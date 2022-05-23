@@ -1,0 +1,283 @@
+.main.login {
+    background-image: url(../image/photo/slide/slide_login.png);
+    background-position: left center;
+    background-size: cover;
+    margin: 0px auto;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    position: relative;
+
+    .login_text {
+        width: calc(85% - 450px);
+        max-width: 550px;
+        margin-left: 10%;
+        position: absolute;
+        top: 45px;
+    }
+
+    .login_area {
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px $grey;
+        width: 450px;
+        margin-left: calc(95% - 450px);
+
+        .account_area {
+
+            .account_secret_area {
+                display: flex;
+                align-items: center;
+                margin-bottom: 25px;
+
+                label {
+                    font-size: 17px;
+                    width: 110px;
+                }
+
+                input {
+                    color: $brown;
+                    background-color: $white;
+                    border: 1px solid $brown;
+                    padding: 8px;
+                    font-size: 17px;
+                    border-radius: 10px;
+                    width: calc(100% - 110px);
+                }
+
+                select:focus,
+                input[type="text"]:focus,
+                input[type="password"]:focus {
+                    outline: 0;
+                    border: 1px solid $brown;
+                    color: $brown;
+                    box-shadow: 1px 1px 5px $grey;
+                    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                }
+            }
+
+            .login_button {
+                width: 100%;
+                font-size: 17px;
+                margin-bottom: 15px;
+                color: $main_color;
+                border: 1px solid $main_color;
+                padding: 6px 0px;
+                border-radius: 10px;
+                background-color: $white;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $main_color;
+                    color: $white;
+                }
+            }
+        }
+
+        .forget_password {
+            display: flex;
+            justify-content: space-between;
+
+            .remember_me {
+                display: flex;
+                position: relative;
+                cursor: pointer;
+
+                .checkmark {
+                    position: relative;
+                    top: 0.5em;
+                    height: 1em;
+                    width: 1em;
+                    border: 1px solid $main_color;
+                    transform: translate(0px, -0.2em);
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                        left: 0px;
+                        top: 50%;
+                        width: 5px;
+                        height: 10px;
+                        border: solid $white;
+                        border-width: 0 3px 3px 0;
+                        transform: rotate(45deg) translate(-50%, -70%);
+                        z-index: 1;
+                    }
+                }
+
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    height: 0;
+                    width: 0;
+                    cursor: pointer;
+
+                    &:checked~.checkmark {
+                        background-color: $main_color;
+
+                    }
+
+                    &:hover~.checkmark:after,
+                    &:checked~.checkmark:after {
+                        display: block;
+                    }
+                }
+
+                p {
+                    margin-left: 5px;
+                }
+
+            }
+
+            a {
+                color: $brown;
+
+                &:hover {
+                    color: $main_color;
+                }
+            }
+        }
+
+        .signup {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid $brown;
+
+            p {
+                text-align: center;
+            }
+
+            .signup_button {
+                width: 100%;
+                font-size: 17px;
+                margin-top: 15px;
+                color: $grey;
+                border: 1px solid $grey;
+                padding: 6px 0px;
+                border-radius: 10px;
+                background-color: $white;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $main_color;
+                    border: 1px solid $main_color;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .main.login {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .login_text {
+            width: calc(450px * 0.8);
+            margin-left: calc(95% - 450px * 0.9);
+            top: calc(130px / 2);
+            transform: translate(0%, -50%);
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .main.login {
+
+        .login_text {
+            width: calc(350px * 0.8);
+            margin-left: calc(95% - 350px * 0.9);
+        }
+
+
+        .login_area {
+
+            width: 350px;
+            margin-left: calc(95% - 350px);
+
+            .account_area {
+
+                .account_secret_area {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-bottom: 20px;
+
+                    label {
+                        font-size: 15px;
+                        width: 100%;
+                        margin-bottom: 5px;
+                    }
+
+                    input {
+                        font-size: 15px;
+                        width: 100%;
+                    }
+                }
+
+                .login_button {
+                    font-size: 15px;
+                }
+            }
+
+            .signup {
+                margin-top: 25px;
+                padding-top: 15px;
+
+                .signup_button {
+                    font-size: 15px;
+                }
+            }
+        }
+
+
+
+    }
+}
+
+@media screen and (max-width: 768px){
+}
+
+@media screen and (max-width: 499px){
+    .main.login {
+
+        .login_area {
+
+            margin: 0 auto;
+
+            .account_area {
+
+                .account_secret_area {
+
+                    label {
+                        font-size: 13px;
+                    }
+
+                    input {
+                        font-size: 13px;
+                    }
+                }
+
+                .login_button {
+                    font-size: 13px;
+                }
+            }
+
+            .signup {
+                margin-top: 15px;
+                padding-top: 10px;
+
+                .signup_button {
+                    font-size: 13px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+
+
+    }
+}

@@ -1,0 +1,453 @@
+.main.grade_map {
+    margin: 0px auto;
+    background-color: $body_bg;
+
+    .map_object {
+        position: relative;
+
+        .map_object_item {
+            line-height: 0;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .map_object_roof {
+                position: relative;
+
+                img {
+                    position: relative;
+                }
+            }
+
+            .map_object_sign {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                transform: translate(0%, -50%);
+                align-items: flex-end;
+                justify-content: space-between;
+                z-index: 2;
+
+                .map_object_sign_one,
+                .map_object_sign_two,
+                .map_object_sign_three {
+                    img {
+                        position: relative;
+                    }
+
+                    .map_object_sign_item {
+                        img {
+                            position: absolute;
+                            z-index: -1;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50% , -50%);
+                        }
+                    }
+                }
+
+                .map_object_sign_one,
+                .map_object_sign_three {
+                    width: 30%;
+                    position: relative;
+                }
+
+                .map_object_sign_two {
+                    width: 65%;
+                    position: absolute;
+                    left: 50%;
+                    z-index: 1;
+                    transform: translate(-50%, -10%);
+                }
+            }
+        }
+    }
+
+    .map_book_area_bg {
+        width: 100%;
+        margin: 0px auto;
+        background-image: url(../image/photo/map/map_object/map_book_area_bg.png);
+        background-repeat: repeat-y;
+        background-position: center;
+        background-size: contain;
+        padding: 240px 0px 0px;
+
+        .map_book_area {
+            width: 100%;
+            padding: 0px 0% 50px;
+            margin: 0px auto;
+            background-color: $body_bg;
+            position: relative;
+            border: 10px solid $circus_blue;
+    
+            .ticket_bg {
+                padding: 80px 0px 40px;
+    
+                .ticket_area {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin: 0px auto;
+                    max-width: 1800px;
+    
+                    .ticket_wrap {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+    
+                        .ticket {
+                            position: relative;
+    
+                            &.ticket_left {
+                                width: 100%;
+                                background-color: $ticket_bg;
+    
+                                .exchange {
+                                    display: none;
+                                    width: 30%;
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translate(0px, -50%) rotate(45deg);
+                                }
+    
+                                &:before,
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    display: block;
+                                    width: 10px;
+                                    height: 10px;
+                                    background: $body_bg;
+                                    border-radius: 50%;
+                                    right: -5px;
+                                    z-index: 1;
+                                }
+    
+                                &:before {
+                                    top: -5px;
+                                }
+    
+                                &:after {
+                                    bottom: -5px;
+                                }
+    
+                                .ticket_object {
+                                    line-height: 0;
+                                }
+    
+    
+    
+                            }
+    
+                            &.ticket_right {
+                                width: 100%;
+                                padding: 10px 0px;
+                                background-color: $ticket_bg;
+                                position: relative;
+                                border-top: 1px dotted $brown;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+    
+                                .receive {
+                                    button {
+                                        background-color: $main_color;
+                                        padding: 5px 10px;
+                                        color: $white;
+    
+                                        &:disabled {
+                                            background-color: $grey;
+                                            border-radius: 10px;
+                                        }
+                                    }
+    
+                                    p {
+                                        color: $white;
+                                        cursor: pointer;
+                                    }
+    
+                                }
+                            }
+                        }
+    
+                        &.exchange_ticket {
+    
+                            padding-right: 5%;
+    
+                            .ticket_left {
+                                .exchange {
+                                    display: block;
+                                }
+                            }
+    
+                            .ticket_right {
+                                display: none;
+                            }
+    
+                        }
+    
+                        /* 波浪線 */
+                        .wave_line {
+                            &.wave_line_left {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                display: flex;
+                                min-width: 5px;
+                                max-width: 5px;
+    
+                                .wave_line_internal {
+                                    height: 100%;
+                                    width: 100%;
+                                    background: radial-gradient(circle at 0 50%, $body_bg 50%, $ticket_bg 0);
+                                    background-size: 0.3rem 0.7rem;
+                                    background-repeat: repeat-y;
+                                }
+                            }
+    
+                            &.wave_line_right {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                height: 100%;
+                                display: flex;
+                                min-width: 5px;
+                                max-width: 5px;
+                                transform: rotate(180deg);
+    
+                                .wave_line_internal {
+                                    height: 100%;
+                                    width: 100%;
+                                    background: radial-gradient(circle at 0 50%, $body_bg 50%, $ticket_bg 0);
+                                    background-size: 0.3rem 0.7rem;
+                                    background-repeat: repeat-y;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .book_area {
+                margin: 80px auto 0px;
+
+                .grade_map_booklist{
+                    .swiper{
+                        .swiper-wrapper{
+                            flex-wrap: wrap;
+                            .swiper-slide{
+                                width: calc(25% - 40px);
+                                margin: 0px 20px 40px 20px;
+                            }
+                        }
+                    }
+                }
+
+                .page{
+                    display: flex;
+                    justify-content: center;
+
+                    .pagination{
+                        a,span{
+                            padding: 5px 0.5rem;
+                            border-radius: 10px;
+                            margin: 0px 5px;
+                            color: $brown;
+                            &:hover,
+                            &:active,
+                            &.active{
+                                background-color: $main_color;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+}
+
+@media screen and (max-width: 1200px){
+    .main.grade_map {
+
+        .map_book_area_bg{
+            .map_book_area {
+
+                .ticket_bg{
+                    .ticket_area {
+                        width: 90%;
+                    }
+                }
+                
+            }
+        }
+        
+
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .main.grade_map {
+
+        .map_book_area_bg{
+            .map_book_area {
+                .ticket_bg{
+                    padding: 40px 0px 0px;
+                    .ticket_area {
+                        .ticket_wrap {
+                            .ticket {
+                                position: relative;
+        
+                                &.ticket_left {
+        
+                                    &:before,
+                                    &:after {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        width: 10px;
+                                        height: 10px;
+                                        background: $body_bg;
+                                        border-radius: 50%;
+                                        right: -5px;
+                                        z-index: 1;
+                                    }
+        
+                                    &:before {
+                                        top: -5px;
+                                    }
+        
+                                    &:after {
+                                        bottom: -5px;
+                                    }
+        
+                                }
+        
+                                &.ticket_right {
+        
+                                    .receive {
+                                        button {
+                                            padding: 5px 8px;
+                                        }
+        
+                                    }
+                                }
+                            }
+        
+                        }
+                    }
+                }
+                
+    
+                .book_area {
+                    margin: 45px auto 0px;
+
+                    .grade_map_booklist{
+                        .swiper{
+                            .swiper-wrapper{
+                                .swiper-slide{
+                                    width: calc(33% - 30px);
+                                    margin: 0px 15px 30px 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+
+    }
+}
+
+@media screen and (max-width: 768px){
+    .main.grade_map {
+
+        .map_book_area_bg{
+            .map_book_area {
+
+                .ticket_area {
+                    width: 100%;
+    
+                    .ticket_wrap {
+                        .ticket {
+                            position: relative;
+    
+                            &.ticket_left {
+                                width: calc(100% - 95px);
+                            }
+    
+                            &.ticket_right {
+                                width: 95px;
+    
+                                .receive {
+                                    button {
+                                        padding: 5px;
+                                    }
+    
+                                }
+                            }
+                        }
+    
+                    }
+                }
+    
+                .book_area {
+                    margin: 40px auto 0px;
+                    .grade_map_booklist{
+                        .swiper{
+                            .swiper-wrapper{
+                                .swiper-slide{
+                                    width: calc(50% - 30px);
+                                    margin: 0px 15px 30px 15px;
+                                }
+                            }
+                        }
+                    }
+
+                    .page{
+    
+                        .pagination{
+                            a,span{
+                                margin: 0px 2.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 499px){
+    .main.grade_map {
+
+        .map_book_area_bg{
+            .map_book_area {
+    
+                .book_area {
+                    .grade_map_booklist{
+                        .swiper{
+                            .swiper-wrapper{
+                                .swiper-slide{
+                                    width: calc(100% - 0px);
+                                    margin: 0px auto 30px auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

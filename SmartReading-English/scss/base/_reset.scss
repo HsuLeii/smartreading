@@ -1,0 +1,293 @@
+%bold {
+    font-weight: bold;
+}
+
+%transition {
+    transition: all .3s ease;
+}
+
+%boxShadow_gray {
+    box-shadow: 1px 1px 5px #4b4b4b45;
+}
+
+%max1200 {
+    max-width: 1200px;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1 {
+    font-size: 40px;
+    color: $main_color;
+    line-height: 1.7;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 1.7;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 17px;
+    color: $brown;
+    line-height: 1.7;
+}
+
+span {
+    font-size: 17px;
+    text-decoration: none;
+    color: $brown;
+    line-height: 1.7;
+}
+
+a {
+    font-size: 17px;
+    text-decoration: none;
+    line-height: 1.7;
+}
+
+label {
+    font-size: 21px;
+    color: $brown;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    padding: 0;
+    border-width: 0px;
+    border-style: none;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: grey;
+    opacity: 0.5;
+    cursor: auto;
+}
+
+*,
+body {
+    font-family: 'Noto Sans', 'Noto Sans TC', 'Noto Sans SC', 'Microsoft JhengHei', 'Noto Sans TC', 'Microsoft YaHei', 'PingFang TC', 'PingFang SC', 'Heiti TC', 'Heiti SC', 'LiHei Pro', 'STXihei', sans-serif;
+    letter-spacing: 1.5px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body_bg;
+}
+
+input[type="radio"]:checked+*,
+input[type="radio"]:hover+* {
+    color: $main_color;
+}
+
+input[type="radio"]:checked+*::before {
+    background: radial-gradient($main_color 0%, $main_color 40%, transparent 50%, transparent);
+    border-color: $main_color;
+}
+
+input[type="radio"]+.img-answer::before {
+    vertical-align: top;
+}
+
+input[type="radio"]+*::before {
+    content: "";
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: $main_color;
+    position: absolute;
+    left: calc(-0.8rem - 0.75px);
+    top: 0.4rem;
+}
+
+input[type="radio"i] {
+    margin-right: 5px;
+}
+
+input[type=radio] {
+    width: 16px;
+    height: 16px;
+    display: none;
+    vertical-align: top;
+    margin-top: 7px;
+}
+
+input[type="radio"i]~label {
+    padding-left: 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    @extend %bold;
+}
+
+.main {
+    margin: 60px auto 80px;
+
+    .tittle {
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    body {
+        &.fixed {
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.75);
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    h1 {
+        font-size: 35px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    span {
+        font-size: 15px;
+    }
+
+    a {
+        font-size: 15px;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    input[type="radio"]+*::before {
+        width: 0.6rem;
+        height: 0.6rem;
+        left: calc(-0.6rem - 0.75px);
+        top: 0.3rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    h1 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    input[type="radio"]+*::before {
+        width: 0.5rem;
+        height: 0.5rem;
+        left: calc(-0.5rem - 0.75px);
+        top: 0.25rem;
+    }
+
+    .main {
+        margin: 40px auto 80px;
+
+        .tittle {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 499px){
+    h1 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    span {
+        font-size: 13px;
+    }
+
+    a {
+        font-size: 13px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+}

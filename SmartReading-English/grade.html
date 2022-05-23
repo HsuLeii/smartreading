@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SRE(SmartReading-English)是提供臺灣等英語學習者閱讀英語讀本的學習平臺。SRE透過閱讀能力檢測對學習者進行英語閱讀能力評估後，再運用AI技術將學習者的英語閱讀程度和文本難度進行適性配對，並推薦適合學習者閱讀能力的英語讀本，增加學習者對英語閱讀的樂趣。當學習者閱讀文本後，可透過讀後測驗，了解自己對文本的理解程度。" />
+  <title>SmartReading-English</title>
+  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+
+  <!-- this page widgets CSS -->
+  <!-- modal -->
+  <link rel="stylesheet" href="css/jquery.modal.min.css" />
+
+  <!-- my core CSS -->
+  <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
+</head>
+
+<body>
+  <header class="header">
+  </header>
+  <div class="slide">
+    <img src="image/photo/slide/slide_grade.png" alt="">
+  </div>
+  <div class="main grade">
+    <div class="tittle">
+      <h1>分級對應</h1>
+    </div>
+
+    <!-- <div class="chart_area">
+      <div class="chart">
+        <div class="bar first_grade_background">
+          <p>一年級</p>
+        </div>
+        <div class="bar second_grade_background">
+          <p>二年級</p>
+        </div>
+        <div class="bar third_grade_background">
+          <p>三年級</p>
+        </div>
+        <div class="bar fourth_grade_background">
+          <p>四年級</p>
+        </div>
+        <div class="bar fifth_grade_background">
+          <p>五年級</p>
+        </div>
+        <div class="bar sixth_grade_background">
+          <p>六年級</p>
+        </div>
+        <div class="bar seventh_grade_background">
+          <p>七年級</p>
+        </div>
+        <div class="bar eighth_grade_background">
+          <p>八年級</p>
+        </div>
+        <div class="bar ninth_grade_background">
+          <p>九年級</p>
+        </div>
+      </div>
+    </div>
+    <div class="chart_content">
+      <div class="grade_content first_grade_content">
+        <h4>對應SRE值: 180以下</h4>
+        <h4>CEFR標準: Pre、A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能讀懂26個印刷體大小寫字母及其對應字詞。<br />
+          讀懂簡單的數量詞。如: 時間、價錢。<br />
+          讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content second_grade_content">
+        <h4>SRE值: 181~259</h4>
+        <h4>CEFR標準: Pre、A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能讀懂簡單視覺詞 (Sight Words) 的意思。<br />
+          讀懂簡單的數量詞。如: 時間、價錢。<br />
+          讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content third_grade_content">
+        <h4>SRE值: 260~323</h4>
+        <h4>CEFR標準: Pre、A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀生活化、情境單純、語句簡短的文本內容。<br />
+          讀懂簡單的數量詞。如: 時間、價錢。<br />
+          讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content fourth_grade_content">
+        <h4>SRE值: 260~323</h4>
+        <h4>CEFR標準: Pre、A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀生活化、情境單純、語句簡短的文本內容。<br />
+          讀懂簡單的數量詞。如: 時間、價錢。<br />
+          讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content fifth_grade_content">
+        <h4>SRE值: 324~435</h4>
+        <h4>CEFR標準: A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀與個人相關、生活化、情境單純、語句簡短的文本內容，如簡易句子或對話、短篇敘述、圖畫標示等。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content sixth_grade_content">
+        <h4>SRE值: 324~435</h4>
+        <h4>CEFR標準: A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀與個人相關、生活化、情境單純、語句簡短的文本內容，如簡易句子或對話、短篇敘述、圖畫標示等。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content seventh_grade_content">
+        <h4>SRE值: 436~570</h4>
+        <h4>CEFR標準: A1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀生活化、與個人相關、訊息或情境單純、語句簡短的內容，如對話、短篇故事或敘述、韻文等。<br />
+          讀懂日常生活相關的短語指示。如: 車站路牌、招牌。<br />
+          讀懂簡短的告示文字。如: 廣告標語、公告標題。
+        </p>
+      </div>
+      <div class="grade_content eighth_grade_content">
+        <h4>SRE值: 571~720</h4>
+        <h4>CEFR標準: A2</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀主題熟悉、訊息或情境略為複雜、語句略長的內容，如對話、記敘文、說明文、韻文等。<br />
+          讀懂由完整句子或簡短段落所書寫的個人書信。如: 便條、生日卡片。<br />
+          讀懂公共場合中以簡短段落呈現的文本或指示。如: 菜單、時間表、如何用機器買票。
+        </p>
+      </div>
+      <div class="grade_content ninth_grade_content">
+        <h4>SRE值: 721~1000</h4>
+        <h4>CEFR標準: B1</h4>
+        <h4>Lexile: 350~369</h4>
+        <p>
+          能閱讀一般議題、訊息或情境多元、語句略為複雜的內容，如對話、記敘文、說明文、議論文、韻文等。<br />
+          讀懂自身領域相關的文本，並理解文章所傳達的主要觀點與結論。<br />
+          閱讀常見書面文本並擷取重要訊息。如: 通知單、簡短的使用手冊。<br />
+          讀懂以段落陳述的事件與感情。如: 私人書信中的情緒和感受。
+        </p>
+      </div>
+    </div> -->
+
+    <div class="grade_introduce">
+      <p>
+        本團隊透過AI讀本分級技術大量分析不同領域以及不同難度的書籍，建立SRE值（書籍文本的難度值）。書籍的SRE值越大，表示這本書的難度越高，需要的閱讀能力也越高。SRE值亦能對應歐盟CEFR的英語水平等級，使用者可參考各等級的描述，判斷自身閱讀能力，挑選適合自己的書籍。
+      </p>
+      <div class="grade_introduce_button">
+        <a href="#cefr_modal" rel="modal:open">什麼是CEFR?</a>
+      </div>
+      <div class="grade_introduce_button">
+        <a href="#lexile_modal" rel="modal:open">什麼是Lexile?</a>
+      </div>
+    </div>
+    <div class="level_correspondence_area">
+      <h3>一次瀏覽等級對應內容</h3>
+      <div class="level_correspondence" data-scroll="true">
+        <!--first_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner level_correspondence_img left">
+              <div class="first_grade_introduction level_introduction">
+                <h4>一年級</h4>
+                <h4>SRE值: 180以下</h4>
+                <h4>CEFR標準: Pre、A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker first_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner first_grade_marker_inner"><img src="image/svg/level_1.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="first_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能讀懂26個印刷體大小寫字母及其對應字詞。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡單的數量詞。如: 時間、價錢。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--first_grade結束-->
+        <!--second_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="second_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能讀懂簡單視覺詞 (Sight Words) 的意思。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡單的數量詞。如: 時間、價錢。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker second_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner second_grade_marker_inner"><img src="image/svg/level_2.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner level_correspondence_img right">
+              <div class="second_grade_introduction level_introduction">
+                <h4>二年級</h4>
+                <h4>SRE值: 181~259</h4>
+                <h4>CEFR標準: Pre、A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--second_grade結束-->
+        <!--third_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="third_grade_introduction level_introduction">
+                <h4>三年級</h4>
+                <h4>SRE值: 260~323</h4>
+                <h4>CEFR標準: Pre、A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker third_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner third_grade_marker_inner"><img src="image/svg/level_3.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="third_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀生活化、情境單純、語句簡短的文本內容。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡單的數量詞。如: 時間、價錢。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--third_grade結束-->
+        <!--fourth_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="fourth_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀生活化、情境單純、語句簡短的文本內容。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡單的數量詞。如: 時間、價錢。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂與個人資訊相關的詞彙。 如: 國籍、學校、家庭狀況。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker fourth_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner fourth_grade_marker_inner"><img src="image/svg/level_4.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="fourth_grade_introduction level_introduction">
+                <h4>四年級</h4>
+                <h4>SRE值: 260~323</h4>
+                <h4>CEFR標準: Pre、A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--fourth_grade結束-->
+        <!--fifth_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="fifth_grade_introduction level_introduction">
+                <h4>五年級</h4>
+                <h4>SRE值: 324~435</h4>
+                <h4>CEFR標準: A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker fifth_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner fifth_grade_marker_inner"><img src="image/svg/level_5.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="fifth_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀與個人相關、生活化、情境單純、語句簡短的文本內容，如簡易句子或對話、短篇敘述、圖畫標示等。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--fifth_grade結束-->
+        <!--sixth_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="sixth_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀與個人相關、生活化、情境單純、語句簡短的文本內容，如簡易句子或對話、短篇敘述、圖畫標示等。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker sixth_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner sixth_grade_marker_inner"><img src="image/svg/level_6.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="sixth_grade_introduction level_introduction">
+                <h4>六年級</h4>
+                <h4>SRE值: 324~435</h4>
+                <h4>CEFR標準: A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--sixth_grade結束-->
+        <!--seventh_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="seventh_grade_introduction level_introduction">
+                <h4>七年級</h4>
+                <h4>SRE值: 436~570</h4>
+                <h4>CEFR標準: A1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker seventh_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner seventh_grade_marker_inner"><img src="image/svg/level_7.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="seventh_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀生活化、與個人相關、訊息或情境單純、語句簡短的內容，如對話、短篇故事或敘述、韻文等。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂日常生活相關的短語指示。如: 車站路牌、招牌。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂簡短的告示文字。如: 廣告標語、公告標題。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--seventh_grade結束-->
+        <!--eighth_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="eighth_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀主題熟悉、訊息或情境略為複雜、語句略長的內容，如對話、記敘文、說明文、韻文等。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂由完整句子或簡短段落所書寫的個人書信。如: 便條、生日卡片。</span>
+                </p>
+                <p>
+                  <span>• </span><span>讀懂公共場合中以簡短段落呈現的文本或指示。如: 菜單、時間表、如何用機器買票。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker eighth_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner eighth_grade_marker_inner"><img src="image/svg/level_8.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="eighth_grade_introduction level_introduction">
+                <h4>八年級</h4>
+                <h4>SRE值: 571~720</h4>
+                <h4>CEFR標準: A2</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--eighth_grade結束-->
+        <!--ninth_grade開始-->
+        <div class="level_correspondence_item">
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner left">
+              <div class="ninth_grade_introduction level_introduction">
+                <h4>九年級</h4>
+                <h4>SRE值: 721~1000</h4>
+                <h4>CEFR標準: B1</h4>
+                <h4>Lexile: 350~369</h4>
+              </div>
+            </div>
+          </div>
+          <div class="level_correspondence_marker ninth_level_correspondence_marker">
+            <div class="level_correspondence_marker_inner ninth_grade_marker_inner"><img src="image/svg/level_9.svg"
+                alt=""></div>
+          </div>
+          <div class="level_correspondence_content">
+            <div class="level_correspondence_content_inner right">
+              <div class="ninth_grade_introduction level_introduction">
+                <p>
+                  <span>• </span><span>能閱讀一般議題、訊息或情境多元、語句略為複雜的內容，如對話、記敘文、說明文、議論文、韻文等。</span>
+                </p>
+                
+                  <p>
+                    <span>• </span><span>讀懂自身領域相關的文本，並理解文章所傳達的主要觀點與結論。</span>
+                  </p>
+                  <p>
+                    <span>• </span><span>閱讀常見書面文本並擷取重要訊息。如: 通知單、簡短的使用手冊。</span>
+                  </p>
+                  <p>
+                  <span>• </span><span>讀懂以段落陳述的事件與感情。如: 私人書信中的情緒和感受。</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--ninth_grade結束-->
+      </div>
+    </div>
+
+    <!-- CEFR彈跳視窗開始 -->
+    <div id="cefr_modal" class="modal grade_information_modal">
+      <div class="lightbulb_bg">
+        <div class="grade_introduction grade_introduction_cefr">
+          <h3>什麼是CEFR?</h3>
+          <p>
+            歐洲共同語言參考架構 (The Common European Framework of Reference for Languages， CEFR)
+            是一套用來描述外語學習者語言能力水平的國際標準，此標準可適用多種語言能力水平的描述，包含英語和歐洲語言等。在CEFR的架構下，語言能力水平劃分成A1入門級、A2初級、B1中級、B2中高級、C1高級和C2精通級，共六個級別，其能力指標更廣泛作為與各大國際語言檢定考試的能力界定參考標準，舉凡雅思IELTS、托福TOEFL和全民英檢GEPT等考試。因此，CEFR的語言能力參考標準讓外語學習者更輕易對應與衡量自己的語言能力水平。
+          </p>
+        </div>
+      </div>
+      <!-- <div class="modal_stationery_right decorative_figure">
+        <img src="image/svg/modal_stationery_right.svg" alt="">
+      </div>
+      <div class="modal_rides_left decorative_figure">
+        <img src="image/svg/modal_stationery_left.svg" alt="">
+      </div> -->
+
+    </div>
+    <!-- CEFR彈跳視窗結束 -->
+
+    <!-- Lexile彈跳視窗開始 -->
+    <div id="lexile_modal" class="modal grade_information_modal">
+      <div class="lightbulb_bg">
+        <div class="grade_introduction grade_introduction_lexile">
+          <h3>什麼是Lexile?</h3>
+          <p>
+            藍思 (Lexile) 是一套由美國教育科研機構MetaMetrics開發，以科學方式評量讀者的英語閱讀能力水平 (Reader ability) 和標示文本難易度 (Text Readability) 的閱讀分級制度。Lexile藍思閱讀分級以文本中詞彙的語義難度 (Semantic difficulty) 和語法複雜程度 (Syntactic complexity) 為衡量標準，將文本難易度劃分成0L至2000L。因此，讀者可透過Lexile分級制度，了解自己的英語閱讀能力水平，並挑選符合自己閱讀能力的文本。例如: 文本難度值低於5L，通常評估為適用閱讀初學者 (Beginning Reader，BR)。透過Lexile藍思閱讀分級，英語學習者、教師和家長可挑選適合學生閱讀程度的文本，來增進其英語閱讀能力。
+          </p>
+        </div>
+      </div>
+      <!-- <div class="modal_stationery_right decorative_figure">
+        <img src="image/svg/modal_stationery_right.svg" alt="">
+      </div>
+      <div class="modal_rides_left decorative_figure">
+        <img src="image/svg/modal_stationery_left.svg" alt="">
+      </div> -->
+
+    </div>
+    <!-- Lexile彈跳視窗結束 -->
+
+
+
+
+  </div>
+  <!-- footer弧線 -->
+  <svg version="1.1" class="footer_top_bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px" y="0px" viewBox="0 0 1920 76.5" style="enable-background:new 0 0 1920 76.5;" xml:space="preserve">
+    <path d="M0,76.5C273,26.4,580.3-2.2,963.2,0c356.2,2.1,697.6,29,956.8,76.5" />
+  </svg>
+  <footer>
+  </footer>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/all.js"></script>
+
+  <!-- this page widgets JS -->
+  <!-- modal -->
+  <script src="js/jquery.modal.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('header').load('header.html', function () {});
+      $('footer').load('footer.html', function () {});
+    });
+  </script>
+
+</body>
+
+</html>
