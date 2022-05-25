@@ -83,72 +83,284 @@
 
         }
 
-        .route_map_area{
-            width: 80%;
+        &.route_map {
+            max-width: 1600px;
             margin: 0 auto;
 
-            .route_1{
-                height:200px;
-                border:10px solid;
-                border-radius:0px 0px 0px 50px;
-                border-top:0px;
-                border-right:0px;
-                margin-right: 50px;
-              }
-              .route_2{
-                height:200px;
-                border:10px solid red;
-                border-radius:0px 50px 50px 0px;
-                margin-top:-10px;
-                margin-left:50px;
-                border-left:0px;
-              }
-              .route_3{
-                height:200px;
-                border:10px solid;
-                border-radius:50px 0px 0px 50px;
-                margin-top:-10px;
-                border-right:0px;
-                margin-right: 50px;
-              }
+            .route_map_area {
+                width: calc(80% - 200px);
+                margin: 250px auto;
+
+                .route_1 {
+                    height: 250px;
+                    border: 30px solid $brown;
+                    border-radius: 0px 250px 250px 0px;
+                    margin-top: -30px;
+                    margin-right: -125px;
+                    border-left: 0;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        border-radius: 0px 250px 250px 0px;
+                        width: calc(100% + 7px);
+                        height: calc(100% + 30px - 7px);
+                        border: 7px dotted $white;
+                        border-left: 0;
+                        transform: translate(-0, -50%);
+                    }
+                }
+
+                .route_2 {
+                    height: 250px;
+                    border: 30px solid $brown;
+                    border-radius: 250px 0px 0px 250px;
+                    margin-top: -30px;
+                    border-right: 0px;
+                    margin-left: -125px;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        border-radius: 250px 0px 0px 250px;
+                        width: calc(100% + 7px);
+                        height: calc(100% + 30px - 7px);
+                        border: 7px dotted $white;
+                        border-right: 0px;
+                        transform: translate(-15px, -50%);
+                    }
+                }
+            }
+
+            .map_route_item {
+                width: calc(80% - 200px);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 80%;
+
+                .map_object_item_project {
+                    width: 7%;
+                    transform: translate(-50%, calc(-50% - 15px));
+                    position: absolute;
+
+                    img {
+                        padding: 5px;
+                        border-radius: 50%;
+                    }
+
+                    &.item_project_map_start {
+                        top: 30px;
+                        left: 0%;
+                        border: 3px solid $main_color;
+                        border-radius: 50%;
+                    }
+
+                    &.item_project_first_grade {
+                        top: 30px;
+                        left: 15%;
+
+                        img {
+                            background-color: $first_grade_color;
+                        }
+                    }
+
+                    &.item_project_second_grade {
+                        top: 30px;
+                        left: 45%;
+
+                        img {
+                            background-color: $second_grade_color;
+                        }
+                    }
+
+                    &.item_project_third_grade {
+                        top: 30px;
+                        left: 75%;
+
+                        img {
+                            background-color: $third_grade_color;
+                        }
+                    }
+
+                    &.item_project_fourth_grade {
+                        top: 250px;
+                        left: 90%;
+
+                        img {
+                            background-color: $fourth_grade_color;
+                        }
+                    }
+
+                    &.item_project_fifth_grade {
+                        top: 250px;
+                        left: 60%;
+
+                        img {
+                            background-color: $fifth_grade_color;
+                        }
+                    }
+
+                    &.item_project_sixth_grade {
+                        top: 250px;
+                        left: 30%;
+
+                        img {
+                            background-color: $sixth_grade_color;
+                        }
+                    }
+
+                    &.item_project_seventh_grade {
+                        top: calc(250px * 2 - 30px);
+                        left: 15%;
+
+                        img {
+                            background-color: $seventh_grade_color;
+                        }
+                    }
+
+                    &.item_project_eighth_grade {
+                        top: calc(250px * 2 - 30px);
+                        left: 45%;
+
+                        img {
+                            background-color: $eighth_grade_color;
+                        }
+                    }
+
+                    &.item_project_ninth_grade {
+                        top: calc(250px * 2 - 30px);
+                        left: 75%;
+
+                        img {
+                            background-color: $ninth_grade_color;
+                        }
+                    }
+
+                    &.item_project_map_end {
+                        top: calc(250px * 2 - 30px);
+                        left: 100%;
+                        border: 3px solid $main_color;
+                        border-radius: 50%;
+                    }
+                }
+            }
         }
 
-        .map_route_item{
-            position: absolute;
-        top:0;
-        left:50%;
-        transform: translate(-50% , 0%);
-        width:80%;
-
-        .map_object_item_project{
-            width:15%;
-            transform: translate(-50% , -50%);
-            position: absolute;
-
-
-            &.item_project_second_grade{
-        top:150px;
+        &.map_description {
+            width: 80%;
+            max-width: 1800px;
+            margin: 0 auto;
+            background-color: $white;
+            
+            .map_description_title{
+                width: 100%;
+                color: $white;
+                background-color: $main_color;
+                text-align: center;
+                margin: 0px auto 60px;
             }
 
-            &.item_project_third_grade{
-                left:50%;
-        top:150px;
+            .map_description_item{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                .map_object_item_project{
+                    width: 30%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                    .level_img{
+                        width: 20%;
+                        max-width: 100px;
+                        margin-right: 15px;
+                        img {
+                            border-radius: 50%;
+                            padding: 5px;
+                        }
+                    }
+
+                    .level_introduction{
+                        p{
+                            display: flex;
+                            margin: 5px 0px;
+                        }
+                    }
+
+                    .object_img{
+                        width: 40%;
+                        max-width: 150px;
+                    }
+
+                    &.item_project_first_grade {
+                        .level_img{
+                            img {
+                                background-color: $first_grade_color;
+                            }
+                        }
+
+                        .level_introduction{
+                            h4{
+                                color: $first_grade_color;
+                            }
+                        }
+                        
+                    }
+
+                    &.item_project_second_grade {
+                        .level_img{
+                            img {
+                                background-color: $second_grade_color;
+                            }
+                        }
+
+                        .level_introduction{
+                            h4{
+                                color: $second_grade_color;
+                            }
+                        }
+                        
+                    }
+
+                    &.item_project_third_grade {
+                        .level_img{
+                            img {
+                                background-color: $third_grade_color;
+                            }
+                        }
+
+                        .level_introduction{
+                            h4{
+                                color: $third_grade_color;
+                            }
+                        }
+                        
+                    }
+                }
+                
             }
-          }
-      }
+
+            }
+
+
 
     }
 
 }
 
-@media screen and (max-width: 1200px){
-}
+@media screen and (max-width: 1200px) {}
 
-@media screen and (max-width: 1024px){
-}
+@media screen and (max-width: 1024px) {}
 
-@media screen and (max-width: 768px){
-}
+@media screen and (max-width: 768px) {}
 
-@media screen and (max-width: 499px){
-}
+@media screen and (max-width: 499px) {}
