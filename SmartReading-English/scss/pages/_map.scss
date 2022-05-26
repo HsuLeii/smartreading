@@ -86,172 +86,278 @@
 
         }
 
-        &.route_map {
-            max-width: 1600px;
+        &.route_map{
+            max-width: 1200px;
+            width: 80%;
             margin: 0 auto;
+            .map_route_item{
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-end;
+                flex-wrap: wrap;
 
-            .route_map_area {
-                width: calc(80% - 200px);
-                margin: 0px auto 150px;
+                .map_object_item_project{
+                    width: 30%;
+                    border-bottom: 10px solid;
+                    padding: 40px 0px 0px;
 
-                .route_1 {
-                    height: 250px;
-                    border: 30px solid $brown;
-                    border-radius: 0px 250px 250px 0px;
-                    margin-top: -30px;
-                    margin-right: -125px;
-                    border-left: 0;
-                    position: relative;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        border-radius: 0px 250px 250px 0px;
-                        width: calc(100% + 7px);
-                        height: calc(100% + 30px - 7px);
-                        border: 7px dotted $white;
-                        border-left: 0;
-                        transform: translate(-0, -50%);
-                    }
-                }
-
-                .route_2 {
-                    height: 250px;
-                    border: 30px solid $brown;
-                    border-radius: 250px 0px 0px 250px;
-                    margin-top: -30px;
-                    border-right: 0px;
-                    margin-left: -125px;
-                    position: relative;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        border-radius: 250px 0px 0px 250px;
-                        width: calc(100% + 7px);
-                        height: calc(100% + 30px - 7px);
-                        border: 7px dotted $white;
-                        border-right: 0px;
-                        transform: translate(-15px, -50%);
-                    }
-                }
-            }
-
-            .map_route_item {
-                width: calc(80% - 200px);
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translate(-50%, 0%);
-                width: 80%;
-
-                .map_object_item_project {
-                    width: 7%;
-                    transform: translate(-50%, calc(-50% - 15px));
-                    position: absolute;
-
-                    img {
-                        padding: 5px;
-                        border-radius: 50%;
+                    .level_introduction{
+                        padding: 0px 0px 10px;
                     }
 
-                    &.item_project_map_start {
-                        top: 30px;
-                        left: 0%;
+                    &.item_project_first_grade{
+                        border-color: $first_grade_color;
+                        order: 1;
                     }
 
-                    &.item_project_first_grade {
-                        top: 30px;
-                        left: 15%;
+                    &.item_project_second_grade{
+                        border-color: $second_grade_color;
+                        order: 2;
+                    }
 
-                        img {
-                            background-color: $first_grade_color;
+                    &.item_project_third_grade{
+                        border-color: $third_grade_color;
+                        position: relative;
+                        order: 3;
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            width: 25%;
+                            height: 100%;
+                            border: 10px solid black;
+                            left: 103.666666%;
+                            top: calc(100%);
+                            border-radius: 0px 100% 100% 0;
+                            border-left: 0;
                         }
                     }
 
-                    &.item_project_second_grade {
-                        top: 30px;
-                        left: 45%;
+                    &.item_project_fourth_grade{
+                        border-color: $fourth_grade_color;
+                        order: 6;
+                    }
 
-                        img {
-                            background-color: $second_grade_color;
+                    &.item_project_fifth_grade{
+                        border-color: $fifth_grade_color;
+                        order: 5;
+                    }
+
+                    &.item_project_sixth_grade{
+                        border-color: $sixth_grade_color;
+                        position: relative;
+                        order: 4;
+
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            width: 25%;
+                            height: 100%;
+                            border: 10px solid black;
+                            right: 103.666666%;
+                            top: calc(100%);
+                            border-radius: 0px 100% 100% 0;
+                            border-left: 0;
+                            transform: rotate(180deg);
+                        }
+
+                        &::after{
+                            position: absolute;
+                            content: "";
+                            width: 25%;
+                            height: 100%;
+                            border: 10px solid black;
+                            right: 103.666666%;
+                            top: calc(100%);
+                            border-radius: 0px 100% 100% 0;
+                            border-left: 0;
+                            transform: rotate(180deg);
                         }
                     }
 
-                    &.item_project_third_grade {
-                        top: 30px;
-                        left: 75%;
-
-                        img {
-                            background-color: $third_grade_color;
-                        }
+                    &.item_project_seventh_grade{
+                        border-color: $seventh_grade_color;
+                        order: 7;
                     }
 
-                    &.item_project_fourth_grade {
-                        top: 250px;
-                        left: 90%;
-
-                        img {
-                            background-color: $fourth_grade_color;
-                        }
+                    &.item_project_eighth_grade{
+                        border-color: $eighth_grade_color;
+                        order: 8;
                     }
 
-                    &.item_project_fifth_grade {
-                        top: 250px;
-                        left: 60%;
-
-                        img {
-                            background-color: $fifth_grade_color;
-                        }
-                    }
-
-                    &.item_project_sixth_grade {
-                        top: 250px;
-                        left: 30%;
-
-                        img {
-                            background-color: $sixth_grade_color;
-                        }
-                    }
-
-                    &.item_project_seventh_grade {
-                        top: calc(250px * 2 - 30px);
-                        left: 15%;
-
-                        img {
-                            background-color: $seventh_grade_color;
-                        }
-                    }
-
-                    &.item_project_eighth_grade {
-                        top: calc(250px * 2 - 30px);
-                        left: 45%;
-
-                        img {
-                            background-color: $eighth_grade_color;
-                        }
-                    }
-
-                    &.item_project_ninth_grade {
-                        top: calc(250px * 2 - 30px);
-                        left: 75%;
-
-                        img {
-                            background-color: $ninth_grade_color;
-                        }
-                    }
-
-                    &.item_project_map_end {
-                        top: calc(250px * 2 - 30px);
-                        left: 100%;
+                    &.item_project_ninth_grade{
+                        border-color: $ninth_grade_color;
+                        order: 9;
                     }
                 }
             }
         }
+
+        // &.route_map {
+        //     max-width: 1600px;
+        //     margin: 0 auto;
+
+        //     .route_map_area {
+        //         width: calc(80% - 200px);
+        //         margin: 0px auto 150px;
+
+        //         .route_1 {
+        //             height: 250px;
+        //             border: 30px solid $brown;
+        //             border-radius: 0px 250px 250px 0px;
+        //             margin-top: -30px;
+        //             margin-right: -125px;
+        //             border-left: 0;
+        //             position: relative;
+
+        //             &::before {
+        //                 content: "";
+        //                 position: absolute;
+        //                 left: 0;
+        //                 top: 50%;
+        //                 border-radius: 0px 250px 250px 0px;
+        //                 width: calc(100% + 7px);
+        //                 height: calc(100% + 30px - 7px);
+        //                 border: 7px dotted $white;
+        //                 border-left: 0;
+        //                 transform: translate(-0, -50%);
+        //             }
+        //         }
+
+        //         .route_2 {
+        //             height: 250px;
+        //             border: 30px solid $brown;
+        //             border-radius: 250px 0px 0px 250px;
+        //             margin-top: -30px;
+        //             border-right: 0px;
+        //             margin-left: -125px;
+        //             position: relative;
+
+        //             &::before {
+        //                 content: "";
+        //                 position: absolute;
+        //                 left: 0;
+        //                 top: 50%;
+        //                 border-radius: 250px 0px 0px 250px;
+        //                 width: calc(100% + 7px);
+        //                 height: calc(100% + 30px - 7px);
+        //                 border: 7px dotted $white;
+        //                 border-right: 0px;
+        //                 transform: translate(-15px, -50%);
+        //             }
+        //         }
+        //     }
+
+        //     .map_route_item {
+        //         width: calc(80% - 200px);
+        //         position: absolute;
+        //         top: 0;
+        //         left: 50%;
+        //         transform: translate(-50%, 0%);
+        //         width: 80%;
+
+        //         .map_object_item_project {
+        //             width: 7%;
+        //             transform: translate(-50%, calc(-50% - 15px));
+        //             position: absolute;
+
+        //             img {
+        //                 padding: 5px;
+        //                 border-radius: 50%;
+        //             }
+
+        //             &.item_project_map_start {
+        //                 top: 30px;
+        //                 left: 0%;
+        //             }
+
+        //             &.item_project_first_grade {
+        //                 top: 30px;
+        //                 left: 15%;
+
+        //                 img {
+        //                     background-color: $first_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_second_grade {
+        //                 top: 30px;
+        //                 left: 45%;
+
+        //                 img {
+        //                     background-color: $second_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_third_grade {
+        //                 top: 30px;
+        //                 left: 75%;
+
+        //                 img {
+        //                     background-color: $third_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_fourth_grade {
+        //                 top: 250px;
+        //                 left: 90%;
+
+        //                 img {
+        //                     background-color: $fourth_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_fifth_grade {
+        //                 top: 250px;
+        //                 left: 60%;
+
+        //                 img {
+        //                     background-color: $fifth_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_sixth_grade {
+        //                 top: 250px;
+        //                 left: 30%;
+
+        //                 img {
+        //                     background-color: $sixth_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_seventh_grade {
+        //                 top: calc(250px * 2 - 30px);
+        //                 left: 15%;
+
+        //                 img {
+        //                     background-color: $seventh_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_eighth_grade {
+        //                 top: calc(250px * 2 - 30px);
+        //                 left: 45%;
+
+        //                 img {
+        //                     background-color: $eighth_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_ninth_grade {
+        //                 top: calc(250px * 2 - 30px);
+        //                 left: 75%;
+
+        //                 img {
+        //                     background-color: $ninth_grade_color;
+        //                 }
+        //             }
+
+        //             &.item_project_map_end {
+        //                 top: calc(250px * 2 - 30px);
+        //                 left: 100%;
+        //             }
+        //         }
+        //     }
+        // }
 
         &.map_description {
             width: 80%;
