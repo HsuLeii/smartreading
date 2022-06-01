@@ -19,6 +19,27 @@ $(".language_dropdown").click(function () {
   $(".about_dropdown").removeClass("open");
   $(".about_dropdown").children(".dropdown_content").removeClass("open");
 });
+
+//scroll-top 按鈕開始
+$(document).ready(function () {
+  $('.scroll_top').hide();
+  $(window).scroll(function () {
+    var windowTop = $(window).scrollTop();
+    if (windowTop > 100) {
+      $('.scroll_top').fadeIn();
+    } else {
+      $('.scroll_top').fadeOut();
+    }
+  });
+  // scroll body to 0px on click
+  $('.scroll_top').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500);
+  });
+});
+//scroll-top 按鈕結束
+
 // 彈跳視窗資訊書籍選擇開始
 $('.modal_btn ul li.introduction').click(function () {
   $('.modal_btn ul li').removeClass('active');
@@ -265,3 +286,4 @@ $(".owl-carousel").owlCarousel({
   }
 });
 //閱讀地圖票券結束
+
