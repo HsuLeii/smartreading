@@ -4703,7 +4703,7 @@ h-word {
 }
 
 .main.grade_map.map_index .map_object .map_object_item .map_object_item_bg.item_bg_cloud {
-  bottom: 95%;
+  bottom: 55%;
   width: 70%;
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
@@ -4711,7 +4711,7 @@ h-word {
 }
 
 .main.grade_map.map_index .map_object .map_object_item .map_object_item_bg.item_bg_grassland {
-  bottom: 45%;
+  bottom: 20%;
   width: 70%;
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
@@ -4895,6 +4895,14 @@ h-word {
   padding: 10px 5%;
   border-radius: 10px;
   width: 100%;
+  z-index: 1;
+}
+
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_introduction .go_map {
+  padding: 5px 0px 0px;
+  border-top: 2px dotted white;
+  margin: 5px auto 0px;
+  text-align: center;
 }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_introduction p {
@@ -5154,25 +5162,43 @@ h-word {
   position: relative;
 }
 
-.main.grade_map .map_object .map_object_item {
+.main.grade_map .map_object.grade_map_object .level_correspondence_marker {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+  z-index: 1;
+  height: auto;
+  width: 5%;
+}
+
+.main.grade_map .map_object.grade_map_object .level_correspondence_marker::before {
+  position: relative;
+}
+
+.main.grade_map .map_object.grade_map_object .level_correspondence_marker .level_correspondence_marker_inner {
+  width: 100%;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item {
   line-height: 0;
 }
 
-.main.grade_map .map_object .map_object_item img {
+.main.grade_map .map_object.grade_map_object .map_object_item img {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.main.grade_map .map_object .map_object_item .map_object_roof {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_roof {
   position: relative;
 }
 
-.main.grade_map .map_object .map_object_item .map_object_roof img {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_roof img {
   position: relative;
 }
 
-.main.grade_map .map_object .map_object_item .map_object_sign {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5189,15 +5215,15 @@ h-word {
   z-index: 2;
 }
 
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_one img,
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_two img,
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_three img {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one img,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_two img,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three img {
   position: relative;
 }
 
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_one .map_object_sign_item img,
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_two .map_object_sign_item img,
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_three .map_object_sign_item img {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one .map_object_sign_item img,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_two .map_object_sign_item img,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three .map_object_sign_item img {
   position: absolute;
   z-index: -1;
   top: 50%;
@@ -5206,13 +5232,81 @@ h-word {
           transform: translate(-50%, -50%);
 }
 
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_one,
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_three {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three {
   width: 30%;
   position: relative;
 }
 
-.main.grade_map .map_object .map_object_item .map_object_sign .map_object_sign_two {
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a {
+  line-height: 0;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  background: #E54F4F;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker .level_correspondence_marker_inner,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker .level_correspondence_marker_inner {
+  width: 16%;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.first_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.first_level_correspondence_marker {
+  background-color: #d72b2b;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.second_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.second_level_correspondence_marker {
+  background-color: #EB772A;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.third_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.third_level_correspondence_marker {
+  background-color: #F3BA03;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.fourth_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.fourth_level_correspondence_marker {
+  background-color: #8DA429;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.fifth_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.fifth_level_correspondence_marker {
+  background-color: #00AD5E;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.sixth_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.sixth_level_correspondence_marker {
+  background-color: #00B1B9;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.seventh_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.seventh_level_correspondence_marker {
+  background-color: #0163C6;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.eighth_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.eighth_level_correspondence_marker {
+  background-color: #4F1AC4;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_one a .level_correspondence_marker.ninth_level_correspondence_marker,
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_three a .level_correspondence_marker.ninth_level_correspondence_marker {
+  background-color: #8400A1;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_two {
   width: 65%;
   position: absolute;
   left: 50%;
@@ -5421,19 +5515,26 @@ h-word {
           justify-content: center;
 }
 
-.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span {
+.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a,
+.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span {
   padding: 5px 0.5rem;
   border-radius: 10px;
   margin: 0px 5px;
   color: #5B3716;
 }
 
-.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a:hover, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a:active, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a.active, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span:hover, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span:active, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span.active {
+.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a:hover, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a:active, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a.active,
+.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span:hover,
+.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span:active,
+.main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span.active {
   background-color: #E54F4F;
   color: #fff;
 }
 
 @media screen and (max-width: 1200px) {
+  .main.grade_map .map_object.grade_map_object .level_correspondence_marker::before {
+    bottom: 0;
+  }
   .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area {
     width: 90%;
   }
@@ -5498,7 +5599,8 @@ h-word {
     width: calc(50% - 30px);
     margin: 0px 15px 30px 15px;
   }
-  .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a, .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span {
+  .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination a,
+  .main.grade_map .map_book_area_bg .map_book_area .book_area .page .pagination span {
     margin: 0px 2.5px;
   }
 }
