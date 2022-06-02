@@ -1,4 +1,4 @@
-.main.grade_map.map_index {    
+.main.grade_map.map_index {
 
     .map_object {
 
@@ -11,14 +11,14 @@
                     bottom: 95%;
                     width: 70%;
                     left: 50%;
-                    transform: translate(-50% , 0%);
+                    transform: translate(-50%, 0%);
                 }
 
                 &.item_bg_grassland {
                     bottom: 45%;
                     width: 70%;
                     left: 50%;
-                    transform: translate(-50% , 0%);
+                    transform: translate(-50%, 0%);
                 }
             }
 
@@ -75,7 +75,7 @@
                     right: 5%;
                 }
 
-                
+
                 &.item_project_book {
                     width: 100%;
                     bottom: 0%;
@@ -164,14 +164,30 @@
                     transform: translate(-50%, -50%);
                     position: absolute;
                     width: 27%;
-                    
 
-                    .level_introduction{
-                        padding: 10px 5%;
-                        border-radius: 10px;
+                    .map_route_item_link {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
 
-                        p{
-                            color: $white;
+                        .level_correspondence_marker {
+                            width: 25%;
+                            align-items: flex-start;
+                        }
+
+                        .map_object_image {
+                            width: 70%;
+                            margin-bottom: 15px;
+                        }
+
+                        .level_introduction {
+                            padding: 10px 5%;
+                            border-radius: 10px;
+                            width: 100%;
+
+                            p {
+                                color: $white;
+                            }
                         }
                     }
 
@@ -179,7 +195,7 @@
                         top: 0px;
                         left: calc(50%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $first_grade_color;
                         }
                     }
@@ -188,7 +204,7 @@
                         top: calc(500px / 2);
                         left: calc(100%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $second_grade_color;
                         }
                     }
@@ -197,7 +213,7 @@
                         top: calc(500px * 1 - 30px);
                         left: calc(50%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $third_grade_color;
                         }
                     }
@@ -206,7 +222,7 @@
                         top: calc(500px * 1 + 500px / 2 - 30px);
                         left: calc(0%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $fourth_grade_color;
                         }
                     }
@@ -215,7 +231,7 @@
                         top: calc(500px * 2 - 60px);
                         left: calc(50%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $fifth_grade_color;
                         }
                     }
@@ -224,7 +240,7 @@
                         top: calc(500px * 2 + 500px / 2 - 60px);
                         left: calc(100%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $sixth_grade_color;
                         }
                     }
@@ -233,7 +249,7 @@
                         top: calc(500px * 3 - 90px);
                         left: calc(50%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $seventh_grade_color;
                         }
                     }
@@ -242,7 +258,7 @@
                         top: calc(500px * 3 + 500px / 2 - 90px);
                         left: calc(0%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $eighth_grade_color;
                         }
                     }
@@ -251,7 +267,7 @@
                         top: calc(500px * 4 - 120px);
                         left: calc(50%);
 
-                        .level_introduction{
+                        .level_introduction {
                             background-color: $ninth_grade_color;
                         }
                     }
@@ -260,249 +276,266 @@
             }
         }
 
-
-
-
     }
 
 }
 
-@media screen and (max-width: 1200px) {}
-
-@media screen and (max-width: 1024px) {
-    .main.grade_map.map_index {    
+@media screen and (max-width: 1200px) {
+    .main.grade_map.map_index {
 
         .map_object {
-    
             &.route_map {
-    
+                .map_route_item {
+                    .map_object_item_project {
+                        .map_route_item_link {
+                            .level_correspondence_marker {
+                                position: initial;
+                                &::before{
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main.grade_map.map_index {
+
+        .map_object {
+
+            &.route_map {
+
                 .route_map_area {
                     margin: 200px auto 170px;
-    
+
                     .route_1 {
                         height: 390px;
                         border-radius: 0px 390px 390px 0px;
-    
+
                         &::before {
                             border-radius: 0px 390px 390px 0px;
                         }
                     }
-    
+
                     .route_2 {
                         height: 390px;
-                        border-radius: 390px 0px 0px 390px;    
+                        border-radius: 390px 0px 0px 390px;
 
                         &::before {
                             border-radius: 390px 0px 0px 390px;
                         }
                     }
                 }
-    
+
                 .map_route_item {
-    
+
                     .map_object_item_project {
                         width: 35%;
-    
+
                         &.item_project_first_grade {
                             top: 0px;
                         }
-    
+
                         &.item_project_second_grade {
                             top: calc(390px / 2);
                         }
-    
+
                         &.item_project_third_grade {
                             top: calc(390px * 1 - 30px);
                         }
-    
+
                         &.item_project_fourth_grade {
                             top: calc(390px * 1 + 390px / 2 - 30px);
                         }
-    
+
                         &.item_project_fifth_grade {
                             top: calc(390px * 2 - 60px);
                         }
-    
+
                         &.item_project_sixth_grade {
                             top: calc(390px * 2 + 390px / 2 - 60px);
                         }
-    
+
                         &.item_project_seventh_grade {
                             top: calc(390px * 3 - 90px);
                         }
-    
+
                         &.item_project_eighth_grade {
                             top: calc(390px * 3 + 390px / 2 - 90px);
                         }
-    
+
                         &.item_project_ninth_grade {
                             top: calc(390px * 4 - 120px);
                         }
-    
+
                     }
                 }
             }
 
         }
-    
+
     }
 }
 
 @media screen and (max-width: 768px) {
-    .main.grade_map.map_index {    
+    .main.grade_map.map_index {
 
         .map_object {
-    
+
             &.route_map {
                 width: 50%;
-    
+
                 .route_map_area {
-    
+
                     .route_1 {
                         height: 650px;
                         border-radius: 0px 650px 650px 0px;
-    
+
                         &::before {
                             border-radius: 0px 650px 650px 0px;
                         }
                     }
-    
+
                     .route_2 {
                         height: 650px;
-                        border-radius: 650px 0px 0px 650px;    
+                        border-radius: 650px 0px 0px 650px;
 
                         &::before {
                             border-radius: 650px 0px 0px 650px;
                         }
                     }
                 }
-    
+
                 .map_route_item {
-    
+
                     .map_object_item_project {
-                        width: 60%;
-    
+                        width: 70%;
+
                         &.item_project_first_grade {
                             top: 0px;
                         }
-    
+
                         &.item_project_second_grade {
                             top: calc(650px / 2);
                         }
-    
+
                         &.item_project_third_grade {
                             top: calc(650px * 1 - 30px);
                         }
-    
+
                         &.item_project_fourth_grade {
                             top: calc(650px * 1 + 650px / 2 - 30px);
                         }
-    
+
                         &.item_project_fifth_grade {
                             top: calc(650px * 2 - 60px);
                         }
-    
+
                         &.item_project_sixth_grade {
                             top: calc(650px * 2 + 650px / 2 - 60px);
                         }
-    
+
                         &.item_project_seventh_grade {
                             top: calc(650px * 3 - 90px);
                         }
-    
+
                         &.item_project_eighth_grade {
                             top: calc(650px * 3 + 650px / 2 - 90px);
                         }
-    
+
                         &.item_project_ninth_grade {
                             top: calc(650px * 4 - 120px);
                         }
-    
+
                     }
                 }
             }
 
         }
-    
+
     }
 }
 
 @media screen and (max-width: 499px) {
-    .main.grade_map.map_index {    
+    .main.grade_map.map_index {
 
         .map_object {
-    
+
             &.route_map {
                 width: 50%;
-    
+
                 .route_map_area {
                     margin: 180px auto 150px;
-    
+
                     .route_1 {
                         height: 500px;
                         border-radius: 0px 500px 500px 0px;
-    
+
                         &::before {
                             border-radius: 0px 500px 500px 0px;
                         }
                     }
-    
+
                     .route_2 {
                         height: 500px;
-                        border-radius: 500px 0px 0px 500px;    
+                        border-radius: 500px 0px 0px 500px;
 
                         &::before {
                             border-radius: 500px 0px 0px 500px;
                         }
                     }
                 }
-    
+
                 .map_route_item {
-    
+
                     .map_object_item_project {
                         width: 80%;
-    
+
                         &.item_project_first_grade {
                             top: 0px;
                         }
-    
+
                         &.item_project_second_grade {
                             top: calc(500px / 2);
                         }
-    
+
                         &.item_project_third_grade {
                             top: calc(500px * 1 - 30px);
                         }
-    
+
                         &.item_project_fourth_grade {
                             top: calc(500px * 1 + 500px / 2 - 30px);
                         }
-    
+
                         &.item_project_fifth_grade {
                             top: calc(500px * 2 - 60px);
                         }
-    
+
                         &.item_project_sixth_grade {
                             top: calc(500px * 2 + 500px / 2 - 60px);
                         }
-    
+
                         &.item_project_seventh_grade {
                             top: calc(500px * 3 - 90px);
                         }
-    
+
                         &.item_project_eighth_grade {
                             top: calc(500px * 3 + 500px / 2 - 90px);
                         }
-    
+
                         &.item_project_ninth_grade {
                             top: calc(500px * 4 - 120px);
                         }
-    
+
                     }
                 }
             }
 
         }
-    
+
     }
 }
