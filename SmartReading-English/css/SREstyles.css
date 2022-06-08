@@ -5056,8 +5056,8 @@ h-word {
 }
 
 .main.grade_map .navigator_area .navigator_content .navigator_text:hover ~ .mapman {
-  -webkit-animation: jump 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-          animation: jump 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  -webkit-animation: 2s infinite ease;
+          animation: 2s infinite ease;
 }
 
 .main.grade_map .navigator_area .navigator_content .navigator_text p {
@@ -5476,8 +5476,94 @@ h-word {
   border: 10px solid #004981;
 }
 
+.main.grade_map .map_book_area_bg .map_book_area .coin_area {
+  margin: 40px auto 20px;
+  width: 80%;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 6px);
+  height: 10px;
+  border: 3px solid;
+  border-top: 0px;
+  bottom: 0;
+  z-index: 3;
+  border-radius: 50px;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 6px);
+  height: 10px;
+  border: 3px solid;
+  border-bottom: 0px;
+  bottom: 0;
+  border-radius: 50px;
+  z-index: 1;
+  background-color: grey;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image img {
+  position: absolute;
+  left: calc(40%);
+  -webkit-transform: scale(0.8) translate(-50%, 0);
+          transform: scale(0.8) translate(-50%, 0);
+  z-index: 2;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_text {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 356px;
+  height: 21px;
+  border: 2px solid grey;
+  border-radius: 50px;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress {
+  margin: 5px auto;
+  width: calc(100% - 2px);
+  height: 15px;
+  border-radius: 50px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1px;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress .progress_separate {
+  width: calc(100% / 10);
+  height: 100%;
+  border-right: 1px solid #fff;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress .progress_separate:last-child {
+  border-right: 0px;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress .progress_separate.get_coins {
+  background-color: #E54F4F;
+}
+
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg {
-  padding: 80px 0px 40px;
+  padding: 40px 0px;
 }
 
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area {
@@ -5724,6 +5810,17 @@ h-word {
 }
 
 @media screen and (max-width: 768px) {
+  .main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image {
+    width: 150px;
+    height: 150px;
+  }
+  .main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame {
+    max-width: 300px;
+    height: 16px;
+  }
+  .main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress {
+    height: 10px;
+  }
   .main.grade_map .map_book_area_bg .map_book_area .ticket_area {
     width: 100%;
   }
@@ -5753,6 +5850,16 @@ h-word {
 }
 
 @media screen and (max-width: 499px) {
+  .main.grade_map .map_book_area_bg .map_book_area .coin_area {
+    margin: 20px auto 10px;
+  }
+  .main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image {
+    width: 100px;
+    height: 100px;
+  }
+  .main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame {
+    max-width: 250px;
+  }
   .main.grade_map .map_book_area_bg .map_book_area .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
     width: calc(100% - 0px);
     margin: 0px auto 30px auto;

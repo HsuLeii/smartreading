@@ -161,8 +161,92 @@
             position: relative;
             border: 10px solid $circus_blue;
 
+            .coin_area{
+                margin: 40px auto 20px;
+                width: 80%;
+
+                .coin_image{
+                    width: 200px;
+                    height: 200px;
+                    overflow: hidden;
+                    position: relative;
+                    margin: 0 auto;
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: calc(100% - 6px);
+                        height: 10px;
+                        border: 3px solid;
+                        border-top: 0px;
+                        bottom: 0;
+                        z-index: 3;
+                        border-radius: 50px;
+                    }
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: calc(100% - 6px);
+                        height: 10px;
+                        border: 3px solid;
+                        border-bottom: 0px;
+                        bottom: 0;
+                        border-radius: 50px;
+                        z-index: 1;
+                        background-color: $grey;
+                    }
+                    img{
+                        position: absolute;
+                        left: calc(40%);
+                        transform: scale(0.8)  translate(-50%, 0);
+                        z-index: 2;
+                    }
+                }
+
+                .coin_text{
+                    text-align: center;
+                    margin: 10px auto;
+                }
+                
+                .coin_progress_frame{
+                    margin: 0 auto;
+                    width: 80%;
+                    max-width: 356px;
+                    height: 21px;
+                    border: 2px solid $grey;
+                    border-radius: 50px;
+
+                    .coin_progress{
+                        margin: 5px auto;
+                        width: calc(100% - 2px);
+                        height: 15px;
+                        border-radius: 50px;
+                        overflow: hidden;
+                        display: flex;
+                        margin-top: 1px;
+    
+                        .progress_separate{
+                            width: calc(100% / 10);
+                            height: 100%;
+                            border-right: 1px solid $white;
+                            &:last-child {
+                                border-right: 0px;
+                            }
+
+                            &.get_coins{
+                                background-color: $main_color;
+                            }
+                        }
+    
+                    }
+
+                }
+                
+            }
+
             .ticket_bg {
-                padding: 80px 0px 40px;
+                padding: 40px 0px;
 
                 .ticket_area {
                     display: flex;
@@ -216,8 +300,6 @@
                                 .ticket_object {
                                     line-height: 0;
                                 }
-
-
 
                             }
 
@@ -468,6 +550,25 @@
         .map_book_area_bg {
             .map_book_area {
 
+                .coin_area{
+    
+                    .coin_image{
+                        width: 150px;
+                        height: 150px;
+                    }
+                    
+                    .coin_progress_frame{
+                        max-width: 300px;
+                        height: 16px;
+
+                        .coin_progress{
+                            height: 10px;
+                        }
+    
+                    }
+                    
+                }
+
                 .ticket_area {
                     width: 100%;
 
@@ -530,6 +631,21 @@
 
         .map_book_area_bg {
             .map_book_area {
+
+                .coin_area{
+                    margin: 20px auto 10px;
+
+                    .coin_image{
+                        width: 100px;
+                        height: 100px;
+                    }
+                    
+                    .coin_progress_frame{
+                        max-width: 250px;
+    
+                    }
+                    
+                }
 
                 .book_area {
                     .grade_map_booklist {
