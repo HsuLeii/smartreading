@@ -1,0 +1,144 @@
+header {
+	.navi-main {
+		padding: 0;
+
+		.navbar-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.navbar-toggler {
+				padding: 0;
+
+				.icon-bar {
+					display: block;
+					width: 30px;
+					height: 2px;
+					border-radius: 1px;
+					background-color: $main-color;
+
+					&+.icon-bar {
+						margin-top: 4px;
+					}
+				}
+
+				&:hover {
+					.icon-bar {
+						background-color: darken($main-color, 10%);
+					}
+				}
+			}
+
+			.navbar-brand {
+				width: calc(100% - 90px);
+				max-width: 400px;
+				height: auto;
+				padding: 15px 0px;
+				margin-right: 0;
+
+				.navbar-brand__SR {
+					width: 60%;
+				}
+			}
+		}
+
+		.navbar-collapse {
+			margin: 0px auto 15px;
+			.navbar-nav {
+				li {
+					margin: 5px 0px;
+
+					a {
+						color: $default-black;
+						padding: 5px 10px;
+						line-height: 1em;
+						position: relative;
+						background-color: transparent;
+
+						&:active,
+						&:focus,
+						&:hover {
+							background-color: transparent;
+						}
+					}
+
+					&:active,
+					&:focus,
+					&:hover {
+						a {
+							color: $main-color;
+							background-color: transparent;
+						}
+
+						&.active {
+							a {
+								color: $main-color;
+							}
+						}
+					}
+
+					&.navTab-signup{
+						a{
+							background-color: $default-purple;
+							border-radius: 50px;
+							color: $white;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+@media screen and (min-width: 576px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {
+	header{
+		.navi-main{
+			.navbar-header{
+				.navbar-brand{
+					width: 100%;
+					padding: 25px 0px;
+				}
+				.navbar-toggler{
+					display: none;
+				}
+			} 
+			.navbar-collapse{
+				display: block;
+				flex-basis: auto;
+				margin: 0 auto;
+				.navbar-nav{
+					flex-direction: row;
+					justify-content: flex-end;
+				}
+			}
+		}
+	}  
+}
+
+@media screen and (min-width: 1200px) {
+	header{
+		.navi-main{
+			.navbar-collapse{
+				.navbar-nav{
+					li{
+						margin: 5px;
+						&:nth-last-child(1){
+							a{
+								padding: 5px 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}  
+}
+
+@media screen and (min-width: 1400px) {}
+
+@media screen and (min-width: 1600px) {}
