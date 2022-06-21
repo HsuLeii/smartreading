@@ -1,0 +1,110 @@
+.slick-slider{
+
+    .slick-list{
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        .slick-slide{
+            padding: 0 10px;
+            .slick_img{
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 250px;
+                    object-position: 50% 0%;
+                }
+            }
+            p{
+                text-align: center;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                white-space: normal;
+                width: 100%;
+                height: 47.6px;
+            }
+        }
+    }
+    
+    .slick-dots {
+        position: relative;
+        bottom: auto;
+        li{
+            button{
+                &:before{
+                    background-color: $main-color;
+                    opacity: 0.25;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                }
+            }
+            &.slick-active {
+                button{
+                    &:before{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    
+    
+    }
+    
+
+        button{
+    &.slick-next {
+        right: 0% !important;
+        transform: translate(-0%, 0px);
+    }
+    
+    &.slick-prev {
+        left: 0%;
+        transform: translate(0%, 0px);
+    }
+    &.slick-next,
+    &.slick-prev{
+        height: 250px;
+        padding: 0px 15px;
+        background-color: $default-gray;
+        top: 0;
+        transform: translate(0,0);
+        border-radius: 0;
+        &:hover,
+        &:focus{
+            background-color: darken($default-gray, 10%);
+            color: $white;
+        }
+    
+        &::before{
+            position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        }
+    
+    
+    
+    }
+        }
+        
+}
+
+
+@media screen and (min-width: 992px){
+    .slick-slider{
+
+        .slick-list{
+            .slick-slide{
+                p{
+                    height: 57.78px;
+                }
+            }
+        }
+
+    }
+}
+
