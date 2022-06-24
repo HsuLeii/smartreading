@@ -1023,6 +1023,7 @@ main.cart,main.main{
     margin-right: 0;
     padding: 10px;
     line-height: 2em;
+    width: 100%;
 }
 .order-body table{
     text-align: center;
@@ -1674,6 +1675,8 @@ main.main .select-group.input-lg:after {
 .order-all,.join-all{
     display: flex;
     flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
 }
 .nav-wrap{
     width: calc((100% - 1200px) / 2);
@@ -1727,7 +1730,6 @@ main.main .select-group.input-lg:after {
 }
 @media (max-width: 1550px){
     .main .order-wrap{
-        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-end;
@@ -1745,12 +1747,8 @@ main.main .select-group.input-lg:after {
     .join-fixed-nav,.order-fixed-nav{
         width: auto;
     }
-    .nav-wrap{
-        width: 260px;
-    }
-    .main .join-wrap,.main .order-wrap{
-        width: calc(100% - 260px);
-    }
+    
+
     .main .order-page{
         width: 100%;
     }
@@ -1923,12 +1921,20 @@ main.main .select-group.input-lg:after {
         width: 100%;
     }
     .nav-wrap{
-        display: none;
-    }
-    .order-fixed-nav{
         width: 100%;
-        align-items: flex-start;
-        display: none;
+    }
+    .nav-wrap .order-fixed-nav{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    align-items: baseline;
+    padding: 0 15px;
+    }
+    .nav-wrap .order-fixed-nav li{
+        padding: 0 15px 0 0;
+    }
+    .nav-wrap .order-fixed-nav li a{
+        position: relative;
     }
     .navbar-center{
         width: 100%;
@@ -1954,6 +1960,19 @@ main.main .select-group.input-lg:after {
     }
     .navi-main .nav.nav.navbar-nav.navbar-join > li:hover{
         background:#fff;
+    }
+    .order-fixed-nav > li:hover > a::after,
+    .order-fixed-nav > li.current > a::after{
+        line-height: 0;
+    top: 50%;
+    transform: translate(0px, -50%) rotate(180deg);
+    margin-left: 0;
+    }
+    .nav-wrap .order-fixed-nav li > ul{
+        display: none;
+    }
+    .nav-wrap .order-fixed-nav li.current > ul{
+        display: block;
     }
     .main .order-page{
         width: 100%;
