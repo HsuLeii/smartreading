@@ -120,6 +120,257 @@
                     }
                 }
             }
+
+            .recommendedBook-search__book {
+                .control-label {
+                    img {
+                        max-width: 200px;
+                    }
+
+                    p {
+                        margin-top: 5px;
+                        text-align: left;
+                    }
+                }
+
+                .recommendedBook-search__slogan {
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .recommendedBook-search__slogan_title {
+                        border-right: 1px solid $default-gray;
+                        white-space: nowrap;
+                        padding-right: 10px;
+                        margin-right: 10px;
+                    }
+                }
+
+                .input-group {
+                    display: block;
+                    margin-bottom: 15px;
+
+                    .input-group-btn {
+                        .recommendedBook-search__btn-recommend {
+                            border: 1px solid $main-color;
+                            width: 100%;
+                            border-radius: 0px;
+                            z-index: 1;
+                        }
+
+                        .recommendedBook-search__btn-search {
+                            background-color: $main-color;
+                            border: 1px solid $main-color;
+                            color: $white;
+                            z-index: auto;
+                            width: 100%;
+                            border-radius: 0;
+                            margin: -1px auto 0px;
+                        }
+                    }
+
+                    .input-group-book {
+                        position: relative;
+                        width: 100%;
+                        margin-top: -1px;
+
+                        .form-control {
+                            border: 1px solid $main-color;
+                            border-radius: 0;
+                        }
+
+                        .input-group-more-options {
+                            position: absolute;
+                            width: 100%;
+
+                            .recommendedBook-search_more-options {
+                                position: relative;
+                                display: block;
+                                right: 0px;
+                                top: 0px;
+                                z-index: 2;
+                                margin-left: auto;
+                                padding: 10px 16px;
+                                font-size: 18px;
+                                line-height: 1.3333333;
+                                border-radius: 0%;
+                                color: $main-color;
+                            }
+
+                            .recommendedBook-search_dropdown-menu_more-options {
+                                position: relative;
+                                width: 100%;
+                                padding: 20px 40px;
+                                border: 1px solid;
+                                border-color: rgba(68, 110, 246, 0.6);
+                                box-shadow: 0 0 8px rgba(68, 110, 246, 0.6);
+                                background-color: $white;
+                                z-index: 1;
+                                display: none;
+
+                                .multiple_input_area {
+                                    .input-group {
+                                        display: flex;
+                                        margin: 15px auto;
+
+                                        label {
+                                            min-width: 70px;
+                                        }
+                                    }
+
+                                    .multiple_input_btn {
+                                        display: flex;
+                                        justify-content: flex-end;
+                                        margin: 5px auto;
+
+                                        .reset,
+                                        .submit {
+                                            padding: 3px 10px;
+                                            border-radius: 5px;
+                                            border: 0px;
+                                            margin-left: 10px;
+                                        }
+
+                                        .reset {
+                                            color: $main-color;
+                                            background-color: $light-gray;
+                                        }
+
+                                        .submit {
+                                            background-color: $main-color;
+                                            color: $white;
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .recommendedBook-search__sort {
+                margin-top: 10px;
+
+                .icheck_area {
+                    margin: 20px auto;
+
+                    .icheck-success-white {
+                        margin-left: 0;
+                        margin-right: 10px;
+                    }
+                }
+
+            }
+
+            .difficulty_range {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                flex-wrap: wrap;
+
+                p {
+                    margin: 5px 10px 5px 0px;
+                    width: 100%;
+                }
+
+                .difficulty_range_button_area {
+                    margin: 5px 10px 5px 0px;
+
+                    button {
+                        border: 1px solid $default-gray;
+                        border-radius: 6px;
+
+                        &.active,
+                        &:hover {
+                            background-color: $main-color;
+                            border: 1px solid $main-color;
+                            color: $white;
+                        }
+
+
+                    }
+
+                }
+            }
+
+            .recommendedBook-table {
+                border: 0px;
+
+                tbody {
+                    display: flex;
+                    flex-wrap: wrap;
+                    tr {
+                        overflow: hidden;
+                        position: relative;
+                        display: inline-block;
+                        margin: 15px 15px;
+                        background-color: $light-gray;
+                        padding: 5px;
+                        vertical-align: middle;
+                        width: calc(100% - 40px);
+                        flex-direction: column;
+                        display: flex;
+
+                        td {
+                            border: 0px;
+                            background-color: transparent;
+                            display: block;
+                            table-layout: fixed;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            position: relative;
+
+                            &.book-front {
+                                text-align: center;
+                                width: 100%;
+                                margin: 5px 0px;
+                                display: flex;
+                                align-items: center;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+
+                            &.book-item{
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: flex-start;
+                                width: 100%;
+
+                                .book-SR,
+                                .book-sort,
+                                .book-winning,
+                                .book-recommender{
+                                    width: 100%;
+                                    margin: 5px 0px;
+                                }
+                                .borrow_btn{
+                                    width: 100%;
+                                    margin: 5px 1.5%;
+                                    display: inline-block;
+                                    text-align: left;
+                                    button{
+                                        border: 1px solid $default-gray;
+                                        margin: 5px auto;
+                                        img{
+                                            width: 20px;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+
+                            
+                        }
+                    }
+                }
+
+            }
+
         }
     }
 }
@@ -131,14 +382,78 @@
                 .grade_option {
                     justify-content: center;
                 }
+                .recommendedBook-table {
+    
+                    tbody {
+                        tr {
+
+                            width: calc(50% - 40px);
+                        }
+                    }
+    
+                }
             }
         }
     }
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .join-all {
+        .order-wrap {
+            .order-body {
+                .difficulty_range {
+                    p {
+                        width: auto;
+                    }
+                }
+                .recommendedBook-table {
+                    tbody {
+                        tr {
+                            width: calc(100% - 40px);
+                            td{
+                                &.book-item{
+                                    .borrow_btn{
+                                        width: 47%;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+        }
+    }
 
-@media screen and (min-width: 992px) {}
+@media screen and (min-width: 992px) {
+    .join-all {
+        .order-wrap {
+            .order-body {
+                .difficulty_range {
+                    p {
+                        width: auto;
+                    }
+                }
+                .recommendedBook-table {
+                    tbody {
+                        tr {
+                            width: calc(50% - 40px);
+                            td{
+                                &.book-item{
+                                    .borrow_btn{
+                                        width: 100%;
+                                        text-align: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 1200px) {
     .join-all {
@@ -149,6 +464,7 @@
                         margin: 5px;
                     }
                 }
+
             }
         }
     }
@@ -186,11 +502,61 @@
                         }
                     }
 
+                }
 
+                .recommendedBook-table {
+                    tbody {
+                        tr {
+                            width: calc(50% - 40px);
+                            td{
+                                &.book-item{
+                                    .borrow_btn{
+                                        width: 47%;
+                                        text-align: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-@media screen and (min-width: 1600px) {}
+@media screen and (min-width: 1600px) {
+    .join-all {
+        .order-wrap {
+            .order-body {
+
+                .recommendedBook-table {
+                    border: 0px;
+    
+                    tbody {
+                        tr {
+    
+                            td {
+    
+                                &.book-front {
+                                    width: 35%;
+                                    align-items: flex-start;
+                                }
+    
+                                &.book-item{
+                                    width: 65%;
+
+                                    .borrow_btn{
+                                        text-align: left;
+                                    }
+                                }
+    
+                                
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}
