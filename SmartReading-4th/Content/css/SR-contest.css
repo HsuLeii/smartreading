@@ -427,12 +427,7 @@ body {
 }
 
 .slick-slider .slick-list .slick-slide .slick_img img {
-  -o-object-fit: cover;
-     object-fit: cover;
   width: 100%;
-  height: 250px;
-  -o-object-position: 50% 0%;
-     object-position: 50% 0%;
 }
 
 .slick-slider .slick-list .slick-slide p {
@@ -479,12 +474,12 @@ body {
 }
 
 .slick-slider button.slick-next, .slick-slider button.slick-prev {
-  height: 250px;
-  padding: 0px 15px;
+  padding: 15px;
+  position: absolute;
   background-color: #5a5f60;
-  top: 0;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+  top: 50%;
+  -webkit-transform: translate(0, calc(-50% - 32px));
+          transform: translate(0, calc(-50% - 32px));
   border-radius: 0;
 }
 
@@ -532,10 +527,12 @@ header .navi-main .container-fluid .navbar-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
+  margin: 0;
+  margin-right: 20px;
 }
 
 header .navi-main .container-fluid .navbar-header .navbar-toggle {
@@ -572,7 +569,6 @@ header .navi-main .container-fluid .navbar-header .navbar-brand .navbar-brand__S
 
 header .navi-main .navbar-collapse {
   margin: 0px auto 15px;
-  width: 80%;
 }
 
 header .navi-main .navbar-collapse .navbar-nav {
@@ -622,26 +618,26 @@ header .navi-main .navbar-collapse .navbar-nav li.navTab-signup a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   header .navi-main .container-fluid .navbar-header {
-    width: 24%;
-    margin: 0 auto;
+    width: 22%;
   }
   header .navi-main .container-fluid .navbar-header .navbar-brand {
     width: 100%;
     padding: 25px 0px;
-    margin-right: 0;
   }
   header .navi-main .container-fluid .navbar-header .navbar-toggle {
     display: none;
   }
   header .navi-main .container-fluid .navbar-collapse {
-    width: 76%;
     display: block;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
-    margin: 0 auto;
     padding: 0;
+    margin: 0 15px;
   }
   header .navi-main .container-fluid .navbar-collapse .navbar-nav {
     -webkit-box-orient: horizontal;
@@ -651,14 +647,17 @@ header .navi-main .navbar-collapse .navbar-nav li.navTab-signup a {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin: 0;
+  }
+  header .navi-main .container-fluid .navbar-collapse .navbar-nav li a {
+    padding: 5px 8px;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  header .navi-main .navbar-header .navbar-brand {
+    margin-left: 0;
+  }
   header .navi-main .navbar-collapse .navbar-nav li {
     margin: 5px;
   }
@@ -2308,8 +2307,21 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   color: white;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .control-label img {
-  max-width: 200px;
+.join-all .order-wrap .order-body .recommendedBook-search__book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0;
+}
+
+.join-all .order-wrap .order-body .recommendedBook-search__book .control-label {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .join-all .order-wrap .order-body .recommendedBook-search__book .control-label p {
@@ -2317,33 +2329,41 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   text-align: left;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__slogan {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input {
+  width: calc(100% - 0px);
+}
+
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 20px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__slogan .recommendedBook-search__slogan_title {
-  border-right: 1px solid #5a5f60;
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan .recommendedBook-search__slogan_title {
+  border-bottom: 1px solid #5a5f60;
   white-space: nowrap;
-  padding-right: 10px;
-  margin-right: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group {
   display: block;
   margin-bottom: 15px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-btn .recommendedBook-search__btn-recommend {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-btn .recommendedBook-search__btn-recommend {
   border: 1px solid #446ef6;
   width: 100%;
   border-radius: 0px;
   z-index: 1;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-btn .recommendedBook-search__btn-search {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-btn .recommendedBook-search__btn-search {
   background-color: #446ef6;
   border: 1px solid #446ef6;
   color: white;
@@ -2353,23 +2373,23 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   margin: -1px auto 0px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book {
   position: relative;
   width: 100%;
   margin-top: -1px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .form-control {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .form-control {
   border: 1px solid #446ef6;
   border-radius: 0;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options {
   position: absolute;
   width: 100%;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_more-options {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_more-options {
   position: relative;
   display: block;
   right: 0px;
@@ -2383,7 +2403,7 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   color: #446ef6;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options {
   position: relative;
   width: 100%;
   padding: 20px 40px;
@@ -2396,18 +2416,18 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   display: none;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .input-group {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .input-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 15px auto;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .input-group label {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .input-group label {
   min-width: 70px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2417,26 +2437,26 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   margin: 5px auto;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .reset,
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .submit {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .reset,
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .submit {
   padding: 3px 10px;
   border-radius: 5px;
   border: 0px;
   margin-left: 10px;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .reset {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .reset {
   color: #446ef6;
   background-color: #F1F1F1;
 }
 
-.join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .submit {
+.join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book .input-group-more-options .recommendedBook-search_dropdown-menu_more-options .multiple_input_area .multiple_input_btn .submit {
   background-color: #446ef6;
   color: white;
 }
 
 .join-all .order-wrap .order-body .recommendedBook-search__sort {
-  margin-top: 10px;
+  margin: 0px;
 }
 
 .join-all .order-wrap .order-body .recommendedBook-search__sort .icheck_area {
@@ -2676,6 +2696,20 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
   .join-all .order-wrap .order-body .difficulty_range p {
     width: auto;
   }
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan .recommendedBook-search__slogan_title {
+    border-bottom: 0px solid #5a5f60;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-right: 1px solid #5a5f60;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
   .join-all .order-wrap .order-body .recommendedBook-table tbody tr {
     width: calc(50% - 40px);
   }
@@ -2688,6 +2722,29 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 @media screen and (min-width: 1200px) {
   .join-all .order-wrap .order-body .previous_web .previous_web_bg {
     margin: 5px;
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__book {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input {
+    width: calc(100% - 200px);
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan .recommendedBook-search__slogan_title {
+    border-bottom: 0px solid #5a5f60;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-right: 1px solid #5a5f60;
+    padding-right: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -2724,14 +2781,17 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
         -ms-flex-order: 2;
             order: 2;
   }
-  .join-all .order-wrap .order-body .recommendedBook-search__book .input-group {
+  .join-all .order-wrap .order-body .recommendedBook-search__book .control-label {
+    margin-bottom: 0px;
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group {
     display: table;
   }
-  .join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-book {
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-book {
     margin-top: 0px;
     margin-left: -1px;
   }
-  .join-all .order-wrap .order-body .recommendedBook-search__book .input-group .input-group-btn .recommendedBook-search__btn-search {
+  .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .input-group .input-group-btn .recommendedBook-search__btn-search {
     margin: 0px 0px 0px -1px;
   }
   .join-all .order-wrap .order-body .recommendedBook-table tbody tr {
@@ -2754,10 +2814,18 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
             align-items: flex-start;
   }
   .join-all .order-wrap .order-body .recommendedBook-table tbody tr td.book-item {
-    width: 65%;
+    width: 100%;
   }
   .join-all .order-wrap .order-body .recommendedBook-table tbody tr td.book-item .borrow_btn {
     text-align: left;
+  }
+  .join-all .order-wrap .order-body .recommendedBook-search__sort .icheck_area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -3011,7 +3079,7 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 400px;
-  margin: 50px auto;
+  margin: 0px auto;
 }
 
 .join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_top {
@@ -3026,6 +3094,30 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 .join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_top .login_system_title {
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+}
+
+.join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_top .icon_task.top_left {
+  width: 20%;
+  border-top: 2px dotted #5a5f60;
+  border-left: 2px dotted #5a5f60;
+}
+
+.join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_top .icon_task.top_right {
+  width: 20%;
+  border-top: 2px dotted #5a5f60;
+  border-right: 2px dotted #5a5f60;
+}
+
+.join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_top .icon_task.bottom_left {
+  width: 20%;
+  border-bottom: 2px dotted #5a5f60;
+  border-left: 2px dotted #5a5f60;
+}
+
+.join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_top .icon_task.bottom_right {
+  width: 20%;
+  border-bottom: 2px dotted #5a5f60;
+  border-right: 2px dotted #5a5f60;
 }
 
 .join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_center {
@@ -3060,6 +3152,19 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 .join-all .order-wrap .order-body .icon_task_flex.login_system .login_system_bottom .login_system_title {
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+}
+
+.join-all .order-wrap .order-body .leading_dotted {
+  border-left: 2px dotted #5a5f60;
+  height: 50px;
+  width: 2px;
+  margin: 20px auto;
+}
+
+.join-all .order-wrap .order-body .detailing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .join-all .order-wrap .table-responsive {
@@ -3141,6 +3246,22 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 
 .join-all .order-wrap .table-responsive.point_description table thead tr td:nth-child(4) {
   width: 10%;
+}
+
+.join-all .order-wrap .table-responsive.eligibility table {
+  table-layout: initial;
+}
+
+.join-all .order-wrap .table-responsive.eligibility table tbody tr td:nth-child(1) {
+  width: 20%;
+}
+
+.join-all .order-wrap .table-responsive.eligibility table tbody tr td:nth-child(2) {
+  width: 60%;
+}
+
+.join-all .order-wrap .table-responsive.eligibility table tbody tr td:nth-child(3) {
+  width: 20%;
 }
 
 .join-all .order-wrap .table-responsive .table {
