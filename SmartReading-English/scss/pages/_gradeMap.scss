@@ -2,11 +2,81 @@
     margin: 0px auto;
     background-color: $body_bg;
 
+    .grade_link{
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+        .level_correspondence_marker{
+            margin: 0px 10px;
+            &::before{
+                display: none;
+            }
+            .level_correspondence_marker_inner{
+                width: 60px;
+                &::after{
+                    width: calc(100% + 5px);
+                    height: calc(100% + 5px);
+                    border: 1.5px solid;
+                    display: none;
+                }
+                &:hover{
+                    &::after{
+                        display: block;
+                    }
+                }
+                &.first_grade_marker_inner{
+                    &::after{
+                        border-color: $first_grade_color;
+                    }
+                }
+                &.second_grade_marker_inner{
+                    &::after{
+                        border-color: $second_grade_color;
+                    }
+                }
+                &.third_grade_marker_inner{
+                    &::after{
+                        border-color: $third_grade_color;
+                    }
+                }
+                &.fourth_grade_marker_inner{
+                    &::after{
+                        border-color: $fourth_grade_color;
+                    }
+                }
+                &.fifth_grade_marker_inner{
+                    &::after{
+                        border-color: $fifth_grade_color;
+                    }
+                }
+                &.sixth_grade_marker_inner{
+                    &::after{
+                        border-color: $sixth_grade_color;
+                    }
+                }
+                &.seventh_grade_marker_inner{
+                    &::after{
+                        border-color: $seventh_grade_color;
+                    }
+                }
+                &.eighth_grade_marker_inner{
+                    &::after{
+                        border-color: $eighth_grade_color;
+                    }
+                }
+                &.ninth_grade_marker_inner{
+                    &::after{
+                        border-color: $ninth_grade_color;
+                    }
+                }
+            }
+        }
+    }
+
     .map_object {
         position: relative;
         
         &.grade_map_object {
-
             margin-top: 7%;
             .level_correspondence_marker {
                 position: absolute;
@@ -239,7 +309,29 @@
 
     }
 
-
+    .medal_area{
+        position: absolute;
+        right: 0;
+        top: 45px;
+        padding: 10px 20px;
+        border-radius: 50px 0px 0px 50px;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        img{
+            max-width: 100px;
+        }
+        .medal_area_text{
+            text-align: center;
+            margin: 0px 0px 0px 10px;
+        }
+        &.medal_area_first_grade{
+            .medal_area_text{
+                color: $first_grade_color;
+            }
+        }
+    }
 
     .map_book_area_bg {
         width: 100%;
@@ -465,6 +557,33 @@
                                     line-height: 0;
                                 }
 
+                                &.ticket_first_grade{
+                                    background-color: $first_grade_color;
+
+                                    .wave_line {
+                                        &.wave_line_left {
+        
+                                            .wave_line_internal {
+                                                height: 100%;
+                                                width: 100%;
+                                                background: radial-gradient(circle at 0 50%, $body_bg 50%, $first_grade_color 0);
+                                                background-size: 0.3rem 0.7rem;
+                                                background-repeat: repeat-y;
+                                            }
+                                        }
+            
+                                        &.wave_line_right {
+                                            .wave_line_internal {
+                                                height: 100%;
+                                                width: 100%;
+                                                background: radial-gradient(circle at 0 50%, $body_bg 50%, $first_grade_color 0);
+                                                background-size: 0.3rem 0.7rem;
+                                                background-repeat: repeat-y;
+                                            }
+                                        }
+                                    }
+                                }
+
                             }
 
                             &.ticket_right {
@@ -475,13 +594,54 @@
                                 border-top: 1px dotted $brown;
                                 display: flex;
                                 align-items: center;
-                                justify-content: center;
+                                justify-content: space-around;
+
+                                &.ticket_first_grade{
+                                    background-color: $first_grade_color;
+
+                                    .wave_line {
+                                        &.wave_line_left {
+        
+                                            .wave_line_internal {
+                                                height: 100%;
+                                                width: 100%;
+                                                background: radial-gradient(circle at 0 50%, $body_bg 50%, $first_grade_color 0);
+                                                background-size: 0.3rem 0.7rem;
+                                                background-repeat: repeat-y;
+                                            }
+                                        }
+            
+                                        &.wave_line_right {
+                                            .wave_line_internal {
+                                                height: 100%;
+                                                width: 100%;
+                                                background: radial-gradient(circle at 0 50%, $body_bg 50%, $first_grade_color 0);
+                                                background-size: 0.3rem 0.7rem;
+                                                background-repeat: repeat-y;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                .ticket_medal{
+                                    display: flex;
+                                    align-items: center;
+                                    img{
+                                        max-width: 30px;
+                                        margin: 0px 10px;
+                                    }
+                                    p{
+                                        color: $white;
+                                    }
+                                }
 
                                 .receive {
                                     button {
                                         background-color: $main_color;
                                         padding: 5px 10px;
                                         color: $white;
+                                        margin: 0px auto;
 
                                         &:disabled {
                                             background-color: $grey;
@@ -616,6 +776,7 @@
                 }
             }
         }
+        
 
         .map_book_area_bg {
             .map_book_area {
@@ -623,6 +784,25 @@
                 .ticket_bg {
                     .ticket_area {
                         width: 90%;
+                        .ticket_wrap {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+    
+                            .ticket {
+                                position: relative;
+    
+                                &.ticket_right {
+    
+                                    .ticket_medal{
+                                        img{
+                                            max-width: 50px;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
                     }
                 }
 
@@ -635,6 +815,12 @@
 
 @media screen and (max-width: 1024px) {
     .main.grade_map {
+
+        .medal_area{
+            img{
+                max-width: 70px;
+            }
+        }
 
         .map_book_area_bg {
             .map_book_area {
@@ -711,6 +897,20 @@
 @media screen and (max-width: 768px) {
     .main.grade_map {
 
+        .medal_area{
+            position: fixed;
+            flex-direction: column;
+            top: auto;
+            bottom: 20px;
+            padding: 8px 15px;
+            img{
+                max-width: 55px;
+            }
+            .medal_area_text{
+                margin: 5px auto 0px;
+            }
+        }
+
         .map_book_area_bg {
             .map_book_area {
 
@@ -733,31 +933,37 @@
                     
                 }
 
-                .ticket_area {
-                    width: 100%;
-
-                    .ticket_wrap {
-                        .ticket {
-                            position: relative;
-
-                            &.ticket_left {
-                                width: calc(100% - 95px);
-                            }
-
-                            &.ticket_right {
-                                width: 95px;
-
-                                .receive {
-                                    button {
-                                        padding: 5px;
+                .ticket_bg{
+                    .ticket_area {
+                        width: 90%;
+    
+                        .ticket_wrap {
+                            .ticket {
+                                position: relative;
+    
+    
+                                &.ticket_right {
+    
+                                    .ticket_medal{
+                                        img{
+                                            max-width: 30px;
+                                        }
                                     }
-
+    
+                                    .receive {
+                                        button {
+                                            padding: 5px;
+                                        }
+    
+                                    }
                                 }
                             }
+    
                         }
-
                     }
                 }
+
+                
 
                 .book_area {
                     margin: 40px auto 0px;
