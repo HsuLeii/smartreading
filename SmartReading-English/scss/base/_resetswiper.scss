@@ -4,7 +4,9 @@
 }
 
 .swiper_slide_next,
-.swiper_slide_prev {
+.swiper_slide_prev,
+.swiper_ticket_next,
+.swiper_ticket_prev {
     position: absolute;
     top: 50%;
     width: calc(var(--swiper-navigation-size)/ 44 * 27);
@@ -28,32 +30,69 @@
     }
 }
 
+.swiper_ticket_next,
+.swiper_ticket_prev {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @extend %boxShadow_gray;
+    color: $brown;
+    background-color: $body_bg;
+}
+
 .swiper_slide_next:after,
-.swiper-rtl .swiper_slide_prev:after {
+.swiper-rtl .swiper_slide_prev:after,
+.swiper_ticket_next:after,
+.swiper-rtl .swiper_ticket_prev:after {
     content: 'next';
 }
 
 .swiper_slide_prev:after,
-.swiper-rtl .swiper_slide_next:after {
+.swiper-rtl .swiper_slide_next:after,
+.swiper_ticket_prev:after,
+.swiper-rtl .swiper_ticket_next:after {
     content: 'prev';
 }
 
 .swiper_slide_prev,
-.swiper-rtl .swiper_slide_next {
+.swiper-rtl .swiper_slide_next,
+.swiper_ticket_prev,
+.swiper-rtl .swiper_ticket_next {
     left: 10px;
     right: auto;
 }
 
 .swiper_slide_next,
-.swiper-rtl .swiper_slide_prev {
+.swiper-rtl .swiper_slide_prev,
+.swiper_ticket_next,
+.swiper-rtl .swiper_ticket_prev {
     right: 10px;
     left: auto;
 }
 // swiper改寫結束
 
+@media screen and (max-width: 1024px){
+
+    .swiper_ticket_next,
+.swiper_ticket_prev {
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+}
+}
+
 @media screen and (max-width: 768px){
+
+    .swiper_ticket_next,
+.swiper_ticket_prev {
+    width: 35px;
+    height: 35px;
+}
+
     .swiper_slide_next,
-    .swiper_slide_prev {
+    .swiper_slide_prev,
+    .swiper_ticket_next,
+    .swiper_ticket_prev {
 
         &:after {
             font-size: 25px;
@@ -61,12 +100,17 @@
     }
 
     .swiper_slide_prev,
-    .swiper-rtl .swiper_slide_next {
+    .swiper-rtl .swiper_slide_next,
+    .swiper_ticket_prev,
+    .swiper-rtl .swiper_ticket_next {
         left: 3px;
     }
 
     .swiper_slide_next,
-    .swiper-rtl .swiper_slide_prev {
+    .swiper-rtl .swiper_slide_prev,
+    .swiper_ticket_next,
+    .swiper-rtl .swiper_ticket_prev {
         right: 3px;
     }
 }
+
