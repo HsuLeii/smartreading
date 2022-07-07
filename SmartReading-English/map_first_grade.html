@@ -97,45 +97,11 @@
             </a>
         </div>
 
-        <div class="map_object grade_map_object new_map">
+        <div class="map_object grade_map_object">
             <div class="map_object_item">
                 <div class="map_object_item_frame">
-                    <div class="map_object_roof" style="    width: 80%;
-                    margin: 0 auto;
-                    z-index: 1;
-                    position: relative;">
+                    <div class="map_object_roof">
                         <img src="image/photo/map/map_object/map_object_roof_first.png" alt="">
-                        <div class="map_object_sign_item" style="    position: absolute;
-                        bottom: 0;
-                        width: 80%;
-                        left: 50%;
-                        transform: translate(-50%, 0px);">
-                        <img  style="    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: auto;" src="image/photo/map/first_grade/bg.png" alt="">
-                        <img id="changeimage_2" style="    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: auto;" src="image/photo/map/first_grade/gray_2.png" alt="">
-                        <img id="changeimage_1" style="    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: auto;" src="image/photo/map/first_grade/gray_1.png" alt="">
-                        <img id="changeimage_3" style="    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: auto;" src="image/photo/map/first_grade/gray_3.png" alt="">
-                        <img id="changeimage_4" style="    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: auto;" src="image/photo/map/first_grade/gray_4.png" alt="">
-                        <img id="changeimage_5" style="    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: auto;" src="image/photo/map/first_grade/gray_5.png" alt="">
-
-                    </div>
                     </div>
                     <div class="map_object_sign">
                         <div class="map_object_sign_one">
@@ -148,9 +114,17 @@
                                 </div>
                             </a>
                         </div>
-
+                        <div class="map_object_sign_two">
+                            <div class="map_object_sign_item">
+                                <img class="map_bg" src="image/photo/map/first_grade/bg.png" alt="">
+                                <img id="changeimage_1" src="image/photo/map/first_grade/gray_1.png" alt="">
+                                <img id="changeimage_3" src="image/photo/map/first_grade/gray_3.png" alt="">
+                                <img id="changeimage_2" src="image/photo/map/first_grade/gray_2.png" alt="">
+                                <img id="changeimage_4" src="image/photo/map/first_grade/gray_4.png" alt="">
+                                <img id="changeimage_5" src="image/photo/map/first_grade/gray_5.png" alt="">
+                            </div>
+                        </div>
                         <div class="map_object_sign_three">
-
                             <a href="map_second_grade.html">
                                 <div class="map_object_roof">
                                     <img src="image/photo/map/map_object/map_object_roof_second.png" alt="">
@@ -169,10 +143,10 @@
         <div class="medal_area medal_area_first_grade">
             <img src="image/photo/medal/first_grade.png" alt="">
             <div class="medal_area_text">
-            <h4>獲得的閱讀章數：</h4>
-            <h4>10枚</h4>
-            <p class="medal_area_button">如何獲得獎章？</p>
-            <a href="#close-modal" rel="modal:close" class="close-modal ">X</a>
+                <h4>獲得的閱讀章數：</h4>
+                <h4>10枚</h4>
+                <p class="medal_area_button">如何獲得獎章？</p>
+                <a href="#close-modal" rel="modal:close" class="close-modal ">X</a>
             </div>
             <div class="medal_area_explain">
                 <h4>
@@ -185,7 +159,7 @@
             </div>
         </div>
 
-        <div class="map_book_area_bg new_map  map_book_area_first_grade">
+        <div class="map_book_area_bg map_book_area_first_grade">
 
             <div class="map_object_table">
             </div>
@@ -886,67 +860,58 @@
         });
     </script>
 
-<!-- <script>
-  var signOneHeight = $(".map_object_sign_one").height();
-  $(".map_book_area_bg").css({
-    "padding-top": signOneHeight / 1.5
-  });
-</script> -->
-
     <script>
         $(".close-modal").click(function (e) {
             $(".medal_area").fadeOut();
         });
         $(".medal_area_button").click(function (e) {
             $(".medal_area_explain").fadeIn();
-            setTimeout(function() { 
-       $('.medal_area_explain').fadeOut(); 
-   }, 15000);
+            setTimeout(function () {
+                $('.medal_area_explain').fadeOut();
+            }, 15000);
         });
-
-      
     </script>
 
-<script>
-    document.getElementById("btn_1").addEventListener("click", function()
-{
-  $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
-  $(this).parent().parent().parent().parent().next(".owl-item").children().children().children().children().removeAttr("disabled");;
-  $("#changeimage_1").attr("src","image/photo/map/first_grade/color_1.png");
-  $("#changeticket_1").attr("src","image/photo/ticket/first_grade/color_1.png");
-});
+    <script>
+        document.getElementById("btn_1").addEventListener("click", function () {
+            $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
+            $(this).parent().parent().parent().parent().next(".owl-item").children().children().children()
+                .children().removeAttr("disabled");;
+            $("#changeimage_1").attr("src", "image/photo/map/first_grade/color_1.png");
+            $("#changeticket_1").attr("src", "image/photo/ticket/first_grade/color_1.png");
+        });
 
-document.getElementById("btn_2").addEventListener("click", function()
-{
-  $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
-  $(this).parent().parent().parent().parent().next(".owl-item").children().children().children().children().removeAttr("disabled");;
-  $("#changeimage_2").attr("src","image/photo/map/first_grade/color_2.png");
-  $("#changeticket_2").attr("src","image/photo/ticket/first_grade/color_2.png");
-});
+        document.getElementById("btn_2").addEventListener("click", function () {
+            $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
+            $(this).parent().parent().parent().parent().next(".owl-item").children().children().children()
+                .children().removeAttr("disabled");;
+            $("#changeimage_2").attr("src", "image/photo/map/first_grade/color_2.png");
+            $("#changeticket_2").attr("src", "image/photo/ticket/first_grade/color_2.png");
+        });
 
-document.getElementById("btn_3").addEventListener("click", function()
-{
-  $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
-  $(this).parent().parent().parent().parent().next(".owl-item").children().children().children().children().removeAttr("disabled");;
-  $("#changeimage_3").attr("src","image/photo/map/first_grade/color_3.png");
-  $("#changeticket_3").attr("src","image/photo/ticket/first_grade/color_3.png");
-});
+        document.getElementById("btn_3").addEventListener("click", function () {
+            $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
+            $(this).parent().parent().parent().parent().next(".owl-item").children().children().children()
+                .children().removeAttr("disabled");;
+            $("#changeimage_3").attr("src", "image/photo/map/first_grade/color_3.png");
+            $("#changeticket_3").attr("src", "image/photo/ticket/first_grade/color_3.png");
+        });
 
-document.getElementById("btn_4").addEventListener("click", function()
-{
-  $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
-  $(this).parent().parent().parent().parent().next(".owl-item").children().children().children().children().removeAttr("disabled");;
-  $("#changeimage_4").attr("src","image/photo/map/first_grade/color_4.png");
-  $("#changeticket_4").attr("src","image/photo/ticket/first_grade/color_4.png");
-});
+        document.getElementById("btn_4").addEventListener("click", function () {
+            $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
+            $(this).parent().parent().parent().parent().next(".owl-item").children().children().children()
+                .children().removeAttr("disabled");;
+            $("#changeimage_4").attr("src", "image/photo/map/first_grade/color_4.png");
+            $("#changeticket_4").attr("src", "image/photo/ticket/first_grade/color_4.png");
+        });
 
-document.getElementById("btn_5").addEventListener("click", function()
-{
-  $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
-  $(this).parent().parent().parent().parent().next(".owl-item").children().children().children().children().removeAttr("disabled");;
-  $("#changeimage_5").attr("src","image/photo/map/first_grade/color_5.png");
-  $("#changeticket_5").attr("src","image/photo/ticket/first_grade/color_5.png");
-});
-  </script>
+        document.getElementById("btn_5").addEventListener("click", function () {
+            $(this).parent().parent().parent(".ticket_wrap").addClass("redeem_ticket");
+            $(this).parent().parent().parent().parent().next(".owl-item").children().children().children()
+                .children().removeAttr("disabled");;
+            $("#changeimage_5").attr("src", "image/photo/map/first_grade/color_5.png");
+            $("#changeticket_5").attr("src", "image/photo/ticket/first_grade/color_5.png");
+        });
+    </script>
 
 </body>

@@ -92,7 +92,6 @@
         position: relative;
 
         &.grade_map_object {
-            margin-top: 7%;
 
             .level_correspondence_marker {
                 position: absolute;
@@ -121,8 +120,6 @@
                 }
 
                 .map_object_roof {
-                    // position: relative;
-
                     img {
                         position: relative;
                     }
@@ -130,14 +127,11 @@
 
                 .map_object_sign {
                     display: flex;
-                    // position: absolute;
-                    // top: 100%;
-                    // left: 50%;
-                    // transform: translate(-50%, -85%);
-                    align-items: center;
+                    align-items: flex-end;
                     justify-content: space-between;
                     z-index: 2;
-                    width: 90%;
+                    width: 100%;
+                    
 
                     .map_object_sign_one,
                     .map_object_sign_two,
@@ -145,7 +139,6 @@
                         img {
                             position: relative;
                         }
-
                         .map_object_sign_item {
                             img {
                                 position: absolute;
@@ -156,14 +149,15 @@
                         }
                     }
 
+                    
+
                     .map_object_sign_one,
                     .map_object_sign_three {
                         width: 30%;
                         position: absolute;
-
+                        z-index: 1;
                         a {
                             line-height: 0;
-
                             .level_correspondence_marker {
                                 position: absolute;
                                 top: 0;
@@ -174,120 +168,39 @@
                                 z-index: -1;
                                 border-radius: 10px;
                                 max-width: none;
-
                                 .level_correspondence_marker_inner {
                                     width: 16%;
                                 }
-
                                 &.first_level_correspondence_marker {
                                     background-color: $first_grade_color;
                                 }
-
                                 &.second_level_correspondence_marker {
                                     background-color: $second_grade_color;
                                 }
-
                                 &.third_level_correspondence_marker {
                                     background-color: $third_grade_color;
                                 }
-
                                 &.fourth_level_correspondence_marker {
                                     background-color: $fourth_grade_color;
                                 }
-
                                 &.fifth_level_correspondence_marker {
                                     background-color: $fifth_grade_color;
                                 }
-
                                 &.sixth_level_correspondence_marker {
                                     background-color: $sixth_grade_color;
                                 }
-
                                 &.seventh_level_correspondence_marker {
                                     background-color: $seventh_grade_color;
                                 }
-
                                 &.eighth_level_correspondence_marker {
                                     background-color: $eighth_grade_color;
                                 }
-
                                 &.ninth_level_correspondence_marker {
                                     background-color: $ninth_grade_color;
                                 }
                             }
-
                         }
-                    }
 
-                    .map_object_sign_one {
-                        left: 0;
-
-                        a {
-
-                            .level_correspondence_marker {
-
-                                .level_correspondence_marker_inner {
-                                    position: absolute;
-                                    left: 25%;
-                                    transform: translate(calc(-50% + 8px), 0px);
-                                }
-
-                            }
-
-                        }
-                    }
-
-                    .map_object_sign_three {
-                        right: 0;
-
-                        a {
-
-                            .level_correspondence_marker {
-
-                                .level_correspondence_marker_inner {
-                                    position: absolute;
-                                    right: 25%;
-                                    transform: translate(calc(50% - 8px), 0px);
-                                }
-
-                            }
-
-                        }
-                    }
-
-                    .map_object_sign_two {
-                        width: 75%;
-                        position: relative;
-                        left: 50%;
-                        z-index: 2;
-                        transform: translate(-50%, 0%);
-                    }
-                }
-            }
-        }
-
-        &.new_map {
-            margin-top: 0%;
-
-            .map_object_item_frame {
-
-                // display: flex;
-                // align-items: flex-end;
-
-                .map_object_sign {
-                    // top: inherit;
-                    // bottom: 0;
-                    // transform: translate(-50%, 0%);
-                    width: 100%;
-                    align-items: flex-end;
-
-                    // .map_object_sign_one,
-                    // .map_object_sign_three {
-                    //     z-index: 1;
-                    // }
-
-                    .map_object_sign_one,
-                    .map_object_sign_three {
                         .map_object_sign_item {
                             width: 75%;
                             position: relative;
@@ -298,32 +211,57 @@
                                 position: relative;
                             }
                         }
+                    
+                    }
+
+                    .map_object_sign_one {
+                        left: 0;
+                        a {
+                            .level_correspondence_marker {
+                                .level_correspondence_marker_inner {
+                                    position: absolute;
+                                    left: 25%;
+                                    transform: translate(calc(-50% + 8px), 0px);
+                                }
+                            }
+                        }
+                    }
+
+                    .map_object_sign_three {
+                        right: 0;
+                        a {
+                            .level_correspondence_marker {
+                                .level_correspondence_marker_inner {
+                                    position: absolute;
+                                    right: 25%;
+                                    transform: translate(calc(50% - 8px), 0px);
+                                }
+                            }
+                        }
                     }
 
                     .map_object_sign_two {
-                        margin: 0 auto;
+                        width: 75%;
+                        position: relative;
                         left: 0;
+                        z-index: 2;
                         transform: translate(0%, 0%);
-
+                        margin: 0 auto;
                         .map_object_sign_item {
                             img {
                                 top: 0;
                                 transform: translate(-50%, 0%);
                                 width: 95%;
-
                                 &:nth-child(1) {
                                     width: 100%;
                                 }
                             }
-
                             .map_bg {
                                 position: relative;
                             }
                         }
                     }
                 }
-
-
             }
         }
 
@@ -353,6 +291,7 @@
                 color: $white;
                 border-radius: 10px;
                 cursor: pointer;
+                margin-top: 8px;
 
                 &:hover {
                     background-color: darken($main_color, 10%);
@@ -409,38 +348,68 @@
                 color: $first_grade_color;
             }
         }
+        &.medal_area_second_grade {
+            .medal_area_text {
+                color: $second_grade_color;
+            }
+        }
+        &.medal_area_third_grade {
+            .medal_area_text {
+                color: $third_grade_color;
+            }
+        }
+        &.medal_area_fourth_grade {
+            .medal_area_text {
+                color: $fourth_grade_color;
+            }
+        }
+        &.medal_area_fifth_grade {
+            .medal_area_text {
+                color: $fifth_grade_color;
+            }
+        }
+        &.medal_area_sixth_grade {
+            .medal_area_text {
+                color: $sixth_grade_color;
+            }
+        }
+        &.medal_area_seventh_grade {
+            .medal_area_text {
+                color: $seventh_grade_color;
+            }
+        }
+        &.medal_area_eighth_grade {
+            .medal_area_text {
+                color: $eighth_grade_color;
+            }
+        }
+        &.medal_area_ninth_grade {
+            .medal_area_text {
+                color: $ninth_grade_color;
+            }
+        }
     }
 
     .map_book_area_bg {
         width: 100%;
         margin: 0px auto;
-        background-image: url(../image/photo/map/map_object/map_book_area_bg.png);
-        background-repeat: repeat-y;
-        background-position: center;
-        background-size: contain;
-        padding: 240px 0px 0px;
+        background-image: none;
+        padding: 0;
+        transform: translate(0px, -135px);
 
-        &.new_map {
-            background-image: none;
-            padding: 0;
-            transform: translate(0px, -135px);
+        .map_object_table {
+            border-width: 80px;
+            width: 100%;
+            border-color: transparent transparent $first_grade_color;
+            border-style: solid solid solid solid;
 
-
-            .map_object_table {
-                border-width: 80px;
-                width: 100%;
-                border-color: transparent transparent $first_grade_color;
-                border-style: solid solid solid solid;
-
-                img {
-                    position: relative;
-                }
+            img {
+                position: relative;
             }
+        }
 
-            .map_book_area {
-                border-color: $main_color;
-            }
-
+        .map_book_area {
+            border-color: $main_color;
         }
 
         &.map_book_area_first_grade {
