@@ -348,6 +348,7 @@ input[type="radio" i] ~ label {
   border-radius: 50%;
   color: #5B3716;
   background-color: #EFE8E0;
+  display: none;
 }
 
 .swiper_slide_next:after,
@@ -378,6 +379,13 @@ input[type="radio" i] ~ label {
 .swiper-rtl .swiper_ticket_prev {
   right: 10px;
   left: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .swiper_ticket_next,
+  .swiper_ticket_prev {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -5343,7 +5351,7 @@ h-word {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 10px auto;
+  margin: 0px auto 40px;
 }
 
 .main.grade_map .grade_link .level_correspondence_marker {
@@ -5435,6 +5443,11 @@ h-word {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.main.grade_map .map_object.grade_map_object .map_object_item .map_object_roof {
+  width: 85%;
+  margin: 0 auto;
 }
 
 .main.grade_map .map_object.grade_map_object .map_object_item .map_object_roof img {
@@ -5584,7 +5597,7 @@ h-word {
 }
 
 .main.grade_map .map_object.grade_map_object .map_object_item .map_object_sign .map_object_sign_two {
-  width: 75%;
+  width: 68%;
   position: relative;
   left: 0;
   z-index: 2;
@@ -5802,92 +5815,6 @@ h-word {
   border: 10px solid #004981;
 }
 
-.main.grade_map .map_book_area_bg .map_book_area .coin_area {
-  margin: 0px auto 20px;
-  width: 80%;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image::before {
-  content: "";
-  position: absolute;
-  width: calc(100% - 6px);
-  height: 8px;
-  border: 2px solid;
-  border-top: 0px;
-  bottom: 0;
-  z-index: 3;
-  border-radius: 50px;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image::after {
-  content: "";
-  position: absolute;
-  width: calc(100% - 6px);
-  height: 8px;
-  border: 2px solid;
-  border-bottom: 0px;
-  bottom: 0;
-  border-radius: 50px;
-  z-index: 1;
-  background-color: grey;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_image img {
-  position: absolute;
-  left: calc(40%);
-  -webkit-transform: scale(0.8) translate(-50%, 0);
-          transform: scale(0.8) translate(-50%, 0);
-  z-index: 2;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_text {
-  text-align: center;
-  margin: 10px auto;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame {
-  margin: 0 auto;
-  width: 80%;
-  max-width: 356px;
-  height: 21px;
-  border: 2px solid grey;
-  border-radius: 50px;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress {
-  margin: 5px auto;
-  width: calc(100% - 2px);
-  height: 15px;
-  border-radius: 50px;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 1px;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress .progress_separate {
-  width: calc(100% / 10);
-  height: 100%;
-  border-right: 1px solid #fff;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress .progress_separate:last-child {
-  border-right: 0px;
-}
-
-.main.grade_map .map_book_area_bg .map_book_area .coin_area .coin_progress_frame .coin_progress .progress_separate.get_coins {
-  background-color: #ff6464;
-}
-
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg {
   padding: 40px 0px;
   position: relative;
@@ -5980,6 +5907,26 @@ h-word {
   background-repeat: repeat-y;
 }
 
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_left.ticket_fifth_grade {
+  background-color: #00AD5E;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_left.ticket_fifth_grade .wave_line.wave_line_left .wave_line_internal {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 0 50%, #EFE8E0 50%, #00AD5E 0);
+  background-size: 0.3rem 0.7rem;
+  background-repeat: repeat-y;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_left.ticket_fifth_grade .wave_line.wave_line_right .wave_line_internal {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 0 50%, #EFE8E0 50%, #00AD5E 0);
+  background-size: 0.3rem 0.7rem;
+  background-repeat: repeat-y;
+}
+
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_right {
   width: 100%;
   padding: 10px 0px;
@@ -6012,6 +5959,26 @@ h-word {
   height: 100%;
   width: 100%;
   background: radial-gradient(circle at 0 50%, #EFE8E0 50%, #d72b2b 0);
+  background-size: 0.3rem 0.7rem;
+  background-repeat: repeat-y;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_right.ticket_fifth_grade {
+  background-color: #00AD5E;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_right.ticket_fifth_grade .wave_line.wave_line_left .wave_line_internal {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 0 50%, #EFE8E0 50%, #00AD5E 0);
+  background-size: 0.3rem 0.7rem;
+  background-repeat: repeat-y;
+}
+
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_right.ticket_fifth_grade .wave_line.wave_line_right .wave_line_internal {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 0 50%, #EFE8E0 50%, #00AD5E 0);
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
@@ -6106,7 +6073,7 @@ h-word {
 }
 
 .main.grade_map .map_book_area_bg .map_book_area .book_area {
-  margin: 80px auto 0px;
+  margin: 0px auto;
 }
 
 .main.grade_map .map_book_area_bg .map_book_area .book_area .grade_map_booklist .swiper .swiper-wrapper {
