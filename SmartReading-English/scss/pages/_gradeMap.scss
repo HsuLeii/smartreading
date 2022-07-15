@@ -2,96 +2,7 @@
     margin: 0px auto;
     background-color: $body_bg;
 
-    .grade_link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 0px auto 40px;
-
-        .level_correspondence_marker {
-            margin: 5px 10px;
-
-            &::before {
-                display: none;
-            }
-
-            .level_correspondence_marker_inner {
-                width: 60px;
-
-                &::after {
-                    width: calc(100% + 5px);
-                    height: calc(100% + 5px);
-                    border: 1.5px solid;
-                    display: none;
-                }
-
-                &:hover {
-                    &::after {
-                        display: block;
-                    }
-                }
-
-                &.active{
-                    width: calc(60px * 1.5);
-                }
-
-                &.first_grade_marker_inner {
-                    &::after {
-                        border-color: $first_grade_color;
-                    }
-                }
-
-                &.second_grade_marker_inner {
-                    &::after {
-                        border-color: $second_grade_color;
-                    }
-                }
-
-                &.third_grade_marker_inner {
-                    &::after {
-                        border-color: $third_grade_color;
-                    }
-                }
-
-                &.fourth_grade_marker_inner {
-                    &::after {
-                        border-color: $fourth_grade_color;
-                    }
-                }
-
-                &.fifth_grade_marker_inner {
-                    &::after {
-                        border-color: $fifth_grade_color;
-                    }
-                }
-
-                &.sixth_grade_marker_inner {
-                    &::after {
-                        border-color: $sixth_grade_color;
-                    }
-                }
-
-                &.seventh_grade_marker_inner {
-                    &::after {
-                        border-color: $seventh_grade_color;
-                    }
-                }
-
-                &.eighth_grade_marker_inner {
-                    &::after {
-                        border-color: $eighth_grade_color;
-                    }
-                }
-
-                &.ninth_grade_marker_inner {
-                    &::after {
-                        border-color: $ninth_grade_color;
-                    }
-                }
-            }
-        }
-    }
+    
 
     .map_object {
         position: relative;
@@ -810,9 +721,104 @@
     }
 }
 
+.grade_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px auto 40px;
+
+    .level_correspondence_marker {
+        margin: 5px 10px;
+
+        &::before {
+            display: none;
+        }
+
+        .level_correspondence_marker_inner {
+            width: 60px;
+
+            &::after {
+                width: calc(100% + 5px);
+                height: calc(100% + 5px);
+                border: 1.5px solid;
+                display: none;
+            }
+
+            &:hover {
+                &::after {
+                    display: block;
+                }
+            }
+
+            &.active{
+                width: calc(60px * 1.5);
+                &::after {
+                    display: block;
+                }
+            }
+
+            &.first_grade_marker_inner {
+                &::after {
+                    border-color: $first_grade_color;
+                }
+            }
+
+            &.second_grade_marker_inner {
+                &::after {
+                    border-color: $second_grade_color;
+                }
+            }
+
+            &.third_grade_marker_inner {
+                &::after {
+                    border-color: $third_grade_color;
+                }
+            }
+
+            &.fourth_grade_marker_inner {
+                &::after {
+                    border-color: $fourth_grade_color;
+                }
+            }
+
+            &.fifth_grade_marker_inner {
+                &::after {
+                    border-color: $fifth_grade_color;
+                }
+            }
+
+            &.sixth_grade_marker_inner {
+                &::after {
+                    border-color: $sixth_grade_color;
+                }
+            }
+
+            &.seventh_grade_marker_inner {
+                &::after {
+                    border-color: $seventh_grade_color;
+                }
+            }
+
+            &.eighth_grade_marker_inner {
+                &::after {
+                    border-color: $eighth_grade_color;
+                }
+            }
+
+            &.ninth_grade_marker_inner {
+                &::after {
+                    border-color: $ninth_grade_color;
+                }
+            }
+        }
+    }
+}
+
 .page {
     display: flex;
     justify-content: center;
+    margin: 20px auto;
     .pagination {
         a,
         span {
@@ -876,12 +882,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .main.grade_map {
-        .grade_link {
-            .level_correspondence_marker {
-                position: relative;
-            }
+    .grade_link {
+        .level_correspondence_marker {
+            position: relative;
         }
+    }
+    .main.grade_map {
+        
         .map_object {
             &.grade_map_object {
                 .level_correspondence_marker {
@@ -930,21 +937,20 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .main.grade_map {
+    .grade_link {
+        margin: 0px auto 20px;
+        width: 90%;
 
-        .grade_link {
-            margin: 0px auto 20px;
-            width: 90%;
-
-            .level_correspondence_marker {
-                .level_correspondence_marker_inner {
-                    width: 40px;
-                    &.active{
-                        width: calc(40px * 1.4);
-                    }
+        .level_correspondence_marker {
+            .level_correspondence_marker_inner {
+                width: 40px;
+                &.active{
+                    width: calc(40px * 1.4);
                 }
             }
         }
+    }
+    .main.grade_map {
 
         .map_book_area_bg {
 
@@ -1046,17 +1052,16 @@
 }
 
 @media screen and (max-width: 768px) {
-    .main.grade_map {
+    .grade_link {
+        justify-content: flex-start;
 
-        .grade_link {
-            justify-content: flex-start;
-
-            .level_correspondence_marker {
-                .level_correspondence_marker_inner {
-                    margin: 2.5px auto;
-                }
+        .level_correspondence_marker {
+            .level_correspondence_marker_inner {
+                margin: 2.5px auto;
             }
         }
+    }
+    .main.grade_map {
 
         .map_book_area_bg {
             .map_book_area {
