@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SRE(SmartReading-English)是提供臺灣等英語學習者閱讀英語讀本的學習平臺。SRE透過閱讀能力檢測對學習者進行英語閱讀能力評估後，再運用AI技術將學習者的英語閱讀程度和文本難度進行適性配對，並推薦適合學習者閱讀能力的英語讀本，增加學習者對英語閱讀的樂趣。當學習者閱讀文本後，可透過讀後測驗，了解自己對文本的理解程度。" />
+    <title>SmartReading-English</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+
+    <!-- this page widgets CSS -->
+    <!-- modal -->
+    <link rel="stylesheet" href="css/jquery.modal.min.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- my core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_logo">
+            <a href="">
+                <img src="image/logo/logo.svg" alt="">
+            </a>
+          </div>
+          <div id="toggle" class=""><span></span></div>
+          <nav>
+            <ul class="menu">
+                <div class="menu_pagination">
+                    <li>
+                        <a class="current" href="index.html">首頁</a>
+                    </li>
+                    <li class="dropdown about_dropdown">
+                        <a href="#">關於我們<span class="arrow down"></span></a>
+          
+                        <ul class="dropdown_content">
+                            <li>
+                                <a href="about_sre.html">關於SRE</a>
+                            </li>
+                            <li>
+                                <a href="about_dcec.html">關於DCEC</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="booklist.html">優選書單</a>
+                    </li>
+                    <li>
+                        <a href="grade.html">分級對應</a>
+                    </li>
+                    <li>
+                        <a href="question.html">常見問題</a>
+                    </li>
+                    <li>
+                        <a href="login.html">我要登入</a>
+                    </li>
+                </div>
+                <div class="menu_language">
+                    <li class="dropdown language_dropdown">
+                        <a href="#">語言</a>
+                        <span class="arrow down"></span>
+                        <ul class="dropdown_content">
+                            <li>
+                                <a href="#">繁體中文</a>
+                            </li>
+                            <li>
+                                <a href="#">English</a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+          </nav>
+    </header>
+    <div class="main diagnosis">
+        <div class="tittle">
+            <h1>
+                閱讀診斷
+            </h1>
+            <p>
+                中文閱讀能力適性診斷評量(DACC-M)可以協助你更精準地瞭解自己的中文閱讀程度。
+            </p>
+        </div>
+        
+        <div class="frame_effect">
+            <div class="folder">
+                <div class="folder_content">
+                    <div class="top_information">
+                        <div class="dcec_ticket dcec_ticket_left">
+                            <div class="dcec_logo">
+                                <img src="image/logo/dcec.svg" alt="">
+                                <p>X</p>
+                                <img src="image/logo/logo-report.svg" alt="">
+
+                                <div class="wave_line wave_line_left">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                                <div class="wave_line wave_line_right">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                            </div>
+                            <div class="dcec_text">
+                                <p>DCEC</p>
+                                <div class="dcec_introduce_text">
+                                    <h3>中文閱讀能力診斷</h3>
+                                    <p>Diagnostic Assessment of Chinese Competence for
+                                        Chinese as a Foreign Language</p>
+                                </div>
+                                <div class="wave_line wave_line_left">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                                <div class="wave_line wave_line_right">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dcec_ticket dcec_ticket_right">
+                            <div class="dcec_logo">
+                                <img src="image/svg/dcec-test.svg" alt="">
+                                <div class="wave_line wave_line_left">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                                <div class="wave_line wave_line_right">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                            </div>
+                            <div class="dcec_text">
+                                <p>測驗時間 <br /> 2021/12/13~2021/12/30 </p>
+                                <button class="dcec_test">
+                                    <p>開始檢測</p>
+                                </button>
+                                <div class="wave_line wave_line_left">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                                <div class="wave_line wave_line_right">
+                                    <div class="wave_line_internal"></div>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+
+        <!-- 第一本書彈跳視窗開始 -->
+        <div id="book_modal_1" class="modal book_information_modal">
+            <div class="book_introduction">
+                <div class="book_introduction_left">
+                    <div class="modal_book_img" title="What Can a Long Nose Do?">
+                        <img src="image/index/book-1.jpg" alt="">
+                        <div class="audio_icon" title="有聲書"></div>
+                    </div>
+
+                    <div class="book_introduction_top_border">
+                        <img src="image/svg/ticket_modal_top.svg" alt="">
+                    </div>
+
+                </div>
+
+                <div class="book_introduction_right">
+                    <div class="introduction_content">
+                        <div class="introduction_item">
+                            <div class="item introduction">
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>書名：</span><span>What Can a Long Nose Do?</span></p>
+                                <p><span>SRE值：</span><span>265</span></p>
+                                <p><span>CEFR：</span><span>A1</span></p>
+                                <p><span>台灣年級：</span><span>四年級</span></p>
+                            </div>
+
+                            <div class="modal_book_button">
+                                <a href="sreadingbookdemo.aspx?b=1&lang=zh-TW">我要閱讀</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="book_introduction_left_border">
+                        <img src="image/svg/ticket_modal_right.svg" alt="">
+                    </div>
+                    <div class="book_introduction_right_border">
+                        <img src="image/svg/ticket_modal_right.svg" alt="">
+                    </div>
+                    <div class="book_introduction_bottom_border">
+                        <img src="image/svg/ticket_modal_top.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal_wave_line modal_wave_line_left">
+                <div class="modal_wave_line_internal">
+                </div>
+            </div>
+
+            <div class="modal_wave_line modal_wave_line_right">
+                <div class="modal_wave_line_internal">
+                </div>
+            </div>
+        </div>
+        <!-- 第一本書彈跳視窗結束 -->
+
+
+    </div>
+    <footer>
+        <a class="scroll_top" href="#">
+            <span class="arrow"></span>
+          </a>
+        <div class="footer_logo">
+            <img src="image/logo/logo.svg" alt="">
+            <img src="image/logo/logo_ntnu.svg" alt="">
+        </div>
+        <div class="footer_information">
+            <div class="information">
+                <div class="mail">
+                    <a href="mailto:service@smartreading.net"> service@smartreading.net</a>
+                </div>
+                <div class="map">
+                    <a href="https://goo.gl/maps/5Sv3LDvcfnnZanR97" target="_blank"> 台北市和平東路一段162號<br>國立台灣師範大學</a>
+                </div>
+            </div>
+            <div class="products">
+                <p>相關產品</p>
+                <div class="products_logo">
+                    <a href="https://kids.smartreading.net/">
+                        <img src="image/products/chinese-character.svg" alt="">
+                    </a>
+                    <a href="https://smartreading.net/v3/index.aspx">
+                        <img src="image/products/srlogo.svg" alt="">
+                    </a>
+                    <a href="https://mandarin.smartreading.net/">
+                        <img src="image/products/srmlogo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyright">
+            <div>
+                <a href="" class="cursor">使用條款</a>
+                |
+                <a href="" class="cursor">隱私政策</a>
+            </div>
+            <p>
+                © 2021 College of Education e-Learning Lab. NTNU, All rights reserved.<br>
+            </p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+
+    <!-- this page widgets JS -->
+    <!-- modal -->
+    <script src="js/jquery.modal.min.js"></script>
+
+    <!-- my core JS -->
+    <script src="js/all.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('header').load('header.html', function () {});
+            $('footer').load('footer.html', function () {});
+        });
+    </script>
+
+    <!-- 閱讀書籍 -->
+    <script>
+        $(".close-modal").click(function (e) {
+            $(".medal_area").fadeOut();
+        });
+        $(".medal_area_button").click(function (e) {
+            $(".medal_area_explain").fadeIn();
+            setTimeout(function () {
+                $('.medal_area_explain').fadeOut();
+            }, 15000);
+        });
+    </script>
+
+    <script>
+    if ( $(".first_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#d72b2b");
+      $(".folder_data h3").css("color", "#d72b2b");
+    }
+    if ( $(".second_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#EB772A");
+      $(".folder_data h3").css("color", "#EB772A");
+    }
+    if ( $(".third_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#F3BA03");
+      $(".folder_data h3").css("color", "#F3BA03");
+    }
+    if ( $(".fourth_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#8DA429");
+      $(".folder_data h3").css("color", "#8DA429");
+    }
+    if ( $(".fifth_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#00AD5E");
+      $(".folder_data h3").css("color", "#00AD5E");
+    }
+    if ( $(".sixth_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#00B1B9");
+      $(".folder_data h3").css("color", "#00B1B9");
+    }
+    if ( $(".seventh_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#0163C6");
+      $(".folder_data h3").css("color", "#0163C6");
+    }
+    if ( $(".eighth_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#4F1AC4");
+      $(".folder_data h3").css("color", "#4F1AC4");
+    }
+    if ( $(".ninth_grade_marker_inner").hasClass("active") ){
+      $(".folder_content").css("border-color", "#8400A1");
+      $(".folder_data h3").css("color", "#8400A1");
+    }
+
+    </script>
+
+
+
+</body>
