@@ -90,11 +90,17 @@
         </div>
         <div class="language_selection">
             <p>
-                請選擇你的就學地/请选择你的就学地
-                <span class="color_purple">Please select your current school location</span>
+                就讀學校所在地
+                <span>Please select your current school location</span>
+                <p class="color_purple">
+                    ※報名及賽事頁面將因就學所在地而有區域的不同，請審慎選擇。<br />
+                ※Registration and competition pages will be different depending on the location of the school, so please
+                choose carefully.
+                </p>
             </p>
 
-            <select name="" onchange="javascript:location.href=this.value;">
+            <select name="language_select" id="language_select">
+                <option value="">select/請選擇</option>
                 <option value="">Taiwan/臺灣</option>
                 <option value="">Hongkong/香港</option>
                 <option value="">Macao/澳門</option>
@@ -108,7 +114,10 @@
         </div>
 
         <div class="enter_button">
-            <a href="" class="enter_button_link">點我進入</a>
+            <button class="enter_button_link" onclick="location.href='index.html';"  disabled>
+                成為科普閱讀王<br/>
+Become an avid popular science reader
+            </button>
         </div>
     </main>
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
@@ -136,6 +145,17 @@
         });
     </script>
 
+    <script>
+
+        $(function () {
+            $("select[name='language_select']").change(function () {
+                if (this.selectedIndex !== 0) {
+                    $(".enter_button_link").attr("disabled", false);
+                }
+            });
+        }); 
+    </script>
+
     <!-- widgets js -->
     <script>
         $(document).ready(function () {
@@ -160,7 +180,7 @@
                     $.each(response, function (key, value) {
                         $($(`#pB-grade${value.Grade}`).find("tr")[parseInt(value.Sort) - 1]).html(
                             `<td></td><td>${value.Sort}</td><td>${value.School}</td><td>${value.Name}</td>`
-                            )
+                        )
                     });
                 },
                 error: function (jqXHR, textStatus, err) {

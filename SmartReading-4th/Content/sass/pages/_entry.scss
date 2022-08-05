@@ -21,22 +21,28 @@
     }
     main{
         .language_selection{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             margin: 20px auto;
             p{
-                text-align: center;
+                text-align: left;
+                width: 80%;
                 span{
                     display: inline-block;
                 }
             }
             select{
                 display: block;
-                margin: 10px auto;
+                margin: 20px auto 0px;
             }
         }
         .enter_button{
             display: flex;
             justify-content: center;
             margin: 40px auto 80px;
+            max-width: 80%;
 
             .enter_button_link{
                 color: $main_color;
@@ -48,6 +54,12 @@
                     background-color: $main_color;
                     color: $white;
                 }
+
+                &:disabled {
+                    background: $default-gray;
+                    border: 1px solid $default-gray;
+                    color: $default-black;
+                  }
             }
         }
     }
@@ -62,8 +74,6 @@
     .entry {
         main{
             .language_selection{
-                display: flex;
-                justify-content: center;
                 p{
                     margin: 0px 5px;
                 }
