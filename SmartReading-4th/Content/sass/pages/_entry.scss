@@ -1,65 +1,137 @@
 .entry {
-    header{
-        .navi-main{
-            .container-fluid{
+    header {
+        .navi-main {
+            .container-fluid {
                 justify-content: flex-start;
-                .navbar-header{
+
+                .navbar-header {
                     width: 100%;
-                    .navbar-brand{
+
+                    .navbar-brand {
                         width: calc(100% - 90px);
                         padding: 15px 0px;
                     }
-                    .navbar-toggle{
+
+                    .navbar-toggle {
                         display: none;
                     }
                 }
+
                 .navbar-collapse {
                     display: none !important;
                 }
             }
         }
     }
-    main{
-        .language_selection{
+
+    main {
+        .language_selection {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin: 20px auto;
-            p{
+            h4{
+                text-align: left;
+                margin: 0px 5px;
+                width: 80%;
+            }
+
+            p {
                 text-align: left;
                 width: 80%;
-                span{
+
+                span {
                     display: inline-block;
                 }
             }
-            select{
-                display: block;
-                margin: 20px auto 0px;
+
+            .select_box{
+                cursor: pointer;
+                width: 300px;
+                margin: 40px auto 60px;
+            
+                .select{
+                    width: 100%;
+                    margin: 0 auto;
+                    display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 10px;
+                border: 1px solid $main-color;
+                border-radius: 10px;
+            
+                p, 
+                i{
+                    color: $main-color;
+                }
+                }
+                .options{
+                    display: none;
+                    border: 1px solid $main-color;
+                    border-radius: 10px;
+                    margin: 5px auto;
+                    overflow: hidden;
+            
+                    .option_item{
+                        border-bottom: 1px solid $main-color;
+            
+                        input[type="radio"] {
+                            opacity: 0;
+                            display: none;
+                            position: absolute;
+                            &:checked{
+                                & ~ label{
+                                    background-color: $main-color;
+                                    color: $white;
+                                }
+                            }
+                          }
+            
+                        label{
+                            display: block;
+                            padding: 10px 20px;
+                            cursor: pointer;
+                            color: $main-color;
+                        }
+                        &:hover{
+                            label{
+                                color: $white;
+                                background-color: $main-color;
+                            }
+                        }
+            
+                        &:nth-last-child(1){
+                            border-bottom: 0px;
+                        }
+                    }
+                }
             }
         }
-        .enter_button{
+
+        .enter_button {
             display: flex;
             justify-content: center;
-            margin: 40px auto 80px;
+            margin: 0px auto 80px;
             max-width: 80%;
 
-            .enter_button_link{
+            .enter_button_link {
+                display: none;
                 color: $main_color;
                 border: 1px solid $main_color;
                 padding: 5px 15px;
                 border-radius: 10px;
 
-                &:hover{
-                    background-color: $main_color;
-                    color: $white;
+                p{
+                    color: $main-color;
                 }
 
-                &:disabled {
-                    background: $default-gray;
-                    border: 1px solid $default-gray;
-                    color: $default-black;
-                  }
+                &:hover {
+                    background-color: $main_color;
+                    p{
+                        color: $white;
+                    }
+                }
             }
         }
     }
@@ -72,9 +144,9 @@
 
 @media screen and (min-width: 992px) {
     .entry {
-        main{
-            .language_selection{
-                p{
+        main {
+            .language_selection {
+                p {
                     margin: 0px 5px;
                 }
             }

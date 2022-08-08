@@ -89,34 +89,88 @@
             <img src="Content/images/index/banner-img.png" alt="">
         </div>
         <div class="language_selection">
+            <h4 class="color_purple">
+                請選擇你的就讀學校所在地。<br />
+                Please select your current school location.
+            </h4>
             <p>
-                就讀學校所在地
-                <span>Please select your current school location</span>
-            <p class="color_purple">
                 ※報名及賽事頁面將因就學所在地而有區域的不同，請審慎選擇。<br />
-                ※Registration and competition pages will be different depending on the location of the school, so please
+                ※Registration and competition pages will be different depending on the location of the school, so
+                please
                 choose carefully.
             </p>
-            </p>
 
-            <select name="language_select" id="language_select">
-                <option value="1" style="display: none">select/請選擇</option>
-                <option value="">Taiwan/臺灣</option>
-                <option value="">Hongkong/香港</option>
-                <option value="">Macao/澳門</option>
-                <option value="">Singapore/新加坡</option>
-                <option value="">Malaysia/馬來西亞</option>
-                <option value="">Thailand/泰國</option>
-                <option value="">Vietnam/越南</option>
-                <option value="">Indonesia/印尼</option>
-                <option value="">U.S.A美國/美国</option>
-            </select>
+            <div class="select_box">
+                <div class="select" id="options-view-button">
+                    <p id="changeText">select/請選擇</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="options">
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Taiwan" value="Taiwan/臺灣">
+                        <label for="Taiwan">
+                            Taiwan/臺灣
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Hongkong" value="Hongkong/香港">
+                        <label for="Hongkong">
+                            Hongkong/香港
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Macao" value="Macao/澳門">
+                        <label for="Macao">
+                            Macao/澳門
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Singapore" value="Singapore/新加坡">
+                        <label for="Singapore">
+                            Singapore/新加坡
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Malaysia" value="Malaysia/馬來西亞">
+                        <label for="Malaysia">
+                            Malaysia/馬來西亞
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Thailand" value="Thailand/泰國">
+                        <label for="Thailand">
+                            Thailand/泰國
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Vietnam" value="Vietnam/越南">
+                        <label for="Vietnam">
+                            Vietnam/越南
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="Indonesia" value="Indonesia/印尼">
+                        <label for="Indonesia">
+                            Indonesia/印尼
+                        </label>
+                    </div>
+                    <div class="option_item">
+                        <input type="radio" name="option_item" id="USA" value="U.S.A美國/美国">
+                        <label for="USA">
+                            U.S.A美國/美国
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="enter_button">
-            <button class="enter_button_link" onclick="location.href='index.html';" disabled>
-                成為科普閱讀王<br />
-                Become an avid popular science reader
+            <button class="enter_button_link" onclick="location.href='index.html';">
+                <p>
+                    成為科普閱讀王<br />
+                    Become an avid popular science reader
+                </p>
             </button>
         </div>
     </main>
@@ -136,6 +190,59 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
     <script src="Content/js/slick-1.8.1.js"></script>
 
+    <script>
+        $("#options-view-button").click(function () {
+            $(".options").toggle();
+        });
+        $("input[name='option_item']").on("click", function () {
+            $(".enter_button_link").show();
+        });
+        $("#Taiwan").click(function () {
+            var isValue = document.getElementById("Taiwan");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Hongkong").click(function () {
+            var isValue = document.getElementById("Hongkong");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Macao").click(function () {
+            var isValue = document.getElementById("Macao");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Singapore").click(function () {
+            var isValue = document.getElementById("Singapore");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Malaysia").click(function () {
+            var isValue = document.getElementById("Malaysia");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Thailand").click(function () {
+            var isValue = document.getElementById("Thailand");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Vietnam").click(function () {
+            var isValue = document.getElementById("Vietnam");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#Indonesia").click(function () {
+            var isValue = document.getElementById("Indonesia");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+        $("#USA").click(function () {
+            var isValue = document.getElementById("USA");
+            document.getElementById("changeText").textContent = isValue.value;
+            $(".options").toggle();
+        });
+    </script>
 
     <script>
         $(document).ready(function () {
@@ -143,16 +250,6 @@
             $('header').load('header.html');
             $('footer').load('footer.html');
         });
-    </script>
-
-    <script>
-        $(function () {
-            $("select[name='language_select']").change(function () {
-                if (this.selectedIndex !== 0) {
-                    $(".enter_button_link").attr("disabled", false);
-                }
-            });
-        }); 
     </script>
 
     <!-- widgets js -->
