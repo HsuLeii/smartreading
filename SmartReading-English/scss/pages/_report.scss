@@ -1,38 +1,280 @@
-.slide_report{
-    background-image: url(../image/photo/slide/stage.jpg);
-    padding: 130px 0px;
-    background-size: cover;
-    background-position: top;
-    padding: 130px 0px;
+.main {
+    &.report {
 
-    h1{
-        color: $white;
+        .tittle {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        .frame_effect {
+            background-color: $main_blue_color;
+            background-image: url(../image/photo/library/circle_effect.png);
+            background-position: center;
+            background-size: contain;
+            background-attachment: fixed;
+            margin: 0 auto;
+            padding: 60px 0px;
+            width: 80%;
+            border-radius: 10px;
+            border-style: solid;
+            border-width: 10px;
+            -webkit-border-image: url(../image/photo/library/border_effect_yellow.png) 10 round;
+            -o-border-image: url(../image/photo/library/border_effect_yellow.png) 10 round;
+            border-image: url(../image/photo/library/border_effect_yellow.png) 10 round;
+
+            .folder {
+                width: 95%;
+                max-width: 1400px;
+                margin: 0 auto;
+
+                .folder_content {
+                    background-color: $body_bg;
+                    position: relative;
+                    padding: 30px;
+                    border: 2px solid;
+                    border-radius: 10px;
+
+                    .folder_report_items{
+                        display: flex;
+                        flex-wrap: wrap;
+                        background-color: $white;
+                        margin: 0px auto 40px;
+
+                        &:last-child {
+                            margin: 0 auto;
+                          }
+
+                        .folder_report_items_left{
+                            position: relative;
+                            width: 50%;
+                            padding: 10px 20px;
+                            display: flex;
+                            align-items: center;
+
+                            .personal_course{
+                                display: flex;
+                                justify-content: center;
+                                flex-wrap: wrap;
+
+                                .personal_course_items{
+                                    width: 100%;
+                                    text-align: center;
+                                    padding: 10px 0px;
+                                    border-bottom: 1px dotted $brown;
+
+                                    &.full_mark{
+                                        border-bottom: 0px;
+                                    }
+
+                                    .personal_course_title{
+                                        color: $brown;
+                                    }
+
+                                    h3{
+                                        color: $main_color;
+                                    }
+                                }
+                                
+                            }
+
+                            .wave_line_left {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                min-width: 5px;
+                                max-width: 5px;
+
+                                .wave_line_internal {
+                                    height: 100%;
+                                    width: 100%;
+                                    background: radial-gradient(circle at 0 50%, $body_bg 50%, $white 0);
+                                    background-size: 0.3rem 0.7rem;
+                                    background-repeat: repeat-y;
+                                }
+                            }
+
+                            .wave_line_right {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                height: 100%;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                min-width: 5px;
+                                max-width: 5px;
+
+                                .wave_line_internal {
+                                    height: 100%;
+                                    width: 100%;
+                                    background: radial-gradient(circle at 0 50%, $white 50%, $body_bg 0);
+                                    background-size: 0.3rem 0.7rem;
+                                    background-repeat: repeat-y;
+                                }
+                            }
+                        }
+
+                        .folder_report_items_right{
+                            position: relative;
+                            width: 50%;
+                            padding: 10px 20px;
+                            background-color: $white;
+
+                            .wave_line_left {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                min-width: 5px;
+                                max-width: 5px;
+
+                                .wave_line_internal {
+                                    height: 100%;
+                                    width: 100%;
+                                    background: radial-gradient(circle at 0 50%, $body_bg 50%, $white 0);
+                                    background-size: 0.3rem 0.7rem;
+                                    background-repeat: repeat-y;
+                                }
+                            }
+
+                            .wave_line_right {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                height: 100%;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                min-width: 5px;
+                                max-width: 5px;
+
+                                .wave_line_internal {
+                                    height: 100%;
+                                    width: 100%;
+                                    background: radial-gradient(circle at 0 50%, $white 50%, $body_bg 0);
+                                    background-size: 0.3rem 0.7rem;
+                                    background-repeat: repeat-y;
+                                }
+                            }
+                        }
+
+                        .dcecPage_chart{
+                            background-color: $white;
+                            padding: 10px 20px;
+
+                            .data_page_scroll{
+                                margin: 20px auto;
+
+                                .dcecPage_chart_control{
+                                    width: 700px;
+
+                                    &.dcec_chart_pie{
+                                        width: 300px;
+                                        height: 300px;
+                                        padding: 0px;
+                                    }
+
+                                    .chart_overall_x{
+                                        right: auto;
+                                        left: 50%;
+                                        transform: translate(-50% , 0%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+}
 
-    p{
-        color: $white;
+@media screen and (max-width: 1400px) {
+    .main {
+        &.report {
+            .frame_effect {
+    
+                .folder {
+    
+                    .folder_content {
+    
+                        .folder_report_items{
+    
+                            .folder_report_items_left{
+                                width: 100%;
+                                border-bottom: 1px dotted $brown;
+
+                                .personal_course{
+                                    width: 80%;
+                                    margin: 0 auto;
+                                }
+                            }
+    
+                            .folder_report_items_right{
+                                width: 100%;
+                            }
+
+                            &.folder_report_pie{
+                                .folder_report_items_left{
+                                    width: 50%;
+                                    border-bottom: 0px dotted $brown;
+
+                                }
+        
+                                .folder_report_items_right{
+                                    width: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-.main.login {
 
-}
+@media screen and (max-width: 1200px) {
+    .main {
+        &.report {
+            .frame_effect {
+    
+                .folder {
+    
+                    .folder_content {
+    
+                        .folder_report_items{
 
-@media screen and (max-width: 1200px){
-    .main.login {
+                            &.folder_report_pie{
+                                .folder_report_items_left{
+                                    width: 100%;
+                                    border-bottom: 1px dotted $brown;
 
+                                }
+        
+                                .folder_report_items_right{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-@media screen and (max-width: 1024px){
-    .main.login {
-
-    }
+@media screen and (max-width: 1024px) {
+    
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 }
 
-@media screen and (max-width: 499px){
-    .main.login {
-    }
-}
+@media screen and (max-width: 499px) {}
