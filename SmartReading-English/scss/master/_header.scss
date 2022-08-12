@@ -60,6 +60,7 @@ div#toggle {
     nav {
         .menu {
             display: flex;
+            align-items: center;
 
             div {
                 display: flex;
@@ -145,24 +146,76 @@ div#toggle {
                 }
 
                 &.menu_language {
-                    padding: 0px 10px;
-                    border: 1px solid $main_color;
+                    width: 140px;
+                    padding: 5px 10px;
+                    margin: 0px 0px 0px 5px;
                     border-radius: 10px;
-
-                    a {
-                        color: $main_color;
-                    }
+                    background-color: $brown;
 
                     li {
+                        margin: 0 auto;
+
+                        a {
+                            color: $white;
+                        }
+
                         &.dropdown {
                             span.arrow {
-                                border: solid $main_color;
+                                border: solid $white;
                                 border-width: 0 3px 3px 0;
                                 display: inline-block;
                                 padding: 3px;
                                 cursor: pointer;
                                 transform: rotate(45deg);
                                 margin: 0px 0px 3px 3px;
+                            }
+
+                            &.open {
+                                a {
+                                    color: $main_yellow_color;
+                                }
+
+                                span.arrow {
+                                    border: solid $main_yellow_color;
+                                    border-width: 0 3px 3px 0;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            a {
+                                color: $main_yellow_color;
+                            }
+
+
+                            span.arrow {
+                                border: solid $main_yellow_color;
+                                border-width: 0 3px 3px 0;
+                            }
+                        }
+
+                        .dropdown_content {
+                            background-color: $brown;
+                            width: 140px;
+
+                            li{
+                                text-align: center;
+                            }
+                            
+
+                            &.open {
+                                display: block;
+                                transform: translate(-50%, -10px);
+                                padding: 20px 0px 0px;
+                                z-index: -1;
+
+                                a {
+                                    color: $white;
+
+                                    &:hover {
+                                        color: $main_yellow_color;
+                                    }
+                                }
                             }
                         }
                     }
@@ -171,6 +224,7 @@ div#toggle {
         }
     }
 }
+
 
 @media screen and (max-width: 1200px) {
     div#toggle {
@@ -223,6 +277,37 @@ div#toggle {
                     flex-direction: column;
                     width: 90%;
                     margin: 0 auto;
+
+                        &.menu_language {
+                            margin: 0px auto 0px 5%;
+                            text-align: left;
+                            padding: 5px 0px;
+            
+                            li {
+                                padding: 0px;
+                                margin: 0;
+
+                                &.dropdown {
+                                    .dropdown_content {
+                                        li {
+                                            padding: 5px 0px;
+                                            text-align: left;
+                                        }
+                                    }
+                                }
+            
+                                .dropdown_content {
+                                    background-color: $brown;
+                                    width: calc(140px - 20px);
+                                    
+                                    &.open {
+                                        transform: translate(0%, 0px);
+                                        padding: 0px;
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                        }
 
                     li {
                         padding: 10px 0px;

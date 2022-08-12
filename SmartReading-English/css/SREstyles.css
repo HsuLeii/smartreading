@@ -575,6 +575,9 @@ div#toggle span:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header nav .menu div {
@@ -657,17 +660,23 @@ div#toggle span:after {
 }
 
 .header nav .menu div.menu_language {
-  padding: 0px 10px;
-  border: 1px solid #ff6464;
+  width: 140px;
+  padding: 5px 10px;
+  margin: 0px 0px 0px 5px;
   border-radius: 10px;
+  background-color: #5B3716;
 }
 
-.header nav .menu div.menu_language a {
-  color: #ff6464;
+.header nav .menu div.menu_language li {
+  margin: 0 auto;
+}
+
+.header nav .menu div.menu_language li a {
+  color: #fff;
 }
 
 .header nav .menu div.menu_language li.dropdown span.arrow {
-  border: solid #ff6464;
+  border: solid #fff;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -675,6 +684,49 @@ div#toggle span:after {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   margin: 0px 0px 3px 3px;
+}
+
+.header nav .menu div.menu_language li.dropdown.open a {
+  color: #f6d367;
+}
+
+.header nav .menu div.menu_language li.dropdown.open span.arrow {
+  border: solid #f6d367;
+  border-width: 0 3px 3px 0;
+}
+
+.header nav .menu div.menu_language li:hover a {
+  color: #f6d367;
+}
+
+.header nav .menu div.menu_language li:hover span.arrow {
+  border: solid #f6d367;
+  border-width: 0 3px 3px 0;
+}
+
+.header nav .menu div.menu_language li .dropdown_content {
+  background-color: #5B3716;
+  width: 140px;
+}
+
+.header nav .menu div.menu_language li .dropdown_content li {
+  text-align: center;
+}
+
+.header nav .menu div.menu_language li .dropdown_content.open {
+  display: block;
+  -webkit-transform: translate(-50%, -10px);
+          transform: translate(-50%, -10px);
+  padding: 20px 0px 0px;
+  z-index: -1;
+}
+
+.header nav .menu div.menu_language li .dropdown_content.open a {
+  color: #fff;
+}
+
+.header nav .menu div.menu_language li .dropdown_content.open a:hover {
+  color: #f6d367;
 }
 
 @media screen and (max-width: 1200px) {
@@ -726,6 +778,29 @@ div#toggle span:after {
             flex-direction: column;
     width: 90%;
     margin: 0 auto;
+  }
+  .header nav .menu div.menu_language {
+    margin: 0px auto 0px 5%;
+    text-align: left;
+    padding: 5px 0px;
+  }
+  .header nav .menu div.menu_language li {
+    padding: 0px;
+    margin: 0;
+  }
+  .header nav .menu div.menu_language li.dropdown .dropdown_content li {
+    padding: 5px 0px;
+    text-align: left;
+  }
+  .header nav .menu div.menu_language li .dropdown_content {
+    background-color: #5B3716;
+    width: calc(140px - 20px);
+  }
+  .header nav .menu div.menu_language li .dropdown_content.open {
+    -webkit-transform: translate(0%, 0px);
+            transform: translate(0%, 0px);
+    padding: 0px;
+    z-index: 1;
   }
   .header nav .menu div li {
     padding: 10px 0px;
