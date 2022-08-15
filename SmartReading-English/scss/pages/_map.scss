@@ -1,86 +1,121 @@
 .map_object {
     position: relative;
 
-    
-        &.new_map{
-            .map_object_item {
-                .map_object_item_project {
-                    width: 18%;
-                    position: absolute;
-        
-                    .map_object_image_animate {
+    &.new_map {
+        .map_object_item {
+            .map_object_item_project {
+                width: 18%;
+                position: absolute;
+
+                .map_object_image_animate {
+                    display: none;
+                }
+
+                &:hover {
+                    .map_object_image {
                         display: none;
                     }
-        
-                    &:hover {
-                        .map_object_image {
-                            display: none;
-                        }
-        
-                        .map_object_image_animate {
-                            display: block;
-                        }
+
+                    .map_object_image_animate {
+                        display: block;
                     }
-        
-                    &.item_project_first_grade {
-                        bottom: 10%;
-                        left: calc(72% / 8 * 1);
-                        z-index: 1;
-                    }
-        
-                    &.item_project_second_grade {
-                        bottom: 35%;
-                        left: calc(72% / 8 * 2);
-                    }
-        
-                    &.item_project_third_grade {
-                        bottom: 10%;
-                        left: calc(72% / 8 * 3);
-                        z-index: 1;
-                    }
-        
-                    &.item_project_fourth_grade {
-                        bottom: 35%;
-                        left: calc(72% / 8 * 4);
-                    }
-        
-                    &.item_project_fifth_grade {
-                        bottom: 10%;
-                        left: calc(72% / 8 * 5);
-                        z-index: 1;
-                    }
-        
-                    &.item_project_sixth_grade {
-                        bottom: 35%;
-                        left: calc(72% / 8 * 6);
-                    }
-        
-                    &.item_project_seventh_grade {
-                        bottom: 10%;
-                        left: calc(72% / 8 * 7);
-                        z-index: 1;
-                    }
-        
-                    &.item_project_eighth_grade {
-                        bottom: 35%;
-                        left: calc(72% / 8 * 8);
-                    }
-        
-                    &.item_project_ninth_grade {
-                        top: 5%;
-                        left: 80%;
-                    }
-        
                 }
-        
+
+                &.item_project_first_grade {
+                    bottom: 30%;
+                    left: calc(72% / 8 * 1);
+                }
+
+                &.item_project_second_grade {
+                    bottom: 3%;
+                    left: calc(72% / 8 * 2);
+                    z-index: 1;
+                }
+
+                &.item_project_third_grade {
+                    bottom: 30%;
+                    left: calc(72% / 8 * 3);
+                }
+
+                &.item_project_fourth_grade {
+                    bottom: 3%;
+                    left: calc(72% / 8 * 4);
+                    z-index: 1;
+                }
+
+                &.item_project_fifth_grade {
+                    bottom: 30%;
+                    left: calc(72% / 8 * 5);
+                }
+
+                &.item_project_sixth_grade {
+                    bottom: 3%;
+                    left: calc(72% / 8 * 6);
+                    z-index: 1;
+                }
+
+                &.item_project_seventh_grade {
+                    bottom: 30%;
+                    left: calc(72% / 8 * 7);
+                }
+
+                &.item_project_eighth_grade {
+                    bottom: 3%;
+                    left: calc(72% / 8 * 8);
+                    z-index: 1;
+                }
+
+                &.item_project_ninth_grade {
+                    top: auto;
+                    bottom: 100%;
+                    left: 80%;
+                    transform: translate(0px, calc(100% + 60px));
+                }
+
             }
+
         }
-    
+    }
 
     .map_object_item {
         .map_object_item_project {
             width: 12.5%;
             position: absolute;
+
+            .item_project_link {
+                position: relative;
+
+                .item_project_mark {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translate(calc(-50%), -50px);
+                    height: 100%;
+
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0px;
+                        width: 3px;
+                        background: $main_color;
+                        content: '';
+                        left: 50%;
+                        z-index: -1;
+                    }
+
+                    p {
+                        background: $main_color;
+                        padding: 5px;
+                        width: auto;
+                        color: $white;
+                        border-radius: 10px;
+                    }
+                }
+
+                img{
+                    position: relative;
+                }
+            }
 
             .map_object_image_animate {
                 display: none;
@@ -100,54 +135,147 @@
                 bottom: 28%;
                 left: calc(75% / 8 * 1);
                 z-index: 1;
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $first_grade_color;
+                        }
+                        p {
+                            background: $first_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_second_grade {
                 bottom: 35%;
                 left: calc(75% / 8 * 2);
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $second_grade_color;
+                        }
+                        p {
+                            background: $second_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_third_grade {
                 bottom: 28%;
                 left: calc(75% / 8 * 3);
-                z-index: 1;
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $third_grade_color;
+                        }
+                        p {
+                            background: $third_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_fourth_grade {
                 bottom: 35%;
                 left: calc(75% / 8 * 4);
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $fourth_grade_color;
+                        }
+                        p {
+                            background: $fourth_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_fifth_grade {
                 bottom: 28%;
                 left: calc(75% / 8 * 5);
-                z-index: 1;
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $fifth_grade_color;
+                        }
+                        p {
+                            background: $fifth_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_sixth_grade {
                 bottom: 35%;
                 left: calc(75% / 8 * 6);
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $sixth_grade_color;
+                        }
+                        p {
+                            background: $sixth_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_seventh_grade {
                 bottom: 28%;
                 left: calc(75% / 8 * 7);
-                z-index: 1;
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $seventh_grade_color;
+                        }
+                        p {
+                            background: $seventh_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_eighth_grade {
                 bottom: 35%;
                 left: calc(75% / 8 * 8);
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $eighth_grade_color;
+                        }
+                        p {
+                            background: $eighth_grade_color;
+                        }
+                    }
+                }
             }
 
             &.item_project_ninth_grade {
                 top: 5%;
                 left: 80%;
+
+                .item_project_link {
+                    .item_project_mark {
+                        &::before {
+                            background: $ninth_grade_color;
+                        }
+                        p {
+                            background: $ninth_grade_color;
+                        }
+                    }
+                }
             }
-
         }
-
-        
     }
 }
 
@@ -567,57 +695,49 @@
     }
 }
 
-.modal_trial{
-    h3{
+.modal_trial {
+    h3 {
         color: $brown;
         margin: 0px auto 10px;
         padding: 0px 0px 10px;
         border-bottom: 1px solid $brown;
     }
-    p{
+
+    p {
         color: $black;
     }
-    span{
+
+    span {
         color: $black;
     }
-    .trial_paragraph{
+
+    .trial_paragraph {
         display: flex;
     }
-    .modal_trial_btn{
+
+    .modal_trial_btn {
         display: flex;
         flex-wrap: wrap;
-        button{
+
+        button {
             border: 1px solid $brown;
             border-radius: 10px;
             padding: 5px 10px;
             margin: 5px 10px 5px 0px;
 
-            a{
+            a {
                 color: $brown;
             }
 
-            &:hover{
-                    background-color: $brown;
-    
-                    a{
-                        color: $white;
-                    }
+            &:hover {
+                background-color: $brown;
+
+                a {
+                    color: $white;
+                }
             }
         }
-        
-    }
-}
 
-@keyframes jump {
-
-    0%,
-    90%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    40% {
-        transform: translateY(-50px);
     }
 }
 
@@ -646,11 +766,29 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .main.grade_map {
+    .map_object {
+        position: relative;
+        .map_object_item {
+            .map_object_item_project {
+    
+                .item_project_link {
+    
+                    .item_project_mark {
+                        width: 70%;
 
+                        p{
+                            text-align: center;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .main.grade_map {
         &.map_index {
             .map_object {
-
                 &.route_map {
 
                     .route_map_area {
@@ -719,14 +857,32 @@
                         }
                     }
                 }
-
             }
-
         }
     }
 }
 
 @media screen and (max-width: 768px) {
+    .map_object {
+        position: relative;
+        .map_object_item {
+            .map_object_item_project {
+    
+                .item_project_link {
+    
+                    .item_project_mark {
+                        width: 90%;
+
+                        p{
+                            text-align: center;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
     .main.grade_map {
 
         &.map_index {
@@ -904,5 +1060,18 @@
             }
         }
 
+    }
+}
+
+@keyframes jump {
+
+    0%,
+    90%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    40% {
+        transform: translateY(-50px);
     }
 }
