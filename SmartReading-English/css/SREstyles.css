@@ -5459,12 +5459,6 @@ h-word {
           flex-direction: column;
 }
 
-.main .navigator_area .navigator_content .mapman {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-
 .main .navigator_area .navigator_content .navigator_text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5472,12 +5466,7 @@ h-word {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   margin: 10px auto 0px;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
   position: relative;
   background-color: #fff;
   padding: 10px 40px 20px 20px;
@@ -5490,7 +5479,7 @@ h-word {
 }
 
 .main .navigator_area .navigator_content .navigator_text p {
-  margin: 0px auto 15px;
+  margin: 0px auto 10px;
   width: 100%;
 }
 
@@ -5499,31 +5488,25 @@ h-word {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.main .navigator_area .navigator_content .navigator_text .navigator_link .level_correspondence_marker {
-  position: initial;
-  width: 50px;
+.main .navigator_area .navigator_content .navigator_text .navigator_link .navigator_link_level p {
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: auto;
+  display: inline-block;
 }
 
-.main .navigator_area .navigator_content .navigator_text .navigator_link .level_correspondence_marker::before {
-  display: none;
-}
-
-.main .navigator_area .navigator_content .navigator_text .navigator_link .level_correspondence_marker .level_correspondence_marker_inner::after {
-  background-color: #fff;
-}
-
-.main .navigator_area .navigator_content .navigator_text .navigator_link p {
-  width: calc(95% - 50px);
-  margin: 0;
-  text-align: right;
+.main .navigator_area .navigator_content .navigator_text .navigator_link .navigator_link_level.first_grade p {
+  background-color: #d72b2b;
 }
 
 .main .navigator_area .navigator_content .navigator_text .close-modal {
@@ -5644,13 +5627,72 @@ h-word {
 }
 
 @media screen and (max-width: 768px) {
-  .map_object {
-    position: relative;
+  .map_object.new_map .map_object_item .map_object_item_project {
+    width: 18%;
+    position: absolute;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project .map_object_image {
+    display: none;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project .map_object_image_animate {
+    display: none;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project:hover .map_object_image {
+    display: none;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project:hover .map_object_image_animate {
+    display: none;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_first_grade {
+    bottom: 30%;
+    left: calc(72% / 8 * 1);
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_second_grade {
+    bottom: 3%;
+    left: calc(72% / 8 * 2);
+    z-index: 1;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_third_grade {
+    bottom: 30%;
+    left: calc(72% / 8 * 3);
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_fourth_grade {
+    bottom: 3%;
+    left: calc(72% / 8 * 4);
+    z-index: 1;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_fifth_grade {
+    bottom: 30%;
+    left: calc(72% / 8 * 5);
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_sixth_grade {
+    bottom: 3%;
+    left: calc(72% / 8 * 6);
+    z-index: 1;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_seventh_grade {
+    bottom: 30%;
+    left: calc(72% / 8 * 7);
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_eighth_grade {
+    bottom: 3%;
+    left: calc(72% / 8 * 8);
+    z-index: 1;
+  }
+  .map_object.new_map .map_object_item .map_object_item_project.item_project_ninth_grade {
+    top: auto;
+    bottom: 100%;
+    left: 80%;
+    -webkit-transform: translate(0px, calc(100% + 60px));
+            transform: translate(0px, calc(100% + 60px));
   }
   .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark {
     width: 90%;
-    -webkit-transform: translate(calc(-50%), -30px);
-            transform: translate(calc(-50%), -30px);
+    -webkit-transform: translate(calc(-50%), -50px);
+            transform: translate(calc(-50%), -50px);
+  }
+  .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark::before {
+    height: 45px;
   }
   .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark p {
     text-align: center;
@@ -5708,7 +5750,7 @@ h-word {
             transform: translate(-100%, -50%);
   }
   .main.grade_map .navigator_area .navigator_content .navigator_text {
-    padding: 10px 35px 20px 15px;
+    display: none;
   }
 }
 
