@@ -85,6 +85,19 @@ div#toggle {
                             margin: 0px 0px 4px 5px;
                         }
 
+                        &.avatar_dropdown{
+                            cursor: pointer;
+                            .avatar_image{
+                                width: 50px;
+                                margin: 0 10px 0 0;
+                            }
+                            .avatar_menu{
+                                li{
+                                    text-align: center;
+                                }
+                            }
+                        }
+
                         &.open {
                             a {
                                 color: $main_color;
@@ -281,6 +294,10 @@ div#toggle {
                     width: 90%;
                     margin: 0 auto;
 
+                    &.menu_avatar{
+                        order: 3;
+                    }
+
                         &.menu_language {
                             margin: 0px auto 0px 5%;
                             text-align: left;
@@ -304,9 +321,16 @@ div#toggle {
                                     width: calc(140px - 20px);
                                     
                                     &.open {
-                                        transform: translate(0%, 0px);
+                                        transform: translate(0%, -5px);
                                         padding: 0px;
                                         z-index: 1;
+                                        left: 0;
+                                        width: 140px;
+                                        padding: 10px 0px;
+
+                                        li{
+                                            padding: 5px 0px;
+                                        }
                                     }
                                 }
                             }
@@ -316,13 +340,17 @@ div#toggle {
                         padding: 10px 0px;
 
                         &.dropdown {
-                            .dropdown_content {
-                                position: relative;
-                                left: 0px;
-                                transform: translate(0px, 0px);
-
-                                li {
-                                    padding: 5px 15px;
+                            &.avatar_dropdown{
+                                .avatar_image{
+                                    margin: 15px 0px;
+                                }
+                                .avatar_menu{
+                                    left: 0;
+                                    transform: translate(0px);
+                                    li{
+                                        text-align: left;
+                                        padding: 5px 0px;
+                                    }
                                 }
                             }
                         }

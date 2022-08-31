@@ -18,6 +18,14 @@ $(".language_dropdown").click(function () {
   $(this).children(".dropdown_content").toggleClass("open");
   $(".about_dropdown").removeClass("open");
   $(".about_dropdown").children(".dropdown_content").removeClass("open");
+  $(".avatar_dropdown").children(".dropdown_content").removeClass("open");
+
+});
+
+$(".avatar_dropdown").click(function () {
+  $(this).children(".dropdown_content").toggleClass("open");
+  (".language_dropdown").removeClass("open");
+  $(".language_dropdown").children(".dropdown_content").removeClass("open");
 });
 
 //scroll-top 按鈕開始
@@ -61,9 +69,7 @@ $('.modal_btn ul li.vocabulary').click(function () {
   })
 });
 // 彈跳視窗資訊書籍選擇結束
-// 常見問題開始
 
-// 常見問題結束
 // 分級對應開始
 $(".grade_content").hide();
 $(".first_grade_content").show();
@@ -179,28 +185,28 @@ $(".ninth_grade_background").click(function () {
 // 分級對應結束
 
 //閱讀地圖票券開始
-$(".owl-carousel").owlCarousel({
-  center: true,
-    loop:false, // 循環播放
-  nav: true, // 顯示箭頭
-  dots: false,// 顯示點點
-  rewindNav: false,
-  navText: ["<span class='owl_arrow arrow_left'><</span>","<span class='owl_arrow arrow_right'>></span>"],
-  responsive: {
-    0: {
-      items: 1.5 
-    },
-    499: {
-      items: 2
-    },
-    768: {
-      items: 2.5
-    },
-    1200: {
-      items: 5,
-      center: false,
-    }
-  }
-});
+// $(".owl-carousel").owlCarousel({
+//   center: true,
+//     loop:false, // 循環播放
+//   nav: true, // 顯示箭頭
+//   dots: false,// 顯示點點
+//   rewindNav: false,
+//   navText: ["<span class='owl_arrow arrow_left'><</span>","<span class='owl_arrow arrow_right'>></span>"],
+//   responsive: {
+//     0: {
+//       items: 1.5 
+//     },
+//     499: {
+//       items: 2
+//     },
+//     768: {
+//       items: 2.5
+//     },
+//     1200: {
+//       items: 5,
+//       center: false,
+//     }
+//   }
+// });
 //閱讀地圖票券結束
 

@@ -575,6 +575,19 @@ div#toggle span:after {
   margin: 0px 0px 4px 5px;
 }
 
+.header nav .menu div li.dropdown.avatar_dropdown {
+  cursor: pointer;
+}
+
+.header nav .menu div li.dropdown.avatar_dropdown .avatar_image {
+  width: 50px;
+  margin: 0 10px 0 0;
+}
+
+.header nav .menu div li.dropdown.avatar_dropdown .avatar_menu li {
+  text-align: center;
+}
+
 .header nav .menu div li.dropdown.open a {
   color: #ff6464;
 }
@@ -740,6 +753,9 @@ div#toggle span:after {
     width: 90%;
     margin: 0 auto;
   }
+  .header nav .menu div.menu_avatar {
+    order: 3;
+  }
   .header nav .menu div.menu_language {
     margin: 0px auto 0px 5%;
     text-align: left;
@@ -758,20 +774,29 @@ div#toggle span:after {
     width: calc(140px - 20px);
   }
   .header nav .menu div.menu_language li .dropdown_content.open {
-    transform: translate(0%, 0px);
+    transform: translate(0%, -5px);
     padding: 0px;
     z-index: 1;
+    left: 0;
+    width: 140px;
+    padding: 10px 0px;
+  }
+  .header nav .menu div.menu_language li .dropdown_content.open li {
+    padding: 5px 0px;
   }
   .header nav .menu div li {
     padding: 10px 0px;
   }
-  .header nav .menu div li.dropdown .dropdown_content {
-    position: relative;
-    left: 0px;
-    transform: translate(0px, 0px);
+  .header nav .menu div li.dropdown.avatar_dropdown .avatar_image {
+    margin: 15px 0px;
   }
-  .header nav .menu div li.dropdown .dropdown_content li {
-    padding: 5px 15px;
+  .header nav .menu div li.dropdown.avatar_dropdown .avatar_menu {
+    left: 0;
+    transform: translate(0px);
+  }
+  .header nav .menu div li.dropdown.avatar_dropdown .avatar_menu li {
+    text-align: left;
+    padding: 5px 0px;
   }
   .header nav .menu.opened {
     visibility: visible;
@@ -7561,8 +7586,8 @@ h-word {
 }
 
 .main.personal .frame_effect .folder .folder_content .membership_card_area {
-  width: 80%;
-  max-width: 900px;
+  width: 85%;
+  max-width: 800px;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -7584,34 +7609,62 @@ h-word {
 .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 20px 20px 25px;
+  background-image: url(../image/svg/reading_card_bg.svg);
+  background-size: cover;
+  background-position: center;
 }
 
 .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area {
   width: 30%;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information {
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content {
   width: 65%;
+  display: flex;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information h3 {
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information {
+  max-width: calc(100% - 165px);
+  margin-right: 20px;
+}
+
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information h3 {
   color: #5B3716;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information .edit_profile {
-  margin: 25px 0px 0px;
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information .edit_profile {
+  margin: 20px 0px 0px;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information .edit_profile a {
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information .edit_profile a {
   color: #fff;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 50px;
   background-color: #5B3716;
 }
 
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area {
+  margin: 0px 5px;
+}
+
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
+  padding: 10px;
+  background-color: #ff6464;
+  border-radius: 50%;
+  line-height: 0;
+  width: 80px;
+  margin: 5px auto;
+}
+
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medal_statistics_title {
   color: #5B3716;
+  margin: 0px 0px 10px;
 }
 
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area {
@@ -7620,19 +7673,12 @@ h-word {
 }
 
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project {
-  width: 18%;
-  margin: 20px 1%;
-}
-
-.main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_img {
-  padding: 23px;
-  border: 2px solid #5B3716;
-  border-radius: 50%;
-  background: #fff;
+  width: 14%;
+  margin: 20px 3%;
 }
 
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_text {
-  margin: 10px auto;
+  margin: 5px auto;
 }
 
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_text h4 {
@@ -7644,27 +7690,82 @@ h-word {
 @media screen and (max-width: 1200px) {
   .main.personal .frame_effect .folder .folder_content .membership_card_area {
     width: 100%;
-    max-width: none;
-  }
-  .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project {
-    width: 23%;
-    margin: 20px 1%;
-  }
-  .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_img {
-    padding: 15px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area {
-    width: 40%;
+  .main.personal .frame_effect {
+    width: 90%;
+    padding: 35px 0px;
   }
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information {
-    width: 55%;
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .reading_card_text {
+    padding: 10px 40px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .reading_card_text img {
+    width: 70%;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area {
+    width: 35%;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content {
+    width: 60%;
+    flex-direction: column;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information {
+    width: 100%;
+    max-width: none;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information .edit_profile {
+    margin: 15px 0px 0px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon {
+    flex-direction: row;
+    margin: 20px 0px 0px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
+    width: 60px;
+  }
+  .main.personal .frame_effect .folder .folder_content .medal_statistics .medal_statistics_title {
+    color: #5B3716;
+    margin: 0px 0px 10px;
   }
   .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project {
-    width: 31%;
-    margin: 20px 1%;
+    width: 19%;
+    margin: 20px 3%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main.personal .frame_effect .folder .folder_content .membership_card_area {
+    max-width: 350px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .reading_card_text {
+    padding: 10px 40px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .reading_card_text img {
+    width: 100%;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area {
+    flex-direction: column;
+    padding: 10px 20px 25px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content {
+    width: 100%;
+    margin: 10px 0px 0px;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon {
+    flex-direction: column;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area {
+    display: flex;
+    align-items: center;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
+    margin: 5px 10px 5px 0px;
+  }
+  .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project {
+    width: 44%;
+    margin: 5px 3%;
   }
 }
 
