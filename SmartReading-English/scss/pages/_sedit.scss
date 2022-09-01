@@ -22,7 +22,7 @@
                         border-radius: 50%;
                         line-height: 0;
 
-                        &:hover{
+                        &:hover {
                             background-color: darken($main_color, 10%);
                         }
                     }
@@ -92,6 +92,124 @@
                 }
             }
         }
+
+
+    }
+}
+
+.avatar_modal {
+    max-width: none !important;
+    width: 60%;
+    padding: 0;
+    .avatar_modal_top{
+        position: relative;
+        background-color: lighten($main_color, 15%);
+        min-height: 150px;
+        border-radius: 8px 8px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .now_avatar{
+            width: 150px;
+            position: absolute;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+        .avatar_name{
+            margin: 0px auto 15px;
+            h4{
+                color: $brown;
+            }
+        }
+        
+        
+    }
+    .avatar_area {
+        background-image: url(../image/svg/reading_card_bg.svg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 5%;
+
+        .avatar_title{
+            text-align: center;
+            color: $brown;
+            margin: 10px auto;
+        }
+
+        .avatar_swiper {
+            width: 80%;
+            max-width: 1200px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+
+            .swiper-wrapper{
+                .swiper-slide{
+                    transform: scale(0.95);
+                    display: flex;
+                    justify-content: center;
+                    .swiper_avatar_img{
+                        margin: 5px;
+                        padding: 5px;
+                        border: 2px solid $transparent;
+                        cursor: pointer;
+                        line-height: 0;
+                        &:hover{
+                            border: 2px solid $main_color;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .avatar_swiper_button_next {
+            right: 5%;
+            &:after {
+                content: "next";
+            }
+        }
+
+        .avatar_swiper_button_prev {
+            left: 5%;
+            &:after {
+                content: "prev";
+            }
+        }
+
+        .avatar_swiper_button_next,
+        .avatar_swiper_button_prev {
+            border-radius: 50%;
+            border: 1px solid $main_color;
+            width: 50px !important;
+            height: 50px !important;
+            position: absolute;
+            top: 50%;
+            transform: translate(0px , -50%);
+            z-index: 10;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:after {
+                font-family: swiper-icons;
+                text-transform: none !important;
+                letter-spacing: 0;
+                text-transform: none;
+                font-variant: initial;
+                line-height: 1;
+                color: $main_color;
+            }
+        }
     }
 }
 
@@ -101,15 +219,12 @@
 @media screen and (max-width: 1024px) {
     .main {
         &.register {
-
             .register_area {
                 .account_area {
                     .register_item {
-
                         input {
                             font-size: 18px;
                         }
-
                         select {
                             font-size: 18px;
                         }
@@ -118,23 +233,67 @@
             }
         }
     }
+
+    .avatar_modal {
+        width: 80%;
+        .avatar_modal_top{
+            min-height: 120px;
+    
+            .now_avatar{
+                width: 120px;
+            }
+            .avatar_name{
+                margin: 0px auto 10px;
+            }
+            
+            
+        }
+        .avatar_area {
+            padding: 20px 5%;
+    
+            .avatar_swiper_button_next,
+            .avatar_swiper_button_prev {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
     .main {
         &.register {
-    
+
             .register_area {
                 .account_area {
                     .student_photo {
                         width: 140px;
-    
+
                         .student_photo_btn {
                             width: 40px;
                             padding: 5px;
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .avatar_modal {
+        .avatar_modal_top{
+            min-height: 100px;
+    
+            .now_avatar{
+                width: 100px;
+            }
+        }
+        .avatar_area {
+            padding: 10px 5%;
+    
+            .avatar_swiper_button_next,
+            .avatar_swiper_button_prev {
+                width: 30px !important;
+                height: 30px !important;
             }
         }
     }
