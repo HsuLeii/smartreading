@@ -546,7 +546,7 @@ div#toggle span:after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;
+  padding: 10px 2.5%;
   position: relative;
   z-index: 4;
 }
@@ -638,7 +638,7 @@ div#toggle span:after {
 .header nav .menu div li a {
   color: #5B3716;
   padding: 5px 8px;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .header nav .menu div li:hover a {
@@ -656,14 +656,17 @@ div#toggle span:after {
   margin: 0px 0px 0px 5px;
   border-radius: 10px;
   background-color: #5B3716;
+  position: relative;
 }
 
 .header nav .menu div.menu_language li {
   margin: 0 auto;
+  position: initial;
 }
 
 .header nav .menu div.menu_language li a {
   color: #fff;
+  padding: 0;
 }
 
 .header nav .menu div.menu_language li.dropdown span.arrow {
@@ -766,7 +769,8 @@ div#toggle span:after {
   .header nav .menu div.menu_language {
     margin: 0px auto 0px 5%;
     text-align: left;
-    padding: 5px 0px;
+    padding: 10px;
+    width: auto;
   }
   .header nav .menu div.menu_language li {
     padding: 0px;
@@ -781,18 +785,22 @@ div#toggle span:after {
     width: calc(140px - 20px);
   }
   .header nav .menu div.menu_language li .dropdown_content.open {
-    transform: translate(0%, -5px);
+    transform: translate(0%, 3px);
     padding: 0px;
     z-index: 1;
     left: 0;
-    width: 140px;
+    width: 100%;
     padding: 10px 0px;
   }
   .header nav .menu div.menu_language li .dropdown_content.open li {
-    padding: 5px 0px;
+    padding: 5px 10px;
   }
   .header nav .menu div li {
     padding: 10px 0px;
+  }
+  .header nav .menu div li.dropdown .dropdown_content {
+    left: 0px;
+    transform: translate(0%, 6px);
   }
   .header nav .menu div li.dropdown.avatar_dropdown .avatar_image {
     margin: 15px 0px;
@@ -4237,7 +4245,7 @@ h-word {
 }
 
 .main.login .login_text {
-  width: calc(85% - 450px);
+  width: calc(85% - 550px);
   max-width: 550px;
   margin-left: 10%;
   position: absolute;
@@ -4251,8 +4259,8 @@ h-word {
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px grey;
-  width: 450px;
-  margin-left: calc(95% - 450px);
+  width: 550px;
+  margin-left: calc(95% - 550px);
 }
 
 .main.login .login_area .account_area .account_secret_area {
@@ -4400,8 +4408,8 @@ h-word {
     padding-bottom: 100px;
   }
   .main.login .login_text {
-    width: calc(450px * 0.8);
-    margin-left: calc(95% - 450px * 0.9);
+    width: calc(550px * 0.8);
+    margin-left: calc(95% - 550px * 0.9);
     top: calc(130px / 2);
     transform: translate(0%, -50%);
   }
@@ -4409,12 +4417,12 @@ h-word {
 
 @media screen and (max-width: 1024px) {
   .main.login .login_text {
-    width: calc(350px * 0.8);
-    margin-left: calc(95% - 350px * 0.9);
+    width: calc(450px * 0.8);
+    margin-left: calc(95% - 450px * 0.9);
   }
   .main.login .login_area {
-    width: 350px;
-    margin-left: calc(95% - 350px);
+    width: 450px;
+    margin-left: calc(95% - 450px);
   }
   .main.login .login_area .account_area .account_secret_area {
     flex-direction: column;
@@ -4442,9 +4450,36 @@ h-word {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .main.login {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .main.login .login_text {
+    width: 60%;
+    margin-left: 0px;
+    margin: 0 auto 20px;
+    max-width: none;
+    position: relative;
+    top: auto;
+    transform: translate(0px, 0px);
+  }
+  .main.login .login_area {
+    width: 70%;
+    margin-left: 0px;
+    margin: 0 auto;
+  }
+  .main.login .login_area .forget_password {
+    flex-direction: column;
+  }
+  .main.login .login_area .forget_password a {
+    margin: 10px 0px 0px;
+  }
+}
+
 @media screen and (max-width: 499px) {
   .main.login .login_area {
-    margin: 0 auto;
+    width: 90%;
   }
   .main.login .login_area .account_area .account_secret_area label {
     font-size: 13px;
