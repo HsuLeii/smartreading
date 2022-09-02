@@ -24,7 +24,7 @@ $(".language_dropdown").click(function () {
 
 $(".avatar_dropdown").click(function () {
   $(this).children(".dropdown_content").toggleClass("open");
-  (".language_dropdown").removeClass("open");
+  $(".language_dropdown").removeClass("open");
   $(".language_dropdown").children(".dropdown_content").removeClass("open");
 });
 
