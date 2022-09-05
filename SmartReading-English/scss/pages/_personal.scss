@@ -30,7 +30,7 @@
                     vertical-align: top;
 
                     .membership_card_area {
-                        width: 400px;
+                        width: 350px;
                         background-color: $white;
                         border-radius: 10px;
                         overflow: hidden;
@@ -46,6 +46,10 @@
                             background-repeat: repeat;
                             background-size: cover;
                             background-position: center;
+
+                            img{
+                                max-width: 400px;
+                            }
                         }
 
                         .member_information_area {
@@ -110,7 +114,7 @@
                     }
 
                     .medal_statistics {
-                        width: calc(95% - 400px);
+                        width: calc(95% - 350px);
                         display: inline-block;
                         vertical-align: top;
                         .medal_statistics_title {
@@ -131,7 +135,7 @@
                                 align-items: center;
 
                                 .medal_project_img{
-                                    margin-left: -10%;
+                                    margin: 0px 0px 0px -10%;
                                     width: 25%;
                                     background-color: $white;
                                     padding: 10px;
@@ -140,6 +144,7 @@
 
                                 .medal_project_text {
                                     margin: 5px 10px;
+                                    width: 75%;
 
                                     .medal_project_title{
                                         display: flex;
@@ -179,6 +184,21 @@
                                         font-weight: bold;
                                         text-align: center;
                                     }
+
+                                    &.medal_project_first_grade{
+                                        .medal_project_title{
+                                            .medal_project_mark{
+                                                background-color: $first_grade_color;
+                                            }
+                                        }
+                                        .progress_content{
+                                            .drag_line{
+                                                .line{
+                                                    background-color: $first_grade_color;
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -190,88 +210,149 @@
 
 }
 
-@media screen and (max-width: 1200px) {
-    // .main {
-    //     &.personal {
-    //         .frame_effect {
-    //             .folder {
-    //                 .folder_content {
-    //                     .membership_card_area {
-    //                         width: 100%;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    // }
+@media screen and (max-width: 1400px) {
+    .main {
+        &.personal {
+            .frame_effect {
+    
+                .folder {
+                    .folder_content {
+                        
+                        .medal_statistics {
+    
+                            .medallion_area {
+                                .medal_project {
+                                    flex-direction: column;
+                                    margin: 20px auto 40px;
+    
+                                    .medal_project_img{
+                                        width: 40%;
+                                        margin: -40px auto 20px;
+                                    }
+    
+                                    .medal_project_text {
+                                        width: 90%;
+    
+                                        .medal_project_title{
+                                            display: flex;
+                                            margin: 0px auto 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
 }
 
+@media screen and (max-width: 1200px){
+    .main{
+        &.personal{
+            .frame_effect{
+                .folder{
+                    .folder_content {
+                        width: calc(100% - 0px);
+                        min-height: 500px;
+                        margin: 0px;
+                        padding: 15px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
 @media screen and (max-width: 1024px) {
-    // .main {
-    //     &.personal {
-    //         .frame_effect {
-    //             width: 90%;
-    //             padding: 35px 0px;
-    //             .folder {
-    //                 .folder_content {
-    //                     .membership_card_area {
-    //                         .reading_card_text{
-    //                             padding: 10px 40px;
-    //                             img{
-    //                                 width: 70%;
-    //                             }
-    //                         }
-    //                         .member_information_area {
-    //                             .avatar_area {
-    //                                 width: 35%;
-    //                             }
+    .main {
+        &.personal {
+            .frame_effect {
+                padding: 35px 0px;
+                .folder {
+    
+                    .folder_content {
+    
+                        .membership_card_area {
+                            width: 100%;
+                            position: relative;
+                            top: auto;
+    
+                            .member_information_area {
+                                flex-direction: row;
+    
+                                .avatar_area {
+                                    width: 35%;
+                                    margin: 0;
+                                }
+    
+                                .member_information_content {
+                                    width: 60%;
+                                    .member_information{
+                                        text-align: left;
+                                        margin: 0 auto 20px;
+                                    }
+                                    
+                                    .member_information_icon{
+                                        flex-direction: row;
+                                        .member_icon_area{
+                                            flex-direction: column;
+                                            margin: 0px 10px 0px 0px;
+                                            .member_icon{
+                                                margin: 10px auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        .medal_statistics {
+                            width: 100%;
 
-    //                             .member_information_content{
-    //                                 width: 60%;
-    //                                 flex-direction: column;
-
-    //                                 .member_information {
-    //                                     width: 100%;
-    //                                     max-width: none;
-    //                                     .edit_profile{
-    //                                         margin: 15px 0px 0px;
-    //                                     }
-    //                                 }
-    //                                 .member_information_icon{
-    //                                     flex-direction: row;
-    //                                     margin: 20px 0px 0px;
-    //                                     .member_icon_area{
-    //                                         .member_icon{
-    //                                             width: 60px;
-    //                                         }
-    //                                     }
-    //                                 }
-    //                             }
+                            .medal_statistics_title{
+                                h3{
+                                    text-align: center;
+                                }
+                            }
+    
+                            .medallion_area {
+                                display: flex;
                                 
-    //                         }
-    //                     }
-
-    //                     .medal_statistics {
-    //                         .medal_statistics_title {
-    //                             color: $brown;
-    //                             margin: 0px 0px 10px;
-    //                         }
+                                .medal_project {
+                                    width: 45%;
+                                    margin: 20px 2.5% 60px;
     
-    //                         .medallion_area {
+                                    .medal_project_img{
+                                        width: 50%;
+                                        margin: -40px auto 0px;
+                                    }
     
-    //                             .medal_project {
-    //                                 width: 27%;
-    //                                 margin: 20px 3%;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    // }
+                                    .medal_project_text {
+                                        margin: 5px 10px;
+    
+                                        .medal_project_title{
+                                            flex-direction: column;
+    
+                                            .medal_project_mark{
+                                                margin: 10px auto 0px;
+                                                order: 2;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
 }
 
 
@@ -280,43 +361,74 @@
     .main {
         &.personal {
             .frame_effect {
+    
                 .folder {
+    
                     .folder_content {
+    
                         .membership_card_area {
-                            max-width: 350px;
-                            .reading_card_text{
-                                padding: 10px 40px;
-                                img{
-                                    width: 100%;
-                                }
-                            }
+                            width: 90%;
+                            margin: 0 auto;
+                            display: block;
+    
                             .member_information_area {
                                 flex-direction: column;
-                                padding: 10px 20px 25px;
-
+    
+                                .avatar_area {
+                                    width: 45%;
+                                    margin: 0 auto;
+                                }
+    
                                 .member_information_content {
                                     width: 100%;
-                                    margin: 10px 0px 0px;
-
+                                    .member_information{
+                                        text-align: center;
+                                    }
                                     .member_information_icon{
+                                        justify-content: center;
                                         flex-direction: column;
                                         .member_icon_area{
-                                            display: flex;
+                                            margin: 0px 5px;
                                             align-items: center;
+                                            justify-content: center;
+                                            flex-direction: row;
                                             .member_icon{
-                                                margin: 5px 10px 5px 0px;
+                                                margin: 10px;
+                                                width: 50px;
+                                                padding: 5px;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-
+    
                         .medal_statistics {
+                            width: 100%;
+                            margin: 40px auto 0px;
+    
                             .medallion_area {
                                 .medal_project {
-                                    width: 44%;
-                                    margin: 5px 3%;
+                                    width: 90%;
+                                    flex-direction: row;
+                                    margin: 20px 0px 20px 10%;
+    
+                                    .medal_project_img{
+                                        margin: 0px 0px 0px -10%;
+                                        width: 25%;
+                                        padding: 5px;
+                                    }
+    
+                                    .medal_project_text {
+                                        margin: 5px 10px;
+                                        width: 75%;
+                                        .medal_project_title{
+                                            align-items: flex-start;
+                                            .medal_project_mark{
+                                                margin: 10px 0px 0px;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -324,7 +436,7 @@
                 }
             }
         }
-
+    
     }
 }
 
@@ -332,14 +444,29 @@
     .main {
         &.personal {
             .frame_effect {
+    
                 .folder {
+    
                     .folder_content {
-
+                        .membership_card_area{
+                            width: 100%;
+                        }
+    
                         .medal_statistics {
+    
                             .medallion_area {
                                 .medal_project {
-                                    width: 70%;
-                                    margin: 15px auto;
+                                    flex-direction: column;
+                                    margin: 20px auto;    
+                                    .medal_project_img{
+                                        margin: -40px auto 0px;
+                                        width: 50%;
+                                    }
+    
+                                    .medal_project_text {
+                                        margin: 5px auto;
+                                        width: 85%;
+                                    }
                                 }
                             }
                         }
@@ -347,6 +474,6 @@
                 }
             }
         }
-
+    
     }
 }
