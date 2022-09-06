@@ -117,8 +117,8 @@ $(function () {
   $(".nopic-text").css({
     "height": nopicheight
   });
-  // var halftextwidth = $(".book-page-bg").width();
-  // $(".text").css({"max-width": halftextwidth});
+  var halftextwidth = $(".book-page-bg").width();
+  $(".text").css({"max-width": halftextwidth});
   // var textheight = $(".a2-2-book-page-bg > img").height() / 2;
   // $(".a2-2-text").css({"max-height": textheight});
 });
