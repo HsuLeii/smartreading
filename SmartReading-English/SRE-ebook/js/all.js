@@ -18,6 +18,7 @@ var read = document.querySelector('.read-menu-container');
 var vocabulary = document.querySelector('.word-menu-container');
 var page = document.querySelector('.book-page');
 var playarea = document.querySelector('.play-area');
+var halftextwidth = $(".book-page-bg").width();
 
 $("#word-id").change(function () {
   if ($(this).is(":checked")) {
@@ -36,6 +37,9 @@ $("#word-id").change(function () {
     $(".nopic-text").css({
       "width": "auto" ,"max-width": "90%" , "max-height": "calc(100vh - 240px)"
     });
+    $(".big-half-text").css({
+      "width": halftextwidth , "max-height": "calc((90vh - 200px) / 4 * 1)"
+    });
   } else {
     box.classList.remove("open");
     book.classList.remove("move");
@@ -50,6 +54,9 @@ $("#word-id").change(function () {
     });
     $(".nopic-text").css({
       "max-width": "45%" , "max-height": "calc(100vh - 240px)"
+    });
+    $(".big-half-text").css({
+      "max-width": halftextwidth , "max-height": "calc((90vh - 200px) / 4 * 1)"
     });
   }
 });
@@ -118,7 +125,7 @@ $(function () {
     "height": nopicheight
   });
   var halftextwidth = $(".book-page-bg").width();
-  $(".text").css({"max-width": halftextwidth});
+  $(".big-half-text").css({"max-width": halftextwidth});
   // var textheight = $(".a2-2-book-page-bg > img").height() / 2;
   // $(".a2-2-text").css({"max-height": textheight});
 });
