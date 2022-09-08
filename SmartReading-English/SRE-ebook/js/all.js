@@ -38,7 +38,7 @@ $("#word-id").change(function () {
       "width": "auto" ,"max-width": "90%" , "max-height": "calc(100vh - 240px)"
     });
     $(".big-half-text").css({
-      "width": halftextwidth , "max-height": "calc((90vh - 200px) / 4 * 1)"
+      "width": halftextwidth , "max-height": "calc((100vh - 250px) / 4 * 1.2)"
     });
   } else {
     box.classList.remove("open");
@@ -56,7 +56,7 @@ $("#word-id").change(function () {
       "max-width": "45%" , "max-height": "calc(100vh - 240px)"
     });
     $(".big-half-text").css({
-      "max-width": halftextwidth , "max-height": "calc((90vh - 200px) / 4 * 1)"
+      "max-width": halftextwidth , "max-height": "calc((100vh - 250px) / 4 * 1.2)"
     });
   }
 });
