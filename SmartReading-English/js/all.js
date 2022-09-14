@@ -30,18 +30,18 @@ $(".avatar_dropdown").click(function () {
 
 //scroll-top 按鈕開始
 $(document).ready(function () {
-  $('.scroll_top').hide();
+  $(".scroll_top").hide();
   $(window).scroll(function () {
     var windowTop = $(window).scrollTop();
     if (windowTop > 100) {
-      $('.scroll_top').fadeIn();
+      $(".scroll_top").fadeIn();
     } else {
-      $('.scroll_top').fadeOut();
+      $(".scroll_top").fadeOut();
     }
   });
   // scroll body to 0px on click
-  $('.scroll_top').click(function () {
-    $('body,html').animate({
+  $(".scroll_top").click(function () {
+    $("body,html").animate({
       scrollTop: 0
     }, 500);
   });
@@ -49,22 +49,22 @@ $(document).ready(function () {
 //scroll-top 按鈕結束
 
 // 彈跳視窗資訊書籍選擇開始
-$('.modal_btn ul li.introduction').click(function () {
-  $('.modal_btn ul li').removeClass('active');
-  $('.modal_btn ul li.introduction').addClass('active');
-  var selector = $('.modal_btn ul li.introduction').attr('data_filter');
-  $('.introduction_item').isotope({
+$(".modal_btn ul li.introduction").click(function () {
+  $(".modal_btn ul li").removeClass("active");
+  $(".modal_btn ul li.introduction").addClass("active");
+  var selector = $(".modal_btn ul li.introduction").attr("data_filter");
+  $(".introduction_item").isotope({
     filter: selector
   })
 });
-$('.item.vocabulary').hide();
-$('.modal_btn ul li.vocabulary').click(function () {
-  $('.modal_btn ul li').removeClass('active');
-  $('.modal_btn ul li.vocabulary').addClass('active');
-  $('.item.vocabulary').addClass('active');
-  $('.item.vocabulary').show();
-  var selector = $('.modal_btn ul li.vocabulary').attr('data_filter');
-  $('.introduction_item').isotope({
+$(".item.vocabulary").hide();
+$(".modal_btn ul li.vocabulary").click(function () {
+  $(".modal_btn ul li").removeClass("active");
+  $(".modal_btn ul li.vocabulary").addClass("active");
+  $(".item.vocabulary").addClass("active");
+  $(".item.vocabulary").show();
+  var selector = $(".modal_btn ul li.vocabulary").attr("data_filter");
+  $(".introduction_item").isotope({
     filter: selector
   })
 });
@@ -184,29 +184,12 @@ $(".ninth_grade_background").click(function () {
 });
 // 分級對應結束
 
-//閱讀地圖票券開始
-// $(".owl-carousel").owlCarousel({
-//   center: true,
-//     loop:false, // 循環播放
-//   nav: true, // 顯示箭頭
-//   dots: false,// 顯示點點
-//   rewindNav: false,
-//   navText: ["<span class='owl_arrow arrow_left'><</span>","<span class='owl_arrow arrow_right'>></span>"],
-//   responsive: {
-//     0: {
-//       items: 1.5 
-//     },
-//     499: {
-//       items: 2
-//     },
-//     768: {
-//       items: 2.5
-//     },
-//     1200: {
-//       items: 5,
-//       center: false,
-//     }
-//   }
-// });
-//閱讀地圖票券結束
+// 彈跳視窗資訊書籍選擇開始
+$(".notget").mouseover(function(){
+  $(".avatar_instructions").show();
+});
+$(".notget").mouseleave(function(){
+  $(".avatar_instructions").hide();
+});
+// 彈跳視窗資訊書籍選擇結束
 
