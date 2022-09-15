@@ -1037,6 +1037,7 @@ input:checked~label:after {
 /* 彈跳獎章開始 */
 .blocker {
 	z-index: 6;
+	overflow: hidden;
 }
 
 .ebook_medal_modal {
@@ -1070,10 +1071,7 @@ input:checked~label:after {
 	margin: 20px auto;
 	width: 65%;
 	max-width: 350px;
-}
-
-.ebook_modal_medal>img {
-	animation: shine 4s ease-in-out infinite;
+	animation: jump 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 
 .ebook_modal_button_area {
@@ -1101,24 +1099,15 @@ input:checked~label:after {
 
 .navigator_area {
 	position: absolute;
-	right: 0;
+	left: 100%;
 	bottom: 0;
 	width: 30%;
-	transform: translate(50%, -20%);
+	transform: translate(-50%, -20%);
+	animation: bookman_move 2.5s cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 
 .close-modal {
 	display: none !important;
-}
-
-
-.jump {
-	animation: jump 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-}
-
-.scale {
-	animation: scale 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-	transform-origin: bottom;
 }
 
 /* 彈跳獎章結束 */
@@ -1517,16 +1506,13 @@ input:checked~label:after {
 	}
 }
 
-@keyframes scale {
+@keyframes bookman_move {
 
-	0%,
-	10%,
-	70%,
-	100% {
-		transform: scaleY(1);
+	0%{
+		transform: translate(100%, -20%);
 	}
 
 	50% {
-		transform: scaleY(.2);
+		transform: translate(-50%, -20%);
 	}
 }
