@@ -101,7 +101,8 @@
     max-width: none !important;
     width: 60%;
     padding: 0;
-    .avatar_modal_top{
+
+    .avatar_modal_top {
         position: relative;
         background-color: lighten($main_color, 15%);
         min-height: 150px;
@@ -110,7 +111,7 @@
         justify-content: center;
         align-items: flex-end;
 
-        .now_avatar{
+        .now_avatar {
             width: 150px;
             position: absolute;
             background-position: center;
@@ -120,15 +121,18 @@
             top: 0;
             transform: translate(-50%, -50%);
         }
-        .avatar_name{
+
+        .avatar_name {
             margin: 0px auto 15px;
-            h4{
+
+            h4 {
                 color: $brown;
             }
         }
-        
-        
+
+
     }
+
     .avatar_area {
         background-image: url(../image/svg/reading_card_bg.svg);
         background-size: cover;
@@ -138,17 +142,16 @@
         margin: 0 auto;
         padding: 20px 5% 60px;
 
-        .avatar_title{
+        .avatar_title {
             text-align: center;
             color: $brown;
             margin: 10px auto;
         }
 
-        .avatar_instructions{
+        .avatar_instructions {
             margin: 0 auto;
             text-align: center;
             font-weight: bold;
-            display: none;
             position: absolute;
             top: 100%;
             left: 50%;
@@ -166,23 +169,50 @@
             margin-left: auto;
             margin-right: auto;
 
-            .swiper-wrapper{
-                .swiper-slide{
+            .swiper-wrapper {
+                .swiper-slide {
                     display: flex;
                     justify-content: center;
 
-                    &.notget{
+                    &.notget {
                         filter: grayscale(1);
                         opacity: 0.8;
                         cursor: auto;
 
-                        .lock_icon{
+                            
+
+                            &:after {
+                                content: attr(data-des);
+                                position: absolute;
+                                bottom: 10px;
+                                left: 10px;
+                                font-size: 17px;
+                                transform: translate(0, 0px);
+                                    opacity: 0;
+                                z-index: 1;
+                                transition: .5s;
+                                color: $white;
+                                background-color: $brown;
+                                padding: 5px;
+                                border-radius: 10px;
+                            }
+
+                            &:hover{
+                                &:after {
+                                        opacity: 1;
+                                }
+                            }
+
+                        
+
+
+                        .lock_icon {
                             position: absolute;
                             left: 50%;
                             top: 50%;
-                            transform: translate(-50% , -50%);
+                            transform: translate(-50%, -50%);
 
-                            i{
+                            i {
                                 font-size: 40px;
                                 line-height: 0.9;
                                 padding: 15px;
@@ -192,19 +222,22 @@
                             }
                         }
 
-                        .swiper_avatar_img{
+                        .swiper_avatar_img {
                             cursor: auto;
-                            &:hover{
+
+                            &:hover {
                                 border: 2px solid $transparent;
                             }
                         }
                     }
-                    .swiper_avatar_img{
+
+                    .swiper_avatar_img {
                         padding: 10px;
                         border: 2px solid $transparent;
                         cursor: pointer;
                         line-height: 0;
-                        &:hover{
+
+                        &:hover {
                             border: 2px solid $main_color;
                             border-radius: 50%;
                         }
@@ -215,6 +248,7 @@
 
         .avatar_swiper_button_next {
             right: 5%;
+
             &:after {
                 content: "next";
             }
@@ -222,6 +256,7 @@
 
         .avatar_swiper_button_prev {
             left: 5%;
+
             &:after {
                 content: "prev";
             }
@@ -235,7 +270,7 @@
             height: 50px !important;
             position: absolute;
             top: 50%;
-            transform: translate(0px , -50%);
+            transform: translate(0px, -50%);
             z-index: 10;
             cursor: pointer;
             display: flex;
@@ -267,6 +302,7 @@
                         input {
                             font-size: 18px;
                         }
+
                         select {
                             font-size: 18px;
                         }
@@ -278,20 +314,23 @@
 
     .avatar_modal {
         width: 80%;
-        .avatar_modal_top{
+
+        .avatar_modal_top {
             min-height: 120px;
-    
-            .now_avatar{
+
+            .now_avatar {
                 width: 120px;
             }
-            .avatar_name{
+
+            .avatar_name {
                 margin: 0px auto 10px;
             }
-            
-            
+
+
         }
+
         .avatar_area {
-    
+
             .avatar_swiper_button_next,
             .avatar_swiper_button_prev {
                 width: 40px !important;
@@ -321,23 +360,24 @@
     }
 
     .avatar_modal {
-        .avatar_modal_top{
+        .avatar_modal_top {
             min-height: 100px;
-    
-            .now_avatar{
+
+            .now_avatar {
                 width: 100px;
             }
         }
+
         .avatar_area {
             padding: 10px 5% 40px;
-    
+
             .avatar_swiper_button_next,
             .avatar_swiper_button_prev {
                 width: 30px !important;
                 height: 30px !important;
             }
 
-            .avatar_instructions{
+            .avatar_instructions {
                 padding: 5px 10px;
                 width: 80%;
             }
@@ -364,6 +404,6 @@
                 }
             }
         }
-        
+
     }
 }

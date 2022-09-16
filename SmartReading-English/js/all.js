@@ -185,11 +185,11 @@ $(".ninth_grade_background").click(function () {
 // 分級對應結束
 
 // 彈跳視窗資訊書籍選擇開始
-$(".notget").mouseover(function(){
-  $(".avatar_instructions").show();
-});
-$(".notget").mouseleave(function(){
-  $(".avatar_instructions").hide();
-});
+// $(".notget").mouseover(function(){
+//   $(".avatar_instructions").show();
+// });
+// $(".notget").mouseleave(function(){
+//   $(".avatar_instructions").hide();
+// });
 // 彈跳視窗資訊書籍選擇結束
 
