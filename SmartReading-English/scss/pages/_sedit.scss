@@ -148,20 +148,6 @@
             margin: 10px auto;
         }
 
-        .avatar_instructions {
-            margin: 0 auto;
-            text-align: center;
-            font-weight: bold;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: $brown;
-            color: $white;
-            padding: 5px 15px;
-            border-radius: 10px;
-        }
-
         .avatar_swiper {
             width: 80%;
             max-width: 1200px;
@@ -178,17 +164,15 @@
                         filter: grayscale(1);
                         opacity: 0.8;
                         cursor: auto;
-
                             
-
                             &:after {
                                 content: attr(data-des);
                                 position: absolute;
                                 bottom: 10px;
                                 left: 10px;
-                                font-size: 17px;
+                                font-size: 15px;
                                 transform: translate(0, 0px);
-                                    opacity: 0;
+                                opacity: 0;
                                 z-index: 1;
                                 transition: .5s;
                                 color: $white;
@@ -331,6 +315,18 @@
 
         .avatar_area {
 
+            .avatar_swiper {
+                .swiper-wrapper {
+                    .swiper-slide {
+                        &.notget {
+                                &:after {
+                                    font-size: 13px;
+                                }
+                        }
+                    }
+                }
+            }
+
             .avatar_swiper_button_next,
             .avatar_swiper_button_prev {
                 width: 40px !important;
@@ -371,15 +367,22 @@
         .avatar_area {
             padding: 10px 5% 40px;
 
+            .avatar_swiper {
+                .swiper-wrapper {
+                    .swiper-slide {
+                        &.notget {
+                                &:after {
+                                    font-size: 11px;
+                                }
+                        }
+                    }
+                }
+            }
+
             .avatar_swiper_button_next,
             .avatar_swiper_button_prev {
                 width: 30px !important;
                 height: 30px !important;
-            }
-
-            .avatar_instructions {
-                padding: 5px 10px;
-                width: 80%;
             }
         }
     }
