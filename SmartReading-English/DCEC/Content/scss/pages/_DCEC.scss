@@ -407,3 +407,431 @@ body {
         }
     }
 }
+
+@page {
+    /*size: portrait;  直向 */
+    /*size: landscape;  橫向 */
+    /*size: A4;  紙張大小 */
+    size: A4 portrait;
+    /* 混合使用 */
+    min-height: 100vh;
+    margin: 0;
+    /* 邊界與內容的距離 */
+  }
+  
+  @media print {
+    body {
+        background-color: $body_bg;
+        counter-reset: page-number;
+        /* 初始化，名字可自訂，數值為0 */
+        -webkit-print-color-adjust: exact;
+    }
+
+    section {
+        width: 100vw;
+        height: 100vh;
+        page-break-after: always;
+      }
+    
+    .page {
+        /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+        /* page-break-after: always;  碰到此元素會直接換頁 */
+        page-break-inside: avoid;
+        position: relative;
+        background: linear-gradient(90deg, $main_color 38%, $white 0%);
+        max-width: 1024px;
+        width: 1024px;
+        height: 1448px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        overflow: hidden;
+    
+        &:after {
+            /* content: counter(page-number); 取用該名字的計數器 */
+            /*counter-increment: page-number 1;  增加計數器數值 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+    
+        .report_title {
+            width: 35%;
+            z-index: 2;
+    
+            .text_content {
+    
+                h3 {
+                    border-bottom: 5px solid $white;
+                    margin: 10px auto;
+                    font-size:42px;
+                }
+    
+                .chinese_title {
+                    font-size: 34px;
+                    margin-bottom: 10px;
+                    color: $white;
+                }
+    
+                .english_title {
+                    font-size: 15px;
+                    color: $white;
+                }
+    
+            }
+    
+            .material {
+                margin-top: 20px;
+    
+                .name,
+                .date,
+                .language {
+                    margin-bottom: 30px;
+    
+                    p {
+                        color: $white;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid $white;
+                    }
+                }
+            }
+        }
+    
+        .test_content {
+            width: 60%;
+            z-index: 2;
+            height: calc(100% - 417px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                margin-bottom: 9px;
+    
+                .fraction_area {
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                    margin: 15px auto 5px;
+    
+                    .fraction,
+                    .average {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 10px;
+    
+                        p {
+                            &:nth-child(2) {
+                                padding: 5px 10px;
+                                border-radius: 10px;
+                            }
+    
+                            &.score {
+                                font-size: 18px;
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+    
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+    
+                .title_mark {
+                    position: relative;
+                    width: 15%;
+                    z-index: 1;
+    
+                    .number_mark {
+                        position: absolute;
+                        left: -5%;
+                        top: -15%;
+                        width: 40%;
+                    }
+                }
+    
+                .item_content {
+                    background-color: $white;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    width: 85%;
+                    margin-left: -5%;
+    
+                    .content_title {
+                        padding: 10px 10px 10px 10%;
+                    }
+                }
+    
+                &.first_item {
+                    .fraction_area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $first_item_color;
+                                    border: 1.5px solid $first_item_color;
+                                }
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $first_item_color;
+                                    border: 1.5px solid $first_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item_content {
+                        border: 1px solid $first_item_color;
+    
+                        .content_title {
+                            background-color: $first_item_color;
+                        }
+    
+                        .content_introduce {
+                            padding: 10px 10px 10px 10%;
+                        }
+                    }
+                }
+    
+                &.two_item {
+                    .fraction_area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $two_item_color;
+                                    border: 1.5px solid $two_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $two_item_color;
+                                    border: 1.5px solid $two_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item_content {
+                        border: 1px solid $two_item_color;
+    
+                        .content_title {
+                            background-color: $two_item_color;
+                        }
+    
+                        .content_introduce {
+                            padding: 10px 10px 10px 10%;
+                        }
+                    }
+                }
+    
+                &.three_item {
+                    .fraction_area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $three_item_color;
+                                    border: 1.5px solid $three_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $three_item_color;
+                                    border: 1.5px solid $three_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item_content {
+                        border: 1px solid $three_item_color;
+    
+                        .content_title {
+                            background-color: $three_item_color;
+                        }
+    
+                        .content_introduce {
+                            padding: 10px 10px 10px 10%;
+                        }
+                    }
+                }
+    
+                &.four_item {
+                    .fraction_area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $four_item_color;
+                                    border: 1.5px solid $four_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $four_item_color;
+                                    border: 1.5px solid $four_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item_content {
+                        border: 1px solid $four_item_color;
+    
+                        .content_title {
+                            background-color: $four_item_color;
+                        }
+    
+                        .content_introduce {
+                            padding: 10px 10px 10px 10%;
+                        }
+                    }
+                }
+    
+                &.five_item {
+                    .fraction_area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $five_item_color;
+                                    border: 1.5px solid $five_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $five_item_color;
+                                    border: 1.5px solid $five_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item_content {
+                        border: 1px solid $five_item_color;
+    
+                        .content_title {
+                            background-color: $five_item_color;
+                        }
+    
+                        .content_introduce {
+                            padding: 10px 10px 10px 10%;
+                        }
+                    }
+                }
+            }
+    
+        }
+    
+        .chartbar_area {
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            bottom: 80px;
+    
+            .srscore,
+            .cefr_level,
+            .actfl_level {
+                position: relative;
+                width: 23%;
+                background-color: $chartbar_color;
+                border-radius: 50%;
+                max-width: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                z-index: 2;
+    
+                &:after {
+                    position: absolute;
+                    content: "";
+                    border: 2px dotted $black;
+                    width: 100%;
+                    height: 100%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: 6px;
+                    border-radius: 50%;
+                }
+    
+                h3{
+                    text-align: center;
+                }
+    
+                p {
+                    text-align: center;
+                    color: $dark_main_color;
+                    font-size: 22px;
+                }
+            }
+        }
+    
+        .bottom_text {
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: 1;
+    
+            &:before {
+                position: absolute;
+                content: "";
+                width: 1024px;
+                height: 1024px;
+                top: -512px;
+                background: $white;
+                border-radius: 50%;
+                z-index: -1;
+            }
+    
+            p {
+                margin: 0 auto;
+                padding: 10px 5%;
+                text-align: center;
+                color: $white;
+    
+                &:nth-child(1) {
+                    background-color: $main_color;
+                }
+    
+                &:nth-child(2) {
+                    background-color: $dark_main_color;
+                }
+            }
+        }
+    }
+  }
