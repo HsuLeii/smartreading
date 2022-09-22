@@ -407,7 +407,7 @@
                             align-items: center;
 
                             img {
-                                max-width: 200px;
+                                max-width: 90px;
                                 width: 75%;
                             }
 
@@ -430,6 +430,44 @@
                                 }
                             }
 
+                            .receive {
+                                button {
+                                    background-color: $main_color;
+                                    padding: 0px 10px;
+                                    color: $white;
+                                    margin: 5px auto;
+
+                                    &:disabled {
+                                        background-color: $grey;
+                                        border-radius: 10px;
+
+                                        &~.redeem_area_button{
+                                            display: inline-block;
+                                        }
+                                    }
+                                }
+
+                                .redeem_area_button {
+                                    display: none;
+                                    background-color: $brown;
+                                    color: $white;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                    width: calc(17px * 1.7);
+                                    margin: 0px 5px;
+                                    text-align: center;
+
+                                    &:hover {
+                                        background-color: darken($brown, 10%);
+                                    }
+                                }
+
+                                p {
+                                    color: $white;
+                                    cursor: pointer;
+                                }
+
+                            }
                         }
                     }
                     .swiper-slide {
@@ -442,26 +480,12 @@
                     .ticket_wrap {
                         width: 100%;
                         height: 100%;
+                        background-color: $ticket_bg;
+                        position: relative;
                         display: flex;
-                        flex-direction: column;
+                        align-items: center;
 
-                        .ticket {
-                            position: relative;
-
-                            &.ticket_left {
-                                width: 100%;
-                                background-color: $ticket_bg;
-
-                                .redeem {
-                                    display: none;
-                                    width: 30%;
-                                    position: absolute;
-                                    right: 10px;
-                                    top: 50%;
-                                    transform: translate(0px, -50%) rotate(45deg);
-                                }
-
-                                &:before,
+                        &:before,
                                 &:after {
                                     content: "";
                                     position: absolute;
@@ -482,12 +506,36 @@
                                     bottom: -5px;
                                 }
 
+                        .ticket {
+                                width: 100%;
+                                .redeem {
+                                    display: none;
+                                    width: 30%;
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translate(0px, -50%) rotate(45deg);
+                                }
+
+                                &.redeem_ticket {
+
+                                    padding-right: 3%;
+        
+                                        .redeem {
+                                            display: block;
+                                        }
+        
+                                    .ticket_right {
+                                        .receive{
+                                            display: none;
+                                        }
+                                    }
+        
+                                }
+
                                 .ticket_object {
                                     line-height: 0;
                                 }
-
-                            }
-
                             &.ticket_right {
                                 width: 100%;
                                 height: 100%;
@@ -778,23 +826,7 @@
                             }
                         }
 
-                        &.redeem_ticket {
-
-                            padding-right: 3%;
-
-                            .ticket_left {
-                                .redeem {
-                                    display: block;
-                                }
-                            }
-
-                            .ticket_right {
-                                .receive{
-                                    display: none;
-                                }
-                            }
-
-                        }
+                        
 
                         /* 波浪線 */
                         .wave_line {
@@ -857,6 +889,37 @@
                         span{
                             color: $white;
                         }
+                    }
+                    &:before {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-right: 10px solid $transparent;
+                        border-left: 10px solid $transparent;
+                        border-top: 12px solid $transparent;
+                        border-bottom: 12px solid $brown;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0%;
+                        -webkit-transform: translate(0%, -50%);
+                        transform: translate(0%, -100%);
+                    }
+                }
+
+                .redeem_area_explain {
+                    position: absolute;
+                    left: 5%;
+                    top: calc(100% - 0px);
+                    width: auto;
+                    max-width: 90%;
+                    @extend %boxShadow_gray;
+                    background-color: $brown;
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    display: none;
+                    z-index: 3;
+                    p {
+                        color: $white;
                     }
                     &:before {
                         content: "";
@@ -1052,9 +1115,6 @@
                     .ticket_area {
                         width: 90%;
                         .ticket_wrap {
-                            width: 100%;
-                            display: flex;
-                            flex-direction: column;
                             .ticket {
                                 position: relative;
                                 &.ticket_right {
@@ -1156,10 +1216,6 @@
                         
                         .medal_swiper-slide {
                             .medal_area {
-                                img {
-                                    width: 80%;
-                                    max-width: 120px;
-                                }
 
                                 .medal_area_text {
 
