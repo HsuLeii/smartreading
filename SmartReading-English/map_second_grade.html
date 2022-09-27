@@ -48,8 +48,8 @@
               <div class="map_object_sign_item">
                 <img class="map_bg" src="image/photo/map/second_grade/bg_1.png" alt="">
                 <img id="changeimage_1" src="image/photo/map/second_grade/gray_1.png" alt="">
-                <img id="changeimage_3" src="image/photo/map/second_grade/gray_3.png" alt="">
                 <img id="changeimage_2" src="image/photo/map/second_grade/gray_2.png" alt="">
+                <img id="changeimage_3" src="image/photo/map/second_grade/gray_3.png" alt="">
                 <img id="changeimage_4" src="image/photo/map/second_grade/gray_4.png" alt="">
                 <img id="changeimage_5" src="image/photo/map/second_grade/gray_5.png" alt="">
               </div>
@@ -92,7 +92,7 @@
                 <div class="medal_area">
                   <img src="image/photo/medal/second_grade.png" alt="">
                   <div class="medal_area_text">
-                    <p>閱讀獎章：10枚</p>
+                    <p>閱讀獎章：10</p>
                     <a class="medal_area_button">?</a>
                   </div>
                   <div class="receive">
@@ -220,6 +220,9 @@
             <p>
               <span>· </span><span>讀後測驗獲得滿分，可獲得一枚</span><br />
             </p>
+            <p>
+              <span>· </span><span>獲得10枚閱讀獎章能兌換一張票券</span><br />
+          </p>
           </div>
           <div class="swiper_ticket_next"></div>
           <div class="swiper_ticket_prev"></div>
@@ -741,12 +744,8 @@
   <!-- swiper -->
   <script src="js/swiper-bundle.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/gsap/1.19.1/TweenMax.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js">
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <!-- anime -->
+  <script src="js/anime.min.js"></script>
 
 
   <!-- my core JS -->
@@ -754,8 +753,8 @@
 
   <script>
     $(document).ready(function () {
-      $('header').load('header_login.html', function () {});
-      $('footer').load('footer.html', function () {});
+      $("header").load("header_login.html", function () {});
+      $("footer").load("footer.html", function () {});
     });
   </script>
 
@@ -767,7 +766,7 @@
     $(".medal_area_button").click(function (e) {
       $(".medal_area_explain").toggle();
       setTimeout(function () {
-        $('.medal_area_explain').fadeOut();
+        $(".medal_area_explain").fadeOut();
       }, 15000);
     });
   </script>
@@ -775,11 +774,11 @@
   <!-- 票券輪播 -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       spaceBetween: 0,
       navigation: {
-        nextEl: '.swiper_ticket_next',
-        prevEl: '.swiper_ticket_prev',
+        nextEl: ".swiper_ticket_next",
+        prevEl: ".swiper_ticket_prev",
       }
     });
   </script>
@@ -791,51 +790,54 @@
     $("#btn_5").on("click", function () {
       anime({
         targets: ticketArray[0],
-        backgroundColor: 'rgb(107, 86, 45)',
-        direction: 'alternate',
+        backgroundColor: "#6b562d",
+        direction: "alternate",
         duration: 500,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine",
       });
       anime({
         targets: ticketArray[1],
-        backgroundColor: 'rgb(107, 86, 45)',
-        direction: 'alternate',
+        backgroundColor: "#6b562d",
+        direction: "alternate",
         duration: 500,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine",
         delay: 500,
       });
       anime({
         targets: ticketArray[2],
-        backgroundColor: 'rgb(107, 86, 45)',
-        direction: 'alternate',
+        backgroundColor: "#6b562d",
+        direction: "alternate",
         duration: 500,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine",
         delay: 1000,
       });
       anime({
         targets: ticketArray[3],
-        backgroundColor: 'rgb(107, 86, 45)',
-        direction: 'alternate',
+        backgroundColor: "#6b562d",
+        direction: "alternate",
         duration: 500,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine",
         delay: 1500,
       });
       anime({
         targets: ticketArray[4],
-        backgroundColor: 'rgb(107, 86, 45)',
-        direction: 'alternate',
+        backgroundColor: "#6b562d",
+        direction: "alternate",
         duration: 500,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine",
         delay: 2000,
       });
       setTimeout(function () {
 
-        $("#changeimage_2").attr("src", "image/photo/map/second_grade/color_1.png");
-        $("#changeticket_2").attr("src", "image/photo/ticket/second_grade/color_1.png");
+        $("#changeimage_2").attr("src", "image/photo/map/second_grade/color_2.png");
+        $("#changeticket_2").attr("src", "image/photo/ticket/second_grade/color_2.png");
         $("#changeticket_2").parent().parent(".ticket").addClass("redeem_ticket");
+        $(".redeem_ticket").parent(".ticket_wrap").removeClass("ticket_animation");
       }, 600 * ticketLength);
 
     });
   </script>
 
 </body>
+
+</html>
