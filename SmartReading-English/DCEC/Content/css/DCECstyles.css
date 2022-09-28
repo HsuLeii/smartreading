@@ -85,15 +85,12 @@ body {
   /* page-break-after: always;  碰到此元素會直接換頁 */
   page-break-inside: avoid;
   position: relative;
-  background: linear-gradient(90deg, #ff9797 38%, #fff 0%);
   max-width: 1024px;
-  width: 1024px;
-  height: 1448px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-top: 15px;
   overflow: hidden;
 }
 
@@ -108,75 +105,108 @@ body {
   text-align: center;
 }
 
+.page h3 {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.page p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page h4 {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .page .report_title {
-  width: 35%;
+  width: 100%;
   z-index: 2;
-  margin: 15px 0 0;
+  background-color: #ff9797;
+  padding: 20px 5%;
+}
+
+.page .report_title img {
+  width: 45%;
+  max-width: 200px;
 }
 
 .page .report_title .text_content h3 {
   border-bottom: 5px solid #fff;
   margin: 10px auto;
-  font-size: 50px;
+  padding: 10px 0px;
+  font-size: 40px;
+  display: inline-block;
 }
 
 .page .report_title .text_content .chinese_title {
-  font-size: 34px;
+  font-size: 32px;
   margin-bottom: 10px;
   color: #fff;
 }
 
 .page .report_title .text_content .english_title {
-  font-size: 15px;
   color: #fff;
 }
 
 .page .report_title .material {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .page .report_title .material .name,
 .page .report_title .material .date,
 .page .report_title .material .language {
-  margin-bottom: 30px;
+  margin: 8px 15px 8px 0px;
+  display: flex;
+}
+
+.page .report_title .material .name h4,
+.page .report_title .material .date h4,
+.page .report_title .material .language h4 {
+  color: #9c4033;
 }
 
 .page .report_title .material .name p,
 .page .report_title .material .date p,
 .page .report_title .material .language p {
   color: #fff;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   border-bottom: 1px solid #fff;
 }
 
 .page .test_content {
-  width: 60%;
+  width: 100%;
   z-index: 2;
-  height: calc(100% - 417px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px 5%;
+  max-width: 768px;
 }
 
 .page .test_content .item {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 9px;
 }
 
 .page .test_content .item .fraction_area {
   display: flex;
-  width: 100%;
   justify-content: flex-end;
-  margin: 15px auto 5px;
+  width: 100%;
+  margin: 15px auto;
 }
 
 .page .test_content .item .fraction_area .fraction,
 .page .test_content .item .fraction_area .average {
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin: 5px 0;
 }
 
 .page .test_content .item .fraction_area .fraction p:nth-child(2),
@@ -195,23 +225,29 @@ body {
   color: #fff;
 }
 
+.page .test_content .item .fraction_area .average {
+  margin: 5px 0 5px 2.5%;
+}
+
 .page .test_content .item .title_mark {
   position: relative;
   width: 15%;
+  max-width: 80px;
   z-index: 1;
 }
 
 .page .test_content .item .title_mark .number_mark {
   position: absolute;
   left: -5%;
-  top: -15%;
-  width: 40%;
+  top: 0%;
+  width: 45%;
+  transform: translate(0px, -50%);
 }
 
 .page .test_content .item .item_content {
   background-color: #fff;
   border-radius: 5px;
-  width: 85%;
+  width: 90%;
   margin-left: -5%;
 }
 
@@ -326,18 +362,18 @@ body {
 .page .chartbar_area {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  position: relative;
-  bottom: 80px;
+  padding: 20px 5%;
+  max-width: 768px;
 }
 
 .page .chartbar_area .srscore,
 .page .chartbar_area .cefr_level,
 .page .chartbar_area .actfl_level {
   position: relative;
-  width: 23%;
+  width: 45%;
   background-color: #f7ae00;
   border-radius: 50%;
   max-width: 250px;
@@ -346,6 +382,7 @@ body {
   justify-content: center;
   flex-direction: column;
   z-index: 2;
+  margin: 10px 2.5%;
 }
 
 .page .chartbar_area .srscore:after,
@@ -359,7 +396,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 6px;
+  padding: 3px;
   border-radius: 50%;
 }
 
@@ -374,26 +411,12 @@ body {
 .page .chartbar_area .actfl_level p {
   text-align: center;
   color: #9c4033;
-  font-size: 22px;
 }
 
 .page .bottom_text {
   width: 100%;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
   z-index: 1;
-}
-
-.page .bottom_text:before {
-  position: absolute;
-  content: "";
-  width: 1024px;
-  height: 1024px;
-  top: -512px;
-  background: #fff;
-  border-radius: 50%;
-  z-index: -1;
+  padding: 20px 0 0;
 }
 
 .page .bottom_text p {
@@ -460,18 +483,38 @@ body {
     font-size: 30px;
     text-align: center;
   }
+  .page h3 {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .page p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .page h4 {
+    font-size: 22px;
+    line-height: 1.6;
+  }
   .page .report_title {
     width: 35%;
     z-index: 2;
     margin: 15px 0 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  .page .report_title img {
+    width: 100%;
+    max-width: none;
   }
   .page .report_title .text_content h3 {
     border-bottom: 5px solid #fff;
     margin: 10px auto;
-    font-size: 50px;
+    font-size: 42px;
+    display: block;
   }
   .page .report_title .text_content .chinese_title {
-    font-size: 34px;
+    font-size: 33px;
     margin-bottom: 10px;
     color: #fff;
   }
@@ -481,11 +524,18 @@ body {
   }
   .page .report_title .material {
     margin-top: 20px;
+    display: block;
   }
   .page .report_title .material .name,
   .page .report_title .material .date,
   .page .report_title .material .language {
-    margin-bottom: 30px;
+    margin-bottom: 15px 0px;
+    display: block;
+  }
+  .page .report_title .material .name h4,
+  .page .report_title .material .date h4,
+  .page .report_title .material .language h4 {
+    color: #9c4033;
   }
   .page .report_title .material .name p,
   .page .report_title .material .date p,
@@ -501,6 +551,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: none;
+    padding: 0;
   }
   .page .test_content .item {
     display: flex;
@@ -536,13 +588,15 @@ body {
   .page .test_content .item .title_mark {
     position: relative;
     width: 15%;
+    max-width: 80px;
     z-index: 1;
   }
   .page .test_content .item .title_mark .number_mark {
     position: absolute;
     left: -5%;
-    top: -15%;
-    width: 40%;
+    top: 0%;
+    width: 45%;
+    transform: translate(0px, -50%);
   }
   .page .test_content .item .item_content {
     background-color: #fff;
@@ -639,17 +693,18 @@ body {
   .page .chartbar_area {
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
     bottom: 80px;
+    max-width: none;
   }
   .page .chartbar_area .srscore,
   .page .chartbar_area .cefr_level,
   .page .chartbar_area .actfl_level {
     position: relative;
-    width: 23%;
+    width: 29%;
     background-color: #f7ae00;
     border-radius: 50%;
     max-width: 250px;
@@ -658,6 +713,7 @@ body {
     justify-content: center;
     flex-direction: column;
     z-index: 2;
+    margin: 0 2%;
   }
   .page .chartbar_area .srscore:after,
   .page .chartbar_area .cefr_level:after,
@@ -691,6 +747,7 @@ body {
     bottom: 0px;
     left: 0px;
     z-index: 1;
+    padding: 0;
   }
   .page .bottom_text:before {
     position: absolute;
@@ -713,6 +770,128 @@ body {
   }
   .page .bottom_text p:nth-child(2) {
     background-color: #9c4033;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .page h3 {
+    font-size: 19px;
+  }
+  .page p {
+    font-size: 15px;
+  }
+  .page h4 {
+    font-size: 17px;
+  }
+  .page .test_content .item {
+    justify-content: flex-end;
+  }
+  .page .chartbar_area .srscore,
+  .page .chartbar_area .cefr_level,
+  .page .chartbar_area .actfl_level {
+    width: 29%;
+    margin: 0 2%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page {
+    /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+    /* page-break-after: always;  碰到此元素會直接換頁 */
+    background: linear-gradient(90deg, #ff9797 38%, #fff 0%);
+    height: 1448px;
+    padding-top: 15px;
+  }
+  .page:after {
+    /* content: counter(page-number); 取用該名字的計數器 */
+    /*counter-increment: page-number 1;  增加計數器數值 */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    text-align: center;
+  }
+  .page h3 {
+    font-size: 20px;
+  }
+  .page p {
+    font-size: 16px;
+  }
+  .page h4 {
+    font-size: 22px;
+  }
+  .page .report_title {
+    width: 35%;
+    margin: 15px 0 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  .page .report_title img {
+    width: 100%;
+    max-width: none;
+  }
+  .page .report_title .text_content h3 {
+    font-size: 42px;
+    display: block;
+  }
+  .page .report_title .text_content .chinese_title {
+    font-size: 33px;
+  }
+  .page .report_title .text_content .english_title {
+    font-size: 15px;
+  }
+  .page .report_title .material {
+    display: block;
+  }
+  .page .report_title .material .name,
+  .page .report_title .material .date,
+  .page .report_title .material .language {
+    margin: 15px 0px;
+    display: block;
+  }
+  .page .test_content {
+    width: 60%;
+    height: calc(100% - 417px);
+    max-width: none;
+    padding: 0;
+  }
+  .page .test_content .item .fraction_area {
+    margin: 15px auto 5px;
+  }
+  .page .test_content .item .item_content {
+    width: 85%;
+  }
+  .page .chartbar_area {
+    position: relative;
+    bottom: 80px;
+    max-width: none;
+  }
+  .page .chartbar_area .srscore:after,
+  .page .chartbar_area .cefr_level:after,
+  .page .chartbar_area .actfl_level:after {
+    padding: 6px;
+  }
+  .page .chartbar_area .srscore p,
+  .page .chartbar_area .cefr_level p,
+  .page .chartbar_area .actfl_level p {
+    font-size: 22px;
+  }
+  .page .bottom_text {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0;
+  }
+  .page .bottom_text:before {
+    position: absolute;
+    content: "";
+    width: 1024px;
+    height: 1024px;
+    top: -512px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: -1;
   }
 }
 
