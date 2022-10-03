@@ -224,3 +224,10 @@ $(".button-menu ul li button").click(function() {
   $(this).siblings().toggleClass("open");
   $(this).parent().siblings().children().siblings().removeClass("open");
 });
+
+
+if ($('.article').height() > $('.text').height()) {
+  $('.text').css("align-items","flex-start");
+}else{
+  $('.text').css("align-items","center");
+}
