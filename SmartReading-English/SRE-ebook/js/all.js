@@ -25,7 +25,7 @@ $("#word-id").change(function () {
   if ($(this).is(":checked")) {
     $(".word-area").addClass("open");
     $(".book-page").addClass("move");
-    $(".book-page").remove("noMove");
+    $(".book-page").removeClass("noMove");
 
     // 版型:兩頁開始
     var twoRightHeight = $(".book-page-bg > img").height();
@@ -59,9 +59,9 @@ $("#word-id").change(function () {
     }
 
   } else {
-    $(".word-area").remove("open");
-    $(".book-page").remove("move");
-    $(".book-page").add("noMove");
+    $(".word-area").removeClass("open");
+    $(".book-page").removeClass("move");
+    $(".book-page").addClass("noMove");
 
     // 版型:兩頁開始
     $(".two-right-text").css({

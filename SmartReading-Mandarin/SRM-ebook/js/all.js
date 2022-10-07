@@ -18,56 +18,98 @@ var read = document.querySelector('.read-menu-container');
 var vocabulary = document.querySelector('.word-menu-container');
 var page = document.querySelector('.book-page');
 var playarea = document.querySelector('.play-area');
+var halftextwidth = $(".book-page-bg").width();
 
+//單字表
 $("#word-id").change(function () {
   if ($(this).is(":checked")) {
-    box.classList.add("open");
-    book.classList.add("move");
-    var templatetextwidth = $(".book-page-bg > img").width();
-    $(".text").css({
-      "max-width": "90%" , "max-height": templatetextwidth 
-    });
+    $(".word-area").addClass("open");
+    $(".book-page").addClass("move");
+    $(".book-page").removeClass("noMove");
+
+    // 版型:兩頁開始
+    var twoRightHeight = $(".book-page-bg > img").height();
     $(".two-right-text").css({
-      "max-width": "25%"
+      "max-height": twoRightHeight
     });
-    $(".half-text").css({
-      "max-width": "90%" , "max-height": "calc((100vh - 200px) / 2.5)"
+    // 版型:兩頁結束
+
+    // 版型:文壓圖開始
+    var topTextHeight = $(".book-page-bg > img").height();
+    $(".top-text").css({
+      "max-height": topTextHeight
     });
-    $(".nopic-text").css({
-      "width": "auto" ,"max-width": "90%" , "max-height": "calc(100vh - 240px)"
+    // 版型:文壓圖結束
+
+    // 版型:句子開始
+    var sentenceHeight = $(".book-page-bg > img").height();
+    $(".sentence").css({
+      "max-height": sentenceHeight
     });
+    // 版型:句子結束
+
+    if ($(window).width() <= 1024) {
+
+      // 版型:兩頁開始
+      var twoRightTextHeight = $(".book-page-bg > img").height() / 2;
+      $(".two-right-text").css({
+        "max-height": twoRightTextHeight
+      });
+      // 版型:兩頁結束
+    }
+
   } else {
-    box.classList.remove("open");
-    book.classList.remove("move");
-    $(".text").css({
-      "max-width": "none" , "max-height": "none"
-    });
+    $(".word-area").removeClass("open");
+    $(".book-page").removeClass("move");
+    $(".book-page").addClass("noMove");
+
+    // 版型:兩頁開始
     $(".two-right-text").css({
-      "max-width": "25%"
+      "max-height": "calc(100vh - 240px)"
     });
-    $(".half-text").css({
-      "max-width": "100%" , "max-height": "calc((100vh - 200px) / 2.5)"
+    // 版型:兩頁結束
+
+    // 版型:文壓圖開始
+    $(".top-text").css({
+      "max-height": "calc(100vh - 240px)"
     });
-    $(".nopic-text").css({
-      "max-width": "45%" , "max-height": "calc(100vh - 240px)"
+    // 版型:文壓圖結束
+
+    // 版型:句子開始
+    $(".sentence").css({
+      "max-height": "calc(100vh - 240px)"
     });
+    // 版型:句子結束
+
+    if ($(window).width() <= 1024) {
+
+      // 版型:兩頁開始
+      var twoRightTextHeight = $(".book-page-bg > img").height() / 2;
+      $(".two-right-text").css({
+        "max-height": twoRightTextHeight
+      });
+      // 版型:兩頁結束
+    }
   }
 });
 
+//唸讀切換
 $("#read-id").change(function () {
   if ($(this).is(":checked")) {
     $(play).show();
-    $('.sound-img').prop('disabled',false);
-    $('.btn-speak').prop('disabled',false);
+    $('.sound-img').prop('disabled', false);
+    $('.btn-speak').prop('disabled', false);
     $('.sound-line').removeClass("grey");
+    $('.sound-draggable-button').removeClass("grey");
   } else {
     $(play).hide();
-    $('.sound-img').prop('disabled',true);
-    $('.btn-speak').prop('disabled',true);
+    $('.sound-img').prop('disabled', true);
+    $('.btn-speak').prop('disabled', true);
     $('.sound-line').addClass("grey");
+    $('.sound-draggable-button').addClass("grey");
   }
 });
-$('.disabled').prop('disabled',true);
+$('.disabled').prop('disabled', true);
 // $("#read-id").click(function() {
 //   $(play).toggle();
 //   $('.sound-line').toggleClass("grey");
@@ -83,6 +125,7 @@ $('.disabled').prop('disabled',true);
 //   }
 // });
 
+// 拼音顯示
 $("#pinyin-id").change(function () {
   if ($(this).is(":checked")) {
     $(".text p > ruby > rt").show();
@@ -92,118 +135,77 @@ $("#pinyin-id").change(function () {
     $(".text > .article > p > ruby > rt").hide();
   }
 });
+
+//內文顯示
 $("#text-id").change(function () {
   if ($(this).is(":checked")) {
     $(".text").show();
-    $('#pinyin-id').prop('disabled',false);
+    $('#pinyin-id').prop('disabled', false);
   } else {
     $(".text").hide();
     $(".text > .article > p > ruby > rt").hide();
-    $('#pinyin-id').prop('checked',false);
-    $('#pinyin-id').prop('disabled',true);
+    $('#pinyin-id').prop('checked', false);
+    $('#pinyin-id').prop('disabled', true);
   }
 });
 
 $(function () {
-  var templatetextwidth = $(".book-page-bg > img").width();
-  $(".text").css({
-    "width": templatetextwidth
+
+  // 版型:文壓圖開始
+  var topTextWidth = $(".book-page-bg > img").width();
+  var topTextHeight = $(".book-page-bg > img").width();
+  $(".top-text").css({
+    "width": topTextWidth,
+    "height": topTextHeight
   });
-  var templatetextheight = $(".book-page-bg > img").height();
-  $(".text").css({
-    "height": templatetextheight
+  // 版型:文壓圖結束
+
+  // 版型:上下圖文開始
+  var halfTextWidth = $(".book-page-bg > img").width();
+  $(".half-text").css({
+    "max-width": halfTextWidth
   });
-  var nopicheight = $(".nopic-text").width();
-  $(".nopic-text").css({
-    "height": nopicheight
+  // 版型:上下圖文結束
+
+  // 版型:句子開始
+  var sentenceWidth = $(".book-page-bg > img").width();
+  var sentenceHeight = $(".book-page-bg > img").height();
+  $(".sentence").css({
+    "width": sentenceWidth,
+    "height": sentenceHeight
   });
-  // var halftextwidth = $(".book-page-bg").width();
-  // $(".text").css({"max-width": halftextwidth});
-  // var textheight = $(".a2-2-book-page-bg > img").height() / 2;
-  // $(".a2-2-text").css({"max-height": textheight});
+  // 版型:句子結束
+
 });
 
 if ($(window).width() <= 1024) {
-  var tworighttextheight = $(".book-page-bg > img").height() / 2;
+
+  // 版型:兩頁開始
+  var twoRightTextWidth = $(".book-page-bg > img").width();
   $(".two-right-text").css({
-    "max-height": tworighttextheight
+    "width": twoRightTextWidth
   });
-  $("#word-id").change(function () {
-    if ($(this).is(":checked")) {
-      $(".two-right-text").css({
-        "max-width": "100%" , "max-height": tworighttextheight
-      });
-    } else {
-      $(".two-right-text").css({
-        "max-width": "100%" , "max-height": tworighttextheight
-      });
-    }
+  var twoRightTextHeight = $(".book-page-bg > img").height() / 2;
+  $(".two-right-text").css({
+    "max-height": twoRightTextHeight
   });
-}
-else {
+  // 版型:兩頁結束
 }
 
-word.addEventListener('click', function () {
-  // this.classList.toggle("end-word");
-  vocabulary.classList.toggle("open");
-  speaking.classList.remove("open");
-  enlarge.classList.remove("open");
-  read.classList.remove("open");
-  text.classList.remove("open");
+// 功能選單設定
+$(".button-menu ul li button").click(function () {
+  $(this).siblings().toggleClass("open");
+  $(this).parent().siblings().children().siblings().removeClass("open");
 });
-arrow.addEventListener('click', function () {
-  box.classList.toggle("open");
-  book.classList.toggle("move");
-});
-sound.addEventListener('click', function () {
-  this.classList.toggle("mute");
-});
-verbatim.addEventListener('click', function () {
-  read.classList.toggle("open");
-  enlarge.classList.remove("open");
-  speaking.classList.remove("open");
-  enlarge.classList.remove("open");
-  text.classList.remove("open");
-  vocabulary.classList.remove("open");
-});
-speak.addEventListener('click', function () {
-  speaking.classList.toggle("open");
-  page.classList.remove("screen");
-  text.classList.remove("open");
-  enlarge.classList.remove("open");
-  read.classList.remove("open");
-  vocabulary.classList.remove("open");
-});
-magnifier.addEventListener('click', function () {
-  enlarge.classList.toggle("open");
-  page.classList.remove("screen");
-  speaking.classList.remove("open");
-  text.classList.remove("open");
-  read.classList.remove("open");
-  vocabulary.classList.remove("open");
-});
-font.addEventListener('click', function () {
-  text.classList.toggle("open");
-  page.classList.remove("screen");
-  speaking.classList.remove("open");
-  enlarge.classList.remove("open");
-  read.classList.remove("open");
-  vocabulary.classList.remove("open");
-});
-screen.addEventListener('click', function () {
-  this.classList.toggle("end-screen");
-  box.classList.remove("open");
-  document.getElementById("word-id").checked = false;
-  book.classList.remove("move");
-  if (page.classList.contains('screen')) {
-    page.classList.remove('screen')
-  } else {
-    page.classList.add('screen')
-  }
-});
-play.addEventListener('click', function () {
-  this.classList.toggle("pause");
-});
-favorite.addEventListener('click', function () {
-  this.classList.toggle("click");
-});
+
+// 內文高度超過顯示高度不垂直置中
+if ($('.article').height() > $('.text').height()) {
+  $('.text').css("align-items", "flex-start");
+} else {
+  $('.text').css("align-items", "center");
+}
+
+// 單字表沒關閉書本顯示區域加move
+if ($(".word-area").hasClass("open")) {
+  $(".book-page").addClass("move");
+}
