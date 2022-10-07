@@ -20,11 +20,12 @@ var page = document.querySelector('.book-page');
 var playarea = document.querySelector('.play-area');
 var halftextwidth = $(".book-page-bg").width();
 
+//單字表
 $("#word-id").change(function () {
   if ($(this).is(":checked")) {
-    box.classList.add("open");
-    book.classList.add("move");
-    book.classList.remove("noMove");
+    $(".word-area").addClass("open");
+    $(".book-page").addClass("move");
+    $(".book-page").remove("noMove");
 
     // 版型:兩頁開始
     var twoRightHeight = $(".book-page-bg > img").height();
@@ -58,9 +59,9 @@ $("#word-id").change(function () {
     }
 
   } else {
-    box.classList.remove("open");
-    book.classList.remove("move");
-    book.classList.add("noMove");
+    $(".word-area").remove("open");
+    $(".book-page").remove("move");
+    $(".book-page").add("noMove");
 
     // 版型:兩頁開始
     $(".two-right-text").css({
@@ -92,6 +93,7 @@ $("#word-id").change(function () {
   }
 });
 
+//唸讀切換
 $("#read-id").change(function () {
   if ($(this).is(":checked")) {
     $(play).show();
@@ -123,6 +125,7 @@ $('.disabled').prop('disabled', true);
 //   }
 // });
 
+// 拼音顯示
 $("#pinyin-id").change(function () {
   if ($(this).is(":checked")) {
     $(".text p > ruby > rt").show();
@@ -132,6 +135,8 @@ $("#pinyin-id").change(function () {
     $(".text > .article > p > ruby > rt").hide();
   }
 });
+
+//內文顯示
 $("#text-id").change(function () {
   if ($(this).is(":checked")) {
     $(".text").show();
