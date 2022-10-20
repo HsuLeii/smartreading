@@ -1,127 +1,256 @@
 // 彈跳獎章開始
 .blocker {
     z-index: 6;
+    overflow-x: hidden;
 
-    .ebook_medal_modal {
-        border-radius: 10px;
-        background-color: #EFE8E0;
-        padding: 40px 0px;
-        width: 70%;
-        max-width: 1200px;
-        position: relative;
+    .modal {
+        max-width: none;
+        width: 60%;
+        padding: 25px 30px;
+        background: $modal_bg;
 
-        .ebook_modal_content {
+        .badge-modal-content {
             display: flex;
             justify-content: center;
-            flex-direction: column;
             align-items: center;
-            margin: 0 auto;
-            width: 70%;
+            flex-wrap: wrap;
+            flex-direction: column;
 
-            .ebook_modal_title {
-                margin: 0px auto 20px;
+            .read-first,
+            .read-second,
+            .read-preview {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
 
-                h4 {
-                    color: $main_color;
-                    text-align: center;
+                .bookman {
+                    position: absolute;
+                    right: 0%;
+                    bottom: 0%;
+                    transform: translate(30%, -100px);
+                    width: 30%;
+                    z-index: -1;
                 }
-            }
 
-            .ebook_modal_medal_area {
-
-                .ebook_modal_medal {
-                    margin: 20px auto;
-                    width: 65%;
-                    max-width: 350px;
-                    animation: jump 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-                }
-            }
-
-            .ebook_modal_button_area {
-                margin: 20px auto 0px;
-
-                .ebook_modal_button {
+                .modal-text {
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
-                    flex-wrap: wrap;
 
-                    .ebook_modal_button_item {
-                        margin: 5px 10px;
-                        background-color: $main_color;
-                        color: $white;
-                        padding: 5px 10px;
-                        border-radius: 10px;
+                    h3 {
+                        font-size: 26px;
                         text-align: center;
+                        border-bottom: 0px solid $white;
+                        padding: 0px;
+                        margin-bottom: 5px;
+                    }
 
-                        &.ebook_modal_close {
-                            background-color: $grey;
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                .modal-img {
+                    border: 1.5px solid transparent;
+                    background-color: transparent;
+                    margin: 20px auto 0px;
+                    border-radius: 10px;
+                    width: 60%;
+
+                    .badge-box {
+                        position: relative;
+                        margin: 0px auto;
+                        padding: 0% 10%;
+                        background: $white;
+                        border-radius: 10px 10px 0px 0px;
+
+                        .light {
+                            animation: 1.5s linear 0.8s infinite normal none running light;
+                            transform-origin: center center;
+                            opacity: 0;
+                            z-index: -2;
+                        }
+
+                        .readbadge-modal {
+                            position: absolute;
+                            left: 0px;
+                            z-index: 1;
+                            animation: 0.8s ease 0s 1 normal forwards running badge;
+                            transform-origin: center center;
+                            transform: scale(0);
+                            padding: 0% 10%;
+
+                            &.bookmanbadge {
+                                position: relative;
+                            }
+                        }
+                    }
+
+                    .modal-text {
+                        padding: 10px;
+                        border-radius: 0px 0px 10px 10px;
+
+                        h3,
+                        p {
+                            color: $white;
+                            text-align: center;
+                        }
+                    }
+
+                    &.modal-img-read {
+                        border: 1.5px solid $main_color;
+                        background-color: $main_color;
+                    }
+
+                    &.modal-img-bookman {
+                        .modal-text {
+                            h3,
+                            p {
+                                color: $dark_grey;
+                            }
+                        }
+
+                        .badge-box {
+                            background-color: transparent;
                         }
                     }
                 }
             }
-        }
 
-        .navigator_area {
-            position: absolute;
-            left: 100%;
-            bottom: 0;
-            width: 30%;
-            transform: translate(-50%, -20%);
-            animation: bookman_move 2s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-        }
+            .button {
+                display: flex;
+                justify-content: center;
+                padding: 20px 0px 0px;
+                margin-top: 20px;
+                width: 100%;
+                border-top: 1px solid $white;
+                text-align: center;
 
-        .close-modal {
-            display: none !important;
+                a {
+                    padding: 10px;
+                    margin: 10px auto;
+                    border-radius: 10px;
+                    color: $white;
+                    background-color: $orange;
+                    display: inline-block;
+                    min-width: 200px;
+                    width: calc(45% - 24px);
+                    text-align: center;
+
+                    &:nth-child(1) {
+                        background-color: $dark_grey;
+                    }
+                }
+            }
         }
     }
 }
-
 // 彈跳獎章開結束
 
-@media (max-width: 1024px){
-        // 彈跳獎章開始
-        .blocker {
+@media (max-width: 1024px) {
+    // 彈跳獎章開始
+    .blocker {
+        .modal {
+            width: 80%;
+        }
+    }
+    // 彈跳獎章開結束
+}
 
-            .ebook_medal_modal {
-                width: 80%;
-    
-                .ebook_modal_content {
-                    width: 75%;
-    
-                    .ebook_modal_medal_area {
-    
-                        .ebook_modal_medal {
-                            max-width: 250px;
+@media (max-width: 768px) {
+    // 彈跳獎章開始
+    .blocker {
+        .modal {
+            width: 95%;
+            padding: 20px 10px;
+
+            .badge-modal-content {
+                .read-first,
+                .read-second,
+                .read-preview {
+                    .bookman {
+                        display: none;
+                    }
+
+                    .modal-text {
+                        h3 {
+                            font-size: 17px;
                         }
                     }
                 }
-    
-                .navigator_area {
-                    width: 25%;
+
+                .button {
+                    width: 90%;
+                    flex-direction: column;
+
+                    a {
+                        margin: 10px auto;
+                        text-align: center;
+                        width: 100%;
+                        max-width: calc(100% - 40px);
+                        display: block;
+                    }
                 }
             }
         }
-    
-        // 彈跳獎章開結束
+    }
+    // 彈跳獎章開結束
 }
 
-@media (max-width: 768px){
-        // 彈跳獎章開始
-        .blocker {
-
-            .ebook_medal_modal {
-                width: 90%;
-                padding: 20px 0px;
-    
-                .ebook_modal_content {
-                    width: 90%;
-                }
-    
-                .navigator_area {
-                    display: none;
+@media (max-width: 768px) {
+    // 彈跳獎章開始
+    .blocker {
+        .modal {
+            .badge-modal-content {
+                .read-first,
+                .read-second,
+                .read-preview {
+                    .modal-text {
+                        h3 {
+                            font-size: 14px;
+                        }
+                    }
                 }
             }
         }
-    
-        // 彈跳獎章開結束
+    }
+    // 彈跳獎章開結束
+}
+
+@-webkit-keyframes badge {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes badge {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes light {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+@keyframes light {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }

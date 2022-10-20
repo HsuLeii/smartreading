@@ -6,6 +6,7 @@ body {
 /*main*/
 /*other*/
 /*SRE使用咖啡色 SRM藍色*/
+/*SRMebook*/
 body,
 div,
 dl,
@@ -312,120 +313,304 @@ input[type=checkbox]:checked ~ label:after {
 
 .blocker {
   z-index: 6;
+  overflow-x: hidden;
 }
 
-.blocker .ebook_medal_modal {
-  border-radius: 10px;
-  background-color: #EFE8E0;
-  padding: 40px 0px;
-  width: 70%;
-  max-width: 1200px;
-  position: relative;
+.blocker .modal {
+  max-width: none;
+  width: 60%;
+  padding: 25px 30px;
+  background: #fffbf1;
 }
 
-.blocker .ebook_medal_modal .ebook_modal_content {
+.blocker .modal .badge-modal-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0 auto;
-  width: 70%;
 }
 
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_title {
-  margin: 0px auto 20px;
+.blocker .modal .badge-modal-content .read-first,
+.blocker .modal .badge-modal-content .read-second,
+.blocker .modal .badge-modal-content .read-preview {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_title h4 {
-  color: #222A4F;
+.blocker .modal .badge-modal-content .read-first .bookman,
+.blocker .modal .badge-modal-content .read-second .bookman,
+.blocker .modal .badge-modal-content .read-preview .bookman {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(30%, -100px);
+          transform: translate(30%, -100px);
+  width: 30%;
+  z-index: -1;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-text,
+.blocker .modal .badge-modal-content .read-second .modal-text,
+.blocker .modal .badge-modal-content .read-preview .modal-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-text h3,
+.blocker .modal .badge-modal-content .read-second .modal-text h3,
+.blocker .modal .badge-modal-content .read-preview .modal-text h3 {
+  font-size: 26px;
+  text-align: center;
+  border-bottom: 0px solid #fff;
+  padding: 0px;
+  margin-bottom: 5px;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-text p,
+.blocker .modal .badge-modal-content .read-second .modal-text p,
+.blocker .modal .badge-modal-content .read-preview .modal-text p {
   text-align: center;
 }
 
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_medal_area .ebook_modal_medal {
-  margin: 20px auto;
-  width: 65%;
-  max-width: 350px;
-  -webkit-animation: jump 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-          animation: jump 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area {
+.blocker .modal .badge-modal-content .read-first .modal-img,
+.blocker .modal .badge-modal-content .read-second .modal-img,
+.blocker .modal .badge-modal-content .read-preview .modal-img {
+  border: 1.5px solid transparent;
+  background-color: transparent;
   margin: 20px auto 0px;
+  border-radius: 10px;
+  width: 60%;
 }
 
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button {
+.blocker .modal .badge-modal-content .read-first .modal-img .badge-box,
+.blocker .modal .badge-modal-content .read-second .modal-img .badge-box,
+.blocker .modal .badge-modal-content .read-preview .modal-img .badge-box {
+  position: relative;
+  margin: 0px auto;
+  padding: 0% 10%;
+  background: #fff;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img .badge-box .light,
+.blocker .modal .badge-modal-content .read-second .modal-img .badge-box .light,
+.blocker .modal .badge-modal-content .read-preview .modal-img .badge-box .light {
+  -webkit-animation: 1.5s linear 0.8s infinite normal none running light;
+          animation: 1.5s linear 0.8s infinite normal none running light;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  opacity: 0;
+  z-index: -2;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img .badge-box .readbadge-modal,
+.blocker .modal .badge-modal-content .read-second .modal-img .badge-box .readbadge-modal,
+.blocker .modal .badge-modal-content .read-preview .modal-img .badge-box .readbadge-modal {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  -webkit-animation: 0.8s ease 0s 1 normal forwards running badge;
+          animation: 0.8s ease 0s 1 normal forwards running badge;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  padding: 0% 10%;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img .badge-box .readbadge-modal.bookmanbadge,
+.blocker .modal .badge-modal-content .read-second .modal-img .badge-box .readbadge-modal.bookmanbadge,
+.blocker .modal .badge-modal-content .read-preview .modal-img .badge-box .readbadge-modal.bookmanbadge {
+  position: relative;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img .modal-text,
+.blocker .modal .badge-modal-content .read-second .modal-img .modal-text,
+.blocker .modal .badge-modal-content .read-preview .modal-img .modal-text {
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img .modal-text h3,
+.blocker .modal .badge-modal-content .read-first .modal-img .modal-text p,
+.blocker .modal .badge-modal-content .read-second .modal-img .modal-text h3,
+.blocker .modal .badge-modal-content .read-second .modal-img .modal-text p,
+.blocker .modal .badge-modal-content .read-preview .modal-img .modal-text h3,
+.blocker .modal .badge-modal-content .read-preview .modal-img .modal-text p {
+  color: #fff;
+  text-align: center;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img.modal-img-read,
+.blocker .modal .badge-modal-content .read-second .modal-img.modal-img-read,
+.blocker .modal .badge-modal-content .read-preview .modal-img.modal-img-read {
+  border: 1.5px solid #222A4F;
+  background-color: #222A4F;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img.modal-img-bookman .modal-text h3,
+.blocker .modal .badge-modal-content .read-first .modal-img.modal-img-bookman .modal-text p,
+.blocker .modal .badge-modal-content .read-second .modal-img.modal-img-bookman .modal-text h3,
+.blocker .modal .badge-modal-content .read-second .modal-img.modal-img-bookman .modal-text p,
+.blocker .modal .badge-modal-content .read-preview .modal-img.modal-img-bookman .modal-text h3,
+.blocker .modal .badge-modal-content .read-preview .modal-img.modal-img-bookman .modal-text p {
+  color: #4B4B4B;
+}
+
+.blocker .modal .badge-modal-content .read-first .modal-img.modal-img-bookman .badge-box,
+.blocker .modal .badge-modal-content .read-second .modal-img.modal-img-bookman .badge-box,
+.blocker .modal .badge-modal-content .read-preview .modal-img.modal-img-bookman .badge-box {
+  background-color: transparent;
+}
+
+.blocker .modal .badge-modal-content .button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item {
-  margin: 5px 10px;
-  background-color: #222A4F;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 10px;
+  padding: 20px 0px 0px;
+  margin-top: 20px;
+  width: 100%;
+  border-top: 1px solid #fff;
   text-align: center;
 }
 
-.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item.ebook_modal_close {
-  background-color: grey;
+.blocker .modal .badge-modal-content .button a {
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #fa9d00;
+  display: inline-block;
+  min-width: 200px;
+  width: calc(45% - 24px);
+  text-align: center;
 }
 
-.blocker .ebook_medal_modal .navigator_area {
-  position: absolute;
-  left: 100%;
-  bottom: 0;
-  width: 30%;
-  -webkit-transform: translate(-50%, -20%);
-          transform: translate(-50%, -20%);
-  -webkit-animation: bookman_move 2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-          animation: bookman_move 2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-
-.blocker .ebook_medal_modal .close-modal {
-  display: none !important;
+.blocker .modal .badge-modal-content .button a:nth-child(1) {
+  background-color: #4B4B4B;
 }
 
 @media (max-width: 1024px) {
-  .blocker .ebook_medal_modal {
+  .blocker .modal {
     width: 80%;
-  }
-  .blocker .ebook_medal_modal .ebook_modal_content {
-    width: 75%;
-  }
-  .blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_medal_area .ebook_modal_medal {
-    max-width: 250px;
-  }
-  .blocker .ebook_medal_modal .navigator_area {
-    width: 25%;
   }
 }
 
 @media (max-width: 768px) {
-  .blocker .ebook_medal_modal {
-    width: 90%;
-    padding: 20px 0px;
+  .blocker .modal {
+    width: 95%;
+    padding: 20px 10px;
   }
-  .blocker .ebook_medal_modal .ebook_modal_content {
-    width: 90%;
-  }
-  .blocker .ebook_medal_modal .navigator_area {
+  .blocker .modal .badge-modal-content .read-first .bookman,
+  .blocker .modal .badge-modal-content .read-second .bookman,
+  .blocker .modal .badge-modal-content .read-preview .bookman {
     display: none;
+  }
+  .blocker .modal .badge-modal-content .read-first .modal-text h3,
+  .blocker .modal .badge-modal-content .read-second .modal-text h3,
+  .blocker .modal .badge-modal-content .read-preview .modal-text h3 {
+    font-size: 17px;
+  }
+  .blocker .modal .badge-modal-content .button {
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blocker .modal .badge-modal-content .button a {
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: calc(100% - 40px);
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .blocker .modal .badge-modal-content .read-first .modal-text h3,
+  .blocker .modal .badge-modal-content .read-second .modal-text h3,
+  .blocker .modal .badge-modal-content .read-preview .modal-text h3 {
+    font-size: 14px;
+  }
+}
+
+@-webkit-keyframes badge {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes badge {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes light {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes light {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 1;
   }
 }
 

@@ -311,113 +311,89 @@
     </div>
 </div>
 
-<a href="#ebook_modal" rel="modal:open" style="position: relative; z-index: 5;">第一次閱讀獎章</a>
+<a href="#readbadge" rel="modal:open" style="position: relative; z-index: 5;">登入後閱讀</a>
 <br/>
-<a href="#ebook_modal_two" rel="modal:open" style="position: relative; z-index: 5;">第二次閱讀獎章</a>
-<br/>
-<a href="#ebook_modal_three" rel="modal:open" style="position: relative; z-index: 5;">測驗滿分後閱讀獎章</a>
+<a href="#previewbadge" rel="modal:open" style="position: relative; z-index: 5;">試閱</a>
 
+<div id="readbadge" class="modal badge-modal read-badge-modal">
+    <div class="read-badge badge-modal-content">
 
-<!-- 第一次閱讀獎章開始 -->
-<div id="ebook_modal" class="modal ebook_medal_modal">
-    <div class="ebook_modal_content">
-        <div class="ebook_modal_title">
-            <h4>
-                恭喜！你獲得了一枚閱讀獎章！
-            </h4>
-            <h4>
-                Congrats! You Got a Reading Stamp!
-            </h4>
-        </div>
-        <div class="ebook_modal_medal_area">
-            <div class="ebook_modal_medal jump ">
-                    <img src="image/photo/medal/eighth_grade.png" alt="">
+        <!--第一次看效果-->
+        <div id="div_1" class="read-first">
+            <div class="bookman">
+                <img src="../image/photo/bookman.png" alt="">
+              </div>
+            <div class="modal-text">
+                <h3>恭喜！你获得了一枚阅读认证章</h3>
+                <p>Congrats! You Got a Reading Stamp!</p>
+            </div>
+            <div class="modal-img modal-img-read">
+                <div class="badge-box" style="
+/* position: absolute; */
+">
+                    <img src="../image/photo/light.png" alt="" class="light">
+                    <img src="../image/photo/readbadge.png" alt="" class="readbadge-modal">
+                  </div>
+                <div id="modal_msg" class="modal-text">
+                    <h3>阅读章 Reading Stamp</h3>
+                    <p>阅读一本书可获得一枚 Read a book to get one Reading Stamp</p>
+                </div>
             </div>
         </div>
-        <div class="ebook_modal_button_area" style="display: block;">
-            <div class="ebook_modal_button">
-                <a id="close-modal" href="#close-modal" rel="modal:close"
-                    class="ebook_modal_button_item ebook_modal_close">
-                    我想继续看书<br />
-                    Continue Reading
-                </a>
-                <a href="#" class="ebook_modal_button_item">
-                    挑战读后测验<br />
-                    Go to Post-Reading Challenge
-                </a>
+        <!--第n次-->
+        <div id="div_2" class="read-second" style="/* display: none; */">
+            <div class="modal-img  modal-img-bookman">
+                <div class="badge-box">
+                    <img src="../image/photo/bookmanbadge.png" alt="" class="readbadge-modal bookmanbadge">
+                </div>
+                <div class="modal-text">
+                    <h3>挑战看看读后测验吧！</h3>
+                    <p>Try to do the post-reading challenge!</p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="navigator_area navigator_ebookman">
-        <div class="navigator_content">
-            <img src="image/photo/map/ebookman_first.png" alt="" class="ebookman">
-        </div>
-
-    </div>
-</div>
-<!-- 第一次閱讀獎章結束 -->
-
-<!-- 第二次閱讀獎章開始 -->
-<div id="ebook_modal_two" class="modal ebook_medal_modal">
-    <div class="ebook_modal_content">
-        <div class="ebook_modal_title">
-            <h4>
-                挑战看看读后测验吧！
-            </h4>
-            <h4>
-                Try to do the post-reading challenge!
-            </h4>
-        </div>
-        <div class="ebook_modal_medal_area">
-            <div class="ebook_modal_medal jump ">
-                    <img src="image/photo/map/ebookman.png" alt="">
+        <!--讀後測驗滿分-->
+        <div id="div_3" class="read-second" style="/* display: none; */">
+            <div class="modal-img modal-img-bookman">
+                <div class="badge-box">
+                    <img src="../image/photo/bookmanbadge.png" alt="" class="readbadge-modal bookmanbadge">
+                  </div>
+                <div class="modal-text">
+                    <h3>已经是最后一页了！</h3>
+                    <p>It's the last page!</p>
+                </div>
             </div>
         </div>
-        <div class="ebook_modal_button_area" style="display: block;">
-            <div class="ebook_modal_button">
-                <a id="close-modal" href="#close-modal" rel="modal:close"
-                    class="ebook_modal_button_item ebook_modal_close">
-                    我想继续看书<br />
-                    Continue Reading
-                </a>
-                <a href="#" class="ebook_modal_button_item">
-                    挑战读后测验<br />
-                    Go to Post-Reading Challenge
-                </a>
-            </div>
+        <div id="div_btnTest" class="button" style="/* display: none; */">
+            <a id="close-modal" href="#close-modal" rel="modal:close" class="cursor hover-effect-dark">我想继续看书 Continue Reading</a>
+            <a href="javascript:void(0)" onclick="GoTest()" class="cursor hover-effect-dark">挑战读后测验 Go to Post-Reading Challenge</a>
+        </div>
+        <div id="div_btnClose" class="button" style="/* display: none; */">
+            <a id="close-modal1" href="#close-modal" rel="modal:close" class="cursor hover-effect-dark close-btn">关闭 Close</a>
         </div>
     </div>
 </div>
-<!-- 第二次閱讀獎章結束 -->
 
-<!-- 測驗滿分後閱讀獎章開始 -->
-<div id="ebook_modal_three" class="modal ebook_medal_modal">
-    <div class="ebook_modal_content">
-        <div class="ebook_modal_title">
-            <h4>
-                已经是最后一页了！
-            </h4>
-            <h4>
-                It's the last page!
-            </h4>
-        </div>
-        <div class="ebook_modal_medal_area">
-            <div class="ebook_modal_medal jump ">
-                    <img src="image/photo/map/ebookman.png" alt="">
+<div id="previewbadge" class="modal badge-modal read-badge-modal">
+    <div class="read-badge badge-modal-content">
+        <!--試閱-->
+        <div id="div_3" class="read-preview">
+            <div class="modal-img modal-img-bookman">
+                <div class="badge-box">
+                    <img src="../image/photo/bookmanbadge.png" alt="" class="readbadge-modal bookmanbadge">
+                </div>
+                <div class="modal-text">
+                    <h3>登入後觀看完整內容</h3>
+                <h3>Log in to continue reading</h3>
+                </div>
             </div>
         </div>
-        <div class="ebook_modal_button_area" style="display: block;">
-            <div class="ebook_modal_button">
-                <a id="close-modal" href="#close-modal" rel="modal:close"
-                    class="ebook_modal_button_item ebook_modal_close">
-                    关闭 Close
-                </a>
-            </div>
+        <div class="button">
+            <a id="close-modal" href="#close-modal" rel="modal:close" class="cursor hover-effect-dark">關閉 Close</a>
+            <a href="javascript:void(0)" onclick="Login()" class="cursor hover-effect-dark">我要登入 Log in</a>
         </div>
     </div>
 </div>
-<!-- 測驗滿分後閱讀獎章結束 -->
 
 <script src="js/jquery-3.5.1.min.js"></script>
 
