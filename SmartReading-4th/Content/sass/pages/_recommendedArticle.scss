@@ -189,9 +189,10 @@ main {
                         .dataTables_wrapper{
                             .leveledBooks-table__header{
                                 display: flex;
-                                flex-wrap: wrap;
+                                flex-direction: column;
 
                                 .dt-buttons{
+                                    margin: 5px 0px;
                                     .dt-button{
                                         background: $button-bg;
                                         border: 1px solid $button-gray;
@@ -214,10 +215,15 @@ main {
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
+                                    margin: 5px 0px;
+
+                                    .dataTables_info{
+                                        padding-top: 0;
+                                    }
 
                                     .paging_simple_numbers{
                                         margin-top: 0;
-                                        padding-top: .755em;
+                                        padding-top: 0;
                                         a{
                                             background: $button-bg;
                                             border: 1px solid $button-gray;
@@ -250,7 +256,7 @@ main {
                                             &.current{
                                                 color: $default-red !important;
                                                 background: transparent;
-                                        border: 0px solid $grey;
+                                        border: 0px solid $button-gray;
                                             }
                                         }
 
@@ -285,13 +291,105 @@ main {
 
 
 @media screen and (min-width: 576px) {
-
+    main {
+        &.recommendedArticle {
+            .join-all {
+                .order-wrap {
+    
+                    .order-body {
+    
+                        .recommendedBook-list{
+                            .dataTables_wrapper{
+                                .leveledBooks-table__header{
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    padding: 5px;
+                                    margin: 0 15px;
+                                }
+                            }
+                                    
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    main {
+        &.recommendedArticle {
+            .join-all {
+                .order-wrap {
+                    width: 100%;
+                    max-width: none;
+    
+                    .order-body {
+                        .recommendedBook-search__book {
+                            flex-direction: row;
+                            align-items: center;
+                            .control-label{
+                                width: 150px;
+                            }
+                            .recommendedBook-search__slogan_title{
+                                margin-right: 20px;
+                            }
+                            .recommendedBook-search__book_input {
+                                width: calc(100% - 300px);
+                                .recommendedBook-search__slogan {
+                                    max-width: 400px;
+                                }
+                            }
+                        }
+    
+                        .recommendedBook-list{
+                            .dataTables_wrapper{
+                                
+                                .recommendedBook-table{
+    
+                                    tbody{
+                                        tr{
+                                            width: calc(50% - 30px);
+                                        }
+                                    }
+                                }
+                            }
+                                    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 992px) {
-
+    main {
+        &.recommendedArticle {
+            .join-all {
+                .order-wrap {
+    
+                    .order-body {
+    
+                        .recommendedBook-list{
+                            .dataTables_wrapper{
+                                
+                                .recommendedBook-table{
+    
+                                    tbody{
+                                        tr{
+                                            width: calc(33% - 30px);
+                                        }
+                                    }
+                                }
+                            }
+                                    
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1200px) {

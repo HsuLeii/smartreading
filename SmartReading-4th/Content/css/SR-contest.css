@@ -3760,9 +3760,10 @@ main.recommendedArticle .join-all .order-wrap .order-body .rA-banner__SRrange .r
 }
 
 main.recommendedArticle .join-all .order-wrap .order-body .rA-banner__SRrange .SRrangeBar {
-  margin-bottom: 20px;
+  margin: 20px auto;
   position: relative;
   width: 100%;
+  max-width: 800px;
   height: 28px;
   background: #e2e2e2;
   border-radius: 28px;
@@ -3910,6 +3911,10 @@ main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list 
           flex-direction: column;
 }
 
+main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__header .dt-buttons {
+  margin: 5px 0px;
+}
+
 main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__header .dt-buttons .dt-button {
   background: #f7f7f8;
   border: 1px solid #e0e0e0;
@@ -3940,11 +3945,16 @@ main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list 
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 5px 0px;
+}
+
+main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__header .pull-right .dataTables_info {
+  padding-top: 0;
 }
 
 main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__header .pull-right .paging_simple_numbers {
   margin-top: 0;
-  padding-top: .755em;
+  padding-top: 0;
 }
 
 main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__header .pull-right .paging_simple_numbers a {
@@ -3968,19 +3978,24 @@ main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list 
   width: 100%;
 }
 
-main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers a {
+main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers .paginate_button {
   background: #f7f7f8;
   border: 1px solid #e0e0e0;
 }
 
-main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers a.paginate_button.current {
+main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers .paginate_button.paginate_button.current {
   color: #ff0000 !important;
   background: transparent;
-  border: 0px solid grey;
+  border: 0px solid #e0e0e0;
 }
 
-main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers a.disabled {
+main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers .paginate_button.disabled {
   background: #eff0f1;
+  color: #bdc0c1 !important;
+}
+
+main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .paging_simple_numbers .paginate_button.disabled i {
+  color: #bdc0c1 !important;
 }
 
 main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__footer .add_dataTables_input {
@@ -3992,15 +4007,54 @@ main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list 
   padding: 10px;
 }
 
+@media screen and (min-width: 576px) {
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .leveledBooks-table__header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 5px;
+    margin: 0 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main.recommendedArticle .join-all .order-wrap {
+    width: 100%;
+    max-width: none;
+  }
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-search__book {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-search__book .control-label {
+    width: 150px;
+  }
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__slogan_title {
+    margin-right: 20px;
+  }
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input {
+    width: calc(100% - 300px);
+  }
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-search__book .recommendedBook-search__book_input .recommendedBook-search__slogan {
+    max-width: 400px;
+  }
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .recommendedBook-table tbody tr {
+    width: calc(50% - 30px);
+  }
+}
+
 @media screen and (min-width: 992px) {
-  .entry main .language_selection p {
-    margin: 0px 5px;
-  }
-  .entry main .language_selection .select_box {
-    margin: 30px auto 20px;
-  }
-  .entry main .language_selection .select_box .options .option_item label {
-    padding: 10px 20px;
+  main.recommendedArticle .join-all .order-wrap .order-body .recommendedBook-list .dataTables_wrapper .recommendedBook-table tbody tr {
+    width: calc(33% - 30px);
   }
 }
 
