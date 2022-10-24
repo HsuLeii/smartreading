@@ -1,578 +1,694 @@
 main {
-    &.recommendedArticle {
-        .join-all {
-            width: 100%;
-            .order-wrap {
-                margin: 0 auto;
+  &.recommendedArticle {
+    .join-all {
+      width: 100%;
+      .order-wrap {
+        margin: 0 auto;
 
-                .order-body {
-                    .recommendedBook-search__book {
-                        .recommendedBook-search__book_input {
-                            .recommendedBook-search__slogan {
-                                margin: 20px 0px;
-                                max-width: 400px;
-                            }
-                        }
+        .order-body {
+            .recommendedBook-search{
+                padding: 0 5%;
+                .recommendedBook-search__book {
+                    .recommendedBook-search__book_input {
+                      .recommendedBook-search__slogan {
+                        margin: 20px 0px;
+                        max-width: 400px;
+                      }
                     }
-
-                    .rA-banner__SRrange {
-                        max-width: 900px;
-                        margin: 0 auto;
-                        .rA-banner__SRrange-titleC {
-                            font-weight: 400;
-                            color: $main-color;
-                            text-align: center;
-                            margin-top: 15px;
-                            margin-bottom: 50px;
-                        }
-
-                        .rA-banner__SRrange-titleR {
-                            font-weight: 400;
-                            color: $default-gray;
-                            text-align: center;
-                            margin-bottom: 50px;
-                        }
-
-                        .SRrangeBar {
-                            margin: 20px auto;
-                            position: relative;
-                            width: 100%;
-                            max-width: 800px;
-                            height: 28px;
-                            background: $rangeBar-gray;
-                            border-radius: 28px;
-
-                            .SRrangeBar-slider {
-                                width: 100%;
-                                height: 28px;
-                                border-radius: 28px;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                background-color: transparent !important;
-                                border-color: transparent !important;
-                                border: none !important;
-                                opacity: 1 !important;
-
-                                &.s-range {
-                                    .ui-widget-header {
-                                        border-radius: 0;
-                                        background-color: $rangeBar-darkBlue;
-                                        z-index: 11;
-
-                                        .slider-min,
-                                        .slider-max {
-                                            color: $default-black !important;
-                                            font-size: 14px;
-                                            font-weight: normal;
-                                            line-height: 28px;
-                                            white-space: nowrap;
-                                            width: 60px;
-                                            text-align: center;
-                                            position: absolute;
-
-                                            &::after{
-                                                content: "";
-                                                display: block;
-                                                width: 1px;
-                                                height: 100%;
-                                                background: $white;
-                                                position: absolute;
-                                                top: 0px;
-                                            }
-                                        }
-
-                                        .slider-min {
-                                            left: 0;
-                                            transform: translate(-100% , 0);
-                                            &::after{
-                                                left: 100%;
-                                            }
-                                        }
-
-                                        .slider-max {
-                                            right: 0;
-                                            transform: translate(100% , 0);
-                                        }
-                                    }
-
-                                    .ui-slider-handle {
-                                        display: none;
-                                    }
-                                }
-
-                                &.ui-slider-disabled {
-
-                                    .ui-slider-handle {
-                                        display: none;
-                                    }
-                                }
-
-                                &.s-control {
-
-                                    .ui-widget-header {
-                                        top: 0;
-                                        height: 100%;
-                                        background-color: $rangeBar-lightBlue;
-                                    }
-                                    
-                                    .ui-slider-handle {
-                                        position: absolute;
-                                        z-index: 11;
-                                        width: 32px;
-                                        height: 32px;
-                                        top: -2px;
-                                        margin-left: -16px;
-                                        border: none;
-                                        border-radius: 50%;
-                                        background-color: transparent;
-                                        background-image: url(../images/recommendedArticle/SRrange-bar-point.png);
-                                        background-position: center center;
-                                        background-repeat: no-repeat;
-                                        // box-shadow: 0 0 5px rgb(68 110 246 / 50%);
-                                        cursor: move;
-
-                                        .slider-tooltip {
-                                            background-color: $main-color;
-                                            color: #FFF;
-                                            font-size: 16px;
-                                            white-space: nowrap;
-                                            text-align: center;
-                                            border-radius: 2px;
-                                            position: absolute;
-                                            top: -50px;
-                                            left: 50%;
-                                            width: 76px;
-                                            height: 30px;
-                                            line-height: 30px;
-                                            margin: 10px 0 10px -38px;
-
-                                            &::after{
-                                                content: "";
-                                                display: block;
-                                                width: 0;
-                                                height: 0;
-                                                border-style: solid;
-                                                border-width: 8px 7px 0 7px;
-                                                border-color: $main-color transparent transparent transparent;
-                                                position: absolute;
-                                                bottom: -7px;
-                                                left: 50%;
-                                                margin-left: -7px;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                .ui-slider {
-                                    .ui-slider-range {
-                                        position: absolute;
-                                        z-index: 1;
-                                        font-size: .7em;
-                                        display: block;
-                                        border: 0;
-                                        background-position: 0 0;
-                                    }
-                                }
-
-                                .ui-slider-horizontal {
-                                    .ui-slider-range {
-                                        top: 0;
-                                        height: 100%;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    .recommendedBook-list{
-                        .dataTables_wrapper{
-                            .leveledBooks-table__header{
-                                display: flex;
-                                flex-direction: column;
-
-                                .dt-buttons{
-                                    margin: 5px 0px;
-                                    .dt-button{
-                                        background: $button-bg;
-                                        border: 1px solid $button-gray;
-                                        &.active{
-                                            background: $main-color;
-                                            box-shadow: none;
-
-                                            span{
-                                                color: $white;
-                                            }
-                                        }
-                                        &:focus{
-                                            border: 0;
-                                            text-shadow: none;
-                                        }
-                                    }
-                                }
-
-                                .pull-right{
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    margin: 5px 0px;
-
-                                    .dataTables_info{
-                                        padding-top: 0;
-                                    }
-
-                                    .paging_simple_numbers{
-                                        margin-top: 0;
-                                        padding-top: 0;
-                                        a{
-                                            background: $button-bg;
-                                            border: 1px solid $button-gray;
-                                        }
-                                        span{
-                                            display: none;
-                                        }
-                                    }
-                                }
-                            }
-                            .recommendedBook-table{
-                                display: table-row-group;
-
-                                thead{
-                                    display: none;
-                                }
-
-                                tbody{
-                                    tr{
-                                        width: 100%;
-                                    }
-                                }
-                            }
-                            .leveledBooks-table__footer{
-                                .paging_simple_numbers{
-                                    .paginate_button {
-                                        background: $button-bg;
-                                        border: 1px solid $button-gray;
-                                        &.paginate_button{
-                                            &.current{
-                                                color: $default-red !important;
-                                                background: transparent;
-                                        border: 0px solid $button-gray;
-                                            }
-                                        }
-
-                                        &.disabled{
-                                            background: $button-disabled-bg;
-                                            color: $button-disabled-text !important;
-
-                                            i{
-                                                color: $button-disabled-text !important;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                .add_dataTables_input{
-                                    margin-top: 5px;
-                                    padding-top: 0.755em;
-
-                                    .paginate_button{
-                                        padding: 10px;
-                                    }
-                                }
-                            }
-                        }
-                                
-                    }
-                }
+                  }
             }
+          
+
+          .rA-banner__SRrange {
+            max-width: 900px;
+            margin: 0 auto;
+            .rA-banner__SRrange-titleC {
+              font-weight: 400;
+              color: $main-color;
+              text-align: center;
+              margin-top: 15px;
+              margin-bottom: 50px;
+            }
+
+            .rA-banner__SRrange-titleR {
+              font-weight: 400;
+              color: $default-gray;
+              text-align: center;
+              margin-bottom: 50px;
+            }
+
+            .SRrangeBar {
+              margin: 20px auto;
+              position: relative;
+              width: 100%;
+              max-width: 800px;
+              height: 28px;
+              background: $rangeBar-gray;
+              border-radius: 28px;
+
+              .SRrangeBar-slider {
+                width: 100%;
+                height: 28px;
+                border-radius: 28px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent !important;
+                border-color: transparent !important;
+                border: none !important;
+                opacity: 1 !important;
+
+                &.s-range {
+                  .ui-widget-header {
+                    border-radius: 0;
+                    background-color: $rangeBar-darkBlue;
+                    z-index: 11;
+
+                    .slider-min,
+                    .slider-max {
+                      color: $default-black !important;
+                      font-size: 14px;
+                      font-weight: normal;
+                      line-height: 28px;
+                      white-space: nowrap;
+                      width: 60px;
+                      text-align: center;
+                      position: absolute;
+
+                      &::after {
+                        content: "";
+                        display: block;
+                        width: 1px;
+                        height: 100%;
+                        background: $white;
+                        position: absolute;
+                        top: 0px;
+                      }
+                    }
+
+                    .slider-min {
+                      left: 0;
+                      transform: translate(-100%, 0);
+                      &::after {
+                        left: 100%;
+                      }
+                    }
+
+                    .slider-max {
+                      right: 0;
+                      transform: translate(100%, 0);
+                    }
+                  }
+
+                  .ui-slider-handle {
+                    display: none;
+                  }
+                }
+
+                &.ui-slider-disabled {
+                  .ui-slider-handle {
+                    display: none;
+                  }
+                }
+
+                &.s-control {
+                  .ui-widget-header {
+                    top: 0;
+                    height: 100%;
+                    background-color: $rangeBar-lightBlue;
+                  }
+
+                  .ui-slider-handle {
+                    position: absolute;
+                    z-index: 11;
+                    width: 32px;
+                    height: 32px;
+                    top: -2px;
+                    margin-left: -16px;
+                    border: none;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    background-image: url(../images/recommendedArticle/SRrange-bar-point.png);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    // box-shadow: 0 0 5px rgb(68 110 246 / 50%);
+                    cursor: move;
+
+                    .slider-tooltip {
+                      background-color: $main-color;
+                      color: #fff;
+                      font-size: 16px;
+                      white-space: nowrap;
+                      text-align: center;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: -50px;
+                      left: 50%;
+                      width: 76px;
+                      height: 30px;
+                      line-height: 30px;
+                      margin: 10px 0 10px -38px;
+
+                      &::after {
+                        content: "";
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 8px 7px 0 7px;
+                        border-color: $main-color transparent transparent
+                          transparent;
+                        position: absolute;
+                        bottom: -7px;
+                        left: 50%;
+                        margin-left: -7px;
+                      }
+                    }
+                  }
+                }
+
+                .ui-slider {
+                  .ui-slider-range {
+                    position: absolute;
+                    z-index: 1;
+                    font-size: 0.7em;
+                    display: block;
+                    border: 0;
+                    background-position: 0 0;
+                  }
+                }
+
+                .ui-slider-horizontal {
+                  .ui-slider-range {
+                    top: 0;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+          }
+
+          .recommendedBook-list {
+            .dataTables_wrapper {
+                padding: 10px 5%;
+                background-color: $dataTables-bg;
+              .leveledBooks-table__header {
+                display: flex;
+                flex-direction: column;
+
+                .dt-buttons {
+                  margin: 5px 0px;
+                  .dt-button {
+                    background: $button-bg;
+                    border: 1px solid $button-gray;
+                    &.active {
+                      background: $main-color;
+                      box-shadow: none;
+
+                      span {
+                        color: $white;
+                      }
+                    }
+                    &:focus {
+                      border: 0;
+                      text-shadow: none;
+                    }
+                  }
+                }
+
+                .pull-right {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 5px 0px;
+
+                  .dataTables_info {
+                    padding-top: 0;
+                  }
+
+                  .paging_simple_numbers {
+                    margin-top: 0;
+                    padding-top: 0;
+                    a {
+                      background: $button-bg;
+                      border: 1px solid $button-gray;
+                    }
+                    span {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              .recommendedBook-table {
+                display: table-row-group;
+
+                thead {
+                  display: none;
+                }
+
+                tbody {
+                  tr {
+                    width: 100%;
+                    padding: 0;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    background-color: $white;
+                    td {
+                      text-align: left;
+                      line-height: 1.7;
+                    }
+                    .book-id {
+                      display: none;
+                    }
+                    .book-front {
+                      margin: 0px auto;
+                      padding: 0;
+                      line-height: 0;
+                      max-width: none !important;
+                      a {
+                        margin: 0 auto;
+                        height: 185px;
+                        width: 100%;
+                        img{
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                      }
+                    }
+                    .book-SR,
+                    .book-word,
+                    .book-author,
+                    .book-sort{
+                        width: 100%;
+                    }
+                    .book-SR{
+                        color: $main-color;
+                        span{
+                            color: $default-black;
+                        }
+                    }
+                    .book-read,
+                    .book-comment,
+                    .book-addRP {
+                      background-color: $default-black;
+                      color: $white;
+                      text-align: center;
+                      width: 100%;
+                    }
+                    .book-addRP {
+                      button {
+                        background-color: $main-color;
+                        border-radius: 50px;
+                      }
+                    }
+                    .book-name {
+                      width: 100%;
+                      p {
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        white-space: normal;
+                        overflow: hidden;
+                        height: 44.6px;
+                      }
+                    }
+                  }
+                }
+              }
+              .leveledBooks-table__footer {
+                .paging_simple_numbers {
+                  .paginate_button {
+                    background: $button-bg;
+                    border: 1px solid $button-gray;
+                    &.paginate_button {
+                      &.current {
+                        color: $default-red !important;
+                        background: transparent;
+                        border: 0px solid $button-gray;
+                      }
+                    }
+
+                    &.disabled {
+                      background: $button-disabled-bg;
+                      color: $button-disabled-text !important;
+
+                      i {
+                        color: $button-disabled-text !important;
+                      }
+                    }
+                  }
+                }
+
+                .add_dataTables_input {
+                  margin-top: 5px;
+                  padding-top: 0.755em;
+
+                  .paginate_button {
+                    padding: 10px;
+                  }
+                }
+              }
+            }
+          }
         }
+      }
     }
+  }
 }
 
-
 @media screen and (min-width: 576px) {
-    main {
-        &.recommendedArticle {
-            .join-all {
-                .order-wrap {
-    
-                    .order-body {
-    
-                        .recommendedBook-list{
-                            .dataTables_wrapper{
-                                .leveledBooks-table__header{
-                                    flex-direction: row;
-                                    justify-content: space-between;
-                                    padding: 5px;
-                                    margin: 0 15px;
-                                }
-                            }
-                                    
-                        }
-                    }
+  main {
+    &.recommendedArticle {
+      .join-all {
+        .order-wrap {
+          .order-body {
+            .recommendedBook-list {
+              .dataTables_wrapper {
+                .leveledBooks-table__header {
+                  flex-direction: row;
+                  justify-content: space-between;
+                  padding: 5px;
+                  margin: 0 15px;
                 }
+
+                .recommendedBook-table {
+                  tbody {
+                    tr {
+                      width: calc(50% - 30px);
+                      .book-read,
+                      .book-comment,
+                      .book-addRP {
+                        width: calc(50% - 20px);
+                      }
+                      .book-addRP {
+                        width: 100%;
+                      }
+                      .book-SR,
+                    .book-word,
+                    .book-author,
+                    .book-sort{
+                        width: calc(50% - 20px);
+                    }
+                    }
+                  }
+                }
+              }
             }
+          }
         }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 768px) {
-    main {
-        &.recommendedArticle {
-            .join-all {
-                .order-wrap {
-                    width: 100%;
-                    max-width: none;
-    
-                    .order-body {
-                        .recommendedBook-search__book {
-                            flex-direction: row;
-                            align-items: center;
-                            .control-label{
-                                width: 150px;
-                            }
-                            .recommendedBook-search__slogan_title{
-                                margin-right: 20px;
-                            }
-                            .recommendedBook-search__book_input {
-                                width: calc(100% - 300px);
-                                .recommendedBook-search__slogan {
-                                    max-width: 400px;
-                                }
-                            }
-                        }
-    
-                        .recommendedBook-list{
-                            .dataTables_wrapper{
-                                
-                                .recommendedBook-table{
-    
-                                    tbody{
-                                        tr{
-                                            width: calc(50% - 30px);
-                                        }
-                                    }
-                                }
-                            }
-                                    
-                        }
+  main {
+    &.recommendedArticle {
+      .join-all {
+        .order-wrap {
+          width: 100%;
+          max-width: none;
+
+          .order-body {
+              .recommendedBook-search{
+                .recommendedBook-search__book {
+                    flex-direction: row;
+                    align-items: center;
+                    .control-label {
+                      width: 150px;
                     }
+                    .recommendedBook-search__slogan_title {
+                      margin-right: 20px;
+                    }
+                    .recommendedBook-search__book_input {
+                      width: calc(100% - 320px);
+                      .recommendedBook-search__slogan {
+                        max-width: 600px;
+                      }
+                    }
+                  }
+              }
+
+              .recommendedBook-list {
+                .dataTables_wrapper {
+                  .leveledBooks-table__header {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 5px;
+                    margin: 0 15px;
+                  }
+  
+                  .recommendedBook-table {
+                    tbody {
+                      tr {
+                        width: calc(50% - 30px);
+                        .book-name {
+                            p {
+                              height: 50px;
+                            }
+                          }
+                      }
+                    }
+                  }
                 }
-            }
+              }
+          }
         }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 992px) {
-    main {
-        &.recommendedArticle {
-            .join-all {
-                .order-wrap {
-    
-                    .order-body {
-    
-                        .recommendedBook-list{
-                            .dataTables_wrapper{
-                                
-                                .recommendedBook-table{
-    
-                                    tbody{
-                                        tr{
-                                            width: calc(33% - 30px);
-                                        }
-                                    }
-                                }
-                            }
-                                    
+  main {
+    &.recommendedArticle {
+      .join-all {
+        .order-wrap {
+          .order-body {
+            .recommendedBook-list {
+              .dataTables_wrapper {
+                .recommendedBook-table {
+                  tbody {
+                    tr {
+                      width: calc(33% - 30px);
+                      .book-name {
+                        p {
+                          height: 55px;
                         }
+                      }
                     }
+                  }
                 }
+              }
             }
+          }
         }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    main {
-        &.recommendedArticle {
-            .join-all {
-                .order-wrap {
-    
-                    .order-body {
-                        .recommendedBook-search__book {
-                            align-items: center;
-                            .recommendedBook-search__book_input {
-                                width: calc(100% - 360px);
-                                margin-left: 20px;
-                            }
-                        }
-    
-                        .rA-banner__SRrange {
-                            .rA-banner__SRrange-titleC {
-                                font-weight: 400;
-                                color: $main-color;
-                                text-align: center;
-                                margin-top: 15px;
-                                margin-bottom: 50px;
-                            }
-    
-                            .SRrangeBar {
-                                margin-bottom: 20px;
-                                position: relative;
-                                width: 100%;
-                                height: 28px;
-                                background: $rangeBar-gray;
-                                border-radius: 28px;
-    
-                                .SRrangeBar-slider {
-                                    width: 100%;
-                                    height: 28px;
-                                    border-radius: 28px;
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    background-color: transparent !important;
-                                    border-color: transparent !important;
-                                    border: none !important;
-                                    opacity: 1 !important;
-    
-                                    &.s-range {
-                                        .ui-widget-header {
-                                            border-radius: 0;
-                                            background-color: $rangeBar-darkBlue;
-                                            z-index: 11;
-    
-                                            .slider-min,
-                                            .slider-max {
-                                                color: $default-black !important;
-                                                font-size: 14px;
-                                                font-weight: normal;
-                                                line-height: 28px;
-                                                white-space: nowrap;
-                                                width: 60px;
-                                                text-align: center;
-                                                position: absolute;
-    
-                                                &::after{
-                                                    content: "";
-                                                    display: block;
-                                                    width: 1px;
-                                                    height: 100%;
-                                                    background: $white;
-                                                    position: absolute;
-                                                    top: 0px;
-                                                }
-                                            }
-    
-                                            .slider-min {
-                                                left: 0;
-                                                transform: translate(-100% , 0);
-                                                &::after{
-                                                    left: 100%;
-                                                }
-                                            }
-    
-                                            .slider-max {
-                                                right: 0;
-                                                transform: translate(100% , 0);
-                                            }
-                                        }
-    
-                                        .ui-slider-handle {
-                                            display: none;
-                                        }
-                                    }
-    
-                                    &.ui-slider-disabled {
-    
-                                        .ui-slider-handle {
-                                            display: none;
-                                        }
-                                    }
-    
-                                    &.s-control {
-    
-                                        .ui-widget-header {
-                                            top: 0;
-                                            height: 100%;
-                                            background-color: $rangeBar-lightBlue;
-                                        }
-                                        
-                                        .ui-slider-handle {
-                                            position: absolute;
-                                            z-index: 11;
-                                            width: 32px;
-                                            height: 32px;
-                                            top: -2px;
-                                            margin-left: -16px;
-                                            border: none;
-                                            border-radius: 50%;
-                                            background-color: transparent;
-                                            background-image: url(../images/recommendedArticle/SRrange-bar-point.png);
-                                            background-position: center center;
-                                            background-repeat: no-repeat;
-                                            // box-shadow: 0 0 5px rgb(68 110 246 / 50%);
-                                            cursor: move;
-    
-                                            .slider-tooltip {
-                                                background-color: $main-color;
-                                                color: #FFF;
-                                                font-size: 16px;
-                                                white-space: nowrap;
-                                                text-align: center;
-                                                border-radius: 2px;
-                                                position: absolute;
-                                                top: -50px;
-                                                left: 50%;
-                                                width: 76px;
-                                                height: 30px;
-                                                line-height: 30px;
-                                                margin: 10px 0 10px -38px;
-    
-                                                &::after{
-                                                    content: "";
-                                                    display: block;
-                                                    width: 0;
-                                                    height: 0;
-                                                    border-style: solid;
-                                                    border-width: 8px 7px 0 7px;
-                                                    border-color: $main-color transparent transparent transparent;
-                                                    position: absolute;
-                                                    bottom: -7px;
-                                                    left: 50%;
-                                                    margin-left: -7px;
-                                                }
-                                            }
-                                        }
-                                    }
-    
-                                    .ui-slider {
-                                        .ui-slider-range {
-                                            position: absolute;
-                                            z-index: 1;
-                                            font-size: .7em;
-                                            display: block;
-                                            border: 0;
-                                            background-position: 0 0;
-                                        }
-                                    }
-    
-                                    .ui-slider-horizontal {
-                                        .ui-slider-range {
-                                            top: 0;
-                                            height: 100%;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+  main {
+    &.recommendedArticle {
+      .join-all {
+        .order-wrap {
+          .order-body {
+            .recommendedBook-search__book {
+              align-items: center;
+              .recommendedBook-search__book_input {
+                width: calc(100% - 360px);
+                margin-left: 20px;
+              }
             }
+
+            .rA-banner__SRrange {
+              .rA-banner__SRrange-titleC {
+                font-weight: 400;
+                color: $main-color;
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 50px;
+              }
+
+              .SRrangeBar {
+                margin-bottom: 20px;
+                position: relative;
+                width: 100%;
+                height: 28px;
+                background: $rangeBar-gray;
+                border-radius: 28px;
+
+                .SRrangeBar-slider {
+                  width: 100%;
+                  height: 28px;
+                  border-radius: 28px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  background-color: transparent !important;
+                  border-color: transparent !important;
+                  border: none !important;
+                  opacity: 1 !important;
+
+                  &.s-range {
+                    .ui-widget-header {
+                      border-radius: 0;
+                      background-color: $rangeBar-darkBlue;
+                      z-index: 11;
+
+                      .slider-min,
+                      .slider-max {
+                        color: $default-black !important;
+                        font-size: 14px;
+                        font-weight: normal;
+                        line-height: 28px;
+                        white-space: nowrap;
+                        width: 60px;
+                        text-align: center;
+                        position: absolute;
+
+                        &::after {
+                          content: "";
+                          display: block;
+                          width: 1px;
+                          height: 100%;
+                          background: $white;
+                          position: absolute;
+                          top: 0px;
+                        }
+                      }
+
+                      .slider-min {
+                        left: 0;
+                        transform: translate(-100%, 0);
+                        &::after {
+                          left: 100%;
+                        }
+                      }
+
+                      .slider-max {
+                        right: 0;
+                        transform: translate(100%, 0);
+                      }
+                    }
+
+                    .ui-slider-handle {
+                      display: none;
+                    }
+                  }
+
+                  &.ui-slider-disabled {
+                    .ui-slider-handle {
+                      display: none;
+                    }
+                  }
+
+                  &.s-control {
+                    .ui-widget-header {
+                      top: 0;
+                      height: 100%;
+                      background-color: $rangeBar-lightBlue;
+                    }
+
+                    .ui-slider-handle {
+                      position: absolute;
+                      z-index: 11;
+                      width: 32px;
+                      height: 32px;
+                      top: -2px;
+                      margin-left: -16px;
+                      border: none;
+                      border-radius: 50%;
+                      background-color: transparent;
+                      background-image: url(../images/recommendedArticle/SRrange-bar-point.png);
+                      background-position: center center;
+                      background-repeat: no-repeat;
+                      // box-shadow: 0 0 5px rgb(68 110 246 / 50%);
+                      cursor: move;
+
+                      .slider-tooltip {
+                        background-color: $main-color;
+                        color: #fff;
+                        font-size: 16px;
+                        white-space: nowrap;
+                        text-align: center;
+                        border-radius: 2px;
+                        position: absolute;
+                        top: -50px;
+                        left: 50%;
+                        width: 76px;
+                        height: 30px;
+                        line-height: 30px;
+                        margin: 10px 0 10px -38px;
+
+                        &::after {
+                          content: "";
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          border-style: solid;
+                          border-width: 8px 7px 0 7px;
+                          border-color: $main-color transparent transparent
+                            transparent;
+                          position: absolute;
+                          bottom: -7px;
+                          left: 50%;
+                          margin-left: -7px;
+                        }
+                      }
+                    }
+                  }
+
+                  .ui-slider {
+                    .ui-slider-range {
+                      position: absolute;
+                      z-index: 1;
+                      font-size: 0.7em;
+                      display: block;
+                      border: 0;
+                      background-position: 0 0;
+                    }
+                  }
+
+                  .ui-slider-horizontal {
+                    .ui-slider-range {
+                      top: 0;
+                      height: 100%;
+                    }
+                  }
+                }
+              }
+            }
+
+            .recommendedBook-list {
+                .dataTables_wrapper {
+                  .recommendedBook-table {
+                    tbody {
+                      tr {
+  
+                        .book-read,
+                          .book-comment,
+                          .book-addRP {
+                            width: 85px;
+                          }
+                          .book-addRP {
+                            width: calc(100% - 85px * 2 - 60px);
+                          }
+                      }
+                    }
+                  }
+                }
+              }
+          }
         }
+      }
     }
+  }
 }
 
-@media screen and (min-width: 1400px) {}
+@media screen and (min-width: 1400px) {
+}
 
-@media screen and (min-width: 1600px) {}
+@media screen and (min-width: 1600px) {
+}

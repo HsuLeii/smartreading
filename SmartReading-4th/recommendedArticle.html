@@ -26,13 +26,15 @@
     <link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css" />
     <link href="Content/css/global.css" rel="stylesheet" />
-    <!-- this page widgets CSS -->
-
-    <link rel="stylesheet" href="http://140.122.118.58/_SRC3/Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
 
 <!-- this page widgets CSS -->
 <link rel="stylesheet" type="text/css" href="Content/widgets/icheck-bootstrap-master/icheck-bootstrap.min.css">
+<!-- datatables 開始 -->
 <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+<!-- datatables 結束 -->
+<!-- jquery-ui 開始 -->
+<link rel="stylesheet" type="text/css" href="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+<!-- jquery-ui 結束 -->
 
     <!-- SR core CSS -->
     <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
@@ -44,9 +46,9 @@
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <main class="main recommendedArticle">
         <div class="join-all">
-            <div class="order-wrap join-wrap container">
+            <div class="order-wrap join-wrap">
                 
-                <div class="row order-body" style="padding: 10px 10px 40px 10px; line-height: 2em;">
+                <div class="row order-body" style="padding: 10px 0px 40px 0px; line-height: 2em;">
 <!-- recommendedBook-search start -->
 <div class="recommendedBook-search">
                         <div class="form-group recommendedBook-search__book">
@@ -155,154 +157,204 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>優選書單</th>
             <th>書封面</th>
+            <th>已閱讀</th>
+            <th>已評論</th>
+            <th>稍後看</th>
             <th>書名</th>
             <th>圖書難度</th>
+            <th>字數</th>
+            <th>作者</th>
             <th>分類</th>
-            <th>題本類別</th>
-            <th>電子書</th>
-            <th>加入閱讀計畫</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="book-id">1</td>
-            <td class="book-good"><img src="Content/images/join_kv.jpg" width="66" height="65"></td>
             <td class="book-front">
               <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
-              <img src="Content/images/join_kv.jpg">
+              <img src="Content/images/recommendedArticle/book.png">
             </a>
             </td>
-            <td class="book-name">我會關心別人我會關心別人</td>
-            <td class="book-SR" data-th="圖書難度">SR 999</td>
-            <td class="book-sort" data-th="分類">成長/生命教育成長/生命教</td>
-            <td class="book-topic" data-th="題本類別">摘要題成長/生命教</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name">
+                <p>台灣也有國家寶藏！從化石窺探海洋古生物保育——台大生科蔡政</p> 
+            </td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 999</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">2</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
-            <td class="book-name">三隻餓狼想吃雞</td>
-            <td class="book-SR" data-th="圖書難度">SR 265</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+                <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+                    <img src="Content/images/recommendedArticle/book.png">
+                </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name"><p>三隻餓狼想吃雞</p></td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 265</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">3</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
-            <td class="book-name">害怕的時候</td>
-            <td class="book-SR" data-th="圖書難度">SR 187</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+                <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+                    <img src="http://english.smartreading.net/image/index/book-3.jpg">
+                </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name"><p>三隻餓狼想吃雞</p></td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 777</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">4</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
-            <td class="book-name">第一條魚</td>
-            <td class="book-SR" data-th="圖書難度">SR 187</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+              <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+              <img src="Content/images/recommendedArticle/book.png">
+            </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name">
+                <p>台灣也有國家寶藏！從化石窺探海洋古生物保育——台大生科蔡政</p> 
+            </td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 999</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">5</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
-            <td class="book-name">走進生命花園</td>
-            <td class="book-SR" data-th="圖書難度">SR 448</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+                <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+                    <img src="Content/images/recommendedArticle/book.png">
+                </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name"><p>三隻餓狼想吃雞</p></td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 265</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">6</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
-            <td class="book-name">10隻橡皮小鴨</td>
-            <td class="book-SR" data-th="圖書難度">SR 342</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+                <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+                    <img src="http://english.smartreading.net/image/index/book-3.jpg">
+                </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name"><p>三隻餓狼想吃雞</p></td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 777</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">7</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
-            <td class="book-name">團圓</td>
-            <td class="book-SR" data-th="圖書難度">SR 258</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+              <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+              <img src="Content/images/recommendedArticle/book.png">
+            </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name">
+                <p>台灣也有國家寶藏！從化石窺探海洋古生物保育——台大生科蔡政</p> 
+            </td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 999</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">8</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/49325.jpg"></a></td>
-            <td class="book-name">影子和我</td>
-            <td class="book-SR" data-th="圖書難度">SR 279</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+                <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+                    <img src="Content/images/recommendedArticle/book.png">
+                </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name"><p>三隻餓狼想吃雞</p></td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 265</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
           <tr>
             <td class="book-id">9</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/20678.jpg"></a></td>
-            <td class="book-name">小琪的房間</td>
-            <td class="book-SR" data-th="圖書難度">SR 330</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
+            <td class="book-front">
+                <a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro">
+                    <img src="http://english.smartreading.net/image/index/book-3.jpg">
+                </a>
+            </td>
+            <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
+            <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+            <td class="book-addRP">
+                <button class="btn recommendedBook-table__btn-addRP" type="button">
+                    <i class="fas fa-plus"></i> 稍後看
+                </button>
+            </td>
+            <td class="book-name"><p>三隻餓狼想吃雞</p></td>
+            <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 777</td>
+            <td class="book-word">字數：2500</td>
+            <td class="book-author">作者：王小明</td>
+            <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
           </tr>
-          <tr>
-            <td class="book-id">10</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18273.jpg"></a></td>
-            <td class="book-name">瘋狂愛上書</td>
-            <td class="book-SR" data-th="圖書難度">SR 338</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
-          </tr>
-          <tr>
-            <td class="book-id">11</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/16080.jpg"></a></td>
-            <td class="book-name">一吋蟲</td>
-            <td class="book-SR" data-th="圖書難度">SR 388</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
-          </tr>
-          <tr>
-            <td class="book-id">12</td>
-            <td class="book-good"></td>
-            <td class="book-front"><a role="button" class="hover-effect-dark" data-toggle="modal" data-target="#modal-bookIntro"><img src="https://smartreading.net/RP/BookContent/BookFront/18374.jpg"></a></td>
-            <td class="book-name">我的媽媽真麻煩</td>
-            <td class="book-SR" data-th="圖書難度">SR 250</td>
-            <td class="book-sort" data-th="分類">成長/生命教育</td>
-            <td class="book-topic" data-th="題本類別">摘要題</td>
-            <td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;電子書</td>
-            <td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" type="button">加入閱讀計畫</button></td>
-          </tr>
-          
         </tbody>
       </table>
   </div>
@@ -326,12 +378,13 @@
     <script src="Script/ie10-viewport-bug-workaround.js"></script> 
     
     <!-- widgets js -->
+    <!-- datatables 開始 -->
     <script src="Content/widgets/DataTables/datatables.min.js"></script> 
-
-
-    <script src="http://140.122.118.58/_SRC3/Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="http://140.122.118.58/_SRC3/Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script>
-
+<!-- datatables 結束 -->
+    <!-- jquery-ui 開始 -->
+<script src="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script> 
+<script src="Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script> 
+<!-- jquery-ui 結束 -->
 
     <script>
         $(document).ready(function () {
@@ -341,12 +394,7 @@
         });
     </script>
 
-    <script>
-        $(".recommendedBook-search_more-options").click(function () {
-            $(".recommendedBook-search_dropdown-menu_more-options").toggle();
-        });
-    </script>
-
+<!-- datatables 開始 -->
 <script>
     $(document).ready(function() {
         //datatables (demo，正式需工程師改寫~~)
@@ -365,28 +413,14 @@
                             { "targets": 6 , orderable: false },
                             { "targets": 7 , orderable: false },
                             { "targets": 8 , orderable: false },
+                            { "targets": 9 , orderable: false },
                          ],	 
             dom:'<"leveledBooks-table__header"B<"pull-right"ip>>'+
                 '<""<""t>>'+
                 '<"leveledBooks-table__footer"pi>',
             buttons:[	
-                        {
-                          text: '文章難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
-                          attr:  { id: 'sort_SR'},
-                          action: function () {
-                            if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
-                                this.order( [ 4, 'desc' ] ).draw();
-                                $('#sort_SR').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
-                                $('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
-                            }else{//原本null or desc↓變asc↑
-                                this.order( [ 4, 'asc' ] ).draw();
-                                $('#sort_SR').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
-                                $('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
-                            }//if there has "SR 1000", that will need to debug......
-                          }
-                        },
-                        {
-                          text: '全部&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+            {
+                          text: '全部&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
                           attr:  { id: 'sort_ebook', class: 'dt-button dt-button-checkbox'},
                           action: function () {
                             if( $('#sort_ebook').hasClass('asc')){ //原本asc↑，變desc↓
@@ -396,6 +430,22 @@
                                 //this.order( [ 7, 'asc' ] ).draw();
                                 
                                 
+                            }//if there has "SR 1000", that will need to debug......
+                          }
+                        },
+                        
+                        {
+                          text: '文章難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+                          attr:  { id: 'sort_SR'},
+                          action: function () {
+                            if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
+                                this.order( [ 6, 'desc' ] ).draw();
+                                $('#sort_SR').removeClass('active asc desc').addClass('active desc').siblings('.dt-button').removeClass('active asc desc');
+                                $('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+                            }else{//原本null or desc↓變asc↑
+                                this.order( [ 6, 'asc' ] ).draw();
+                                $('#sort_SR').removeClass('active asc desc').addClass('active asc').siblings('.dt-button').removeClass('active asc desc');
+                                $('#sort_SR').find('.glyphicon').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
                             }//if there has "SR 1000", that will need to debug......
                           }
                         },
@@ -447,13 +497,10 @@
             $('html, body').animate({scrollTop: $(".recommendedBook-search").offset().top - 80}, 500);
         });
     });
-    </script>
+</script>
+<!-- datatables 結束 -->
 
-
-
-<link rel="stylesheet" type="text/css" href="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-<script src="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script> 
-<script src="../Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script> 
+<!-- jquery-ui 開始 -->
 <script>
 $(function() {
 	$( '#SRrangeBar-s-range' ).slider({
@@ -484,7 +531,7 @@ $(function() {
 	$('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR '+$( "#SRrangeBar-s-control" ).slider( "values", 1 ));
  });
 </script> 
-
+<!-- jquery-ui 結束 -->
 
 
 
