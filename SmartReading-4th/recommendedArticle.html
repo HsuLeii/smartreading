@@ -681,11 +681,50 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="comment_btn">
+              <div class="comment_btn">
                   <p>
                     立即評論
                   </p>
-              </button>
+                </div>
+            </div>
+
+            <div class="comment_area">
+                <div class="input-group input_keywords">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                          <div class="input_title">
+                            <p><i class="far fa-lightbulb"></i> 找出文章的重要關鍵字</p>
+                          </div>
+                          <div class="input_annotation">
+                              <p>
+                                  紀錄你覺得這篇文章最重要的3個關鍵字！
+                              </p>
+                          </div>
+                        </div>
+                    </div>
+                    <input type="text" aria-label="First keywords" class="form-control">
+                    <input type="text" aria-label="Second keywords" class="form-control">
+                    <input type="text" aria-label="Third keywords" class="form-control">
+                  </div>
+
+                  <div class="input-group input_comment">
+                    <label for="comment" class="input-group-text">
+                        <div class="input_title">
+                            <p><i class="fas fa-pen"></i> 別忘了留下你的評論喔！</p>
+                          </div>
+                        </label>
+
+                    <textarea id="comment" name="comment" rows="10" maxlength="100" class="form-control" placeholder="將你對這篇文章的感受、收穫、評論，化為文字記錄下來吧！"></textarea>
+                    <div class="limit">
+                        <p>
+                            字數限制：<span>0</span>/100
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="button_area">
+                    <input type="submit" value="送出">
+                  </div>
             </div>
           </div>
         </div>
@@ -723,6 +762,15 @@
             $('footer').load('footer.html');
         });
     </script>
+
+<script>
+    $(document).ready(function () {
+        $(".comment_btn").click(function(){
+  $(".comment_area").show();
+  $(this).hide();
+});
+    });
+</script>
 
 <!-- datatables 開始 -->
 <script>
