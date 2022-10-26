@@ -58,6 +58,7 @@ header {
 			.navbar-nav {
 				display: flex;
 				flex-direction: column;
+				align-items: center;
 				margin: 0;
 
 				li {
@@ -69,7 +70,8 @@ header {
 
 					&:active,
 					&:focus,
-					&:hover {
+					&:hover,
+					&.active {
 						a {
 							color: $main-color;
 							background-color: transparent;
@@ -162,6 +164,36 @@ header {
 							background-color: transparent;
 						}
 					}
+
+					
+					&.navTab-shopping{
+						margin: 20px 0px;
+						padding: 3px 20px;
+						border: 1px solid $shopping-color;
+						border-radius: 50px;
+						position: relative;
+
+						i{
+							color: $shopping-color;
+						}
+
+						.shop_num{
+							right: 0;
+							top: 0;
+							transform: translate(50%, -50%);
+							background-color: $shopping-color;
+							color: $white;
+							position: absolute;
+
+    line-height: 1;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+						}
+					}
 				}
 			}
 
@@ -199,10 +231,12 @@ header {
 					padding: 0;
 					margin: 0 auto;
 					padding: 25px 0px 10px;
+					width: 100%;
 
 					.navbar-nav {
 						flex-direction: row;
-						justify-content: flex-end;
+						justify-content: center;
+						width: 100%;
 						li {
 
 							&.dropdown{
@@ -223,7 +257,15 @@ header {
 								}
 							}
 							a {
-								padding: 5px 8px;
+								padding: 5px;
+							}
+
+							&.navTab-name{
+								margin: 5px 0 5px 15px;
+							}
+
+							&.navTab-shopping{
+								margin: 20px 0 20px 10px;
 							}
 						}
 					}
