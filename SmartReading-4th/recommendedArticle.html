@@ -163,8 +163,8 @@
                                             <img src="Content/images/recommendedArticle/book.png">
                                         </a>
                                     </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-read"><i class="far fa-eye"></i> 未看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen">未評論</i> </td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -190,7 +190,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -216,7 +216,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -242,7 +242,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -268,7 +268,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -294,7 +294,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -320,7 +320,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -346,7 +346,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -372,7 +372,7 @@
                                         </a>
                                     </td>
                                     <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment"><i class="fas fa-pen"></i> 已評論</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
                                     <td class="book-addRP">
                                         <button class="btn recommendedBook-table__btn-addRP" type="button">
                                             <i class="fas fa-plus"></i> 稍後看
@@ -788,9 +788,10 @@
     </script>
 
     <!-- datatables 開始 -->
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             //datatables (demo，正式需工程師改寫~~)
+            var hCols = [3, 4];
             $('.leveledBooks-table').DataTable({
                 responsive: true,
                 searching: true,
@@ -841,84 +842,118 @@
                         orderable: false
                     },
                 ],
+                
+
+
                 dom: '<"leveledBooks-table__header"B<"pull-right"ip>>' +
                     '<""<""t>>' +
                     '<"leveledBooks-table__footer"pi>',
-                buttons: [
-                    // {
-                    //     text: '全部&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
-                    //     attr: {
-                    //         id: 'sort_id',
-                    //         dataToggle: 'dropdown'
-                    //     },
-                    //     action: function () {
-                    //         if ($('#sort_id').hasClass('asc')) { //原本asc↑，變desc↓
-                    //             this.order([0, 'desc']).draw();
-                    //             $('#sort_id').find('input[type="checkbox"]').removeAttr(
-                    //                 'checked');
-                    //         } else { //原本null or desc↓變asc↑
-                    //             this.order([0, 'asc']).draw();
-                    //             $('#sort_SR').removeClass('active').siblings('.dt-button')
-                    //                 .removeClass('active');
+                buttons: {
+                    
 
-                    //         } //if there has "SR 1000", that will need to debug......
-                    //     }
-                    // },
+                    buttons: [
 
                     {
-                        text: '全部',
-                        extend: 'collection',
-            className: '',
-            "buttons": [
-					{
-					extend: 'colvis',
-					collectionLayout: 'one-column',
-					text: function() {
-						var totCols = $('#example thead th').length;
-						var hiddenCols = hCols.length;
-						var shownCols = totCols - hiddenCols;
-						return 'Columns (' + shownCols + ' of ' + totCols + ')';
-					},
-					prefixButtons: [{
-						extend: 'colvisGroup',
-						text: 'Show all',
-						show: ':hidden'
-					}, {
-						extend: 'colvisRestore',
-						text: 'Restore'
-					}]
-				}, 
-					]
-                
+                        text: '全部&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
+                        attr: {
+                            id: 'sort_id',
+                        },
+                        action: function () {
+                            if ($('#sort_id').hasClass('asc')) { //原本asc↑，變desc↓
+                                this.order([0, 'desc']).draw();
+                                $('#sort_id').find('input[type="checkbox"]').removeAttr(
+                                    'checked');
+                            } else { //原本null or desc↓變asc↑
+                                this.order([0, 'asc']).draw();
+                                $('#sort_SR').removeClass('active').siblings('.dt-button')
+                                    .removeClass('active');
+
+                            } //if there has "SR 1000", that will need to debug......
+                        }
                     },
+                    
+            // {
+            //   extend: "collection",
+            //   text: "Export",
+            //   buttons: [
+            //     { text: "csv",
+            //     attr: {
+            //                  id: 'sort_SR'
+            //              },
+            //              action: function () {
+            //                  if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
+            //                      this.order([7, 'desc']).draw();
+            //                      $('#sort_SR').removeClass('active asc desc').addClass(
+            //                          'active desc').siblings('.dt-button').removeClass(
+            //                          'active asc desc');
+            //                      $('#sort_SR').find('.glyphicon').removeClass(
+            //                          'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+            //                  } else { //原本null or desc↓變asc↑
+            //                      this.order([7, 'asc']).draw();
+            //                      $('#sort_SR').removeClass('active asc desc').addClass(
+            //                          'active asc').siblings('.dt-button').removeClass(
+            //                          'active asc desc');
+            //                      $('#sort_SR').find('.glyphicon').removeClass(
+            //                          'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+            //                  } //if there has "SR 1000", that will need to debug......
+            //              }
+            //         },
+            //     { text: "已評論",
+            //     attr: {
+            //                  id: 'sort_B'
+            //              },
+            //              action: function () {
+            //                  if ($('#sort_B').hasClass('asc')) { //原本asc↑，變desc↓
+            //                      this.order([3, 'desc']).draw();
+            //                      $('#sort_B').removeClass('active asc desc').addClass(
+            //                          'active desc').siblings('.dt-button').removeClass(
+            //                          'active asc desc');
+            //                      $('#sort_B').find('.glyphicon').removeClass(
+            //                          'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+            //                  } else { //原本null or desc↓變asc↑
+            //                      this.order([3, 'asc']).draw();
+            //                      $('#sort_B').removeClass('active asc desc').addClass(
+            //                          'active asc').siblings('.dt-button').removeClass(
+            //                          'active asc desc');
+            //                      $('#sort_B').find('.glyphicon').removeClass(
+            //                          'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+            //                  } //if there has "SR 1000", that will need to debug......
+            //              }
+            //         },
+            //   ],
+            // },
 
-                    // {
-                    //     text: '文章難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
-                    //     attr: {
-                    //         id: 'sort_SR'
-                    //     },
-                    //     action: function () {
-                    //         if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
-                    //             this.order([7, 'desc']).draw();
-                    //             $('#sort_SR').removeClass('active asc desc').addClass(
-                    //                 'active desc').siblings('.dt-button').removeClass(
-                    //                 'active asc desc');
-                    //             $('#sort_SR').find('.glyphicon').removeClass(
-                    //                 'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
-                    //         } else { //原本null or desc↓變asc↑
-                    //             this.order([7, 'asc']).draw();
-                    //             $('#sort_SR').removeClass('active asc desc').addClass(
-                    //                 'active asc').siblings('.dt-button').removeClass(
-                    //                 'active asc desc');
-                    //             $('#sort_SR').find('.glyphicon').removeClass(
-                    //                 'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
-                    //         } //if there has "SR 1000", that will need to debug......
-                    //     }
-                    // },
+            {
+                        text: '文章難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+                        attr: {
+                            id: 'sort_SR'
+                        },
+                        action: function () {
+                            if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
+                                this.order([7, 'desc']).draw();
+                                $('#sort_SR').removeClass('active asc desc').addClass(
+                                    'active desc').siblings('.dt-button').removeClass(
+                                    'active asc desc');
+                                $('#sort_SR').find('.glyphicon').removeClass(
+                                    'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+                            } else { //原本null or desc↓變asc↑
+                                this.order([7, 'asc']).draw();
+                                $('#sort_SR').removeClass('active asc desc').addClass(
+                                    'active asc').siblings('.dt-button').removeClass(
+                                    'active asc desc');
+                                $('#sort_SR').find('.glyphicon').removeClass(
+                                    'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+                            } //if there has "SR 1000", that will need to debug......
+                        }
+                    },
+          ],
 
-                ],
+                    
+
+                    },
                 
                 
+
                     language: {
                     "processing": "處理中...",
                     "loadingRecords": "載入中...",
@@ -967,8 +1002,47 @@
                 }, 500);
             });
         });
-    </script>
+    </script> -->
     <!-- datatables 結束 -->
+
+        <!-- datatables 開始 -->
+        <script>
+            $(document).ready(function () {
+                //datatables (demo，正式需工程師改寫~~)
+                var hCols = [3, 4];
+                $('.leveledBooks-table').DataTable({
+				// "dom": "<'row'<'col-sm-4'B><'col-sm-2'l><'col-sm-6'p<br/>i>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-12'p<br/>i>>",
+				"paging": true,
+				"autoWidth": true,
+				"columnDefs": [{
+					"visible": false,
+					"targets": hCols
+				}],
+				"buttons": [
+					{
+					extend: 'colvis',
+					collectionLayout: 'one-column',
+					text: function() {
+						var totCols = $('#example thead th').length;
+						var hiddenCols = hCols.length;
+						var shownCols = totCols - hiddenCols;
+						return 'Columns (' + shownCols + ' of ' + totCols + ')';
+					},
+					prefixButtons: [{
+						extend: 'colvisGroup',
+						text: 'Show all',
+						show: ':hidden'
+					}, {
+						extend: 'colvisRestore',
+						text: 'Restore'
+					}]
+				},]
+				
+				});
+
+            });
+        </script>
+        <!-- datatables 結束 -->
 
     <!-- jquery-ui 開始 -->
     <script>
