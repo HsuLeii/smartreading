@@ -358,117 +358,43 @@
     }
 
     .map_book_area {
-      border-color: $main_color;
-    }
-
-    &.map_book_area_first_grade {
-      .map_object_table {
-        border-color: transparent transparent $first_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $first_grade_color;
-      }
-    }
-
-    &.map_book_area_second_grade {
-      .map_object_table {
-        border-color: transparent transparent $second_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $second_grade_color;
-      }
-    }
-
-    &.map_book_area_third_grade {
-      .map_object_table {
-        border-color: transparent transparent $third_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $third_grade_color;
-      }
-    }
-
-    &.map_book_area_fourth_grade {
-      .map_object_table {
-        border-color: transparent transparent $fourth_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $fourth_grade_color;
-      }
-    }
-
-    &.map_book_area_fifth_grade {
-      .map_object_table {
-        border-color: transparent transparent $fifth_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $fifth_grade_color;
-      }
-    }
-
-    &.map_book_area_sixth_grade {
-      .map_object_table {
-        border-color: transparent transparent $sixth_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $sixth_grade_color;
-      }
-    }
-
-    &.map_book_area_seventh_grade {
-      .map_object_table {
-        border-color: transparent transparent $seventh_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $seventh_grade_color;
-      }
-    }
-
-    &.map_book_area_eighth_grade {
-      .map_object_table {
-        border-color: transparent transparent $eighth_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $eighth_grade_color;
-      }
-    }
-
-    &.map_book_area_ninth_grade {
-      .map_object_table {
-        border-color: transparent transparent $ninth_grade_color;
-        border-style: solid solid solid solid;
-      }
-
-      .map_book_area {
-        border-color: $ninth_grade_color;
-      }
-    }
-
-    .map_book_area {
       width: 100%;
       padding: 0px 0% 50px;
       margin: 0px auto;
       background-color: $body_bg;
       position: relative;
+      border-color: $main_color;
+
+      &.map_book_area_first_grade{
+        background-color: lighten($first_grade_color, 45%);
+      }
+      &.map_book_area_second_grade{
+        background-color: lighten($second_grade_color, 40%);
+      }
+      &.map_book_area_third_grade{
+        background-color: lighten($third_grade_color, 45%);
+      }
+      &.map_book_area_fourth_grade{
+        background-color: lighten($fourth_grade_color, 45%);
+      }
+      &.map_book_area_fifth_grade{
+        background-color: lighten($fifth_grade_color, 60%);
+      }
+      &.map_book_area_sixth_grade{
+        background-color: lighten($sixth_grade_color, 55%);
+      }
+      &.map_book_area_seventh_grade{
+        background-color: lighten($seventh_grade_color, 55%);
+      }
+      &.map_book_area_eighth_grade{
+        background-color: lighten($eighth_grade_color, 50%);
+      }
+      &.map_book_area_ninth_grade{
+        background-color: lighten($ninth_grade_color, 60%);
+      }
 
       .ticket_bg {
-        padding: 40px 0px 20px;
+        padding: 40px 0px 40px;
         position: relative;
         .ticket_area {
           display: flex;
@@ -538,9 +464,36 @@
           .swiper-slide {
             width: calc((100% - 255px) / 5);
             height: auto;
+            position: relative;
             &:nth-child(1) {
               width: 255px !important;
               background-color: $white;
+            }
+            &.notget{
+              &:hover{
+                &:after{
+                  opacity: 1;                
+                }
+              }
+              &:after{
+                content: attr(data-des);
+                width: 80%;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                font-size: 15px;
+                -webkit-transform: translate(-50%, 0px);
+                transform: translate(-50%, 0px);
+                opacity: 0;
+                z-index: 1;
+                -webkit-transition: .5s;
+                transition: .5s;
+                color: $white;
+                background-color: $brown;
+                padding: 5px;
+                border-radius: 10px;
+                filter: grayscale(1);
+              }
             }
           }
           .ticket_wrap {
@@ -558,7 +511,7 @@
               display: block;
               width: 10px;
               height: 10px;
-              background: $body_bg;
+              background: $white;
               border-radius: 50%;
               right: -5px;
               z-index: 1;
@@ -966,7 +919,7 @@
                   width: 100%;
                   background: radial-gradient(
                     circle at 0 50%,
-                    $body_bg 50%,
+                    $white 50%,
                     $ticket_bg 0
                   );
                   background-size: 0.3rem 0.7rem;
@@ -989,7 +942,7 @@
                   width: 100%;
                   background: radial-gradient(
                     circle at 0 50%,
-                    $body_bg 50%,
+                    $white 50%,
                     $ticket_bg 0
                   );
                   background-size: 0.3rem 0.7rem;
@@ -1084,6 +1037,105 @@
             }
           }
         }
+      }
+    }
+
+    &.map_book_area_first_grade {
+      .map_object_table {
+        border-color: transparent transparent $first_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $first_grade_color;
+      }
+    }
+
+    &.map_book_area_second_grade {
+      .map_object_table {
+        border-color: transparent transparent $second_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $second_grade_color;
+      }
+    }
+
+    &.map_book_area_third_grade {
+      .map_object_table {
+        border-color: transparent transparent $third_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $third_grade_color;
+      }
+    }
+
+    &.map_book_area_fourth_grade {
+      .map_object_table {
+        border-color: transparent transparent $fourth_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $fourth_grade_color;
+      }
+    }
+
+    &.map_book_area_fifth_grade {
+      .map_object_table {
+        border-color: transparent transparent $fifth_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $fifth_grade_color;
+      }
+    }
+
+    &.map_book_area_sixth_grade {
+      .map_object_table {
+        border-color: transparent transparent $sixth_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $sixth_grade_color;
+      }
+    }
+
+    &.map_book_area_seventh_grade {
+      .map_object_table {
+        border-color: transparent transparent $seventh_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $seventh_grade_color;
+      }
+    }
+
+    &.map_book_area_eighth_grade {
+      .map_object_table {
+        border-color: transparent transparent $eighth_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $eighth_grade_color;
+      }
+    }
+
+    &.map_book_area_ninth_grade {
+      .map_object_table {
+        border-color: transparent transparent $ninth_grade_color;
+        border-style: solid solid solid solid;
+      }
+
+      .map_book_area {
+        border-color: $ninth_grade_color;
       }
     }
   }
@@ -1312,6 +1364,22 @@
             
         }
     }
+
+    .map_book_area_bg{
+      .map_book_area {
+        .ticket_bg{
+          .ticket_area{
+            .swiper-slide {
+              &.notget{
+                &:after{
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
 }
@@ -1345,6 +1413,7 @@
       }
       .map_book_area {
         .ticket_bg {
+          padding: 20px 0px 20px;
           .ticket_area {
             width: 90%;
             .ticket_wrap {
@@ -1373,6 +1442,11 @@
               width: calc((100% - 235px) / 1.5);
               &:nth-child(1) {
                 width: 235px !important;
+              }
+              &.notget{
+                &:after{
+                  font-size: 11px;
+                }
               }
             }
           }
