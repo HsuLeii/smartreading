@@ -6830,7 +6830,7 @@ h-word {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0px auto 40px;
+  margin: 30px auto 40px;
 }
 
 .grade_link .level_correspondence_marker {
@@ -6849,12 +6849,13 @@ h-word {
   content: "";
   background-image: url(../../image/svg/magicWand.svg);
   background-size: cover;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translate(-50%, calc(-100% - 5px));
+  transform: translate(-50%, calc(-100% - 10px));
+  display: none;
 }
 
 .grade_link .level_correspondence_marker .level_correspondence_marker_inner::after {
@@ -6870,6 +6871,10 @@ h-word {
 
 .grade_link .level_correspondence_marker .level_correspondence_marker_inner.active {
   width: calc(60px * 1.5);
+}
+
+.grade_link .level_correspondence_marker .level_correspondence_marker_inner.active::before {
+  display: block;
 }
 
 .grade_link .level_correspondence_marker .level_correspondence_marker_inner.active::after {
@@ -6971,11 +6976,15 @@ h-word {
 
 @media screen and (max-width: 1024px) {
   .grade_link {
-    margin: 0px auto 20px;
+    margin: 30px auto;
     width: 90%;
   }
   .grade_link .level_correspondence_marker .level_correspondence_marker_inner {
     width: 40px;
+  }
+  .grade_link .level_correspondence_marker .level_correspondence_marker_inner::before {
+    width: 30px;
+    height: 30px;
   }
   .grade_link .level_correspondence_marker .level_correspondence_marker_inner.active {
     width: calc(40px * 1.4);

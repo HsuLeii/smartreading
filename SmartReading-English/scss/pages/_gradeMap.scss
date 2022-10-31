@@ -1146,7 +1146,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0px auto 40px;
+  margin: 30px auto 40px;
 
   .level_correspondence_marker {
     margin: 5px 10px;
@@ -1162,12 +1162,13 @@
         content: "";
         background-image: url(../../image/svg/magicWand.svg);
         background-size: cover;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         position: absolute;
         left: 50%;
         top: 0;
-        transform: translate(-50%, calc(-100% - 5px));
+        transform: translate(-50%, calc(-100% - 10px));
+        display: none;
       }
 
       &::after {
@@ -1185,6 +1186,9 @@
 
       &.active {
         width: calc(60px * 1.5);
+        &::before {
+          display: block;
+        }
         &::after {
           display: block;
         }
@@ -1347,12 +1351,16 @@
 
 @media screen and (max-width: 1024px) {
   .grade_link {
-    margin: 0px auto 20px;
+    margin: 30px auto;
     width: 90%;
 
     .level_correspondence_marker {
       .level_correspondence_marker_inner {
         width: 40px;
+        &::before{
+          width: 30px;
+          height: 30px;
+        }
         &.active {
           width: calc(40px * 1.4);
         }
