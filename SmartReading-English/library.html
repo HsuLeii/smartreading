@@ -781,35 +781,35 @@
 
 
     <script>
-       $(".level_correspondence_marker").click(function(){
-  if ($(".first_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#d72b2b");
-        }
-        if ($(".second_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#EB772A");
-        }
-        if ($(".third_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#F3BA03");
-        }
-        if ($(".fourth_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#8DA429");
-        }
-        if ($(".fifth_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#00AD5E");
-        }
-        if ($(".sixth_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#00B1B9");
-        }
-        if ($(".seventh_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#0163C6");
-        }
-        if ($(".eighth_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#4F1AC4");
-        }
-        if ($(".ninth_grade_marker_inner").hasClass("active")) {
-            $(".folder_data h3").css("color", "#8400A1");
-        }
-});
+        $(".level_correspondence_marker").click(function () {
+            if ($(".first_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#d72b2b");
+            }
+            if ($(".second_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#EB772A");
+            }
+            if ($(".third_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#F3BA03");
+            }
+            if ($(".fourth_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#8DA429");
+            }
+            if ($(".fifth_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#00AD5E");
+            }
+            if ($(".sixth_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#00B1B9");
+            }
+            if ($(".seventh_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#0163C6");
+            }
+            if ($(".eighth_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#4F1AC4");
+            }
+            if ($(".ninth_grade_marker_inner").hasClass("active")) {
+                $(".folder_data h3").css("color", "#8400A1");
+            }
+        });
     </script>
 
     <script>
@@ -910,7 +910,23 @@
             $(".level_correspondence_marker_inner").removeClass("active");
             $(".this_grade").addClass("active");
         });
-    
+    </script>
+
+    <!-- 書本圖片高度設定 -->
+    <script>
+        $(document).ready(function () {
+            bookWidth = $(".book_img").width();
+            $(".book_img").css({
+                "max-height": bookWidth
+            });
+
+            $(window).resize(function () {
+                bookWidth = $(".book_img").width();
+                $(".book_img").css({
+                    "max-height": bookWidth
+                });
+            });
+        });
     </script>
 
 </body>
