@@ -149,15 +149,15 @@ input[type="radio"] + .img-answer::before {
 input[type="radio"] + *::before {
   content: "";
   display: inline-block;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   border-style: solid;
   border-width: 1.5px;
   border-color: #ff6464;
   position: absolute;
-  left: calc(-0.8rem - 0.75px);
-  top: 0.4rem;
+  left: calc(-17px - 0.75px);
+  margin: 3px 0 0 0;
 }
 
 input[type="radio" i] {
@@ -247,10 +247,9 @@ input[type="radio" i] ~ label {
     font-size: 15px;
   }
   input[type="radio"] + *::before {
-    width: 0.6rem;
-    height: 0.6rem;
-    left: calc(-0.6rem - 0.75px);
-    top: 0.3rem;
+    width: 15px;
+    height: 15px;
+    left: calc(-15px - 0.75px);
   }
 }
 
@@ -263,12 +262,6 @@ input[type="radio" i] ~ label {
   }
   h4 {
     font-size: 16px;
-  }
-  input[type="radio"] + *::before {
-    width: 0.5rem;
-    height: 0.5rem;
-    left: calc(-0.5rem - 0.75px);
-    top: 0.25rem;
   }
   .main {
     margin: 40px auto 80px;
@@ -307,6 +300,11 @@ input[type="radio" i] ~ label {
   select,
   option {
     font-size: 14px;
+  }
+  input[type="radio"] + *::before {
+    width: 14px;
+    height: 14px;
+    left: calc(-14px - 0.75px);
   }
 }
 
@@ -3618,7 +3616,7 @@ footer .footer_copyright p {
 }
 
 .main.test .answer_area .test_form fieldset .answer_picture {
-  width: calc(45% - 15px);
+  width: 100%;
 }
 
 .main.test .answer_area .test_form fieldset .answer_sound {
@@ -3637,6 +3635,15 @@ footer .footer_copyright p {
 
 .main.test .answer_area .test_form .answer_list {
   margin: 15px;
+}
+
+.main.test .answer_area .test_form .answer_list .text_answer_area {
+  display: flex;
+}
+
+.main.test .answer_area .test_form .answer_list .text_answer_area span:nth-last-child(1) {
+  max-width: calc(100% - 90px);
+  margin: 0 0 0 5px;
 }
 
 .main.test .answer_area .test_form .answer_list.answer_picture {
@@ -3730,12 +3737,13 @@ footer .footer_copyright p {
 }
 
 .main.test .answer_area .connect tr td {
-  width: 27.5%;
+  width: calc(22.5% - 4px);
   position: relative;
+  display: inline-block;
 }
 
 .main.test .answer_area .connect tr td:nth-child(2) {
-  width: 45%;
+  width: calc(45% - 4px);
   cursor: auto;
 }
 
@@ -3746,6 +3754,12 @@ footer .footer_copyright p {
 }
 
 .main.test .answer_area .connect tr td .connect_topic p {
+  text-align: left;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.main.test .answer_area .connect tr td .connect_topic span {
   text-align: left;
   font-size: 21px;
   font-weight: bold;
@@ -4291,7 +4305,7 @@ h-word {
     margin: 10px auto;
   }
   .main.test .answer_area .test_form .answer_list.answer_picture {
-    margin: 15px auto;
+    margin: 15px 0px;
   }
   .main.test .answer_area .test_form .answer_list.answer_picture img {
     max-width: 100%;
@@ -4309,13 +4323,13 @@ h-word {
     margin: 10px auto;
   }
   .main.test .answer_area .connect tr {
-    margin: 0px 35px;
+    margin: 20px 35px;
   }
   .main.test .answer_area .connect tr td {
-    width: 32.5%;
+    width: calc(32% - 4px);
   }
   .main.test .answer_area .connect tr td:nth-child(2) {
-    width: 35%;
+    width: calc(35% - 4px);
   }
   .main.test .answer_area .connect tr td .test_audio_icon {
     width: 30px;
@@ -4328,6 +4342,9 @@ h-word {
     right: -35px;
   }
   .main.test .answer_area .connect tr td .connect_topic p {
+    font-size: 17px;
+  }
+  .main.test .answer_area .connect tr td .connect_topic span {
     font-size: 17px;
   }
   /*另一種注音開始*/
@@ -4375,9 +4392,6 @@ h-word {
   .main.test .answer_area {
     padding: 0px calc(1rem + 30px);
   }
-  .main.test .answer_area .test_form fieldset .answer_picture {
-    width: 100%;
-  }
   .main.test .answer_area .test_form fieldset .answer_sound {
     width: 45%;
   }
@@ -4398,13 +4412,13 @@ h-word {
     width: calc(100% + 2rem);
   }
   .main.test .answer_area .connect_area .connect tr {
-    margin: 0px auto;
+    margin: 20px auto;
   }
   .main.test .answer_area .connect_area .connect tr td {
-    width: 42.5%;
+    width: calc(42% - 4px);
   }
   .main.test .answer_area .connect_area .connect tr td:nth-child(2) {
-    width: 15%;
+    width: calc(15% - 4px);
   }
   .main.test .answer_area .connect_area .connect tr td .test_audio_icon {
     width: 25px;
@@ -4420,6 +4434,9 @@ h-word {
     padding: 3px;
   }
   .main.test .answer_area .connect_area .connect tr td .connect_topic p {
+    font-size: 15px;
+  }
+  .main.test .answer_area .connect_area .connect tr td .connect_topic span {
     font-size: 15px;
   }
   .main.test .answer_area .connect_area .connect tr td .connect_topic.connect_topic_audio img {
@@ -4475,15 +4492,6 @@ h-word {
   .main.test .answer_area .topic span {
     font-size: 19px;
   }
-  .main.test .answer_area .connect_area .connect tr {
-    margin: 25px 20px;
-  }
-  .main.test .answer_area .connect_area .connect tr td {
-    width: 40%;
-  }
-  .main.test .answer_area .connect_area .connect tr td:nth-child(2) {
-    width: 20%;
-  }
   .main.test .answer_area .connect_area .connect tr td .test_audio_icon {
     width: 20px;
     height: 20px;
@@ -4495,6 +4503,9 @@ h-word {
     right: -20px;
   }
   .main.test .answer_area .connect_area .connect tr td .connect_topic p {
+    font-size: 14px;
+  }
+  .main.test .answer_area .connect_area .connect tr td .connect_topic span {
     font-size: 14px;
   }
   .main.test .answer_area .connect_area .connect tr td .connect_topic.connect_topic_audio img {
@@ -7261,7 +7272,7 @@ h-word {
   padding: 10px 0px;
 }
 
-.main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_content h4 {
+.main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
   color: #5B3716;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -7271,8 +7282,8 @@ h-word {
   height: 65px;
 }
 
-.main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_content h4:hover {
-  color: #321e0c;
+.main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4:hover {
+  color: #ff6464;
 }
 
 .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .test_button_area .test_button {
@@ -7395,7 +7406,7 @@ h-word {
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information {
     width: 90%;
   }
-  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_content h4 {
+  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
     -webkit-line-clamp: 3;
     height: 87px;
   }
@@ -7432,7 +7443,7 @@ h-word {
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information {
     width: 90%;
   }
-  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_content h4 {
+  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
     height: 77px;
   }
 }
@@ -7457,7 +7468,7 @@ h-word {
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item {
     margin: 10px auto;
   }
-  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_content h4 {
+  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
     height: 70px;
   }
 }
