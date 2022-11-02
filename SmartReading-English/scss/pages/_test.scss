@@ -30,7 +30,7 @@
             width: 30%;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             background-color: $white;
             border-radius: 16px;
             padding: 15px;
@@ -159,10 +159,11 @@
             .answer_list {
                 margin: 15px;
 
-                .text_answer_area{
+                .text_answer_area {
                     display: flex;
-                    span{
-                        &:nth-last-child(1){
+
+                    span {
+                        &:nth-last-child(1) {
                             max-width: calc(100% - 90px);
                             margin: 0 0 0 5px;
                         }
@@ -188,6 +189,8 @@
                 height: auto;
                 margin: 20px;
             }
+
+            
 
             .dictionary {
                 display: flex;
@@ -344,6 +347,20 @@
                 }
             }
 
+        }
+
+        .audio_img {
+            width: 80%;
+            border: 0px solid;
+            padding: 15px;
+            background-color: $main_color;
+            border-radius: 50%;
+            cursor: pointer;
+            max-width: 140px;
+
+            &.audio_animate {
+                animation: audio 1500ms infinite;
+            }
         }
     }
 
@@ -670,7 +687,7 @@ h-word {
         position: relative;
 
         &.first_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $first_grade_color;
                     background-color: $first_grade_color;
@@ -679,77 +696,77 @@ h-word {
         }
 
         &.second_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $second_grade_color;
                     background-color: $second_grade_color;
                 }
             }
-            
+
         }
 
         &.third_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $third_grade_color;
                     background-color: $third_grade_color;
                 }
             }
-            
+
         }
 
         &.fourth_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $fourth_grade_color;
                     background-color: $fourth_grade_color;
                 }
             }
-            
+
         }
 
         &.fifth_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $fifth_grade_color;
                     background-color: $fifth_grade_color;
                 }
             }
-            
+
         }
 
         &.sixth_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $sixth_grade_color;
                     background-color: $sixth_grade_color;
                 }
             }
-            
+
         }
 
         &.seventh_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $seventh_grade_color;
                     background-color: $seventh_grade_color;
                 }
             }
-            
+
         }
 
         &.eighth_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $eighth_grade_color;
                     background-color: $eighth_grade_color;
                 }
             }
-            
+
         }
 
         &.ninth_grade_test_modal {
-            .test_modal_content{
+            .test_modal_content {
                 .test_modal_medal_area {
                     border: 1.5px solid $ninth_grade_color;
                     background-color: $ninth_grade_color;
@@ -765,18 +782,20 @@ h-word {
                 text-align: center;
             }
         }
-        .test_modal_title{
+
+        .test_modal_title {
             width: 95%;
         }
 
-        .two_test_modal{
+        .two_test_modal {
             display: flex;
             margin: 0 auto;
             width: 95%;
+
             .test_modal_content {
                 width: 45%;
 
-                .test_modal_medal_area{
+                .test_modal_medal_area {
                     width: 100%;
                 }
             }
@@ -831,7 +850,7 @@ h-word {
                     }
                 }
             }
-            
+
         }
 
         .navigator_area {
@@ -986,12 +1005,14 @@ h-word {
     /* 彈跳獎章開始 */
     .blocker {
         .test_medal_modal {
-            .test_modal_title{
+            .test_modal_title {
                 width: 70%;
             }
-            .two_test_modal{
+
+            .two_test_modal {
                 flex-direction: column;
                 width: 70%;
+
                 .test_modal_content {
                     width: 100%;
                     margin: 0px auto 20px;
@@ -1284,30 +1305,44 @@ h-word {
 }
 
 @keyframes jump {
-	0% {
-		transform: translateY(-40px);
-	}
+    0% {
+        transform: translateY(-40px);
+    }
 
-	30% {
-		transform: translateY(30px);
-	}
+    30% {
+        transform: translateY(30px);
+    }
 
-	60% {
-		transform: translateY(-30px);
-	}
+    60% {
+        transform: translateY(-30px);
+    }
 
-	100% {
-		transform: translateY(0px);
-	}
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes bookman_move {
 
-	0%{
-		transform: translate(100%, -20%);
-	}
+    0% {
+        transform: translate(100%, -20%);
+    }
 
-	50% {
-		transform: translate(-50%, -20%);
-	}
+    50% {
+        transform: translate(-50%, -20%);
+    }
+}
+
+@keyframes audio {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .55;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
