@@ -69,10 +69,21 @@ div#toggle {
 
                 li {
 
+                    border-left: 1px solid $brown;
+
+                    &:nth-child(1){
+                        border-left: 0px;
+                    }
+
                     &.dropdown {
                         display: inline-block;
                         cursor: default;
                         position: relative;
+
+                        li{
+                            
+                            border: 0px;
+                        }
 
 
                         span.arrow {
@@ -122,18 +133,18 @@ div#toggle {
                             position: absolute;
                             display: none;
                             left: 50%;
-                            transform: translate(-50%, 6px);
+                            transform: translate(-50%, 0px);
                             z-index: 1;
-                            background-color: $header_bg;
-                            border-radius: 0px 0px 10px 10px;
+                            background-color: $body_bg;
+                            border-radius: 10px;
+                            margin: 15px 0;
                             white-space: nowrap;
+                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
 
                             li {
                                 padding: 5px 15px;
-
-                                &:last-child {
-                                    margin-bottom: 10px;
-                                }
                             }
 
                             &.open {
@@ -153,7 +164,7 @@ div#toggle {
                     a {
                         color: $brown;
                         @extend %bold;
-                        padding: 5px 8px;
+                        padding: 5px 12px;
                         font-size: 18px;
                     }
 
@@ -173,7 +184,7 @@ div#toggle {
                 &.menu_language {
                     width: 140px;
                     padding: 5px 10px;
-                    margin: 0px 0px 0px 5px;
+                    margin: 0px 0px 0px 10px;
                     border-radius: 10px;
                     background-color: $brown;
                     position: relative;
@@ -233,8 +244,9 @@ div#toggle {
 
                             &.open {
                                 display: block;
-                                transform: translate(-50%, -10px);
+                                transform: translate(-50%, -15px);
                                 padding: 20px 0px 0px;
+                                margin: 0;
                                 z-index: -1;
 
                                 a {
@@ -253,8 +265,18 @@ div#toggle {
     }
 }
 
+@media screen and (max-width: 1300px){
+    .header{
+        flex-direction: column;
+        padding: 15px 2.5%;
 
-@media screen and (max-width: 1200px) {
+        .header_logo {
+            margin: 0 0 15px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
     div#toggle {
         display: block;
         right: 10px;
@@ -285,6 +307,9 @@ div#toggle {
     }
 
     .header {
+        .header_logo{
+            margin: 0 auto 0 0;
+        }
         nav {
             .menu {
                 visibility: hidden;
@@ -293,25 +318,21 @@ div#toggle {
                 position: absolute;
                 width: 30%;
                 min-width: 280px;
-                height: calc(100vh - 40px);
-                padding-top: 50px;
-                right: 0;
-                top: 20px;
-                background-color: $header_bg;
+                height: calc(100vh - 150px);
+                right: 20px;
+                top: 130px;
+                background-color: $body_bg;
                 z-index: 4;
-                border-radius: 10px 0px 0px 10px;
+                border-radius: 10px;
+                padding: 30px 0;
 
                 div {
                     flex-direction: column;
                     width: 90%;
                     margin: 0 auto;
 
-                    &.menu_avatar{
-                        order: 3;
-                    }
-
                         &.menu_language {
-                            margin: 0px auto 0px 5%;
+                            margin: 15px auto 0px 5%;
                             text-align: left;
                             padding: 10px;
                             width: auto;
@@ -335,12 +356,8 @@ div#toggle {
                                     width: calc(140px - 20px);
                                     
                                     &.open {
-                                        transform: translate(0%, 3px);
-                                        padding: 0px;
-                                        z-index: 1;
-                                        left: 0;
+                                        transform: translate(0%, -15px);
                                         width: 100%;
-                                        padding: 10px 0px;
 
                                         li{
                                             padding: 5px 10px;
@@ -352,15 +369,23 @@ div#toggle {
 
                     li {
                         padding: 10px 0px;
+                        border-left: 0px;
+                        border-top: 1px solid $brown;
+
+                        &:nth-child(1){
+                            border-top: 0px;
+                        }
 
                         &.dropdown {
                             .dropdown_content{
-                                left: 0px;
-                                transform: translate(0% , 6px);
+                                margin: 10px 0;
+                                left: 0%;
+                                transform: translate(0%, 0px);
                             }
                             &.avatar_dropdown{
+                                padding: 0;
                                 .avatar_image{
-                                    margin: 15px 0px;
+                                    margin: 0 0 15px;
                                 }
                                 .avatar_menu{
                                     left: 0;
@@ -384,27 +409,157 @@ div#toggle {
     }
 }
 
-@media screen and (max-width: 1024px) {
-    div#toggle {
-        top: 10px;
-    }
+// @media screen and (max-width: 1200px) {
+//     div#toggle {
+//         display: block;
+//         right: 10px;
+//         top: 20px;
+//         z-index: 5;
 
-    .header {
+//         &.open {
+//             span {
+//                 background-color: rgba(0, 0, 0, 0.0);
 
-        nav {
-            .menu {
-                height: calc(100vh - 20px);
-                top: 10px;
-            }
-        }
+//                 &:before {
+//                     margin: 0;
+//                 }
 
-        .header_logo {
-            img {
-                height: 50px;
-            }
-        }
-    }
-}
+//                 &:after {
+//                     margin: 0;
+//                 }
+
+//                 &:before {
+//                     transform: rotate(45deg);
+//                 }
+
+//                 &:after {
+//                     transform: rotate(-45deg);
+//                 }
+//             }
+//         }
+//     }
+
+//     .header {
+//         nav {
+//             .menu {
+//                 visibility: hidden;
+//                 overflow-y: auto;
+//                 flex-direction: column;
+//                 position: absolute;
+//                 width: 30%;
+//                 min-width: 280px;
+//                 height: calc(100vh - 40px);
+//                 padding-top: 50px;
+//                 right: 0;
+//                 top: 20px;
+//                 background-color: $header_bg;
+//                 z-index: 4;
+//                 border-radius: 10px 0px 0px 10px;
+
+//                 div {
+//                     flex-direction: column;
+//                     width: 90%;
+//                     margin: 0 auto;
+
+//                     &.menu_avatar{
+//                         order: 3;
+//                     }
+
+//                         &.menu_language {
+//                             margin: 0px auto 0px 5%;
+//                             text-align: left;
+//                             padding: 10px;
+//                             width: auto;
+//                             min-width: 140px;
+            
+//                             li {
+//                                 padding: 0px;
+//                                 margin: 0;
+
+//                                 &.dropdown {
+//                                     .dropdown_content {
+//                                         li {
+//                                             padding: 5px 0px;
+//                                             text-align: left;
+//                                         }
+//                                     }
+//                                 }
+            
+//                                 .dropdown_content {
+//                                     background-color: $brown;
+//                                     width: calc(140px - 20px);
+                                    
+//                                     &.open {
+//                                         transform: translate(0%, 3px);
+//                                         padding: 0px;
+//                                         z-index: 1;
+//                                         left: 0;
+//                                         width: 100%;
+//                                         padding: 10px 0px;
+
+//                                         li{
+//                                             padding: 5px 10px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+
+//                     li {
+//                         padding: 10px 0px;
+
+//                         &.dropdown {
+//                             .dropdown_content{
+//                                 left: 0px;
+//                                 transform: translate(0% , 6px);
+//                             }
+//                             &.avatar_dropdown{
+//                                 .avatar_image{
+//                                     margin: 15px 0px;
+//                                 }
+//                                 .avatar_menu{
+//                                     left: 0;
+//                                     transform: translate(0px);
+//                                     li{
+//                                         text-align: left;
+//                                         padding: 5px 0px;
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 &.opened {
+//                     visibility: visible;
+//                 }
+
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 1024px) {
+//     div#toggle {
+//         top: 10px;
+//     }
+
+//     .header {
+
+//         nav {
+//             .menu {
+//                 height: calc(100vh - 20px);
+//                 top: 10px;
+//             }
+//         }
+
+//         .header_logo {
+//             img {
+//                 height: 50px;
+//             }
+//         }
+//     }
+// }
 
 @media screen and (max-width: 768px) {
     .header {
@@ -431,8 +586,8 @@ div#toggle {
 
         nav {
             .menu {
-                height: calc(100vh - 10px);
-                top: 5px;
+                height: calc(100vh - 106px);
+                top: 86px;
             }
         }
 
