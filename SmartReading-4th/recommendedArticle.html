@@ -36,6 +36,12 @@
     <link rel="stylesheet" type="text/css" href="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
     <!-- jquery-ui 結束 -->
 
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
+ -->
+
+
+
     <!-- SR core CSS -->
     <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
 </head>
@@ -138,7 +144,7 @@
 
                     <!-- recommendedBook-list start -->
                     <div class="recommendedBook-list">
-                        <table id="" class="table leveledBooks-table recommendedBook-table">
+                        <table id="table" class="table leveledBooks-table recommendedBook-table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -155,19 +161,97 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="book-id">1</td>
+                                <tr class="book_area">
+                                    <td data-search="all read comment later" class="book-id">1</td>
                                     <td class="book-front">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
                                             <img src="Content/images/recommendedArticle/book.png">
                                         </a>
                                     </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 未看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen">未評論</i> </td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;已看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;已評論</td>
+                                    <td class="book-later active">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
+                                        </button>
+                                    </td>
+                                    <td class="book-logo">
+                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
+                                    </td>
+                                    <td class="book-name">
+                                        <p>台灣也有國家寶藏！從化石窺探海洋古生物保育——台大生科蔡政1</p>
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 999</td>
+                                    <td class="book-word">字數：2500</td>
+                                    <td class="book-author">作者：王小明</td>
+                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
+                                </tr>
+                                <tr class="book_area">
+                                    <td data-search="all read later" class="book-id">2</td>
+                                    <td class="book-front">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/recommendedArticle/book.png">
+                                        </a>
+                                    </td>
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;已看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;未評論</td>
+                                    <td class="book-later active">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
+                                        </button>
+                                    </td>
+                                    <td class="book-logo">
+                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
+                                    </td>
+                                    <td class="book-name">
+                                        <p>三隻餓狼想吃雞2</p>
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 265</td>
+                                    <td class="book-word">字數：2500</td>
+                                    <td class="book-author">作者：王小明</td>
+                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
+                                </tr>
+                                <tr class="book_area">
+                                    <td data-search="all read" class="book-id">3</td>
+                                    <td class="book-front">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/recommendedArticle/book.png">
+                                        </a>
+                                    </td>
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;已看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;未評論</td>
+                                    <td class="book-later">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i> &nbsp;稍後看
+                                        </button>
+                                    </td>
+                                    <td class="book-logo">
+                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
+                                    </td>
+                                    <td class="book-name">
+                                        <p>三隻餓狼想吃雞3</p>
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 777</td>
+                                    <td class="book-word">字數：2500</td>
+                                    <td class="book-author">作者：王小明</td>
+                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
+                                </tr>
+                                <tr class="book_area">
+                                    <td data-search="all read comment" class="book-id">4</td>
+                                    <td class="book-front">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/recommendedArticle/book.png">
+                                        </a>
+                                    </td>
+                                    <td class="book-read"><i class="fas fa-eye"></i>&nbsp;已看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;已評論</td>
+                                    <td class="book-later">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
                                         </button>
                                     </td>
                                     <td class="book-logo">
@@ -181,19 +265,19 @@
                                     <td class="book-author">作者：王小明</td>
                                     <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
                                 </tr>
-                                <tr>
-                                    <td class="book-id">2</td>
+                                <tr class="book_area">
+                                    <td data-search="all comment later" class="book-id">5</td>
                                     <td class="book-front">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
                                             <img src="Content/images/recommendedArticle/book.png">
                                         </a>
                                     </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;未看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;已評論</td>
+                                    <td class="book-later active">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
                                         </button>
                                     </td>
                                     <td class="book-logo">
@@ -207,19 +291,19 @@
                                     <td class="book-author">作者：王小明</td>
                                     <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
                                 </tr>
-                                <tr>
-                                    <td class="book-id">3</td>
+                                <tr class="book_area">
+                                    <td data-search="all comment" class="book-id">6</td>
                                     <td class="book-front">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
                                             <img src="Content/images/recommendedArticle/book.png">
                                         </a>
                                     </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;未看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;已評論</td>
+                                    <td class="book-later">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
                                         </button>
                                     </td>
                                     <td class="book-logo">
@@ -233,19 +317,19 @@
                                     <td class="book-author">作者：王小明</td>
                                     <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
                                 </tr>
-                                <tr>
-                                    <td class="book-id">4</td>
+                                <tr class="book_area">
+                                    <td data-search="all" class="book-id">7</td>
                                     <td class="book-front">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
                                             <img src="Content/images/recommendedArticle/book.png">
                                         </a>
                                     </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;未看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;未評論</td>
+                                    <td class="book-later">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
                                         </button>
                                     </td>
                                     <td class="book-logo">
@@ -259,19 +343,19 @@
                                     <td class="book-author">作者：王小明</td>
                                     <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
                                 </tr>
-                                <tr>
-                                    <td class="book-id">5</td>
+                                <tr class="book_area">
+                                    <td data-search="all later" class="book-id">8</td>
                                     <td class="book-front">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
                                             <img src="Content/images/recommendedArticle/book.png">
                                         </a>
                                     </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
+                                    <td class="book-read"><i class="far fa-eye"></i>&nbsp;未看過</td>
+                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i>&nbsp;未評論</td>
+                                    <td class="book-later active">
+                                        <button class="btn recommendedBook-table__btn-later" type="button">
+                                            <i class="fas fa-plus"></i>&nbsp;稍後看
                                         </button>
                                     </td>
                                     <td class="book-logo">
@@ -281,110 +365,6 @@
                                         <p>三隻餓狼想吃雞</p>
                                     </td>
                                     <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 265</td>
-                                    <td class="book-word">字數：2500</td>
-                                    <td class="book-author">作者：王小明</td>
-                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
-                                </tr>
-                                <tr>
-                                    <td class="book-id">6</td>
-                                    <td class="book-front">
-                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
-                                            data-toggle="modal" data-target="#modal-bookIntro">
-                                            <img src="Content/images/recommendedArticle/book.png">
-                                        </a>
-                                    </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
-                                        </button>
-                                    </td>
-                                    <td class="book-logo">
-                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
-                                    </td>
-                                    <td class="book-name">
-                                        <p>三隻餓狼想吃雞</p>
-                                    </td>
-                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 777</td>
-                                    <td class="book-word">字數：2500</td>
-                                    <td class="book-author">作者：王小明</td>
-                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
-                                </tr>
-                                <tr>
-                                    <td class="book-id">7</td>
-                                    <td class="book-front">
-                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
-                                            data-toggle="modal" data-target="#modal-bookIntro">
-                                            <img src="Content/images/recommendedArticle/book.png">
-                                        </a>
-                                    </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
-                                        </button>
-                                    </td>
-                                    <td class="book-logo">
-                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
-                                    </td>
-                                    <td class="book-name">
-                                        <p>台灣也有國家寶藏！從化石窺探海洋古生物保育——台大生科蔡政</p>
-                                    </td>
-                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 999</td>
-                                    <td class="book-word">字數：2500</td>
-                                    <td class="book-author">作者：王小明</td>
-                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
-                                </tr>
-                                <tr>
-                                    <td class="book-id">8</td>
-                                    <td class="book-front">
-                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
-                                            data-toggle="modal" data-target="#modal-bookIntro">
-                                            <img src="Content/images/recommendedArticle/book.png">
-                                        </a>
-                                    </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
-                                        </button>
-                                    </td>
-                                    <td class="book-logo">
-                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
-                                    </td>
-                                    <td class="book-name">
-                                        <p>三隻餓狼想吃雞</p>
-                                    </td>
-                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 265</td>
-                                    <td class="book-word">字數：2500</td>
-                                    <td class="book-author">作者：王小明</td>
-                                    <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
-                                </tr>
-                                <tr>
-                                    <td class="book-id">9</td>
-                                    <td class="book-front">
-                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
-                                            data-toggle="modal" data-target="#exampleModalScrollable">
-                                            <img src="Content/images/recommendedArticle/book.png">
-                                        </a>
-                                    </td>
-                                    <td class="book-read"><i class="far fa-eye"></i> 已看過</td>
-                                    <td class="book-comment" data-th="已評論"><i class="fas fa-pen"></i> 已評論</td>
-                                    <td class="book-addRP">
-                                        <button class="btn recommendedBook-table__btn-addRP" type="button">
-                                            <i class="fas fa-plus"></i> 稍後看
-                                        </button>
-                                    </td>
-                                    <td class="book-logo">
-                                        <img src="Content/images/team/team_2/team_2_4.png" alt="">
-                                    </td>
-                                    <td class="book-name">
-                                        <p>三隻餓狼想吃雞</p>
-                                    </td>
-                                    <td class="book-SR" data-th="圖書難度"><span>文章難度：</span>SR 777</td>
                                     <td class="book-word">字數：2500</td>
                                     <td class="book-author">作者：王小明</td>
                                     <td class="book-sort" data-th="分類">分類：成長/生命教育成長/生命教</td>
@@ -778,8 +758,15 @@
         });
     </script>
 
+    <!-- 立即評論按鈕 -->
     <script>
         $(document).ready(function () {
+            
+            // 稍後看按鈕
+            $(".book-later").click(function () {
+                $(this).toggleClass("active");
+            });
+            // 立即評論按鈕
             $(".comment_btn").click(function () {
                 $(".comment_area").show();
                 $(this).hide();
@@ -791,10 +778,10 @@
     <script>
         $(document).ready(function () {
             //datatables (demo，正式需工程師改寫~~)
-            var hCols = [3, 4];
             $('.leveledBooks-table').DataTable({
                 responsive: true,
                 searching: true,
+                select: true,
                 pageLength: 6,
                 pagingType: "simple_numbers",
                 columnDefs: [{
@@ -842,119 +829,108 @@
                         orderable: false
                     },
                 ],
-                
-
 
                 dom: '<"leveledBooks-table__header"B<"pull-right"ip>>' +
                     '<""<""t>>' +
                     '<"leveledBooks-table__footer"pi>',
-                buttons: {
-                    
 
-                    buttons: [
+                //alert表格重绘了
+                // "drawCallback": function (settings) {
+                //     alert('表格重绘了');
+                // },
 
-                    {
-                        text: '全部&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
-                        attr: {
-                            id: 'sort_id',
+                buttons: [
+
+                        {
+                            extend: "collection",
+                            text: '<span id="btn_all">全部</span>&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
+                            buttons: [
+                            {
+                                    text: "全部",
+                                    attr: {
+                                        id: "book_all",
+                                        class:"dt-button active"
+                                    },
+                                    action: function (e, dt, node, config) {
+                                        dt.search("all").draw();
+                                        $("#btn_all").text("全部");
+                                        $("#book_all").addClass(
+                                                "active").siblings(".dt-button")
+                                            .removeClass(
+                                                "active");
+                                    }
+                                },
+                                {
+                                    text: "已看過",
+                                    attr: {
+                                        id: "book_read",
+                                    },
+                                    action: function (e, dt, node, config) {
+                                        dt.search("read").draw();
+                                        $("#btn_all").text("已看過");
+                                        $("#book_read").addClass(
+                                                "active").siblings(".dt-button")
+                                            .removeClass(
+                                                "active");
+                                    }
+                                },
+                                {
+                                    text: "已評論",
+                                    attr: {
+                                        id: "book_comment"
+                                    },
+                                    action: function (e, dt, node, config) {
+                                        dt.search("comment").draw();
+                                        $("#btn_all").text("已評論");
+                                        $("#book_comment").addClass(
+                                                "active").siblings(".dt-button")
+                                            .removeClass(
+                                                "active");
+                                    }
+                                },
+                                {
+                                    text: "稍後看",
+                                    attr: {
+                                        id: "book_later"
+                                    },
+                                    action: function (e, dt, node, config) {
+                                        dt.search("later").draw();
+                                        $("#btn_all").text("稍後看");
+                                        $("#book_later").addClass("active").siblings(".dt-button").removeClass("active");
+                                    }
+                                },
+                            ],
                         },
-                        action: function () {
-                            if ($('#sort_id').hasClass('asc')) { //原本asc↑，變desc↓
-                                this.order([0, 'desc']).draw();
-                                $('#sort_id').find('input[type="checkbox"]').removeAttr(
-                                    'checked');
-                            } else { //原本null or desc↓變asc↑
-                                this.order([0, 'asc']).draw();
-                                $('#sort_SR').removeClass('active').siblings('.dt-button')
-                                    .removeClass('active');
 
-                            } //if there has "SR 1000", that will need to debug......
-                        }
-                    },
-                    
-            {
-              extend: "collection",
-              text: "Export",
-              buttons: [
-                { text: "csv",
-                attr: {
-                             id: 'sort_SR'
-                         },
-                         action: function () {
-                             if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
-                                 this.order([7, 'desc']).draw();
-                                 $('#sort_SR').removeClass('active asc desc').addClass(
-                                     'active desc').siblings('.dt-button').removeClass(
-                                     'active asc desc');
-                                 $('#sort_SR').find('.glyphicon').removeClass(
-                                     'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
-                             } else { //原本null or desc↓變asc↑
-                                 this.order([7, 'asc']).draw();
-                                 $('#sort_SR').removeClass('active asc desc').addClass(
-                                     'active asc').siblings('.dt-button').removeClass(
-                                     'active asc desc');
-                                 $('#sort_SR').find('.glyphicon').removeClass(
-                                     'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
-                             } //if there has "SR 1000", that will need to debug......
-                         }
-                    },
-                { text: "已評論",
-                attr: {
-                             id: 'sort_B'
-                         },
-                         action: function () {
-                             if ($('#sort_B').hasClass('asc')) { //原本asc↑，變desc↓
-                                 this.order([3, 'desc']).draw();
-                                 $('#sort_B').removeClass('active asc desc').addClass(
-                                     'active desc').siblings('.dt-button').removeClass(
-                                     'active asc desc');
-                                 $('#sort_B').find('.glyphicon').removeClass(
-                                     'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
-                             } else { //原本null or desc↓變asc↑
-                                 this.order([3, 'asc']).draw();
-                                 $('#sort_B').removeClass('active asc desc').addClass(
-                                     'active asc').siblings('.dt-button').removeClass(
-                                     'active asc desc');
-                                 $('#sort_B').find('.glyphicon').removeClass(
-                                     'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
-                             } //if there has "SR 1000", that will need to debug......
-                         }
-                    },
-              ],
-            },
-
-            {
-                        text: '文章難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
-                        attr: {
-                            id: 'sort_SR'
+                        {
+                            text: '文章難度&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+                            attr: {
+                                id: 'sort_SR'
+                            },
+                            action: function () {
+                                $(".dt-button-collection").toggle();
+                                if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
+                                    this.order([7, 'desc']).draw();
+                                    $('#sort_SR').removeClass('active asc desc').addClass(
+                                        'active desc').siblings('.dt-button').removeClass(
+                                        'active asc desc');
+                                    $('#sort_SR').find('.glyphicon').removeClass(
+                                        'glyphicon-arrow-up').addClass(
+                                        'glyphicon-arrow-down');
+                                } else { //原本null or desc↓變asc↑
+                                    this.order([7, 'asc']).draw();
+                                    $('#sort_SR').removeClass('active asc desc').addClass(
+                                        'active asc').siblings('.dt-button').removeClass(
+                                        'active asc desc');
+                                    $('#sort_SR').find('.glyphicon').removeClass(
+                                        'glyphicon-arrow-down').addClass(
+                                        'glyphicon-arrow-up');
+                                } //if there has "SR 1000", that will need to debug......
+                            }
                         },
-                        action: function () {
-                            if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
-                                this.order([7, 'desc']).draw();
-                                $('#sort_SR').removeClass('active asc desc').addClass(
-                                    'active desc').siblings('.dt-button').removeClass(
-                                    'active asc desc');
-                                $('#sort_SR').find('.glyphicon').removeClass(
-                                    'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
-                            } else { //原本null or desc↓變asc↑
-                                this.order([7, 'asc']).draw();
-                                $('#sort_SR').removeClass('active asc desc').addClass(
-                                    'active asc').siblings('.dt-button').removeClass(
-                                    'active asc desc');
-                                $('#sort_SR').find('.glyphicon').removeClass(
-                                    'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
-                            } //if there has "SR 1000", that will need to debug......
-                        }
-                    },
-          ],
+                    ],
 
-                    
-
-                    },
-                
-                
-
-                    language: {
+                language: {
                     "processing": "處理中...",
                     "loadingRecords": "載入中...",
                     "lengthMenu": "顯示 _MENU_ 項結果",
@@ -976,6 +952,8 @@
                     }
                 },
             });
+
+
 
             //到第X頁
             var inputHTML = '<div class="add_dataTables_input">' +
@@ -1001,48 +979,24 @@
                     scrollTop: $(".recommendedBook-search").offset().top - 80
                 }, 500);
             });
+
         });
     </script>
+
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+
     <!-- datatables 結束 -->
 
-        <!-- datatables 開始 -->
-        <!-- <script>
-            $(document).ready(function () {
-                //datatables (demo，正式需工程師改寫~~)
-                var hCols = [3, 4];
-                $('.leveledBooks-table').DataTable({
-				// "dom": "<'row'<'col-sm-4'B><'col-sm-2'l><'col-sm-6'p<br/>i>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-12'p<br/>i>>",
-				"paging": true,
-				"autoWidth": true,
-				"columnDefs": [{
-					"visible": false,
-					"targets": hCols
-				}],
-				"buttons": [
-					{
-					extend: 'colvis',
-					collectionLayout: 'one-column',
-					text: function() {
-						var totCols = $('#example thead th').length;
-						var hiddenCols = hCols.length;
-						var shownCols = totCols - hiddenCols;
-						return 'Columns (' + shownCols + ' of ' + totCols + ')';
-					},
-					prefixButtons: [{
-						extend: 'colvisGroup',
-						text: 'Show all',
-						show: ':hidden'
-					}, {
-						extend: 'colvisRestore',
-						text: 'Restore'
-					}]
-				},]
-				
-				});
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> -->
 
-            });
-        </script> -->
-        <!-- datatables 結束 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script> -->
 
     <!-- jquery-ui 開始 -->
     <script>

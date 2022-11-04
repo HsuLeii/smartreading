@@ -249,82 +249,105 @@ main {
                 display: table-row-group;
 
                 thead {
-                  // display: none;
+                  display: none;
                 }
 
                 tbody {
-                  tr {
+                  tr{
                     width: 100%;
-                    padding: 0;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    background-color: $white;
-                    td {
-                      text-align: left;
-                      line-height: 1.7;
-                    }
-                    .book-id {
-                      display: none;
-                    }
-                    .book-front {
-                      margin: 0px auto;
+                    &.book_area {
+                      width: 100%;
                       padding: 0;
-                      line-height: 0;
-                      max-width: none !important;
-                      width: 100%;
-                      a {
-                        margin: 0 auto;
-                        height: 185px;
+                      flex-direction: row;
+                      flex-wrap: wrap;
+                      background-color: $white;
+                      td {
+                        text-align: left;
+                        line-height: 1.7;
+                        padding: 10px;
+                      }
+                      .book-id {
+                        display: none;
+                      }
+                      .book-front {
+                        margin: 0px auto;
+                        padding: 0;
+                        line-height: 0;
+                        max-width: none !important;
                         width: 100%;
-                        img{
-                            height: 100%;
-                            object-fit: cover;
+                        a {
+                          margin: 0 auto;
+                          height: 185px;
+                          width: 100%;
+                          img{
+                              height: 100%;
+                              object-fit: cover;
+                          }
                         }
                       }
-                    }
-                    .book-SR,
-                    .book-word,
-                    .book-author,
-                    .book-sort{
-                        width: 100%;
-                    }
-                    .book-SR{
-                        color: $main-color;
-                        span{
-                            color: $default-black;
-                        }
-                    }
-                    .book-read,
-                    .book-comment,
-                    .book-addRP {
-                      background-color: $default-black;
-                      color: $white;
-                      text-align: center;
-                      width: 100%;
-                    }
-                    .book-addRP {
-                      button {
-                        background-color: $main-color;
-                        border-radius: 50px;
+                      .book-SR,
+                      .book-word,
+                      .book-author,
+                      .book-sort{
+                          width: 100%;
                       }
-                    }
-                    .book-logo{
+                      .book-SR{
+                          color: $main-color;
+                          span{
+                              color: $default-black;
+                          }
+                      }
+                      .book-read,
+                      .book-comment,
+                      .book-later {
+                        background-color: $default-black;
+                        color: $white;
+                        text-align: center;
                         width: 100%;
-                        img{
-                            max-width: 120px;
-                            margin: 0 auto;
-                            display: block;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      }
+                      .book-later {
+                        button {
+                          background-color: $main-color;
+                          border-radius: 50px;
+                          &:focus{
+                            color: $white !important;
+                          }
                         }
-                    }
-                    .book-name {
-                      width: 100%;
-                      p {
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        white-space: normal;
-                        overflow: hidden;
-                        height: 44.6px;
+                        &.active{
+                          button{
+                            background-color: transparent;
+                          border-radius: 0;
+                          }
+                          &:hover{
+                            button {
+                              background-color: $main-color;
+                              border-radius: 50px;
+                              color: $white;
+                            }
+                          }
+                        }
+                      }
+                      .book-logo{
+                          width: 100%;
+                          img{
+                              max-width: 120px;
+                              margin: 0 auto;
+                              display: block;
+                          }
+                      }
+                      .book-name {
+                        width: 100%;
+                        p {
+                          text-overflow: ellipsis;
+                          display: -webkit-box;
+                          -webkit-line-clamp: 2;
+                          white-space: normal;
+                          overflow: hidden;
+                          height: 44.6px;
+                        }
                       }
                     }
                   }
@@ -665,6 +688,8 @@ main {
   }
 }
 
+
+
 @media screen and (min-width: 576px) {
   main {
     &.recommendedArticle {
@@ -694,22 +719,24 @@ main {
 
                 .recommendedBook-table {
                   tbody {
-                    tr {
-                      width: calc(50% - 30px);
-                      .book-read,
-                      .book-comment,
-                      .book-addRP {
-                        width: calc(50% - 20px);
+                    tr{
+                      &.book_area {
+                        width: calc(50% - 30px);
+                        .book-read,
+                        .book-comment,
+                        .book-later {
+                          width: calc(50% - 20px);
+                        }
+                        .book-later {
+                          width: 100%;
+                        }
+                        .book-SR,
+                      .book-word,
+                      .book-author,
+                      .book-sort{
+                          width: calc(50% - 20px);
                       }
-                      .book-addRP {
-                        width: 100%;
                       }
-                      .book-SR,
-                    .book-word,
-                    .book-author,
-                    .book-sort{
-                        width: calc(50% - 20px);
-                    }
                     }
                   }
                 }
@@ -769,13 +796,15 @@ main {
   
                   .recommendedBook-table {
                     tbody {
-                      tr {
-                        width: calc(50% - 30px);
-                        .book-name {
-                            p {
-                              height: 50px;
+                      tr{
+                        &.book_area {
+                          width: calc(50% - 30px);
+                          .book-name {
+                              p {
+                                height: 50px;
+                              }
                             }
-                          }
+                        }
                       }
                     }
                   }
@@ -838,11 +867,13 @@ main {
               .dataTables_wrapper {
                 .recommendedBook-table {
                   tbody {
-                    tr {
-                      width: calc(33% - 30px);
-                      .book-name {
-                        p {
-                          height: 55px;
+                    tr{
+                      &.book_area {
+                        width: calc(33% - 30px);
+                        .book-name {
+                          p {
+                            height: 55px;
+                          }
                         }
                       }
                     }
@@ -858,19 +889,7 @@ main {
 }
 
 @media screen and (min-width: 1024px){
-  main {
-    &.recommendedArticle {
-      .join-all {
-        .order-wrap {
-          .order-body {
-            .recommendedBook-search{
-              
-            }
-          }
-        }
-      }
-    }
-  }
+  
 }
 
 @media screen and (min-width: 1200px) {
@@ -902,16 +921,18 @@ main {
                 .dataTables_wrapper {
                   .recommendedBook-table {
                     tbody {
-                      tr {
+                      tr{
+                        &.book_area {
   
-                        .book-read,
-                          .book-comment,
-                          .book-addRP {
-                            width: 85px;
-                          }
-                          .book-addRP {
-                            width: calc(100% - 85px * 2 - 60px);
-                          }
+                          .book-read,
+                            .book-comment,
+                            .book-later {
+                              width: calc(33.33333% - 20px);
+                            }
+                            .book-later {
+                              width: calc(33.33333% - 20px);
+                            }
+                        }
                       }
                     }
                   }
@@ -980,21 +1001,23 @@ main {
                 .dataTables_wrapper {
                   .recommendedBook-table {
                     tbody {
-                      tr {
+                      tr{
+                        &.book_area {
   
-                        .book-read,
-                          .book-comment,
-                          .book-addRP {
-                            width: 95px;
-                          }
-                          .book-addRP {
-                            width: calc(100% - 95px * 2 - 60px);
-                          }
-                          .book-name {
-                            p {
-                              height: 60px;
+                          .book-read,
+                            .book-comment,
+                            .book-later {
+                              width: calc(33.33333% - 20px);
                             }
-                          }
+                            .book-later {
+                              width: calc(33.33333% - 20px);
+                            }
+                            .book-name {
+                              p {
+                                height: 60px;
+                              }
+                            }
+                        }
                       }
                     }
                   }
@@ -1017,16 +1040,18 @@ main {
                 .dataTables_wrapper {
                   .recommendedBook-table {
                     tbody {
-                      tr {
+                      tr{
+                        &.book_area {
   
-                        .book-read,
-                          .book-comment,
-                          .book-addRP {
-                            width: calc(33.33333% - 20px);
-                          }
-                          .book-addRP {
-                            width: calc(33.33333% - 20px);
-                          }
+                          .book-read,
+                            .book-comment,
+                            .book-later {
+                              width: calc(33.33333% - 20px);
+                            }
+                            .book-later {
+                              width: calc(33.33333% - 20px);
+                            }
+                        }
                       }
                     }
                   }
