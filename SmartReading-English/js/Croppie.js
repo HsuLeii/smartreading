@@ -1,16 +1,16 @@
 const $upload = $('#upload'),
-      $crop = $('#crop'),
-      $result = $('#result'),
-      $croppie = $('#croppie');
+  $crop = $('.crop_area'),
+  $avatar_result = $('#avatar_result'),
+  $crop_pie = $('#crop_pie');
 
 var cr,
-    cr_img = '',
-    img_w = 320,
-    img_h = 320,
-    isCrop = 0;
+  cr_img = '',
+  img_w = 320,
+  img_h = 320,
+  isCrop = 0;
 
 //支援上傳檔案判斷
-$(function(){
+$(function () {
   if (window.File && window.FileList && window.FileReader)
     fileInit();
   else
@@ -18,35 +18,32 @@ $(function(){
 });
 
 //********* file select/drop *********
-var fileselect = document.getElementById("fileselect"),
-    filedrag = document.getElementById("filedrag");
+var file_select = document.getElementById("file_select");
 
-function fileInit(){
+function fileInit() {
   // file select
-  fileselect.addEventListener("change", FileSelectHandler, false);
+  file_select.addEventListener("change", FileSelectHandler, false);
   // is XHR2 available?
-  
+
 }
 
 // file selection
 function FileSelectHandler(e) {
   // cancel event and hover styling
-  // FileDragHover(e);
   // fetch FileList object
   var files = e.target.files || e.dataTransfer.files;
-  if(files[0] && files[0].type.match('image.*')){
+  if (files[0] && files[0].type.match('image.*')) {
     var reader = new FileReader();
     reader.onload = function (e) {
       // $upload.hide();
-      if(cr_img == '') { //第一次上傳
+      if (cr_img == '') { //第一次上傳
         cr_img = e.target.result;
         cropInit();
-      }
-      else {// 綁定照片
+      } else { // 綁定照片
         cr_img = e.target.result;
         bindCropImg();
       }
-      $crop.css("display" , "flex");
+      $crop.css("display", "flex");
     }
     reader.readAsDataURL(files[0]);
   }
@@ -54,8 +51,8 @@ function FileSelectHandler(e) {
 
 //********* crop *********
 //裁切設定
-function cropInit(){
-  cr = $croppie.croppie({
+function cropInit() {
+  cr = $crop_pie.croppie({
     viewport: {
       width: img_w,
       height: img_h
@@ -69,7 +66,7 @@ function cropInit(){
   });
 
   $(".cr-slider-wrap").append('<button id="cr-rotate" onClick="cropRotate(-90);"><i class="fa-solid fa-rotate-right"></i> Rotate</button>');
-
+  $('.cr-slider').attr('id', 'playRange');
   bindCropImg();
 }
 
@@ -89,25 +86,44 @@ function cropRotate(deg) {
 function cropCancel() {
   $(".upload_avatar_area").addClass("uploading");
   $crop.hide();
-    fileselect.value = "";
-    isCrop = 0;
+  file_select.value = "";
+  isCrop = 0;
 }
 
 //圖片裁切
 function cropResult() {
   $(".crop_avatar").addClass("swiper-slide");
-  if(!isCrop){
+  if (!isCrop) {
     isCrop = 0;
     cr.croppie('result', {
       type: 'canvas', // canvas(base64)|html
-      size: {width:img_w, height:img_h}, //'viewport'|'original'|{width:500, height:500}
+      size: {
+        width: img_w,
+        height: img_h
+      }, //'viewport'|'original'|{width:500, height:500}
       format: 'jpeg', //'jpeg'|'png'|'webp'
       quality: 1 //0~1
     }).then(function (resp) {
       $crop.hide();
-      $result.find('img').attr('src', resp);
-      $result.fadeIn(300);
+      $avatar_result.find('img').attr('src', resp);
+      $avatar_result.fadeIn(300);
     });
   }
-  
+
 }
+
+
+//取得播放range
+var playRange = document.getElementsById("playRange");
+//取得播放距離
+var playRangeWidth = (value) => {
+    document.documentElement.style.setProperty("--playRange", value + "%");
+}
+
+//更改播放距離顏色
+function updatePlayRangeProperty() {
+  playRangeWidth(playRange.value);
+}
+
+
+playRange.addEventListener("input", updatePlayRangeProperty);
