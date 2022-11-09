@@ -8880,6 +8880,133 @@ h-word {
   outline: #EFE8E0 auto 0px;
 }
 
+.crop_area {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 15;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.crop_area .crop_content_area {
+  width: 60%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px 50px;
+  border-radius: 10px;
+}
+
+.crop_area .crop_content_area .croppie-container {
+  /******** Range Input ********/
+}
+
+.crop_area .crop_content_area .croppie-container .cr-boundary {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-boundary .cr-image {
+  width: auto;
+  z-index: 1;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-boundary .cr-viewport {
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  border: 3px solid #ff6464;
+  box-shadow: 0 0 0 900px rgba(217, 217, 217, 0.5);
+  z-index: 2;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-boundary .cr-overlay {
+  position: absolute;
+  z-index: 2;
+  cursor: move;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap {
+  width: 80%;
+  display: flex;
+  margin: 15px auto;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
+  width: calc(100% - 150px);
+  margin: 0 50px 0 0;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background-color: grey;
+  border: 0;
+  border-radius: 1em;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  background-color: #ff6464;
+  border-radius: 50%;
+  border: none;
+  transform: scale(1);
+  transition: transform .3s;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.25);
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:focus {
+  outline: none;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:focus::-webkit-slider-thumb {
+  background-color: #ff6464;
+}
+
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap #cr-rotate {
+  color: #5B3716;
+}
+
+.crop_area .crop_content_area .crop_area_btn {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto 0px;
+}
+
+.crop_area .crop_content_area .crop_area_btn .crop_btn {
+  margin: 5px 10px;
+  padding: 5px 10px;
+  background-color: #ff6464;
+  color: #fff;
+}
+
+.crop_area .crop_content_area .crop_area_btn .crop_btn:hover {
+  background-color: #ff3131;
+}
+
+.crop_area .crop_content_area .crop_area_btn .crop_btn.crop_btn_prev {
+  background-color: grey;
+}
+
+.crop_area .crop_content_area .crop_area_btn .crop_btn.crop_btn_prev:hover {
+  background-color: #676767;
+}
+
 .avatar_modal {
   max-width: none !important;
   width: 60%;
@@ -8931,7 +9058,11 @@ h-word {
   margin: 10px auto;
 }
 
-.avatar_modal .avatar_area .avatar_swiper {
+.avatar_modal .avatar_area .choose_avatar_area {
+  position: relative;
+}
+
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper {
   width: 80%;
   max-width: 1200px;
   height: auto;
@@ -8939,18 +9070,18 @@ h-word {
   margin-right: auto;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide {
   display: flex;
   justify-content: center;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget {
   filter: grayscale(1);
   opacity: 0.8;
   cursor: auto;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
   content: attr(data-des);
   width: 80%;
   position: absolute;
@@ -8967,18 +9098,18 @@ h-word {
   border-radius: 10px;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:hover:after {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:hover:after {
   opacity: 1;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .lock_icon {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .lock_icon {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .lock_icon i {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .lock_icon i {
   font-size: 40px;
   line-height: 0.9;
   padding: 15px;
@@ -8987,44 +9118,32 @@ h-word {
   color: grey;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .swiper_avatar_img {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .swiper_avatar_img {
   cursor: auto;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .swiper_avatar_img:hover {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .swiper_avatar_img:hover {
   border: 2px solid transparent;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img {
   padding: 10px;
   border: 2px solid transparent;
   cursor: pointer;
   line-height: 0;
 }
 
-.avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img:hover {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img:hover {
   border: 2px solid #ff6464;
   border-radius: 50%;
 }
 
-.avatar_modal .avatar_area .avatar_swiper_button_next {
-  right: 5%;
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img img {
+  border-radius: 50%;
 }
 
-.avatar_modal .avatar_area .avatar_swiper_button_next:after {
-  content: "next";
-}
-
-.avatar_modal .avatar_area .avatar_swiper_button_prev {
-  left: 5%;
-}
-
-.avatar_modal .avatar_area .avatar_swiper_button_prev:after {
-  content: "prev";
-}
-
-.avatar_modal .avatar_area .avatar_swiper_button_next,
-.avatar_modal .avatar_area .avatar_swiper_button_prev {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next,
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
   border-radius: 50%;
   border: 1px solid #ff6464;
   width: 50px !important;
@@ -9039,8 +9158,8 @@ h-word {
   justify-content: center;
 }
 
-.avatar_modal .avatar_area .avatar_swiper_button_next:after,
-.avatar_modal .avatar_area .avatar_swiper_button_prev:after {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next:after,
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev:after {
   font-family: swiper-icons;
   text-transform: none !important;
   letter-spacing: 0;
@@ -9048,6 +9167,60 @@ h-word {
   font-variant: initial;
   line-height: 1;
   color: #ff6464;
+}
+
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next {
+  right: 5%;
+  transform: translate(100%, -50%);
+}
+
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next:after {
+  content: "next";
+}
+
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
+  left: 5%;
+  transform: translate(-100%, -50%);
+}
+
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev:after {
+  content: "prev";
+}
+
+.avatar_modal .avatar_area .upload_avatar_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.avatar_modal .avatar_area .upload_avatar_area .upload_avatar {
+  margin: 20px auto 0;
+  text-align: center;
+  border-top: 1px solid #5B3716;
+  width: 100%;
+  padding: 20px 0 0;
+}
+
+.avatar_modal .avatar_area .upload_avatar_area .upload_avatar .upload_avatar_title {
+  margin: 0 0 20px;
+  color: #5B3716;
+}
+
+.avatar_modal .avatar_area .upload_avatar_area .upload_avatar .filedrag {
+  cursor: pointer;
+  background-color: #5B3716;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.avatar_modal .avatar_area .upload_avatar_area .upload_avatar .filedrag:hover {
+  background-color: #321e0c;
+}
+
+.avatar_modal .avatar_area .upload_avatar_area .upload_avatar input[type="file"] {
+  display: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -9069,11 +9242,11 @@ h-word {
   .avatar_modal .avatar_modal_top .avatar_name {
     margin: 0px auto 10px;
   }
-  .avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
     font-size: 13px;
   }
-  .avatar_modal .avatar_area .avatar_swiper_button_next,
-  .avatar_modal .avatar_area .avatar_swiper_button_prev {
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next,
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
     width: 40px !important;
     height: 40px !important;
   }
@@ -9096,11 +9269,11 @@ h-word {
   .avatar_modal .avatar_area {
     padding: 10px 5% 40px;
   }
-  .avatar_modal .avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
     font-size: 11px;
   }
-  .avatar_modal .avatar_area .avatar_swiper_button_next,
-  .avatar_modal .avatar_area .avatar_swiper_button_prev {
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next,
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
     width: 30px !important;
     height: 30px !important;
   }
