@@ -93,8 +93,8 @@
             }
         }
 
-
     }
+
 }
 
 .crop_area {
@@ -157,47 +157,52 @@
                     cursor: pointer;
                     -webkit-appearance: none;
                     position: relative;
+                    /* input range 主體樣式 */
+                    -webkit-appearance: none;
+                    width: 100%;
+                    position: relative;
+                    border-radius: 10px;
+                    cursor: pointer;
 
                     &:before {
                         position: absolute;
                         content: "";
                         width: var(--playRange);
-                        height: 100%;
-                        background-color: #552b8d;
+                        height: 5px;
+                        background-color: $main_color;
+                        border-radius: 10px;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                    }
+
+                    /* input range 進度條樣式 */
+                    &::-webkit-slider-runnable-track {
+                        background-color: $grey;
+                        height: 5px;
                         border-radius: 10px;
                     }
 
-                    &::-webkit-slider-runnable-track {
-                        width: 100%;
-                        height: 4px;
-                        background-color: $grey;
-                        border: 0;
-                        border-radius: 1em;
-                    }
-
+                    /* input range 原點樣式 */
                     &::-webkit-slider-thumb {
-                        -webkit-appearance: none;
-                        width: 16px;
-                        height: 16px;
-                        margin-top: -6px;
-                        background-color: $main_color;
-                        border-radius: 50%;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 100%;
                         border: none;
-                        transform: scale(1);
-                        transition: transform .3s;
+                        -webkit-appearance: none;
+                        background-color: $main_color;
+                        z-index: 1;
+                        position: relative;
+                        transition: 0.5s all ease;
+                        transform: translate(0%, -50%);
+                        top: 50%;
                     }
 
-                    &:hover {
-                        &::-webkit-slider-thumb {
-                            transform: scale(1.25)
-                        }
-                    }
-
+                    /* input range 原點focus */
                     &:focus {
                         outline: none;
 
                         &::-webkit-slider-thumb {
-                            background-color: $main_color;
+                            background-color: darken($main_color, 10%);
                         }
                     }
                 }
@@ -218,14 +223,15 @@
                 padding: 5px 10px;
                 background-color: $main_color;
                 color: $white;
-                &:hover{
+
+                &:hover {
                     background-color: darken($main_color, 10%);
                 }
 
-                &.crop_btn_prev{
+                &.crop_btn_prev {
                     background-color: $grey;
 
-                    &:hover{
+                    &:hover {
                         background-color: darken($grey, 10%);
                     }
                 }
@@ -259,7 +265,6 @@
             top: 0;
             transform: translate(-50%, -50%);
         }
-
         .avatar_name {
             margin: 0px auto 15px;
 
@@ -267,8 +272,6 @@
                 color: $brown;
             }
         }
-
-
     }
 
     .avatar_area {
@@ -285,7 +288,6 @@
             color: $brown;
             margin: 10px auto;
         }
-
         .choose_avatar_area {
             position: relative;
 
@@ -421,14 +423,11 @@
                 }
             }
         }
-
         .upload_avatar_area {
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin: 10px auto;
-
-
 
             .upload_avatar {
                 margin: 20px auto 0;
@@ -436,19 +435,16 @@
                 border-top: 1px solid $brown;
                 width: 100%;
                 padding: 20px 0 0;
-
                 .upload_avatar_title {
                     margin: 0 0 20px;
                     color: $brown;
                 }
-
                 .file_upload {
                     cursor: pointer;
                     background-color: $brown;
                     padding: 10px 20px;
                     border-radius: 10px;
                     color: $white;
-
                     &:hover {
                         background-color: darken($brown, 10%);
                     }
@@ -459,7 +455,6 @@
                 }
             }
         }
-
     }
 
 
@@ -492,19 +487,13 @@
 
         .avatar_modal_top {
             min-height: 120px;
-
             .now_avatar {
                 width: 120px;
             }
-
             .avatar_name {
                 margin: 0px auto 10px;
             }
-
-
         }
-
-
         .avatar_area {
             .choose_avatar_area {
                 .avatar_swiper {

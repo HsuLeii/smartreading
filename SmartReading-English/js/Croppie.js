@@ -66,8 +66,25 @@ function cropInit() {
   });
 
   $(".cr-slider-wrap").append('<button id="cr-rotate" onClick="cropRotate(-90);"><i class="fa-solid fa-rotate-right"></i> Rotate</button>');
-  $('.cr-slider').attr('id', 'playRange');
   bindCropImg();
+
+  //取得播放range
+var playRange = document.getElementById("playRange");
+//取得播放距離
+var playRangeWidth = (value) => {
+    document.documentElement.style.setProperty("--playRange", value + "%");
+}
+
+
+//更改播放距離顏色
+function updatePlayRangeProperty() {
+    playRangeWidth(playRange.value);
+}
+
+
+playRange.addEventListener("input", updatePlayRangeProperty);
+
+
 }
 
 //綁定圖片
@@ -113,17 +130,4 @@ function cropResult() {
 }
 
 
-//取得播放range
-var playRange = document.getElementsById("playRange");
-//取得播放距離
-var playRangeWidth = (value) => {
-    document.documentElement.style.setProperty("--playRange", value + "%");
-}
 
-//更改播放距離顏色
-function updatePlayRangeProperty() {
-  playRangeWidth(playRange.value);
-}
-
-
-playRange.addEventListener("input", updatePlayRangeProperty);
