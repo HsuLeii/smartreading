@@ -72,7 +72,7 @@ function cropInit() {
 var playRange = document.getElementById("playRange");
 //取得播放距離
 var playRangeWidth = (value) => {
-    document.documentElement.style.setProperty("--playRange", value + "%");
+    document.documentElement.style.setProperty("--playRange", value * 1 + "%");
 }
 
 
