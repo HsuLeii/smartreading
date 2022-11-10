@@ -113,7 +113,7 @@
     .crop_content_area {
         width: 60%;
         max-width: 600px;
-        background-color: $white;
+        background-color: $body_bg;
         padding: 30px 50px;
         border-radius: 10px;
 
@@ -149,19 +149,15 @@
                 width: 80%;
                 display: flex;
                 margin: 15px auto;
+                position: relative;
 
                 .cr-slider {
-                    width: calc(100% - 150px);
-                    margin: 0 50px 0 0;
-                    background-color: transparent;
-                    cursor: pointer;
-                    -webkit-appearance: none;
-                    position: relative;
                     /* input range 主體樣式 */
                     -webkit-appearance: none;
-                    width: 100%;
                     position: relative;
                     border-radius: 10px;
+                    width: 100%;
+                    background-color: transparent;
                     cursor: pointer;
 
                     &:before {
@@ -195,6 +191,7 @@
                         transition: 0.5s all ease;
                         transform: translate(0%, -50%);
                         top: 50%;
+
                     }
 
                     /* input range 原點focus */
@@ -209,7 +206,19 @@
 
                 #cr-rotate {
                     color: $brown;
+                    display: none;
                 }
+
+                .dotRange {
+                    background-color: $main_color;
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            border-radius: 10px;
+            top: 50%;
+            left: 0%;
+            transform: translate(-0%, -50%);
+        }
             }
         }
 

@@ -64,22 +64,11 @@ function cropInit() {
     mouseWheelZoom: false,
     enableOrientation: true
   });
+  
+  $(".cr-slider-wrap").append('<div class="dotRange"></div>','<button id="cr-rotate" onClick="cropRotate(-90);"><i class="fa-solid fa-rotate-right"></i> Rotate</button>');
 
-  $(".cr-slider-wrap").append('<button id="cr-rotate" onClick="cropRotate(-90);"><i class="fa-solid fa-rotate-right"></i> Rotate</button>');
   bindCropImg();
 
-  // //取得播放range
-  // var playRange = document.getElementById("playRange");
-  // //取得播放距離
-  // var playRangeWidth = (value) => {
-  //   document.documentElement.style.setProperty("--playRange", value * 1 + "%");
-  // }
-
-  // //更改播放距離顏色
-  // function updatePlayRangeProperty() {
-  //   playRangeWidth(playRange.value);
-  // }
-  // playRange.addEventListener("input", updatePlayRangeProperty);
 }
 
 //綁定圖片
@@ -87,6 +76,26 @@ function bindCropImg() {
   cr.croppie('bind', {
     url: cr_img
   });
+
+  const crRange = document.querySelector(".cr-slider");
+  const dotRange = document.querySelector(".dotRange");
+
+  crRange.addEventListener("input", () => {
+    setDotRange(crRange, dotRange);
+  });
+  setDotRange(crRange, dotRange);
+
+
+function setDotRange(crRange, dotRange) {
+  const val = crRange.value;
+  const min = crRange.min ? crRange.min : 0;
+  const max = crRange.max ? crRange.max : 100;
+  const newVal = Number(((val - min) * 100) / (max - min));
+
+  // Sorta magic numbers based on size of the native UI thumb
+  dotRange.style.width = newVal + "%";
+}
+
 }
 
 //旋轉按鈕
@@ -104,6 +113,11 @@ function cropCancel() {
 
 //圖片裁切
 function cropResult() {
+  const dotRange = document.querySelector(".dotRange");
+
+  // Sorta magic numbers based on size of the native UI thumb
+  dotRange.style.width = 0 + "%";
+
   $(".crop_avatar").addClass("swiper-slide");
   if (!isCrop) {
     isCrop = 0;
