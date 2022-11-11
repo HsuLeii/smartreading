@@ -41,9 +41,9 @@ function FileSelectHandler(e) {
         bindCropImg();
       }
       $crop.css("display", "flex");
-      $(".cr-boundary").css("height" , $(".cr-boundary").width());
-      $(".cr-viewport").css("height" , $(".cr-boundary").width());
-    
+      $(".cr-boundary").css("height", $(".cr-boundary").width());
+      $(".cr-viewport").css("height", $(".cr-boundary").width());
+
     }
     reader.readAsDataURL(files[0]);
   }
@@ -91,6 +91,38 @@ function bindCropImg() {
     url: cr_img
   });
 
+  // 調整crop_area位置
+  if ($('.crop_content_area').height() > $('.crop_area').height()) {
+    //靠上
+    $('.crop_area').css({
+      "align-items": "flex-start"
+    });
+  } else {
+    //上下置中
+    $('.crop_area').css({
+      "align-items": "center"
+    });
+  }
+
+  $(window).on('resize', function () {
+    Resize();
+  });
+
+  function Resize() {
+    if ($('.crop_content_area').height() > $('.crop_area').height()) {
+      //靠上
+      $('.crop_area').css({
+        "align-items": "flex-start"
+      });
+    } else {
+      //上下置中
+      $('.crop_area').css({
+        "align-items": "center"
+      });
+    }
+  }
+
+
 }
 
 //旋轉按鈕
@@ -106,6 +138,7 @@ function cropCancel() {
   $crop.hide();
   file_select.value = "";
   isCrop = 0;
+
 }
 
 //圖片裁切
@@ -130,4 +163,13 @@ function cropResult() {
     });
   }
 
+}
+
+$(window).on('resize', function () {
+  Resize();
+});
+
+function Resize() {
+  $(".cr-boundary").css("height", $(".cr-boundary").width());
+  $(".cr-viewport").css("height", $(".cr-boundary").width());
 }
