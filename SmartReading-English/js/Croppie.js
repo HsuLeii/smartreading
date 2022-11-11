@@ -5,8 +5,6 @@ const $upload = $('#upload'),
 
 var cr,
   cr_img = '',
-  img_w = 320,
-  img_h = 320,
   isCrop = 0;
 
 //支援上傳檔案判斷
@@ -24,7 +22,6 @@ function fileInit() {
   // file select
   file_select.addEventListener("change", FileSelectHandler, false);
   // is XHR2 available?
-
 }
 
 // file selection
@@ -44,28 +41,25 @@ function FileSelectHandler(e) {
         bindCropImg();
       }
       $crop.css("display", "flex");
+      $(".cr-boundary").css("height" , $(".cr-boundary").width());
+      $(".cr-viewport").css("height" , $(".cr-boundary").width());
+    
     }
     reader.readAsDataURL(files[0]);
   }
+
 }
 
 //********* crop *********
 //裁切設定
 function cropInit() {
+
   cr = $crop_pie.croppie({
-    viewport: {
-      width: img_w,
-      height: img_h
-    },
-    boundary: {
-      width: img_w,
-      height: img_h
-    },
     mouseWheelZoom: false,
     enableOrientation: true
   });
-  
-  $(".cr-slider-wrap").append('<div class="dotRange"></div>','<button id="cr-rotate" onClick="cropRotate(-90);"><i class="fa-solid fa-rotate-right"></i> Rotate</button>');
+
+  $(".cr-slider-wrap").append('<div class="dotRange"></div>', '<button id="cr-rotate" onClick="cropRotate(-90);"><i class="fa-solid fa-rotate-right"></i> Rotate</button>');
 
   bindCropImg();
 
@@ -73,28 +67,29 @@ function cropInit() {
 
 //綁定圖片
 function bindCropImg() {
-  cr.croppie('bind', {
-    url: cr_img
-  });
 
+  // 放大縮小range
   const crRange = document.querySelector(".cr-slider");
   const dotRange = document.querySelector(".dotRange");
 
   crRange.addEventListener("input", () => {
     setDotRange(crRange, dotRange);
   });
-  setDotRange(crRange, dotRange);
 
+  function setDotRange(crRange, dotRange) {
+    const val = crRange.value;
+    const min = crRange.min ? crRange.min : 0;
+    const max = crRange.max ? crRange.max : 100;
+    const newVal = Number(((val - min) * 100) / (max - min));
 
-function setDotRange(crRange, dotRange) {
-  const val = crRange.value;
-  const min = crRange.min ? crRange.min : 0;
-  const max = crRange.max ? crRange.max : 100;
-  const newVal = Number(((val - min) * 100) / (max - min));
+    // Sorta magic numbers based on size of the native UI thumb
+    dotRange.style.width = newVal + "%";
+  }
+  // 放大縮小range
 
-  // Sorta magic numbers based on size of the native UI thumb
-  dotRange.style.width = newVal + "%";
-}
+  cr.croppie('bind', {
+    url: cr_img
+  });
 
 }
 
@@ -106,6 +101,8 @@ function cropRotate(deg) {
 //取消裁切
 function cropCancel() {
   $(".upload_avatar_area").addClass("uploading");
+  $(".dotRange").css("width", "0px");
+
   $crop.hide();
   file_select.value = "";
   isCrop = 0;
@@ -113,20 +110,17 @@ function cropCancel() {
 
 //圖片裁切
 function cropResult() {
-  const dotRange = document.querySelector(".dotRange");
-
-  // Sorta magic numbers based on size of the native UI thumb
-  dotRange.style.width = 0 + "%";
 
   $(".crop_avatar").addClass("swiper-slide");
+
   if (!isCrop) {
     isCrop = 0;
     cr.croppie('result', {
       type: 'canvas', // canvas(base64)|html
-      size: {
-        width: img_w,
-        height: img_h
-      }, //'viewport'|'original'|{width:500, height:500}
+      // size: {
+      // width: img_w,
+      //   height: $(".cr-boundary").width()
+      // }, //'viewport'|'original'|{width:500, height:500}
       format: 'jpeg', //'jpeg'|'png'|'webp'
       quality: 1 //0~1
     }).then(function (resp) {
