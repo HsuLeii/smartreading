@@ -31,7 +31,7 @@
 
 
     <div class="main register">
-        
+
         <div class="register_area">
             <div class="account_area">
                 <div class="student_photo">
@@ -121,36 +121,36 @@
                     <div class="swiper mySwiper avatar_swiper">
                         <div class="swiper-wrapper" aria-live="polite">
 
-                            <div class="crop_avatar">
-                                <div id="avatar_result">
-                                    <div class="swiper_avatar_img">
-                                        <img src="" />
-                                    </div>
+                            <div id="avatar_result" class="swiper-slide crop_avatar">
+                                <div class="swiper_avatar_img">
+                                    <img src="image/avatar/avatar_01.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_01.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_02.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_03.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
-                            <div class="swiper-slide notget" data-des="收集10枚閱讀章 可以解鎖" title="收集10枚閱讀章 可以解鎖">
+                            <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_04.png" alt="">
                                 </div>
-                                <div class="lock_icon">
-                                    <i class="fa-solid fa-lock"></i>
-                                </div>
+                                <div class="close_avatar"></div>
                             </div>
                             <div class="swiper-slide notget" data-des="Collect 10 reading chapters to unlock"
                                 title="Collect 10 reading chapters to unlock">
@@ -289,7 +289,7 @@
 
     </div>
 
-    
+
 
 
     <footer>
@@ -314,10 +314,10 @@
     <!-- my core JS -->
     <script src="js/all.js"></script>
 
-<script>
-    
+    <script>
 
-</script>
+
+    </script>
 
     <script>
         $(document).ready(function () {
@@ -349,6 +349,19 @@
                     slidesPerView: 4,
                 }
             }
+        });
+    </script>
+
+    <!-- 頭像刪除 -->
+    <script>
+        $(".swiper-slide").mouseover(function () {
+            $(this).children(".close_avatar").addClass("show");
+        });
+        $(".swiper-slide").mouseout(function () {
+            $(this).children(".close_avatar").removeClass("show");
+        });
+        $(".close_avatar").click(function () {
+            $(this).parent(".swiper-slide").hide();
         });
     </script>
 
