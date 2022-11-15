@@ -616,19 +616,6 @@ div#toggle span:after {
   margin: 0px 0px 4px 5px;
 }
 
-.header nav .menu div li.dropdown.avatar_dropdown {
-  cursor: pointer;
-}
-
-.header nav .menu div li.dropdown.avatar_dropdown .avatar_image {
-  width: 50px;
-  margin: 0 10px 0 0;
-}
-
-.header nav .menu div li.dropdown.avatar_dropdown .avatar_menu li {
-  text-align: center;
-}
-
 .header nav .menu div li.dropdown.open a {
   color: #ff6464;
 }
@@ -682,6 +669,10 @@ div#toggle span:after {
   border-width: 0 3px 3px 0;
 }
 
+.header nav .menu div.menu_pagination {
+  order: 1;
+}
+
 .header nav .menu div.menu_language {
   width: 140px;
   padding: 5px 10px;
@@ -689,6 +680,7 @@ div#toggle span:after {
   border-radius: 10px;
   background-color: #5B3716;
   position: relative;
+  order: 2;
 }
 
 .header nav .menu div.menu_language li {
@@ -752,6 +744,28 @@ div#toggle span:after {
 
 .header nav .menu div.menu_language li .dropdown_content.open a:hover {
   color: #f6d367;
+}
+
+.header nav .menu div.menu_avatar {
+  margin: 0 0 0 30px;
+  order: 3;
+}
+
+.header nav .menu div.menu_avatar .avatar_dropdown {
+  cursor: pointer;
+}
+
+.header nav .menu div.menu_avatar .avatar_dropdown .avatar_image {
+  width: 50px;
+}
+
+.header nav .menu div.menu_avatar .avatar_dropdown .avatar_image .swiper_avatar_img.swiper_avatar_text .avatar_text h4 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.header nav .menu div.menu_avatar .avatar_dropdown .avatar_menu li {
+  text-align: center;
 }
 
 @media screen and (max-width: 1300px) {
@@ -835,6 +849,23 @@ div#toggle span:after {
   .header nav .menu div.menu_language li .dropdown_content.open li {
     padding: 5px 10px;
   }
+  .header nav .menu div.menu_avatar {
+    margin: 30px 0 0;
+  }
+  .header nav .menu div.menu_avatar .avatar_dropdown {
+    padding: 0;
+  }
+  .header nav .menu div.menu_avatar .avatar_dropdown .avatar_image {
+    margin: 0 0 15px;
+  }
+  .header nav .menu div.menu_avatar .avatar_dropdown .avatar_menu {
+    left: 0;
+    transform: translate(0px);
+  }
+  .header nav .menu div.menu_avatar .avatar_dropdown .avatar_menu li {
+    text-align: left;
+    padding: 5px 0px;
+  }
   .header nav .menu div li {
     padding: 10px 0px;
     border-left: 0px;
@@ -847,20 +878,6 @@ div#toggle span:after {
     margin: 10px 0;
     left: 0%;
     transform: translate(0%, 0px);
-  }
-  .header nav .menu div li.dropdown.avatar_dropdown {
-    padding: 0;
-  }
-  .header nav .menu div li.dropdown.avatar_dropdown .avatar_image {
-    margin: 0 0 15px;
-  }
-  .header nav .menu div li.dropdown.avatar_dropdown .avatar_menu {
-    left: 0;
-    transform: translate(0px);
-  }
-  .header nav .menu div li.dropdown.avatar_dropdown .avatar_menu li {
-    text-align: left;
-    padding: 5px 0px;
   }
   .header nav .menu.opened {
     visibility: visible;
@@ -8410,27 +8427,11 @@ h-word {
   background-position: center;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area {
-  width: 45%;
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .student_photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  position: relative;
-  border-radius: 50%;
-}
-
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area .student_photo_btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translate(100%, 0px);
-  width: 50px;
-  padding: 10px;
-  background-color: #ff6464;
-  border-radius: 50%;
-  line-height: 0;
-}
-
-.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area .student_photo_btn:hover {
-  background-color: #ff3131;
 }
 
 .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content {
@@ -8705,16 +8706,6 @@ h-word {
   line-height: 0;
 }
 
-.avatar_area img,
-.avatar_image img {
-  border-radius: 50%;
-}
-
-.avatar_area .student_photo_btn img,
-.avatar_image .student_photo_btn img {
-  border-radius: 0;
-}
-
 @media screen and (max-width: 1400px) {
   .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project {
     flex-direction: column;
@@ -8753,27 +8744,16 @@ h-word {
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area {
     flex-direction: row;
+    align-items: center;
   }
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area {
-    width: 35%;
-    margin: 0;
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .student_photo {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area img {
-    max-width: calc(90% - 50px);
-  }
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area .student_photo_btn {
-    transform: translate(0%, 100%);
-    top: 50%;
-    bottom: auto;
-  }
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .avatar_area .student_photo_btn img {
-    max-width: none;
+    margin: 0 2%;
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content {
-    width: 60%;
+    width: calc(92% - 210px);
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information {
     text-align: left;
@@ -8857,6 +8837,7 @@ h-word {
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content {
     width: 100%;
+    margin: 20px 0 0;
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information {
     text-align: center;
@@ -8933,28 +8914,6 @@ h-word {
   margin: 40px auto 80px;
 }
 
-.main.register .register_area .account_area .student_photo {
-  width: 160px;
-  margin: 60px 0px 40px;
-  position: relative;
-}
-
-.main.register .register_area .account_area .student_photo .student_photo_btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translate(100%, 0px);
-  width: 50px;
-  padding: 10px;
-  background-color: #ff6464;
-  border-radius: 50%;
-  line-height: 0;
-}
-
-.main.register .register_area .account_area .student_photo .student_photo_btn:hover {
-  background-color: #ff3131;
-}
-
 .main.register .register_area .account_area .register_item {
   display: flex;
   flex-wrap: wrap;
@@ -9016,6 +8975,28 @@ h-word {
 
 .main.register .register_area .account_area .register_item select:focus-visible {
   outline: #EFE8E0 auto 0px;
+}
+
+.main .student_photo {
+  width: 160px;
+  margin: 60px 0px 40px;
+  position: relative;
+}
+
+.main .student_photo .student_photo_btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(100%, 0px);
+  width: 50px;
+  padding: 10px;
+  background-color: #ff6464;
+  border-radius: 50%;
+  line-height: 0;
+}
+
+.main .student_photo .student_photo_btn:hover {
+  background-color: #ff3131;
 }
 
 .crop_area {
@@ -9177,6 +9158,7 @@ h-word {
   max-width: none !important;
   width: 60%;
   padding: 0;
+  margin: 75px auto 0;
 }
 
 .avatar_modal .avatar_modal_top {
@@ -9189,7 +9171,7 @@ h-word {
   align-items: flex-end;
 }
 
-.avatar_modal .avatar_modal_top .now_avatar {
+.avatar_modal .avatar_modal_top .swiper_avatar_img {
   width: 150px;
   position: absolute;
   background-position: center;
@@ -9297,6 +9279,7 @@ h-word {
   border: 2px solid transparent;
   cursor: pointer;
   line-height: 0;
+  width: 100%;
 }
 
 .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img:hover {
@@ -9308,7 +9291,11 @@ h-word {
   border-radius: 50%;
 }
 
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .close_avatar {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img.swiper_avatar_text ~ .close_avatar.show {
+  display: none;
+}
+
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .close_avatar {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -9324,7 +9311,7 @@ h-word {
   background-position: center center;
 }
 
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .close_avatar.show {
+.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .close_avatar.show {
   display: block;
 }
 
@@ -9410,6 +9397,38 @@ h-word {
   display: none;
 }
 
+.swiper_avatar_img {
+  position: relative;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.swiper_avatar_img img {
+  border-radius: 50%;
+}
+
+.swiper_avatar_img.swiper_avatar_text {
+  user-select: none;
+  /* standard syntax */
+  -webkit-user-select: none;
+  /* for Chrome、Safari */
+  -moz-user-select: none;
+  /* for Mozilla、Firefox */
+}
+
+.swiper_avatar_img.swiper_avatar_text .avatar_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.swiper_avatar_img.swiper_avatar_text .avatar_text h4 {
+  font-size: 60px;
+  text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
   .main.register .register_area .account_area .register_item input {
     font-size: 18px;
@@ -9419,11 +9438,12 @@ h-word {
   }
   .avatar_modal {
     width: 80%;
+    margin: 60px auto 0;
   }
   .avatar_modal .avatar_modal_top {
     min-height: 120px;
   }
-  .avatar_modal .avatar_modal_top .now_avatar {
+  .avatar_modal .avatar_modal_top .swiper_avatar_img {
     width: 120px;
   }
   .avatar_modal .avatar_modal_top .avatar_name {
@@ -9440,17 +9460,20 @@ h-word {
 }
 
 @media screen and (max-width: 768px) {
-  .main.register .register_area .account_area .student_photo {
+  .main .student_photo {
     width: 140px;
   }
-  .main.register .register_area .account_area .student_photo .student_photo_btn {
+  .main .student_photo .student_photo_btn {
     width: 40px;
     padding: 5px;
+  }
+  .avatar_modal {
+    margin: 50px auto 0;
   }
   .avatar_modal .avatar_modal_top {
     min-height: 100px;
   }
-  .avatar_modal .avatar_modal_top .now_avatar {
+  .avatar_modal .avatar_modal_top .swiper_avatar_img {
     width: 100px;
   }
   .avatar_modal .avatar_area {
@@ -9472,6 +9495,48 @@ h-word {
   }
   .main.register .register_area .account_area .register_item select {
     font-size: 17px;
+  }
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper {
+    width: 70%;
+  }
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next {
+    right: 10%;
+    transform: translate(100%, -50%);
+  }
+  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
+    left: 10%;
+    transform: translate(-100%, -50%);
+  }
+  .avatar_modal .avatar_area .upload_avatar_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar {
+    margin: 20px auto 0;
+    text-align: center;
+    border-top: 1px solid #5B3716;
+    width: 100%;
+    padding: 20px 0 0;
+  }
+  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar .upload_avatar_title {
+    margin: 0 0 20px;
+    color: #5B3716;
+  }
+  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar .file_upload {
+    cursor: pointer;
+    background-color: #5B3716;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+  }
+  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar .file_upload:hover {
+    background-color: #321e0c;
+  }
+  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar input[type="file"] {
+    display: none;
   }
 }
 

@@ -40,12 +40,17 @@
                             <img src="image/photo/reading_card.png" alt="">
                         </div>
                         <div class="member_information_area">
-                            <div class="avatar_area">
-                                <img src="image/avatar/avatar_01.png" alt="">
-                                <a href="#avatar_modal" rel="modal:open" class="student_photo_btn button_hover">
-                                    <img src="image/svg/photo.svg" alt="">
-                                </a>
-                            </div>
+                            <div class="student_photo">
+                                <div class="swiper_avatar_img swiper_avatar_text">
+                                    <img src="image/avatar/avatar_text.png" alt="">
+                                    <div class="avatar_text">
+                                        <h4>A</h4>
+                                    </div>
+                                </div>
+                            <a href="#avatar_modal" rel="modal:open" class="student_photo_btn button_hover">
+                                <img src="image/svg/photo.svg" alt="">
+                            </a>
+                        </div>
                             <div class="member_information_content">
                                 <div class="member_information">
                                     <h3>王小明</h3>
@@ -386,9 +391,12 @@
 
         <div id="avatar_modal" class="modal avatar_modal">
             <div class="avatar_modal_top">
-                <div class="now_avatar">
-                    <img src="image/avatar/avatar_01.png">
-                </div>
+                    <div class="swiper_avatar_img swiper_avatar_text">
+                        <img src="image/avatar/avatar_text.png" alt="">
+                        <div class="avatar_text">
+                            <h4>A</h4>
+                        </div>
+                    </div>
                 <div class="avatar_name">
                     <h4>小明 王</h4>
                 </div>
@@ -401,36 +409,45 @@
                     <div class="swiper mySwiper avatar_swiper">
                         <div class="swiper-wrapper" aria-live="polite">
 
-                            <div class="crop_avatar">
-                                <div id="avatar_result">
-                                    <div class="swiper_avatar_img">
-                                        <img src="" />
+                            <div id="avatar_result" class="swiper-slide crop_avatar">
+                                <div class="swiper_avatar_img">
+                                    <img src="image/avatar/avatar_01.png" alt="">
+                                </div>
+                                <div class="close_avatar"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_avatar_img swiper_avatar_text">
+                                    <img src="image/avatar/avatar_text.png" alt="">
+                                    <div class="avatar_text">
+                                        <h4>A</h4>
                                     </div>
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_01.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_02.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_03.png" alt="">
                                 </div>
+                                <div class="close_avatar"></div>
                             </div>
-                            <div class="swiper-slide notget" data-des="收集10枚閱讀章 可以解鎖" title="收集10枚閱讀章 可以解鎖">
+                            <div class="swiper-slide">
                                 <div class="swiper_avatar_img">
                                     <img src="image/avatar/avatar_04.png" alt="">
                                 </div>
-                                <div class="lock_icon">
-                                    <i class="fa-solid fa-lock"></i>
-                                </div>
+                                <div class="close_avatar"></div>
                             </div>
                             <div class="swiper-slide notget" data-des="Collect 10 reading chapters to unlock"
                                 title="Collect 10 reading chapters to unlock">
@@ -543,7 +560,6 @@
                 </div>
 
                 <div class="upload_avatar_area">
-
                     <div id="upload" class="upload_avatar">
                         <h4 class="upload_avatar_title">上傳專屬頭像</h4>
                         <label for="file_select" onclick="cropCancel();" class="file_upload">
@@ -555,7 +571,7 @@
                 </div>
 
             </div>
-        </div>
+        </div
 
         <div class="crop_area">
             <div class="crop_content_area">
@@ -625,16 +641,17 @@
             });
         </script>
 
-    <!-- 閱讀章數 -->
-  <script>
-    $(".close-modal").click(function (e) {
-      $(".medal_area").fadeOut();
-    });
-    $(".medal_area_button").click(function (e) {
-      $(".medal_area_explain").toggle();
-      setTimeout(function () {
-        $(".medal_area_explain").fadeOut();
-      }, 15000);
-    });
-  </script>
+      <!-- 頭像刪除 -->
+      <script>
+        $(".swiper-slide").mouseover(function () {
+            $(this).children(".close_avatar").addClass("show");
+        });
+        $(".swiper-slide").mouseout(function () {
+            $(this).children(".close_avatar").removeClass("show");
+        });
+        $(".close_avatar").click(function () {
+            $(this).parent(".swiper-slide").hide();
+        });
+    </script>
+
 </body>

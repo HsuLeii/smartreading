@@ -6,28 +6,7 @@
 
         .register_area {
             .account_area {
-                .student_photo {
-                    width: 160px;
-                    margin: 60px 0px 40px;
-                    position: relative;
-
-                    .student_photo_btn {
-                        position: absolute;
-                        right: 0;
-                        bottom: 0;
-                        transform: translate(100%, 0px);
-                        width: 50px;
-                        padding: 10px;
-                        background-color: $main_color;
-                        border-radius: 50%;
-                        line-height: 0;
-
-                        &:hover {
-                            background-color: darken($main_color, 10%);
-                        }
-                    }
-                }
-
+                
                 .register_item {
                     display: flex;
                     flex-wrap: wrap;
@@ -95,6 +74,27 @@
 
     }
 
+    .student_photo {
+        width: 160px;
+        margin: 60px 0px 40px;
+        position: relative;
+
+        .student_photo_btn {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translate(100%, 0px);
+            width: 50px;
+            padding: 10px;
+            background-color: $main_color;
+            border-radius: 50%;
+            line-height: 0;
+
+            &:hover {
+                background-color: darken($main_color, 10%);
+            }
+        }
+    }
 }
 
 .crop_area {
@@ -257,6 +257,7 @@
     max-width: none !important;
     width: 60%;
     padding: 0;
+    margin: 75px auto 0;
 
     .avatar_modal_top {
         position: relative;
@@ -267,7 +268,7 @@
         justify-content: center;
         align-items: flex-end;
 
-        .now_avatar {
+        .swiper_avatar_img {
             width: 150px;
             position: absolute;
             background-position: center;
@@ -378,6 +379,7 @@
                             border: 2px solid $transparent;
                             cursor: pointer;
                             line-height: 0;
+                            width: 100%;
 
                             &:hover {
                                 border: 2px solid $main_color;
@@ -387,28 +389,37 @@
                             img {
                                 border-radius: 50%;
                             }
+
+                            &.swiper_avatar_text {
+                                &~.close_avatar {
+                                    &.show {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        .close_avatar {
+                            width: 30px;
+                            height: 30px;
+                            position: absolute;
+                            right: 0px;
+                            top: 0px;
+                            background: $black;
+                            border-radius: 50%;
+                            display: none;
+                            cursor: pointer;
+                            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+
+                            &.show {
+                                display: block;
+                            }
                         }
                     }
 
-                    .close_avatar {
-                        width: 30px;
-                        height: 30px;
-                        position: absolute;
-                        right: 0px;
-                        top: 0px;
-                        background: $black;
-                        border-radius: 50%;
-                        display: none;
-                        cursor: pointer;
-                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        background-position: center center;
-                        
-                        &.show{
-                            display: block;
-                        }
-                    }
                 }
             }
 
@@ -499,6 +510,38 @@
 
 }
 
+.swiper_avatar_img {
+    position: relative;
+    line-height: 0;
+    border-radius: 50%;
+
+    img {
+        border-radius: 50%;
+    }
+
+    &.swiper_avatar_text {
+        user-select: none;
+        /* standard syntax */
+        -webkit-user-select: none;
+        /* for Chrome、Safari */
+        -moz-user-select: none;
+
+        /* for Mozilla、Firefox */
+        .avatar_text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+
+
+            h4 {
+                font-size: 60px;
+                text-align: center;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 1200px) {}
 
@@ -523,11 +566,12 @@
 
     .avatar_modal {
         width: 80%;
+        margin: 60px auto 0;
 
         .avatar_modal_top {
             min-height: 120px;
 
-            .now_avatar {
+            .swiper_avatar_img {
                 width: 120px;
             }
 
@@ -563,28 +607,23 @@
 
 @media screen and (max-width: 768px) {
     .main {
-        &.register {
+        .student_photo {
+            width: 140px;
 
-            .register_area {
-                .account_area {
-                    .student_photo {
-                        width: 140px;
-
-                        .student_photo_btn {
-                            width: 40px;
-                            padding: 5px;
-                        }
-                    }
-                }
+            .student_photo_btn {
+                width: 40px;
+                padding: 5px;
             }
         }
     }
 
     .avatar_modal {
+        margin: 50px auto 0;
+
         .avatar_modal_top {
             min-height: 100px;
-
-            .now_avatar {
+            
+            .swiper_avatar_img {
                 width: 100px;
             }
         }
@@ -635,6 +674,68 @@
                 }
             }
         }
+
+    }
+
+    .avatar_modal {
+
+        .avatar_area {
+
+            .choose_avatar_area {
+
+                .avatar_swiper {
+                    width: 70%;
+                }
+
+                .avatar_swiper_button_next {
+                    right: 10%;
+                    transform: translate(100%, -50%);
+                }
+
+                .avatar_swiper_button_prev {
+                    left: 10%;
+                    transform: translate(-100%, -50%);
+                }
+            }
+
+            .upload_avatar_area {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 10px auto;
+
+                .upload_avatar {
+                    margin: 20px auto 0;
+                    text-align: center;
+                    border-top: 1px solid $brown;
+                    width: 100%;
+                    padding: 20px 0 0;
+
+                    .upload_avatar_title {
+                        margin: 0 0 20px;
+                        color: $brown;
+                    }
+
+                    .file_upload {
+                        cursor: pointer;
+                        background-color: $brown;
+                        padding: 10px 20px;
+                        border-radius: 10px;
+                        color: $white;
+                        display: inline-block;
+
+                        &:hover {
+                            background-color: darken($brown, 10%);
+                        }
+                    }
+
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+            }
+        }
+
 
     }
 }
