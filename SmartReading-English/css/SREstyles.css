@@ -3617,7 +3617,7 @@ footer .footer_copyright p {
 }
 
 .main.test .answer_area {
-  padding: 30px calc(1.2rem + 30px);
+  padding: 30px calc(1.2rem + 60px);
   border: 1px solid #ff6464;
   margin-top: -10px;
   border-radius: 10px;
@@ -3733,6 +3733,30 @@ footer .footer_copyright p {
 .main.test .answer_area .topic .topic_text p {
   font-size: 26px;
   font-weight: bold;
+}
+
+.main.test .answer_area .topic .topic_text.wrong, .main.test .answer_area .topic .topic_text.correct {
+  position: relative;
+}
+
+.main.test .answer_area .topic .topic_text.wrong:before, .main.test .answer_area .topic .topic_text.correct:before {
+  content: "";
+  position: absolute;
+  left: -65px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.main.test .answer_area .topic .topic_text.wrong:before {
+  background-image: url(../image/svg/wrong.svg);
+}
+
+.main.test .answer_area .topic .topic_text.correct:before {
+  background-image: url(../image/svg/correct.svg);
 }
 
 .main.test .answer_area .topic span {
@@ -4350,6 +4374,7 @@ h-word {
   }
   .main.test .answer_area {
     margin-top: 15px;
+    padding: 30px calc(1.2rem + 40px);
   }
   .main.test .answer_area .test_form .answer_list {
     margin: 10px auto;
@@ -4365,6 +4390,13 @@ h-word {
   }
   .main.test .answer_area .topic .topic_text p {
     font-size: 22px;
+  }
+  .main.test .answer_area .topic .topic_text.wrong:before, .main.test .answer_area .topic .topic_text.correct:before {
+    left: -50px;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
   }
   .main.test .answer_area .topic span {
     font-size: 22px;
@@ -4440,7 +4472,7 @@ h-word {
     margin: 0px auto 10px;
   }
   .main.test .answer_area {
-    padding: 0px calc(1rem + 30px);
+    padding: 0px calc(1.2rem + 40px);
   }
   .main.test .answer_area .test_form fieldset .answer_sound {
     width: 45%;
