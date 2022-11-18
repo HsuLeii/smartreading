@@ -1,0 +1,1052 @@
+body {
+    background-color: $body_bg;
+    counter-reset: page-number;
+    /* 初始化，名字可自訂，數值為0 */
+    -webkit-print-color-adjust: exact;
+}
+
+.page {
+    /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+    /* page-break-after: always;  碰到此元素會直接換頁 */
+    page-break-inside: avoid;
+    position: relative;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    &:after {
+        /* content: counter(page-number); 取用該名字的計數器 */
+        /*counter-increment: page-number 1;  增加計數器數值 */
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 1.5;
+        color: $white;
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    h4 {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .report-title {
+        width: 100%;
+        z-index: 2;
+        background-color: $light_main_color;
+        padding: 20px 5%;
+
+        img{
+            width: 45%;
+            max-width: 200px;
+        }
+
+        .text-content {
+
+            h3 {
+                border-bottom: 5px solid $yellow;
+                margin: 10px auto;
+                padding: 10px 0px;
+                font-size: 40px;
+                display: inline-block;
+            }
+
+            .chinese-title {
+                font-size: 32px;
+                margin-bottom: 10px;
+                color: $white;
+            }
+
+            .english-title {
+                color: $white;
+            }
+
+        }
+
+        .material {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .name,
+            .date,
+            .language {
+                margin: 8px 15px 8px 0px;
+                display: flex;
+
+                h4 {
+                    color: $yellow;
+                }
+
+                p {
+                    color: $white;
+                    padding-bottom: 2px;
+                    border-bottom: 1px solid $white;
+                }
+            }
+        }
+    }
+
+    .test-content {
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px 5%;
+        max-width: 768px;
+
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 9px;
+
+            .fraction-area {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                margin: 15px auto;
+
+                .fraction,
+                .average {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    p {
+                        &:nth-child(2) {
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                        }
+
+                        &.score {
+                            font-size: 18px;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
+                .fraction {
+                    p {
+                        &:nth-child(2) {
+                            color: $white;
+                        }
+                    }
+                }
+
+                .average {
+                    margin: 5px 0 5px 2.5%;
+                }
+            }
+
+            .title-mark {
+                position: relative;
+                width: 15%;
+                max-width: 80px;
+                z-index: 1;
+
+                .number-mark {
+                    position: absolute;
+                    left: -5%;
+                    top: 0%;
+                    width: 45%;
+                    transform: translate(0px , -50%);
+                }
+            }
+
+            .item-content {
+                background-color: $white;
+                border-radius: 5px;
+                @extend %boxShadow_gray;
+                width: 90%;
+                margin-left: -5%;
+
+                .content-title {
+                    padding: 5px 10px 5px 10%;
+                    border-radius: 5px 5px 0 0;
+                    border-bottom: 0 !important;
+                }
+
+                .content-introduce {
+                    padding: 5px 10px 5px 10%;
+                    border-radius: 0 0 5px 5px;
+                    background-color: $white;
+                    border-top: 0 !important;
+                }
+            }
+
+            &.first-item {
+                .fraction-area {
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                background-color: $first_item_color;
+                                border: 1.5px solid $first_item_color;
+                            }
+                        }
+                    }
+
+                    .average {
+                        p {
+                            &:nth-child(2) {
+                                color: $first_item_color;
+                                border: 1.5px solid $first_item_color;
+                            }
+                        }
+                    }
+                }
+
+                .item-content {
+                    .content-title {
+                        background-color: $first_item_color;
+                        border: 1px solid $first_item_color;
+                    }
+
+                    .content-introduce {
+                        border: 1px solid $first_item_color;
+                    }
+                }
+            }
+
+            &.two-item {
+                .fraction-area {
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                background-color: $two_item_color;
+                                border: 1.5px solid $two_item_color;
+                            }
+
+                        }
+                    }
+
+                    .average {
+                        p {
+                            &:nth-child(2) {
+                                color: $two_item_color;
+                                border: 1.5px solid $two_item_color;
+                            }
+                        }
+                    }
+                }
+
+                .item-content {
+                    .content-title {
+                        background-color: $two_item_color;
+                        border: 1px solid $two_item_color;
+                    }
+
+                    .content-introduce {
+                        border: 1px solid $two_item_color;
+                    }
+                }
+            }
+
+            &.three-item {
+                .fraction-area {
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                background-color: $three_item_color;
+                                border: 1.5px solid $three_item_color;
+                            }
+
+                        }
+                    }
+
+                    .average {
+                        p {
+                            &:nth-child(2) {
+                                color: $three_item_color;
+                                border: 1.5px solid $three_item_color;
+                            }
+                        }
+                    }
+                }
+
+                .item-content {
+                    .content-title {
+                        background-color: $three_item_color;
+                        border: 1px solid $three_item_color;
+                    }
+
+                    .content_introduce {
+                        border: 1px solid $three_item_color;
+                    }
+                }
+            }
+
+            &.four-item {
+                .fraction-area {
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                background-color: $four_item_color;
+                                border: 1.5px solid $four_item_color;
+                            }
+
+                        }
+                    }
+
+                    .average {
+                        p {
+                            &:nth-child(2) {
+                                color: $four_item_color;
+                                border: 1.5px solid $four_item_color;
+                            }
+                        }
+                    }
+                }
+
+                .item-content {
+                    .content-title {
+                        background-color: $four_item_color;
+                        border: 1px solid $four_item_color;
+                    }
+
+                    .content-introduce {
+                        border: 1px solid $four_item_color;
+                    }
+                }
+            }
+
+            &.five-item {
+                .fraction-area {
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                background-color: $five_item_color;
+                                border: 1.5px solid $five_item_color;
+                            }
+
+                        }
+                    }
+
+                    .average {
+                        p {
+                            &:nth-child(2) {
+                                color: $five_item_color;
+                                border: 1.5px solid $five_item_color;
+                            }
+                        }
+                    }
+                }
+
+                .item-content {
+                    .content-title {
+                        background-color: $five_item_color;
+                        border: 1px solid $five_item_color;
+                    }
+
+                    .content-introduce {
+                        border: 1px solid $five_item_color;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .chartbar-area {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px 5%;
+        max-width: 768px;
+
+        .srscore,
+        .cefr-level,
+        .actfl-level {
+            position: relative;
+            width: 45%;
+            background-color: $chartbar_color;
+            border-radius: 50%;
+            max-width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 2;
+            margin: 10px 2.5%;
+
+            &:after {
+                position: absolute;
+                content: "";
+                border: 2px dotted $dark_main_color;
+                width: 100%;
+                height: 100%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                padding: 3px;
+                border-radius: 50%;
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                color: $dark_main_color;
+            }
+        }
+    }
+
+    .bottom-text {
+        width: 100%;
+        z-index: 1;
+        padding: 20px 0 0;
+
+        p {
+            margin: 0 auto;
+            padding: 10px 5%;
+            text-align: center;
+            color: $white;
+
+            &:nth-child(1) {
+                background-color: $light_main_color;
+            }
+
+            &:nth-child(2) {
+                background-color: $dark_main_color;
+            }
+        }
+    }
+}
+
+@page {
+    /*size: portrait;  直向 */
+    /*size: landscape;  橫向 */
+    /*size: A4;  紙張大小 */
+    size: A4 portrait;
+    /* 混合使用 */
+    min-height: 100vh;
+    margin: 0;
+    /* 邊界與內容的距離 */
+}
+
+@media print {
+    body {
+        background-color: $body_bg;
+        counter-reset: page-number;
+        /* 初始化，名字可自訂，數值為0 */
+        -webkit-print-color-adjust: exact;
+    }
+
+    section {
+        width: 100vw;
+        height: 100vh;
+        page-break-after: always;
+    }
+
+    .page {
+        /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+        /* page-break-after: always;  碰到此元素會直接換頁 */
+        page-break-inside: avoid;
+        position: relative;
+        background: linear-gradient(90deg, $light_main_color 38%, $white 0%);
+        max-width: 1024px;
+        width: 1024px;
+        height: 1448px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        overflow: hidden;
+
+        &:after {
+            /* content: counter(page-number); 取用該名字的計數器 */
+            /*counter-increment: page-number 1;  增加計數器數值 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 1.5;
+            color: $white;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        h4 {
+            font-size: 22px;
+            line-height: 1.6;
+        }
+
+        .report-title {
+            width: 100%;
+            z-index: 2;
+            background-color: $light_main_color;
+            padding: 20px 5%;
+    
+            img{
+                width: 45%;
+                max-width: 200px;
+            }
+    
+            .text-content {
+    
+                h3 {
+                    border-bottom: 5px solid $yellow;
+                    margin: 10px auto;
+                    padding: 10px 0px;
+                    font-size: 40px;
+                    display: inline-block;
+                }
+    
+                .chinese-title {
+                    font-size: 32px;
+                    margin-bottom: 10px;
+                    color: $white;
+                }
+    
+                .english-title {
+                    color: $white;
+                }
+    
+            }
+    
+            .material {
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+    
+                .name,
+                .date,
+                .language {
+                    margin: 8px 15px 8px 0px;
+                    display: flex;
+    
+                    h4 {
+                        color: $yellow;
+                    }
+    
+                    p {
+                        color: $white;
+                        padding-bottom: 2px;
+                        border-bottom: 1px solid $white;
+                    }
+                }
+            }
+        }
+    
+        .test-content {
+            width: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px 5%;
+            max-width: 768px;
+    
+            .item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 9px;
+    
+                .fraction-area {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    margin: 15px auto;
+    
+                    .fraction,
+                    .average {
+                        display: flex;
+                        align-items: center;
+                        margin: 5px 0;
+    
+                        p {
+                            &:nth-child(2) {
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                            }
+    
+                            &.score {
+                                font-size: 18px;
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+    
+                    .fraction {
+                        p {
+                            &:nth-child(2) {
+                                color: $white;
+                            }
+                        }
+                    }
+    
+                    .average {
+                        margin: 5px 0 5px 2.5%;
+                    }
+                }
+    
+                .title-mark {
+                    position: relative;
+                    width: 15%;
+                    max-width: 80px;
+                    z-index: 1;
+    
+                    .number-mark {
+                        position: absolute;
+                        left: -5%;
+                        top: 0%;
+                        width: 45%;
+                        transform: translate(0px , -50%);
+                    }
+                }
+    
+                .item-content {
+                    background-color: $white;
+                    border-radius: 5px;
+                    width: 90%;
+                    margin-left: -5%;
+    
+                    .content-title {
+                        padding: 5px 10px 5px 10%;
+                        border-radius: 5px 5px 0 0;
+                        border-bottom: 0 !important;
+                    }
+    
+                    .content-introduce {
+                        padding: 5px 10px 5px 10%;
+                        border-radius: 0 0 5px 5px;
+                        background-color: $white;
+                        border-top: 0 !important;
+                    }
+                }
+    
+                &.first-item {
+                    .fraction-area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $first_item_color;
+                                    border: 1.5px solid $first_item_color;
+                                }
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $first_item_color;
+                                    border: 1.5px solid $first_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item-content {
+                        .content-title {
+                            background-color: $first_item_color;
+                            border: 1px solid $first_item_color;
+                        }
+    
+                        .content-introduce {
+                            border: 1px solid $first_item_color;
+                        }
+                    }
+                }
+    
+                &.two-item {
+                    .fraction-area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $two_item_color;
+                                    border: 1.5px solid $two_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $two_item_color;
+                                    border: 1.5px solid $two_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item-content {
+                        .content-title {
+                            background-color: $two_item_color;
+                            border: 1px solid $two_item_color;
+                        }
+    
+                        .content-introduce {
+                            border: 1px solid $two_item_color;
+                        }
+                    }
+                }
+    
+                &.three-item {
+                    .fraction-area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $three_item_color;
+                                    border: 1.5px solid $three_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $three_item_color;
+                                    border: 1.5px solid $three_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item-content {
+                        .content-title {
+                            background-color: $three_item_color;
+                            border: 1px solid $three_item_color;
+                        }
+    
+                        .content_introduce {
+                            border: 1px solid $three_item_color;
+                        }
+                    }
+                }
+    
+                &.four-item {
+                    .fraction-area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $four_item_color;
+                                    border: 1.5px solid $four_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $four_item_color;
+                                    border: 1.5px solid $four_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item-content {
+                        .content-title {
+                            background-color: $four_item_color;
+                            border: 1px solid $four_item_color;
+                        }
+    
+                        .content-introduce {
+                            border: 1px solid $four_item_color;
+                        }
+                    }
+                }
+    
+                &.five-item {
+                    .fraction-area {
+                        .fraction {
+                            p {
+                                &:nth-child(2) {
+                                    background-color: $five_item_color;
+                                    border: 1.5px solid $five_item_color;
+                                }
+    
+                            }
+                        }
+    
+                        .average {
+                            p {
+                                &:nth-child(2) {
+                                    color: $five_item_color;
+                                    border: 1.5px solid $five_item_color;
+                                }
+                            }
+                        }
+                    }
+    
+                    .item-content {
+                        .content-title {
+                            background-color: $five_item_color;
+                            border: 1px solid $five_item_color;
+                        }
+    
+                        .content-introduce {
+                            border: 1px solid $five_item_color;
+                        }
+                    }
+                }
+            }
+    
+        }
+    
+        .chartbar-area {
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px 5%;
+            max-width: 768px;
+    
+            .srscore,
+            .cefr-level,
+            .actfl-level {
+                position: relative;
+                width: 45%;
+                background-color: $chartbar_color;
+                border-radius: 50%;
+                max-width: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                z-index: 2;
+                margin: 10px 2.5%;
+    
+                &:after {
+                    position: absolute;
+                    content: "";
+                    border: 2px dotted $dark_main_color;
+                    width: 100%;
+                    height: 100%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: 3px;
+                    border-radius: 50%;
+                }
+    
+                h3 {
+                    text-align: center;
+                }
+    
+                p {
+                    text-align: center;
+                    color: $dark_main_color;
+                }
+            }
+        }
+    
+        .bottom-text {
+            width: 100%;
+            z-index: 1;
+            padding: 20px 0 0;
+    
+            p {
+                margin: 0 auto;
+                padding: 10px 5%;
+                text-align: center;
+                color: $white;
+    
+                &:nth-child(1) {
+                    background-color: $light_main_color;
+                }
+    
+                &:nth-child(2) {
+                    background-color: $dark_main_color;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px){
+    .page {
+    
+        h3 {
+            font-size: 19px;
+        }
+    
+        p {
+            font-size: 15px;
+        }
+    
+        h4 {
+            font-size: 17px;
+        }
+
+        .test-content {
+            .item{
+                justify-content: flex-end;
+            }
+        }
+
+        .chartbar-area {
+    
+            .srscore,
+            .cefr-level,
+            .actfl-level {
+                width: 29%;
+                margin: 0 2%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .page {
+        /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+        /* page-break-after: always;  碰到此元素會直接換頁 */
+        background: linear-gradient(90deg, $light_main_color 38%, $white 0%);
+        height: 1448px;
+        padding-top: 15px;
+    
+        &:after {
+            /* content: counter(page-number); 取用該名字的計數器 */
+            /*counter-increment: page-number 1;  增加計數器數值 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+    
+        h3 {
+            font-size: 20px;
+        }
+    
+        p {
+            font-size: 16px;
+        }
+    
+        h4 {
+            font-size: 22px;
+        }
+    
+        .report-title {
+            width: 35%;
+            margin: 15px 0 0;
+            padding: 0;
+            background-color: transparent;
+
+            img{
+                width: 100%;
+                max-width: none;
+            }
+    
+            .text-content {
+    
+                h3 {
+                    font-size: 42px;
+                    display: block;
+                }
+    
+                .chinese-title {
+                    font-size: 33px;
+                }
+    
+                .english-title {
+                    font-size: 15px;
+                }
+    
+            }
+    
+            .material {
+                display: block;
+    
+                .name,
+                .date,
+                .language {
+                    margin: 15px 0px;
+                    display: block;
+                }
+            }
+        }
+    
+        .test-content {
+            width: 60%;
+            height: calc(100% - 417px);
+            max-width: none;
+            padding: 0;
+    
+            .item {
+    
+                .fraction-area {
+                    margin: 15px auto 5px;
+                }
+    
+                .item-content {
+                    width: 85%;
+                }
+            }
+    
+        }
+    
+        .chartbar-area {
+            position: relative;
+            bottom: 80px;
+            max-width: none;
+    
+            .srscore,
+            .cefr-level,
+            .actfl-level {
+    
+                &:after {
+                    padding: 6px;
+                }
+    
+                p {
+                    font-size: 22px;
+                }
+            }
+        }
+    
+        .bottom-text {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            padding: 0;
+    
+            &:before {
+                position: absolute;
+                content: "";
+                width: 1024px;
+                height: 1024px;
+                top: -512px;
+                background: $white;
+                border-radius: 50%;
+                z-index: -1;
+            }
+        }
+    }
+  }
