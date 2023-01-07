@@ -72,7 +72,7 @@ main{
                 margin: 5px auto 0;
             }
 
-            &.pass{
+            &.finish{
                 &.progress_bar_first{
                     .progress_bar_icon{
                         border-color: $firstStop;
@@ -113,13 +113,53 @@ main{
         width: 80%;
         margin: 0 auto;
         .card_step_area{
+            .card_step_title{
+                background-color: $dark_main_color;
+                padding: 5px 10px;
+                border-radius: 5px 5px 0 0 ;
+                border: 1px solid;
+                h4{
+                    color: $white;
+                }
+            }
             .card_step_content{
+                border-radius:  0 0 5px 5px;
+                border: 1px solid;
+                padding: 10px;
                 .card_step_task{
+                    padding: 0 0 10px;
+                    margin: 0 0 10px;
+                    border-bottom: 1px solid $dark_grey;
+
                     .card_step_task_item{
                         display: flex;
+                        margin: 10px 0 0 0;
 
                         svg{
                             margin: 0 10px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.card_first_step{
+            .card_step_area{
+                .card_step_title{
+                    background-color: $firstStop;
+                    border-color: $firstStop;
+                }
+                .card_step_content{
+                    border-color: $firstStop;
+                    .card_step_task{
+                        .card_step_task_item{
+                            color: $firstStop;
+
+                            &.finish{
+                                p{
+                                    color: $firstStop;
+                                }
+                            }
                         }
                     }
                 }
