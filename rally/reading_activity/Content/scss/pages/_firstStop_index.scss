@@ -1,0 +1,178 @@
+main{
+    .discussion_title_area{
+        background-color: $dark_main_color;
+        .discussion_title{
+            max-width: 1200px;
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px 0;
+            h3{
+                color: $white;
+            }
+        }
+    }
+
+    .progress_bar_area{
+        max-width: 1200px;
+        width: 80%;
+        margin: 20px auto;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .progress_bar{
+            position: absolute;
+            top: calc(45px / 2);
+            left: 50%;
+            transform: translate(-50% , -50%);
+            width: 66%;
+            height: 5px;
+            z-index: -1;
+
+            .progress_bar_item{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                right: 0;
+
+                &.progress_bar_color{
+                    background: linear-gradient(90deg, $firstStop 50%, $secondStop 0%);
+                    z-index: -1;
+                }
+    
+                &.progress_bar_gray{
+                    background-color: $dark_grey;
+                }
+            }
+
+            
+        }
+
+        .progress_bar_icon_item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 33%;
+
+            .progress_bar_icon{
+                font-size: 20px;
+                background-color: $white;
+                border-radius: 50%;
+                border: 3px solid;
+                width: calc(30px * 1.6);
+                text-align: center;
+                padding: 5px;
+                color: $dark_grey;
+                border-color: $dark_grey;
+                margin: 0 auto;
+            }
+
+            p{
+                margin: 5px auto 0;
+            }
+
+            &.pass{
+                &.progress_bar_first{
+                    .progress_bar_icon{
+                        border-color: $firstStop;
+                        color: $firstStop;
+                    }
+
+                    p{
+                        color: $firstStop;
+                    }
+                }
+                &.progress_bar_second{
+                    .progress_bar_icon{
+                        border-color: $secondStop;
+                        color: $secondStop;
+                    }
+
+                    p{
+                        color: $secondStop;
+                    }
+                }
+                &.progress_bar_third{
+                    .progress_bar_icon{
+                        border-color: $thirdStop;
+                        color: $thirdStop;
+                    }
+
+                    p{
+                        color: $thirdStop;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .card_main_area{
+        max-width: 1200px;
+        width: 80%;
+        margin: 0 auto;
+        .card_step_area{
+            .card_step_content{
+                .card_step_task{
+                    .card_step_task_item{
+                        display: flex;
+
+                        svg{
+                            margin: 0 10px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main{
+    
+        .progress_bar_area{
+    
+            .progress_bar{
+                top: calc(53px / 2);
+            }
+
+            .progress_bar_icon_item{
+    
+                .progress_bar_icon{
+                    font-size: 25px;
+                    width: calc(35px * 1.6);
+                }
+                
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+    main{
+    
+        .progress_bar_area{
+            margin: 40px auto;
+    
+            .progress_bar{
+                top: calc(61px / 2);
+                height: 7px;
+            }
+
+            .progress_bar_icon_item{
+    
+                .progress_bar_icon{
+                    font-size: 30px;
+                    width: calc(40px * 1.6);
+                    border: 4px solid;
+                }
+                
+            }
+        }
+    }
+}
