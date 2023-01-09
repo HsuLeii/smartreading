@@ -112,7 +112,12 @@ main{
         max-width: 1200px;
         width: 80%;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
         .card_step_area{
+            width: 100%;
+
             .card_step_title{
                 background-color: $dark_main_color;
                 padding: 5px 10px;
@@ -125,7 +130,7 @@ main{
             .card_step_content{
                 border-radius:  0 0 5px 5px;
                 border: 1px solid;
-                padding: 10px;
+                padding: 20px 15px;
                 .card_step_task{
                     padding: 0 0 10px;
                     margin: 0 0 10px;
@@ -133,11 +138,62 @@ main{
 
                     .card_step_task_item{
                         display: flex;
+                        align-items: center;
                         margin: 10px 0 0 0;
 
                         svg{
-                            margin: 0 10px 0 0;
+                            margin: 0 5px 0 0;
                         }
+                    }
+                }
+
+                .card_step_record{
+                    .card_step_record_value{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .card_step_record_value_item{
+                            margin: 0 15px 0 0;
+                            span{
+                                color: $dark_main_color;
+                            }
+                        }
+                    }
+                }
+
+                .card_step_button{
+                    margin: 20px auto 0;
+                    .card_step_button_item{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        border: 1px solid;
+                        border-radius: 5px;
+                        padding: 5px;
+
+                        svg{
+                            margin: 0 5px 0 0;
+                        }
+
+                        &.card_step_button_item_summarize{
+                            border-color: $dark_main_color;
+                            color: $dark_main_color;
+                            p{
+                                color: $dark_main_color;
+                            }
+
+                            
+                        }
+
+                        &.card_step_button_item_done{
+                            border-color: $dark_main_color;
+                            color: $dark_main_color;
+                            margin: 15px 0 0;
+                            p{
+                                color: $dark_main_color;
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -165,6 +221,65 @@ main{
                 }
             }
         }
+
+        .card_item_area{
+            margin: 40px auto;
+            width: 100%;
+
+            .card_main_button{
+                .card_main_button_item{
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    svg{
+                        margin: 0 5px 0 0;
+                    }
+
+                    &.card_main_button_item_new{
+                        border-color: $dark_main_color;
+                        color: $dark_main_color;
+
+                        p{
+                            color: $dark_main_color;
+                        }
+                    }
+
+                    &.card_main_button_item_delete{
+                        margin: 20px 0;
+                        &:hover{
+                            color: $white !important;
+                            background-color: $dark_grey !important;
+                        p{
+                            color: $white !important;
+                        }
+                        }
+                    }
+                }
+            }
+        }
+
+        .card_button{
+            &.disabled{
+                border-color: $disabled !important;
+                color: $disabled !important;
+                cursor: auto;
+                p{
+                    color: $disabled !important;
+                }
+            }
+
+            &.card_button_main_color {
+                &:hover{
+                    color: $white !important;
+                    background-color: $dark_main_color !important;
+                p{
+                    color: $white !important;
+                }
+                }
+            }
+        }
     }
 }
 
@@ -172,6 +287,7 @@ main{
     main{
     
         .progress_bar_area{
+            margin: 40px auto 0px;
     
             .progress_bar{
                 top: calc(53px / 2);
@@ -186,10 +302,39 @@ main{
                 
             }
         }
+
+        .card_main_area{
+            margin: 40px auto;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            .card_step_area{
+                width: 280px;
+                
+            }
+    
+            .card_item_area{
+                margin: 0 0 40px;
+                width: calc(100% - 320px);
+            }
+        }
     }
 }
 
 @media screen and (min-width: 992px) {
+    main{
+        .card_main_area{
+    
+            .card_step_area{
+                width: 300px;
+                
+            }
+    
+            .card_item_area{
+                width: calc(100% - 350px);
+            }
+        }
+    }
 
 }
 
@@ -212,6 +357,19 @@ main{
                     border: 4px solid;
                 }
                 
+            }
+        }
+
+        .card_main_area{
+            margin: 60px auto;
+            .card_step_area{
+                width: 350px;
+                
+            }
+    
+            .card_item_area{
+                margin: 0 0 60px;
+                width: calc(100% - 400px);
             }
         }
     }
