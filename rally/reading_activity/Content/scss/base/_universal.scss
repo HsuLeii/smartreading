@@ -1,36 +1,37 @@
-.modal{
-    .modal-dialog{
+.modal {
+    .modal-dialog {
         max-width: 90%;
-        .modal-content{
-            
-            .modal_header{
+
+        .modal-content {
+
+            .modal_header {
                 padding: 20px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
-                h4{
-                    color: $white;
-                }
-                
-                .btn_close{
+                h4 {
                     color: $white;
                 }
 
-                &.modal_header_first_step{
+                .btn_close {
+                    color: $white;
+                }
+
+                &.modal_header_first_step {
                     background-color: $firstStop;
                 }
             }
 
-            .modal_body{
+            .modal_body {
                 overflow-y: auto;
                 padding: 10px 20px;
 
-                .modal_content_title{
+                .modal_content_title {
                     padding: 15px 0;
                     border-bottom: 1px solid $dark_main_color;
 
-                    h5{
+                    h5 {
                         color: $dark_main_color;
                     }
                 }
@@ -38,53 +39,55 @@
         }
     }
 
-    &.modal_slide{
+    &.modal_slide {
         display: block !important;
         z-index: -1;
         transition: 0.3s;
-        .modal-dialog{
+
+        .modal-dialog {
             position: absolute;
             left: auto;
-            right: 0;
-        transform: translate(100%, 0px);
-        visibility:hidden;
-        transition: 0.3s;
+            right: -100%;
+            transform: translate(0%, 0%);
+            visibility: hidden;
+            transition: 0.3s;
         }
-        
 
 
-    &.show{
-        transition: 0s;
-        z-index: 1055;
-        .modal-dialog{
-            transform: translate(0%, 0px);
-            visibility:visible;
-        }
-    }
 
-    &.modal-static{
-        .modal-dialog{
-            transform: translate(0%, 0px) scale(1.03);
+        &.show {
+            transition: 0s;
+            z-index: 1055;
+
+            .modal-dialog {
+                right: 5%;
+                visibility: visible;
+            }
         }
-    }
+
+        &.modal-static {
+            .modal-dialog {
+                transform: translate(0%, 0px) scale(1.03);
+            }
+        }
     }
 }
 
 .input_group {
     margin: 15px 0;
 
-    label{
+    label {
         margin: 0 0 5px;
     }
 
-    .input_block{
+    .input_block {
         width: 100%;
         border: 1px solid $dark_grey;
         border-radius: 5px;
         padding: 5px 10px;
         outline: 0;
 
-        &:focus{
+        &:focus {
             border: 1px solid $dark_main_color !important;
             color: $dark_main_color;
         }
@@ -107,18 +110,19 @@
             border: 1px solid $dark_grey;
             cursor: pointer;
 
-            &.open{
+            &.open {
                 border: 1px solid $dark_main_color;
-                p{
+
+                p {
                     color: $dark_main_color;
                 }
 
-                .svg_icon{
+                .svg_icon {
                     transform: rotate(180deg);
                 }
             }
 
-            .svg_icon{
+            .svg_icon {
                 margin: 0 0 0 5px;
                 transition: 0.3s;
             }
@@ -150,7 +154,7 @@
                     background-color: $dark_main_color;
                     color: white;
 
-                    label{
+                    label {
                         color: $white;
                     }
                 }
@@ -163,52 +167,54 @@
                     }
                 }
 
-                label{
+                label {
                     color: $dark_main_color;
                 }
             }
-            
+
         }
-        
+
     }
 
-    &.star_rating{
-        .star_rating_name{
+    &.star_rating {
+        .star_rating_name {
             display: flex;
 
-            .star_rating_area{
+            .star_rating_area {
                 float: left;
-                .star_rating_item{
-                    color: $dark_grey; 
-                    float: right; 
+
+                .star_rating_item {
+                    color: $dark_grey;
+                    float: right;
                     margin: 0 5px 0 0;
                     cursor: pointer;
 
-                    &.get_star{
+                    &.get_star {
                         color: $dark_main_color;
                     }
                 }
 
-                input { 
-                    display: none; 
-            
-                    &:checked{
-                        &~.star_rating_item{
+                input {
+                    display: none;
+
+                    &:checked {
+                        &~.star_rating_item {
                             color: $dark_main_color;
                         }
                     }
                 }
-                
-                &:not(:checked){
-                    .star_rating_item{
-                        &:hover{
+
+                &:not(:checked) {
+                    .star_rating_item {
+                        &:hover {
                             color: $dark_main_color;
-                            &~.star_rating_item{
+
+                            &~.star_rating_item {
                                 color: $dark_main_color;
                             }
                         }
                     }
-                  }
+                }
             }
         }
     }
