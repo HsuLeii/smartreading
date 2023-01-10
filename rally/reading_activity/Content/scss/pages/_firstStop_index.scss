@@ -303,10 +303,10 @@ main {
 }
 
 .modal{
-    max-width: 90%;
     .modal-dialog{
+        max-width: 90%;
         .modal-content{
-            overflow: scroll;
+            
             .modal_header{
                 padding: 20px;
                 display: flex;
@@ -328,28 +328,48 @@ main {
 
             .modal_body{
                 padding: 10px 20px;
+
+                .modal_content_title{
+                    padding: 15px 0;
+                    border-bottom: 1px solid $dark_main_color;
+
+                    h5{
+                        color: $dark_main_color;
+                    }
+                }
             }
         }
     }
 
     &.modal_slide{
-        left: auto;
-        right: 0;
-    transform: translate(100%, 0px);
-    visibility:hidden;
-    transition: 0.3s;
+        display: block !important;
+        z-index: -1;
+        transition: 0.3s;
+        .modal-dialog{
+            position: absolute;
+            left: auto;
+            right: 0;
+        transform: translate(100%, 0px);
+        visibility:hidden;
+        transition: 0.3s;
+        }
+        
 
-    display: block !important;
 
     &.show{
-        transform: translate(0%, 0px);
-        visibility:visible;
+        transition: 0s;
+        z-index: 1055;
+        .modal-dialog{
+            transform: translate(0%, 0px);
+            visibility:visible;
+        }
+        
     }
     }
 }
 
 .input_group {
-    margin: 20px 0;
+    margin: 15px 0;
 
     label{
         margin: 0 0 5px;
@@ -390,10 +410,15 @@ main {
                 p{
                     color: $dark_main_color;
                 }
+
+                .svg_icon{
+                    transform: rotate(180deg);
+                }
             }
 
             .svg_icon{
                 margin: 0 0 0 5px;
+                transition: 0.3s;
             }
         }
 
@@ -422,6 +447,10 @@ main {
                 &:hover {
                     background-color: $dark_main_color;
                     color: white;
+
+                    label{
+                        color: $white;
+                    }
                 }
 
                 input {
@@ -431,12 +460,58 @@ main {
                         position: absolute;
                     }
                 }
+
+                label{
+                    color: $dark_main_color;
+                }
             }
             
         }
         
     }
+
+    &.star_rating{
+        .star_rating_name{
+            display: flex;
+
+            .star_rating_area{
+                float: left;
+                .star_rating_item{
+                    color: $dark_grey; 
+                    float: right; 
+                    margin: 0 5px 0 0;
+                    cursor: pointer;
+
+                    &.get_star{
+                        color: $dark_main_color;
+                    }
+                }
+
+                input { 
+                    display: none; 
+            
+                    &:checked{
+                        &~.star_rating_item{
+                            color: $dark_main_color;
+                        }
+                    }
+                }
+                
+                &:not(:checked){
+                    .star_rating_item{
+                        &:hover{
+                            color: $dark_main_color;
+                            &~.star_rating_item{
+                                color: $dark_main_color;
+                            }
+                        }
+                    }
+                  }
+            }
+        }
+    }
 }
+
 
 @media screen and (min-width: 768px) {
     main {
