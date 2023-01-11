@@ -121,6 +121,8 @@ main {
 
         .card_step_area {
             width: 100%;
+            display: flex;
+            flex-direction: column;
 
             .card_step_title {
                 background-color: $dark_main_color;
@@ -134,6 +136,7 @@ main {
             }
 
             .card_step_content {
+                background-color: $white;
                 border-radius: 0 0 5px 5px;
                 border: 1px solid;
                 padding: 20px 15px;
@@ -142,6 +145,10 @@ main {
                     padding: 0 0 10px;
                     margin: 0 0 10px;
                     border-bottom: 1px solid $dark_grey;
+
+                    .card_step_task_title{
+                        width: 100%;
+                    }
 
                     .card_step_task_item {
                         display: flex;
@@ -282,6 +289,7 @@ main {
             }
 
             .card_main_content_item{
+                display: block;
                 margin: 40px 0;
                 border-radius: 5px;
                 overflow: hidden;
@@ -301,9 +309,13 @@ main {
                         display: flex;
                         justify-content: flex-end;
                         .svg_icon{
-                            color: $white;
+                            color: opacify(rgba(20,40,60,.87),.20);
                             margin: 0 0 0 10px;
                             font-size: 22px;
+
+                            &.get_icon{
+                                color: $white;
+                            }
                         }
                     }
                 }
@@ -314,21 +326,25 @@ main {
 
                     .card_main_content_right_header{
                         display: flex;
-                        align-items: flex-start;
-                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
                         .card_author{
-                            background-color: $dark_main_color;
-                            padding: 5px 10px;
-                            border-radius: 5px;
-                            margin: 0 0 10px;
+                            margin: 5px 10px 5px 0;
+                            min-width: 200px;
                             p{
                                 color: $white;
+                                background-color: $dark_main_color;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            display: inline-block;
                             }
                         }
 
                         .card_time_area{
                             display: flex;
                             flex-wrap: wrap;
+                            margin: 5px 0;
                             .card_time{
                                 margin: 0 5px 0 0;
                                 span{
@@ -343,7 +359,6 @@ main {
                         .card_main_content_right_title{
                             h4{
                                 color: $dark_main_color;
-                                height: 30px;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                                 white-space: nowrap;
@@ -411,11 +426,46 @@ main {
     }
 }
 
+@media screen and (min-width: 576px) {
+    main {
+
+        .card_main_area {
+
+            .card_step_area{
+                .card_step_content{
+                    .card_step_task{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .card_step_task_item{
+                            margin: 10px 15px 0 0;
+                        }
+                    }
+
+                    .card_step_button{
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        .card_step_button_item{
+                            width: 47.5%;
+
+                            &.card_step_button_item_done{
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     main {
 
         .progress_bar_area {
-            margin: 40px auto 0px;
+            margin: 40px auto;
 
             .progress_bar {
                 top: calc(53px / 2);
@@ -432,18 +482,21 @@ main {
         }
 
         .card_main_area {
-            margin: 40px auto;
-            flex-direction: row;
-            justify-content: space-between;
-
-            .card_step_area {
-                width: 280px;
-
-            }
 
             .card_item_area {
-                margin: 0 0 40px;
-                width: calc(100% - 320px);
+
+                .card_main_content_item{
+
+                    .card_main_content_left{
+
+                        .card_main_content_icon{
+
+                            .svg_icon{
+                                font-size: 23px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -452,14 +505,58 @@ main {
 @media screen and (min-width: 992px) {
     main {
         .card_main_area {
+            margin: 60px auto;
+            flex-direction: row;
+            justify-content: space-between;
 
             .card_step_area {
                 width: 300px;
+                align-self: flex-start;
+                position: sticky;
+                top: 10px;
 
+                .card_step_content{
+
+                    .card_step_button{
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        .card_step_button_item{
+                            width: 100%;
+
+                            &.card_step_button_item_done{
+                                margin: 15px 0 0;
+                            }
+                        }
+                    }
+                }
             }
 
             .card_item_area {
+                margin: 0;
                 width: calc(100% - 350px);
+
+                .card_main_button{
+                    margin: 0 0 30px;
+
+                    &.card_main_button_delete{
+                        margin: 0;
+                    }
+                }
+
+                .card_main_content_item{
+
+                    .card_main_content_left{
+
+                        .card_main_content_icon{
+
+                            .svg_icon{
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -489,16 +586,48 @@ main {
         }
 
         .card_main_area {
-            margin: 60px auto;
+            margin: 60px auto 120px;
 
             .card_step_area {
                 width: 350px;
-
             }
 
             .card_item_area {
-                margin: 0 0 60px;
                 width: calc(100% - 400px);
+
+                .card_main_content_item{
+                    display: flex;
+
+                    .card_main_content_left{
+                        position: relative;
+                        width: 100px;
+                        display: flex;
+
+                        .card_main_content_name{
+                            display: flex;
+                            align-items: center;
+                            h4{
+                                text-align: center;
+                            }
+                        }
+
+                        .card_main_content_icon{
+                            position: absolute;
+                            left: 50%;
+                            bottom: 10px;
+                            transform: translate(-50% , 0%);
+                            justify-content: center;
+
+                            .svg_icon{
+                                margin: 0 5px;
+                            }
+                        }
+                    }
+
+                    .card_main_content_right{
+                        width: calc(100% - 100px);
+                    }
+                }
             }
         }
     }
