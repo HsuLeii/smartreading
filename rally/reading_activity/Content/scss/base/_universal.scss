@@ -178,42 +178,44 @@
 
     }
 
-    &.star_rating {
-        .star_rating_name {
-            display: flex;
+    
+}
 
-            .star_rating_area {
-                float: left;
+.star_rating {
+    .star_rating_name {
+        display: flex;
 
-                .star_rating_item {
-                    color: $dark_grey;
-                    float: right;
-                    margin: 0 5px 0 0;
-                    cursor: pointer;
+        .star_rating_area {
+            float: left;
 
-                    &.get_star {
+            .star_rating_item {
+                color: $dark_grey;
+                float: right;
+                margin: 0 5px 0 0;
+                cursor: pointer;
+            }
+
+            .get_star {
+                color: $dark_main_color;
+            }
+
+            input {
+                display: none;
+
+                &:checked {
+                    &~.star_rating_item {
                         color: $dark_main_color;
                     }
                 }
+            }
 
-                input {
-                    display: none;
+            &:not(:checked) {
+                .star_rating_item {
+                    &:hover {
+                        color: $dark_main_color;
 
-                    &:checked {
                         &~.star_rating_item {
                             color: $dark_main_color;
-                        }
-                    }
-                }
-
-                &:not(:checked) {
-                    .star_rating_item {
-                        &:hover {
-                            color: $dark_main_color;
-
-                            &~.star_rating_item {
-                                color: $dark_main_color;
-                            }
                         }
                     }
                 }
