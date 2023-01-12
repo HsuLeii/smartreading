@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading閱讀拉力賽">
+<title>SmartReading閱讀拉力賽</title>
+<link rel="shortcut icon" type="image/x-icon" href="../image/SR.ico">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-5.1.1.min.css">
+<link rel="stylesheet" type="text/css" href="../css/fontawesome-6.2.1-all.min.css">    
+
+<!-- this page widgets CSS --> 
+<link rel="stylesheet" type="text/css" href="../widgets/DataTables/datatables.min.css">   
+    
+<!-- my core CSS -->
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+<header> </header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main> 
+  <!-- recommend-banner start -->
+  <div class="recommend-header">
+    <div class="container">
+      <div class="row">
+        <div class="mt-5 mb-5">
+          <h1>SmartReading 推薦閱讀</h1>
+          <p>(假字，請提供正確文字更新)本系統根據文化部設立之「金鼎獎」、「中小學生讀物選介」；台北市立圖書館評選的「好書大家讀」；「OPEN BOOK好書獎」、「兒童文學牧笛獎」等多項得獎好書，
+            以及與本團隊合作的專業教師共同推薦之優良讀物為基礎建立書目，並精選該主題的分級圖書／文章，引導探究閱讀，主題關鍵字檢索，檢索不再僅限於書名。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- recommend-banner end --> 
+  
+  <!-- recommend-body start -->
+  <div class="recommend-body article"> 
+    <!-- recommend-nav start -->
+    <ul class="nav nav-fill nav-justified recommend-nav">
+      <li class="nav-item"> <a class="nav-link ms-auto" aria-current="page" href="recommend-books.html"><span class="recommend-img"><img src="../image/recommend/books-img.png" alt=""/></span><span class="recommend-title">推薦主題圖書</span></a> </li>
+      <li class="nav-item"> <a class="nav-link me-auto active" href="recommend-article.html"><span class="recommend-img"><img src="../image/recommend/article-img.png" alt=""/></span><span class="recommend-title">推薦主題文章</span></a> </li>
+    </ul>
+    <!-- recommend-nav end --> 
+    
+    <!-- recommend-content start-->
+    <div class="recommend-content">
+      <div class="container"> 
+        <!-- 搜尋 start -->
+        <div class="row align-items-center mb-5">
+          <div class="col-9 mx-auto mb-3 col-sm-8 col-md-6 col-lg-4 mb-lg-0 col-xl-4"> <img src="../image/recommend/article-slogan.png" alt="主題適選文，閱讀好文章" class="img-fluid"/> </div>
+          <div class="col-12 col-lg-8 col-xl-8">
+            <div class="input-group">
+              <input type="text" class="form-control border-rally-secondary" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字...">
+              <button class="btn btn-rally-secondary rounded-0" type="button" id="search">查詢</button>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋 end --> 
+        
+        <!-- 推薦主題文章 datatable start -->
+        <table id="recommend-article" class="table recommend-article-table" style="width:100%">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>文章標題</th>
+              <th>出版社</th>
+              <th>文章難度</th>
+              <th>內容</th>
+              <th>作者</th>  
+            </tr>
+          </thead> 
+          <tbody>
+          </tbody>
+        </table>
+        <!-- 推薦主題文章 datatable end --> 
+      </div>
+    </div>
+    <!-- recommend-content end --> 
+  </div>
+  <!-- recommend-body end --> 
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+
+<script src="../js/jquery-3.5.1.min.js"></script> 
+<script src="../js/bootstrap-5.1.1.min.js"></script> 
+<script src="../widgets/DataTables/datatables.min.js"></script> 
+<script src="https://cdn.datatables.net/plug-ins/1.13.1/sorting/any-number.js"></script>      
+<script>
+$(document).ready(function () {
+    //jQuery loading header
+    $('header').load('header.html', function () {
+        $('.navTab-Recommend').addClass('active');  //nowPage字體顏色效果
+    });
+    
+    //jQuery loading footer
+    $('footer').load('footer.html');
+    
+    //datatables 
+	$('#recommend-article').DataTable({
+        responsive: true,
+		searching: true,
+		pageLength: 6,
+		pagingType: "simple_numbers",
+        dom: '<"datatables-custom-header clearfix"B<"float-end"ip>>'+
+			 'r'+
+			 '<""<""t>>'+
+			 '<"datatables-custom-footer clearfix"pi>',
+        language: {
+          url: '../json/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: '../json/article.json',
+        columnDefs: [
+            { //ID
+                targets: 0 , 
+                visible: false,
+                data: 'id',
+                className: 'article-id',
+            },
+            {//文章標題
+                targets: 1 , 
+                data: 'topic',
+                className: 'article-topic',
+                render: function (data, type, row, meta) {
+                    return '<div>' + data + '<div>';
+                }  
+            },
+            {//出版社 
+                targets: 2 , 
+                data: 'publishing',
+                className: 'article-publishing',
+                render: function (data, type, row, meta) {
+                   return '<img src="../image/publishing/white/' + data[1] + '" alt="' + data[0] + '"/>';
+                }
+            },
+            {//文章難度 
+                type: 'any-number',
+                targets: 3 , 
+                data: 'SR',
+                className: 'article-SR',
+                render: function (data, type, row, meta) {
+                    return '文章難度 SR' + data;
+                }  
+            },
+            {//文章內容 
+                targets: 4 , 
+                data: 'text',
+                className: 'article-text',
+                render: function (data, type, row, meta) {
+                    return '<div>' + data + '<div>';
+                } 
+            },
+            {//作者
+                targets: 5 , 
+                data: 'author',
+                className: 'article-author',
+                render: function (data, type, row, meta) {
+                    return '作者：' + data;
+                } 
+            }
+        ],
+        buttons:[
+            {
+              text: '文章難度&nbsp;<i class="fa-solid fa-up-long"></i>',
+              attr:  { id: 'sort_SR'},
+              action:  function ( ) { 
+                if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
+                    this.order( [ 3, 'desc' ] ).draw();
+                    $('#sort_SR').removeClass('active asc desc').addClass('active desc');
+                    $('#sort_SR').find('i').removeClass('fa-up-long').addClass('fa-down-long');
+                }else{//原本null or desc↓變asc↑
+                    this.order( [ 3, 'asc' ] ).draw();
+                    $('#sort_SR').removeClass('active asc desc').addClass('active asc');
+                    $('#sort_SR').find('i').removeClass('fa-down-long').addClass('fa-up-long');
+                }
+              }
+            }
+        ],
+        initComplete: function() {
+            //到第X頁
+            var inputHTML =	'<div class="add_dataTables_input">'+
+                                '到第&nbsp;'+
+                                '<input type="text" class="form-control input-lg d-inline paginate_input" id="textGotoPage" data-prev="" value="">'+ 
+                                '&nbsp;頁'+
+                                '<a class="btn btn-lg paginate_button" id="btnGotoPage">確定</a>'+
+                            '</div>';
+
+            $('.datatables-custom-footer').append(inputHTML);
+            $("#btnGotoPage").click(function(){
+                var textGotoPage = $("#textGotoPage").val();
+                var info = $('#recommend-books').DataTable().page.info();
+                if(parseInt(textGotoPage) > 0 && parseInt(textGotoPage)<=info.pages){
+                    $('#recommend-books').DataTable().page(parseInt(textGotoPage)-1).draw(false);
+                }else{
+                    alert('請輸入正確頁數。');
+                    $("#textGotoPage").focus();
+                }
+            });
+            
+            //點擊table頁碼滑動至最表格上方
+            $('#recommend-books').on('page.dt', function() {
+                $('html, body').animate({scrollTop: $('.recommend-content').offset().top}, 500);
+            });
+            
+            //點選詳細
+            $('#recommend-article tbody tr').click(function(e){
+                var $tr = $(this).closest('tr');
+                var dataTableRow = $('#recommend-article').DataTable().row($tr[0]); 
+                var rowData  = dataTableRow.data();
+                
+                let html = `<div class="modal fade articleContentModal" id="articleContentModal" tabindex="-1" aria-labelledby="bookIntroModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                              <div class="modal-content">
+                                <div class="modal-header border-0">
+                                  <div class="text-start">
+                                    <img src="../image/publishing/` + rowData.publishing[1] + `" alt="publishing" height="40">
+                                    </div>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                  <iframe id="article-iframe" src="` + rowData.url + `" width="100%" scrolling="no" frameborder="0" height="1000"> </iframe>
+                                </div>
+                                <div class="modal-footer border-0">
+                                  <input type="text" class="form-control noRadius" value="` + rowData.url + `" id="copyLink" style="height:0; padding:0; border:none;">
+                                  <button class="btn btn-rally-secondary mx-auto px-5" type="button" onClick="goCopy()">複製連結</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>`; //<iframe>需載入的內容及iframe高度請工程師處理
+
+                $('body').append(html);
+
+                $('#articleContentModal').modal('show');
+
+                $('#articleContentModal').on('hidden.bs.modal', function (e) {
+                    $('#articleContentModal').remove();
+                }); 
+            });
+        }
+    });
+    
+    //搜尋
+    $('#search').click(function(){
+        let keywords = $(this).prev('input').val();
+        
+        if( keywords !== null){
+            $('#recommend-article').DataTable().search(keywords).draw();   
+        }else{
+            $('#recommend-article').DataTable().draw();
+        }
+    });
+});
+ 
+    
+    
+//複製網址     
+function goCopy(){
+    var _copy = $('#copyLink');
+    _copy.select();
+    document.execCommand('Copy');
+    
+    $('#articleContentModal .modal-footer').append('<div class="copyMsg text-rally-secondary">連結已複製</div>');
+    
+    var interval = setInterval(function() {
+        $('.copyMsg').remove();
+    }, 3000);
+}      
+</script>
+</body>
+</html>
