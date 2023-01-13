@@ -778,11 +778,40 @@
                             </div>
                             <div class="additional_materials_item additional_materials_item_firstStop">
                                 <div class="additional_materials_item_left">
-
+                                    <p>重點摘要</p>
                                 </div>
                                 <div class="additional_materials_item_right">
+                                    <div class="additional_materials_item_right_content_area">
 
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left">
+                                    <p>重點摘要</p>
+                                </div>
+                                <div class="additional_materials_item_right">
+                                    <div class="additional_materials_item_right_content_area">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left">
+                                    <p>影片</p>
+                                </div>
+                                <div class="additional_materials_item_right">
+                                    <div class="additional_materials_item_right_content_area">
+                                        <iframe src="" frameborder="0" id="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="additional_materials_item_btn_area">
+                                    <div class="input-group">
+                                        <input type="text" id="videoInput" class="form-control" placeholder="輸入影片連結" aria-label="輸入影片連結">
+                                        <button class="" type="button" id="additional_materials_video" onclick="processFormData();">瀏覽</button>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -840,6 +869,18 @@
                 }
             });
         });
+        </script>
+
+        <script>
+            function processFormData() {
+      var URLElement = document.getElementById("videoInput");
+        var str = URLElement.value;
+      var strindex = str.indexOf('=');
+      var strAry = str.substr (strindex+1 , 11);
+     alert(strAry);
+        var embeddedUrl =  "https://www.youtube.com/embed/"+strAry;
+      $("#video").attr("src", (embeddedUrl));
+    }
         </script>
 
     <script>
