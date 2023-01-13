@@ -160,7 +160,7 @@
 
                 <!-- 卡片1開始 -->
                     <a href="" class="card_main_content_item">
-                        <div class="card_main_content_left bg-gradient-secondStop">
+                        <div class="card_main_content_left card_main_secondStop">
                             <div class="card_main_content_name">
                                 <h4>
                                     卡片名稱
@@ -290,7 +290,7 @@
 
                 <!-- 卡片2開始 -->
                     <a href="" class="card_main_content_item">
-                        <div class="card_main_content_left bg-gradient-firstStop">
+                        <div class="card_main_content_left card_main_firstStop">
                             <div class="card_main_content_name">
                                 <h4>
                                     卡片名稱
@@ -426,7 +426,7 @@
 
                 <!-- 卡片3開始 -->
                 <a href="" class="card_main_content_item">
-                    <div class="card_main_content_left bg-gradient-thirdStop">
+                    <div class="card_main_content_left card_main_thirdStop">
                         <div class="card_main_content_name">
                             <h4>
                                 卡片名稱
@@ -575,7 +575,7 @@
         </div>
 
         <div class="modal modal_slide" id="exampleModalScrollable" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel"
-            aria-modal="true" role="dialog" style="">
+            aria-modal="true" role="dialog" style="display: block;">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal_header modal_header_first_step">
@@ -797,17 +797,19 @@
                                 </div>
                             </div>
                             <div class="additional_materials_item additional_materials_item_firstStop">
-                                <div class="additional_materials_item_left">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>影片</p>
                                 </div>
                                 <div class="additional_materials_item_right">
                                     <div class="additional_materials_item_right_content_area">
-                                        <iframe src="" frameborder="0" id="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <div class="iframe_area">
+                                            <iframe src="" class="additional_materials_video_iframe" frameborder="0" id="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="additional_materials_item_btn_area">
-                                    <div class="input-group">
-                                        <input type="text" id="videoInput" class="form-control" placeholder="輸入影片連結" aria-label="輸入影片連結">
+                                    <div class="input_group">
+                                        <input type="text" id="videoInput" class="input_block" placeholder="輸入影片連結" aria-label="輸入影片連結">
                                         <button class="" type="button" id="additional_materials_video" onclick="processFormData();">瀏覽</button>
                                     </div>
                                 </div>
@@ -877,9 +879,9 @@
         var str = URLElement.value;
       var strindex = str.indexOf('=');
       var strAry = str.substr (strindex+1 , 11);
-     alert(strAry);
         var embeddedUrl =  "https://www.youtube.com/embed/"+strAry;
       $("#video").attr("src", (embeddedUrl));
+      $(".haveVideo").addClass("haveVideo");
     }
         </script>
 
