@@ -18,7 +18,7 @@ $thirdStop:#25a05f;
 $thirdStopTwoColor:#82d1ff;
 $disabled:#AAAAAA;
 
-
+// 卡片顏色
 $gradients: (
     firstStop: linear-gradient(135deg, $firstStop 0%,$firstStopTwoColor 100%),
     secondStop: linear-gradient(135deg, $secondStop 0%,$secondStopTwoColor 100%),
@@ -26,7 +26,14 @@ $gradients: (
     mainBg: linear-gradient(135deg, $dark_main_color 0%,$main_color 100%),
 );
 
-// Gradient backgrounds
+// 顏色選擇
+$choose_color: (
+  colorOne: linear-gradient(90deg, $firstStop 50%, $firstStopTwoColor 0%),
+  colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
+  colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
+);
+
+// 卡片顏色
 @mixin card_main($parent, $gradient) {
   #{$parent} {
     background: $gradient !important;
@@ -46,5 +53,15 @@ $gradients: (
   @each $gradient, $value in $gradients {
       @include additional_materials(".additional_materials_#{$gradient}", $value);
     }
+// 卡片顏色結束
 
+    // 顏色選擇
+  @mixin card_main($parent, $choose_color) {
+    #{$parent} {
+      background: $choose_color !important;
+    }
+  }
   
+  @each $choose_color, $value in $choose_color {
+      @include card_main(".choose_color_content_item_#{$choose_color}", $value);
+    }

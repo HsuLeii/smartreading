@@ -1,3 +1,7 @@
+.alertText{
+    color: $red;
+}
+
 .modal {
     .modal-dialog {
         max-width: 90%;
@@ -21,6 +25,12 @@
 
                 &.modal_header_first_step {
                     background-color: $firstStop;
+                }
+                &.modal_header_second_step {
+                    background-color: $secondStop;
+                }
+                &.modal_header_third_step {
+                    background-color: $thirdStop;
                 }
             }
 
@@ -54,22 +64,41 @@
                         .additional_materials_item{
                             margin: 30px 0;
                             .additional_materials_item_left{
-                                border: 1px solid $firstStop;
+                                border: 1px solid;
                                 border-radius: 5px 5px 0 0;
                                 padding: 10px 15px;
+                                border-color: $dark_main_color;
                                 p{
                                     color: $white;
                                 }
                             }
                             .additional_materials_item_right{
-                                border: 1px solid $firstStop;
+                                border: 1px solid;
                                 border-radius: 0 0 5px 5px;
                                 border-top: 0px;
                                 height: 300px;
-
+                                border-color: $dark_main_color;
+                                
                                 .additional_materials_item_right_content_area{
                                     width: 100%;
                                     height: 100%;
+
+                                    .photo_area{
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        height: 100%;
+                                        
+                                        .upload__img-box{
+                                            width: calc(33% - 30px);
+                                        height: calc(50% - 30px);
+                                        object-fit: cover;
+                                        margin: 15px;
+                                        padding: 15px;
+                                        display: flex;
+    align-items: center;
+    justify-content: center;
+                                        }
+                                    }
 
                                     .iframe_area{
                                         position: relative;
@@ -82,6 +111,7 @@
                                             transform: translate(-50% , -50%);
                                             width: 100%;
                                             height: 100%;
+                                            border-radius: 0 0 5px 5px;
 
                                             body{
                                                 background: transparent;
@@ -94,10 +124,15 @@
                                     }
                                 }
 
-                                
+                                &.additional_materials_item_firstStop{
+                                    border-color: $firstStop;
+                                }
+
+                                &.additional_materials_item_secondStop{
+                                    border-color: $secondStop;
+                                }
                                 
                             }
-
                             .additional_materials_item_btn_area{
                                 
                                 .input_group{
@@ -129,6 +164,62 @@
                                         }
                                     }
                                 }
+                            }
+
+                            &.additional_materials_item_firstStop{
+                                .additional_materials_item_left{
+                                    border-color: $firstStop;
+                                    
+                                    .additional_materials_item_right_content_area{
+    
+                                        .photo_area{
+                                            
+                                            .upload__img-box{
+                                                border: 1px solid $firstStop;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+
+                                .additional_materials_item_right{
+                                    border: 1px solid $firstStop;
+                                    border-radius: 0 0 5px 5px;
+                                    border-top: 0px;
+                                    height: 300px;
+                                    
+                                    .additional_materials_item_right_content_area{
+    
+                                        .photo_area{
+                                            
+                                            .upload__img-box{
+                                                border: 1px solid $firstStop;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+
+                    &.choose_color_area{
+                        .choose_color_content{
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin: 5px 0;
+
+                            .choose_color_content_item{
+                                width: 50px;
+                                height: 50px;
+                                margin: 15px;
+                                border-radius: 50%;
+                                transform: rotate(45deg);
+                                border: 1px solid $dark_grey;
+
+                                // &.choose_color_content_item_colorOne{
+                                //     background: linear-gradient(90deg, $firstStop 50%, $firstStopTwoColor 0%);
+                                // }
                             }
                         }
                     }
