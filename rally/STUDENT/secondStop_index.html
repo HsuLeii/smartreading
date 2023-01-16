@@ -859,7 +859,18 @@
                                 </div>
                                 <div class="additional_materials_item_right additional_materials_item_secondStop">
                                     <div class="additional_materials_item_right_content_area">
-
+                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
+                                            <div class="svg_icon">
+                                                <p>
+                                                    <i class="fa-solid fa-palette"></i>
+                                                </p>
+                                            </div>
+                                            <p>
+                                                快將你的感動或觀察化為圖畫記錄下來吧！
+                                            </p>
+                                        </div>
+                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="additional_materials_item_btn_area">
@@ -878,8 +889,17 @@
                                 </div>
                                 <div class="additional_materials_item_right additional_materials_item_secondStop">
                                     <div class="additional_materials_item_right_content_area">
-                                        <div class="photo_area">
-
+                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
+                                            <div class="svg_icon">
+                                                <p>
+                                                    <i class="fa-solid fa-photo-film"></i>
+                                                </p>
+                                            </div>
+                                            <p>
+                                                快將你的感動或觀察化為圖畫記錄下來吧！
+                                            </p>
+                                        </div>
+                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer photo_area">
                                         </div>
                                     </div>
                                 </div>
@@ -904,11 +924,21 @@
                                 </div>
                                 <div class="additional_materials_item_right additional_materials_item_secondStop">
                                     <div class="additional_materials_item_right_content_area">
-                                        <div class="iframe_area">
+                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
+                                            <div class="svg_icon">
+                                                <p>
+                                                    <i class="fa-solid fa-clapperboard"></i>
+                                                </p>
+                                            </div>
+                                            <p>
+                                                快將你的感動或觀察，化為影像記錄下來吧！
+                                            </p>
+                                        </div>
+                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer iframe_area">
                                             <iframe src="" class="additional_materials_video_iframe" frameborder="0"
-                                                id="video" title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowfullscreen></iframe>
+                                            id="video" title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -992,10 +1022,10 @@
                 var filesAmount = input.files.length;
                 for (i = 0; i < filesAmount; i++) {
                     var reader = new FileReader();
-                    var MAX_LENGTH = 3;
+                    var MAX_LENGTH = 6;
 
                     if (filesAmount > MAX_LENGTH) {
-                        alert(`Cannot upload files more than ${MAX_LENGTH}`);
+                        alert(`最多上傳六張圖檔`);
                         return;
                     }
 
@@ -1005,12 +1035,16 @@
                     }
                     reader.readAsDataURL(input.files[i]);
                 }
+
+                $(".additional_materials_item_right_content_area_item_answer.photo_area").css("display" , "flex");
+
             }
         };
 
         $('#additional_materials_photo').on('change', function () {
             imagesPreview(this, 'div.photo_area');
         });
+
     </script>
     <!-- 上傳圖片測試結束 -->
 
@@ -1023,7 +1057,7 @@
             var strAry = str.substr(strindex + 1, 11);
             var embeddedUrl = "https://www.youtube.com/embed/" + strAry;
             $("#video").attr("src", (embeddedUrl));
-            $(".iframe_area").addClass("haveVideo");
+            $(".additional_materials_item_right_content_area_item_answer.iframe_area").addClass("haveVideo").show();
         }
     </script>
     <!-- 上傳影片測試結束 -->

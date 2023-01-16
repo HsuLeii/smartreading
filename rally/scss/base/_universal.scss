@@ -2,7 +2,7 @@
     color: $red;
 }
 
-.fa-xmark{
+.fa-xmark {
     font-size: 40px;
 }
 
@@ -86,16 +86,45 @@
                                 border-radius: 0 0 5px 5px;
                                 border-top: 0px;
                                 height: 300px;
+                                overflow: hidden;
                                 border-color: $dark_main_color;
 
                                 .additional_materials_item_right_content_area {
                                     width: 100%;
                                     height: 100%;
+                                    position: relative;
+
+                                    .additional_materials_item_right_content_area_item {
+                                        position: absolute;
+                                        left: 50%;
+                                        top: 50%;
+                                        transform: translate(-50%, -50%);
+
+                                        p {
+                                            color: $placeholder;
+                                        }
+
+                                        .svg_icon {
+                                            margin: 0 auto 20px;
+                                            text-align: center;
+
+                                            p {
+                                                font-size: 80px;
+                                            }
+                                        }
+
+                                        &.additional_materials_item_right_content_area_item_answer{
+                                            width: 100%;
+                                            height: 100%;
+                                            background-color: $body_bg;
+                                            z-index: 1;
+                                            display: none;
+                                        }
+                                    }
 
                                     .photo_area {
                                         display: flex;
                                         flex-wrap: wrap;
-                                        height: 100%;
 
                                         .upload_img_box {
                                             width: calc(33% - 30px);
@@ -117,9 +146,6 @@
                                     }
 
                                     .iframe_area {
-                                        position: relative;
-                                        width: 100%;
-                                        height: 100%;
 
                                         .additional_materials_video_iframe {
                                             position: absolute;
@@ -139,14 +165,6 @@
                                             background-color: $black;
                                         }
                                     }
-                                }
-
-                                &.additional_materials_item_firstStop {
-                                    border-color: $firstStop;
-                                }
-
-                                &.additional_materials_item_secondStop {
-                                    border-color: $secondStop;
                                 }
 
                             }
@@ -244,7 +262,7 @@
                                 }
 
                                 .additional_materials_item_right {
-                                    border: 1px solid $firstStop;
+                                    border-color: $firstStop;
                                 }
                             }
 
@@ -255,7 +273,7 @@
                                 }
 
                                 .additional_materials_item_right {
-                                    border: 1px solid $secondStop;
+                                    border-color: $secondStop;
                                 }
                             }
 
@@ -265,7 +283,7 @@
                                 }
 
                                 .additional_materials_item_right {
-                                    border: 1px solid $thirdStop;
+                                    border-color: $thirdStop;
                                 }
                             }
                         }
