@@ -26,7 +26,7 @@
     <main>
         <!-- index-banner start -->
         <div class="index-banner">
-            <img src="Content/image/slide/slide_index.png" alt="">
+            <img src="Content/image/slide/slide_index.jpg" alt="">
         </div>
         <!-- index-banner end -->
         <div class="discussion_title_area">
@@ -692,7 +692,7 @@
                             <div class="read_content_area_text">
                                 <div class="input_group">
                                     <p>重點摘要</p>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_text"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_highlight"></textarea>
                                 </div>
 
                                 <div class="input_group star_rating">
@@ -726,7 +726,7 @@
 
                                         </fieldset>
                                     </div>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_text"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_credibility"></textarea>
                                 </div>
 
                                 <div class="input_group star_rating">
@@ -760,7 +760,7 @@
 
                                         </fieldset>
                                     </div>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_text"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_harvest"></textarea>
                                 </div>
 
                             </div>
@@ -883,7 +883,7 @@
                     <div class="modal_header modal_header_first_step">
                         <h4>總結卡片</h4>
                         <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="fa-solid fa-xmark"></i>
+                                <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
                     <div class="modal_body">
@@ -898,7 +898,7 @@
                             <div class="read_content_area_text">
                                 <div class="input_group">
                                     <p>重點摘要</p>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_text"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_summarize_text"></textarea>
                                 </div>
 
                                 <div class="input_group star_rating">
@@ -927,7 +927,7 @@
                                 </div>
                                 <div class="additional_materials_item_btn_area">
                                     <div class="input_group">
-                                        <button class="input_group_btn" type="button">
+                                        <button class="input_group_btn input_group_btn_firstStop" type="button">
                                             <p>
                                             繪製
                                         </p>
@@ -948,7 +948,7 @@
                                 </div>
                                 <div class="additional_materials_item_btn_area">
                                     <div class="input_group">
-                                        <label for="additional_materials_photo" class="input_group_btn">
+                                        <label for="additional_materials_photo" class="input_group_btn input_group_btn_firstStop">
                                             <p>
                                                 上傳圖檔
                                             </p>
@@ -979,7 +979,7 @@
                                     <div class="input_group">
                                         <input type="text" id="videoInput" class="input_block"
                                             placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
-                                        <button class="input_group_btn" type="button" id="additional_materials_video"
+                                        <button class="input_group_btn input_group_btn_firstStop" type="button" id="additional_materials_video"
                                             onclick="processFormData();">
                                         <p>
                                             瀏覽
@@ -1020,8 +1020,21 @@
 
     <!-- 文字輸入框 -->
     <script>
-        $('.firstStop_add_text').jqte({
-            placeholder: "Please, write your biography"
+        $(".firstStop_add_card_highlight").jqte({
+            placeholder: "<p>列點式的說明，能讓自己跟組員更好理解這筆資料的重點唷！</p>"
+        });
+        
+        $(".firstStop_add_card_credibility").jqte({
+            placeholder: "<p>看一看，作者資訊、內容說明是否有來源出處、你認為這個資料是正確可信的嗎？</p>"
+        });
+
+        $(".firstStop_add_card_harvest").jqte({
+            placeholder: "<p>想一想，這個資訊是幫你解決了你對關於探究題目哪些疑問？又有哪些新的問題是你想知道的呢？</p>"
+        });
+
+        // 以下為總結卡片
+        $(".firstStop_summarize_text").jqte({
+            placeholder: "<p>綜合小組探究的內容，有系統的從不同角度，說明各方的觀點以及小組自己的觀點吧！（說明時盡量要提出根據的來源唷！）</p>"
         });
 
         // settings of status

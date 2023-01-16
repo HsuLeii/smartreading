@@ -4,6 +4,7 @@ $light_grey:#f9f9f9;
 $middle_grey:#c6c6c6;
 $red:#ff0000;
 $white:#fff;
+$black:#000;
 $transparent: transparent;
 $body_bg:#f4f8fb;
 $footer_bg:#242529;
@@ -12,3 +13,60 @@ $footer_bg:#242529;
 $rally-primary:    $main_color;
 $rally-secondary:  #2e2f99;
 $rally-lightGrey:  lighten($dark_grey, 25%);
+
+$dark_main_color: #4a2f96;
+$firstStop:#f44747;
+$firstStopTwoColor:#ff9d53;
+$secondStop:#FD803F;
+$secondStopTwoColor:#ffe483;
+$thirdStop:#25a05f;
+$thirdStopTwoColor:#82d1ff;
+$disabled:#AAAAAA;
+
+// 卡片顏色
+$gradients: (
+    firstStop: linear-gradient(-45deg, $firstStop 0%,$firstStopTwoColor 100%),
+    secondStop: linear-gradient(-45deg, $secondStop 0%,$secondStopTwoColor 100%),
+    thirdStop: linear-gradient(-45deg, $thirdStop 0%,$thirdStopTwoColor 100%),
+    mainBg: linear-gradient(-45deg, $dark_main_color 0%,$main_color 100%),
+);
+
+// 顏色選擇
+$choose_color: (
+  colorOne: linear-gradient(90deg, $firstStop 50%, $firstStopTwoColor 0%),
+  colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
+  colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
+);
+
+// 卡片顏色
+@mixin card_main($parent, $gradient) {
+  #{$parent} {
+    background: $gradient !important;
+  }
+}
+
+@each $gradient, $value in $gradients {
+    @include card_main(".card_main_#{$gradient}", $value);
+  }
+
+  @mixin additional_materials($parent, $gradient) {
+    #{$parent} {
+      background: $gradient !important;
+    }
+  }
+  
+  @each $gradient, $value in $gradients {
+      @include additional_materials(".additional_materials_#{$gradient}", $value);
+    }
+// 卡片顏色結束
+
+    // 顏色選擇
+  @mixin card_main($parent, $choose_color) {
+    #{$parent} {
+      background: $choose_color !important;
+    }
+  }
+  
+  @each $choose_color, $value in $choose_color {
+      @include card_main(".choose_color_content_item_#{$choose_color}", $value);
+    }

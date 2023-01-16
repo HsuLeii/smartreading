@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="SmartReading閱讀拉力賽">
     <title>SmartReading閱讀拉力賽</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/SR.ico">
-    <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-5.1.1.min.css">
-    <link rel="stylesheet" href="Content/css/fontawesome-free-6.1.1-web.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../image/SR.ico">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-5.1.1.min.css">
+    <link rel="stylesheet" href="../css/fontawesome-free-6.1.1-web.min.css">
 
     <!-- this page widgets CSS -->
     <!-- 文字輸入框 -->
-    <link rel="stylesheet" href="Content/css/jquery-te-1.4.0.css">
+    <link rel="stylesheet" href="../css/jquery-te-1.4.0.css">
 
     <!-- my core CSS -->
-    <link rel="stylesheet" type="text/css" href="Content/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -37,8 +37,18 @@
 
         <div class="progress_bar_area">
             <div class="progress_bar">
-                <div class="progress_bar_item progress_bar_gray" style="width: calc(100% / 8 * 2);"></div>
-                <div class="progress_bar_item progress_bar_color"></div>
+                <div class="progress_bar_item progress_bar_gray" style="">
+                <span class="progress_bar_dot progress_bar_gray_dot gray_dot_one finish_dot"></span>
+                <span class="progress_bar_dot progress_bar_gray_dot gray_dot_two"></span>
+                <span class="progress_bar_dot progress_bar_gray_dot gray_dot_three"></span>
+                <span class="progress_bar_dot progress_bar_gray_dot gray_dot_four"></span>
+                </div>
+                <div class="progress_bar_item progress_bar_color">
+                    <span class="progress_bar_dot progress_bar_color_dot color_dot_one"></span>
+                    <span class="progress_bar_dot progress_bar_color_dot color_dot_two"></span>
+                    <span class="progress_bar_dot progress_bar_color_dot color_dot_three"></span>
+                    <span class="progress_bar_dot progress_bar_color_dot color_dot_four"></span>
+                </div>
             </div>
 
 
@@ -64,7 +74,7 @@
             </div>
         </div>
 
-        <div class="card_main_area card_second_step">
+        <div class="card_main_area card_first_step">
             <div class="card_step_area">
 
                 <div class="card_step_title">
@@ -103,16 +113,23 @@
                         </div>
                     </div>
                     <div class="card_step_record">
+                        <p>讀物類型</p>
                         <div class="card_step_record_value">
                             <p class="card_step_record_value_item">
-                                記錄了<span> 1 </span>個創造過程
+                                圖書：<span>0</span>
+                            </p>
+                            <p class="card_step_record_value_item">
+                                文章：<span>0</span>
+                            </p>
+                            <p class="card_step_record_value_item">
+                                其他：<span>0</span>
                             </p>
                         </div>
                     </div>
                     <div class="card_step_button">
                         <a href=""
                             class="card_button card_button_main_color card_step_button_item card_step_button_item_summarize"
-                            data-bs-toggle="modal" data-bs-target="#secondStopSummarize">
+                            data-bs-toggle="modal" data-bs-target="#firstStopSummarize">
                             <p class="svg_icon">
                                 <i class="fa-regular fa-star"></i>
                             </p>
@@ -154,7 +171,7 @@
 
                 <!-- 卡片1開始 -->
                 <a href="" class="card_main_content_item">
-                    <div class="card_main_content_left card_main_firstStop">
+                    <div class="card_main_content_left card_main_secondStop">
                         <div class="card_main_content_name">
                             <h4>
                                 卡片名稱
@@ -281,7 +298,7 @@
 
                 <!-- 卡片2開始 -->
                 <a href="" class="card_main_content_item">
-                    <div class="card_main_content_left card_main_secondStop">
+                    <div class="card_main_content_left card_main_firstStop">
                         <div class="card_main_content_name">
                             <h4>
                                 卡片名稱
@@ -568,7 +585,7 @@
             style="display: block;">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal_header modal_header_second_step">
+                    <div class="modal_header modal_header_first_step">
                         <h4>探究閱讀</h4>
                         <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
                             <i class="fa-solid fa-xmark"></i>
@@ -577,30 +594,120 @@
                     <div class="modal_body">
 
                         <div class="modal_body_item research_data_area">
+                            <div class="modal_content_title">
+                                <h5>探究資料</h5>
+                            </div>
+
+                            <div class="input_group_area">
+                                <div class="input_group select_box">
+                                    <label for="read_type">讀物類型：</label>
+                                    <div class="selected">
+                                        <p class="selected_text">請選擇讀物類型</p>
+                                        <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
+                                    </div>
+                                    <div class="options">
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="books" value="圖書">
+                                            <label for="books">圖書</label>
+                                        </div>
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="article" value="文章">
+                                            <label for="article">文章</label>
+                                        </div>
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="typeOther" value="其他">
+                                            <label for="typeOther">其他</label>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="input_group">
-                                    <label for="read_type">提案標題：</label>
-                                    <input type="text" id="read_type" class="input_block" placeholder="輸入提案標題">
+                                    <label for="read_type">書名 / 標題：</label>
+                                    <input type="text" id="read_type" class="input_block" placeholder="輸入書名 / 標題">
                                 </div>
+                            </div>
+
+                            <div class="input_group_area">
+                                <div class="input_group select_box">
+                                    <label for="read_type">來源類型：</label>
+                                    <div class="selected">
+                                        <p class="selected_text">請選擇來源類型</p>
+                                        <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
+                                    </div>
+                                    <div class="options">
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="ISBN" value="ISBN">
+                                            <label for="ISBN">ISBN</label>
+                                        </div>
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="URL" value="網址">
+                                            <label for="URL">網址</label>
+                                        </div>
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="sourceOther" value="其他">
+                                            <label for="sourceOther">其他</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input_group">
+                                    <label for="read_type">來源說明：</label>
+                                    <input type="text" id="read_type" class="input_block" placeholder="輸入來源說明">
+                                </div>
+                            </div>
+
+                            <div class="input_group_area">
+                                <div class="input_group select_box">
+                                    <label for="read_type">如何找到這筆資料：</label>
+                                    <div class="selected">
+                                        <p class="selected_text">請選擇資料來源</p>
+                                        <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
+                                    </div>
+                                    <div class="options">
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="ISBN" value="比賽推薦閱讀清單">
+                                            <label for="ISBN">比賽推薦閱讀清單</label>
+                                        </div>
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="URL" value="圖書館系統查詢">
+                                            <label for="URL">圖書館系統查詢</label>
+                                        </div>
+                                        <div class="option_item">
+                                            <input type="radio" name="option_item" id="URL" value="Google查詢">
+                                            <label for="URL">Google查詢</label>
+                                        </div>
+
+                                        <div class="option_item materialOther">
+                                            <input type="radio" name="option_item" id="materialOther" value="其他">
+                                            <label for="materialOther">其他</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input_group material_description" style="display: none;">
+                                    <label for="read_type">資料來源說明：</label>
+                                    <input type="text" id="read_type" class="input_block" placeholder="輸入資料來源說明">
+                                </div>
+                            </div>
 
                         </div>
 
                         <div class="modal_body_item read_content_area">
                             <div class="modal_content_title">
                                 <h5>
-                                    提案內容
+                                    閱讀內容
                                 </h5>
                             </div>
 
                             <div class="read_content_area_text">
                                 <div class="input_group">
                                     <p>重點摘要</p>
-                                    <textarea name="textarea" class="jqte_placeholder secondStop_add_card_highlight"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_highlight"></textarea>
                                 </div>
 
                                 <div class="input_group star_rating">
                                     <div class="star_rating_name">
-                                        <p>聚焦程度：</p>
+                                        <p>可信度：</p>
                                         <fieldset class="star_rating_area">
                                             <input type="radio" id="star5" name="rating" value="5" />
                                             <label for="star5" class="star_rating_item">
@@ -629,12 +736,12 @@
 
                                         </fieldset>
                                     </div>
-                                    <textarea name="textarea" class="jqte_placeholder secondStop_add_card_focus"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_credibility"></textarea>
                                 </div>
 
                                 <div class="input_group star_rating">
                                     <div class="star_rating_name">
-                                        <p>可行性：</p>
+                                        <p>收穫度：</p>
                                         <fieldset class="star_rating_area">
                                             <input type="radio" id="star5" name="rating" value="5" />
                                             <label for="star5" class="star_rating_item">
@@ -663,7 +770,7 @@
 
                                         </fieldset>
                                     </div>
-                                    <textarea name="textarea" class="jqte_placeholder secondStop_add_card_feasibility"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_harvest"></textarea>
                                 </div>
 
                             </div>
@@ -676,18 +783,18 @@
                                     補充資料
                                 </h5>
                             </div>
-                            <div class="additional_materials_item additional_materials_item_secondStop">
-                                <div class="additional_materials_item_left additional_materials_secondStop">
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>繪畫</p>
                                 </div>
-                                <div class="additional_materials_item_right additional_materials_item_secondStop">
+                                <div class="additional_materials_item_right additional_materials_item_firstStop">
                                     <div class="additional_materials_item_right_content_area">
 
                                     </div>
                                 </div>
                                 <div class="additional_materials_item_btn_area">
                                     <div class="input_group">
-                                        <button class="input_group_btn input_group_btn_secondStop" type="button">
+                                        <button class="input_group_btn input_group_btn_firstStop" type="button">
                                             <p>
                                             繪製
                                         </p>
@@ -695,11 +802,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="additional_materials_item additional_materials_item_secondStop">
-                                <div class="additional_materials_item_left additional_materials_secondStop">
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>圖片</p>
                                 </div>
-                                <div class="additional_materials_item_right additional_materials_item_secondStop">
+                                <div class="additional_materials_item_right additional_materials_item_firstStop">
                                     <div class="additional_materials_item_right_content_area">
                                         <div class="photo_area">
 
@@ -708,7 +815,7 @@
                                 </div>
                                 <div class="additional_materials_item_btn_area">
                                     <div class="input_group">
-                                        <label for="additional_materials_photo" class="input_group_btn input_group_btn_secondStop">
+                                        <label for="additional_materials_photo" class="input_group_btn input_group_btn_firstStop">
                                             <p>
                                                 上傳圖檔
                                             </p>
@@ -721,11 +828,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="additional_materials_item additional_materials_item_secondStop">
-                                <div class="additional_materials_item_left additional_materials_secondStop">
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>影片</p>
                                 </div>
-                                <div class="additional_materials_item_right additional_materials_item_secondStop">
+                                <div class="additional_materials_item_right">
                                     <div class="additional_materials_item_right_content_area">
                                         <div class="iframe_area">
                                             <iframe src="" class="additional_materials_video_iframe" frameborder="0"
@@ -739,7 +846,7 @@
                                     <div class="input_group">
                                         <input type="text" id="videoInput" class="input_block"
                                             placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
-                                        <button class="input_group_btn input_group_btn_secondStop" type="button" id="additional_materials_video"
+                                        <button class="input_group_btn input_group_btn_firstStop" type="button" id="additional_materials_video"
                                             onclick="processFormData();">
                                         <p>
                                             瀏覽
@@ -779,14 +886,14 @@
         
 
         <!-- 新增總結modal開始 -->
-        <div class="modal modal_slide" id="secondStopSummarize" data-bs-backdrop="static" data-bs-keyboard="false"
+        <div class="modal modal_slide" id="firstStopSummarize" data-bs-backdrop="static" data-bs-keyboard="false"
             tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal_header modal_header_second_step">
+                    <div class="modal_header modal_header_first_step">
                         <h4>總結卡片</h4>
                         <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="fa-solid fa-xmark"></i>
+                                <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
                     <div class="modal_body">
@@ -794,66 +901,43 @@
                         <div class="modal_body_item read_content_area">
                             <div class="modal_content_title">
                                 <h5>
-                                    提案結論
+                                    探究結論
                                 </h5>
                             </div>
 
                             <div class="read_content_area_text">
                                 <div class="input_group">
                                     <p>重點摘要</p>
-                                    <textarea name="textarea" class="jqte_placeholder secondStop_summarize_text"></textarea>
+                                    <textarea name="textarea" class="jqte_placeholder firstStop_summarize_text"></textarea>
                                 </div>
-                                
-                            </div>
 
-                        </div>
+                                <div class="input_group star_rating">
+                                    <p>想解決的問題</p>
+                                    <textarea name="textarea" class="" placeholder="探究後決定能解決甚麼樣的問題？這個問題將是小組要在【創造站】中提案解決的問題。"></textarea>
+                                </div>
 
-                        <div class="modal_body_item read_content_area">
-                            <div class="modal_content_title">
-                                <h5>
-                                    決定提案
-                                </h5>
-                            </div>
-
-                            <div class="read_content_area_text">
-                                    <div class="input_group select_box">
-                                        <label for="read_type">執行項目：</label>
-                                        <div class="selected">
-                                            <p class="selected_text">請選擇小組決定執行的項目</p>
-                                            <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
-                                        </div>
-                                        <div class="options">
-                                            <div class="option_item">
-                                                <input type="radio" name="option_item" id="books" value="圖書">
-                                                <label for="books">圖書</label>
-                                            </div>
-                                            <div class="option_item">
-                                                <input type="radio" name="option_item" id="article" value="文章">
-                                                <label for="article">文章</label>
-                                            </div>
-                                            <div class="option_item">
-                                                <input type="radio" name="option_item" id="typeOther" value="其他">
-                                                <label for="typeOther">其他</label>
-                                            </div>
-                                        </div>
-                                    </div>
                             </div>
 
                         </div>
 
                         <div class="modal_body_item additional_materials_area">
-                            <div class="additional_materials_item additional_materials_item_secondStop">
-                                <div class="additional_materials_item_left additional_materials_secondStop">
+                            <div class="modal_content_title">
+                                <h5>
+                                    補充資料
+                                </h5>
+                            </div>
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>繪畫</p>
                                 </div>
-                                <div class="additional_materials_item_right additional_materials_item_secondStop">
+                                <div class="additional_materials_item_right additional_materials_item_firstStop">
                                     <div class="additional_materials_item_right_content_area">
 
                                     </div>
                                 </div>
                                 <div class="additional_materials_item_btn_area">
                                     <div class="input_group">
-                                        <button class="input_group_btn input_group_btn_secondStop" type="button">
+                                        <button class="input_group_btn input_group_btn_firstStop" type="button">
                                             <p>
                                             繪製
                                         </p>
@@ -861,11 +945,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="additional_materials_item additional_materials_item_secondStop">
-                                <div class="additional_materials_item_left additional_materials_secondStop">
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>圖片</p>
                                 </div>
-                                <div class="additional_materials_item_right additional_materials_item_secondStop">
+                                <div class="additional_materials_item_right additional_materials_item_firstStop">
                                     <div class="additional_materials_item_right_content_area">
                                         <div class="photo_area">
 
@@ -874,7 +958,7 @@
                                 </div>
                                 <div class="additional_materials_item_btn_area">
                                     <div class="input_group">
-                                        <label for="additional_materials_photo" class="input_group_btn input_group_btn_secondStop">
+                                        <label for="additional_materials_photo" class="input_group_btn input_group_btn_firstStop">
                                             <p>
                                                 上傳圖檔
                                             </p>
@@ -887,11 +971,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="additional_materials_item additional_materials_item_secondStop">
-                                <div class="additional_materials_item_left additional_materials_secondStop">
+                            <div class="additional_materials_item additional_materials_item_firstStop">
+                                <div class="additional_materials_item_left additional_materials_firstStop">
                                     <p>影片</p>
                                 </div>
-                                <div class="additional_materials_item_right additional_materials_item_secondStop">
+                                <div class="additional_materials_item_right additional_materials_item_firstStop">
                                     <div class="additional_materials_item_right_content_area">
                                         <div class="iframe_area">
                                             <iframe src="" class="additional_materials_video_iframe" frameborder="0"
@@ -905,7 +989,7 @@
                                     <div class="input_group">
                                         <input type="text" id="videoInput" class="input_block"
                                             placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
-                                        <button class="input_group_btn  input_group_btn_secondStop" type="button" id="additional_materials_video"
+                                        <button class="input_group_btn input_group_btn_firstStop" type="button" id="additional_materials_video"
                                             onclick="processFormData();">
                                         <p>
                                             瀏覽
@@ -932,35 +1016,35 @@
     </footer>
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
 
-    <script src="Content/js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
 
-    <script src="Content/js/bootstrap-5.1.1.min.js"></script>
-    <script src="Content/js/fontawesome-free-6.1.1.min.js"></script>
+    <script src="../js/bootstrap-5.1.1.min.js"></script>
+    <script src="../js/fontawesome-free-6.1.1.min.js"></script>
 
     <!-- this page widgets JS -->
     <!-- 文字輸入框 -->
-    <script src="Content/js/jquery-te-1.4.0.min.js"></script>
+    <script src="../js/jquery-te-1.4.0.min.js"></script>
 
     <!-- JQellipsis -->
     <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 
     <!-- 文字輸入框 -->
     <script>
-        $(".secondStop_add_card_highlight").jqte({
-            placeholder: "<p>簡單說明想要提出的作法、預期做出來的成品長成怎樣吧！</p>"
+        $(".firstStop_add_card_highlight").jqte({
+            placeholder: "<p>列點式的說明，能讓自己跟組員更好理解這筆資料的重點唷！</p>"
+        });
+        
+        $(".firstStop_add_card_credibility").jqte({
+            placeholder: "<p>看一看，作者資訊、內容說明是否有來源出處、你認為這個資料是正確可信的嗎？</p>"
         });
 
-        $(".secondStop_add_card_focus").jqte({
-            placeholder: "<p>思考看看，這個提案是否能解決你們想解決的問題？</p>"
-        });
-
-        $(".secondStop_add_card_feasibility").jqte({
-            placeholder: "<p>思考看看，是否能在期限內完成這個創造提案？</p>"
+        $(".firstStop_add_card_harvest").jqte({
+            placeholder: "<p>想一想，這個資訊是幫你解決了你對關於探究題目哪些疑問？又有哪些新的問題是你想知道的呢？</p>"
         });
 
         // 以下為總結卡片
-        $(".secondStop_summarize_text").jqte({
-            placeholder: "<p>綜合小組提案，有系統的說明最後決定要執行哪個項目的原因吧！</p>"
+        $(".firstStop_summarize_text").jqte({
+            placeholder: "<p>綜合小組探究的內容，有系統的從不同角度，說明各方的觀點以及小組自己的觀點吧！（說明時盡量要提出根據的來源唷！）</p>"
         });
 
         // settings of status
