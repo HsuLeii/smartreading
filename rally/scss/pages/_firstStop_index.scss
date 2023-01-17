@@ -263,16 +263,36 @@ main {
                                 color: $dark_main_color;
                             }
 
+                            &.summarize_btn_finish{
+                                background-color: $dark_main_color;
+                                color: $white;
+
+                                p {
+                                    color: $white;
+                                }
+
+                                &:hover{
+                                    background-color: darken($dark_main_color, 15%) !important;
+                                }
+                            }
 
                         }
 
                         &.card_step_button_item_done {
-                            border-color: $dark_main_color;
-                            color: $dark_main_color;
+                            border-color: $finishGreen;
+                            color: $finishGreen;
                             margin: 15px 0 0;
 
                             p {
-                                color: $dark_main_color;
+                                color: $finishGreen;
+                            }
+
+                            &:hover{
+                                background-color: $finishGreen;
+
+                                p {
+                                    color: $white;
+                                }
                             }
                         }
 
@@ -430,7 +450,8 @@ main {
                     }
 
                     .card_main_content_right_content {
-                        margin: 10px auto;
+                        margin: 15px auto;
+                        display: block;
 
                         .card_main_content_right_title {
                             h4 {
@@ -459,18 +480,23 @@ main {
                             }
                         }
 
-                        .card_main_content_right_star_rating {
-                            display: flex;
-                            flex-wrap: wrap;
-                            padding: 10px 0 0;
-                            border-top: 1px solid $dark_grey;
-                        }
+                        
                     }
 
                     .card_main_content_right_footer {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+                        flex-wrap: wrap;
+                        margin: 15px 0 0;
+
+                        .card_main_content_right_star_rating {
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            padding: 10px 0 0;
+                            border-top: 1px solid $dark_grey;
+                        }
 
                         .card_Discussor {
                             display: flex;
@@ -498,6 +524,15 @@ main {
 
                 p {
                     color: $disabled !important;
+                }
+
+                &:hover {
+                    color: $disabled !important;
+                    background-color: $transparent !important;
+
+                    p {
+                        color: $disabled !important;
+                    }
                 }
             }
 
