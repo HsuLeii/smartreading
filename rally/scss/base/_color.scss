@@ -40,8 +40,14 @@ $gradients: (
 );
 
 // 顏色選擇
-$choose_color: (
-  colorOne: linear-gradient(90deg, $firstStop 50%, $firstStopTwoColor 0%),
+$choose_left_color: (
+  leftColorOne: #f29300,
+  colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
+  colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
+);
+
+$choose_footer_color: (
+  footerColorOne: #fdeeda,
   colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
   colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
 );
@@ -75,6 +81,10 @@ $choose_color: (
     }
   }
   
-  @each $choose_color, $value in $choose_color {
-      @include card_main(".choose_color_content_item_#{$choose_color}", $value);
+  @each $choose_left_color, $value in $choose_left_color {
+      @include card_main(".choose_left_color_#{$choose_left_color}", $value);
+    }
+
+    @each $footerColorOne, $value in $footerColorOne {
+      @include card_main(".choose_left_color_#{$footerColorOne}", $value);
     }
