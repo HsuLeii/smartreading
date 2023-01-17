@@ -31,6 +31,18 @@ $thirdStopTwoColor:#fc4e29;
 $disabled:#AAAAAA;
 $placeholder:#858585;
 
+// 卡片選色
+$colorOne_dark:#e89115;
+$colorOne_light:#faebd7;
+$colorTwo_dark:#40a476;
+$colorTwo_light:#e2ecdd;
+$colorThree_dark:#2c76b4;
+$colorThree_light:#e7f2f8;
+$colorFour_dark:#e07a9a;
+$colorFour_light:#f9ebf1;
+$colorFive_dark:#7f4891;
+$colorFive_light:#f0e5ef;
+
 // 卡片顏色
 $gradients: (
     firstStop: linear-gradient(-45deg, $firstStop 0%,$firstStopTwoColor 100%),
@@ -40,28 +52,14 @@ $gradients: (
 );
 
 // 顏色選擇
-$choose_left_color: (
-  leftColorOne: #f29300,
-  colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
-  colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
-);
-
-$choose_footer_color: (
-  footerColorOne: #fdeeda,
-  colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
-  colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
-);
+// $choose_color: (
+//   leftColorOne: #f29300,
+//   colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
+//   colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
+// );
 
 // 卡片顏色
-@mixin card_main($parent, $gradient) {
-  #{$parent} {
-    background: $gradient !important;
-  }
-}
 
-@each $gradient, $value in $gradients {
-    @include card_main(".card_main_#{$gradient}", $value);
-  }
 
   @mixin additional_materials($parent, $gradient) {
     #{$parent} {
@@ -75,16 +73,13 @@ $choose_footer_color: (
 // 卡片顏色結束
 
     // 顏色選擇
-  @mixin card_main($parent, $choose_color) {
-    #{$parent} {
-      background: $choose_color !important;
-    }
-  }
+  // @mixin card_main($parent, $choose_color) {
+  //   #{$parent} {
+  //     background: $choose_color !important;
+  //   }
+  // }
   
-  @each $choose_left_color, $value in $choose_left_color {
-      @include card_main(".choose_left_color_#{$choose_left_color}", $value);
-    }
+  // @each $choose_color, $value in $choose_color {
+  //     @include card_main(".choose_left_color_#{$choose_color}", $value);
+  //   }
 
-    @each $footerColorOne, $value in $footerColorOne {
-      @include card_main(".choose_left_color_#{$footerColorOne}", $value);
-    }
