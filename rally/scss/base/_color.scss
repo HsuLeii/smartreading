@@ -52,11 +52,13 @@ $gradients: (
 );
 
 // 顏色選擇
-// $choose_color: (
-//   leftColorOne: #f29300,
-//   colorTwo: linear-gradient(90deg, $secondStop 50%, $secondStopTwoColor 0%),
-//   colorThree: linear-gradient(90deg, $thirdStop 50%, $thirdStopTwoColor 0%),
-// );
+$choose_color: (
+  colorOne: linear-gradient(135deg, $colorOne_dark 50%, $colorOne_light 0%),
+  colorTwo: linear-gradient(135deg, $colorTwo_dark 50%, $colorTwo_light 0%),
+  colorThree: linear-gradient(135deg, $colorThree_dark 50%, $colorThree_light 0%),
+  colorFour: linear-gradient(135deg, $colorFour_dark 50%, $colorFour_light 0%),
+  colorFive: linear-gradient(135deg, $colorFive_dark 50%, $colorFive_light 0%),
+);
 
 // 卡片顏色
 
@@ -73,13 +75,13 @@ $gradients: (
 // 卡片顏色結束
 
     // 顏色選擇
-  // @mixin card_main($parent, $choose_color) {
-  //   #{$parent} {
-  //     background: $choose_color !important;
-  //   }
-  // }
+  @mixin card_main($parent, $choose_color) {
+    #{$parent} {
+      background: $choose_color !important;
+    }
+  }
   
-  // @each $choose_color, $value in $choose_color {
-  //     @include card_main(".choose_left_color_#{$choose_color}", $value);
-  //   }
+  @each $choose_color, $value in $choose_color {
+      @include card_main(".choose_color_content_item_#{$choose_color}", $value);
+    }
 
