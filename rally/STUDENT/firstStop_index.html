@@ -598,339 +598,340 @@
         </div>
         <!-- 新增卡片modal開始 -->
         <div class="modal modal_slide" id="AddCardModal" data-bs-backdrop="static" data-bs-keyboard="false"
-            tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog"
-            style="display: block;">
+            tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal_header modal_header_first_step">
-                        <h4>探究閱讀</h4>
-                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-                    <div class="modal_body">
-
-                        <div class="modal_body_item research_data_area">
-                            <div class="modal_content_title">
-                                <h5>探究資料</h5>
-                            </div>
-
-                            <div class="input_group_area">
-                                <div class="input_group select_box">
-                                    <label for="read_type">讀物類型：</label>
-                                    <div class="selected">
-                                        <p class="selected_text">請選擇讀物類型</p>
-                                        <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
-                                    </div>
-                                    <div class="options">
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="books" value="圖書">
-                                            <label for="books">圖書</label>
-                                        </div>
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="article" value="文章">
-                                            <label for="article">文章</label>
-                                        </div>
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="typeOther" value="其他">
-                                            <label for="typeOther">其他</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="input_group">
-                                    <label for="read_type">書名 / 標題：</label>
-                                    <input type="text" id="read_type" class="input_block" placeholder="輸入書名 / 標題" required>
-                                </div>
-                            </div>
-
-                            <div class="input_group_area">
-                                <div class="input_group select_box">
-                                    <label for="read_type">來源類型：</label>
-                                    <div class="selected">
-                                        <p class="selected_text">請選擇來源類型</p>
-                                        <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
-                                    </div>
-                                    <div class="options">
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="ISBN" value="ISBN">
-                                            <label for="ISBN">ISBN</label>
-                                        </div>
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="URL" value="網址">
-                                            <label for="URL">網址</label>
-                                        </div>
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="sourceOther" value="其他">
-                                            <label for="sourceOther">其他</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="input_group">
-                                    <label for="read_type">來源說明：</label>
-                                    <input type="text" id="read_type" class="input_block" placeholder="輸入來源說明">
-                                </div>
-                            </div>
-
-                            <div class="input_group_area">
-                                <div class="input_group select_box">
-                                    <label for="read_type">如何找到這筆資料：</label>
-                                    <div class="selected">
-                                        <p class="selected_text">請選擇資料來源</p>
-                                        <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
-                                    </div>
-                                    <div class="options">
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="ISBN" value="比賽推薦閱讀清單">
-                                            <label for="ISBN">比賽推薦閱讀清單</label>
-                                        </div>
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="URL" value="圖書館系統查詢">
-                                            <label for="URL">圖書館系統查詢</label>
-                                        </div>
-                                        <div class="option_item">
-                                            <input type="radio" name="option_item" id="URL" value="Google查詢">
-                                            <label for="URL">Google查詢</label>
-                                        </div>
-
-                                        <div class="option_item materialOther">
-                                            <input type="radio" name="option_item" id="materialOther" value="其他">
-                                            <label for="materialOther">其他</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="input_group material_description" style="display: none;">
-                                    <label for="read_type">資料來源說明：</label>
-                                    <input type="text" id="read_type" class="input_block" placeholder="輸入資料來源說明">
-                                </div>
-                            </div>
-
+                    <form class="validate_area">
+                        <div class="modal_header modal_header_first_step">
+                            <h4>探究閱讀</h4>
+                            <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
                         </div>
-
-                        <div class="modal_body_item read_content_area">
-                            <div class="modal_content_title">
-                                <h5>
-                                    閱讀內容
-                                </h5>
-                            </div>
-
-                            <div class="read_content_area_text">
-                                <div class="input_group">
-                                    <p>重點摘要</p>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_highlight"></textarea>
+                        <div class="modal_body">
+    
+                            <div class="modal_body_item research_data_area">
+                                <div class="modal_content_title">
+                                    <h5>探究資料</h5>
                                 </div>
-
-                                <div class="input_group star_rating">
-                                    <div class="star_rating_name">
-                                        <p>可信度：</p>
-                                        <fieldset class="star_rating_area">
-                                            <input type="radio" id="star5" name="rating" value="5" />
-                                            <label for="star5" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star4" name="rating" value="4" />
-                                            <label for="star4" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star3" name="rating" value="3" />
-                                            <label for="star3" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star2" name="rating" value="2" />
-                                            <label for="star2" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star1" name="rating" value="1" />
-                                            <label for="star1" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                        </fieldset>
+    
+                                <div class="input_group_area">
+                                    <div class="input_group select_box">
+                                        <label for="read_type">讀物類型：</label>
+                                        <div class="selected">
+                                            <p class="selected_text">請選擇讀物類型</p>
+                                            <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
+                                        </div>
+                                        <div class="options">
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="books" value="圖書">
+                                                <label for="books">圖書</label>
+                                            </div>
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="article" value="文章">
+                                                <label for="article">文章</label>
+                                            </div>
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="typeOther" value="其他">
+                                                <label for="typeOther">其他</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_credibility"></textarea>
-                                </div>
-
-                                <div class="input_group star_rating">
-                                    <div class="star_rating_name">
-                                        <p>收穫度：</p>
-                                        <fieldset class="star_rating_area">
-                                            <input type="radio" id="star5" name="rating" value="5" />
-                                            <label for="star5" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star4" name="rating" value="4" />
-                                            <label for="star4" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star3" name="rating" value="3" />
-                                            <label for="star3" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star2" name="rating" value="2" />
-                                            <label for="star2" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                            <input type="radio" id="star1" name="rating" value="1" />
-                                            <label for="star1" class="star_rating_item">
-                                                <i class="fa-regular fa-star"></i>
-                                            </label>
-
-                                        </fieldset>
+    
+                                    <div class="input_group">
+                                        <label for="read_type">書名 / 標題：</label>
+                                        <input type="text" name="cardTitle" class="input_block" placeholder="輸入書名 / 標題" required>
                                     </div>
-                                    <textarea name="textarea" class="jqte_placeholder firstStop_add_card_harvest"></textarea>
                                 </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="modal_body_item additional_materials_area">
-                            <div class="modal_content_title">
-                                <h5>
-                                    補充資料
-                                </h5>
-                            </div>
-                            <div class="additional_materials_item">
-                                <div class="additional_materials_item_left">
-                                    <p>繪畫</p>
+    
+                                <div class="input_group_area">
+                                    <div class="input_group select_box">
+                                        <label for="read_type">來源類型：</label>
+                                        <div class="selected">
+                                            <p class="selected_text">請選擇來源類型</p>
+                                            <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
+                                        </div>
+                                        <div class="options">
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="ISBN" value="ISBN">
+                                                <label for="ISBN">ISBN</label>
+                                            </div>
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="URL" value="網址">
+                                                <label for="URL">網址</label>
+                                            </div>
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="sourceOther" value="其他">
+                                                <label for="sourceOther">其他</label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="input_group">
+                                        <label for="read_type">來源說明：</label>
+                                        <input type="text" name="cardSource" class="input_block" placeholder="輸入來源說明">
+                                    </div>
                                 </div>
-                                <div class="additional_materials_item_right">
-                                    <div class="additional_materials_item_right_content_area">
-                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
-                                            <div class="svg_icon">
+    
+                                <div class="input_group_area">
+                                    <div class="input_group select_box">
+                                        <label for="read_type">如何找到這筆資料：</label>
+                                        <div class="selected">
+                                            <p class="selected_text">請選擇資料來源</p>
+                                            <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
+                                        </div>
+                                        <div class="options">
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="ISBN" value="比賽推薦閱讀清單">
+                                                <label for="ISBN">比賽推薦閱讀清單</label>
+                                            </div>
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="URL" value="圖書館系統查詢">
+                                                <label for="URL">圖書館系統查詢</label>
+                                            </div>
+                                            <div class="option_item">
+                                                <input type="radio" name="option_item" id="URL" value="Google查詢">
+                                                <label for="URL">Google查詢</label>
+                                            </div>
+    
+                                            <div class="option_item materialOther">
+                                                <input type="radio" name="option_item" id="materialOther" value="其他">
+                                                <label for="materialOther">其他</label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="input_group material_description" style="display: none;">
+                                        <label for="read_type">資料來源說明：</label>
+                                        <input type="text" name="cardMaterial" class="input_block" placeholder="輸入資料來源說明">
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <div class="modal_body_item read_content_area">
+                                <div class="modal_content_title">
+                                    <h5>
+                                        閱讀內容
+                                    </h5>
+                                </div>
+    
+                                <div class="read_content_area_text">
+                                    <div class="input_group">
+                                        <p>重點摘要</p>
+                                        <textarea name="textarea" class="jqte_placeholder firstStop_add_card_highlight"></textarea>
+                                    </div>
+    
+                                    <div class="input_group star_rating">
+                                        <div class="star_rating_name">
+                                            <p>可信度：</p>
+                                            <fieldset class="star_rating_area">
+                                                <input type="radio" id="star5" name="rating" value="5" />
+                                                <label for="star5" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star4" name="rating" value="4" />
+                                                <label for="star4" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star3" name="rating" value="3" />
+                                                <label for="star3" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star2" name="rating" value="2" />
+                                                <label for="star2" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star1" name="rating" value="1" />
+                                                <label for="star1" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                            </fieldset>
+                                        </div>
+                                        <textarea name="textarea" class="jqte_placeholder firstStop_add_card_credibility"></textarea>
+                                    </div>
+    
+                                    <div class="input_group star_rating">
+                                        <div class="star_rating_name">
+                                            <p>收穫度：</p>
+                                            <fieldset class="star_rating_area">
+                                                <input type="radio" id="star5" name="rating" value="5" />
+                                                <label for="star5" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star4" name="rating" value="4" />
+                                                <label for="star4" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star3" name="rating" value="3" />
+                                                <label for="star3" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star2" name="rating" value="2" />
+                                                <label for="star2" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                                <input type="radio" id="star1" name="rating" value="1" />
+                                                <label for="star1" class="star_rating_item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </label>
+    
+                                            </fieldset>
+                                        </div>
+                                        <textarea name="textarea" class="jqte_placeholder firstStop_add_card_harvest"></textarea>
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+    
+                            <div class="modal_body_item additional_materials_area">
+                                <div class="modal_content_title">
+                                    <h5>
+                                        補充資料
+                                    </h5>
+                                </div>
+                                <div class="additional_materials_item">
+                                    <div class="additional_materials_item_left">
+                                        <p>繪畫</p>
+                                    </div>
+                                    <div class="additional_materials_item_right">
+                                        <div class="additional_materials_item_right_content_area">
+                                            <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
+                                                <div class="svg_icon">
+                                                    <p>
+                                                        <i class="fa-solid fa-palette"></i>
+                                                    </p>
+                                                </div>
                                                 <p>
-                                                    <i class="fa-solid fa-palette"></i>
+                                                    快將你的感動或觀察化為圖畫記錄下來吧！
                                                 </p>
                                             </div>
-                                            <p>
-                                                快將你的感動或觀察化為圖畫記錄下來吧！
-                                            </p>
-                                        </div>
-                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="additional_materials_item_btn_area">
-                                    <div class="input_group">
-                                        <button class="input_group_btn" type="button">
-                                            <p>
-                                            繪製
-                                        </p>
-                                    </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="additional_materials_item">
-                                <div class="additional_materials_item_left">
-                                    <p>圖片</p>
-                                </div>
-                                <div class="additional_materials_item_right">
-                                    <div class="additional_materials_item_right_content_area">
-                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
-                                            <div class="svg_icon">
-                                                <p>
-                                                    <i class="fa-solid fa-photo-film"></i>
-                                                </p>
+                                            <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer">
                                             </div>
-                                            <p>
-                                                快將你的感動或觀察化為圖畫記錄下來吧！
-                                            </p>
-                                        </div>
-                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer photo_area">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="additional_materials_item_btn_area">
-                                    <div class="input_group">
-                                        <label for="additional_materials_photo" class="input_group_btn">
-                                            <p>
-                                                上傳圖檔
-                                            </p>
-                                            <input type="file" multiple="" name="上傳圖檔" id="additional_materials_photo" class="additional_materials_photo">
-                                        </label>
-
-                                        <p class="alertText">
-                                            最多可上傳六張圖檔
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="additional_materials_item">
-                                <div class="additional_materials_item_left">
-                                    <p>影片</p>
-                                </div>
-                                <div class="additional_materials_item_right">
-                                    <div class="additional_materials_item_right_content_area">
-                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
-                                            <div class="svg_icon">
+                                    <div class="additional_materials_item_btn_area">
+                                        <div class="input_group">
+                                            <button class="input_group_btn" type="button">
                                                 <p>
-                                                    <i class="fa-solid fa-clapperboard"></i>
-                                                </p>
-                                            </div>
-                                            <p>
-                                                快將你的感動或觀察，化為影像記錄下來吧！
+                                                繪製
                                             </p>
-                                        </div>
-                                        <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer iframe_area">
-                                            <iframe src="" class="additional_materials_video_iframe" frameborder="0"
-                                            id="AddVideo" title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="additional_materials_item_btn_area">
-                                    <div class="input_group">
-                                        <input type="text" id="AddVideoInput" class="input_block"
-                                            placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
-                                        <button class="input_group_btn" type="button" id="additional_materials_video"
-                                            onclick="AddVideoData();">
-                                        <p>
-                                            瀏覽
-                                        </p>
                                         </button>
+                                        </div>
                                     </div>
                                 </div>
-
+    
+                                <div class="additional_materials_item">
+                                    <div class="additional_materials_item_left">
+                                        <p>圖片</p>
+                                    </div>
+                                    <div class="additional_materials_item_right">
+                                        <div class="additional_materials_item_right_content_area">
+                                            <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
+                                                <div class="svg_icon">
+                                                    <p>
+                                                        <i class="fa-solid fa-photo-film"></i>
+                                                    </p>
+                                                </div>
+                                                <p>
+                                                    快將你的感動或觀察化為圖畫記錄下來吧！
+                                                </p>
+                                            </div>
+                                            <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer photo_area">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="additional_materials_item_btn_area">
+                                        <div class="input_group">
+                                            <label for="additional_materials_photo" class="input_group_btn">
+                                                <p>
+                                                    上傳圖檔
+                                                </p>
+                                                <input type="file" multiple="" name="上傳圖檔" id="additional_materials_photo" class="additional_materials_photo">
+                                            </label>
+    
+                                            <p class="alertText">
+                                                最多可上傳六張圖檔
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="additional_materials_item">
+                                    <div class="additional_materials_item_left">
+                                        <p>影片</p>
+                                    </div>
+                                    <div class="additional_materials_item_right">
+                                        <div class="additional_materials_item_right_content_area">
+                                            <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_default">
+                                                <div class="svg_icon">
+                                                    <p>
+                                                        <i class="fa-solid fa-clapperboard"></i>
+                                                    </p>
+                                                </div>
+                                                <p>
+                                                    快將你的感動或觀察，化為影像記錄下來吧！
+                                                </p>
+                                            </div>
+                                            <div class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer iframe_area">
+                                                <iframe src="" class="additional_materials_video_iframe" frameborder="0"
+                                                id="AddVideo" title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="additional_materials_item_btn_area">
+                                        <div class="input_group">
+                                            <input type="text" id="AddVideoInput" class="input_block"
+                                                placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
+                                            <button class="input_group_btn" type="button" id="additional_materials_video"
+                                                onclick="AddVideoData();">
+                                            <p>
+                                                瀏覽
+                                            </p>
+                                            </button>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+                            <div class="modal_body_item choose_color_area">
+                                <div class="modal_content_title">
+                                    <h5>
+                                        選取卡片顏色
+                                    </h5>
+                                </div>
+                                <div class="choose_color_content">
+                                    <div class="choose_color_content_item choose_color_content_item_colorOne">
+                                    </div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorTwo">
+                                    </div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorThree">
+                                    </div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorFour">
+                                    </div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorFive">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="modal_body_item choose_color_area">
-                            <div class="modal_content_title">
-                                <h5>
-                                    選取卡片顏色
-                                </h5>
-                            </div>
-                            <div class="choose_color_content">
-                                <div class="choose_color_content_item choose_color_content_item_colorOne">
-                                </div>
-                                <div class="choose_color_content_item choose_color_content_item_colorTwo">
-                                </div>
-                                <div class="choose_color_content_item choose_color_content_item_colorThree">
-                                </div>
-                                <div class="choose_color_content_item choose_color_content_item_colorFour">
-                                </div>
-                                <div class="choose_color_content_item choose_color_content_item_colorFive">
-                                </div>
-                            </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="modal_footer_btn modal_footer_btn_store" value="儲存卡片">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -1088,8 +1089,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <input type="submit" class="modal_footer_btn modal_footer_btn_store" value="儲存卡片">
                     </div>
                 </div>
             </div>
@@ -1110,6 +1110,44 @@
     <!-- this page widgets JS -->
     <!-- 文字輸入框 -->
     <script src="../js/jquery-te-1.4.0.min.js"></script>
+    <!-- input必填 -->
+    <script src="../js/jquery.validate.1.15.0.min.js"></script>
+
+    <!-- input必填 -->
+    <script>
+        $(document).ready(function () {
+            $.validator.setDefaults({
+                errorElement: "span",
+                errorClass: "error_block",
+            });
+
+            $(".validate_area").validate({
+                rules: {
+                    cardTitle: {
+                        required: true,
+                    },
+                    cardSource: {
+                        required: true,
+                    },
+                    cardMaterial: {
+                        required: true,
+                    },
+                },
+
+                messages: {
+                    cardTitle: {
+                        required: "請輸入內容",
+                    },
+                    cardSource: {
+                        required: "請輸入內容",
+                    },
+                    cardMaterial: {
+                        required: "請輸入內容",
+                    },
+                }
+            });
+        });
+    </script>
 
     <!-- 文字輸入框 -->
     <script>

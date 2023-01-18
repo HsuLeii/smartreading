@@ -9,7 +9,7 @@
 .modal {
     .modal-dialog {
         max-width: 90%;
-        margin: 0;
+        margin: 0 auto;
 
         .modal-content {
 
@@ -116,7 +116,7 @@
                                             }
                                         }
 
-                                        &.additional_materials_item_right_content_area_item_answer{
+                                        &.additional_materials_item_right_content_area_item_answer {
                                             width: 100%;
                                             height: 100%;
                                             background-color: $body_bg;
@@ -311,6 +311,30 @@
 
 
             }
+
+            .modal-footer {
+                justify-content: center;
+                border-top: 1px solid $dark_grey;
+
+                .modal_footer_btn {
+                    padding: 5px 10px;
+                    border-radius: 5px !important;
+                    border: 1px solid;
+                    border-color: $dark_grey;
+                    margin: 5px 10px;
+                    background-color: $white;
+
+                    &.modal_footer_btn_store {
+                        border-color: $finishGreen;
+                        color: $finishGreen;
+
+                        &:hover {
+                            background-color: $finishGreen;
+                            color: $white;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -498,6 +522,187 @@
         }
     }
 }
+
+.validate_area {
+    overflow-y: scroll;
+
+    .error_block {
+        border: 1px solid $red;
+
+        &:focus {
+            border: 1px solid $red !important;
+        }
+    }
+
+    span {
+        &.error_block {
+            width: 100%;
+            display: block;
+            padding: 5px;
+            color: $red;
+            border: 0px;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+.crop_area {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1056;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    overflow-y: scroll;
+
+    .crop_content_area {
+        width: 60%;
+        max-width: 600px;
+        background-color: $body_bg;
+        padding: 30px 50px;
+        border-radius: 10px;
+
+        .croppie-container {
+            .cr-boundary {
+                width: 80%;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+
+                .cr-image {
+                    width: auto;
+                    z-index: 1;
+                }
+
+                .cr-viewport {
+                    position: absolute;
+                    top: 0;
+                    border-radius: 50%;
+                    border: 3px solid $main_color;
+                    box-shadow: 0 0 0 900px rgba(217, 217, 217, 0.5);
+                    z-index: 2;
+                    width: 100% !important;
+                }
+
+                .cr-overlay {
+                    position: absolute;
+                    z-index: 2;
+                    cursor: move;
+                }
+            }
+
+            /******** Range Input ********/
+            .cr-slider-wrap {
+                width: 80%;
+                display: flex;
+                margin: 15px auto;
+                position: relative;
+
+                .cr-slider {
+                    /* input range 主體樣式 */
+                    -webkit-appearance: none;
+                    position: relative;
+                    border-radius: 10px;
+                    width: 100%;
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        width: var(--playRange);
+                        height: 5px;
+                        background-color: $main_color;
+                        border-radius: 10px;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                    }
+
+                    /* input range 進度條樣式 */
+                    &::-webkit-slider-runnable-track {
+                        background-color: $dark_grey;
+                        height: 5px;
+                        border-radius: 10px;
+                    }
+
+                    /* input range 原點樣式 */
+                    &::-webkit-slider-thumb {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 100%;
+                        border: none;
+                        -webkit-appearance: none;
+                        background-color: $main_color;
+                        z-index: 1;
+                        position: relative;
+                        transition: 0.5s all ease;
+                        transform: translate(0%, -50%);
+                        top: 50%;
+
+                    }
+
+                    /* input range 原點focus */
+                    &:focus {
+                        outline: none;
+
+                        &::-webkit-slider-thumb {
+                            background-color: darken($main_color, 10%);
+                        }
+                    }
+                }
+
+                #cr-rotate {
+                    color: $main_color;
+                    display: none;
+                }
+
+                .dotRange {
+                    background-color: $main_color;
+                    width: 0%;
+                    height: 5px;
+                    position: absolute;
+                    border-radius: 10px;
+                    top: 50%;
+                    left: 0%;
+                    transform: translate(-0%, -50%);
+                }
+            }
+        }
+
+        .crop_area_btn {
+            display: flex;
+            justify-content: center;
+            margin: 10px auto 0px;
+
+            .crop_btn {
+                margin: 5px 10px;
+                padding: 5px 10px;
+                background-color: $main_color;
+                color: $white;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: darken($main_color, 10%);
+                }
+
+                &.crop_btn_prev {
+                    background-color: $dark_grey;
+
+                    &:hover {
+                        background-color: darken($dark_grey, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 
 @media screen and (min-width: 768px) {
     .modal {
