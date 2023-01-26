@@ -616,7 +616,8 @@
                                 </div>
     
                                 <div class="input_group_area">
-                                    <div class="input_group select_box">
+
+                                    <!-- <div class="input_group select_box">
                                         <label for="read_type">讀物類型：</label>
                                         <div class="selected">
                                             <p class="selected_text">請選擇讀物類型</p>
@@ -636,8 +637,18 @@
                                                 <label for="typeOther">其他</label>
                                             </div>
                                         </div>
+                                    </div> -->
+                                    <div class="input_group">
+                                        <label for="read_type">讀物類型：</label>
+                                        <select name="selectTitle" class="input_block" required>
+                                          <option hidden disabled selected>請選擇讀物類型</option>
+                                          <option class="option_item" value="books">圖書</option>
+                                          <option class="option_item" value="article">文章</option>
+                                          <option class="option_item" value="typeOther">其他</option>
+                                        </select>
                                     </div>
-    
+                                    
+
                                     <div class="input_group">
                                         <label for="read_type">書名 / 標題：</label>
                                         <input type="text" name="cardTitle" class="input_block" placeholder="輸入書名 / 標題" required>
@@ -1111,10 +1122,10 @@
     <!-- 文字輸入框 -->
     <script src="../js/jquery-te-1.4.0.min.js"></script>
     <!-- input必填 -->
-    <script src="../js/jquery.validate.1.15.0.min.js"></script>
+    <!-- <script src="../js/jquery.validate.1.15.0.min.js"></script> -->
 
     <!-- input必填 -->
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             $.validator.setDefaults({
                 errorElement: "span",
@@ -1132,6 +1143,9 @@
                     cardMaterial: {
                         required: true,
                     },
+                    selectTitle: {
+                        required: true,
+                    },
                 },
 
                 messages: {
@@ -1144,10 +1158,13 @@
                     cardMaterial: {
                         required: "請輸入內容",
                     },
+                    selectTitle: {
+                        required: "請輸入內容",
+                    },
                 }
             });
         });
-    </script>
+    </script> -->
 
     <!-- 文字輸入框 -->
     <script>
