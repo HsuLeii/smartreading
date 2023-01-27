@@ -13,13 +13,15 @@
 
     <!-- this page widgets CSS -->
     <!-- 文字輸入框 -->
-    <link rel="stylesheet" href="../css/demo.css">
+    <!-- <link rel="stylesheet" href="../css/demo.css"> -->
 
-    <link rel="stylesheet" href="../css/jquery-te-1.4.0.css">
 
 
     <!-- my core CSS -->
+    <link rel="stylesheet" href="../css/jquery-te-1.4.0.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
 </head>
 
 <body>
@@ -683,7 +685,7 @@
     
                                     <div class="input_group">
                                         <label for="read_type">來源說明：</label>
-                                        <input type="text" name="cardSource" class="input_block" placeholder="輸入來源說明">
+                                        <input type="text" name="cardSource" class="input_block" placeholder="輸入來源說明" required>
                                     </div>
                                 </div>
     
@@ -715,7 +717,7 @@
                                         </div>
                                     </div>
     
-                                    <div class="input_group material_description" style="display: none;">
+                                    <div class="input_group material_description" style="display: none;" required>
                                         <label for="read_type">資料來源說明：</label>
                                         <input type="text" name="cardMaterial" class="input_block" placeholder="輸入資料來源說明">
                                     </div>
@@ -1124,52 +1126,10 @@
     <!-- this page widgets JS -->
 
     <!-- 文字輸入框 -->
-    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script> -->
+    <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery-te-1.4.0.min.js"></script>
     <!-- input必填 -->
     <script src="../js/jquery.validate.1.15.0.min.js"></script>
-
-    <!-- input必填 -->
-    <script>
-        $(document).ready(function () {
-            $.validator.setDefaults({
-                errorElement: "span",
-                errorClass: "error_block",
-            });
-
-            $(".validate_area").validate({
-                rules: {
-                    cardTitle: {
-                        required: true,
-                    },
-                    cardSource: {
-                        required: true,
-                    },
-                    cardMaterial: {
-                        required: true,
-                    },
-                    selectTitle: {
-                        required: true,
-                    },
-                },
-
-                messages: {
-                    cardTitle: {
-                        required: "請輸入內容",
-                    },
-                    cardSource: {
-                        required: "請輸入內容",
-                    },
-                    cardMaterial: {
-                        required: "請輸入內容",
-                    },
-                    selectTitle: {
-                        required: "請輸入內容",
-                    },
-                }
-            });
-        });
-    </script>
 
     <!-- 文字輸入框 -->
     <script>
@@ -1199,6 +1159,48 @@
             })
         });
     </script>
+
+        <!-- input必填 -->
+        <script>
+            $(document).ready(function () {
+                $.validator.setDefaults({
+                    errorElement: "span",
+                    errorClass: "error_block",
+                });
+    
+                $(".validate_area").validate({
+                    rules: {
+                        cardTitle: {
+                            required: true,
+                        },
+                        cardSource: {
+                            required: true,
+                        },
+                        cardMaterial: {
+                            required: true,
+                        },
+                        selectTitle: {
+                            required: true,
+                        },
+                    },
+    
+                    messages: {
+                        cardTitle: {
+                            required: "請輸入內容",
+                        },
+                        cardSource: {
+                            required: "請輸入內容",
+                        },
+                        cardMaterial: {
+                            required: "請輸入內容",
+                        },
+                        selectTitle: {
+                            required: "請輸入內容",
+                        },
+                    }
+                });
+            });
+        </script>
 
     <!-- 上傳圖片測試開始 -->
     <script>
@@ -1271,32 +1273,32 @@
 
             // input、下拉選單區域開始
 
-            $(".selected").click(function () {
+            // $(".selected").click(function () {
 
-                if ($(this).hasClass("open")) {
-                    $(".options").hide();
-                    $(".selected").removeClass("open");
-                    $(this).next(".options").hide();
-                    $(this).removeClass("open");
+            //     if ($(this).hasClass("open")) {
+            //         $(".options").hide();
+            //         $(".selected").removeClass("open");
+            //         $(this).next(".options").hide();
+            //         $(this).removeClass("open");
 
-                } else {
-                    $(".options").hide();
-                    $(".selected").removeClass("open");
-                    $(this).next(".options").show();
-                    $(this).addClass("open");
-                }
-            });
+            //     } else {
+            //         $(".options").hide();
+            //         $(".selected").removeClass("open");
+            //         $(this).next(".options").show();
+            //         $(this).addClass("open");
+            //     }
+            // });
 
-            $(".option_item").click(function () {
-                $(".options").hide();
-                $(".selected").removeClass("open");
-                var text = $(this).children("label").text();
-                $(this).parent().prev(".selected").children(".selected_text").text(text);
-            });
+            // $(".option_item").click(function () {
+            //     $(".options").hide();
+            //     $(".selected").removeClass("open");
+            //     var text = $(this).children("label").text();
+            //     $(this).parent().prev(".selected").children(".selected_text").text(text);
+            // });
 
-            $(".materialOther").click(function () {
-                $(".material_description").show();
-            });
+            // $(".materialOther").click(function () {
+            //     $(".material_description").show();
+            // });
 
             // input、下拉選單區域結束
 
