@@ -1,7 +1,19 @@
-
 (function() {
     // Before using it we must add the parse and format functions
     // Here is a sample implementation using moment.js
+    validate.extend(validate.validators.datetime, {
+      // The value is guaranteed not to be null or undefined but otherwise it
+      // could be anything.
+      parse: function(value, options) {
+        return +moment.utc(value);
+      },
+      // Input is a unix timestamp
+      format: function(value, options) {
+        var format = options.dateOnly ? "YYYY-MM-DD" : "YYYY-MM-DD hh:mm:ss";
+        return moment.utc(value).format(format);
+      }
+    });
+
     // These are the constraints used to validate the form
     var constraints = {
       email: {
@@ -10,6 +22,18 @@
         // and must be an email (duh)
         email: true
       },
+
+      cardTitle: {
+        // Email is required
+        presence: true
+      },
+
+      selectTitle: {
+        // You also need to input where you live
+        presence: true,
+        // And we restrict the countries supported to Sweden
+      },
+     
     };
 
     // Hook up the form so we can prevent it from being posted
