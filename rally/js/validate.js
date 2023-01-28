@@ -39,7 +39,7 @@
     };
 
     // Hook up the form so we can prevent it from being posted
-    var form = document.querySelector("form#main");
+    var form = document.querySelector("form");
     form.addEventListener("submit", function(ev) {
       ev.preventDefault();
       handleFormSubmit(form);
