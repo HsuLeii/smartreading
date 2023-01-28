@@ -16,22 +16,24 @@
 
     // These are the constraints used to validate the form
     var constraints = {
-      email: {
-        // Email is required
-        presence: true,
-        // and must be an email (duh)
-        email: true
-      },
+        readTitle: {
+            presence: true
+          },
 
       cardTitle: {
-        // Email is required
         presence: true
       },
 
-      selectTitle: {
-        // You also need to input where you live
+      sourceTitle: {
         presence: true,
-        // And we restrict the countries supported to Sweden
+      },
+
+      cardSource: {
+        presence: true,
+      },
+      
+      materialTitle:{
+        presence: true
       },
      
     };
@@ -122,7 +124,7 @@
       var block = document.createElement("p");
       block.classList.add("help-block");
       block.classList.add("error");
-      block.innerText = error;
+      block.innerText = "請輸入內容";
       messages.appendChild(block);
     }
 
