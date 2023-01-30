@@ -36,11 +36,23 @@
         presence: true
       },
 
+      proposalTitle:{
+        presence: true
+      },
+
+      readingType:{
+        presence: true
+      },
+
       processTitle:{
         presence: true
       },
 
       textareaHighlight:{
+        presence: true
+      },
+
+      textareaHighlightSummarize:{
         presence: true
       },
      

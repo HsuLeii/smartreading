@@ -602,9 +602,9 @@
                             <div class="modal_body_item research_data_area">
 
                                 <div class="form-group input_group">
-                                    <label for="read_type">提案標題：</label>
-                                    <input type="text" name="readTitle" class="input_block" placeholder="輸入提案標題"
-                                        required>
+                                    <label for="proposal_title">提案標題：</label>
+                                    <input type="text" id="proposal_title" name="proposalTitle" class="input_block"
+                                        placeholder="輸入提案標題" required>
                                     <div class="messages"></div>
                                 </div>
 
@@ -619,15 +619,15 @@
 
                                 <div class="read_content_area_text">
                                     <div class="form-group input_group">
-                                        <p>重點摘要</p>
-                                        <textarea name="textareaHighlight"
+                                        <label for="textareaHighlight">重點摘要</label>
+                                        <textarea id="textareaHighlight" name="textareaHighlight"
                                             class="jqte_placeholder secondStop_add_card_highlight"></textarea>
                                         <div class="messages"></div>
                                     </div>
 
                                     <div class="form-group input_group star_rating">
                                         <div class="star_rating_name">
-                                            <p>聚焦程度：</p>
+                                            <label for="addCardFocus">聚焦程度：</label>
                                             <fieldset class="star_rating_area">
                                                 <input type="radio" id="star5" name="rating" value="5" />
                                                 <label for="star5" class="star_rating_item">
@@ -656,13 +656,13 @@
 
                                             </fieldset>
                                         </div>
-                                        <textarea name="textarea"
+                                        <textarea id="addCardFocus"
                                             class="jqte_placeholder secondStop_add_card_focus"></textarea>
                                     </div>
 
                                     <div class="form-group input_group star_rating">
                                         <div class="star_rating_name">
-                                            <p>可行性：</p>
+                                            <label for="addCardFeasibility">可行性：</label>
                                             <fieldset class="star_rating_area">
                                                 <input type="radio" id="star5" name="rating" value="5" />
                                                 <label for="star5" class="star_rating_item">
@@ -691,7 +691,7 @@
 
                                             </fieldset>
                                         </div>
-                                        <textarea name="textarea"
+                                        <textarea id="addCardFeasibility"
                                             class="jqte_placeholder secondStop_add_card_feasibility"></textarea>
                                     </div>
 
@@ -834,7 +834,6 @@
             tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
-                    <form class="validate_area">
                         <div class="modal_header modal_header_second_step">
                             <h4>總結卡片</h4>
                             <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
@@ -843,6 +842,9 @@
                         </div>
                         <div class="modal_body">
 
+                            <form novalidate>
+
+                            
                             <div class="modal_body_item read_content_area">
                                 <div class="modal_content_title">
                                     <h5>
@@ -851,12 +853,12 @@
                                 </div>
 
                                 <div class="read_content_area_text">
-                                    <div class="input_group">
-                                        <p>重點摘要</p>
-                                        <textarea name="textarea" name="cardTitle"
-                                            class="jqte_placeholder secondStop_summarize_text"></textarea>
+                                    <div class="form-group input_group">
+                                        <label for="textareaHighlightSummarize">重點摘要</label>
+                                        <textarea id="textareaHighlightSummarize" name="textareaHighlightSummarize"
+                                            class="jqte_placeholder secondStop_add_card_highlight"></textarea>
+                                        <div class="messages"></div>
                                     </div>
-
                                 </div>
 
                             </div>
@@ -869,32 +871,10 @@
                                 </div>
 
                                 <div class="read_content_area_text">
-                                    <div class="input_group select_box">
-                                        <label for="read_type">執行項目：</label>
-                                        <div class="selected">
-                                            <p class="selected_text">請選擇小組決定執行的項目</p>
-                                            <p class="svg_icon"><i class="fas fa-chevron-down"></i></p>
-                                        </div>
-                                        <div class="options validate[required]" name="block_name">
-
-                                            <div class="option_item">
-                                                <input type="radio" name="option_item" id="books" value="圖書">
-                                                <label for="books">圖書</label>
-                                            </div>
-                                            <div class="option_item">
-                                                <input type="radio" name="option_item" id="article" value="文章">
-                                                <label for="article">文章</label>
-                                            </div>
-                                            <div class="option_item">
-                                                <input type="radio" name="option_item" id="typeOther" value="其他">
-                                                <label for="typeOther">其他</label>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="input_group custom-select">
-                                        <label for="read_type">讀物類型：</label>
-                                        <select name="selectTitle" class="input_block" required>
+                                        <label for="reading_type">讀物類型：</label>
+                                        <select id="reading_type" name="readingType" class="input_block" required>
                                             <option hidden disabled selected>請選擇讀物類型</option>
                                             <option class="option_item" value="books">圖書</option>
                                             <option class="option_item" value="article">文章</option>
@@ -1020,11 +1000,12 @@
                                 </div>
 
                             </div>
+                            
+                            <div class="modal_footer_btn_area form-group">
+                                <input type="submit" class="modal_footer_btn modal_footer_btn_store" value="儲存卡片">
+                              </div>
+                        </form>
                         </div>
-                        <div class="modal-footer">
-                            <input type="submit" class="modal_footer_btn modal_footer_btn_store" value="儲存卡片">
-                        </div>
-                    </form>
 
                 </div>
             </div>
