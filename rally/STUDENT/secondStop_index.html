@@ -590,21 +590,22 @@
             tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
-                    <form class="validate_area">
-                        <div class="modal_header modal_header_second_step">
-                            <h4>創造提案</h4>
-                            <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </div>
-                        <div class="modal_body">
 
+                    <div class="modal_header modal_header_second_step">
+                        <h4>創造提案</h4>
+                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="modal_body">
+                        <form novalidate>
                             <div class="modal_body_item research_data_area">
 
-                                <div class="input_group">
+                                <div class="form-group input_group">
                                     <label for="read_type">提案標題：</label>
-                                    <input type="text" name="cardTitle" class="input_block" placeholder="輸入提案標題"
+                                    <input type="text" name="readTitle" class="input_block" placeholder="輸入提案標題"
                                         required>
+                                    <div class="messages"></div>
                                 </div>
 
                             </div>
@@ -617,13 +618,14 @@
                                 </div>
 
                                 <div class="read_content_area_text">
-                                    <div class="input_group">
+                                    <div class="form-group input_group">
                                         <p>重點摘要</p>
-                                        <textarea name="textarea" name="cardTitle"
+                                        <textarea name="textareaHighlight"
                                             class="jqte_placeholder secondStop_add_card_highlight"></textarea>
+                                        <div class="messages"></div>
                                     </div>
 
-                                    <div class="input_group star_rating">
+                                    <div class="form-group input_group star_rating">
                                         <div class="star_rating_name">
                                             <p>聚焦程度：</p>
                                             <fieldset class="star_rating_area">
@@ -658,7 +660,7 @@
                                             class="jqte_placeholder secondStop_add_card_focus"></textarea>
                                     </div>
 
-                                    <div class="input_group star_rating">
+                                    <div class="form-group input_group star_rating">
                                         <div class="star_rating_name">
                                             <p>可行性：</p>
                                             <fieldset class="star_rating_area">
@@ -699,9 +701,7 @@
 
                             <div class="modal_body_item additional_materials_area">
                                 <div class="modal_content_title">
-                                    <h5>
-                                        補充資料
-                                    </h5>
+                                    <h5>補充資料</h5>
                                 </div>
                                 <div class="additional_materials_item">
                                     <div class="additional_materials_item_left">
@@ -716,9 +716,7 @@
                                                         <i class="fa-solid fa-palette"></i>
                                                     </p>
                                                 </div>
-                                                <p>
-                                                    快將你的感動或觀察化為圖畫記錄下來吧！
-                                                </p>
+                                                <p>快將你的感動或觀察化為圖畫記錄下來吧！</p>
                                             </div>
                                             <div
                                                 class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer">
@@ -728,13 +726,12 @@
                                     <div class="additional_materials_item_btn_area">
                                         <div class="input_group">
                                             <button class="input_group_btn" type="button">
-                                                <p>
-                                                    繪製
-                                                </p>
+                                                <p>繪製</p>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="additional_materials_item">
                                     <div class="additional_materials_item_left">
                                         <p>圖片</p>
@@ -748,9 +745,7 @@
                                                         <i class="fa-solid fa-photo-film"></i>
                                                     </p>
                                                 </div>
-                                                <p>
-                                                    快將你的感動或觀察化為圖畫記錄下來吧！
-                                                </p>
+                                                <p>快將你的感動或觀察化為圖畫記錄下來吧！</p>
                                             </div>
                                             <div
                                                 class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer photo_area">
@@ -758,21 +753,19 @@
                                         </div>
                                     </div>
                                     <div class="additional_materials_item_btn_area">
-                                        <div class="input_group">
+                                        <div class="form-group input_group">
                                             <label for="additional_materials_photo" class="input_group_btn">
-                                                <p>
-                                                    上傳圖檔
-                                                </p>
+                                                <p>上傳圖檔</p>
                                                 <input type="file" multiple="" name="上傳圖檔"
-                                                    id="additional_materials_photo" class="additional_materials_photo">
+                                                    id="additional_materials_photo"
+                                                    class="additional_materials_photo" />
                                             </label>
 
-                                            <p class="alertText">
-                                                最多可上傳六張圖檔
-                                            </p>
+                                            <p class="alertText">最多可上傳六張圖檔</p>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="additional_materials_item">
                                     <div class="additional_materials_item_left">
                                         <p>影片</p>
@@ -786,9 +779,7 @@
                                                         <i class="fa-solid fa-clapperboard"></i>
                                                     </p>
                                                 </div>
-                                                <p>
-                                                    快將你的感動或觀察，化為影像記錄下來吧！
-                                                </p>
+                                                <p>快將你的感動或觀察，化為影像記錄下來吧！</p>
                                             </div>
                                             <div
                                                 class="additional_materials_item_right_content_area_item additional_materials_item_right_content_area_item_answer iframe_area">
@@ -802,43 +793,35 @@
                                     <div class="additional_materials_item_btn_area">
                                         <div class="input_group">
                                             <input type="text" id="AddVideoInput" class="input_block"
-                                                placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
+                                                placeholder="輸入影片連結 https://" aria-label="輸入影片連結" />
                                             <button class="input_group_btn" type="button"
                                                 id="additional_materials_video" onclick="AddVideoData();">
-                                                <p>
-                                                    瀏覽
-                                                </p>
+                                                <p>瀏覽</p>
                                             </button>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
 
                             <div class="modal_body_item choose_color_area">
                                 <div class="modal_content_title">
-                                    <h5>
-                                        選取卡片顏色
-                                    </h5>
+                                    <h5>選取卡片顏色</h5>
                                 </div>
                                 <div class="choose_color_content">
-                                    <div class="choose_color_content_item choose_color_content_item_colorOne">
-                                    </div>
-                                    <div class="choose_color_content_item choose_color_content_item_colorTwo">
-                                    </div>
-                                    <div class="choose_color_content_item choose_color_content_item_colorThree">
-                                    </div>
-                                    <div class="choose_color_content_item choose_color_content_item_colorFour">
-                                    </div>
-                                    <div class="choose_color_content_item choose_color_content_item_colorFive">
-                                    </div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorOne"></div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorTwo"></div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorThree"></div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorFour"></div>
+                                    <div class="choose_color_content_item choose_color_content_item_colorFive"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="submit" class="modal_footer_btn modal_footer_btn_store" value="儲存卡片">
-                        </div>
-                    </form>
+
+                            <div class="modal_footer_btn_area form-group">
+                                <input type="submit" class="modal_footer_btn modal_footer_btn_store" value="儲存卡片">
+                            </div>
+                        </form>
+                    </div>
+
 
                 </div>
             </div>
@@ -912,10 +895,10 @@
                                     <div class="input_group custom-select">
                                         <label for="read_type">讀物類型：</label>
                                         <select name="selectTitle" class="input_block" required>
-                                          <option hidden disabled selected>請選擇讀物類型</option>
-                                          <option class="option_item" value="books">圖書</option>
-                                          <option class="option_item" value="article">文章</option>
-                                          <option class="option_item" value="typeOther">其他</option>
+                                            <option hidden disabled selected>請選擇讀物類型</option>
+                                            <option class="option_item" value="books">圖書</option>
+                                            <option class="option_item" value="article">文章</option>
+                                            <option class="option_item" value="typeOther">其他</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1063,32 +1046,11 @@
     <!-- this page widgets JS -->
     <!-- 文字輸入框 -->
     <script src="../js/jquery-te-1.4.0.min.js"></script>
-    <!-- input必填 -->
-    <script src="../js/jquery.validate.1.15.0.min.js"></script>
 
     <!-- input必填 -->
-    <script>
-        $(document).ready(function () {
-            $.validator.setDefaults({
-                errorElement: "span",
-                errorClass: "error_block",
-            });
-
-            $(".validate_area").validate({
-                rules: {
-                    cardTitle: {
-                        required: true,
-                    },
-                },
-
-                messages: {
-                    cardTitle: {
-                        required: "請輸入內容",
-                    },
-                }
-            });
-        });
-    </script>
+    <script src="../js/underscore-min.js"></script>
+    <script src="../js/validate.0.13.1.min.js"></script>
+    <script src="../js/validate.js"></script>
 
     <!-- 文字輸入框 -->
     <script>
@@ -1186,59 +1148,32 @@
             });
             $('footer').load('footer.html');
 
-            // input、下拉選單區域開始
-
-            $(".selected").click(function () {
-
-                if ($(this).hasClass("open")) {
-                    $(".options").hide();
-                    $(".selected").removeClass("open");
-                    $(this).next(".options").hide();
-                    $(this).removeClass("open");
-
-                } else {
-                    $(".options").hide();
-                    $(".selected").removeClass("open");
-                    $(this).next(".options").show();
-                    $(this).addClass("open");
-                }
-            });
-
-            $(".option_item").click(function () {
-                $(".options").hide();
-                $(".selected").removeClass("open");
-                var text = $(this).children("label").text();
-                $(this).parent().prev(".selected").children(".selected_text").text(text);
-            });
-
-            $(".materialOther").click(function () {
-                $(".material_description").show();
-            });
-
-            // input、下拉選單區域結束
-
             $(".star_rating_item").click(function () {
                 if ($(this).prevAll(".star_rating_item").hasClass("get_star")) {
                     $(this).addClass("get_star");
-                    $(this).find("svg").addClass("fa-solid");
-                    $(this).find("svg").removeClass("fa-regular");
+                    $(this).find("i").addClass("fa-solid");
+                    $(this).find("i").removeClass("fa-regular");
                     $(this).prevAll(".star_rating_item").removeClass("get_star");
-                    $(this).prevAll(".star_rating_item").children("svg").removeClass("fa-solid")
+                    $(this)
+                        .prevAll(".star_rating_item")
+                        .children("i")
+                        .removeClass("fa-solid")
                         .addClass("fa-regular");
-
                 } else if ($(this).hasClass("get_star")) {
                     $(this).removeClass("get_star");
-                    $(this).find("svg").removeClass("fa-solid");
-                    $(this).find("svg").addClass("fa-regular");
+                    $(this).find("i").removeClass("fa-solid");
+                    $(this).find("i").addClass("fa-regular");
                 } else {
                     $(this).addClass("get_star");
-                    $(this).find("svg").removeClass("fa-regular");
-                    $(this).find("svg").addClass("fa-solid");
+                    $(this).find("i").removeClass("fa-regular");
+                    $(this).find("i").addClass("fa-solid");
                     $(this).nextAll(".star_rating_item").addClass("get_star");
-                    $(this).nextAll(".star_rating_item").children("svg").addClass("fa-solid")
+                    $(this)
+                        .nextAll(".star_rating_item")
+                        .children("i")
+                        .addClass("fa-solid")
                         .removeClass("fa-regular");
                 }
-
             });
 
             $(".choose_color_content_item").click(function () {
