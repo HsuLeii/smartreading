@@ -36,6 +36,10 @@
         presence: true
       },
 
+      readTitleEdit:{
+        presence: true
+      },
+
       proposalTitle:{
         presence: true
       },
@@ -59,7 +63,7 @@
     };
 
     // Hook up the form so we can prevent it from being posted
-    var form = document.querySelector("form");
+    var form = document.querySelector("form#main");
     form.addEventListener("submit", function(ev) {
       ev.preventDefault();
       handleFormSubmit(form);
