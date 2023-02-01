@@ -369,7 +369,7 @@
             border-radius: 5px !important;
             border: 1px solid;
             border-color: $dark_grey;
-            margin: 5px 10px;
+            margin: 5px 15px;
             background: $white !important;
 
             &.modal_footer_btn_store {
@@ -378,6 +378,16 @@
 
               &:hover {
                 background: $finishGreen !important;
+                color: $white;
+              }
+            }
+
+            &.modal_footer_btn_deleted {
+              border-color: $red;
+              color: $red;
+
+              &:hover {
+                background: $red !important;
                 color: $white;
               }
             }
@@ -667,6 +677,37 @@
   }
 }
 
+.page {
+  display: flex;
+  justify-content: center;
+  margin: 60px auto;
+  width: 100%;
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    cursor: pointer;
+
+    a,
+    span {
+      padding: 5px 0.5rem;
+      border-radius: 10px;
+      margin: 0px 2px;
+      color: $dark_main_color;
+      display: inline-block;
+
+      &:hover,
+      &:active,
+      &.active {
+        background-color: $dark_main_color;
+        color: $white;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .modal {
     .modal-dialog {
@@ -701,6 +742,17 @@
         .modal-dialog {
           transform: translate(0%, -50%) scale(1.03);
         }
+      }
+    }
+  }
+
+  .page {
+  
+    .pagination {
+  
+      a,
+      span {
+        margin: 0px 5px;
       }
     }
   }
