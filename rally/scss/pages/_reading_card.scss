@@ -68,8 +68,15 @@ main {
                                     }
 
                                     &:hover {
-                                        color: $white;
                                         background-color: $dark_main_color;
+
+                                    p{
+                                            color: $white;
+
+                                            span{
+                                                color: $white;
+                                            }
+                                        }
                                     }
                                 }
 
@@ -89,7 +96,7 @@ main {
                 display: flex;
 
                 .reading_card_header_information_item_content {
-                    width: calc(100% - 120px);
+                    width: calc(100% - 150px);
                     color: $dark_main_color;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -100,32 +107,25 @@ main {
                 a {
                     width: 28px;
                     height: 28px;
-                    color: $white;
+                    background-color: $main_color;
                     text-align: center;
                     position: relative;
+                    border-radius: 50%;
+                    margin: 0 0 0 10px;
 
                     i {
                         font-size: 14px;
-                        padding: 7px;
-                    }
-
-                    &::after {
-                        content: "";
                         position: absolute;
                         left: 50%;
                         top: 50%;
                         transform: translate(-50%, -50%);
-                        width: 100%;
-                        height: 100%;
-                        background-color: $main_color;
-                        border-radius: 50%;
-                        z-index: -1;
+                        color: $white;
                     }
 
                     &:hover {
-                        &::after {
+                        
                             background-color: $dark_main_color;
-                        }
+                        
                     }
                 }
             }
@@ -207,7 +207,8 @@ main {
             margin: 20px auto;
             iframe{
                 width: 100%;
-                max-width: 400px;
+                max-width: 560px;
+                max-height: 315px;
             }
         }
 
@@ -257,8 +258,9 @@ main {
 
                 .reading_card_forum_textarea{
                     width: 100%;
+                    height: 150px;
                 }
-                
+
                 .reading_card_forum_submit{
                     background-color: $main_color;
                     color: $white;
@@ -278,6 +280,62 @@ main {
                     }
                 }
                 
+            }
+
+            .message_area{
+                margin: 20px 0;
+                .message_area_item{
+                    padding: 20px;
+                    border-bottom: 1px solid $dark_grey;
+
+                    &:nth-last-child(1){
+                        border-bottom: 0px;
+                    }
+                    .message_area_item_top{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        .message_area_item_top_left{
+                            display: flex;
+                            align-items: center;
+                            .message_area_avatar{
+                                width: 40px;
+                                margin: 0 10px 0 0;
+                            }
+                            .message_area_name{
+                                margin: 0 10px 0 0;
+
+                                p{
+                                    color: $dark_main_color;
+                                }
+                            }
+                        }
+
+                        .message_area_item_top_right{
+                            display: flex;
+                            align-items: center;
+                            margin: 10px 0 10px auto;
+                            .message_area_item_top_right_item {
+                                padding: 0 10px;
+                                cursor: pointer;
+                                &:hover{
+                                    p{
+                                        color: $dark_main_color;
+                                    }
+                                }
+                                &:nth-child(1){
+                                    border-right: 1px solid $dark_grey;
+                                }
+                            }
+                        }
+                    }
+
+                    .message_area_item_content{
+                        margin: 20px 0;
+                        padding: 0 0 0 50px;
+                    }
+                }
             }
         }
 
@@ -323,42 +381,193 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-
     main {
-
-        .deleted_card_ul {
-
-            .deleted_card_li {
-
-
-                .deleted_card_label {
-
-                    .card_main_content_item {
-
-                        .card_main_content_left {
-
-                            .card_main_content_icon {
-
-                                .svg_icon {
-                                    font-size: 23px;
+        .reading_card_header {
+    
+            .reading_card_header_content {
+                flex-direction: row;
+    
+                .reading_card_header_content_right {
+                    margin: 0;
+                }
+            }
+        }
+    
+        .reading_card_content {
+    
+            .reading_card_content_album {
+                justify-content: flex-start;
+                margin: 20px auto;
+    
+                .img_box {
+                    width: 28%;
+                    margin: 20px 5% 20px 0;
+                }
+            }
+    
+            .reading_card_content_star_rating{
+                margin: 20px auto;
+    
+                .reading_card_content_star_rating_area{
+                    padding: 20px 0;
+    
+                    .star_rating_name {
+                        border-bottom: 1px dotted $dark_main_color;
+                        padding: 5px 0;
+                        margin: 5px 0;
+                    }
+    
+                    &:nth-child(1){
+                        border-bottom: 1px solid $dark_main_color;
+                    }
+                }
+            }
+        }
+    
+        .reading_card_forum{
+            width: 80%;
+            max-width: 1200px;
+            margin: 60px auto;
+    
+            .reading_card_forum_title{
+                padding: 10px 15px;
+                background-color: $dark_main_color;
+                color: $white;
+            }
+    
+            .reading_card_forum_total{
+                margin: 10px 0;
+                p{
+                    text-align: right;
+                }
+            }
+    
+            .reading_card_forum_input{
+                .input_group{
+                        display: flex;
+                    justify-content: flex-end;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+    
+                    .reading_card_forum_textarea{
+                        width: 100%;
+                        height: 150px;
+                    }
+    
+                    .reading_card_forum_submit{
+                        background-color: $main_color;
+                        color: $white;
+                        padding: 5px 10px;
+                        border-radius: 5px !important;
+                        border: 1px solid;
+                        border-color: $main_color;
+                        color: $dark_main_color;
+                        margin: 15px 0;
+                        width: 60px;
+    
+                        &:hover,
+                        &:focus{
+                            background-color: $dark_main_color !important;
+                            color: $white;
+                            border-color: $dark_main_color;
+                        }
+                    }
+                    
+                }
+    
+                .message_area{
+                    margin: 20px 0;
+                    .message_area_item{
+                        padding: 20px;
+                        border-bottom: 1px solid $dark_grey;
+    
+                        &:nth-last-child(1){
+                            border-bottom: 0px;
+                        }
+                        .message_area_item_top{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            .message_area_item_top_left{
+                                display: flex;
+                                align-items: center;
+                                .message_area_avatar{
+                                    width: 40px;
+                                    margin: 0 10px 0 0;
+                                }
+                                .message_area_name{
+                                    margin: 0 10px 0 0;
+    
+                                    p{
+                                        color: $dark_main_color;
+                                    }
                                 }
                             }
-                        }
-
-                        .card_main_content_right {
-
-                            .card_main_content_right_footer {
-
-                                .card_icon {
-
-                                    .svg_icon {
-                                        font-size: 23px;
+    
+                            .message_area_item_top_right{
+                                display: flex;
+                                align-items: center;
+                                margin: 10px 0 10px auto;
+                                .message_area_item_top_right_item {
+                                    padding: 0 10px;
+                                    cursor: pointer;
+                                    &:hover{
+                                        p{
+                                            color: $dark_main_color;
+                                        }
+                                    }
+                                    &:nth-child(1){
+                                        border-right: 1px solid $dark_grey;
                                     }
                                 }
                             }
                         }
+    
+                        .message_area_item_content{
+                            margin: 20px 0;
+                            padding: 0 0 0 50px;
+                        }
                     }
-
+                }
+            }
+    
+            
+        }
+    
+        .img_box_modal {
+            max-width: 800px;
+            width: calc(100% - 72px);
+            overflow: initial;
+            margin: 0 auto;
+            left: 50%;
+            transform: translate(-50%, 0px);
+    
+            .modal-dialog {
+                .modal-content {
+                    .modal-body {
+                        padding: 15px;
+    
+                        .close_btn {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            transform: translate(50%, -50%);
+                            background-color: $dark_main_color;
+                            border-radius: 50%;
+                            width: 36px;
+                            height: 36px;
+    
+                            i {
+                                font-size: 18px;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                color: $white;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -367,106 +576,8 @@ main {
 
 @media screen and (min-width: 992px) {
 
-    main {
-
-        .deleted_card_ul {
-            margin: 80px auto;
-
-            .deleted_card_li {
-                margin: 80px auto;
-
-                .deleted_card_label {
-
-                    .card_main_content_item {
-
-                        .card_main_content_left {
-
-                            .card_main_content_icon {
-
-                                .svg_icon {
-                                    font-size: 25px;
-                                }
-                            }
-                        }
-
-                        .card_main_content_right {
-
-                            .card_main_content_right_footer {
-
-                                .card_icon {
-
-                                    .svg_icon {
-                                        font-size: 25px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-        }
-    }
 }
 
 @media screen and (min-width: 1200px) {
 
-    main {
-
-        .deleted_card_ul {
-
-            .deleted_card_li {
-
-                .deleted_card_label {
-
-                    .card_main_content_item {
-                        display: flex;
-
-                        .card_main_content_left {
-                            position: relative;
-                            width: 100px;
-                            display: flex;
-
-                            .card_main_content_name {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 100%;
-
-                                h4 {
-                                    text-align: center;
-                                }
-                            }
-
-                            .card_main_content_icon {
-                                position: absolute;
-                                left: 50%;
-                                bottom: 10px;
-                                transform: translate(-50%, 0%);
-                                justify-content: center;
-
-                                .svg_icon {
-                                    margin: 0 5px;
-                                }
-                            }
-                        }
-
-                        .card_main_content_right {
-                            width: calc(100% - 100px);
-
-                            .card_main_content_right_header {
-                                .card_author {
-                                    .card_author_img {
-                                        width: 60px;
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-
-                }
-            }
-        }
-    }
 }
