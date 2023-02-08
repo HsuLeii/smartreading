@@ -1,0 +1,281 @@
+.course {
+    &.slide {
+        background-image: url(../image/photo/personal-header-green.png);
+        margin-bottom: 0px;
+    }
+}
+
+.main {
+
+    &.course {
+        .top-information {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 80px;
+
+            .simple-information {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: $body_bg;
+                @extend %boxShadow_gray;
+                border-radius: 16px;
+                width: 47.5%;
+                padding: 25px 30px;
+                position: relative;
+                overflow-x: scroll;
+
+                .personal-course {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    padding: 25px 0px 0px;
+
+                    .book-total,
+                    .complete-quiz {
+                        border-right: 1px dashed $grey;
+                        width: calc(50% - 1px);
+                        padding: 20px 10px;
+                        margin-top: 0px;
+                        border-bottom: 0px dashed $grey;
+                    }
+
+                    .full-mark {
+                        width: 100%;
+                        padding: 20px 10px;
+                        margin-top: 0px;
+                        border-top: 1px dashed $grey;
+                    }
+
+                    .book-total,
+                    .complete-quiz,
+                    .full-mark {
+                        h3 {
+                            width: 100%;
+                            margin: 10px auto;
+                            text-align: center;
+                            font-size: 23px;
+                        }
+
+                        p {
+                            font-size: 50px;
+                            text-align: center;
+                            color: #00a7e5;
+                        }
+                    }
+                }
+            }
+
+            .performance {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                background-color: $body_bg;
+                @extend %boxShadow_gray;
+                border-radius: 16px;
+                width: 47.5%;
+                padding: 25px 30px;
+                position: relative;
+                margin-left: -15px;
+                overflow-x: scroll;
+
+                .performance-course {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    padding: 25px 0px 0px;
+
+                    .full-mark-highest,
+                    .book-total-highest {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        padding: 20px 10px;
+                        align-items: center;
+                        border-bottom: 1px dashed $grey;
+
+                        h3 {
+                            font-size: 20px;
+                            font-weight: bold;
+                            color: $grey;
+                            line-height: 1.5;
+                        }
+
+                        .course-book-img-area {
+                            display: flex;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            width: 100%;
+                            margin-top: 20px;
+
+                            .course-book-img {
+                                position: relative;
+                                width: 150px;
+                                height: 150px;
+                                border-radius: 16px;
+                                overflow: hidden;
+                                margin-right: 20px;
+
+                                img {
+                                    border-radius: 10px;
+                                    object-fit: cover;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+
+                            .folder-book-content {
+                                width: calc(90% - 150px);
+                            }
+                        }
+                    }
+
+                    div {
+                        &:nth-last-child(1) {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+
+            .circle {
+                margin: 15px 0px 30px -15px;
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .circle-1,
+                .circle-2,
+                .circle-3 {
+                    width: 60px;
+                    height: 30px;
+                    border: 5px solid $grey;
+                    border-radius: 100px 100px 0px 0px;
+                    border-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+/* 圓餅圖開始 */
+.chartbar-area {
+    margin: 0px auto;
+    flex-wrap: wrap;
+    display: flex;
+    width: 80%;
+
+    h3 {
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 23px;
+      }
+
+    .lowest,
+    .highest,
+    .average {
+        background-color: #f7ae00;
+        width: 30%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        margin: 60px auto 15px;
+        color: $white;
+        max-width: 300px;
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+
+            &:nth-child(1) {
+                color: $white;
+            }
+
+            &:nth-child(2) {
+                color: #154299;
+            }
+        }
+    }
+
+    .course-chart-degree,
+    .course-chart-sixmonth,
+    .course-chart-degree-statistics {
+        text-align: center;
+        padding: 60px 0px 15px;
+        margin: 0 auto;
+    }
+
+    .course-chart-degree__control,
+    .course-chart-sixmonth__control {
+        margin: 0 auto;
+        position: relative;
+        min-width: 480px;
+
+        .chartjs-size-monitor {
+
+            .chartjs-size-monitor-expand,
+            .chartjs-size-monitor-shrink {
+                position: absolute;
+                direction: ltr;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                pointer-events: none;
+                visibility: hidden;
+                z-index: -1;
+            }
+        }
+
+        .chart-degree-x,
+        .chart-sixmonth-x {
+            position: absolute;
+            z-index: 3;
+            bottom: -15px;
+            left: 0;
+            font-size: 14px;
+            color: $main_color;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chart-degree-y,
+        .chart-sixmonth-y {
+            width: 100%;
+            position: absolute;
+            z-index: 3;
+            top: -30px;
+            left: 0;
+            font-size: 14px;
+            color: #5c6466;
+            text-align: left;
+            padding-right: 10px;
+        }
+    }
+
+    .course-chart-degree-statistics {
+        overflow-x: scroll;
+
+        .course-chart-degree-statistics__control {
+            min-width: 150px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+}

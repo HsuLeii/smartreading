@@ -1,0 +1,48 @@
+[class*="icheck-"] > input:first-child {
+    position: absolute !important;
+    opacity: 0;
+    margin: 0;
+  }
+  
+  [class*="icheck-"] > label {
+    padding-left: 25px !important;
+    min-height: 16px;
+    line-height: 16px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .checkbox label, .checkbox-inline label {
+    font-size: 0.8em;
+    font-weight: 300 !important;
+}
+
+[class*="icheck-"] > input:first-child + label::before, [class*="icheck-"] > input:first-child + input[type="hidden"] + label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #4b4b4b;
+    border-radius: 0px;
+    margin-left: -25px;
+}
+
+[class*="icheck-"] > input:first-child:checked + label::after, [class*="icheck-"] > input:first-child:checked + input[type="hidden"] + label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    left: -2px;
+    width: 7px;
+    height: 14px;
+    border: solid 2px #4b4b4b;
+    border-left: none;
+    border-top: none;
+    transform: translate(7.75px, 4.5px) rotate(45deg);
+    -ms-transform: translate(7.75px, 4.5px) rotate(45deg);
+}

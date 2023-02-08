@@ -1,0 +1,387 @@
+.grade {
+    &.slide {
+        background-image: url(../image/photo/slide-grade.jpeg);
+    }
+}
+
+.main {
+
+    &.grade {
+        max-width: 1200px;
+        width: 80%;
+        margin: 0 auto;
+        overflow-x: hidden;
+
+        .chart-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            position: relative;
+            width: 100%;
+
+            .chart {
+                width: 11.78%;
+
+                &:nth-child(1) {
+                    .grade-content {
+                        display: block;
+                    }
+                }
+
+                .meter {
+                    width: 100%;
+                    position: relative;
+                    list-style: none;
+
+                    span {
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        bottom: 0;
+                        font-size: 15px;
+                        padding: 10px 0px;
+                        border-top: 1px solid $white;
+                        color: $white;
+                        text-align: center;
+
+                        &:before {
+                            content: "";
+                            width: 0;
+                            height: 0;
+                            border-left: 16px solid transparent;
+                            border-right: 16px solid transparent;
+                            border-top: 12px solid transparent;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            -webkit-transition: all .1s ease-in-out;
+                            -moz-transition: all .1s ease-in-out;
+                            -o-transition: all .1s ease-in-out;
+                            transition: all .1s ease-in-out;
+                        }
+
+                        &.active {
+                            &:before {
+                                border-top: 12px solid;
+                            }
+                        }
+                    }
+
+                    .bar {
+                        border-radius: 10px;
+
+                        &.pre-background {
+                            height: calc(var(--meter-height) * 1 + 40.64px);
+                            background-color: $preColor;
+                        }
+
+                        &.a1-background {
+                            height: calc(var(--meter-height) * 2 + 40.64px);
+                            background-color: $a1Color;
+                        }
+
+                        &.a2-background {
+                            height: calc(var(--meter-height) * 3 + 40.64px);
+                            background-color: $a2Color;
+                        }
+
+                        &.b1-background {
+                            height: calc(var(--meter-height) * 4 + 40.64px);
+                            background-color: $b1Color;
+                        }
+
+                        &.b2-background {
+                            height: calc(var(--meter-height) * 5 + 40.64px);
+                            background-color: $b2Color;
+                        }
+
+                        &.c1-background {
+                            height: calc(var(--meter-height) * 6 + 40.64px);
+                            background-color: $c1Color;
+                        }
+
+                        &.c2-background {
+                            height: calc(var(--meter-height) * 7 + 40.64px);
+                            background-color: $c2Color;
+                        }
+                    }
+
+                    &.pre-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $preColor;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $preColor;
+                            &.active {
+                                &:before {
+                                    border-top-color: $preColor;
+                                }
+                            }
+                        }
+                    }
+
+                    &.a1-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $a1Color;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $a1Color;
+                            &.active {
+                                &:before {
+                                    border-top-color: $a1Color;
+                                }
+                            }
+                        }
+                    }
+
+                    &.a2-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $a2Color;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $a2Color;
+                            &.active {
+                                &:before {
+                                    border-top-color: $a2Color;
+                                }
+                            }
+                        }
+                    }
+
+                    &.b1-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $b1Color;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $b1Color;
+                            &.active {
+                                &:before {
+                                    border-top-color: $b1Color;
+                                }
+                            }
+                        }
+                    }
+
+                    &.b2-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $b2Color;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $b2Color;
+                            &.active {
+                                &:before {
+                                    border-top-color: $b2Color;
+                                }
+                            }
+                        }
+                    }
+
+                    &.c1-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $c1Color;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $c1Color;
+                            &.active {
+                                &:before {
+                                    border-top-color: $c1Color;
+                                }
+                            }
+                        }
+                    }
+
+                    &.c2-meter {
+                        &:hover {
+                            span {
+                                &:before {
+                                    border-top-color: $c2Color;
+                                }
+                            }
+                        }
+
+                        span {
+                            background-color: $c2Color;
+                            &.active {
+                                &:before {
+                                    border-top-color: $c2Color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .grade-content {
+                    position: absolute;
+                    width: 100%;
+                    left: 0%;
+                    background: $body_bg;
+                    margin-top: 35px;
+                    overflow: hidden;
+                    display: none;
+                    border-radius: 10px;
+                    border: 1px solid ;
+
+                    h4,
+                    p{
+                        padding: 0px 15px;
+                    }
+
+                    h4 {
+                        color: $main_color;
+                        &:nth-child(1) {
+                            padding-top: 15px;
+                          }
+                    }
+
+                    p {
+                        margin-top: 10px;
+                        display: flex;
+
+                        &.sample-article {
+                            padding: 0px;
+
+                            a {
+                                width: 100%;
+                                padding: 15px;
+                                color: $white;
+                              }
+                          }
+                    }
+
+                    &.pre {
+                        border-color: $preColor;
+                        h4 {
+                            color: $preColor;
+                          }
+                      }
+
+                      &.a1 {
+                        border-color: $a1Color;
+                        h4 {
+                            color: $a1Color;
+                          }
+                      }
+
+                      &.a2 {
+                        border-color: $a2Color;
+                        h4 {
+                            color: $a2Color;
+                          }
+                      }
+
+                      &.b1 {
+                        border-color: $b1Color;
+                        h4 {
+                            color: $b1Color;
+                          }
+                      }
+
+                      &.b2 {
+                        border-color: $b2Color;
+                        h4 {
+                            color: $b2Color;
+                          }
+                      }
+
+                      &.c1 {
+                        border-color: $c1Color;
+                        h4 {
+                            color: $c1Color;
+                          }
+                      }
+
+                      &.c2 {
+                        border-color: $c2Color;
+                        h4 {
+                            color: $c2Color;
+                          }
+                      }
+                }
+
+            }
+
+        }
+
+        .chart-text {
+            margin: 340px auto 0px;
+          }
+    }
+}
+
+.sample-modal{
+    &.modal{
+        &.pre{
+            h2{
+                color: $preColor;
+            }
+        }
+
+        &.a1{
+            h2{
+                color: $a1Color;
+            }
+        }
+
+        &.a2{
+            h2{
+                color: $a2Color;
+            }
+        }
+
+        &.b1{
+            h2{
+                color: $b1Color;
+            }
+        }
+
+        &.b2{
+            h2{
+                color: $b2Color;
+            }
+        }
+
+        &.c1{
+            h2{
+                color: $c1Color;
+            }
+        }
+
+        &.c2{
+            h2{
+                color: $c2Color;
+            }
+        }
+    }
+}

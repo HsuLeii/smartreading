@@ -142,38 +142,8 @@ main {
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
-                }
-            }
-
-            .img_box_link {
-                display: none;
-                position: absolute;
-                right: 10px;
-                bottom: 10px;
-                width: 36px;
-                height: 36px;
-                background-color: $main_color;
-                border-radius: 50%;
-
-                i {
-                    font-size: 18px;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    color: $white;
-                }
-
-            }
-
-            &:hover {
-                .img_box_link {
-                    display: block;
-
-                    &:hover {
-                        background-color: $dark_main_color;
-                    }
+                    object-fit: contain;
+                    padding: 10px;
                 }
             }
         }
@@ -258,14 +228,14 @@ main {
             }
 
             .message_area{
-                margin: 20px 0;
                 .message_area_item{
+                    display: none;
                     padding: 20px;
-                    border-bottom: 1px solid $dark_grey;
-
-                    &:nth-last-child(1){
-                        border-bottom: 0px;
+                    border-top: 1px solid $dark_grey;
+                    &:nth-child(1){
+                        border-top: 0px solid $dark_grey;
                     }
+                    
                     .message_area_item_top{
                         display: flex;
                         align-items: center;
@@ -288,11 +258,23 @@ main {
                         }
 
                         .message_area_item_top_right{
-                            display: flex;
-                            align-items: center;
                             margin: 10px 0 10px auto;
+
+                            .floor_text{
+                                color: $dark_main_color;
+                            }
+                        }
+                    }
+
+                    .message_area_item_bottom{
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        flex-wrap: wrap;
+                        margin: 30px 0 10px;
+    padding: 0 0 0 50px;
+
                             .message_area_item_top_right_item {
-                                padding: 0 10px;
                                 cursor: pointer;
                                 &:hover{
                                     p{
@@ -301,14 +283,38 @@ main {
                                 }
                                 &:nth-child(1){
                                     border-right: 1px solid $dark_grey;
+                                    padding: 0 10px 0 0;
+                                }
+
+                                &:nth-child(2){
+                                    padding: 0 0 0 10px;
                                 }
                             }
-                        }
+                        
                     }
 
                     .message_area_item_content{
-                        margin: 20px 0;
+                        margin: 10px 0;
                         padding: 0 0 0 50px;
+                    }
+                }
+
+                .message_btn_area{
+                    display: block;
+                    margin: 20px auto;
+
+                    p{
+                        margin: 0 auto 5px;
+                    }
+
+                    &:hover{
+                        p,i{
+                            color: $dark_main_color;
+                        }
+                    }
+
+                    .btn_less{
+                        display: none;
                     }
                 }
             }
@@ -318,14 +324,13 @@ main {
     }
 
     .img_box_modal {
-        max-width: 800px;
-        width: calc(100% - 72px);
+        padding: 40px 0;
+        
+        .modal-dialog {
+            max-width: 800px;
+            width: 80%;
         overflow: initial;
         margin: 0 auto;
-        left: 50%;
-        transform: translate(-50%, 0px);
-
-        .modal-dialog {
             .modal-content {
                 .modal-body {
                     padding: 15px;
@@ -347,6 +352,21 @@ main {
                             top: 50%;
                             transform: translate(-50%, -50%);
                             color: $white;
+                        }
+                    }
+
+                    .copyright_link{
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin: 20px 0 10px;
+                        padding: 20px 0 0;
+                        border-top: 1px dotted $dark_main_color;
+                        a{
+                            color: $dark_main_color;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: block;
                         }
                     }
                 }
@@ -449,102 +469,9 @@ main {
                     }
                     
                 }
-    
-                .message_area{
-                    margin: 20px 0;
-                    .message_area_item{
-                        padding: 20px;
-                        border-bottom: 1px solid $dark_grey;
-    
-                        &:nth-last-child(1){
-                            border-bottom: 0px;
-                        }
-                        .message_area_item_top{
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            flex-wrap: wrap;
-                            .message_area_item_top_left{
-                                display: flex;
-                                align-items: center;
-                                .message_area_avatar{
-                                    width: 40px;
-                                    margin: 0 10px 0 0;
-                                }
-                                .message_area_name{
-                                    margin: 0 10px 0 0;
-    
-                                    p{
-                                        color: $dark_main_color;
-                                    }
-                                }
-                            }
-    
-                            .message_area_item_top_right{
-                                display: flex;
-                                align-items: center;
-                                margin: 10px 0 10px auto;
-                                .message_area_item_top_right_item {
-                                    padding: 0 10px;
-                                    cursor: pointer;
-                                    &:hover{
-                                        p{
-                                            color: $dark_main_color;
-                                        }
-                                    }
-                                    &:nth-child(1){
-                                        border-right: 1px solid $dark_grey;
-                                    }
-                                }
-                            }
-                        }
-    
-                        .message_area_item_content{
-                            margin: 20px 0;
-                            padding: 0 0 0 50px;
-                        }
-                    }
-                }
             }
     
             
-        }
-    
-        .img_box_modal {
-            max-width: 800px;
-            width: calc(100% - 72px);
-            overflow: initial;
-            margin: 0 auto;
-            left: 50%;
-            transform: translate(-50%, 0px);
-    
-            .modal-dialog {
-                .modal-content {
-                    .modal-body {
-                        padding: 15px;
-    
-                        .close_btn {
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            transform: translate(50%, -50%);
-                            background-color: $dark_main_color;
-                            border-radius: 50%;
-                            width: 36px;
-                            height: 36px;
-    
-                            i {
-                                font-size: 18px;
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                color: $white;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }

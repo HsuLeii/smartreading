@@ -1,0 +1,233 @@
+.main {
+
+    &.test {
+        width: 80%;
+        max-width: 1200px;
+        margin: 60px auto;
+
+        .test-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(0deg, #44959d 50%, #f7f7f7 50%);
+            position: relative;
+            padding: 20px 10px;
+
+            &:before {
+                position: absolute;
+                content: "";
+                width: 250px;
+                height: 30px;
+                background-color: #f5c000;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -15px);
+                border-radius: 30px 30px 0px 0px;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 30px;
+                height: 30px;
+                background-color: $body_bg;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -41px);
+                border: 6px solid #f5c000;
+                border-radius: 50%;
+            }
+
+            .test-book {
+                width: 30%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #FFF;
+                border: 1px solid #44959d;
+                border-radius: 16px;
+                padding: 15px;
+                flex-wrap: wrap;
+
+                .test-book-img {
+                    width: 30%;
+                    line-height: 0;
+
+                    img {
+                        border-radius: 16px;
+                    }
+                }
+
+                .test-book-title {
+                    width: 60%;
+
+                    h3 {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        white-space: normal;
+                        width: 100%;
+                        margin: 8px auto 5px;
+                    }
+                }
+
+                .test-book-text {
+                    width: 100%;
+                    margin-top: 5px;
+                }
+            }
+
+            .test-title {
+                position: absolute;
+                bottom: 4%;
+                left: 50%;
+                transform: translate(-50%, 0px);
+                color: $white;
+
+                h3 {
+                    color: $white;
+                    font-size: 23px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            .test-badge {
+                display: flex;
+                width: 30%;
+                position: absolute;
+                right: 10px;
+                bottom: 50%;
+
+                div {
+                    width: calc(33% - 5px);
+                    margin-left: 5px;
+
+                    &.notget {
+                        filter: grayscale(1);
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+
+        .answer-area {
+            margin: 0px auto;
+            padding: 0px 10% 40px;
+            border: 1px solid #44959d;
+            border-radius: 0px 0px 16px 16px;
+
+            .test-form {
+                margin: 40px auto;
+
+                fieldset {
+                    flex-direction: column;
+
+                    .answer-list {
+                        margin: 5px 0px;
+                        width: 100%;
+                    }
+
+                    label {
+                        font-size: 22px;
+
+                        img {
+                            width: calc(100% - 50px);
+                            height: auto;
+                            max-width: 250px;
+                            max-height: 250px;
+                        }
+                    }
+
+                    .test-answer {
+                        legend {
+                            p {
+                                display: flex;
+                                color: $main_color;
+
+                                span {
+                                    font-size: 22px;
+
+                                    &:nth-child(1) {
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.img {
+                        align-items: flex-start;
+                        flex-direction: row;
+
+                        .answer-list {
+                            align-items: flex-start;
+                        }
+                    }
+                }
+
+                .wrong,
+                .correct {
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: -80px;
+                        top: 0%;
+                        width: 30px;
+                        height: 30px;
+                        background-size: 30px 30px;
+                        display: inline-block;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                .wrong {
+                    &:before {
+                        background-image: url("../image/svg/wrong.svg");
+                    }
+                }
+
+                .correct {
+                    &:before {
+                        background-image: url("../image/svg/correct.svg");
+                    }
+
+                }
+
+                .big-text {
+                    legend {
+                        .wrong,
+                        .correct {
+                            &:before {
+                                top: 5px;
+                            }
+                        }
+                    }
+
+                    &.test-answer{
+                        legend{
+                            p{
+                                span{
+                                    font-size: 30px;
+                                  }
+                            }
+                        }
+                    }
+
+                    &.answer-list{
+                        label {
+                            font-size: 30px;
+                          }
+                    }
+                }
+
+            }
+        }
+    }
+}
