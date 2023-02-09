@@ -32,12 +32,41 @@ main {
         .deleted_card_li {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             margin: 40px auto;
 
             .deleted_card_input {
-                display: none;
+	 display: none;
+     &+label {
+        position: relative;
+        display: block;
+        border: 1.5px solid $dark_main_color;
+        width: 30px; 
+        height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .2s ease;
+        margin: 0 20px 0 0;
+        
+        .fa-check{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            color: $dark_main_color;
+            display: none;
+            transition: 0.3s;
+        }
+    }
+	
+    &:checked {
+        &+label {
+            .fa-check{
+                display: block;
             }
+        }
+    }
+}
 
             .deleted_card_label {
                 cursor: pointer;
@@ -48,7 +77,7 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                width: calc(100% - 65px);
+                width: calc(100% - 120px);
 
                 &:hover {
                     input {
@@ -171,6 +200,7 @@ main {
 
                             .card_main_content_right_title {
                                 h4 {
+                                    text-align: left;
                                     color: $dark_main_color;
                                     overflow: hidden;
                                     text-overflow: ellipsis;
@@ -181,6 +211,7 @@ main {
 
                             .card_main_content_right_article {
                                 p {
+                                    text-align: left;
                                     margin: 10px auto;
                                     overflow: hidden;
                                     text-overflow: ellipsis;
