@@ -3072,6 +3072,38 @@
     </script>
     <!-- 上傳影片測試結束 -->
 
+      <!-- 留言顯示按鈕開始 -->
+  <script>
+    var showFloor = 3;
+    $('.message_area_item').filter(':lt(' + showFloor + ')').show();
+    var messageLength = $(".message_area_item").length;
+
+    $('#loadMore').click(function () {
+      showFloor = (showFloor + 5 <= messageLength) ? showFloor + 5 : messageLength;
+      $('.message_area_item').filter(':lt(' + showFloor + ')').show();
+      if (showFloor == messageLength) {
+        $('#loadMore').hide();
+        $('#loadLess').show();
+      } else {
+        $('#loadMore').show();
+        $('#loadLess').hide();
+      }
+    });
+    $('#loadLess').click(function () {
+      showFloor = (showFloor - 5 < 3) ? 3 : showFloor - 5;
+      $('.message_area_item').not(':lt(' + showFloor + ')').hide();
+      if (showFloor <= 3) {
+
+        $('#loadMore').show();
+        $('#loadLess').hide();
+      } else {
+        $('#loadMore').hide();
+        $('#loadLess').show();
+      }
+    });
+  </script>
+  <!-- 留言顯示按鈕結束 -->
+
     <script>
         $(document).ready(function () {
             //nowPage (此頁必留)
@@ -3081,6 +3113,7 @@
             });
             $('footer').load('footer.html');
 
+            // 星星
             $(".star_rating_item").click(function () {
                 if ($(this).prevAll(".star_rating_item").hasClass("get_star")) {
                     $(this).addClass("get_star");
@@ -3109,10 +3142,20 @@
                 }
             });
 
-            $(".choose_color_content_item").click(function () {
-                $(this).addClass("active");
-                $(this).siblings().removeClass("active");
-            });
+            // 卡片顏色選擇
+      $(".choose_color_content_item").click(function () {
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+      });
+
+      // 刪除卡片input
+      $(".deleted_card_input").click(function () {
+        if ($(this).is(":checked")) {
+          $(this).parent().parent(".deleted_card_li").addClass("check");
+        } else {
+          $(this).parent().parent(".deleted_card_li").removeClass("check");
+        }
+      });
 
         });
     </script>
