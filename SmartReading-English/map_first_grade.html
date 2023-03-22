@@ -27,6 +27,17 @@
 
     <div class="main grade_map">
 
+        <div class="fireworks_area">
+            <div class="fireworks_one">
+                <img src="image/photo/fireworks/fireworks_left.png" alt="">
+            </div>
+            <div class="fireworks_two">
+                <img src="image/photo/fireworks/fireworks_right.png" alt="">
+            </div>
+            <div class="fireworks_three">
+                <img src="image/photo/fireworks/fireworks_bottom.png" alt="">
+            </div>
+        </div>
 
         <div class="map_object grade_map_object">
             <div class="map_object_item">
@@ -827,6 +838,8 @@
 
         </div>
 
+         
+
     </div>
     <footer>
     </footer>
@@ -894,6 +907,11 @@
         var ticketLength = $(".ticket_animation").length;
 
         $("#btn_5").on("click", function () {
+            $(".fireworks_area").addClass("get");
+            setTimeout(function(){
+$(".fireworks_area").removeClass("get");
+}, 8000);
+    
             anime({
                 targets: ticketArray[0],
                 backgroundColor: "#6b562d",
