@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-input[type="radio" i] ~ label, .header nav .menu div li a { font-weight: bold; }
+body input[type="radio" i] ~ label, .header nav .menu div li a { font-weight: bold; }
 
 .main.test .send_button a { transition: all .3s ease; }
 
@@ -37,28 +37,29 @@ body { background-color: #EFE8E0; }
 
 body.report { background-color: #3E0752; }
 
-input[type="radio"]:checked + *, input[type="radio"]:hover + * { color: #ff6464; }
+body.fixed { position: relative; overflow: hidden; }
 
-input[type="radio"]:checked + *::before { background: radial-gradient(#ff6464 0%, #ff6464 40%, transparent 50%, transparent); border-color: #ff6464; }
+body input[type="radio"]:checked + *, body input[type="radio"]:hover + * { color: #ff6464; }
 
-input[type="radio"] + .img-answer::before { vertical-align: top; }
+body input[type="radio"]:checked + *::before { background: radial-gradient(#ff6464 0%, #ff6464 40%, transparent 50%, transparent); border-color: #ff6464; }
 
-input[type="radio"] + *::before { content: ""; display: inline-block; width: 17px; height: 17px; border-radius: 50%; border-style: solid; border-width: 1.5px; border-color: #ff6464; position: absolute; left: calc(-17px - 0.75px); margin: 3px 0 0 0; }
+body input[type="radio"] + .img-answer::before { vertical-align: top; }
 
-input[type="radio" i] { margin-right: 5px; }
+body input[type="radio"] + *::before { content: ""; display: inline-block; width: 17px; height: 17px; border-radius: 50%; border-style: solid; border-width: 1.5px; border-color: #ff6464; position: absolute; left: calc(-17px - 0.75px); margin: 3px 0 0 0; }
 
-input[type="radio" i] { width: 16px; height: 16px; display: none; vertical-align: top; margin-top: 7px; }
+body input[type="radio" i] { margin-right: 5px; }
 
-input[type="radio" i] ~ label { padding-left: 20px; display: block; position: relative; cursor: pointer; }
+body input[type="radio" i] { width: 16px; height: 16px; display: none; vertical-align: top; margin-top: 7px; }
 
-.main { margin: 60px auto 80px; }
+body input[type="radio" i] ~ label { padding-left: 20px; display: block; position: relative; cursor: pointer; }
 
-.main .tittle { padding-bottom: 40px; }
+body .main { margin: 60px auto 80px; }
 
-.close-modal { border-radius: 50%; position: absolute; top: 0px; right: 0px; display: block; width: 30px; height: 30px; text-indent: -9999px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: black; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==); }
+body .main .tittle { padding-bottom: 40px; }
 
-@media screen and (max-width: 1100px) { body.fixed { position: relative; overflow: hidden; }
-  body.fixed:after { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); z-index: 3; } }
+body .close-modal { border-radius: 50%; position: absolute; top: 0px; right: 0px; display: block; width: 30px; height: 30px; text-indent: -9999px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: black; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==); }
+
+@media screen and (max-width: 1100px) { body body:after { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); z-index: 3; } }
 
 @media screen and (max-width: 1024px) { h1 { font-size: 35px; }
   h3 { font-size: 24px; }

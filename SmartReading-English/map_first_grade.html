@@ -259,10 +259,12 @@
                             <span>· </span><span>Read 1 book,you get 1 stamp.</span><br />
                         </p>
                         <p>
-                            <span>· </span><span>Finish 1 post-reading challenge of a book, you get 1 stamp.</span><br />
+                            <span>· </span><span>Finish 1 post-reading challenge of a book, you get 1
+                                stamp.</span><br />
                         </p>
                         <p>
-                            <span>· </span><span>Get 1 full score in a post-reading challenge, you get 1 stamp.</span><br />
+                            <span>· </span><span>Get 1 full score in a post-reading challenge, you get 1
+                                stamp.</span><br />
                         </p>
                         <p>
                             <span>· </span><span>10 stamps can redeem 1 ticket.</span><br />
@@ -838,7 +840,7 @@
 
         </div>
 
-         
+
 
     </div>
     <footer>
@@ -886,7 +888,6 @@
         $(".medal_img").mouseout(function (e) {
             $(".medal_area_explain").hide();
         });
-        
     </script>
 
     <!-- 票券輪播 -->
@@ -908,10 +909,12 @@
 
         $("#btn_5").on("click", function () {
             $(".fireworks_area").addClass("get");
-            setTimeout(function(){
-$(".fireworks_area").removeClass("get");
-}, 8000);
-    
+            $("body").addClass("fixed");
+            setTimeout(function () {
+                $(".fireworks_area").removeClass("get");
+                $("body").removeClass("fixed");
+            }, 8000);
+
             anime({
                 targets: ticketArray[0],
                 backgroundColor: "#6b562d",
@@ -955,13 +958,15 @@ $(".fireworks_area").removeClass("get");
 
                 $("#changeimage_2").attr("src", "image/photo/map/first_grade/color_2.png");
                 $("#changeticket_2").attr("src", "image/photo/ticket/first_grade/color_2.png");
-                $("#changeticket_2").parent().parent().parent().parent(".swiper-slide").addClass("ticket_selection");
+                $("#changeticket_2").parent().parent().parent().parent(".swiper-slide").addClass(
+                    "ticket_selection");
                 $(".redeem_ticket").parent(".ticket_wrap").removeClass("ticket_animation");
             }, 600 * ticketLength);
             setTimeout(function () {
-            $("#changeticket_2").parent().parent(".ticket").addClass("redeem_ticket");
-            $("#changeticket_2").parent().parent().parent().parent(".swiper-slide").removeClass("ticket_selection");
-        }, 600 * ticketLength + 1000);
+                $("#changeticket_2").parent().parent(".ticket").addClass("redeem_ticket");
+                $("#changeticket_2").parent().parent().parent().parent(".swiper-slide").removeClass(
+                    "ticket_selection");
+            }, 600 * ticketLength + 1000);
 
         });
     </script>
