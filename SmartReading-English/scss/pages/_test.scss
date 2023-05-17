@@ -131,6 +131,36 @@
 
                 .answer_text {
                     width: 100%;
+
+                    &.answer_text_sound {
+                        position: relative;
+
+                        .text_answer {
+                            padding-left: 55px;
+                        }
+                    }
+
+                    .test_audio_icon {
+                        position: absolute;
+                        left: 10px;
+                        top: 0;
+                        transform: translate(0px, calc(-50% + 15px));
+                        width: 35px;
+                        height: 35px;
+                        background-color: $main_color;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        img {
+                            border: 0px solid;
+                            padding: 5px;
+                            width: 100%;
+                            height: auto;
+                            max-width: none;
+                            max-height: none;
+                            margin: 0;
+                        }
+                    }
                 }
 
                 .answer_picture {
@@ -153,6 +183,22 @@
                         }
                     }
 
+                }
+            }
+
+            .img_and_sound{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                img{
+                        margin: 10px 0px 10px 20px;
+                }
+                .test_audio_icon{
+                        width: calc(20% - 25px);
+                        max-width: 100px;
+                        img{
+                            margin: 0 0 0 auto;
+                    }
                 }
             }
 
@@ -208,9 +254,41 @@
         .topic {
             display: flex;
 
+            &.topic_sound {
+                .test_audio_icon {
+                    position: absolute;
+                    left: 10px;
+                    margin-top: 0px;
+                    top: 0%;
+                    transform: translate(0px, calc(50% + -15px));
+                    width: 35px;
+                    height: 35px;
+                    background-color: $main_color;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    z-index: 1;
+
+                    img {
+                        border: 0px solid;
+                        padding: 5px;
+                        width: 100%;
+                        height: auto;
+                        max-width: none;
+                        max-height: none;
+                        margin: 0;
+                    }
+                }
+
+                .topic_text {
+                    padding-left: 55px;
+                }
+            }
+
             .topic_number {
                 margin-left: -1rem;
             }
+
+
 
             .topic_text {
                 padding-left: 20px;
@@ -228,6 +306,7 @@
                 &.wrong,
                 &.correct {
                     position: relative;
+
                     &:before {
                         content: "";
                         position: absolute;
@@ -344,7 +423,7 @@
                         transform: translate(0px, -50%);
                         width: 35px;
                         height: 35px;
-                        background-color: $main_color;
+                        // background-color: $main_color;
                         border-radius: 50%;
                         cursor: pointer;
 
@@ -948,6 +1027,31 @@ h-word {
 
             .test_form {
 
+                fieldset {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    border-width: 0px;
+                    padding: 15px 0px;
+    
+                    .answer_text {
+                        width: 100%;
+    
+                        &.answer_text_sound {
+                            position: relative;
+    
+                            .text_answer {
+                                padding-left: 50px;
+                            }
+                        }
+    
+                        .test_audio_icon {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+
                 .answer_list {
                     margin: 10px auto;
 
@@ -966,6 +1070,18 @@ h-word {
             }
 
             .topic {
+
+                &.topic_sound {
+                    .test_audio_icon {
+                        width: 30px;
+                        height: 30px;
+                    }
+    
+                    .topic_text {
+                        padding-left: 50px;
+                    }
+                }
+
                 .topic_text {
 
                     p {
@@ -973,15 +1089,15 @@ h-word {
                     }
 
                     &.wrong,
-                &.correct {
-                    &:before {
-                        left: -50px;
-                        top: 8px;
-                        width: 20px;
-                        height: 20px;
-                        background-size: 20px 20px;
+                    &.correct {
+                        &:before {
+                            left: -50px;
+                            top: 8px;
+                            width: 20px;
+                            height: 20px;
+                            background-size: 20px 20px;
+                        }
                     }
-                }
                 }
 
                 span {
@@ -1115,12 +1231,32 @@ h-word {
                     }
                 }
 
+                .img_and_sound{
+                    align-items: flex-start;
+                    flex-direction: column;
+
+                    img{
+                        margin: 10px 0px 10px 20px;
+                    }
+                    .test_audio_icon{
+                        margin: 10px 0px 10px 20px;
+                        width: calc(35% - 25px);
+                        min-width: 60px;
+
+                        img{
+                            margin: 0;
+                            padding: 5px;
+                        }
+                    }
+                }
+
                 img {
                     max-width: calc(100% - 20px)
                 }
             }
 
             .topic {
+
                 .topic_text {
                     p {
                         font-size: 20px;
