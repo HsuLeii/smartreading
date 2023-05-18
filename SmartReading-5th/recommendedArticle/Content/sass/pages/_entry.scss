@@ -1,0 +1,177 @@
+.entry {
+    // header {
+    //     .navi-main {
+    //         .container-fluid {
+    //             justify-content: flex-start;
+
+    //             .navbar-header {
+    //                 width: 100%;
+
+    //                 .navbar-brand {
+    //                     width: calc(100% - 90px);
+    //                     padding: 15px 0px;
+    //                 }
+
+    //                 .navbar-toggle {
+    //                     display: none;
+    //                 }
+    //             }
+
+    //             .navbar-collapse {
+    //                 display: none !important;
+    //             }
+    //         }
+    //     }
+    // }
+
+    main {
+        .language_selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            h4{
+                text-align: left;
+                margin: 0px 5px 10px;
+                width: 80%;
+            }
+
+            .remark_text {
+                text-align: left;
+                width: 80%;
+                display: flex;
+
+                span {
+                    display: inline-block;
+                }
+            }
+
+            .select_box{
+                cursor: pointer;
+                width: 300px;
+                margin: 20px auto;
+                position: relative;
+            
+                .select{
+                    width: 100%;
+                    margin: 0 auto;
+                    display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 10px;
+                border: 1px solid $main-color;
+                border-radius: 10px;
+            
+                p, 
+                i{
+                    color: $main-color;
+                }
+                }
+                .options{
+                    display: none;
+                    border: 1px solid $main-color;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    background-color: $white;
+            
+                    .option_item{
+                        border-bottom: 1px solid $main-color;
+            
+                        input[type="radio"] {
+                            opacity: 0;
+                            display: none;
+                            position: absolute;
+                            &:checked{
+                                & ~ label{
+                                    background-color: $main-color;
+                                    color: $white;
+                                }
+                            }
+                          }
+            
+                        label{
+                            display: block;
+                            padding: 6px 10px;
+                            cursor: pointer;
+                            color: $main-color;
+                        }
+                        &:hover{
+                            label{
+                                color: $white;
+                                background-color: $main-color;
+                            }
+                        }
+            
+                        &:nth-last-child(1){
+                            border-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .enter_button {
+            display: flex;
+            justify-content: center;
+            margin: 0px auto 80px;
+            max-width: 80%;
+
+            .enter_button_link {
+                display: none;
+                color: $main_color;
+                border: 1px solid $main_color;
+                padding: 5px 15px;
+                border-radius: 10px;
+
+                p{
+                    color: $main-color;
+                }
+
+                &:hover {
+                    background-color: $main_color;
+                    p{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 576px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {
+    .entry {
+        main {
+            .language_selection {
+                p {
+                    margin: 0px 5px;
+                }
+
+                .select_box{
+                    margin: 30px auto 20px;
+                    .options{
+                        .option_item{
+                            label{
+                                padding: 10px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1400px) {}
+
+@media screen and (min-width: 1600px) {}

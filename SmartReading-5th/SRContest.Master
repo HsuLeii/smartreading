@@ -1,0 +1,323 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SRContest.master.cs" Inherits="SmartReading.contest2021.SRContest" %>
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SmartReading X 科普閱讀力大賽">
+    <meta name="author" content="SmartReading X 科普閱讀力大賽">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no;minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <title>SmartReading X 科普閱讀力大賽</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico">
+    <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+    <link href="Content/css/global.css" rel="stylesheet" />
+    <!-- this page widgets CSS -->
+
+    <!-- SR core CSS -->
+    <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css">
+
+    <style>
+        .btn-floatAct {
+            background-color: #ffffff;
+            display: block;
+            position: fixed;
+            z-index: 500;
+            right: 1vw;
+            top: 100px;
+            height: auto;
+        }
+    </style>
+
+    <script src="Script/jquery.min.js"></script>
+    <script src="Script/bootstrap-lg.min.js"></script>
+    <script src="Script/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G70RZYCQLP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-G70RZYCQLP');
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1071204796959349');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1071204796959349&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--<div style="position: fixed; display: block; margin-top: 20px; border: 1px solid #999; z-index: 1;">
+        <a href="https://contest.smartreading.net/contest2021/Login.aspx">
+            <img src="Content/images/signup.png" style="width: 260px;" />
+        </a>
+    </div>--%>
+    <header>
+        <nav class="navbar navi-main">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">展開選單</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <div class="navbar-brand">
+                        <a class="navbar-brand__SR" href="index.aspx">
+                            <img src="Content/images/logo-contest_01.png" alt="SmartReading" class="img-responsive">
+                        </a>
+                        <span class="navbar-brand__line">
+                            <img src="Content/images/logo-contest_02.png" alt="X" class="img-responsive">
+                        </span>
+                        <a class="navbar-brand__contest" href="index.aspx">
+                            <img src="Content/images/logo-contest_03.png" alt="科普閱讀力大賽" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse navbar-collapse-center">
+                    <ul class="nav navbar-nav navbar-center">
+                        <li class="navTab-index"><a href="index.aspx">首頁</a></li>
+                        <li class="navTab-news dropdown"><a href="news.aspx">最新消息</a></li>
+                        <li class="navTab-intro dropdown">
+                            <a href="intro_contest.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">競賽簡介</a>
+                            <ul class="dropdown-menu hidden-sm hidden-md hidden-lg navbar-join">
+                                <li>
+                                    <a href="" class="disabled">競賽簡介</a>
+                                    <ul>
+                                        <li><a href="intro_contest.aspx">緣起</a></li>
+                                        <li><a href="intro_contest_2.aspx">目標及理念</a></li>
+                                        <li><a target="_blank" href="../v3/about-dacc.aspx">中文閱讀能力診斷</a></li>
+                                        <li><a href="intro_contest_3.aspx">歷屆官網</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navTab-parti dropdown">
+                            <a href="info_apply_1.aspx">參賽專區</a>
+                            <ul class="dropdown-menu hidden-sm hidden-md hidden-lg navbar-join">
+                                <li>
+                                    <ul>
+                                        <li><a href="https://contest.smartreading.net/contest2021/Login.aspx">我要報名</a></li>
+                                        <li class="current"><a href="parti_contest.aspx">重要時程</a></li>
+                                        <li>
+                                            <a href="info_apply_1.aspx">報名資訊</a>
+                                            <ul>
+                                                <li><a href="info_apply_1.aspx">報名資格</a></li>
+                                                <li><a href="info_apply_2.aspx">報名流程</a></li>
+                                                <li><a href="info_apply_3.aspx">報名須知</a></li>
+                                                <li><a href="info_apply_4.aspx">退費及繳費規則</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="info_active.aspx">活動說明</a></li>
+                                        <li>
+                                            <a href="info_preTest_1.aspx">前測</a>
+                                            <ul>
+                                                <li><a href="info_preTest_1.aspx">前測時間與地點</a></li>
+                                                <li><a href="info_preTest_2.aspx">前測辦法</a></li>
+                                                <li><a href="info_preTest_3.aspx">前測須知</a></li>
+                                                <li><a href="info_preTest_4.aspx">前測交通資訊</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="info_task_1.aspx">閱讀任務</a>
+                                            <ul>
+                                                <li><a href="info_task_1.aspx">閱讀任務說明</a></li>
+                                                <li><a href="info_task_2.aspx">閱讀任務流程</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="info_postTest_1.aspx">後測</a>
+                                            <ul>
+                                                <li><a href="info_postTest_1.aspx">後測時間與地點</a></li>
+                                                <li><a href="info_postTest_2.aspx">後測辦法</a></li>
+                                                <li><a href="info_postTest_3.aspx">後測須知</a></li>
+                                                <li><a href="info_postTest_4.aspx">後測交通資訊</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="info_award_1.aspx">成績採計與獎項</a>
+                                            <ul>
+                                                <li><a href="info_award_1.aspx">成績採計說明</a></li>
+                                                <li><a href="info_award_2.aspx">獎項</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navTab-team dropdown">
+                            <a href="team_1.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">工作團隊</a>
+                            <ul class="dropdown-menu hidden-sm hidden-md hidden-lg navbar-join">
+                                <li>
+                                    <a href="" class="disabled">工作團隊</a>
+                                    <ul>
+                                        <li><a href="team_1.aspx">主辦單位</a></li>
+                                        <li><a href="team_2.aspx">協辦單位</a></li>
+                                        <li><a href="team_3.aspx">贊助單位</a></li>
+                                        <li><a href="team_4.aspx">合作單位</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navTab-download dropdown"><a href="download.aspx">下載專區</a></li>
+                        <li class="navTab-qa dropdown">
+                            <a href="qa_1.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">問答專區</a>
+                            <ul class="dropdown-menu hidden-sm hidden-md hidden-lg navbar-join">
+                                <li>
+                                    <a href="" class="disabled">問答專區</a>
+                                    <ul>
+                                        <li><a href="qa_1.aspx">報名篇</a></li>
+                                        <li><a href="qa_2.aspx">前測篇</a></li>
+                                        <li><a href="qa_3.aspx">閱讀任務篇</a></li>
+                                        <li><a href="qa_4.aspx">後測篇</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <asp:Literal ID="Literal1" runat="server" Visible="false">
+                            <li><a href="login.aspx" class="btn navi-main__loginBtn">登入</a></li>
+                        </asp:Literal>
+                        <asp:Literal ID="Literal2" runat="server" Visible="false">
+                            <li class="dropdown open">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">會員資料</a>
+                            <ul class="dropdown-menu hidden-sm hidden-md hidden-lg navbar-order">
+                                <li>
+                                    <ul>
+                                        <li><a href="member_info.aspx">帳戶資料</a></li>
+                                        <li class="current"><a href="">參賽學生</a></li>
+                                        <li><a href="">我的訂單</a></li>
+                                        <li><a href="">金流資料</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        </asp:Literal>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <asp:ContentPlaceHolder ID="body" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <footer class="footer">
+        <!-- footer-info start -->
+        <div class="footer-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-8 col-sm-4 col-lg-3">
+                        <div class="footer-info__logo">
+                            <img src="Content/images/logo-SR-contest.png" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-lg-1">
+                        <div class="footer-info__social">
+                            <a class="footer-info__social-facebook hover-effect-dark" href="https://www.facebook.com/SmartReadingContest" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-8">
+                        <div class="footer-info__contact">
+                            <div class="footer-info__contact-title">
+                                聯繫我們
+                            </div>
+                            <div class="footer-info__contact-text row">
+                                <div class="col-lg-6">
+                                    <div class="contact-tel">
+                                    </div>
+                                    <div class="contact-email">
+                                        <i class="far fa-envelope"></i>smartreadingcontest@gmail.com
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="contact-add">
+                                        <i class="fas fa-map-marker-alt"></i>106台北市和平東路一段162號<br>
+                                        國立臺灣師範大學
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-info end -->
+        <!-- footer-copyright start -->
+        <div class="footer-copyright">
+            <div class="container-fluid text-center">
+                © 2021 College of Education e-Learning Lab. NTNU, All rights reserved.
+            </div>
+        </div>
+        <!-- footer-copyright end -->
+    </footer>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script>
+        $(document).ready(function () {
+            //nowPage
+            //$('.navTab-?').addClass('active');
+            //floatAct();
+        });
+
+        //閱讀力大賽 AD Banner
+        function floatAct() {
+            if (window.location.hostname == "smartreading.net" || window.location.hostname == "www.smartreading.net" || window.location.hostname == "beta.smartreading.net" || window.location.hostname == "contest.smartreading.net") {
+                $('body').append('<div class="btn-floatAct active">' +
+                    '<div class="btn-floatAct-control">' +
+                    '<a href="" class="control-zoom"><span class="glyphicon glyphicon-minus"></span></a>' +
+                    '<a href="" class="control-close"><span class="glyphicon glyphicon-remove"></span></a>' +
+                    '</div>' +
+
+                    '<div class="btn-floatAct-content">' +
+                    '<a href="https://contest.smartreading.net/contest2021/Login.aspx" target="_blank"><img src="Content/images/signup.png" class="img-responsive"></a>' +
+                    '</div>' +
+
+                    '</div>');
+
+
+                $('.btn-floatAct .control-zoom').click(function () {
+                    $(this).html(($(this).html() != '<span class="glyphicon glyphicon-resize-full"></span>') ? '<span class="glyphicon glyphicon-resize-full"></span>' : '<span class="glyphicon glyphicon-minus"></span>');
+                    $(this).parents('.btn-floatAct').toggleClass('active');
+                    if ($('.btn-floatAct').attr("class") == "btn-floatAct") {
+                        $(".btn-floatAct-content").css("display", "none");
+                    } else {
+                        $(".btn-floatAct-content").css("display", "block");
+                    }
+                    return false;
+                });
+                $('.btn-floatAct .control-close').click(function () {
+                    $(this).parents('.btn-floatAct').hide();
+                    return false;
+                });
+            }
+        }
+    </script>
+</body>
+</html>
