@@ -29,16 +29,36 @@ body{
 	background-color:#f4f8fb;
 }
 .whiteBg{
-	background-color:#fff;
+	background-color:$white;
 }
 /**/
-.base-h2{
-	font-weight:400;
-	padding:6px 0;
-	margin-bottom:15px;
-	margin-top:0px;
+.index_title{
 	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 0 15px;
 
+	.base-h2{
+		font-weight:400;
+		display: flex;
+		flex-wrap: wrap;
+		h2{
+			margin:8px 5px 8px 0;
+		}
+		
+		span{
+			margin:8px 0;
+			color:$main-color;
+			text-transform:uppercase;
+		}
+	}
+	.base-more{ 
+		color:$default-red;
+		font-size:18px;
+		padding-right:10px;
+		margin: 8px 0;
+	}
 	&::before{
 		content: "";
     position: absolute;
@@ -51,23 +71,8 @@ body{
     -webkit-transform: translate(0px, 100%);
     transform: translate(0px, 100%);
 	}
-	span{
-		color:$main-color;
-		text-transform:uppercase;
-	}
 }
-.base-more{ 
-	color:$default-red;
-	font-size:18px;
-	line-height:1em;
-	font-weight:300;
-	padding-right:10px;
-	margin-top:4px;
-	text-decoration:none;
-	position:relative;
-	float: right;
 
-}
 .base-more:hover, 
 .base-more:focus, 
 .base-more:focus{
@@ -83,9 +88,59 @@ body{
 	border-radius:0;
 }
 
+main{
+	.banner_paging{
+		background-color: $intro-kv;
 
+		.intro-kv{
+			width: 90%;
+			max-width: 1200px;
+			margin: 0 auto;
+			background-image: url(../images/intro/intro_kv_m.png);
+			background-repeat: no-repeat;
+		background-position: left bottom;
+		background-size: contain;
+			.row{
+				.intro-kv-text{
+					&.banner-text{
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content: center;
+						width: 45%;
+						margin: 0 0 0 auto;
+						display: none;
+						p{
+							color: $white;
+							&.chinese_text{
+								font-size: 30px;
+							}
+							&.english_text{
+								font-size: 24px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
 
-
-
-
-
+@media screen and (min-width: 1200px){
+    main{
+		.banner_paging{
+	
+			.intro-kv{
+				.row{
+					.intro-kv-text{
+						&.banner-text{
+							display: flex;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}
