@@ -1,10 +1,62 @@
+
 .slick-slider{
 
+    &.slider_activities{
+        .slick-list{
+            width: 100%;
+            .slick-slide{
+                padding: 0;
+                position: relative;
+                line-height: 0;
+                .slick_text{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: rgba($black, .5);
+                    width: 100%;
+                    p{
+                        display: block;
+                        text-align: center;
+                        color: $white;
+                        height: auto;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+        .slick-next,.slick-prev{
+            display: none;
+        }
+    }
+
+    &.slider_recommendBook{
+        button {
+            &.slick-next,
+            &.slick-prev{
+                top: 0%;
+                height: 210px;
+                transform: translate(0,0);
+            }
+            
+        }
+        .slick_img{
+            img{
+                height: 210px;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+
+        .slick-dots{
+            display: none !important;
+        }
+    }
+
     .slick-list{
-        width: 100%;
+        width: calc(100% - 60px);
         margin: 0 auto;
         .slick-slide{
-            padding: 0;
+            padding: 0 10px;
             .slick_img{
                 img {
                     width: 100%;
@@ -28,21 +80,26 @@
     .slick-dots {
         position: relative;
         bottom: auto;
+        margin: 5px 0;
         li{
+            width: 10px;
+    height: 10px;
             button{
+                width: 10px;
+                    height: 10px;
                 &:before{
-                    background-color: $main-color;
-                    opacity: 0.25;
-                    content: "";
+                    background-color: rgba($black, .3);
+                    opacity: 1;
                     width: 10px;
                     height: 10px;
+                    content: "";
                     border-radius: 50%;
                 }
             }
             &.slick-active {
                 button{
                     &:before{
-                        opacity: 1;
+                        background-color: rgba($black, .6);
                     }
                 }
             }
@@ -66,14 +123,14 @@
     &.slick-prev{
         padding: 15px;
         position: absolute;
-        background-color: $default-gray;
+        background-color: $light-gray;
         top: 50%;
         transform: translate(0, calc(-50% - 32px));
         border-radius: 0;
         &:hover,
         &:focus{
             background-color: darken($default-gray, 10%);
-            color: $white;
+            
         }
     
         &::before{
