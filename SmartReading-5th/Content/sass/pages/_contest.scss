@@ -1,7 +1,16 @@
 .join-all {
     .order-wrap {
+        padding: 40px 30px;
+        &.order-wrap-contest{
+            background-color: transparent;
+            padding: 0;
+            .order-body {
+                background-color: $grey_bg;
+            }
+        }
         .order-body {
-            padding: 0px 30px;
+            padding: 0;
+            background-color: $white;
 
             .grade_option {
                 display: flex;
@@ -37,8 +46,10 @@
                         border-radius: 0px;
                         width: 25%;
                         border: 0px;
+                        padding: 10px 5px;
                         background-color: rgba($regional-purple, .5);
                         color: $white;
+                        font-size: 14px;
 
                         &.active,
                         &:hover,
@@ -59,10 +70,16 @@
 
             .dacc_introduce {
                 .dacc_logo {
+                    margin: 0 0 50px 0;
                     img {
                         width: 80%;
                         max-width: 240px;
                     }
+                }
+
+                h3{
+                    font-size: 17px;
+                    font-weight: normal;
                 }
 
                 .dacc_link {
@@ -126,13 +143,14 @@
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 0;
+                background-color: $white;
                 .control-label {
                     width: 200px;
                     margin-right: 20px;
                     margin-bottom: 20px;
                     p {
                         margin-top: 5px;
-                        text-align: left;
+                        text-align: right;
                     }
                 }
 
@@ -148,6 +166,7 @@
                             white-space: nowrap;
                             padding-bottom: 10px;
                             margin-bottom: 10px;
+                            font-weight: bold;
                         }
                     }
     
@@ -156,16 +175,21 @@
                         margin-bottom: 15px;
     
                         .input-group-btn {
+                            border: 1px solid $main-color;
+                            &.input-group-btnSearch{
+                                background-color: $main-color;
+                            }
                             .recommendedBook-search__btn-recommend {
-                                border: 1px solid $main-color;
+                                margin: 0;
                                 width: 100%;
+                                border: 0px;
                                 border-radius: 0px;
                                 z-index: 1;
+                                color: $main-color;
+                                font-size: 14px;
                             }
     
                             .recommendedBook-search__btn-search {
-                                background-color: $main-color;
-                                border: 1px solid $main-color;
                                 color: $white;
                                 z-index: auto;
                                 width: 100%;
@@ -178,15 +202,32 @@
                             position: relative;
                             width: 100%;
                             margin-top: -1px;
+                            border: 1px solid $main-color;
+
+                            .input-group-btn {
+                                border: 0px;
+                            }
+
+                            .input-searchBook{
+                                width: calc(100% - 127.5px);
+    padding: 10px 16px;
+    font-size: 18px;
+    border: 0;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+                            }
+                            
     
                             .form-control {
-                                border: 1px solid $main-color;
+                                border: 1px solid $default-gray;
                                 border-radius: 0;
                             }
     
                             .input-group-more-options {
                                 position: absolute;
                                 width: 100%;
+                                top: 0;
     
                                 .recommendedBook-search_more-options {
                                     position: relative;
@@ -195,7 +236,7 @@
                                     top: 0px;
                                     z-index: 2;
                                     margin-left: auto;
-                                    padding: 10px 16px;
+                                    padding: 9px 16px;
                                     font-size: 18px;
                                     line-height: 1.3333333;
                                     border-radius: 0%;
@@ -206,12 +247,11 @@
                                     position: relative;
                                     width: 100%;
                                     padding: 20px 40px;
-                                    border: 1px solid;
-                                    border-color: rgba(68, 110, 246, 0.6);
-                                    box-shadow: 0 0 8px rgba(68, 110, 246, 0.6);
+                                    border: 1px solid $main-color;
                                     background-color: $white;
                                     z-index: 1;
                                     display: none;
+                                    margin: 0 0 0 -1px;
     
                                     .multiple_input_area {
                                         .input-group {
@@ -238,7 +278,6 @@
     
                                             .reset {
                                                 color: $main-color;
-                                                background-color: $light-gray;
                                             }
     
                                             .submit {
@@ -259,14 +298,15 @@
 
             .recommendedBook-search__sort {
                 margin: 0px;
+                background-color: $white;
 
                 .icheck_area {
-                    margin: 20px auto;
-
+                    margin: 0px auto;
 
                     .icheck-success-white {
                         margin-left: 0;
                         margin-right: 10px;
+                        padding: 5px 0;
                     }
                 }
 
@@ -277,6 +317,7 @@
                 width: 100%;
                 align-items: center;
                 flex-wrap: wrap;
+                margin: 15px 0 0;
 
                 p {
                     margin: 5px 10px 5px 0px;
@@ -288,7 +329,7 @@
 
                     button {
                         border: 1px solid $default-gray;
-                        border-radius: 6px;
+                        border-radius: 0;
 
                         &.active,
                         &:hover {
@@ -313,11 +354,13 @@
                         overflow: hidden;
                         position: relative;
                         display: inline-block;
-                        margin: 15px 15px;
-                        padding: 5px;
+                        margin: 15px 0;
+                        padding: 10px;
                         vertical-align: middle;
-                        width: calc(100% - 40px);
+                        width: 100%;
                         display: flex;
+                        flex-direction: column;
+                        background-color: $white;
 
                         td {
                             border: 0px;
@@ -354,16 +397,17 @@
                                 .book-winning,
                                 .book-recommender{
                                     width: 100%;
-                                    margin: 5px 0px;
                                 }
                                 .borrow_btn{
-                                    width: 100%;
-                                    margin: 5px 1.5%;
+                                    width: auto;
+                                    margin: 10px 8px 10px 0;
                                     display: inline-block;
                                     text-align: left;
                                     button{
                                         border: 1px solid $default-gray;
                                         margin: 5px auto;
+                                        font-size: 14px;
+                                        padding: 10px;
                                         img{
                                             width: 20px;
                                         }
@@ -449,6 +493,10 @@
             }
 
         }
+
+        .filter_criteria{
+            padding: 10px;
+        }
     }
 }
 
@@ -459,16 +507,6 @@
                 .grade_option {
                     justify-content: center;
                 }
-                .recommendedBook-table {
-    
-                    tbody {
-                        tr {
-
-                            width: calc(50% - 40px);
-                        }
-                    }
-    
-                }
             }
         }
     }
@@ -478,6 +516,20 @@
     .join-all {
         .order-wrap {
             .order-body {
+                .index-content {
+                    .regional_option {
+    
+                        .btn {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .dacc_introduce {
+                    
+                    h3{
+                        font-size: 19px;
+                    }
+                }
                 .difficulty_range {
                     p {
                         width: auto;
@@ -486,12 +538,13 @@
                 .recommendedBook-table {
                     tbody {
                         tr {
-                            width: calc(100% - 40px);
                             td{
                                 &.book-item{
                                     .borrow_btn{
-                                        width: auto;
                                         text-align: center;
+                                        button{
+                                            font-size: 15px;
+                                        }
                                     }
                                 }
                             }
@@ -507,6 +560,20 @@
     .join-all {
         .order-wrap {
             .order-body {
+                .index-content {
+                    .regional_option {
+    
+                        .btn {
+                            font-size: 17px;
+                        }
+                    }
+                }
+                .dacc_introduce {
+                    
+                    h3{
+                        font-size: 30px;
+                    }
+                }
                 .difficulty_range {
                     p {
                         width: auto;
@@ -526,17 +593,29 @@
                                 margin-right: 10px;
                             }
                         }
+
+                        .input-group {
+        
+                            .input-group-btn {
+                                .recommendedBook-search__btn-recommend {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
                     }
                 }
                 .recommendedBook-table {
                     tbody {
+                        justify-content: space-between;
                         tr {
-                            width: calc(50% - 40px);
+                            width: calc(50% - 15px);
                             td{
                                 &.book-item{
                                     .borrow_btn{
-                                        width: 100%;
                                         text-align: left;
+                                        button{
+                                            font-size: 17px;
+                                        }
                                     }
                                 }
                             }
@@ -550,8 +629,21 @@
 
 @media screen and (min-width: 1200px) {
     .join-all {
+        
         .order-wrap {
+            padding: 40px 60px;
             .order-body {
+                padding: 0;
+                .dacc_introduce {
+                    
+                    h3{
+                        font-size: 34px;
+                    }
+                }
+                .filter_criteria{
+                    padding: 25px 15px;
+                }
+
                 .previous_web {
                     .previous_web_bg {
                         margin: 0 5px 60px;
@@ -560,6 +652,9 @@
 
                 .recommendedBook-search__book {
                     flex-direction: row;
+                    &.filter_criteria {
+                        padding: 55px 15px 25px;
+                    }
                     .recommendedBook-search__book_input{
                         width: calc(100% - 200px);
                         .recommendedBook-search__slogan {
@@ -574,10 +669,35 @@
                                 margin-right: 10px;
                             }
                         }
+
+                        .input-group {
+        
+                            .input-group-btn {
+                                .recommendedBook-search__btn-recommend {
+                                    font-size: 17px;
+                                }
+                            }
+                        }
                     }
                 }
 
+                .recommendedBook-search__sort {
+                    padding: 0;
+                    background-color: $white;
+                    .icheck_area{
+                        margin: 0;
+                        background-color: $white;
+                        .icheck-success-white {
+                            padding: 15px 0;
+                        }
+                    }
+                }
+                
             }
+        }
+
+        .filter_criteria{
+            padding: 20px 10px;
         }
     }
 
@@ -587,6 +707,14 @@
     .join-all {
         .order-wrap {
             .order-body {
+                .index-content {
+                    .regional_option {
+    
+                        .btn {
+                            font-size: 19px;
+                        }
+                    }
+                }
                 .dacc_photo_area {
                     flex-direction: row;
 
@@ -623,13 +751,22 @@
                     .recommendedBook-search__book_input{
                         .input-group {
                             display: table;
+                            .input-group-btn {
+                                &.input-group-btnSearch{
+                                    transform: translate(-1px , 0);
+                                }
+                            }
                             .input-group-book {
                                 margin-top: 0px;
                                 margin-left: -1px;
                             }
                             .input-group-btn{
+                                .recommendedBook-search__btn-recommend {
+                                    font-size: 19px;
+                                }
                                 .recommendedBook-search__btn-search{
-                                    margin: 0px 0px 0px -1px;
+                                    margin: 1px 0px 0px 0px;
+                                    font-size: 19px;
                                 }
                             }
                         }
@@ -640,12 +777,18 @@
                 .recommendedBook-table {
                     tbody {
                         tr {
-                            width: calc(50% - 40px);
                             td{
                                 &.book-item{
                                     .borrow_btn{
-                                        width: auto;
                                         text-align: center;
+                                        button{
+                                            font-size: 19px;
+
+                                            img{
+                                                width: 30px;
+                                            }
+                                        }
+                                        
                                     }
                                 }
                             }
@@ -667,12 +810,17 @@
     
                     tbody {
                         tr {
+                            flex-direction: row;
     
                             td {
     
                                 &.book-front {
-                                    width: 35%;
+                                    width: 40%;
                                     align-items: flex-start;
+                                }
+
+                                &.book-item {
+                                    width: 60%;
                                 }
     
                                 
