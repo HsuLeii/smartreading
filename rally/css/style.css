@@ -50,7 +50,7 @@ body { background-color: #f4f8fb; }
 
 ::selection { background: #b284f6; color: #fff; }
 
-main .card_main_area .card_item_area .card_main_content_item, main .deleted_card_ul .deleted_card_li .deleted_card_label .card_main_content_item { box-shadow: 1px 1px 5px #4b4b4b45; }
+main .progress_bar_area .progress_bar_hint, main .card_main_area .card_item_area .card_main_content_item, main .deleted_card_ul .deleted_card_li .deleted_card_label .card_main_content_item { box-shadow: 1px 1px 5px #4b4b4b45; }
 
 @media screen and (min-width: 768px) { h1 { font-size: 32px; }
   h3 { font-size: 22px; }
@@ -1366,7 +1366,7 @@ main .discussion_title_area .discussion_title h3 { color: #fff; }
 
 main .progress_bar_area { max-width: 1200px; width: 100%; margin: 20px auto; position: relative; display: flex; justify-content: space-between; align-items: center; }
 
-main .progress_bar_area .progress_bar { position: absolute; top: calc(30px / 2); left: 50%; transform: translate(-50%, -50%); width: 75%; height: 3px; }
+main .progress_bar_area .progress_bar { position: absolute; z-index: 1; top: calc(30px / 2); left: 50%; transform: translate(-50%, -50%); width: 75%; height: 3px; }
 
 main .progress_bar_area .progress_bar .progress_bar_item { width: 100%; height: 100%; position: absolute; right: 0; }
 
@@ -1374,21 +1374,29 @@ main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_color { ba
 
 main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_gray { background-color: #2e3233; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot { width: 8px; height: 8px; border-radius: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); cursor: pointer; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot { width: 8px; height: 8px; border-radius: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot:hover .progress_bar_hint { display: block; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot:hover { width: 13px; height: 13px; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint { position: absolute; top: calc(30px / 2 + 8px); left: -100%; transform: translate(0, 0%); z-index: 2; width: 150px; padding: 5px 10px; background-color: #fff; border-radius: 5px; display: none; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot:hover .progress_bar_hint { display: block !important; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint::after { content: ""; position: absolute; left: calc(8px - 6px / 2); border-width: 0px 6px 6px 6px; top: -6px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid #FF6000; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint { top: calc(30px / 2 + 8px); width: 150px; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_first { border: 1px solid #ffac43; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_first { left: -100%; transform: translate(0%, 0%); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_first::after { border-bottom: 6px solid #ffac43; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_first::after { left: calc(8px / 2); }
+
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_second { left: 50%; transform: translate(calc(-50% + 8px / 2), 0%); }
+
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_second::after { left: calc(50% - 8px / 2); transform: translate(-50%, 0); }
+
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_third { right: -100%; transform: translate(0%, 0%); }
+
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_third::after { right: calc(8px / 2); }
 
 main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot { background-color: #2e3233; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.finish_dot { display: none; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.finish_dot { background-color: transparent; }
 
 main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_one { left: calc(100% / 12 * 1); }
 
@@ -1396,23 +1404,17 @@ main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .
 
 main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_three { left: calc(100% / 12 * 3); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_four { left: calc(100% / 12 * 4); }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_four { left: calc(100% / 12 * 5); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_five { left: calc(100% / 12 * 5); }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_five { left: calc(100% / 12 * 6); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_six { left: calc(100% / 12 * 6); }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_six { left: calc(100% / 12 * 7); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_seven { left: calc(100% / 12 * 7); }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_seven { left: calc(100% / 12 * 9); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_eight { left: calc(100% / 12 * 8); }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_eight { left: calc(100% / 12 * 10); }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_nine { left: calc(100% / 12 * 9); }
-
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_ten { left: calc(100% / 12 * 10); }
-
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_eleven { left: calc(100% / 12 * 11); }
-
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_twelve { left: calc(100% / 12 * 12); }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_gray_dot.gray_dot_nine { left: calc(100% / 12 * 11); }
 
 main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot { background-color: #4a2f96; }
 
@@ -1422,27 +1424,37 @@ main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .
 
 main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_three { left: calc(100% / 12 * 3); background-color: #ffac43; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_four { left: calc(100% / 12 * 4); background-color: #ff702a; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_four { left: calc(100% / 12 * 5); background-color: #ff702a; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_five { left: calc(100% / 12 * 5); background-color: #ff702a; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_five { left: calc(100% / 12 * 6); background-color: #ff702a; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_six { left: calc(100% / 12 * 6); background-color: #ff702a; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_six { left: calc(100% / 12 * 7); background-color: #ff702a; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_seven { left: calc(100% / 12 * 7); background-color: #ff702a; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_seven { left: calc(100% / 12 * 9); background-color: #d6145a; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_eight { left: calc(100% / 12 * 8); background-color: #ff702a; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_eight { left: calc(100% / 12 * 10); background-color: #d6145a; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_nine { left: calc(100% / 12 * 9); background-color: #ff702a; }
+main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_nine { left: calc(100% / 12 * 11); background-color: #d6145a; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_ten { left: calc(100% / 12 * 10); background-color: #ff702a; }
+main .progress_bar_area .progress_bar_icon_item { display: flex; flex-direction: column; justify-content: center; width: 25%; position: relative; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_eleven { left: calc(100% / 12 * 11); background-color: #ff702a; }
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon { position: relative; z-index: 1; font-size: 14px; background-color: #fff; border-radius: 50%; border: 1.5px solid; width: 30px; height: 30px; text-align: center; padding: 3px; color: #2e3233; border-color: #2e3233; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
 
-main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot.progress_bar_color_dot.color_dot_twelve { left: calc(100% / 12 * 12); background-color: #ff702a; }
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint { top: calc(100% + 9px); width: 200px; }
 
-main .progress_bar_area .progress_bar_icon_item { display: flex; flex-direction: column; justify-content: center; width: 25%; }
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_first { left: 50%; transform: translate(-20px, 0%); }
 
-main .progress_bar_area .progress_bar_icon_item .progress_bar_icon { position: relative; font-size: 14px; background-color: #fff; border-radius: 50%; border: 1.5px solid; width: 30px; height: 30px; text-align: center; padding: 3px; color: #2e3233; border-color: #2e3233; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_first::after { left: 20px; transform: translate(-50%, 0%); }
+
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_second { left: 50%; transform: translate(-50%, 0%); }
+
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_second::after { left: 50%; transform: translate(-50%, 0%); }
+
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_third { right: 50%; transform: translate(20px, 0%); }
+
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_third::after { right: 20px; transform: translate(50%, 0%); }
+
+main .progress_bar_area .progress_bar_icon_item .progress_bar_icon:hover .progress_bar_hint { display: block !important; }
 
 main .progress_bar_area .progress_bar_icon_item p { margin: 3px auto 0; }
 
@@ -1457,6 +1469,30 @@ main .progress_bar_area .progress_bar_icon_item.finish.progress_bar_second p { c
 main .progress_bar_area .progress_bar_icon_item.finish.progress_bar_third .progress_bar_icon { border-color: #d6145a; color: #d6145a; }
 
 main .progress_bar_area .progress_bar_icon_item.finish.progress_bar_third p { color: #d6145a; }
+
+main .progress_bar_area .progress_bar_icon_item.finish.progress_bar_fourth .progress_bar_icon { border-color: #4a2f96; color: #4a2f96; }
+
+main .progress_bar_area .progress_bar_icon_item.finish.progress_bar_fourth p { color: #4a2f96; }
+
+main .progress_bar_area .progress_bar_hint { position: absolute; z-index: 2; padding: 5px 10px; background-color: #fff; border-radius: 5px; display: none; }
+
+main .progress_bar_area .progress_bar_hint.show { display: block !important; }
+
+main .progress_bar_area .progress_bar_hint::after { content: ""; position: absolute; border-width: 0px 6px 6px 6px; top: -6px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid #b284f6; }
+
+main .progress_bar_area .progress_bar_hint.progress_bar_hint_first { border: 1px solid #ffac43; }
+
+main .progress_bar_area .progress_bar_hint.progress_bar_hint_first::after { border-bottom: 6px solid #ffac43; }
+
+main .progress_bar_area .progress_bar_hint.progress_bar_hint_second { border: 1px solid #ff702a; }
+
+main .progress_bar_area .progress_bar_hint.progress_bar_hint_second::after { border-bottom: 6px solid #ff702a; }
+
+main .progress_bar_area .progress_bar_hint.progress_bar_hint_third { border: 1px solid #d6145a; }
+
+main .progress_bar_area .progress_bar_hint.progress_bar_hint_third::after { border-bottom: 6px solid #d6145a; }
+
+main .progress_bar_area .progress_hint_btn { cursor: pointer; }
 
 main .card_main_area { max-width: 1200px; width: 80%; margin: 0 auto; display: flex; flex-direction: column; }
 
@@ -1618,7 +1654,13 @@ main .card_main_area .card_total_area { width: 100%; }
 
 @media screen and (min-width: 576px) { main .progress_bar_area .progress_bar { top: calc(48px / 2); height: 5px; }
   main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot { width: 14px; height: 14px; }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint { top: calc(40px / 2 + 14px); width: 200px; text-align: center; }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_first::after { left: calc(14px); }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_second { transform: translate(calc(-50% + 14px / 2), 0%); }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_second::after { left: calc(50% - 14px / 2); }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint.progress_bar_hint_third::after { right: calc(14px); }
   main .progress_bar_area .progress_bar_icon_item .progress_bar_icon { font-size: 20px; border: 3px solid; width: 48px; height: 48px; }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint { top: calc(100% + 14px); }
   main .progress_bar_area .progress_bar_icon_item p { margin: 5px auto 0; }
   main .card_main_area .card_step_area .card_step_content .card_step_task { display: flex; flex-wrap: wrap; }
   main .card_main_area .card_step_area .card_step_content .card_step_task .card_step_task_item { margin: 10px 15px 0 0; }
@@ -1628,11 +1670,19 @@ main .card_main_area .card_total_area { width: 100%; }
 
 @media screen and (min-width: 768px) { main .progress_bar_area { margin: 40px auto; }
   main .progress_bar_area .progress_bar { top: calc(55px / 2); }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint { top: calc(55px / 2 + 14px); width: 240px; }
   main .progress_bar_area .progress_bar_icon_item .progress_bar_icon { font-size: 25px; width: 55px; height: 55px; }
   main .card_main_area .card_item_area .card_main_content_item .card_main_content_left .card_main_content_icon .svg_icon { font-size: 23px; }
   main .card_main_area .card_item_area .card_main_content_item .card_main_content_right .card_main_content_right_footer .card_icon .svg_icon { font-size: 23px; } }
 
-@media screen and (min-width: 992px) { main .card_main_area { margin: 60px auto; flex-direction: row; justify-content: space-between; }
+@media screen and (min-width: 992px) { main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint { width: 230px; }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_first { left: 50%; transform: translate(-50%, 0%); }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_first::after { left: 50%; transform: translate(-50%, 0%); }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_second { left: 50%; transform: translate(-50%, 0%); }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_second::after { left: 50%; transform: translate(-50%, 0%); }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_third { right: auto; left: 50%; transform: translate(-50%, 0%); }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint.progress_bar_hint_third::after { right: auto; left: 50%; transform: translate(-50%, 0%); }
+  main .card_main_area { margin: 60px auto; flex-direction: row; justify-content: space-between; }
   main .card_main_area .card_step_area { width: 300px; align-self: flex-start; position: sticky; top: 10px; }
   main .card_main_area .card_step_area .card_step_content .card_step_button { display: flex; justify-content: space-between; flex-wrap: wrap; }
   main .card_main_area .card_step_area .card_step_content .card_step_button .card_step_button_item { width: 100%; }
@@ -1645,7 +1695,9 @@ main .card_main_area .card_total_area { width: 100%; }
 
 @media screen and (min-width: 1200px) { main .progress_bar_area { margin: 40px auto; }
   main .progress_bar_area .progress_bar { top: calc(65px / 2); height: 7px; }
+  main .progress_bar_area .progress_bar .progress_bar_item.progress_bar_dot_area .progress_bar_dot .progress_bar_hint { top: calc(65px / 2 + 14px); width: 260px; }
   main .progress_bar_area .progress_bar_icon_item .progress_bar_icon { font-size: 30px; width: 65px; height: 65px; border: 4px solid; }
+  main .progress_bar_area .progress_bar_icon_item .progress_bar_icon .progress_bar_hint { top: calc(100% + 16px); width: 260px; }
   main .card_main_area { margin: 60px auto 120px; }
   main .card_main_area .card_step_area { width: 350px; }
   main .card_main_area .card_item_area { width: calc(100% - 400px); }
