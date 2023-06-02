@@ -4286,8 +4286,15 @@
 
       //進度條點擊
       $(".progress_hint_btn").click(function () {
+
+        
+          if( $(this).children(".progress_bar_hint").hasClass("show")){//原本是顯示密碼
+				$(".progress_bar_hint").removeClass("show");
+			}else{//原本是隱藏密碼
         $(".progress_bar_hint").removeClass("show");
-        $(this).children(".progress_bar_hint").toggleClass("show");
+				$(this).children(".progress_bar_hint").addClass("show");
+			}
+		
       });
     });
   </script>
