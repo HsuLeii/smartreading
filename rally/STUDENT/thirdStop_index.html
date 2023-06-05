@@ -37,41 +37,115 @@
 
     <div class="progress_bar_area">
       <div class="progress_bar">
-        <div class="progress_bar_item progress_bar_gray" style="width: calc(100% / 6 * 0);"></div>
+        <div class="progress_bar_item progress_bar_gray" style="width: calc(100% / 12 * 11)"></div>
         <div class="progress_bar_item progress_bar_color"></div>
         <div class="progress_bar_item progress_bar_dot_area">
-          <span class="progress_bar_dot progress_bar_color_dot color_dot_one"></span>
-          <span class="progress_bar_dot progress_bar_color_dot color_dot_two"></span>
-          <span class="progress_bar_dot progress_bar_color_dot color_dot_three"></span>
-          <span class="progress_bar_dot progress_bar_color_dot color_dot_four"></span>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_one"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_two"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_three"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_four"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_five"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_six"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_seven"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_eight"></div>
+          <div class="progress_bar_dot progress_bar_color_dot color_dot_nine"></div>
 
-          <span class="progress_bar_dot progress_bar_gray_dot gray_dot_one finish_dot"></span>
-          <span class="progress_bar_dot progress_bar_gray_dot gray_dot_two finish_dot"></span>
-          <span class="progress_bar_dot progress_bar_gray_dot gray_dot_three finish_dot"></span>
-          <span class="progress_bar_dot progress_bar_gray_dot gray_dot_four finish_dot"></span>
+
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_one finish_dot">
+            <span class="progress_bar_hint progress_bar_hint_first">
+              完成新增四張探究卡片
+            </span>
+          </div>
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_two">
+            <span class="progress_bar_hint progress_bar_hint_first">
+              開始填寫總結卡片
+            </span>
+          </div>
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_three">
+            <span class="progress_bar_hint progress_bar_hint_first">
+              按下完成探究
+            </span>
+          </div>
+
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_four">
+            <span class="progress_bar_hint progress_bar_hint_second">
+              完成新增兩張提案卡片
+            </span>
+          </div>
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_five">
+            <span class="progress_bar_hint progress_bar_hint_second">
+              開始填寫總結卡片
+            </span>
+          </div>
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_six">
+            <span class="progress_bar_hint progress_bar_hint_second">
+              按下完成提案
+            </span>
+          </div>
+
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_seven">
+            <span class="progress_bar_hint progress_bar_hint_third">
+              開始填寫總結卡片
+            </span>
+          </div>
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_eight">
+            <span class="progress_bar_hint progress_bar_hint_third">
+              完成上傳成果簡報PPT
+            </span>
+          </div>
+          <div class="progress_hint_btn progress_bar_dot progress_bar_gray_dot gray_dot_nine">
+            <span class="progress_bar_hint progress_bar_hint_third">
+              完成上傳成果發表影片
+            </span>
+          </div>
+        </div>
+
+        <div class="progress_car progress_hint_btn" style="left: calc(100% / 12 * 1);">
+          <img src="../image/activity/progress_car.png" alt="">
+          <span class="progress_bar_hint progress_bar_hint_car">
+            顯示隊名
+          </span>
         </div>
       </div>
 
-
       <div class="progress_bar_icon_item progress_bar_first finish">
-        <div class="progress_bar_icon">
+        <div class="progress_bar_icon progress_hint_btn">
           <i class="fa-solid fa-book"></i>
+          <span class="progress_bar_hint progress_bar_hint_first">
+            開始時間：2023/07/06<br />
+            結束時間：2023/07/12
+          </span>
         </div>
         <p>探究閱讀</p>
       </div>
 
       <div class="progress_bar_icon_item progress_bar_second finish">
-        <div class="progress_bar_icon">
+        <div class="progress_bar_icon progress_hint_btn">
           <i class="fa-solid fa-file"></i>
+          <span class="progress_bar_hint progress_bar_hint_second">
+            開始時間：2023/07/13<br />
+            結束時間：2023/07/19
+          </span>
         </div>
         <p>創造提案</p>
       </div>
 
       <div class="progress_bar_icon_item progress_bar_third finish">
-        <div class="progress_bar_icon">
+        <div class="progress_bar_icon progress_hint_btn">
           <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span class="progress_bar_hint progress_bar_hint_third">
+            開始時間：2023/07/20<br />
+            結束時間：2023/07/26
+          </span>
         </div>
         <p>創造實踐</p>
+      </div>
+
+      <div class="progress_bar_icon_item progress_bar_fourth finish">
+        <div class="progress_bar_icon">
+          <i class="fa-solid fa-flag"></i>
+        </div>
+        <p>完成拉力賽</p>
       </div>
     </div>
 
@@ -3403,6 +3477,16 @@
       });
       $(".card_link").mouseout(function () {
         $(this).parent().parent(".card_main_content_item").removeClass("card_main_hover");
+      });
+
+      //進度條點擊
+      $(".progress_hint_btn").click(function () {
+        if ($(this).children(".progress_bar_hint").hasClass("show")) { //原本是顯示密碼
+          $(".progress_bar_hint").removeClass("show");
+        } else { //原本是隱藏密碼
+          $(".progress_bar_hint").removeClass("show");
+          $(this).children(".progress_bar_hint").addClass("show");
+        }
       });
 
     });
