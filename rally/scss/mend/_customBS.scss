@@ -29,17 +29,34 @@
     }
 }
 .form-check{
+    padding: 0;
+    display: flex;
+    align-items: center;
     .form-check-input{
-        border-radius: 0;
-        margin-top: 0.35em;
+        border-radius: 5px;
+        margin: 0 10px;
         &:focus {
+            background-color: transparent !important;
             border-color: $rally-primary;
             outline: 0;
             box-shadow: none;
         }
         &:checked {
-            background-color: $rally-primary;
+            background-color: transparent;
             border-color: $rally-primary;
+            position: relative;
+            background-image: none;
+
+            &::after{
+                font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $rally-primary;
+            }
         }    
     }   
 }
