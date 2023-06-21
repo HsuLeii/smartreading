@@ -65,6 +65,35 @@
                     margin: 0 auto;
                     padding: 25px 20px;
                     background-color: $text_bg;
+
+                    ruby{
+
+                        &:hover{
+                            color: red;
+                        }
+
+                        &.listen_sentence{
+                            position: relative;
+                            padding: 0 20px 0 0;
+
+                            &::after{
+                                content: "\f3c9";
+                                position: absolute;
+                                top: 0;
+                                right: 15px;
+                                transform: translate(100% , 0);
+                                background-color: $main_color;
+                                color: $white;
+                                padding: 5px;
+                                border-radius: 10px;
+
+                                &:hover{
+                                    background-color: red;
+                                }
+                            }
+                        }
+                        
+                    }
                 }
             }
 
@@ -650,6 +679,14 @@
 
                     &:disabled {
                         background-image: url(../image/button/speak-gray.svg);
+                    }
+                }
+
+                .btn-listen {
+                    background-image: url(../image/button/listen.svg);
+
+                    &:disabled {
+                        background-image: url(../image/button/listen-gray.svg);
                     }
                 }
 
