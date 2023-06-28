@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRE-eBook</title>
+
+    <!-- this page widgets CSS -->
+    <!-- modal -->
+    <link rel="stylesheet" href="css/jquery.modal.min.css" />
+
     <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
     <!-- <link rel="stylesheet" type="text/css" href="css/sre-ebook.css"> -->
 
@@ -19,18 +24,6 @@
     <button class="close cursor background-icon"></button>
 </header>
 
-<!--Brand Icon -->
-<span class="brands icon twitter"></span>
-
-<!--Regular Icon -->
-<span class="regular icon user"></span>
-
-<!--Solid Icon -->
-<span class="solid cloud"></span>
-
-
-
-
 <div class="book-page two-right-book-page noMove">
     <div class="book-page-img">
         <div class="book-page-bg two-right-book-page-bg">
@@ -39,23 +32,35 @@
         <div class="text two-right-text full-back">
             <div class="article">
                 <p>
-                    <span sindex="0" style="cursor: pointer;">
-                        <ruby class="icon solid listen_sentence" style="font-size: 20px;">
-                            Rabbit sees two monkeys
-                            playing in a tree.
+                    <span sindex="0" style="cursor: pointer;" class="listen_sentence">
+                        <ruby style="font-size: 20px;">
+                            Rabbit sees two monkeys playing in a tree.
                         </ruby>
+
+                        <a href="#noMicrophone_modal" rel="modal:open" style="position: relative; z-index: 5;">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </a>
+
                     </span>
+
                     <br>
-                    <span sindex="1" style="cursor: pointer;">
-                        <ruby class="icon regular listen_sentence" style="font-size: 20px;">
+                    <span sindex="1" style="cursor: pointer;" class="listen_sentence">
+                        <ruby style="font-size: 20px;">
                             One monkey says, "Give me five!"
                         </ruby>
+
+                        <a href="#recording_modal" rel="modal:open" style="position: relative; z-index: 5;">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </a>
+
                     </span>
                     <br>
-                    <span sindex="2" style="cursor: pointer;">
+                    <span sindex="2" style="cursor: pointer;" class="listen_sentence">
                         <ruby style="font-size: 20px;">
                             The monkeys are happy.
                         </ruby>
+                        <i class="fa-solid fa-microphone-lines"></i>
+
                     </span>
                     <br>
                 </p>
@@ -250,9 +255,177 @@
 </div>
 
 
+
+<!-- 彈跳沒有麥克風開始 -->
+<div id="noMicrophone_modal" class="modal noMicrophone_modal">
+    <div class="noMicrophone_modal_content">
+        <div class="noMicrophone_modal_title">
+            <h4>
+                Please insert your microphone!
+            </h4>
+            <h4>
+                請插入麥克風！
+            </h4>
+        </div>
+        <div class="noMicrophone_modal_icon">
+            <i class="fa-solid fa-microphone-lines-slash"></i>
+        </div>
+        <div class="noMicrophone_modal_text">
+            <p>
+                無法錄音:无法录音：NotFoundError，无可用麦克风
+            </p>
+        </div>
+
+        <div class="noMicrophone_modal_button_area">
+            <div class="noMicrophone_modal_button">
+                <a id="close-modal" href="#close-modal" rel="modal:close"
+                    class="noMicrophone_modal_button_item noMicrophone_modal_close">
+                    关闭 Close
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 彈跳沒有麥克風結束 -->
+
+<!-- 彈跳錄音開始 -->
+<div id="recording_modal" class="modal recording_modal">
+    <div class="recording_modal_content">
+        <div class="recording_modal_title">
+            <h4>
+                請點選錄音並念出下面句子
+            </h4>
+        </div>
+
+        <button class="recording_modal_icon_area listen_sentence_btn">
+            <div class="recording_modal_icon">
+                <i class="fa-solid fa-play"></i>
+            </div>
+
+            <p id="listenText">播放句子</p>
+        </button>
+
+        <div class="recording_modal_text">
+            <h4>
+                One monkey says, "Give me five!"
+            </h4>
+        </div>
+
+        <div class="sound_bar_area">
+            <!-- 播放時class加上"play_animation" -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="record_play_area">
+            <button class="recording_modal_icon_area record_play_area_item record_area_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+
+                <p id="recordText">錄製聲音</p>
+            </button>
+
+            <button disabled="disabled" class="recording_modal_icon_area record_play_area_item play_area_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <p id="playText">播放</p>
+            </button>
+        </div>
+
+        <div class="recording_modal_button_area">
+            <div class="recording_modal_button">
+                <a id="close-modal" href="#close-modal" rel="modal:close"
+                    class="recording_modal_button_item recording_modal_close">
+                    关闭 Close
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 彈跳錄音結束 -->
+
+
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/fontawesome-free-6.1.1.min.js"></script>
+
+<!-- this page widgets JS -->
+<!-- modal -->
+<script src="js/jquery.modal.min.js"></script>
+
 <script src="js/all.js"></script>
+
+<script>
+    //點選錄製聲音跟播放顯示聲音動態
+    $(".listen_sentence_btn").click(function () {
+        $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-play")) { //原本是播放
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-play");
+        } else { //原本是停止
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-play");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+        }
+
+        var listenText = document.getElementById("listenText");
+    if (listenText.innerHTML === "停止播放") {
+        listenText.innerHTML = "播放句子";
+      } else {
+        listenText.innerHTML = "停止播放";
+      }
+
+    });
+
+    //點選錄製聲音跟播放顯示聲音動態
+    $(".record_area_item").click(function () {
+        $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-microphone-lines")) { //原本是播放
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-microphone-lines");
+        } else { //原本是停止
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-microphone-lines");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+        }
+
+        var recordText = document.getElementById("recordText");
+    if (recordText.innerHTML === "停止錄製") {
+        recordText.innerHTML = "錄製聲音";
+      } else {
+        recordText.innerHTML = "停止錄製";
+      }
+
+    });
+
+    //點選播放跟播放顯示聲音動態
+    $(".play_area_item").click(function () {
+        $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-play")) { //原本是播放
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-play");
+        } else { //原本是停止
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-play");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+        }
+
+        var playText = document.getElementById("playText");
+    if (playText.innerHTML === "停止") {
+        playText.innerHTML = "播放";
+      } else {
+        playText.innerHTML = "停止";
+      }
+
+    });
+</script>
 </body>
 
 </html>

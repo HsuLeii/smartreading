@@ -59,6 +59,45 @@
             align-items: flex-start;
 
             .article {
+                .listen_sentence {
+
+                    ruby {
+                        width: calc(100% - 50px);
+                    }
+
+                    i {
+                        display: inline-block;
+                        font-size: 20px;
+                        vertical-align: top;
+                        margin: calc(10px * 1.5) 0;
+                        width: 30px;
+                        height: 30px;
+                        color: $white;
+                        background-color: $brown;
+                        border-radius: 50%;
+                        position: relative;
+
+                        &::before {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        &:hover {
+                            background-color: $main_color;
+                        }
+                    }
+                }
+
+                ruby {
+
+                    &:hover {
+                        color: $main_color;
+                    }
+
+                }
+
                 p {
                     text-align: left;
                     word-break: break-word;
@@ -66,34 +105,6 @@
                     padding: 25px 20px;
                     background-color: $text_bg;
 
-                    ruby{
-
-                        &:hover{
-                            color: red;
-                        }
-
-                        &.listen_sentence{
-                            position: relative;
-                            padding: 0 20px 0 0;
-
-                            &::after{
-                                content: "\f3c9";
-                                position: absolute;
-                                top: 0;
-                                right: 15px;
-                                transform: translate(100% , 0);
-                                background-color: $main_color;
-                                color: $white;
-                                padding: 5px;
-                                border-radius: 10px;
-
-                                &:hover{
-                                    background-color: red;
-                                }
-                            }
-                        }
-                        
-                    }
                 }
             }
 
@@ -136,10 +147,11 @@
                         overflow: auto;
                     }
                 }
-            }            
+            }
 
             &.sentence {
                 max-width: 90%;
+
                 .article {
                     max-width: calc(100% - 24px);
                     max-height: calc(100% - 24px);
@@ -152,7 +164,7 @@
                 .article {
                     top: 12px;
                     left: 50%;
-                    transform: translate(-50% , 0);
+                    transform: translate(-50%, 0);
                 }
             }
 
@@ -160,12 +172,12 @@
                 .article {
                     bottom: 12px;
                     left: 50%;
-                    transform: translate(-50% , 0);
+                    transform: translate(-50%, 0);
                 }
             }
 
             &.top-center-text,
-            &.bottom-center-text{
+            &.bottom-center-text {
                 .article {
                     width: 100%;
                 }
@@ -370,7 +382,7 @@
             .text {
 
                 &.two-right-text {
-                    max-height: calc(100vh - 240px) ;
+                    max-height: calc(100vh - 240px);
                 }
             }
 
@@ -405,23 +417,25 @@
         background-color: $copyright_page_bg;
         z-index: 5;
 
-        .book-page-img{
-            .text{
-                .article{
+        .book-page-img {
+            .text {
+                .article {
                     background-color: $text_bg;
-                    img{
+
+                    img {
                         display: block;
                         max-width: none;
                         max-height: none;
                         width: 100%;
                     }
 
-                    p{
+                    p {
                         background-color: transparent;
                         height: auto;
                     }
                 }
-                .copyright-close{
+
+                .copyright-close {
                     position: absolute;
                     top: 20px;
                     right: 20px;
@@ -639,7 +653,7 @@
             li {
                 z-index: 100;
 
-                &:nth-child(1){
+                &:nth-child(1) {
                     &[aria-label] {
                         &:hover {
                             &:before {
@@ -647,7 +661,7 @@
                                 left: 0;
                             }
                         }
-                    
+
                         &:after {
                             left: 11px;
                         }
@@ -704,7 +718,7 @@
 
                 .btn-word {
                     background-image: url(../image/button/word.svg);
-                    
+
                     &.simplified {
                         background-image: url(../image/button/word-simplified.svg);
                     }
@@ -853,9 +867,11 @@
         }
     }
 }
+
 // 下方控制區結束
 
 @media (max-width: 1024px) {
+
     // 電子書區域開始
     .book-page {
 
@@ -900,6 +916,7 @@
 }
 
 @media (max-width: 768px) {
+
     // 電子書區域開始
     .book-page {
 
@@ -1031,22 +1048,22 @@
         // 顯示詞彙結束
 
         // 詞彙未顯示開始
-    &.noMove {
-        .book-page-img {
+        &.noMove {
+            .book-page-img {
 
-            // 文字版型開始
-            .text {
+                // 文字版型開始
+                .text {
 
-                &.two-right-text {
-                    max-width: 90%;
+                    &.two-right-text {
+                        max-width: 90%;
+                    }
                 }
+
+                // 文字版型結束
             }
-
-            // 文字版型結束
         }
-    }
 
-    // 詞彙未顯示結束
+        // 詞彙未顯示結束
 
         // 顯示詞彙電子書移動開始
         &.move {
@@ -1082,8 +1099,8 @@
                 }
             }
 
-            &~.play-area{
-                .progress{
+            &~.play-area {
+                .progress {
                     display: none;
                 }
             }
@@ -1188,4 +1205,3 @@
 
     // 下方控制區結束
 }
-
