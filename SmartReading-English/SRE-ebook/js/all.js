@@ -125,6 +125,15 @@ $('.disabled').prop('disabled', true);
 //   }
 // });
 
+//聽讀切換
+$("#listen-id").change(function () {
+  if ($(this).is(":checked")) {
+    $('.listen_sentence').addClass("microphone_show");
+  } else {
+    $('.listen_sentence').removeClass("microphone_show");
+  }
+});
+
 // 拼音顯示
 $("#pinyin-id").change(function () {
   if ($(this).is(":checked")) {

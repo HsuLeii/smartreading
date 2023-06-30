@@ -59,37 +59,7 @@
             align-items: flex-start;
 
             .article {
-                .listen_sentence {
-
-                    ruby {
-                        width: calc(100% - 50px);
-                    }
-
-                    i {
-                        display: inline-block;
-                        font-size: 20px;
-                        vertical-align: top;
-                        margin: calc(10px * 1.5) 0;
-                        width: 30px;
-                        height: 30px;
-                        color: $white;
-                        background-color: $brown;
-                        border-radius: 50%;
-                        position: relative;
-
-                        &::before {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                        }
-
-                        &:hover {
-                            background-color: $main_color;
-                        }
-                    }
-                }
-
+                
                 ruby {
 
                     &:hover {
@@ -217,6 +187,49 @@
                 max-width: 25%;
                 height: 100%;
                 position: static;
+            }
+
+            // 麥克風按鈕
+            .microphone_icon{
+                display: none;
+            }
+            .listen_sentence {
+                
+                &.microphone_show{
+
+                    ruby {
+                        width: calc(100% - 50px);
+                    }
+
+                    .microphone_icon{
+                        display: inline;
+
+                        i {
+                            display: inline-block;
+                            font-size: 20px;
+                            vertical-align: top;
+                            margin: calc(10px * 1.5) 0;
+                            width: 30px;
+                            height: 30px;
+                            color: $white;
+                            background-color: $brown;
+                            border-radius: 50%;
+                            position: relative;
+        
+                            &::before {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+        
+                            &:hover {
+                                background-color: $main_color;
+                            }
+                        }
+                    }
+                }
+                
             }
         }
 
