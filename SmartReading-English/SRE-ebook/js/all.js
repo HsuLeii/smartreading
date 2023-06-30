@@ -128,9 +128,10 @@ $('.disabled').prop('disabled', true);
 //聽讀切換
 $("#listen-id").change(function () {
   if ($(this).is(":checked")) {
-    $('.listen_sentence').addClass("microphone_show");
+    $(".listen_sentence").addClass("microphone_show");
+    alert("此功能需插入麥克風");
   } else {
-    $('.listen_sentence').removeClass("microphone_show");
+    $(".listen_sentence").removeClass("microphone_show");
   }
 });
 
