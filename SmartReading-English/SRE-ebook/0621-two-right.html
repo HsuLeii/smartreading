@@ -37,7 +37,7 @@
                             Rabbit sees two monkeys playing in a tree.
                         </ruby>
 
-                        <a href="#noMicrophone_modal" rel="modal:open" style="position: relative; z-index: 5;">
+                        <a href="#noMicrophone_modal" rel="modal:open">
                             <i class="fa-solid fa-microphone-lines"></i>
                         </a>
 
@@ -49,7 +49,7 @@
                             One monkey says, "Give me five!"
                         </ruby>
 
-                        <a href="#recording_modal" rel="modal:open" style="position: relative; z-index: 5;">
+                        <a href="#recording_modal">
                             <i class="fa-solid fa-microphone-lines"></i>
                         </a>
 
@@ -59,10 +59,19 @@
                         <ruby style="font-size: 20px;">
                             The monkeys are happy.
                         </ruby>
-                        <i class="fa-solid fa-microphone-lines"></i>
+
+                        <a href="#recording_result_modal">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </a>
 
                     </span>
                     <br>
+
+                    <span sindex="3" style="cursor: pointer;">
+                        <ruby style="font-size: 20px;">
+                            One monkey says, "Give me five!"
+                        </ruby>
+                    </span>
                 </p>
             </div>
         </div>
@@ -343,6 +352,126 @@
             </button>
         </div>
 
+        <div class="recording_modal_medal_area">
+            <div class="recording_modal_medal">
+                <img src="image/photo/map/ebookman.png" alt="">
+            </div>
+        </div>
+
+        <div class="recording_modal_button_area">
+            <div class="recording_modal_button">
+                <a id="close-modal" href="#close-modal" rel="modal:close"
+                    class="recording_modal_button_item recording_modal_close">
+                    关闭 Close
+                </a>
+
+                <a href="#recording_result_modal" class="recording_modal_button_item">
+                    送出 send
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 彈跳錄音結束 -->
+
+<!-- 彈跳錄音結果開始 -->
+<div id="recording_result_modal" class="modal recording_modal recording_result_modal">
+    <div class="recording_modal_content">
+        <div class="recording_modal_title">
+            <h4>
+                以下是你朗讀這個句子的表現
+            </h4>
+        </div>
+
+        <div class="results_comments">
+            <h4>
+                評語
+            </h4>
+            <div class="results_comments_item results_comments_good">
+                <h4>
+                    Good
+                </h4>
+            </div>
+
+            <!-- <div class="results_comments_item results_comments_perfect">
+                <h4>
+                    Perfect
+                </h4>
+            </div>
+
+            <div class="results_comments_item results_comments_bad">
+                <h4>
+                    Bad
+                </h4>
+            </div> -->
+        </div>
+
+        <div class="results_presented_area">
+            <div class="results_presented_area_title">
+                <h4>
+                    表現敘述
+                </h4>
+            </div>
+            <div class="recording_modal_text">
+                <h4>
+                    One <span>monkey</span> says, "Give me five!"
+                </h4>
+            </div>
+        </div>
+        
+        <div class="sound_bar_area">
+            <!-- 播放時class加上"play_animation" -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="record_play_area">
+            <button class="recording_modal_icon_area record_play_area_item your_voice_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <p id="recordText">你的聲音</p>
+            </button>
+
+            <button class="recording_modal_icon_area record_play_area_item teacher_voice_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <p id="playText">老師的聲音</p>
+            </button>
+
+            <a href="#recording_modal" rel="modal:open" class="recording_modal_icon_area record_play_area_item record_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                </div>
+                <p id="playText">重錄</p>
+            </a>
+
+            <!-- <button onclick="#recording_result_modal" >
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                </div>
+
+                <p id="playText">重錄</p>
+            </button> -->
+        </div>
+
+        <div class="recording_modal_medal_area">
+            <div class="recording_modal_medal">
+                <img src="image/photo/map/ebookman.png" alt="">
+            </div>
+        </div>
+
         <div class="recording_modal_button_area">
             <div class="recording_modal_button">
                 <a id="close-modal" href="#close-modal" rel="modal:close"
@@ -353,7 +482,7 @@
         </div>
     </div>
 </div>
-<!-- 彈跳錄音結束 -->
+<!-- 彈跳錄音結果結束 -->
 
 
 <script src="js/jquery-3.5.1.min.js"></script>
@@ -366,23 +495,41 @@
 <script src="js/all.js"></script>
 
 <script>
-    //點選錄製聲音跟播放顯示聲音動態
+    $('a[href="#recording_modal"]').click(function () {
+        $(this).modal({
+            clickClose: false
+        });
+    });
+
+    $('a[href="#recording_result_modal"]').click(function () {
+        $(this).modal({
+            clickClose: false
+        });
+    });
+
+    //點選播放聲音跟播放顯示聲音動態
     $(".listen_sentence_btn").click(function () {
         $(".sound_bar_area").toggleClass("play_animation");
         if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-play")) { //原本是播放
             $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-play");
+            $(".record_area_item").attr("disabled", true);
+            $(".play_area_item").attr("disabled", true);
+            $(this).addClass("active");
         } else { //原本是停止
             $(this).children('.recording_modal_icon').children('i').addClass("fa-play");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+            $(".record_area_item").attr("disabled", false);
+            $(".play_area_item").attr("disabled", false);
+            $(this).removeClass("active");
         }
 
         var listenText = document.getElementById("listenText");
-    if (listenText.innerHTML === "停止播放") {
-        listenText.innerHTML = "播放句子";
-      } else {
-        listenText.innerHTML = "停止播放";
-      }
+        if (listenText.innerHTML === "停止播放") {
+            listenText.innerHTML = "播放句子";
+        } else {
+            listenText.innerHTML = "停止播放";
+        }
 
     });
 
@@ -392,17 +539,23 @@
         if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-microphone-lines")) { //原本是播放
             $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-microphone-lines");
+            $(".listen_sentence_btn").attr("disabled", true);
+            $(".play_area_item").attr("disabled", true);
+            $(this).addClass("active");
         } else { //原本是停止
             $(this).children('.recording_modal_icon').children('i').addClass("fa-microphone-lines");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+            $(".listen_sentence_btn").attr("disabled", false);
+            $(".play_area_item").attr("disabled", false);
+            $(this).removeClass("active");
         }
 
         var recordText = document.getElementById("recordText");
-    if (recordText.innerHTML === "停止錄製") {
-        recordText.innerHTML = "錄製聲音";
-      } else {
-        recordText.innerHTML = "停止錄製";
-      }
+        if (recordText.innerHTML === "停止錄製") {
+            recordText.innerHTML = "錄製聲音";
+        } else {
+            recordText.innerHTML = "停止錄製";
+        }
 
     });
 
@@ -412,19 +565,68 @@
         if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-play")) { //原本是播放
             $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-play");
+            $(".record_area_item").attr("disabled", true);
+            $(".listen_sentence_btn").attr("disabled", true);
+            $(this).addClass("active");
         } else { //原本是停止
             $(this).children('.recording_modal_icon').children('i').addClass("fa-play");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+            $(".record_area_item").attr("disabled", false);
+            $(".listen_sentence_btn").attr("disabled", false);
+            $(this).removeClass("active");
         }
 
         var playText = document.getElementById("playText");
-    if (playText.innerHTML === "停止") {
-        playText.innerHTML = "播放";
-      } else {
-        playText.innerHTML = "停止";
-      }
+        if (playText.innerHTML === "停止") {
+            playText.innerHTML = "播放";
+        } else {
+            playText.innerHTML = "停止";
+        }
 
     });
+
+        //點選你的聲音
+        $(".your_voice_item").click(function () {
+            $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-play")) { //原本是播放
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-play");
+            $(".teacher_voice_item").attr("disabled", true);
+            $(".record_item").attr("disabled", true);
+            $(this).addClass("active");
+        } else { //原本是停止
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-play");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+            $(".teacher_voice_item").attr("disabled", false);
+            $(".record_item").attr("disabled", false);
+            $(this).removeClass("active");
+        }
+    });
+
+    //點選老師的聲音
+    $(".teacher_voice_item").click(function () {
+            $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.recording_modal_icon').children('i').hasClass("fa-play")) { //原本是播放
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-stop");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-play");
+            $(".your_voice_item").attr("disabled", true);
+            $(".record_item").attr("disabled", true);
+            $(this).addClass("active");
+        } else { //原本是停止
+            $(this).children('.recording_modal_icon').children('i').addClass("fa-play");
+            $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
+            $(".your_voice_item").attr("disabled", false);
+            $(".record_item").attr("disabled", false);
+            $(this).removeClass("active");
+        }
+    });
+
+//點選重錄
+$(".record_item").click(function () {
+            $(".sound_bar_area").removeClass("play_animation");
+    });
+
+    
 </script>
 </body>
 
