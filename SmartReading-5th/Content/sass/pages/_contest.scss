@@ -171,17 +171,21 @@
                     }
     
                     .input-group {
-                        display: block;
+                        display: flex;
+                        flex-direction: column;
                         margin-bottom: 15px;
     
                         .input-group-btn {
                             border: 1px solid $main-color;
+                            width: 100%;
                             &.input-group-btnSearch{
                                 background-color: $main-color;
                             }
+
                             .recommendedBook-search__btn-recommend {
                                 margin: 0;
                                 width: 100%;
+                                height: 100%;
                                 border: 0px;
                                 border-radius: 0px;
                                 z-index: 1;
@@ -197,98 +201,117 @@
                                 margin: -1px auto 0px;
                             }
                         }
-    
-                        .input-group-book {
+
+                        .input-group-right{
                             position: relative;
+                            display: flex;
+                            flex-direction: column;
                             width: 100%;
-                            margin-top: -1px;
-                            border: 1px solid $main-color;
 
-                            .input-group-btn {
-                                border: 0px;
-                            }
-
-                            .input-searchBook{
-                                width: calc(100% - 127.5px);
-    padding: 10px 16px;
-    font-size: 18px;
-    border: 0;
-    position: relative;
-    z-index: 1;
-    background: transparent;
-                            }
-                            
-    
-                            .form-control {
-                                border: 1px solid $default-gray;
-                                border-radius: 0;
-                            }
-    
-                            .input-group-more-options {
-                                position: absolute;
+                            .input-group-book {
+                                position: relative;
                                 width: 100%;
-                                top: 0;
+                                margin-top: -1px;
+                                border: 1px solid $main-color;
     
-                                .recommendedBook-search_more-options {
-                                    position: relative;
-                                    display: block;
-                                    right: 0px;
-                                    top: 0px;
-                                    z-index: 2;
-                                    margin-left: auto;
-                                    padding: 9px 16px;
-                                    font-size: 18px;
-                                    line-height: 1.3333333;
-                                    border-radius: 0%;
-                                    color: $main-color;
+                                .input-group-btn {
+                                    border: 0px;
                                 }
     
-                                .recommendedBook-search_dropdown-menu_more-options {
-                                    position: relative;
+                                .input-searchBook{
+                                    width: calc(100% - 127.5px);
+        padding: 10px 16px;
+        font-size: 18px;
+        border: 0;
+        position: relative;
+        z-index: 1;
+        background: transparent;
+                                }
+                                
+        
+                                .form-control {
+                                    border: 1px solid $default-gray;
+                                    border-radius: 0;
+                                }
+        
+                                .input-group-more-options {
+                                    position: absolute;
                                     width: 100%;
-                                    padding: 20px 40px;
-                                    border: 1px solid $main-color;
-                                    background-color: $white;
-                                    z-index: 1;
-                                    display: none;
-                                    margin: 0 0 0 -1px;
-    
-                                    .multiple_input_area {
-                                        .input-group {
-                                            display: flex;
-                                            margin: 15px auto;
-    
-                                            label {
-                                                min-width: 70px;
-                                            }
+                                    height: 100%;
+                                    top: 0;
+        
+                                    .recommendedBook-search_more-options {
+                                        position: relative;
+                                        display: block;
+                                        right: 0px;
+                                        top: 0px;
+                                        z-index: 2;
+                                        margin-left: auto;
+                                        padding: 10px 16px;
+                                        line-height: 1.3333333;
+                                        border-radius: 0%;
+                                        color: $main-color;
+                                        height: 100%;
+
+                                        p{
+                                            color: $main-color;
                                         }
-    
-                                        .multiple_input_btn {
-                                            display: flex;
-                                            justify-content: flex-end;
-                                            margin: 5px auto;
-    
-                                            .reset,
-                                            .submit {
-                                                padding: 3px 10px;
-                                                border-radius: 5px;
-                                                border: 0px;
-                                                margin-left: 10px;
-                                            }
-    
-                                            .reset {
-                                                color: $main-color;
-                                            }
-    
-                                            .submit {
-                                                background-color: $main-color;
-                                                color: $white;
-                                            }
-                                        }
-    
                                     }
-    
+        
+                                    
                                 }
+                            }
+
+                            .recommendedBook-search_dropdown-menu_more-options {
+                                position: absolute;
+                                top: 100%;
+                                width: 100%;
+                                padding: 20px 40px;
+                                border: 1px solid $main-color;
+                                background-color: $white;
+                                z-index: 1;
+                                display: none;
+                                margin: 0;
+
+                                .multiple_input_area {
+                                    .input-group {
+                                        display: flex;
+                                        margin: 15px auto;
+
+                                        label {
+                                            min-width: 70px;
+                                        }
+
+                                        .form-control{
+                                            border-radius: 0;
+                                        }
+                                    }
+
+                                    .multiple_input_btn {
+                                        display: flex;
+                                        justify-content: flex-end;
+                                        margin: 5px auto;
+
+                                        .reset,
+                                        .submit {
+                                            padding: 3px 10px;
+                                            border-radius: 5px;
+                                            border: 0px;
+                                            margin-left: 10px;
+                                        }
+
+                                        .reset {
+                                            color: $main-color;
+                                        }
+
+                                        .submit {
+                                            background-color: $main-color;
+                                            color: $white;
+                                        }
+                                    }
+
+                                }
+
                             }
                         }
                     }
@@ -379,10 +402,30 @@
                                 display: flex;
                                 align-items: center;
                                 max-width: 350px;
-
-                                img {
+                                
+                                .book-front-link{
+                                    position: relative;
                                     width: 100%;
-                                    height: auto;
+                                    height: 100%;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+    
+                                    .book_red_ribbon{
+                                        display: none;
+                                        position: absolute;
+                                        right: -7px;
+                                        top: -7px;
+                                    }
+
+                                    &.have_ribbon{
+                                            .book_red_ribbon{
+                                                display: block;
+                                            }
+                                    }
                                 }
                             }
 
@@ -745,28 +788,57 @@
                 }
 
                 .recommendedBook-search__book{
+                    flex-direction: row;
                     .control-label {
                         margin-bottom: 0px;
                     }
                     .recommendedBook-search__book_input{
                         .input-group {
-                            display: table;
+                            flex-direction: row;
                             .input-group-btn {
-                                &.input-group-btnSearch{
-                                    transform: translate(-1px , 0);
-                                }
-                            }
-                            .input-group-book {
-                                margin-top: 0px;
-                                margin-left: -1px;
-                            }
-                            .input-group-btn{
+                                width: 140px;
+
                                 .recommendedBook-search__btn-recommend {
                                     font-size: 19px;
                                 }
+
                                 .recommendedBook-search__btn-search{
                                     margin: 1px 0px 0px 0px;
                                     font-size: 19px;
+                                }
+
+                            }
+
+                            .input-group-right{
+                                flex-direction: row;
+                                width: calc(100% - 140px);
+    
+                                .input-group-book {
+                                    margin-top: 0px;
+                                    margin-left: -1px;
+                                    width: calc(100% - 140px);
+                                }
+
+                                .recommendedBook-search_dropdown-menu_more-options {
+                                    transform: translate(-1px , -1px);
+
+                                    .multiple_input_area {
+                                        .input-group {
+    
+                                            .form-control{
+                                                width: calc(100% - 40px - 140px);
+                                            }
+                                        }
+
+                                        .multiple_input_btn {
+    
+                                            .reset,
+                                            .submit {
+                                                padding: 10px 30px;
+                                            }
+                                        }
+                                    }
+    
                                 }
                             }
                         }
