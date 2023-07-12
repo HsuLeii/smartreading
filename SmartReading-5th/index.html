@@ -1324,7 +1324,10 @@
     <script>
         $(document).ready(function () {
             //nowPage (此頁必留)
-            $('header').load('header.html');
+            $('.navTab-index').addClass('active');
+                $('header').load('header.html', function () {
+                    $('.navTab-index').addClass('active'); //nowPage
+                });
             $('footer').load('footer.html');
         });
     </script>
@@ -1332,8 +1335,6 @@
     <!-- widgets js -->
     <script>
         $(document).ready(function () {
-            //nowPage
-            $('.navTab-index').addClass('active');
 
             //floatAct();
             GetAdvanceScoreRanking();
