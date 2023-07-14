@@ -1318,6 +1318,8 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 
 .join-all .order-wrap .order-body .parti_contest_content .add_batches_area .input-group .form-control { width: calc(100% - 75px - 60px); height: auto; padding: 10px 12px; line-height: 1.5; background-color: transparent; }
 
+.join-all .order-wrap .order-body .parti_contest_content .add_batches_area .input-group .form-control:disabled { cursor: auto; }
+
 .join-all .order-wrap .order-body .parti_contest_content .add_batches_area .input-group .btn-file { width: 75px; }
 
 .join-all .order-wrap .order-body .parti_contest_content .add_batches_area .input-group .btn-file .input-group-text { color: #446ef6; background-color: transparent; display: flex; justify-content: center; align-items: center; cursor: pointer; border-radius: 0px; padding: 0.375rem 0rem; margin: 0; height: 100%; padding: 10px 12px; transform: translate(-1px, 0px); }
@@ -1486,6 +1488,8 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 
 .student_information_area .student_information_area_top { display: flex; justify-content: space-between; }
 
+.student_information_area .student_information_area_top a { cursor: pointer; }
+
 .student_information_area .student_information_area_top a span { color: #ff0000; }
 
 .student_information_area .student_information_area_top a:hover { text-decoration: underline #ff0000; }
@@ -1507,6 +1511,8 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 .student_information_area .student_information_table tbody tr.student_area td.student_delete button img { width: 24px; }
 
 .student_information_area .leveledBooks-table__footer .paging_simple_numbers .paginate_button, .student_information_area .notUploadedTable_footer .paging_simple_numbers .paginate_button { background: #f7f7f8; border: 1px solid #e0e0e0; }
+
+.student_information_area .leveledBooks-table__footer .paging_simple_numbers .paginate_button:hover, .student_information_area .notUploadedTable_footer .paging_simple_numbers .paginate_button:hover { color: #446ef6 !important; }
 
 .student_information_area .leveledBooks-table__footer .paging_simple_numbers .paginate_button.paginate_button.current, .student_information_area .notUploadedTable_footer .paging_simple_numbers .paginate_button.paginate_button.current { color: #ff0000 !important; background: transparent; border: 0px solid #e0e0e0; }
 
@@ -1534,11 +1540,15 @@ header .navi-main .navbar-header .navbar-toggle:not(.collapsed) .icon-bar:nth-ch
 
 .student_information_area .notUploadedTable_information_table tbody tr.student_area { width: 100%; height: auto; padding: 0; background-color: white; }
 
-.student_information_area .notUploadedTable_information_table tbody tr.student_area td { padding: 30px 8px; vertical-align: middle; word-wrap: break-word; word-break: break-word; border-right: 1px solid #E2E2E2; border-left: 0px; border-bottom: 0px; line-height: 1.42857143; border-top: 1px solid #ddd; }
+.student_information_area .notUploadedTable_information_table tbody tr.student_area td { padding: 30px 8px; vertical-align: middle; word-wrap: break-word; word-break: break-word; border-right: 1px solid #E2E2E2; border-left: 0px; border-bottom: 0px; line-height: 1.42857143; border-top: 1px solid #E2E2E2; }
 
 .student_information_area .notUploadedTable_information_table tbody tr.student_area td.student_delete button img { width: 24px; }
 
-.student_information_area .notUploadedTable_information_table tbody tr.student_area td[contenteditable="true"] { border-top: 1px solid #ff0000; border-right: 1px solid #ff0000; border-left: 1px solid #ff0000; border-bottom: 1px solid #ff0000; }
+.student_information_area .notUploadedTable_information_table tbody tr.student_area td[contenteditable="true"] { position: relative; cursor: text; }
+
+.student_information_area .notUploadedTable_information_table tbody tr.student_area td[contenteditable="true"]::before { content: ""; position: absolute; top: 1px; left: 1px; width: calc(100% - 2px); height: calc(100% - 2px); border: 1px solid #5a5f60; }
+
+.student_information_area .notUploadedTable_information_table tbody tr.student_area td[contenteditable="true"].redBorder::before { border: 1px solid #ff0000; }
 
 table .dataTable { width: 100%; }
 
@@ -1555,6 +1565,50 @@ table .dataTable { width: 100%; }
 .modal.modal_verify .modal-dialog .modal-content .modal-body .btn_close { position: absolute; left: 10px; top: 10px; }
 
 .modal.modal_notUploaded .modal-dialog .modal-content .modal-body .student_information_area { width: 95%; }
+
+.modal.modal_notUploaded .modal-dialog .modal-content .modal-body .student_information_area .student_information_area_top { margin: 60px auto 30px; justify-content: center; }
+
+.modal.modal_notUploaded .modal-dialog .modal-content .modal-body .student_information_area .student_information_area_top p { text-align: center; }
+
+.modal.modal_notUploaded .modal-dialog .modal-content .modal-body .student_information_area .student_information_area_top p span { color: #ff0000; }
+
+.modal.modal_notUploaded .modal-dialog .modal-content .modal-body .student_information_area .general_group_btn_confirm { display: flex; justify-content: center; margin: 0 auto 70px; padding: 10px 15px; width: 100%; max-width: 330px; background-color: #446ef6; }
+
+.modal.modal_notUploaded .modal-dialog .modal-content .modal-body .student_information_area .general_group_btn_confirm p { color: white; }
+
+.modal.modal_garbage .modal-dialog { width: 80%; max-width: 550px; margin: 40px auto; }
+
+.modal.modal_garbage .modal-dialog .modal-content { position: relative; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body { display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_img { max-width: 115px; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body p { margin: 20px auto 30px; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body .btn_close { position: absolute; left: 10px; top: 10px; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_area { display: flex; flex-wrap: wrap; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_area .garbage_btn_item { padding: 10px 20px; margin: 10px auto; width: 100%; max-width: 170px; border-radius: 5px; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_area .garbage_btn_item.garbage_btn_close { border: 1px solid #446ef6; color: #446ef6; }
+
+.modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_area .garbage_btn_item.garbage_btn_confirm { border: 1px solid #446ef6; background-color: #446ef6; color: white; }
+
+.modal.modal_grateful .modal-dialog { width: 80%; max-width: 800px; margin: 40px auto; }
+
+.modal.modal_grateful .modal-dialog .modal-content { position: relative; }
+
+.modal.modal_grateful .modal-dialog .modal-content .modal-body { display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+
+.modal.modal_grateful .modal-dialog .modal-content .modal-body .grateful_btn_img { max-width: 115px; margin: 0 auto 25px; }
+
+.modal.modal_grateful .modal-dialog .modal-content .modal-body p { margin: 20px auto 30px; text-align: center; }
+
+.modal.modal_grateful .modal-dialog .modal-content .modal-body p span { color: #ff0000; }
+
+.modal.modal_grateful .modal-dialog .modal-content .modal-body .btn_close { position: absolute; left: 10px; top: 10px; }
 
 @media screen and (min-width: 576px) { .join-all .order-wrap .order-body .participating_group_area .participating_group_item { width: 47.5%; }
   .modal.modal_verify .modal-dialog { max-width: 600px; }
@@ -1574,8 +1628,10 @@ table .dataTable { width: 100%; }
   .modal.modal_verify .modal-dialog .modal-content .modal-body .btn_close { position: absolute; left: 10px; top: 10px; }
   .modal.modal_notUploaded .modal-dialog { width: calc(100% - 260px) !important; max-width: 1200px; }
   .modal.modal_notUploaded .modal-dialog .modal-content { position: relative; }
-  .modal.modal_notUploaded .modal-dialog .modal-content .modal-body { padding: 15px 105px; }
-  .modal.modal_notUploaded .modal-dialog .modal-content .modal-body .btn_close { position: absolute; left: 10px; top: 10px; } }
+  .modal.modal_notUploaded .modal-dialog .modal-content .modal-body { padding: 15px 85px; }
+  .modal.modal_notUploaded .modal-dialog .modal-content .modal-body .btn_close { position: absolute; left: 10px; top: 10px; }
+  .modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_area { width: 100%; justify-content: center; }
+  .modal.modal_garbage .modal-dialog .modal-content .modal-body .garbage_btn_area .garbage_btn_item { width: 40%; margin: 0 10px; } }
 
 @media screen and (min-width: 992px) { .join-all .order-wrap .order-body .activity_process .process_step { flex-direction: row; }
   .join-all .order-wrap .order-body .activity_process .process_step .activity_process_img { max-width: 200px; margin-right: 20px; margin-bottom: 0; }

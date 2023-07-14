@@ -790,6 +790,10 @@
                             padding: 10px 12px;
                             line-height: 1.5;
                             background-color: transparent;
+
+                            &:disabled {
+                                cursor: auto;
+                            }
                         }
 
                         .btn-file {
@@ -1323,6 +1327,8 @@
         justify-content: space-between;
 
         a {
+            cursor: pointer;
+
             span {
                 color: $default-red;
             }
@@ -1397,6 +1403,10 @@
                 background: $button-bg;
                 border: 1px solid $button-gray;
 
+                &:hover{
+                    color: $main_color !important;
+                }
+
                 &.paginate_button {
                     &.current {
                         color: $default-red !important;
@@ -1434,11 +1444,12 @@
         border-left: 1px solid $light-gray;
         border-top: 1px solid $light-gray;
 
-        table{
+        table {
             table-layout: fixed;
             text-align: center;
+
             th,
-            td{
+            td {
                 border: 1px solid $light-gray;
             }
         }
@@ -1481,7 +1492,7 @@
                         border-left: 0px;
                         border-bottom: 0px;
                         line-height: 1.42857143;
-                        border-top: 1px solid #ddd;
+                        border-top: 1px solid $light-gray;
 
                         &.student_delete {
                             button {
@@ -1492,11 +1503,27 @@
                         }
 
                         &[contenteditable="true"] {
-                            border-top: 1px solid $default-red;
-                            border-right: 1px solid $default-red;
-                            border-left: 1px solid $default-red;
-                            border-bottom: 1px solid $default-red;
-                    }
+                            position: relative;
+                            cursor: text;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                top: 1px;
+                                left: 1px;
+                                width: calc(100% - 2px);
+                                height: calc(100% - 2px);
+                                border: 1px solid $default-gray;
+
+                            }
+
+                            &.redBorder {
+                                &::before {
+                                    border: 1px solid $default-red;
+
+                                }
+                            }
+                        }
                     }
 
                 }
@@ -1505,64 +1532,176 @@
     }
 }
 
-table{
-    .dataTable{
+table {
+    .dataTable {
         width: 100%;
     }
 }
 
 .modal {
-        &.modal_verify {
-            .modal-dialog {
-                width: 80%;
-                margin: 40px auto;
+    &.modal_verify {
+        .modal-dialog {
+            width: 80%;
+            margin: 40px auto;
 
-                .modal-content {
-                    position: relative;
+            .modal-content {
+                position: relative;
 
-                    .modal-body {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        padding: 40px 60px;
+                .modal-body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 40px 60px;
 
-                        p {
-                            margin: 0 auto 40px;
+                    p {
+                        margin: 0 auto 40px;
+                    }
+
+                    .modal_verify_btn {
+                        width: 100%;
+                        margin: 20px auto 0;
+                        background-color: $main_color;
+                        color: $white;
+                        border-radius: 5px;
+                        padding: 10px 0px;
+                        text-align: center;
+                    }
+
+                    .btn_close {
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                    }
+
+
+                }
+            }
+        }
+    }
+
+    &.modal_notUploaded {
+        .modal-dialog {
+            .modal-content {
+                .modal-body {
+                    .student_information_area {
+                        width: 95%;
+                        .student_information_area_top{
+                            margin: 60px auto 30px;
+                            justify-content: center;
+                            p{
+                                text-align: center;
+                                span{
+                                    color: $default-red;
+                                }
+                            }
+
                         }
 
-                        .modal_verify_btn {
+                        .general_group_btn_confirm {
+                            display: flex;
+                            justify-content: center;
+                            margin: 0 auto 70px;
+                            padding: 10px 15px;
                             width: 100%;
-                            margin: 20px auto 0;
+                            max-width: 330px;
                             background-color: $main_color;
-                            color: $white;
+        
+                            p {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.modal_garbage{
+        .modal-dialog {
+            width: 80%;
+            max-width: 550px;
+            margin: 40px auto;
+
+            .modal-content {
+                position: relative;
+
+                .modal-body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 40px 20px;
+
+                    .garbage_btn_img{
+                        max-width: 115px;
+                    }
+                    p {
+                        margin: 20px auto 30px;
+                    }
+                    .btn_close {
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                    }
+                    .garbage_btn_area{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .garbage_btn_item{
+                            padding: 10px 20px;
+                            margin: 10px auto;
+                            width: 100%;
+                            max-width: 170px;
                             border-radius: 5px;
-                            padding: 10px 0px;
-                            text-align: center;
-                        }
-
-                        .btn_close {
-                            position: absolute;
-                            left: 10px;
-                            top: 10px;
-                        }
-
-
-                    }
-                }
-            }
-        }
-
-        &.modal_notUploaded {
-            .modal-dialog {
-                .modal-content{
-                    .modal-body{
-                        .student_information_area{
-                            width: 95%;
+                            &.garbage_btn_close{
+                                border: 1px solid $main_color;
+                                color: $main_color;
+                            }
+                            &.garbage_btn_confirm{
+                                border: 1px solid $main_color;
+                                background-color: $main_color;
+                                color: $white;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    &.modal_grateful{
+        .modal-dialog {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+
+            .modal-content {
+                position: relative;
+
+                .modal-body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 40px 20px;
+
+                    .grateful_btn_img{
+                        max-width: 115px;
+                        margin: 0 auto 25px;
+                    }
+                    p {
+                        margin: 20px auto 30px;
+                        text-align: center;
+                        span{
+                            color: $default-red;
+                        }
+                    }
+                    .btn_close {
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 576px) {
@@ -1579,19 +1718,19 @@ table{
     }
 
     .modal {
-            &.modal_verify {
-                .modal-dialog {
-                    max-width: 600px;
+        &.modal_verify {
+            .modal-dialog {
+                max-width: 600px;
 
-                    .modal-content {
-                        .modal-body {
-                            .modal_verify_btn {
-                                padding: 10px 0px;
-                            }
+                .modal-content {
+                    .modal-body {
+                        .modal_verify_btn {
+                            padding: 10px 0px;
                         }
                     }
                 }
             }
+        }
     }
 }
 
@@ -1651,68 +1790,84 @@ table{
     }
 
     .modal {
-            &.modal_verify {
-                .modal-dialog {
-                    width: 80%;
-                    margin: 40px auto;
+        &.modal_verify {
+            .modal-dialog {
+                width: 80%;
+                margin: 40px auto;
 
-                    .modal-content {
-                        position: relative;
+                .modal-content {
+                    position: relative;
 
-                        .modal-body {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            padding: 40px 60px;
+                    .modal-body {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 40px 60px;
 
-                            p {
-                                margin: 0 auto 40px;
-                            }
+                        p {
+                            margin: 0 auto 40px;
+                        }
 
-                            .modal_verify_btn {
-                                width: 100%;
-                                margin: 20px auto 0;
-                                background-color: $main_color;
-                                color: $white;
-                                border-radius: 5px;
-                                padding: 10px 0px;
-                                text-align: center;
-                            }
+                        .modal_verify_btn {
+                            width: 100%;
+                            margin: 20px auto 0;
+                            background-color: $main_color;
+                            color: $white;
+                            border-radius: 5px;
+                            padding: 10px 0px;
+                            text-align: center;
+                        }
 
-                            .btn_close {
-                                position: absolute;
-                                left: 10px;
-                                top: 10px;
-                            }
+                        .btn_close {
+                            position: absolute;
+                            left: 10px;
+                            top: 10px;
+                        }
 
 
+                    }
+                }
+            }
+        }
+
+        &.modal_notUploaded {
+            .modal-dialog {
+                width: calc(100% - 260px) !important;
+                max-width: 1200px;
+
+                .modal-content {
+                    position: relative;
+
+                    .modal-body {
+                        padding: 15px 85px;
+
+                        .btn_close {
+                            position: absolute;
+                            left: 10px;
+                            top: 10px;
                         }
                     }
                 }
             }
+        }
 
-            &.modal_notUploaded {
-                .modal-dialog {
-                    width: calc(100% - 260px) !important;
-                    max-width: 1200px;
-
-                    .modal-content {
-                        position: relative;
-
-                        .modal-body {
-                            padding: 15px 105px;
-
-                            .btn_close {
-                                position: absolute;
-                                left: 10px;
-                                top: 10px;
+        &.modal_garbage{
+            .modal-dialog {
+                .modal-content {
+    
+                    .modal-body {
+                        .garbage_btn_area{
+                            width: 100%;
+                            justify-content: center;
+                            .garbage_btn_item{
+                                width: 40%;
+                                margin: 0 10px;
                             }
-
-
                         }
                     }
                 }
             }
+        }
     }
 }
 
