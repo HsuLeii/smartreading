@@ -529,9 +529,10 @@
                 .data_entry_area {
                     border-bottom: 1px solid $default-gray;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: center;
 
                     .data_entry_btn_item {
+                        min-width: 150px;
 
                         .data_entry_btn_item_link {
                             display: flex;
@@ -559,6 +560,9 @@
                             }
                         }
 
+                        &.general_group {
+                            margin: 0 20px 0 0;
+                        }
 
                     }
                 }
@@ -1125,127 +1129,307 @@
 
             &.registration_process {
                 position: relative;
-                padding: 0 5px 13px 13px;
+                padding: 0 0 13px 0;
                 border: 0;
 
-                table {
-                    border: 0px;
+                // table {
+                //     border: 0px;
 
-                    td {
+                //     td {
+                //         border: 1px solid $white;
+                //     }
+
+                //     thead {
+                //         tr {
+                //             td {
+                //                 background-color: $table_blue;
+                //                 color: $white;
+                //             }
+
+                //         }
+                //     }
+
+                //     tbody {
+                //         tr {
+                //             td {
+                //                 background-color: $table_yellow;
+                //             }
+                //         }
+                //     }
+                // }
+
+                // .registration_process_img {
+                //     min-width: 1000px;
+                //     position: absolute;
+                //     bottom: 0;
+
+                //     .registration_process_img_item {
+                //         position: absolute;
+
+                //         &.registration_process_img_seaweed_one {
+                //             width: 135px;
+                //             left: 0;
+                //             bottom: 0;
+                //         }
+
+                //         &.registration_process_img_stone_one {
+                //             width: 70px;
+                //             left: 33%;
+                //             bottom: 0;
+                //             transform: translate(calc(-100% - 25px), 0px);
+                //         }
+
+                //         &.registration_process_img_seaweed_two {
+                //             width: 40px;
+                //             left: 33%;
+                //             bottom: 10px;
+                //             transform: translate(40px, 0);
+                //         }
+
+                //         &.registration_process_img_seaweed_three {
+                //             width: 88px;
+                //             left: 66%;
+                //             bottom: 8px;
+                //         }
+
+                //         &.registration_process_img_stone_two {
+                //             width: 85px;
+                //             right: 0;
+                //             bottom: 2px;
+                //         }
+                //     }
+
+
+                // }
+
+                .registration_process_content {
+                    display: flex;
+                    flex-direction: column;
+
+                    .registration_process_content_item{
+                        position: relative;
+                        background-color: $table_yellow;
                         border: 1px solid $white;
-                    }
 
-                    thead {
-                        tr {
-                            td {
-                                background-color: $table_blue;
-                                color: $white;
+                        .registration_process_head {
+                            background-color: $table_blue;
+                            color: $white;
+    
+                            .registration_process_head_item {
+                                padding: 15px 8px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+    
+                                p {
+                                    color: $white;
+                                }
                             }
-
                         }
-                    }
-
-                    tbody {
-                        tr {
-                            td {
-                                background-color: $table_yellow;
+    
+                        .registration_process_body {
+    
+                            .registration_process_body_row {
+                                display: flex;
+                                flex-wrap: wrap;
+    
+                                .registration_process_body_item_content {
+                                    width: 100%;
+                                    padding: 15px 0;
+    
+                                    .registration_process_body_item {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        padding: 10px 8px;
+    
+                                        p {
+                                            text-align: center;
+    
+                                            .table_arrow{
+                                                max-width: 18px;
+                                                margin: 10px auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .registration_process_img {
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+            
+                                .registration_process_img_item {
+                                    position: absolute;
+            
+                                    &.registration_process_img_seaweed_one {
+                                        width: 135px;
+                                        left: 0;
+                                        bottom: 0;
+                                    }
+            
+                                    &.registration_process_img_stone_one {
+                                        width: 70px;
+                                        right: 0;
+                                        bottom: 0;
+                                        transform: translate(calc(-100% - -40px), 0px);
+                                    }
+            
+                                    &.registration_process_img_seaweed_two {
+                                        width: 40px;
+                                        left: 0;
+                                        bottom: 0;
+                                        transform: translate(20px, 0);
+                                    }
+            
+                                    &.registration_process_img_seaweed_three {
+                                        width: 88px;
+                                        left: 0;
+                                        bottom: 0;
+                                    }
+            
+                                    &.registration_process_img_stone_two {
+                                        width: 85px;
+                                        right: 0;
+                                        bottom: 0;
+                                    }
+                                }
                             }
                         }
                     }
-                }
-
-                .registration_process_img {
-                    min-width: 1000px;
-                    position: absolute;
-                    bottom: 0;
-
-                    .registration_process_img_item {
-                        position: absolute;
-
-                        &.registration_process_img_seaweed_one {
-                            width: 135px;
-                            left: 0;
-                            bottom: 0;
-                        }
-
-                        &.registration_process_img_stone_one {
-                            width: 70px;
-                            left: 33%;
-                            bottom: 0;
-                            transform: translate(calc(-100% - 25px), 0px);
-                        }
-
-                        &.registration_process_img_seaweed_two {
-                            width: 40px;
-                            left: 33%;
-                            bottom: 10px;
-                            transform: translate(40px, 0);
-                        }
-
-                        &.registration_process_img_seaweed_three {
-                            width: 88px;
-                            left: 66%;
-                            bottom: 8px;
-                        }
-
-                        &.registration_process_img_stone_two {
-                            width: 85px;
-                            right: 0;
-                            bottom: 2px;
-                        }
-                    }
-
-
+                    
                 }
             }
 
             &.registration_price {
-                table {
-                    border: 0px;
+                // table {
+                //     border: 0px;
 
-                    td {
-                        border: 1px solid $white;
-                    }
+                //     td {
+                //         border: 1px solid $white;
+                //     }
 
-                    thead {
-                        tr {
-                            td {
-                                background-color: $table_blue;
+                //     thead {
+                //         tr {
+                //             td {
+                //                 background-color: $table_blue;
+                //                 color: $white;
+
+                //                 .early_bird {
+                //                     margin: 0 20px 0 0;
+                //                     padding: 10px 20px 10px 60px;
+                //                     background-color: #e65551;
+                //                     border-radius: 50px;
+                //                     position: relative;
+
+                //                     .table_bird {
+                //                         width: 110px;
+                //                         position: absolute;
+                //                         left: 0;
+                //                         top: 50%;
+                //                         transform: translate(-60px, -50%);
+                //                     }
+                //                 }
+
+                //                 .table_price {
+                //                     width: 70px;
+                //                 }
+                //             }
+                //         }
+                //     }
+
+                //     tbody {
+                //         tr {
+                //             td {
+                //                 background-color: $table_yellow;
+                //             }
+                //         }
+                //     }
+                // }
+                border: 0px;
+                .registration_price_content {
+                    display: flex;
+                    flex-direction: column;
+
+                    .registration_price_head {
+                        background-color: $table_blue;
+                        color: $white;
+
+                        .registration_price_head_item {
+                            padding: 30px 8px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+
+                            p {
                                 color: $white;
+                            }
+
+                            &.early_bird_area {
+                                width: 100%;
+                                border: 1px solid $white;
 
                                 .early_bird {
-                                    margin: 0 20px 0 0;
                                     padding: 10px 20px 10px 60px;
                                     background-color: #e65551;
                                     border-radius: 50px;
                                     position: relative;
+                                    margin: 0 0 10px 0;
 
                                     .table_bird {
-                                        width: 110px;
+                                        width: 90px;
                                         position: absolute;
                                         left: 0;
                                         top: 50%;
-                                        transform: translate(-60px, -50%);
+                                        transform: translate(-30px, -50%);
                                     }
                                 }
+                            }
+
+                            &.original_price_area {
+                                width: 100%;
 
                                 .table_price {
                                     width: 70px;
+                                    margin: 0 0 10px 0;
                                 }
                             }
                         }
                     }
 
-                    tbody {
-                        tr {
-                            td {
+                    .registration_price_body {
+
+                        .registration_price_body_row {
+                            display: flex;
+                            flex-wrap: wrap;
+
+                            .registration_price_body_item_content {
+                                width: 100%;
+                                border: 1px solid $white;
                                 background-color: $table_yellow;
+                                padding: 15px 0;
+
+                                .registration_price_body_item {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 10px 8px;
+
+
+                                    p {
+                                        text-align: center;
+                                    }
+                                }
                             }
+
+
                         }
+
                     }
                 }
             }
-
 
             &.eligibility {
                 table {
@@ -1403,7 +1587,7 @@
                 background: $button-bg;
                 border: 1px solid $button-gray;
 
-                &:hover{
+                &:hover {
                     color: $main_color !important;
                 }
 
@@ -1583,16 +1767,20 @@ table {
         .modal-dialog {
             overflow-y: scroll;
             max-height: calc(100% - 20px);
+
             .modal-content {
                 .modal-body {
                     .student_information_area {
                         width: 95%;
-                        .student_information_area_top{
+
+                        .student_information_area_top {
                             margin: 60px auto 30px;
                             justify-content: center;
-                            p{
+
+                            p {
                                 text-align: center;
-                                span{
+
+                                span {
                                     color: $default-red;
                                 }
                             }
@@ -1607,7 +1795,7 @@ table {
                             width: 100%;
                             max-width: 330px;
                             background-color: $main_color;
-        
+
                             p {
                                 color: $white;
                             }
@@ -1618,7 +1806,7 @@ table {
         }
     }
 
-    &.modal_garbage{
+    &.modal_garbage {
         .modal-dialog {
             width: 80%;
             max-width: 550px;
@@ -1633,31 +1821,37 @@ table {
                     align-items: center;
                     padding: 40px 20px;
 
-                    .garbage_btn_img{
+                    .garbage_btn_img {
                         max-width: 115px;
                     }
+
                     p {
                         margin: 20px auto 30px;
                     }
+
                     .btn_close {
                         position: absolute;
                         left: 10px;
                         top: 10px;
                     }
-                    .garbage_btn_area{
+
+                    .garbage_btn_area {
                         display: flex;
                         flex-wrap: wrap;
-                        .garbage_btn_item{
+
+                        .garbage_btn_item {
                             padding: 10px 20px;
                             margin: 10px auto;
                             width: 100%;
                             max-width: 170px;
                             border-radius: 5px;
-                            &.garbage_btn_close{
+
+                            &.garbage_btn_close {
                                 border: 1px solid $main_color;
                                 color: $main_color;
                             }
-                            &.garbage_btn_confirm{
+
+                            &.garbage_btn_confirm {
                                 border: 1px solid $main_color;
                                 background-color: $main_color;
                                 color: $white;
@@ -1669,7 +1863,7 @@ table {
         }
     }
 
-    &.modal_grateful{
+    &.modal_grateful {
         .modal-dialog {
             width: 80%;
             max-width: 800px;
@@ -1684,17 +1878,20 @@ table {
                     align-items: center;
                     padding: 40px 20px;
 
-                    .grateful_btn_img{
+                    .grateful_btn_img {
                         max-width: 115px;
                         margin: 0 auto 25px;
                     }
+
                     p {
                         margin: 20px auto 30px;
                         text-align: center;
-                        span{
+
+                        span {
                             color: $default-red;
                         }
                     }
+
                     .btn_close {
                         position: absolute;
                         left: 10px;
@@ -1768,7 +1965,7 @@ table {
                     .data_entry_area {
 
                         .data_entry_btn_item {
-                            min-width: 138px;
+                            min-width: 180px;
                         }
                     }
 
@@ -1783,6 +1980,71 @@ table {
                                 width: 45%;
                                 max-width: 140px;
                                 margin: 0 20px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .table-responsive {
+
+                &.registration_process{
+                    .registration_process_content {
+                        flex-direction: row;
+    
+                        .registration_process_content_item{
+                            width: 33.333%;
+    
+                            .registration_process_head {
+        
+                                .registration_process_head_item {
+                                    padding: 15px 8px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-direction: column;
+        
+                                    p {
+                                        color: $white;
+                                    }
+                                }
+                            }
+        
+                            .registration_process_body {
+        
+                                .registration_process_body_row {
+        
+                                    .registration_process_body_item_content {
+                                        
+        
+                                        .registration_process_body_item {
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+
+                &.registration_price {
+                    .registration_price_content {
+                        .registration_price_head {
+                            .registration_price_head_item {
+                                flex-direction: row;
+
+                                &.early_bird_area {
+                                    .early_bird {
+                                        margin: 0 20px 0 0;
+                                    }
+                                }
+
+                                &.original_price_area {
+                                    .table_price {
+                                        margin: 0 20px 0 0;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1854,15 +2116,16 @@ table {
             }
         }
 
-        &.modal_garbage{
+        &.modal_garbage {
             .modal-dialog {
                 .modal-content {
-    
+
                     .modal-body {
-                        .garbage_btn_area{
+                        .garbage_btn_area {
                             width: 100%;
                             justify-content: center;
-                            .garbage_btn_item{
+
+                            .garbage_btn_item {
                                 width: 40%;
                                 margin: 0 10px;
                             }
@@ -1930,7 +2193,6 @@ table {
                     .data_entry_area {
                         max-width: 850px;
                         margin: 0 auto;
-                        justify-content: center;
 
                         .data_entry_btn_item {
 
@@ -1942,10 +2204,6 @@ table {
                                 .data_entry_btn_icon {
                                     margin: 0 10px 0 0;
                                 }
-                            }
-
-                            &.general_group {
-                                margin: 0 20px 0 0;
                             }
                         }
                     }
@@ -2154,6 +2412,52 @@ table {
                     .table_starfish {
                         left: 12.5%;
                         width: 70px;
+                    }
+                }
+            }
+
+            .table-responsive {
+
+                &.registration_price {
+                    .registration_price_content {
+                        min-width: 1000px;
+                        flex-direction: row;
+                        .registration_price_content_item{
+                            &.early_bird_item{
+                                width: calc(100% / 7 * 4);
+                            }
+
+                            &.original_price_item{
+                                width: calc(100% / 7 * 3);
+                            }
+                            .registration_price_head{
+                                .registration_price_head_item {
+                                    &.original_price_area {
+                                        border: 1px solid $white;
+                                        p{
+                                            padding: 10px 0;
+                                        }
+                                    }
+                                }
+                            }
+                            .registration_price_body{
+                                .registration_price_body_row{
+                                    flex-wrap: nowrap;
+
+                                    .registration_price_body_item_content {
+        
+                                        .registration_price_body_item {
+                                            min-height: 90px;
+                                            border-bottom: 1px solid $white;
+                                            &:nth-child(2){
+                                                border-bottom: 0px;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
                     }
                 }
             }

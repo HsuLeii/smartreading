@@ -1977,7 +1977,7 @@ main.main .select-group.input-lg:after {
 .nav-wrap {
     width: calc((100% - 1200px) / 2);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     /*padding-right: 2em;*/
 }
 
@@ -2094,6 +2094,44 @@ main.main .select-group.input-lg:after {
     .popup-refund-info .toprectangle {
         left: 45%;
     }
+
+    .nav-wrap {
+        width: 100%;
+    }
+
+    .nav-wrap .order-fixed-nav {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        padding: 0 15px;
+    }
+
+    .nav-wrap .order-fixed-nav li {
+        padding: 0 15px 0 0;
+    }
+
+    .nav-wrap .order-fixed-nav li a {
+        position: relative;
+    }
+
+    .nav-wrap .order-fixed-nav li>ul {
+        display: none;
+    }
+
+    .nav-wrap .order-fixed-nav li.current>ul {
+        display: block;
+    }
+
+    .order-fixed-nav>li:hover>a::after,
+    .order-fixed-nav>li.current>a::after {
+        display: none;
+    }
+
+    .main .join-wrap,
+    .main .order-wrap {
+        width: 100%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -2161,8 +2199,6 @@ main.main .select-group.input-lg:after {
         text-align: left;
     }
 }
-
-
 
 @media (max-width: 768px) {
     .order-kv {
@@ -2272,31 +2308,6 @@ main.main .select-group.input-lg:after {
         flex-wrap: wrap;
     }
 
-    .main .join-wrap,
-    .main .order-wrap {
-        width: 100%;
-    }
-
-    .nav-wrap {
-        width: 100%;
-    }
-
-    .nav-wrap .order-fixed-nav {
-        width: 100%;
-        /* flex-direction: row; */
-        flex-wrap: wrap;
-        align-items: baseline;
-        padding: 0 15px;
-    }
-
-    .nav-wrap .order-fixed-nav li {
-        padding: 0 15px 0 0;
-    }
-
-    .nav-wrap .order-fixed-nav li a {
-        position: relative;
-    }
-
     .navbar-center {
         width: 100%;
     }
@@ -2329,19 +2340,6 @@ main.main .select-group.input-lg:after {
 
     .navi-main .nav.nav.navbar-nav.navbar-join>li:hover {
         background: #fff;
-    }
-
-    .order-fixed-nav>li:hover>a::after,
-    .order-fixed-nav>li.current>a::after {
-        display: none;
-    }
-
-    .nav-wrap .order-fixed-nav li>ul {
-        display: none;
-    }
-
-    .nav-wrap .order-fixed-nav li.current>ul {
-        display: block;
     }
 
     .main .order-page {
@@ -2437,12 +2435,6 @@ main.main .select-group.input-lg:after {
     .refund-status li {
         width: 50%;
         margin: 5px 0px;
-    }
-}
-
-@media (max-width: 767px){
-    .nav-wrap .order-fixed-nav {
-        flex-direction: row;
     }
 }
 
