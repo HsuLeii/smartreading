@@ -374,29 +374,47 @@
             .participating_group_area {
                 display: flex;
                 justify-content: space-between;
-                flex-wrap: wrap;
                 width: 75%;
                 margin: 0 auto;
+                min-width: 780px;
 
                 .participating_group_item {
-                    background-color: $table_blue;
                     position: relative;
                     width: 100%;
                     min-height: 220px;
-                    padding: 20px 0 45px;
-                    margin: 20px 0;
+                    padding: 20px 0 70px;
+                    margin: 20px 0 0 30px;
+
+                    &.participating_group_item_one{
+                        background-color: $participating_group_1;
+                        margin: 20px 0 0;
+                    }
+
+                    &.participating_group_item_two{
+                        background-color: $participating_group_2;
+                    }
+
+                    &.participating_group_item_three{
+                        background-color: $participating_group_3;
+                    }
 
                     .participating_group_item_text {
                         display: flex;
-                        flex-direction: column;
                         align-items: center;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        width: 75%;
+                        margin: 0 auto;
 
-                        h4 {
-                            font-size: 25px;
-                            margin: 0 0 10px;
+                        .participating_group_item_text_img{
+                            margin: 0 auto 20px;
+                            width: 100%;
                         }
 
-                        h4,
+                        .participating_group_item_text_p{
+                            margin: 0 auto;
+                        }
+
                         p {
                             color: $white;
                         }
@@ -842,6 +860,7 @@
         .table-responsive {
             overflow-x: scroll;
             margin: 10px auto;
+            border: 0px;
 
             &.registery_fee {
                 thead {
@@ -1349,8 +1368,196 @@
                 // }
                 border: 0px;
                 .registration_price_content {
+                    min-width: 1000px;
                     display: flex;
-                    flex-direction: column;
+                    // flex-direction: column;
+                    .registration_price_content_left{
+                        width: 165px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        padding: 0 0 80px;
+                        margin: 0 20px 0 0;
+                        .registration_price_head_item {
+                            padding: 15px 0;
+                            .registration_price_head_item_tittle{
+                                display: flex;
+                                justify-content: center;
+                                margin: 0 0 10px;
+                                img{
+                                    width: 45px;
+                                    margin: 0 10px 0 0;
+                                }
+                            }
+                            p{
+                                text-align: center;
+                            }
+                            &.early_bird_area{
+                                h5,
+                                p{
+                                    color: $early_bird_color;
+                                }
+                            }
+                            &.original_price_area{
+                                border-top: 1px dotted $original_price_color;
+                                h5,
+                                p{
+                                    color: $original_price_color;
+                                }
+                            }
+                        }
+                    }
+
+                    .registration_price_content_right{
+                        display: flex;
+                        .registration_price_content_right_item{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            border: 1px solid;
+                            margin: 0 5px 0 0;
+                            min-width: 266px;
+                            .registration_price_content_right_item_head{
+                                position: relative;
+                                z-index: 1;
+                                padding: 27px 5px 40px;
+
+                                h5{
+                                    color: $white;
+                                    text-align: center;
+                                }
+
+                                .registration_price_content_right_item_icon{
+                                    position: absolute;
+                                    z-index: -1;
+                                    left: 50%;
+                                    bottom: 0;
+                                    transform: translate(-50%, 50%);
+                                    padding: 20px;
+                                    border-radius: 50%;
+                                }
+                            }
+
+                            .registration_price_content_right_item_body{
+                                padding: 70px 20px 30px;
+                                .registration_price_content_right_item_body_top{
+                                    display: flex;
+                                    justify-content: center;
+                                    
+                                    p{
+                                        text-align: center;
+                                        font-weight: bold;
+                                    }
+                                    h4{
+                                        font-size: 40px;
+                                        margin: 50px 0 0;
+                                        padding: 0 0 25px;
+                                        color: $early_bird_color;
+                                        text-align: center;
+                                    }
+                                }
+
+                                .registration_price_content_right_item_body_bottom{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: center;
+                                    h4{
+                                        margin: 25px auto 50px;
+                                        color: $original_price_color;
+                                        text-align: center;
+                                        font-weight: bold;
+                                    }
+                                    a{
+                                        display: block;
+                                        width: 100%;
+                                        padding: 15px;
+                                        text-align: center;
+                                        background-color: $main-color;
+                                        color: $white;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+
+                            &.registration_price_content_right_one{
+                                border-color: $registration_price_one_color;
+                                .registration_price_content_right_item_head{
+                                    background-color: $registration_price_one_color;
+
+                                    .registration_price_content_right_item_icon{
+                                        background-color: $registration_price_one_color;
+                                    }
+                                }
+                                .registration_price_content_right_item_body{
+                                    .registration_price_content_right_item_body_top{
+                                        border-bottom: 1px dotted $registration_price_one_color;
+                                        p{
+                                            color: $registration_price_one_color;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.registration_price_content_right_two{
+                                border-color: $registration_price_two_color;
+                                .registration_price_content_right_item_head{
+                                    background-color: $registration_price_two_color;
+
+                                    .registration_price_content_right_item_icon{
+                                        background-color: $registration_price_two_color;
+                                    }
+                                }
+                                .registration_price_content_right_item_body{
+                                    .registration_price_content_right_item_body_top{
+                                        border-bottom: 1px dotted $registration_price_two_color;
+                                        p{
+                                            color: $registration_price_two_color;
+                                        }
+
+                                        .registration_price_body_top_item{
+                                            &:nth-child(1){
+                                                margin: 0 12px 0 0;
+                                            }
+                                            &:nth-child(2){
+                                                margin: 0 0 0 12px;
+                                            }
+                                        }
+                                    }
+
+                                    .registration_price_content_right_item_body_bottom{
+
+                                        .registration_price_body_bottom_item{
+                                            &:nth-child(1){
+                                                margin: 0 12px 0 0;
+                                            }
+                                            &:nth-child(2){
+                                                margin: 0 0 0 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.registration_price_content_right_three{
+                                border-color: $registration_price_three_color;
+                                .registration_price_content_right_item_head{
+                                    background-color: $registration_price_three_color;
+
+                                    .registration_price_content_right_item_icon{
+                                        background-color: $registration_price_three_color;
+                                    }
+                                }
+                                .registration_price_content_right_item_body{
+                                    .registration_price_content_right_item_body_top{
+                                        border-bottom: 1px dotted $registration_price_three_color;
+                                        p{
+                                            color: $registration_price_three_color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     .registration_price_head {
                         background-color: $table_blue;
@@ -1947,18 +2154,6 @@ table {
                     }
                 }
 
-                .participating_group_area {
-
-                    .participating_group_item {
-
-                        .participating_group_item_text {
-                            h4 {
-                                font-size: 28px;
-                            }
-                        }
-                    }
-                }
-
                 .parti_contest_content {
 
                     .data_entry_area {
@@ -2413,8 +2608,7 @@ table {
 
                 &.registration_price {
                     .registration_price_content {
-                        min-width: 1000px;
-                        flex-direction: row;
+                        
                         .registration_price_content_item{
                             &.early_bird_item{
                                 width: calc(100% / 7 * 4);
@@ -2466,12 +2660,6 @@ table {
                 .participating_group_area {
                     .participating_group_item {
                         width: 30%;
-
-                        .participating_group_item_text {
-                            h4 {
-                                font-size: 32px;
-                            }
-                        }
                     }
                 }
 
