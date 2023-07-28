@@ -1830,23 +1830,37 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map { width: 70%; max-width: 1200px; margin: 0 auto; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area { width: 100%; margin: 300px auto; }
+.main.grade_map.map_index .map_object.route_map .route_map_area { position: relative; width: 100%; margin: 300px auto; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_1 { height: 600px; border: 30px solid #5B3716; border-radius: 0px 600px 600px 0px; margin-top: -30px; margin-left: 50%; border-left: 0; position: relative; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item { position: relative; height: 350px; border: 30px solid #5B3716; margin-top: -30px; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_1::before { content: ""; position: absolute; left: 0; top: 50%; border-radius: 0px 600px 600px 0px; width: calc(100% + 7px); height: calc(100% + 30px - 7px); border: 7px dotted #fff; border-left: 0; transform: translate(0, -50%); }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item::before { content: ""; position: absolute; left: 0; top: 50%; border: 7px dotted #fff; width: calc(100% + 7px); height: calc(100% + 30px + 7px); transform: translate(0, -50%); }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_2 { height: 600px; border: 30px solid #5B3716; border-radius: 600px 0px 0px 600px; margin-top: -30px; border-right: 0px; margin-right: 50%; position: relative; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_1 { border-top-right-radius: 350px; border-left: 0; border-bottom: 0; margin-left: 50%; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_2::before { content: ""; position: absolute; left: 0; top: 50%; border-radius: 600px 0px 0px 600px; width: calc(100% + 7px); height: calc(100% + 30px - 7px); border: 7px dotted #fff; border-right: 0px; transform: translate(-15px, -50%); }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_1::before { border-top-right-radius: 350px; border-left: 0; border-bottom: 0; }
+
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_2 { border-bottom-right-radius: 350px; border-left: 0; border-top: 0; margin-left: 50%; }
+
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_2::before { border-bottom-right-radius: 350px; border-left: 0; border-top: 0; }
+
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_3 { border-top-left-radius: 350px; border-right: 0px; border-bottom: 0px; margin-right: 50%; }
+
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_3::before { border-top-left-radius: 350px; border-right: 0px; border-bottom: 0px; }
+
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_4 { border-bottom-left-radius: 350px; border-right: 0px; border-top: 0; margin-right: 50%; }
+
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_4::before { border-bottom-left-radius: 350px; border-right: 0px; border-top: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item { width: 100%; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project { transform: translate(-50%, -50%); position: absolute; width: 27%; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker { width: 25%; align-items: flex-start; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker { position: relative; width: 25%; height: 120px; align-items: flex-start; }
+
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker::before { height: 120px; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .map_object_image, .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .map_object_image_animate { width: 70%; margin-bottom: 10px; margin-left: auto; display: block; }
 
@@ -2058,8 +2072,8 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .modal_trial .modal_trial_btn button:hover a { color: #fff; }
 
-@media screen and (max-width: 1200px) { .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker { position: initial; }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker::before { bottom: 0; } }
+@media screen and (max-width: 1200px) { .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker { height: 90px; }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker::before { bottom: 0; height: 90px; } }
 
 @media screen and (max-width: 1024px) { .map_object { position: relative; }
   .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark { width: 70%; }
@@ -2078,6 +2092,9 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(500px * 3 - 90px); }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(500px * 3 + 500px / 2 - 90px); }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(500px * 4 - 120px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(500px * 4 + 500px / 2 - 120px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(500px * 5 - 150px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(500px * 5 + 500px / 2 - 150px); }
   .main .navigator_area .navigator_content .navigator_text p span { font-size: 20px; } }
 
 @media screen and (max-width: 768px) { .map_object.new_map .map_object_item .map_object_item_project .map_object_image { display: none; }
@@ -2112,6 +2129,9 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(950px * 3 - 90px); }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(950px * 3 + 950px / 2 - 90px); }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(950px * 4 - 120px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(950px * 4 + 950px / 2 - 120px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(950px * 5 - 150px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(950px * 5 + 950px / 2 - 150px); }
   .main .navigator_area { display: none; } }
 
 @media screen and (max-width: 499px) { .main.grade_map.map_index .map_object.route_map { width: 50%; }
@@ -2127,7 +2147,10 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(900px * 2 + 900px / 2 - 60px); }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(900px * 3 - 75px); }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(900px * 3 + 900px / 2 - 90px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(900px * 4 - 105px); } }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(900px * 4 - 105px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(900px * 4 + 900px / 2 - 120px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(900px * 5 - 75px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(900px * 5 + 900px / 2 - 150px); } }
 
 @keyframes jump { 0%, 90%, 100% { transform: translateY(0px); }
   40% { transform: translateY(-50px); } }
