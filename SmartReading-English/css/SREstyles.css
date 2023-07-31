@@ -1832,29 +1832,33 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .route_map_area { position: relative; width: 100%; margin: 300px auto; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_item { position: relative; height: 350px; border: 30px solid #5B3716; margin-top: -30px; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item { position: relative; height: 350px; border: 30px solid #5B3716; border: 30px solid; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_item::before { content: ""; position: absolute; left: 0; top: 50%; border: 7px dotted #fff; width: calc(100% + 7px); height: calc(100% + 30px + 7px); transform: translate(0, -50%); }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item::before { content: ""; position: absolute; left: 0; top: 0; border: 7px dotted #fff; width: calc(100% + 30px - 7px); height: calc(100% + 30px - 7px); }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_1 { border-top-right-radius: 350px; border-left: 0; border-bottom: 0; margin-left: 50%; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_1 { border-top-right-radius: 350px; border-left: 0; border-bottom: 0; margin-left: 50%; margin-top: -30px; border-color: red; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_1::before { border-top-right-radius: 350px; border-left: 0; border-bottom: 0; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_1::before { border-top-right-radius: 350px; border-left: 0; border-bottom: 0; transform: translate(-7px, -15px); }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_2 { border-bottom-right-radius: 350px; border-left: 0; border-top: 0; margin-left: 50%; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_2 { border-bottom-right-radius: 350px; border-left: 0; border-top: 0; margin-left: 50%; border-color: yellow; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_2::before { border-bottom-right-radius: 350px; border-left: 0; border-top: 0; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_2::before { border-bottom-right-radius: 350px; border-left: 0; border-top: 0; transform: translate(-7px, -7.5px); }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_3 { border-top-left-radius: 350px; border-right: 0px; border-bottom: 0px; margin-right: 50%; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_3 { border-top-left-radius: 350px; border-right: 0px; border-bottom: 0px; margin-right: 50%; margin-top: -30px; border-color: blue; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_3::before { border-top-left-radius: 350px; border-right: 0px; border-bottom: 0px; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_3::before { border-top-left-radius: 350px; border-right: 0px; border-bottom: 0px; transform: translate(-23px, -15px); }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_4 { border-bottom-left-radius: 350px; border-right: 0px; border-top: 0; margin-right: 50%; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_4 { border-bottom-left-radius: 350px; border-right: 0px; border-top: 0; margin-right: 50%; border-color: purple; }
 
-.main.grade_map.map_index .map_object.route_map .route_map_area .route_4::before { border-bottom-left-radius: 350px; border-right: 0px; border-top: 0; }
+.main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_4::before { border-bottom-left-radius: 350px; border-right: 0px; border-top: 0; transform: translate(-23px, -7.5px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item { width: 100%; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project { transform: translate(-50%, -50%); position: absolute; width: 27%; }
+
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project::before { content: ""; position: absolute; z-index: 4; width: 100%; height: 1px; background-color: black; top: 50%; transform: translate(0, -50%); }
+
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project::after { content: ""; position: absolute; z-index: 4; width: 1px; height: 100%; background-color: black; top: 0; left: 50%; transform: translate(-50%, 0%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; }
 
@@ -1882,9 +1886,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project:hover .map_route_item_link .map_object_image_animate { display: block; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_first_grade { top: 0px; left: calc(50%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_first_grade .level_introduction { background-color: #d72b2b; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_first_grade { top: calc(30px * 0.5); left: calc(50%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_first_grade .level_introduction .go_map p:hover { background-color: #db4040; }
 
@@ -1892,9 +1894,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_first_grade .trial a:hover { background-color: #db4040; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade { top: calc(600px / 2); left: calc(100%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade .level_introduction { background-color: #EB772A; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade { top: calc(350px * 1 - 30px * 0); left: calc(100% - 15px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade .level_introduction .go_map p:hover { background-color: #ed8641; }
 
@@ -1902,9 +1902,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade .trial a:hover { background-color: #ed8641; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade { top: calc(600px * 1 - 30px); left: calc(50%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade .level_introduction { background-color: #F3BA03; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade { top: calc(350px * 2 - 30px * 0.5); left: calc(50%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade .level_introduction .go_map p:hover { background-color: #fcc513; }
 
@@ -1912,9 +1910,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade .trial a:hover { background-color: #fcc513; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade { top: calc(600px * 1 + 600px / 2 - 30px); left: calc(0%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade .level_introduction { background-color: #8DA429; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade { top: calc(350px * 3 - 30px * 1); left: calc(0% + 15px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade .level_introduction .go_map p:hover { background-color: #9fb82e; }
 
@@ -1922,9 +1918,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade .trial a:hover { background-color: #9fb82e; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade { top: calc(600px * 2 - 60px); left: calc(50%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade .level_introduction { background-color: #00AD5E; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade { top: calc(350px * 4 - 30px * 1.5); left: calc(50%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade .level_introduction .go_map p:hover { background-color: #00c76c; }
 
@@ -1932,9 +1926,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade .trial a:hover { background-color: #00c76c; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(600px * 2 + 600px / 2 - 60px); left: calc(100%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade .level_introduction { background-color: #00B1B9; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(350px * 5 - 30px * 2); left: calc(100% - 15px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade .level_introduction .go_map p:hover { background-color: #00c9d3; }
 
@@ -1942,9 +1934,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade .trial a:hover { background-color: #00c9d3; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(600px * 3 - 90px); left: calc(50%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade .level_introduction { background-color: #238cf6; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(350px * 6 - 30px * 2.5); left: calc(50%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade .level_introduction .go_map p:hover { background-color: #3b99f7; }
 
@@ -1952,9 +1942,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade .trial a:hover { background-color: #3b99f7; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(600px * 3 + 600px / 2 - 90px); left: calc(0%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade .level_introduction { background-color: #0163C6; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(350px * 7 - 30px * 3); left: calc(0% + 15px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade .level_introduction .go_map p:hover { background-color: #0170df; }
 
@@ -1962,9 +1950,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade .trial a:hover { background-color: #0170df; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(600px * 4 - 120px); left: calc(50%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade .level_introduction { background-color: #00349b; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(350px * 8 - 30px * 3.5); left: calc(50%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade .level_introduction .go_map p:hover { background-color: #003db5; }
 
@@ -1972,9 +1958,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade .trial a:hover { background-color: #003db5; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(600px * 4 + 600px / 2 - 120px); left: calc(100%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade .level_introduction { background-color: #6c4bdc; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(350px * 9 - 30px * 4); left: calc(100% - 15px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade .level_introduction .go_map p:hover { background-color: #7d60e0; }
 
@@ -1982,9 +1966,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade .trial a:hover { background-color: #7d60e0; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(600px * 5 - 120px); left: calc(50%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade .level_introduction { background-color: #8910ff; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(350px * 10 - 30px * 4.5); left: calc(50%); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade .level_introduction .go_map p:hover { background-color: #962aff; }
 
@@ -1992,9 +1974,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade .trial a:hover { background-color: #962aff; }
 
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(600px * 5 + 600px / 2 - 120px); left: calc(0%); }
-
-.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade .level_introduction { background-color: #670087; }
+.main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(350px * 11 - 30px * 5); left: calc(0% + 15px); }
 
 .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade .level_introduction .go_map p:hover { background-color: #7a00a1; }
 
@@ -2078,23 +2058,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 @media screen and (max-width: 1024px) { .map_object { position: relative; }
   .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark { width: 70%; }
   .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark p { text-align: center; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area { margin: 250px auto; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_1 { height: 500px; border-radius: 0px 500px 500px 0px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_1::before { border-radius: 0px 500px 500px 0px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_2 { height: 500px; border-radius: 500px 0px 0px 500px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_2::before { border-radius: 500px 0px 0px 500px; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project { width: 35%; }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade { top: calc(500px / 2); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade { top: calc(500px * 1 - 30px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade { top: calc(500px * 1 + 500px / 2 - 30px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade { top: calc(500px * 2 - 60px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(500px * 2 + 500px / 2 - 60px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(500px * 3 - 90px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(500px * 3 + 500px / 2 - 90px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(500px * 4 - 120px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(500px * 4 + 500px / 2 - 120px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(500px * 5 - 150px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(500px * 5 + 500px / 2 - 150px); }
   .main .navigator_area .navigator_content .navigator_text p span { font-size: 20px; } }
 
 @media screen and (max-width: 768px) { .map_object.new_map .map_object_item .map_object_item_project .map_object_image { display: none; }
@@ -2113,44 +2077,36 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
   .map_object .map_object_item .map_object_item_project .item_project_link .item_project_mark p { text-align: center; padding: 3px; }
   .main.grade_map.map_index .map_object.route_map { width: 50%; }
   .main.grade_map.map_index .map_object.route_map .route_map_area { margin: 215px auto 315px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_1 { height: 950px; border-radius: 0px 950px 950px 0px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_1::before { border-radius: 0px 950px 950px 0px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_2 { height: 950px; border-radius: 950px 0px 0px 950px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_2::before { border-radius: 950px 0px 0px 950px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item { height: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_1 { border-top-right-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_1::before { border-top-right-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_2 { border-bottom-right-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_2::before { border-bottom-right-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_3 { border-top-left-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_3::before { border-top-left-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_4 { border-bottom-left-radius: 500px; }
+  .main.grade_map.map_index .map_object.route_map .route_map_area .route_item.route_4::before { border-bottom-left-radius: 500px; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project { width: 70%; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .level_correspondence_marker { display: none; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .map_object_image { width: 100%; }
   .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project .map_route_item_link .map_object_image_animate { width: 100%; }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade { top: calc(950px / 2); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade { top: calc(950px * 1 - 30px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade { top: calc(950px * 1 + 950px / 2 - 30px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade { top: calc(950px * 2 - 60px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(950px * 2 + 950px / 2 - 60px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(950px * 3 - 90px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(950px * 3 + 950px / 2 - 90px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(950px * 4 - 120px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(950px * 4 + 950px / 2 - 120px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(950px * 5 - 150px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(950px * 5 + 950px / 2 - 150px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade .map_route_item_link .level_correspondence_marker, .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade .map_route_item_link .level_correspondence_marker, .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade .map_route_item_link .level_correspondence_marker { display: flex; }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_first_grade { top: calc(30px * 0.5); left: calc(50%); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade { top: calc(500px * 1 - 30px * 0); left: calc(100% - 15px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade { top: calc(500px * 2 - 30px * 0.5); left: calc(50%); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade { top: calc(500px * 3 - 30px * 1); left: calc(0% + 15px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade { top: calc(500px * 4 - 30px * 1.5); left: calc(50%); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(500px * 5 - 30px * 2); left: calc(100% - 15px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(500px * 6 - 30px * 2.5); left: calc(50%); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(500px * 7 - 30px * 3); left: calc(0% + 15px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(500px * 8 - 30px * 3.5); left: calc(50%); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(500px * 9 - 30px * 4); left: calc(100% - 15px); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(500px * 10 - 30px * 4.5); left: calc(50%); }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(500px * 11 - 30px * 5); left: calc(0% + 15px); }
   .main .navigator_area { display: none; } }
 
 @media screen and (max-width: 499px) { .main.grade_map.map_index .map_object.route_map { width: 50%; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_1 { height: 900px; border-radius: 0px 900px 900px 0px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_1::before { border-radius: 0px 900px 900px 0px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_2 { height: 900px; border-radius: 900px 0px 0px 900px; }
-  .main.grade_map.map_index .map_object.route_map .route_map_area .route_2::before { border-radius: 900px 0px 0px 900px; }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project { width: 80%; }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_second_grade { top: calc(900px / 2 - 15px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_third_grade { top: calc(900px * 1 - 30px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fourth_grade { top: calc(900px * 1 + 900px / 2 - 30px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_fifth_grade { top: calc(900px * 2 - 45px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_sixth_grade { top: calc(900px * 2 + 900px / 2 - 60px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_seventh_grade { top: calc(900px * 3 - 75px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eighth_grade { top: calc(900px * 3 + 900px / 2 - 90px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_ninth_grade { top: calc(900px * 4 - 105px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_tenth_grade { top: calc(900px * 4 + 900px / 2 - 120px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_eleventh_grade { top: calc(900px * 5 - 75px); }
-  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project.item_project_twelfth_grade { top: calc(900px * 5 + 900px / 2 - 150px); } }
+  .main.grade_map.map_index .map_object.route_map .map_route_item .map_object_item_project { width: 80%; } }
 
 @keyframes jump { 0%, 90%, 100% { transform: translateY(0px); }
   40% { transform: translateY(-50px); } }
