@@ -90,8 +90,6 @@ body .close-modal { border-radius: 50%; position: absolute; top: 0px; right: 0px
 
 .swiper_slide_next, .swiper_slide_prev, .swiper_ticket_next, .swiper_ticket_prev { position: absolute; top: 50%; width: calc(var(--swiper-navigation-size)/ 44 * 27); height: var(--swiper-navigation-size); margin-top: calc(0px - (var(--swiper-navigation-size)/ 2)); z-index: 10; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #ff6464; }
 
-.swiper_slide_next:hover, .swiper_slide_prev:hover, .swiper_ticket_next:hover, .swiper_ticket_prev:hover { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
-
 .swiper_slide_next.swiper-button-disabled, .swiper_slide_prev.swiper-button-disabled, .swiper_ticket_next.swiper-button-disabled, .swiper_ticket_prev.swiper-button-disabled { opacity: 0.3; }
 
 .swiper_slide_next.swiper-button-disabled:hover, .swiper_slide_prev.swiper-button-disabled:hover, .swiper_ticket_next.swiper-button-disabled:hover, .swiper_ticket_prev.swiper-button-disabled:hover { box-shadow: none; }
@@ -108,14 +106,31 @@ body .close-modal { border-radius: 50%; position: absolute; top: 0px; right: 0px
 
 .swiper_slide_next, .swiper-rtl .swiper_slide_prev, .swiper_ticket_next, .swiper-rtl .swiper_ticket_prev { right: 10px; left: auto; }
 
-.swiper-slide.swiper-slide_one .grade_link .swiper_slide_next, .swiper-slide.swiper-slide_one .grade_link .swiper_slide_prev { position: relative !important; top: auto; margin-top: 0; width: auto; margin: 0 20px; }
+.mySwiper_slide_level .swiper-wrapper { align-items: center; }
+
+.mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level { margin: 40px 0 0; }
+
+.mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next { margin: 0 15px; line-height: 0; cursor: pointer; }
+
+.mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next .level_correspondence_marker .level_correspondence_marker_inner { width: 150px; }
+
+.mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next .level_correspondence_marker .level_correspondence_marker_inner img { border-radius: 0; padding: 0; }
+
+.mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next .level_correspondence_marker .level_correspondence_marker_inner:hover::after { display: none; }
+
+.mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next:hover { transform: scale(1.1); }
 
 @media screen and (max-width: 1024px) { .swiper_ticket_next, .swiper_ticket_prev { width: 40px; height: 40px; } }
 
 @media screen and (max-width: 768px) { .swiper_ticket_next, .swiper_ticket_prev { width: 35px; height: 35px; }
   .swiper_slide_next:after, .swiper_slide_prev:after, .swiper_ticket_next:after, .swiper_ticket_prev:after { font-size: 20px; }
   .swiper_slide_prev, .swiper-rtl .swiper_slide_next, .swiper_ticket_prev, .swiper-rtl .swiper_ticket_next { left: 3px; }
-  .swiper_slide_next, .swiper-rtl .swiper_slide_prev, .swiper_ticket_next, .swiper-rtl .swiper_ticket_prev { right: 3px; } }
+  .swiper_slide_next, .swiper-rtl .swiper_slide_prev, .swiper_ticket_next, .swiper-rtl .swiper_ticket_prev { right: 3px; }
+  .mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level { margin: 0; }
+  .mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next .level_correspondence_marker .level_correspondence_marker_inner { width: 100px; }
+  .mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next:hover { transform: scale(1.05); } }
+
+@media screen and (max-width: 690px) { .mySwiper_slide_level .swiper-wrapper .swiper-slide.swiper-slide_level .grade_link .level_prev_next { margin: 0; } }
 
 label { font-family: 'Noto Sans', 'Noto Sans TC', 'Noto Sans SC', 'Microsoft JhengHei', 'Noto Sans TC', 'Microsoft YaHei', 'PingFang TC', 'PingFang SC', 'Heiti TC', 'Heiti SC', 'LiHei Pro', 'STXihei', sans-serif; border: 0px; padding: 0px; white-space: normal; }
 
@@ -2131,6 +2146,8 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 /*閱讀地圖*/
 .main.grade_map { margin: 0px auto -135px; background-color: #EFE8E0; }
 
+.main.grade_map.high_school { margin: 0 auto; }
+
 .main.grade_map .fireworks_area { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100vh; z-index: 5; transition: width 2s; display: none; overflow: hidden; }
 
 .main.grade_map .fireworks_area.get { display: block; }
@@ -2299,7 +2316,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map .map_book_area_bg .map_book_area { width: 100%; padding: 0px 0% 50px; margin: 0px auto; background-color: #EFE8E0; position: relative; }
 
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade { background-color: #ffd8d8; }
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade { background-color: #ffd8d8; background-color: #ffe6e6; }
 
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #ffd8d8 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
 
@@ -2425,49 +2442,13 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_ninth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
 
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade { background-color: #fae3ff; }
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade { background-color: #e6e0f9; }
 
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade { background-color: #eedcff; }
 
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade { background-color: #f5d4ff; }
 
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .ticket_wrap { /* 波浪線 */ }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .ticket_wrap:after { background: #fae3ff; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_tenth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade { background-color: #fae3ff; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .ticket_wrap { /* 波浪線 */ }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .ticket_wrap:after { background: #fae3ff; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eleventh_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade { background-color: #fae3ff; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .medal_swiper-slide .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, transparent 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .ticket_wrap { /* 波浪線 */ }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .ticket_wrap:after { background: #fae3ff; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_twelfth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_right .wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, #fae3ff 50%, #e3cea5 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
-
-.main.grade_map .map_book_area_bg .map_book_area .ticket_bg { padding: 40px 0px 40px; position: relative; }
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg { padding: 40px 0px 0; position: relative; }
 
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area { display: flex; justify-content: center; width: 90%; margin: 0px auto; max-width: 1800px; }
 
@@ -2589,7 +2570,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 
 .grade_link { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 60px auto 30px; }
 
-.grade_link .level_correspondence_marker { padding: 5px 10px; }
+.grade_link .level_correspondence_marker { padding: 5px 8px; margin: 5px 0px; }
 
 .grade_link .level_correspondence_marker::before { display: none; }
 
@@ -2691,7 +2672,7 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
   .grade_link .level_correspondence_marker .level_correspondence_marker_inner.this_grade::before { display: none; }
   .page .pagination a, .page .pagination span { margin: 0px; padding: 5px 0.45rem; } }
 
-@media screen and (max-width: 650px) { .grade_link { justify-content: flex-start; }
+@media screen and (max-width: 690px) { .grade_link { justify-content: flex-start; }
   .grade_link .level_correspondence_marker .level_correspondence_marker_inner { margin: 2.5px auto; } }
 
 @media screen and (max-width: 600px) { .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .swiper-wrapper .swiper-slide { width: calc(100% / 3); }
