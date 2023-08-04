@@ -1101,7 +1101,7 @@
         }
   
         .ticket_bg {
-          padding: 40px 0px 0;
+          padding: 40px 0px;
           position: relative;
   
           .ticket_area {
@@ -1561,7 +1561,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 60px auto 30px;
+  padding: 60px 0 30px;
 
   .level_correspondence_marker {
     padding: 5px 8px;
@@ -1688,6 +1688,39 @@
       }
     }
   }
+
+  .level_prev_next {
+    margin: 0 15px;
+    line-height: 0;
+    cursor: pointer;
+
+    .level_correspondence_marker{
+        .level_correspondence_marker_inner{
+            width: 150px;
+
+            img{
+                border-radius: 0;
+                padding: 0;
+            }
+
+            &:hover{
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        outline:none;
+    }
+
+    &:focus,
+    &:focus-visible {
+        outline:none;
+    }
+}
 
   &.grade_map_link{
     .level_correspondence_marker {
@@ -1905,7 +1938,7 @@
 
 @media screen and (max-width: 1024px) {
   .grade_link {
-    margin: 30px auto;
+    padding: 30px 0;
     width: 90%;
     justify-content: flex-start;
 
@@ -1991,6 +2024,20 @@
 }
 
 @media screen and (max-width: 768px) {
+  .grade_link {
+    .level_prev_next {
+      .level_correspondence_marker{
+          .level_correspondence_marker_inner{
+              width: 95px;
+          }
+      }
+
+      &:hover {
+          transform: scale(1.05);
+      }
+  }
+  }
+
   .main{
     &.grade_map {
       .map_object {
@@ -2092,6 +2139,10 @@
 
 @media screen and (max-width: 690px) {
   .grade_link {
+    .level_prev_next {
+      margin: 0;
+  }
+
     .level_correspondence_marker {
       .level_correspondence_marker_inner {
         margin: 2.5px auto;
