@@ -75,7 +75,7 @@
                             </thead>
                             <tbody>
                                 <tr class="club_table_area">
-                                    <td data-search="all read comment later" class="club_id">1</td>
+                                    <td data-search="entity online" class="club_id">1</td>
                                     <td class="club_table_img">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
@@ -93,7 +93,7 @@
                                 </tr>
 
                                 <tr class="club_table_area">
-                                    <td data-search="all read comment later" class="club_id">1</td>
+                                    <td data-search="online" class="club_id">2</td>
                                     <td class="club_table_img">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
@@ -111,7 +111,7 @@
                                 </tr>
 
                                 <tr class="club_table_area">
-                                    <td data-search="all read comment later" class="club_id">1</td>
+                                    <td data-search="entity" class="club_id">3</td>
                                     <td class="club_table_img">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
@@ -562,23 +562,21 @@
                 //     alert('表格重绘了');
                 // },
 
-
                     buttons: [
-
                         {
                             extend: "collection",
-                            text: '<span id="btn_all">實體</span>&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
+                            text: '<span id="btn_place">地點</span>&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
                             buttons: [
                             {
                                     text: "實體",
                                     attr: {
-                                        id: "book_all",
-                                        class:"dt-button active"
+                                        id: "book_entity",
+                                        class:"dt-button"
                                     },
                                     action: function (e, dt, node, config) {
-                                        dt.search("all").draw();
+                                        dt.search("entity").draw();
                                         $("#btn_all").text("實體");
-                                        $("#book_all").addClass(
+                                        $("#book_entity").addClass(
                                                 "active").siblings(".dt-button")
                                             .removeClass(
                                                 "active");
@@ -587,12 +585,12 @@
                                 {
                                     text: "線上",
                                     attr: {
-                                        id: "book_read",
+                                        id: "book_online",
                                     },
                                     action: function (e, dt, node, config) {
-                                        dt.search("read").draw();
+                                        dt.search("online").draw();
                                         $("#btn_all").text("線上");
-                                        $("#book_read").addClass(
+                                        $("#book_online").addClass(
                                                 "active").siblings(".dt-button")
                                             .removeClass(
                                                 "active");
@@ -609,7 +607,7 @@
                             action: function () {
                                 $(".dt-button-collection").toggle();
                                 if ($('#sort_free').hasClass('asc')) { //原本asc↑，變desc↓
-                                    this.order([6, 'desc']).draw();
+                                    this.order([0, 'desc']).draw();
                                     $('#sort_free').removeClass('active asc desc').addClass(
                                         'active desc').siblings('.dt-button').removeClass(
                                         'active asc desc');
@@ -617,7 +615,7 @@
                                         'glyphicon-arrow-up').addClass(
                                         'glyphicon-arrow-down');
                                 } else { //原本null or desc↓變asc↑
-                                    this.order([6, 'asc']).draw();
+                                    this.order([4, 'asc']).draw();
                                     $('#sort_free').removeClass('active asc desc').addClass(
                                         'active asc').siblings('.dt-button').removeClass(
                                         'active asc desc');
@@ -629,33 +627,44 @@
                         },
 
                         {
-                            text: '尚未開始&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
-                            attr: {
-                                id: 'sort_time'
-                            },
-                            action: function () {
-                                $(".dt-button-collection").toggle();
-                                if ($('#sort_time').hasClass('asc')) { //原本asc↑，變desc↓
-                                    this.order([4, 'desc']).draw();
-                                    $('#sort_time').removeClass('active asc desc').addClass(
-                                        'active desc').siblings('.dt-button').removeClass(
-                                        'active asc desc');
-                                    $('#sort_time').find('.glyphicon').removeClass(
-                                        'glyphicon-arrow-up').addClass(
-                                        'glyphicon-arrow-down');
-                                } else { //原本null or desc↓變asc↑
-                                    this.order([6, 'asc']).draw();
-                                    $('#sort_time').removeClass('active asc desc').addClass(
-                                        'active asc').siblings('.dt-button').removeClass(
-                                        'active asc desc');
-                                    $('#sort_time').find('.glyphicon').removeClass(
-                                        'glyphicon-arrow-down').addClass(
-                                        'glyphicon-arrow-up');
-                                } //if there has "SR 1000", that will need to debug......
-                            },
+                            extend: "collection",
+                            text: '<span id="btn_place">時間</span>&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
+                            buttons: [
+                            {
+                                    text: "尚未開始",
+                                    attr: {
+                                        id: "book_entity",
+                                        class:"dt-button"
+                                    },
+                                    action: function (e, dt, node, config) {
+                                        dt.search("entity").draw();
+                                        $("#btn_all").text("尚未開始");
+                                        $("#book_entity").addClass(
+                                                "active").siblings(".dt-button")
+                                            .removeClass(
+                                                "active");
+                                    }
+                                },
+                                {
+                                    text: "已結束",
+                                    attr: {
+                                        id: "book_online",
+                                    },
+                                    action: function (e, dt, node, config) {
+                                        dt.search("online").draw();
+                                        $("#btn_all").text("已結束");
+                                        $("#book_online").addClass(
+                                                "active").siblings(".dt-button")
+                                            .removeClass(
+                                                "active");
+                                    }
+                                },
+                            ],
                         },
+
                     ],
-                language: {
+                
+                    language: {
                     "processing": "處理中...",
                     "loadingRecords": "載入中...",
                     "lengthMenu": "顯示 _MENU_ 項結果",
@@ -687,12 +696,15 @@
                 '&nbsp;頁' +
                 '<a class="btn paginate_button" id="btnGotoPage">確定</a>' +
                 '</div>';
-            $('.leveledBooks-table__footer').append(inputHTML);
+            var inputHT = '<div class="add_dataTables_input">' +
+                '熱門' + '</div>';
+                $('.1230').append(inputHT);
+            $('.readingClub-list__footer').append(inputHTML);
             $("#btnGotoPage").click(function () {
                 var textGotoPage = $("#textGotoPage").val();
-                var info = $('.leveledBooks-table').DataTable().page.info();
+                var info = $('.readingClub').DataTable().page.info();
                 if (parseInt(textGotoPage) > 0 && parseInt(textGotoPage) <= info.pages) {
-                    $('.leveledBooks-table').DataTable().page(parseInt(textGotoPage) - 1).draw(false);
+                    $('.readingClub').DataTable().page(parseInt(textGotoPage) - 1).draw(false);
                 } else {
                     alert('請輸入正確頁數。');
                 }
