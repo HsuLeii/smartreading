@@ -53,6 +53,8 @@ body input[type="radio" i] { width: 16px; height: 16px; display: none; vertical-
 
 body input[type="radio" i] ~ label { padding-left: 20px; display: block; position: relative; cursor: pointer; }
 
+body input:-webkit-autofill, body input:-webkit-autofill:hover, body input:-webkit-autofill:focus { border: 1px solid #5B3716; -webkit-text-fill-color: #5B3716; -webkit-box-shadow: 0 0 0px 1000px #fff inset !important; }
+
 body .main { margin: 60px auto 80px; }
 
 body .main .tittle { padding-bottom: 40px; }
@@ -1001,9 +1003,9 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 
 .main.booklist .book_area .book_area_menu { display: flex; flex-wrap: wrap; z-index: 3; background-color: #EFE8E0; border-bottom: 1.5px solid #ff6464; position: sticky; top: 0px; }
 
-.main.booklist .book_area .book_area_menu .book_selection { margin: 15px 8px 15px 0px; }
+.main.booklist .book_area .book_area_menu .book_selection { margin: 15px 15px 15px 0px; }
 
-.main.booklist .book_area .book_area_menu .book_selection a { border: 1px solid; border-radius: 10px; padding: 5px 10px; cursor: pointer; }
+.main.booklist .book_area .book_area_menu .book_selection a { font-size: 16px; border: 1px solid; border-radius: 5px; padding: 5px 5px; cursor: pointer; }
 
 .main.booklist .book_area .book_area_menu .book_selection.first_grade_selection a { color: #d72b2b; border-color: #d72b2b; }
 
@@ -1121,11 +1123,14 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 
 .main.booklist .level_correspondence_marker:before { top: 90px; bottom: -90px; }
 
+@media screen and (max-width: 1400px) { .main.booklist .book_area .book_area_menu .book_selection { margin: 15px 5px 15px 0px; }
+  .main.booklist .book_area .book_area_menu .book_selection a { padding: 5px 2px; } }
+
 @media screen and (max-width: 1200px) { .main.booklist { width: 100%; }
   .main.booklist .tittle, .main.booklist .booklist_introduce { width: 80%; margin: 0 auto; }
   .main.booklist .book_area { width: 100%; }
   .main.booklist .book_area .book_area_menu { padding: 15px 5% 0px; }
-  .main.booklist .book_area .book_area_menu .book_selection { margin: 0px 15px 15px 0px; }
+  .main.booklist .book_area .book_area_menu .book_selection { margin: 0px 5px 15px 0px; }
   .main.booklist .book_area .booklist_best_book .book_list { width: calc(100% - 105px); }
   .main.booklist .book_area .booklist_best_book .book_list .book_list_title h3 { margin: calc(38px / 2) 0px 0px 1.3%; }
   .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area { margin-top: 35px; }
@@ -1133,7 +1138,8 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area .swiper-button-next::after, .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area .swiper-button-prev::after { font-size: 20px; }
   .main.booklist .level_correspondence_marker { align-items: flex-start; position: initial; } }
 
-@media screen and (max-width: 1024px) { .main.booklist .book_area .booklist_best_book .book_list { width: calc(100% - 90px); margin-left: 15px; }
+@media screen and (max-width: 1024px) { .main.booklist .book_area .book_area_menu .book_selection a { font-size: 14px; }
+  .main.booklist .book_area .booklist_best_book .book_list { width: calc(100% - 90px); margin-left: 15px; }
   .main.booklist .level_correspondence_marker:before { top: 110px; bottom: -110px; } }
 
 @media screen and (max-width: 768px) { .main.booklist .book_area .booklist_best_book .book_list { width: calc(100% - 65px); }
@@ -1828,6 +1834,8 @@ h-jinze, h-word { display: inline-block; text-indent: 0; }
 .map_object .map_object_item .map_object_item_project.item_project_tenth_grade .item_project_link .item_project_mark::before { background: #6c4bdc; }
 
 .map_object .map_object_item .map_object_item_project.item_project_tenth_grade .item_project_link .item_project_mark p { background: #6c4bdc; }
+
+.map_object .map_object_item .map_object_item_project.item_project_tenth_grade:hover .map_object_image { display: block; }
 
 .main.grade_map .tittle, .main.grade_map .booklist_introduce { margin: 0 auto; max-width: 1200px; width: 80%; }
 
