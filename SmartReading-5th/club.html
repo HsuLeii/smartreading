@@ -32,13 +32,10 @@
     <!-- datatables 開始 -->
     <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
     <!-- datatables 結束 -->
-    <!-- jquery-ui 開始 -->
-    <link rel="stylesheet" type="text/css" href="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-    <!-- jquery-ui 結束 -->
-
 
     <!-- SR core CSS -->
     <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
+
 </head>
 
 <body>
@@ -62,6 +59,69 @@
 
                     <!-- recommendedBook-list start -->
                     <div class="readingClub-list">
+
+                        <div class="dataTable_menu_bar">
+                            <div class="dataTable_menu_bar_item">
+                                <p class="menu_text">熱門活動篩選</p>
+                                <ul class="nav dataTable_menu_bar_nav">
+                                    <li class="dataTable_menu_bar_nav_li">
+                                        <a href="#" class="dropdown-toggle dataTable_menu_bar_nav_li_btn"
+                                            data-toggle="dropdown">
+                                            <span id="btn_place">地點</span>&nbsp;
+                                            <i class="fas fa-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <p class="btn_entity">實體</p>
+                                            </li>
+                                            <li>
+                                                <p class="btn_online">線上</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dataTable_menu_bar_nav_li">
+                                        <ul class="dataTable_menu_bar_nav_li_btn">
+                                            
+                                                <p class="btn_free">免費</p>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dataTable_menu_bar_nav_li">
+                                        <a href="#" class="dropdown-toggle dataTable_menu_bar_nav_li_btn"
+                                            data-toggle="dropdown">
+                                            <span id="btn_time">活動時間</span>&nbsp;
+                                            <i class="fas fa-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <p class="btn_future">尚未開始</p></li>
+                                            <li>
+                                                <p class="btn_finish">已結束</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="dataTable_menu_bar_item">
+                                <p class="menu_text">活動分類</p>
+                                <ul class="nav dataTable_menu_bar_nav">
+                                    <li class="dataTable_menu_bar_nav_li">
+                                        <a href="#" class="dropdown-toggle dataTable_menu_bar_nav_li_btn"
+                                            data-toggle="dropdown">
+                                            <span id="btn_place">閱讀素養</span>&nbsp;
+                                            <i class="fas fa-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><p>閱讀素養 1</p></li>
+                                            <li><p>閱讀素養 2</p></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <table id="table" class="table readingClub-table recommendedBook-table">
                             <thead>
                                 <tr>
@@ -74,8 +134,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- 尚未開始 1-3線上 4-6實體 7-9實體/線上 -->
                                 <tr class="club_table_area">
-                                    <td data-search="entity online" class="club_id">1</td>
+                                    <td class="club_id">1</td>
                                     <td class="club_table_img">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
@@ -83,17 +144,17 @@
                                         </a>
                                     </td>
                                     <td class="club_table_tittle">
-                                        <h3>講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                        <h3>1.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
                                     </td>
                                     <td class="club_table_introduce">
                                         <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
                                     </td>
-                                    <td class="club_table_time" data-th="時間">時間: 3月28日(四) 19:00 </td>
-                                    <td class="club_table_place" data-th="地點">地點: 實體/線上</td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="online" class="club_table_place">地點: 線上</td>
                                 </tr>
 
                                 <tr class="club_table_area">
-                                    <td data-search="online" class="club_id">2</td>
+                                    <td class="club_id">2</td>
                                     <td class="club_table_img">
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
@@ -101,34 +162,312 @@
                                         </a>
                                     </td>
                                     <td class="club_table_tittle">
-                                        <h3>講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                        <h3>2.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
                                     </td>
                                     <td class="club_table_introduce">
                                         <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
                                     </td>
-                                    <td class="club_table_time" data-th="時間">時間: 3月29日(五) 19:00 </td>
-                                    <td class="club_table_place" data-th="地點">地點: 線上</td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="online" class="club_table_place">地點: 線上</td>
                                 </tr>
 
                                 <tr class="club_table_area">
-                                    <td data-search="entity" class="club_id">3</td>
-                                    <td class="club_table_img">
+                                    <td class="club_id">3</td>
+                                    <td>
                                         <a data-target="#bookModal" role="button" class="hover-effect-dark"
                                             data-toggle="modal" data-target="#modal-bookIntro">
                                             <img src="Content/images/club/tableImg/tableImg_3.jpg">
                                         </a>
                                     </td>
                                     <td class="club_table_tittle">
-                                        <h3>講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                        <h3>3.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
                                     </td>
                                     <td class="club_table_introduce">
                                         <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
                                     </td>
-                                    <td class="club_table_time" data-th="時間">時間: 3月30日(六) 19:00 </td>
-                                    <td class="club_table_place" data-th="地點">地點: 實體</td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="online" class="club_table_place">地點: 線上</td>
                                 </tr>
+
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">4</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_1.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>4.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="entity" class="club_table_place">地點: 實體</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">5</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_2.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>5.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="entity" class="club_table_place">地點: 實體</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">6</td>
+                                    <td>
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_3.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>6.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="entity" class="club_table_place">地點: 實體</td>
+                                </tr>
+
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">7</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_1.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>7.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="entity online" class="club_table_place">地點: 實體/線上</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">8</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_2.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>8.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="entity online" class="club_table_place">地點: 實體/線上</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">9</td>
+                                    <td>
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_3.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>9.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="future" class="club_table_time">時間: 10月28日(四) 19:00 </td>
+                                    <td data-search="entity online" class="club_table_place">地點: 實體/線上</td>
+                                </tr>
+
+
+                                <!-- 已結束 10-12線上 13-15實體 16-18實體/線上 -->
+                                <tr class="club_table_area">
+                                    <td class="club_id">10</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_1.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>10.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="online" class="club_table_place">地點: 線上</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">11</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_2.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>11.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="online" class="club_table_place">地點: 線上</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">12</td>
+                                    <td>
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_3.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>12.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="online" class="club_table_place">地點: 線上</td>
+                                </tr>
+
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">13</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_1.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>13.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="entity" class="club_table_place">地點: 實體</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">14</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_2.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>14.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="entity" class="club_table_place">地點: 實體</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">15</td>
+                                    <td>
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_3.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>15.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="entity" class="club_table_place">地點: 實體</td>
+                                </tr>
+
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">16</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_1.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>16.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="entity online" class="club_table_place">地點: 實體/線上</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">17</td>
+                                    <td class="club_table_img">
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_2.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>17.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="entity online" class="club_table_place">地點: 實體/線上</td>
+                                </tr>
+
+                                <tr class="club_table_area">
+                                    <td class="club_id">18</td>
+                                    <td>
+                                        <a data-target="#bookModal" role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro">
+                                            <img src="Content/images/club/tableImg/tableImg_3.jpg">
+                                        </a>
+                                    </td>
+                                    <td class="club_table_tittle">
+                                        <h3>18.講座：探索式閱讀至創造性實作探索式閱讀至創造性實作</h3>
+                                    </td>
+                                    <td class="club_table_introduce">
+                                        <p>培養探索式閱讀至創造性實作探索式閱讀至創造性實作探索式閱讀至創造性實作</p>
+                                    </td>
+                                    <td data-search="finish" class="club_table_time">時間: 8月3日(四) 19:00 </td>
+                                    <td data-search="entity online" class="club_table_place">地點: 實體/線上</td>
+                                </tr>
+
                             </tbody>
                         </table>
+
                     </div>
                     <!-- recommendedBook-list end -->
 
@@ -500,19 +839,18 @@
     <script src="Content/js/modal_icon.js"></script>
     <!-- datatables 開始 -->
     <script src="Content/widgets/DataTables/datatables.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script> -->
     <!-- datatables 結束 -->
-    <!-- jquery-ui 開始 -->
-    <script src="Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script>
-    <!-- jquery-ui 結束 -->
+
 
     <script>
         $(document).ready(function () {
             //nowPage (此頁必留)
             $('.navTab-club').addClass('active');
-                $('header').load('header.html', function () {
-                    $('.navTab-club').addClass('active'); //nowPage
-                });
+            $('header').load('header.html', function () {
+                $('.navTab-club').addClass('active'); //nowPage
+            });
             $('footer').load('footer.html');
         });
     </script>
@@ -521,11 +859,45 @@
     <script>
         $(document).ready(function () {
             //datatables (demo，正式需工程師改寫~~)
-            $('.readingClub-table').DataTable({
+
+            $('.btn_entity').on('click', function () {
+                table.button('0').trigger();
+            });
+
+            $('.btn_online').on('click', function () {
+                table.button('1').trigger();
+            });
+
+            // $('.btn_free').on('click', function () {
+            //     table.button('2').trigger();
+            // });
+
+
+//     $('.btn_free').on('click',function(){
+//     if($(".club_table_place").attr('data-search') == "online") {
+//         table.button('1').trigger();
+//       }
+//     else {
+//         table.button('0').trigger();
+//     }
+//   });
+
+            $('.btn_future').on('click', function () {
+                var table = $('#table').DataTable();
+                table.button('3').trigger();
+            });
+
+            $('.btn_finish').on('click', function () {
+                var table = $('#table').DataTable();
+                table.button('4').trigger();
+            });
+
+            var table = $('.readingClub-table').DataTable({
                 responsive: true,
                 searching: true,
+                "bFilter": true,
                 select: true,
-                pageLength: 1,
+                pageLength: 9,
                 pagingType: "simple_numbers",
                 columnDefs: [{
                         "targets": 0,
@@ -553,118 +925,71 @@
                     },
                 ],
 
-                dom: '<"readingClub-list__header"B<"pull-right"ip>>' +
-                    '<""<""t>>' +
+                dom: '<"leveledBooks-table__header"<"pull-right"ip>>' +
+                    't' +
                     '<"readingClub-list__footer"pi>',
 
-                //alert表格重绘了
-                // "drawCallback": function (settings) {
-                //     alert('表格重绘了');
-                // },
-
-                    buttons: [
-                        {
-                            extend: "collection",
-                            text: '<span id="btn_place">地點</span>&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
-                            buttons: [
-                            {
-                                    text: "實體",
-                                    attr: {
-                                        id: "book_entity",
-                                        class:"dt-button"
-                                    },
-                                    action: function (e, dt, node, config) {
-                                        dt.search("entity").draw();
-                                        $("#btn_all").text("實體");
-                                        $("#book_entity").addClass(
-                                                "active").siblings(".dt-button")
-                                            .removeClass(
-                                                "active");
-                                    }
-                                },
-                                {
-                                    text: "線上",
-                                    attr: {
-                                        id: "book_online",
-                                    },
-                                    action: function (e, dt, node, config) {
-                                        dt.search("online").draw();
-                                        $("#btn_all").text("線上");
-                                        $("#book_online").addClass(
-                                                "active").siblings(".dt-button")
-                                            .removeClass(
-                                                "active");
-                                    }
-                                },
-                            ],
+                    
+                buttons: [ 
+                {
+                        text: "實體",
+                        attr: {
+                            id: "entity",
                         },
-
-                        {
-                            text: '免費&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
-                            attr: {
-                                id: 'sort_free'
-                            },
-                            action: function () {
-                                $(".dt-button-collection").toggle();
-                                if ($('#sort_free').hasClass('asc')) { //原本asc↑，變desc↓
-                                    this.order([0, 'desc']).draw();
-                                    $('#sort_free').removeClass('active asc desc').addClass(
-                                        'active desc').siblings('.dt-button').removeClass(
-                                        'active asc desc');
-                                    $('#sort_free').find('.glyphicon').removeClass(
-                                        'glyphicon-arrow-up').addClass(
-                                        'glyphicon-arrow-down');
-                                } else { //原本null or desc↓變asc↑
-                                    this.order([4, 'asc']).draw();
-                                    $('#sort_free').removeClass('active asc desc').addClass(
-                                        'active asc').siblings('.dt-button').removeClass(
-                                        'active asc desc');
-                                    $('#sort_free').find('.glyphicon').removeClass(
-                                        'glyphicon-arrow-down').addClass(
-                                        'glyphicon-arrow-up');
-                                } //if there has "SR 1000", that will need to debug......
-                            },
+                        action: function (e, dt, node, config) {
+                            table.column(5)
+                                .search("entity")
+                                .draw();
+                            $("#btn_place").text("實體");
+                        }
+                    },
+                    {
+                        text: "線上",
+                        attr: {
+                            id: "online",
                         },
+                        action: function (e, dt, node, config) {
+                            table.column(5)
+                                .search("online")
+                                .draw();
+                            $("#btn_place").text("線上");
+                        }
+                    },
 
-                        {
-                            extend: "collection",
-                            text: '<span id="btn_place">時間</span>&nbsp;<span class="glyphicon fas fa-angle-down" aria-hidden="true"></span>',
-                            buttons: [
-                            {
-                                    text: "尚未開始",
-                                    attr: {
-                                        id: "book_entity",
-                                        class:"dt-button"
-                                    },
-                                    action: function (e, dt, node, config) {
-                                        dt.search("entity").draw();
-                                        $("#btn_all").text("尚未開始");
-                                        $("#book_entity").addClass(
-                                                "active").siblings(".dt-button")
-                                            .removeClass(
-                                                "active");
-                                    }
-                                },
-                                {
-                                    text: "已結束",
-                                    attr: {
-                                        id: "book_online",
-                                    },
-                                    action: function (e, dt, node, config) {
-                                        dt.search("online").draw();
-                                        $("#btn_all").text("已結束");
-                                        $("#book_online").addClass(
-                                                "active").siblings(".dt-button")
-                                            .removeClass(
-                                                "active");
-                                    }
-                                },
-                            ],
+                    {
+                        text: "免費",
+                        attr: {
+                            id: 'free'
                         },
+                    },
 
-                    ],
-                
-                    language: {
+                    {
+                        text: "尚未開始",
+                        attr: {
+                            id: "future"
+                        },
+                        action: function (e, dt, node, config) {
+                            table.column(4)
+                                .search("future")
+                                .draw();
+                            $("#btn_time").text("尚未開始");
+                        }
+                    },
+                    {
+                        text: "已結束",
+                        attr: {
+                            id: "finish",
+                        },
+                        action: function (e, dt, node, config) {
+                            table.column(4)
+                                .search("finish")
+                                .draw();
+                            $("#btn_time").text("已結束");
+                        }
+                    },
+                ],
+
+                language: {
                     "processing": "處理中...",
                     "loadingRecords": "載入中...",
                     "lengthMenu": "顯示 _MENU_ 項結果",
@@ -696,9 +1021,6 @@
                 '&nbsp;頁' +
                 '<a class="btn paginate_button" id="btnGotoPage">確定</a>' +
                 '</div>';
-            var inputHT = '<div class="add_dataTables_input">' +
-                '熱門' + '</div>';
-                $('.1230').append(inputHT);
             $('.readingClub-list__footer').append(inputHTML);
             $("#btnGotoPage").click(function () {
                 var textGotoPage = $("#textGotoPage").val();
@@ -716,6 +1038,7 @@
                     scrollTop: $(".readingClub-table").offset().top - 80
                 }, 500);
             });
+
 
         });
     </script>

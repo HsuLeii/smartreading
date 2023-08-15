@@ -7,37 +7,74 @@ main {
 
         .order-body {
           .readingClub-list {
-            .dataTables_wrapper {
-                padding: 10px 5%;
-                background-color: $dataTables-bg;
-              .readingClub-list__header {
+            .dataTable_menu_bar{
+              display: flex;
+              flex-wrap: wrap;
+              .dataTable_menu_bar_item{
                 display: flex;
-                flex-direction: column;
-
-                .dt-buttons {
-                  margin: 5px 0px;
-                  .dt-button {
-                    background: $button-bg;
-                    border: 1px solid $button-gray;
-                    &.active {
-                      background: $main-color;
-                      box-shadow: none;
-
-                      span {
-                        color: $white;
+                align-items: center;
+                flex-wrap: wrap; 
+                margin: 10px 0;
+                .menu_text{
+                  margin: 0 15px 10px 0;
+                } 
+                .dataTable_menu_bar_nav{
+                  display: flex;
+                  flex-wrap: wrap;
+                  .dataTable_menu_bar_nav_li{
+                    margin: 0 15px 10px 0;
+                    text-align: center;
+                    .dataTable_menu_bar_nav_li_btn{
+                      cursor: pointer;
+                      padding: 5px 15px;
+                      border: 1px solid $default-gray;
+                      background-color: $white;
+                      color: $main-color;
+                      p{
+                        color: $main-color;
                       }
+                      &:hover{
+                        background-color: $main-color;
+                        color: $white;
+                        p{
+                          color: $white;
+                        }
+                      }
+                      
                     }
-                    &:focus {
-                      border: 0;
-                      text-shadow: none;
+                    .dropdown-menu{
+                      position: absolute !important;
+                      margin: 0;
+                      padding: 0;
+                      min-width: 100%;
+                      li{
+                        p{
+                          cursor: pointer;
+                          padding: 10px 15px;
+                          text-align: center;
+                          &:hover{
+                            background-color: $main-color;
+                            color: $white;
+                          }
+                        }
+                      }
                     }
                   }
                 }
+              }
+            }
+
+            .dataTables_wrapper {
+                
+              .readingClub-list__header {
+                display: flex;
+                flex-direction: column;
 
                 .pull-right {
                   display: flex;
                   justify-content: center;
                   align-items: center;
+                  flex-wrap: wrap;
                   margin: 5px 0px;
 
                   .dataTables_info {
@@ -65,7 +102,6 @@ main {
 
                 tbody {
                   tr{
-                    width: 100%;
                     &.club_table_area {
                       width: 100%;
                       padding: 0;
@@ -102,6 +138,39 @@ main {
                       .club_table_place{
                           width: 100%;
                           white-space: inherit;
+                      }
+
+                      .club_table_tittle{
+                        h3{
+                          overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    /* autoprefixer: off */
+                    -webkit-box-orient: vertical;
+                    /* autoprefixer: on */
+                    box-orient: vertical;
+                    -moz--box-orient: vertical;
+                    -o--box-orient: vertical;
+                    -ms--box-orient: vertical;
+                        }
+                      }
+
+                      .club_table_introduce{
+                        border-bottom: 1px dotted;
+                        p{
+                          overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    /* autoprefixer: off */
+                    -webkit-box-orient: vertical;
+                    /* autoprefixer: on */
+                    box-orient: vertical;
+                    -moz--box-orient: vertical;
+                    -o--box-orient: vertical;
+                    -ms--box-orient: vertical;
+                        }
                       }
                     }
                   }
@@ -443,31 +512,69 @@ main {
 }
 
 
-
 @media screen and (min-width: 576px) {
+  main {
+    &.readingClub {
+      .join-all {
+        .order-wrap {
+  
+          .order-body {
+            .readingClub-list {
+  
+              .dataTables_wrapper {
+                .readingClub-list__header {
+                  flex-direction: row;
+                  justify-content: flex-end;
+                  padding: 5px;
+                }
+                .readingClub-table {
+                  tbody {
+                    justify-content: flex-start;
 
-}
-
-@media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 992px) {
-
+                    tr{
+                      &.club_table_area {
+                        width: 47.5%;
+                        margin: 10px 1.25%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1024px){
+  main {
+    &.readingClub {
+      .join-all {
+        .order-wrap {
   
+          .order-body {
+            .readingClub-list {
+  
+              .dataTables_wrapper {
+                .readingClub-table {
+                  tbody {
+
+                    tr{
+                      &.club_table_area {
+                        width: 30%;
+                        margin: 10px 1.5%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-@media screen and (min-width: 1200px) {
-
-}
-
-@media screen and (min-width: 1400px) {
-
-}
-
-@media screen and (min-width: 1600px) {
-
-}
