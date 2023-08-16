@@ -1,0 +1,258 @@
+main {
+
+    .test_area {
+        .instructions {
+            display: flex;
+            justify-content: center;
+            margin: 0px auto 20px;
+
+            p {
+                color: $main_color_brown;
+            }
+        }
+
+        .score_report_area {
+            .score_report_header {
+                display: flex;
+                justify-content: flex-end;
+                padding: 15px 0;
+                background-color: $main_color;
+                border: 1px solid $main_color_brown;
+                border-bottom: 0;
+
+                .score_report_header_text {
+                    color: $white;
+                    text-align: center;
+                }
+            }
+
+            .score_report_body{
+                border: 1px solid $main_color_brown;
+                border-top: 0;
+                background-color: $white;
+
+                .score_report_item {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    border-top: 1px solid $main_color_brown;
+                    cursor: pointer;
+    
+                    .score_report_item_content {
+                        padding: 15px 8px;
+    
+                        &.score_report_item_icon {
+                            width: 37.5px;
+                            text-align: center;
+                            border: 0px;
+                            
+                            .fa-circle-check{
+                                color: $disabled;
+                                font-size: 20px;
+                            }
+                        }
+    
+                        &.score_report_item_text {
+                            text-align: center;
+                            color: $main_color_brown;
+    
+                            &.score_report_item_name {
+                                p{
+                                    overflow:hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                }
+                            }
+    
+                            &.score_report_item_time {
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+    
+                                .text_date {
+                                    margin: 0 10px 0 0;
+                                }
+                            }
+                        }
+    
+                    }
+
+                    &.check_item{
+                        background-color: $main_color_30;
+                        .score_report_item_content {
+                            &.score_report_item_icon {
+                                .fa-circle-check{
+                                    color: $main_color;
+                                }
+                            }
+
+                            &.score_report_item_text {
+                                color: $main_color;
+                            }
+                        }
+                    }
+
+                    &::before,
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 1px;
+                        height: 100%;
+                        background-color: $main_color_brown;
+                        bottom: 0;
+                    }
+
+                    &::before{
+                        left: 37.5px;
+                    }
+
+                    &::after{
+                        left: calc(45% + 15px);
+                    }
+
+                    &:nth-child(1){
+                        border-top: 0px;
+                    }
+    
+                }
+            }
+
+            
+
+            .score_report_header_name,
+            .score_report_item_name {
+                width: calc(45% - 15px);
+            }
+
+            .score_report_header_time,
+            .score_report_item_time {
+                width: calc(55% - 15px);
+            }
+
+        }
+    }
+}
+
+
+@media screen and (min-width: 576px) {
+    main {
+
+        .test_area {
+    
+            .score_report_area {
+    
+                .score_report_body{
+    
+                    .score_report_item {
+        
+                        .score_report_item_content {
+                            padding: 15px 10px;
+        
+                            &.score_report_item_icon {
+                                width: 50px;
+
+                                .fa-circle-check{
+                                    font-size: 25px;
+                                }
+                            }
+        
+                        }
+    
+                        &::before,
+                        &::after{
+                        }
+    
+                        &::before{
+                            left: 50px;
+                        }
+    
+                        &::after{
+                            left: calc(45% + 25px);
+                        }
+                    }
+                }
+    
+                
+    
+                .score_report_header_name,
+                .score_report_item_name {
+                    width: calc(45% - 25px);
+                }
+    
+                .score_report_header_time,
+                .score_report_item_time {
+                    width: calc(55% - 25px);
+                }
+    
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+
+        .test_area {
+            .instructions {
+                margin: 0px auto 40px;
+            }
+    
+            .score_report_area {
+
+                .score_report_header {
+                    padding: 25px 0;
+                }
+    
+                .score_report_body{
+    
+                    .score_report_item {
+        
+                        .score_report_item_content {
+                            padding: 25px 15px;
+        
+                            &.score_report_item_icon {
+                                width: 66.5px;
+
+                                .fa-circle-check{
+                                    font-size: 35px;
+                                }
+                            }
+        
+                        }
+    
+                        &::before,
+                        &::after{
+                        }
+    
+                        &::before{
+                            left: 66.5px;
+                        }
+    
+                        &::after{
+                            left: calc(45% + 33.25px);
+                        }
+                    }
+                }
+    
+                
+    
+                .score_report_header_name,
+                .score_report_item_name {
+                    width: calc(45% - 25px);
+                }
+    
+                .score_report_header_time,
+                .score_report_item_time {
+                    width: calc(55% - 25px);
+                }
+    
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1400px) {}

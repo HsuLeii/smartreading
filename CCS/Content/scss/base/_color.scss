@@ -1,0 +1,63 @@
+$header_bg: #EFE8E0;
+$body_bg: #FFF6EB;
+$body_line_color: #FFE7D3;
+$footer_bg: #483C34;
+
+/*main*/
+$main_color:             #FF6000;
+$main_color_brown:	  	 #58391C;
+
+/*transparency*/
+$main_color_40:#FF600040;
+$main_color_30:#FF600030;
+$main_color_25:#FF600025;
+
+/*other*/
+$white:#fff;
+$grey: grey;
+$disabled: #ADADAD;
+$test_area_bg: #F3F3F3;
+$wrong_answer_color:#EE5007;
+$wrong_answer_bg:#FFD1BC;
+$correct_answer_color:#5E3200;
+$correct_answer_bg:#FFD7A9;
+$microphone_color:#3E215D;
+$play_color:#FFB800;
+$badge_yellow:#f8ebbb;
+$check_color: #00C314;
+
+/*grade*/
+$first_grade:#ff8120;
+$second_grade:#e26200;
+$third_grade:#f55203;
+$fourth_grade:#9a3400;
+$fifth_grade:#551f01;
+$sixth_grade:#380202;
+
+
+// 顏色選擇
+$text_color: (
+    colorBlue: $main_color,
+    colorGreen: $main_color_brown
+);
+
+@mixin mainTextColor($parent, $text_color) {
+    #{$parent} {
+      color: $text_color !important;
+    }
+  }
+  
+  @each $text_color, $value in $text_color {
+      @include mainTextColor(".about_content_#{$text_color}", $value);
+    }
+
+    @mixin mainBorderColor($parent, $text_color) {
+        #{$parent} {
+          border-color: $text_color !important;
+        }
+      }
+      
+      @each $text_color, $value in $text_color {
+          @include mainBorderColor(".about_border_#{$text_color}", $value);
+        }
+
