@@ -1,42 +1,128 @@
 main {
 
     .login_area {
-        padding: 100px 0 40px;
+        padding: 60px 0;
         max-width: 500px;
         margin: 0 auto;
         width: 80%;
 
         .login_title {
             color: $main_color;
-            h3{
+            margin: 30px auto 0;
+
+            h3 {
                 text-align: center;
             }
         }
 
         .input_area {
-            .form-control {
-                padding: 10px 100px 10px 15px;
-                width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
 
-                &::-webkit-input-placeholder {
-                    position: relative;
-                    left: calc(19px + 15px);
+            .input-group-text {
+
+                &.icon_password,
+                &.icon_user {
+                    padding: 10px;
+                    background-color: $main_color;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    i {
+                        color: $white;
+                    }
                 }
+            }
+
+            .form-control {
+                padding: 10px 45px 10px 15px;
+                width: calc(100% - 50px);
             }
 
             .password_input {
                 width: 100%;
             }
         }
+
+        .save_password{
+            display: flex;
+            justify-content: flex-end;
+            .save_password_checkbox {
+                position: absolute;
+                opacity: 0;
+    
+                &+label {
+                    color: $main_color_grey;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+    
+                    &:before {
+                        content: '';
+                        margin-right: 10px;
+                        display: inline-block;
+                        vertical-align: text-top;
+                        width: 20px;
+                        height: 20px;
+                        background: $white;
+                        border: 1px solid $main_color_grey;
+                    }
+                }
+
+                &:hover {
+                    &+label {
+                        color: $main_color;
+                        &:before {
+                            border: 1px solid $main_color;
+                        }
+                    }
+                }
+
+                &:checked {
+                    &+label {
+                        &:before {
+                            border: 1px solid $main_color;
+                            background-color: $main_color;
+                        }
+
+                        &:after {
+                            font-family: 'FontAwesome', sans-serif;
+                            content: '\f00c';
+                            position: absolute;
+                            color: $white;
+                            width: 20px;
+                            font-size: 15px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .register_btn{
+            display: flex;
+            justify-content: center;
+            margin: 60px auto 0;
+            a{
+                color: $main_color_grey;
+                border-bottom: 0px solid transparent;
+
+                &:hover{
+                    color: $main-color;
+                    border-bottom: 1px solid $main-color;
+                }
+            }
+        }
     }
 }
 
 
-@media screen and (min-width: 576px) {
-}
+@media screen and (min-width: 576px) {}
 
-@media screen and (min-width: 768px) {
-}
+@media screen and (min-width: 768px) {}
 
 @media screen and (min-width: 992px) {}
 
