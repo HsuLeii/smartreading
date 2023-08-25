@@ -28,7 +28,6 @@
     <link rel="stylesheet" type="text/css" href="Content/css/slick-1.8.1.css">
     <link rel="stylesheet" type="text/css" href="Content/css/slick-theme-1.8.1.min.css">
 
-
     <!-- SR core CSS -->
     <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
 
@@ -85,9 +84,21 @@
     </header>
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <main>
-        <div class="index-banner">
-            <img src="Content/images/index/banner-img.png" alt="">
+
+        <div class="slider slider_banner">
+            <div class="slick-slide">
+                <div class="slick_img">
+                    <img src="Content/images/index/banner-img.png" alt="">
+                </div>
+            </div>
+
+            <div class="slick-slide">
+                <div class="slick_img">
+                    <img src="Content/images/index/banner-img-1.png" alt="">
+                </div>
+            </div>
         </div>
+
         <div class="index-content">
             <div class="container">
                 <div class="row">
@@ -553,7 +564,7 @@
                                 </div>
                                 <a class="base-more" href="" target="_blank">more ></a>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="slider slider_recommendBook responsive">
                                     <div class="slick-slide">
@@ -1320,14 +1331,13 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
     <script src="Content/js/slick-1.8.1.js"></script>
 
-
     <script>
         $(document).ready(function () {
             //nowPage (此頁必留)
             $('.navTab-index').addClass('active');
-                $('header').load('header.html', function () {
-                    $('.navTab-index').addClass('active'); //nowPage
-                });
+            $('header').load('header.html', function () {
+                $('.navTab-index').addClass('active'); //nowPage
+            });
             $('footer').load('footer.html');
         });
     </script>
@@ -1354,7 +1364,7 @@
                     $.each(response, function (key, value) {
                         $($(`#pB-grade${value.Grade}`).find("tr")[parseInt(value.Sort) - 1]).html(
                             `<td></td><td>${value.Sort}</td><td>${value.School}</td><td>${value.Name}</td>`
-                            )
+                        )
                     });
                 },
                 error: function (jqXHR, textStatus, err) {
@@ -1400,6 +1410,21 @@
             }
         }
     </script>
+
+    <!-- banner輪播圖 -->
+    <script>
+        $(".slider_banner").slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            infinite: true,
+            arrows: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    </script>
+
     <!-- 推薦書單輪播圖 -->
     <script>
         $(".responsive").slick({
@@ -1432,6 +1457,17 @@
                     }
                 }
             ]
+        });
+
+        $(".slider_banner").slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            infinite: true,
+            arrows: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1
         });
     </script>
 
