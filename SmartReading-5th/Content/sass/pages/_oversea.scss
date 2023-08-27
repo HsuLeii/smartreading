@@ -7,33 +7,34 @@ main {
                         .signup_area {
                             display: flex;
                             align-items: center;
+                            flex-direction: column;
 
                             .signup_photo_area,
                             .signup_text_area {
-                                width: 43.75%;
+                                width: 100%;
                                 margin: 0 auto;
                             }
 
                             .signup_photo_area {
-                                background-image: url(../../Content/images/oversea/signup_bg.png);
-                                background-size: cover;
-                                background-position: center center;
-                                position: relative;
+                                background-color: #5ba4ff;
+                                margin: 0 auto 30px;
 
                                 .signup_photo_item_text{
                                     width: 80%;
-                                        margin: 0 auto;
+                                        margin: 15px auto;
+                                        display: flex;
+                                        justify-content: center;
+                                        position: relative;
+                                        z-index: 1;
+                                        transform: translate(0px, -5px);
+                                    a {
+                                        display: block;
+                                        color: $white;
+                                        width: 100%;
                                         padding: 10px;
                                         background-color: #ff9567;
                                         border-radius: 50px;
-                                        display: flex;
-                                        justify-content: center;
-                                        position: absolute;
-                                        bottom: 0;
-                                        z-index: 1;
-                                    p {
-                                        color: $white;
-                                        
+                                        text-align: center;
                                     }
 
                                     &::after{
@@ -59,8 +60,32 @@ main {
 }
 
 
-@media screen and (min-width: 576px) {
-    main {}
+@media screen and (min-width: 768px) {
+    main {
+        &.oversea {
+            .join-all {
+                .order-wrap {
+                    .order-page {
+                        .order-body {
+                            .signup_area {
+                                flex-direction: row;
+    
+                                .signup_photo_area,
+                                .signup_text_area {
+                                    width: 43.75%;
+                                }
+    
+                                .signup_photo_area {
+                                    margin: 0 auto;
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1024px) {
