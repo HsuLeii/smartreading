@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="SmartReading X 科普閱讀力大賽" />
+<meta name="author" content="SmartReading X 科普閱讀力大賽" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>SmartReading X 科普閱讀力大賽</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico" />
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css" />
+<link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css" />
+<link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css" />
+<link href="Content/css/global.css" rel="stylesheet" />
+
+<!-- SR core CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
+<script src="Script/jquery.min.js"></script> 
+<script src="Script/bootstrap-lg.min.js"></script> 
+<script src="Script/ie10-viewport-bug-workaround.js"></script>
+</head>
+
+<body>
+<header> </header>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<main class="main">
+  <div class="join-kv">
+    <div class="row h-full">
+      <div class="col-xs-8 join-kv-text">
+        <h1>參賽專區<br>
+          COMPETITION AREA</h1>
+      </div>
+      <div class="col-xs-4"></div>
+    </div>
+  </div>
+  <div class="join-all">
+    <div class="nav-wrap nav-wrap-info">
+      <ul class="order-fixed-nav join-fixed-nav">
+        <li class="current"><a href="info_signUp_1.html">我要報名</a></li>
+        <li><a href="info_schedule.html">重要時程</a></li>
+        <li><a href="info_apply_1.html">報名資訊</a></li>
+        <li><a href="info_apply_2.html">活動說明</a></li>
+        <li><a href="info_apply_3.html">前測</a></li>
+        <li><a href="info_apply_4.html">閱讀任務</a></li>
+        <li><a href="info_apply_5.html">後測</a></li>
+        <li><a href="info_apply_6.html">成績採計與獎項</a></li>
+      </ul>
+    </div>
+    <div class="order-wrap join-wrap container"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <div class="order-page join-page">
+        <div class="row order-body">
+          <div class="info_signUp__order-body"> 
+            <!-- nav start -->
+            <ul class="nav nav-lines nav-justified info_signUp__nav">
+              <li role="presentation"><a href="info_signUp_1.html"><span>我要報名</span></a></li>
+              <li role="presentation"><a href="info_signUp_2.html"><span>我來揪團</span></a></li>
+              <li role="presentation" class="active"><a href="info_signUp_3.html"><span>報名查詢</span></a></li>
+            </ul>
+            <!-- nav end --> 
+            
+            <!-- h3 start -->
+            <h3 class="text-center mt-5 my-1 pb-2 info_signUp__h3"><img src="Content/images/logo/footer_sr_logo.svg" height="85" alt="SmartReadingLogo" class="w-auto"/>報名查詢</h3>
+            <br>
+            <!-- h3 end -->
+            
+            <form id="form1">
+              <!-- 報名查詢 start -->
+              <div class="form-horizontal row mb-5 info_signUp__form" id="searchForm">
+                <div class="form-group"> <label for="inputSearchName" class="col-md-3 control-label"><span class="text-red">*</span>參賽者姓名</label>
+                  <div class="col-md-9 col-lg-7">
+                    <input type="text" class="form-control noRadius" id="inputSearchName" placeholder="請輸入參賽者的姓名" pattern="^[\u4e00-\u9fa5]+$" title="請輸入參賽者的中文姓名" required>
+                  </div>
+                </div>
+                <div class="form-group"> <label for="inputSearchId" class="col-md-3 control-label"><span class="text-red">*</span>身份證字號</label>
+                  <div class="col-md-9 col-lg-7">
+                    <input type="text" class="form-control noRadius" id="inputSearchId" placeholder="請輸入參賽者的身分證字號" pattern="^[A-Z][12]\d{8}$" required>
+                  </div>
+                </div>
+                <div class="form-group"> <label for="inputSearchEmail" class="col-md-3 control-label"><span class="text-red">*</span>E-mail</label>
+                  <div class="col-md-9 col-lg-7">
+                    <input type="email" class="form-control noRadius" id="inputSearchEmail" placeholder="請填寫參賽者的信箱" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12 text-center">
+                    <button class="btn btn-primary btn-lg mx-1 btn-wider" type="submit" id="searchSignUp">查詢報名</button>
+                  </div>
+                </div>
+              </div>
+              <!-- 報名查詢 end --> 
+              
+              <!-- 查詢後 start -->
+              <div id="searchResult" style="display: none;">
+                <div class="panel panel-default noRadius row">
+                  <div class="panel-heading">
+                    <h3 class="panel-title fs-18 text-center">參賽者報名資料</h3>
+                    <button class="text-primary pull-right info_signUp__editBtn" type="button" id="editSignUp"><i class="fas fa-edit fs-20"></i><span class="hidden-xs visible-lg-inline fs-lg-17">&nbsp;修改資料</span></button>
+                    <button class="text-primary pull-right info_signUp__editBtn" type="submit" id="editOk" style="display: none;"><i class="fas fa-check fs-20"></i><span class="hidden-xs visible-lg-inline fs-lg-17">&nbsp;確認修改</span></button>
+                  </div>
+                  <div class="panel-body px-3"> 
+                    <!-- 參賽者基本資料 start -->
+                    <div class="form-horizontal row mb-1 info_signUp__form readonly" id="contestantInfo">
+                      <div class="form-group"> <label for="inputName" class="col-md-3 control-label"><span class="text-red">*</span>姓名</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputName" placeholder="請輸入您的姓名" pattern="^[\u4e00-\u9fa5]+$" title="請輸入您的中文姓名" disabled readonly>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputEName" class="col-md-3 control-label"><span class="text-red">*</span>英文名</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputEName" placeholder="請使用護照上的英文名"  pattern="^[a-zA-Z\s,]+$" disabled readonly>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputCountry" class="col-md-3 control-label"><span class="text-red">*</span>國家</label>
+                        <div class="col-md-9 col-lg-7">
+                          <select class="form-control  noRadius" id="inputCountry" disabled readonly>
+                            <option value="" disabled hidden>請選擇</option>
+                            <option value="臺灣" selected>臺灣</option>
+                            <option value="香港">香港</option>
+                            <option value="澳門">澳門</option>
+                            <option value="馬來西亞">馬來西亞</option>
+                            <option value="越南">越南</option>
+                            <option value="菲律賓">菲律賓</option>
+                            <option value="印尼">印尼</option>
+                            <option value="新加玻">新加玻</option>
+                            <option value="泰國">泰國</option>
+                            <option value="美國">美國</option>
+                            <option value="其他">其他</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputSchoolCity" class="col-md-3 control-label"><span class="text-red">*</span>學校</label>
+                        <div class="col-md-9 col-lg-7">
+                          <div class="row">
+                            <div class="col-lg-3 pr-lg-0">
+                              <select class="form-control noRadius" id="inputSchoolCity" disabled readonly>
+                                <option value="" disabled selected hidden>縣市</option>
+                                <option value="基隆市">基隆市</option>
+                                <option value="台北市">台北市</option>
+                                <option value="新北市">新北市</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-3 pr-lg-0">
+                              <select class="form-control noRadius" id="inputSchoolDist" disabled readonly>
+                                <option value="" disabled selected hidden>行政區</option>
+                                <option value="大安區">大安區</option>
+                              </select>
+                            </div>
+                            <div class="col-lg-6">
+                              <select class="form-control noRadius editableSelect" id="inputSchoolCode" placeholder="請輸入關鍵字/學校代碼" disabled readonly>
+                                <option value="111 愛閱讀國小">111 愛閱讀國小</option>
+                                <option value="222 好讀書國小">222 好讀書國小</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputGrade" class="col-md-3 control-label"><span class="text-red">*</span>年級</label>
+                        <div class="col-md-9 col-lg-7">
+                          <select class="form-control noRadius" id="inputGrade" disabled readonly>
+                            <option value="" disabled hidden selected>請選擇年級</option>
+                            <option value="2年級">2年級</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputId" class="col-md-3 control-label"><span class="text-red">*</span>身份證字號</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputId" placeholder="請填寫身份證字號"  pattern="^[A-Z][12]\d{8}$" disabled readonly>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputGender" class="col-md-3 control-label"><span class="text-red">*</span>性別</label>
+                        <div class="col-md-9 col-lg-7">
+                          <select class="form-control noRadius" id="inputGender" disabled readonly>
+                            <option value="" disabled hidden selected>請選擇</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputEmail" class="col-md-3 control-label"><span class="text-red">*</span>E-mail</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="email" class="form-control noRadius" id="inputEmail" placeholder="請填寫常用且正確的電子信箱" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled readonly>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputUploadIdFile" class="col-md-3 control-label"><span class="text-red">*</span>上傳證件檔案</label>
+                        <div class="col-md-9 col-lg-7"> <label class="form-control noRadius form-control-file disabled readonly" for="inputUploadIdFile">
+                          <input type="text" class="form-control noRadius" placeholder="請選擇文件..." id="inputUploadIdText" disabled readonly required>
+                          <div class="btn btn-default btn-lg noRadius text-primary" type="button">瀏覽...</div>
+                          <input class="form-control" type="file" id="inputUploadIdFile" accept="image/*,.pdf" disabled readonly>
+                          <a href="" class="preview-upload">查看上傳</a> </label> </div>
+                      </div>
+                      <div class="form-group"> <label for="inputPhone" class="col-md-3 control-label"><span class="text-red">*</span>手機</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputPhone" placeholder="請填寫方便聯繫的手機" pattern="09\d{8}" title="請輸入手機號碼09開頭的10位數字號碼" disabled readonly>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputTestarea" class="col-md-3 control-label"><span class="text-red">*</span>考區</label>
+                        <div class="col-md-9 col-lg-7">
+                          <select class="form-control noRadius" id="inputTestarea" required disabled readonly>
+                            <option value="" disabled hidden selected>請選擇</option>
+                            <option value="北一區">北一區</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputGroupsigncode" class="col-md-3 control-label">團報碼</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputGroupsigncode" placeholder="無則免填" disabled readonly>
+                          <button type="button" class="btn btn-default btn-lg noRadius text-red info_signUp__funBtn" id="quitGroup" style="display: none;">我要退團</button>
+                        </div>
+                      </div>
+                      <div class="form-group"> <label for="inputSpecialcode" class="col-md-3 control-label">優惠碼</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputSpecialcode" placeholder="無則免填" disabled readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 參賽者基本資料 end --> 
+                    
+                    <!-- 監護人/聯絡人基本資料 start -->
+                    <div class="form-horizontal row mb-1 info_signUp__form readonly" id="guardianInfo">
+                      <div class="form-group">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2">
+                          <h4>監護人/聯絡人基本資料</h4>
+                        </div>
+                      </div>
+                      <div class="form-group"><label for="inputGuardianName" class="col-md-3 control-label"><span class="text-red">*</span>姓名</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputGuardianName" placeholder="請輸入監護人/家長姓名" pattern="^[\u4e00-\u9fa5]+$" required disabled readonly>
+                        </div>
+                      </div>
+                      <div class="form-group"><label for="inputGuardianPhone" class="col-md-3 control-label"><span class="text-red">*</span>手機</label>
+                        <div class="col-md-9 col-lg-7">
+                          <input type="text" class="form-control noRadius" id="inputGuardianPhone" placeholder="請填寫監護人/家長方便聯絡手機" pattern="09\d{8}" title="請輸入手機號碼09開頭10位數字" required disabled readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 監護人/聯絡人基本資料 end -->
+                    
+                    <hr class="dashed mx-n3">
+                    <!-- 訂單資訊 start -->
+                    <div class="form-horizontal row info_signUp__form">
+                      <div class="form-group">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2">
+                          <h4>訂單資訊</h4>
+                        </div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2">活動名稱：第四屆科普力大賽</div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2">報名類別：<label id="Category">個人/團體</label>報名&nbsp;&nbsp;（<label id="Number">1</label>人）&nbsp;&nbsp;<label class="text-red GROUP" id="Category-groupText">已成團/暫未成團</label></div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2">訂購時間：<label id="OrderTime">0000/00/00 00:00</label></div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2">訂單號碼：<label  id="OrderId">SR20220700000</label> </div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2"> 付款金額：<span>NT$&nbsp;<label id="PayAmount">750</label></span></div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <div class="col-md-9 col-lg-10 col-md-offset-2"> 訂單狀態：<label id="State">待付款</label><span class="pull-right" id="wantToRefund">
+                          <button class="btn btn-primary btn-lg mx-1 btn-wider" type="button" data-toggle="modal" data-target="#modal-refundAlert">我要退款</button>
+                          <a class="btn" role="button" data-toggle="collapse" href="#collapseRefundMethod" aria-expanded="false" aria-controls="collapseRefundMethod"> 退款辦法&nbsp;<i class="fas fa-question-circle fa-lg"></i> </a></span> </div>
+                      </div>
+                    </div>
+                    <div class="collapse" id="collapseRefundMethod">
+                      <div class="well">
+                        <p>1. 訂購完成，系統將自動寄送通知信，內容包含訂購資訊，將以此信中內容做為後續資訊確認之證明。</p>
+                        <p>2. 付款成功後，系統將自動寄送通知信，內容包含訂購資訊，將以此信中內容做為後續資訊確認之證明。</p>
+                        <p>3. 退費申請處理至少需14個工作天。</p>
+                        <p>4. 若因不可抗力因素（天災）或報名人數不足而活動取消時，將全額退費。</p>
+                        <p>5. 若參賽者取消，退費相關規則如下：</p>
+                        <div class="pl-2">
+                          <p>(1)主辦單位將01/12(四)中午12:00整，退費申請截止之後統一寄出「第一聯收執聯」交由繳款人保存，請務必妥善保存。後續若因特殊狀況(如因天災或疫情導致參賽者無法繼續參與)有退款需求，需寄回「第一聯收執聯」予主辦單位，方可辦理退款作業。</p>
+                          <p>(2)科普閱讀力大賽「活動開始日或開始後中途停止或未通知不參加者，將不予退費」。</p>
+                          <p>(3)繳費後至12/17(六)前退費，扣手續費100元。</p>
+                          <p>(4)前測結束後，若參賽者報名本競賽，但因故未參與前測，可於01/12(四)中午12:00前提出未參與緣由，並申請退費。扣手續費100元後， 無息退回價差。</p>
+                          <p>(5)如參賽者於開始日後並已完成前測的第一次DACC測驗始退出活動，主辦單位將不予退費。</p>
+                        </div>
+                        <p>6. 主辦單位保有最終修改、變更、活動解釋及取消本活動之權利，若有相關異動將會公告於大賽官方網站，恕不另行通知。</p>
+                      </div>
+                    </div>
+                    <!-- 訂單資訊 end --> 
+                  </div>
+                </div>
+                <div class="info_signUp__payment" id="needToPay" style="display: none;">付款金額： <label class="fs-lg-30 text-red fw-400"> $ <label class="fs-lg-30 text-red fw-400" id="needToPayAmount">600</label> </label>
+                  <button class="btn btn-danger btn-lg noRadius" type="button" id="ToPay">付款</button>
+                </div>
+              </div>
+              <!-- 查詢後 end -->
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </div>
+  </div>
+</main>
+<!-- Modal#modal-refundAlert start -->
+<div class="modal fade" id="modal-refundAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content noRadius">
+      <div class="modal-header border-transparent">
+        <button type="button" class="close pull-left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body"> 
+        <!-- -->
+        <div class="row mb-4 d-flex flex-wrap justify-content-center align-items-center">
+          <div class="col-lg-3"><img src="Content/images/info_signUp/refund.png" alt="" class="w-auto center-block my-1"/></div>
+          <div class="col-lg-7">
+            <p>當您按下確定後，系統將自動釋出您的名額，</p>
+            <p>若您想再次報名該活動，還請至報名頁面重新報名， </p>
+            <p>感謝您!</p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center mb-5">
+          <div class="w-auto px-3">
+            <p>*退款須知：(未繳費請忽略）</p>
+            <p>1. 繳費後至活動日往前推算之7日前，扣手續費100元。</p>
+            <p>2. 活動開始期間已達全期間之三分之一，扣費用二分之一及手續費100元後，無息退回價差。</p>
+            <p>3. 活動開始期間已逾全期間之三分之一，不予退費。</p>
+            <p>4. 退款申請處理至少需14個工作天。</p>
+            <h4 class="text-center mt-1 mt-2 mb-3 fs-lg-24 fw-400">確定要退款嗎？</h4>
+            <div class="text-center">
+              <button type="button" class="btn btn-primary-outline btn-lg m-1 btn-wider" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary btn-lg m-1 btn-wider" id="refundConfirm">確定</button>
+            </div>
+          </div>
+        </div>
+        <!-- --> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal#modal-refundAlert end --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<footer class="footer"> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<link href="Content/widgets/jquery-editable-select-master/dist/jquery-editable-select.min.css" rel="stylesheet">
+<script src="Content/widgets/jquery-editable-select-master/dist/jquery-editable-select.min.js"></script> 
+<script src="Content/js/info_signUp.js"></script> 
+<script>
+$(document).ready(function () {
+    $('header').load('header.html');//aspx請刪除
+    $('footer').load('footer.html');//aspx請刪除
+    
+
+    //查詢報名
+    $('#searchSignUp').click(function(){ 
+        if ( $('#editOk').is(':visible') ){
+               alertModal('請先完成確定修改。');
+               return false;
+        }else{
+            $('#contestantInfo, #guardianInfo').find('input, select').val();
+            
+            $('#form1').submit(function(e){  
+                e.stopPropagation();
+
+                //(假模擬) 以名字搜尋出各種狀態，正式請刪除
+                switch ($('#inputSearchName').val()){
+                    case '張花花個人無優惠待付款': //個人 無優惠 待付款 
+                        id = 'SR20220928100';
+                        break;
+                    case '張花花個人無優惠已付款': //個人 無優惠 已付款 
+                        id = 'SR20220928101';
+                        break;   
+                    case '張花花個人無優惠退款中': //個人 無優惠 退款中
+                        id = 'SR20220928102';
+                        break;  
+                    case '張花花個人無優惠已退款': //個人 無優惠 已退款
+                        id = 'SR20220928103';
+                        break;  
+                    /* ------- ------- ------- ------- ------- ------- ------- */       
+                    case '張花花個人有優惠待付款': //個人 有優惠 待付款
+                        id = 'SR20220928110';
+                        break;
+                    case '張花花個人有優惠已付款': //個人 有優惠 已付款 
+                        id = 'SR20220928111';
+                        break;
+                    case '張花花個人有優惠退款中': //個人 有優惠 退款中 
+                        id = 'SR20220928112';
+                        break; 
+                    case '張花花個人有優惠已退款': //個人 有優惠 已退款
+                        id = 'SR20220928113';
+                        break;  
+                    /* ------- ------- ------- ------- ------- ------- ------- */     
+                    case '張花花團體未成團': //團體 未成團 
+                        id = 'SR20220928200';
+                        break;
+                    /* ------- ------- ------- ------- ------- ------- ------- */       
+                    case '張花花團體已成團待付款': //團體 已成團 待付款 
+                        id = 'SR20220928210';
+                        break;
+                    case '張花花團體已成團已付款': //團體 已成團 已付款
+                        id = 'SR20220928211';
+                        break;   
+                    case '張花花團體已成團退款中': //團體 已成團 退款中
+                        id = 'SR20220928212';
+                        break;
+                    case '張花花團體已成團已退款': //團體 已成團 已退款
+                        id = 'SR20220928213';
+                        break; 
+                    /* ------- ------- ------- ------- ------- ------- ------- */   
+                    default:
+                        id = 'null';
+                        break;
+                }
+
+                if(id == 'null'){
+                    alertModal('查無此報名，請重新查詢或立即報名。');
+                }else{
+                    $('#searchResult').slideDown();
+                    $('html,body').animate({scrollTop:$('#searchResult').offset().top - 20 }, 500);
+
+                    $.getJSON('Content/jsonDemo/'+id+'.json', function (data) {
+                        getFormInput(data); 
+
+                        $('#State').text(data[0].State);
+                        $('#PayAmount, #needToPayAmount').text(data[0].PayAmount);
+                        
+                        if( data[0].Number == '1' ){//個人報名
+                            $('.GROUP').hide(); 
+                            showEl(data[0].State);
+                        }else {//團體報名
+                            $('.GROUP').show(); 
+                            showEl(data[0].State);
+                            
+                            //報名類別：團體報名 已成團|暫未成團 顯示
+                            if ( data[0].Number == data[0].Member.length){
+                                $('#Category-groupText').text('已成團');
+                                $('#needToPay').show(); 
+                            }else{
+                                $('#Category-groupText').text('暫未成團');
+                                $('#needToPay').hide();   
+                            }
+                        }
+                    });
+                }
+                return false;
+            });    
+        }
+    });
+    
+    //修改資料 效果顯示
+    $('#editSignUp').click(function(){ 
+        $('#editSignUp').hide();
+        $('#editOk').show();
+        
+        //去除 報名查詢 required
+        $('#searchForm').find('input, select').prop('required', false);
+        
+        //參賽者報名資料 欄位效果
+        $('#contestantInfo, #guardianInfo').toggleClass('readonly')
+                                           .find('input, select').removeAttr('disabled readonly')
+                                           .not('#inputGroupsigncode, #inputSpecialcode').prop('required', true);
+        
+        $('.form-control-file').removeClass('disabled readonly');
+        $('#inputUploadIdFile').prop('required', false);
+    });
+
+    //確認修改
+    $('#editOk').click(function(){ 
+        //(簡易)驗證學校代碼名稱
+        if( $('.editableSelect').val()!='' && checkEditable()==false){
+            alertModal('請確認學校代碼名稱。');
+
+            $('#alertModal').on('hidden.bs.modal', function (e) {
+                $('html,body').animate({scrollTop:$('.editableSelect').offset().top - 40}, 800);
+                $('.editableSelect').focus();
+            });
+
+            return false;
+        }
+
+        //驗證團報碼與優惠碼
+        if ( $('#inputGroupsigncode').val() != '' && $('#inputSpecialcode').val() != ''){
+            alertModal('團報碼與優惠碼只能擇一優惠！');
+            return false;
+        }
+        
+        $('#form1').submit(function(e){
+            e.preventDefault();
+
+            $('#editSignUp').show(); 
+            $('#editOk').hide(); 
+            
+            //恢復 報名查詢 required
+            $('#searchForm').find('input, select').prop('required', true);
+
+            //參賽者報名資料 欄位效果
+            $('#contestantInfo, #guardianInfo').toggleClass('readonly')
+                                               .find('input, select').attr({
+                                                                            'disabled': 'disabled',
+                                                                            'readonly': 'readonly'
+                                                                       })
+                                               .prop('required', false);
+            $('.form-control-file').addClass('disabled readonly');
+            
+            $('#quitGroup').hide(); 
+
+            return false;
+        });
+                                  
+        alertModal('成功修改報名資料');                          
+    });
+    
+    //我要退團 click
+    $('#quitGroup').click(function(){
+        confirmModal('是否確定退團？<br><span class="small">(退團後將會成為個人報名。<br>未付款前及期限內可再加入團體報名。)</span>');
+        
+        $('#confirmModal-ok').click(function(){
+            $('#inputGroupsigncode').val('');    
+        });
+    });
+    
+    //付款
+    $('#ToPay').click(function(){
+        window.location.href = 'info_signUp_1-2.html?id=' + id;      
+    });
+
+    //確定退款
+    $('#refundConfirm').click(function(){
+        window.location.href = 'info_signUp_3-2.html?id=' + id;  
+    });
+}); 
+    
+function showEl(State){
+    /*參賽者報名資料 修改報名資料 顯示
+      參賽者報名資料 團報碼、優惠碼功能按鈕 顯示
+      訂單資訊      訂單狀態顏色
+      訂單資訊      我要退款 顯示
+      底下         付款 顯示                  */
+    switch (State){
+        case '待付款': 
+            $('#editSignUp').show();
+            $('#State').removeClass().addClass('text-red');
+            $('#wantToRefund').hide();
+            $('#needToPay').show(); 
+            break;
+        case '已付款':
+            $('#editSignUp').show();
+            $('#State').removeClass().addClass('text-success');
+            $('#wantToRefund').show();
+            $('#needToPay').hide();
+            break;
+        case '退款中':
+            $('#editSignUp').hide();
+            $('#State').removeClass().addClass('text-primary');
+            $('#wantToRefund').hide();
+            $('#needToPay').hide();
+            break;
+        case '已退款':
+            $('#editSignUp').hide();
+            $('#State').removeClass().addClass('text-primary');
+            $('#wantToRefund').hide();
+            $('#needToPay').hide();
+            break;
+        default:
+            break;
+    }
+}
+</script>
+</body>
+</html>
