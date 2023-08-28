@@ -58,20 +58,20 @@ header {
 
 				.navbar-collapse {
 					margin: 0px auto 15px;
-		
+
 					.navbar-nav {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 						margin: 0;
-		
+
 						li {
 							margin: 5px 0px;
-		
+
 							.dropdown-menu {
 								background: $white;
 							}
-		
+
 							&:active,
 							&:focus,
 							&:hover,
@@ -80,16 +80,16 @@ header {
 									color: $main-color;
 									background-color: transparent;
 								}
-		
+
 								&.active {
 									a {
 										color: $main-color;
 									}
 								}
 							}
-		
+
 							&.dropdown {
-		
+
 								&:active,
 								&:focus,
 								&:hover {
@@ -98,7 +98,7 @@ header {
 											a {
 												color: $default-black;
 											}
-		
+
 											&:active,
 											&:focus,
 											&:hover {
@@ -106,7 +106,7 @@ header {
 													color: $main-color;
 													background-color: transparent;
 												}
-		
+
 												&.active {
 													a {
 														color: $main-color;
@@ -115,7 +115,7 @@ header {
 											}
 										}
 									}
-		
+
 									&.active {
 										.dropdown-menu {
 											li {
@@ -127,24 +127,24 @@ header {
 									}
 								}
 							}
-		
+
 							.navi-main__languageMenu {
 								li {
 									a {
 										padding: 6px 10px 6px calc(10px + 1.25em);
 										text-align: left;
-		
+
 										.language-icon {
 											display: inline-block;
 											width: 1em;
 											height: 1em;
 											margin-left: -1.25em;
-		
+
 											.glyphicon {
 												display: none;
 											}
 										}
-		
+
 										&[check="checked"] {
 											.language-icon {
 												.glyphicon {
@@ -155,14 +155,14 @@ header {
 									}
 								}
 							}
-		
+
 							a {
 								color: $default-black;
 								padding: 5px 10px;
 								line-height: 1em;
 								position: relative;
 								background-color: transparent;
-		
+
 								&:active,
 								&:focus,
 								&:hover {
@@ -170,42 +170,44 @@ header {
 								}
 							}
 
-							&.navTab-sr{
+							&.navTab-sr {
 								cursor: pointer;
-								&.open{
-								.dropdown-menu {
-									display: flex;
-									flex-direction: column;
-									align-items: center;
-									min-width: auto;
-									position: relative;
-									box-shadow: none;
-									border: 0px;
-									float: none;
 
-									.dropdown-item{
-										color: $default-black;
+								&.open {
+									.dropdown-menu {
+										&.navTab-sr-dropdown-menu {
+											display: flex;
+											flex-direction: column;
+											align-items: center;
+											min-width: auto;
+											position: relative;
+											box-shadow: none;
+											border: 0px;
+											float: none;
 
-										&:hover{
-											color: $main-color;
+											.dropdown-item {
+												color: $default-black;
+
+												&:hover {
+													color: $main-color;
+												}
+											}
 										}
-									}
 									}
 								}
 							}
-		
-		
+
 							&.navTab-shopping {
 								margin: 20px 0px;
 								padding: 3px 20px;
 								border: 1px solid $shopping-color;
 								border-radius: 50px;
 								position: relative;
-		
+
 								i {
 									color: $shopping-color;
 								}
-		
+
 								.shop_num {
 									right: 0;
 									top: 0;
@@ -213,7 +215,7 @@ header {
 									background-color: $shopping-color;
 									color: $white;
 									position: absolute;
-		
+
 									line-height: 1;
 									border-radius: 50%;
 									width: 30px;
@@ -225,11 +227,11 @@ header {
 							}
 						}
 					}
-		
+
 				}
 			}
 		}
-		
+
 	}
 }
 
@@ -265,6 +267,7 @@ header {
 
 					.navbar-menu-btn {
 						display: block;
+
 						&:hover {
 							color: $main-color;
 						}
@@ -359,10 +362,18 @@ header {
 
 				.navbar-menu {
 
+					.navbar-menu-btn {
+						padding: 5px 0;
+					}
+
 					.navbar-collapse {
 						.navbar-nav {
 							li {
 								margin: 5px;
+
+								a{
+									padding: 10px;
+								}
 
 								&.navTab-signup {
 									a {
@@ -384,6 +395,7 @@ header {
 		.navi-main {
 			.container-fluid {
 				flex-direction: row;
+				align-items: flex-start;
 
 				.navbar-header {
 					width: 25%;
@@ -420,9 +432,28 @@ header {
 
 					.navbar-collapse {
 						width: 100%;
-					}
-				}
+						overflow: initial !important;
 
+						.navbar-nav {
+							align-items: center;
+
+							li {
+								&.navTab-sr {
+									&.open {
+										.dropdown-menu {
+											&.navTab-sr-dropdown-menu {
+												position: absolute;
+												width: 100%;
+											}
+										}
+
+									}
+								}
+							}
+						}
+					}
+
+				}
 			}
 		}
 	}
