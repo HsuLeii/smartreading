@@ -51,7 +51,7 @@ body { background-color: #f8f5c8; }
 
 .cursor { cursor: pointer; }
 
-::selection { background: #5c8a39; color: #fff; }
+::selection { background: #385423; color: #fff; }
 
 @media screen and (min-width: 768px) { h1 { font-size: 38px; }
   h3 { font-size: 35px; }
@@ -75,6 +75,8 @@ body { background-color: #f8f5c8; }
 .modal .modal-dialog .modal-content .modal-body .btn-primary { background-color: #58391C; padding: 5px 25px; transition: all 150ms ease-in-out; }
 
 .modal .modal-dialog .modal-content .modal-body .btn-primary:focus { box-shadow: 0 0 10px 0 #58391C inset, 0 0 10px 4px #58391C; }
+
+.table > :not(caption) > * > * { padding: 0; background-color: transparent; border-bottom-width: 0px; box-shadow: none; }
 
 @media screen and (min-width: 576px) { .modal .modal-dialog { margin: 0.5rem auto; } }
 
@@ -248,11 +250,17 @@ header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link
 
 header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle::after { display: none; }
 
+header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle.show > .fa-angle-down { transform: rotate(180deg); }
+
+header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle > .fa-angle-down { transition: 0.3s; }
+
 header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu { border: 0; border-radius: 20px; }
 
 header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu li .dropdown-item { padding: 10px 20px; border-radius: 20px; }
 
 header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu li .dropdown-item:hover { color: #5c8a39; background-color: #5c8a3925; }
+
+header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu li .dropdown-item.check { color: #5c8a39; }
 
 header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:nth-child(1) .nav-link { padding: 0; }
 
@@ -262,7 +270,7 @@ header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:nth-child
   header .navbar .container-fluid .navbar-collapse { position: relative; width: auto; display: flex; align-items: center; flex-basis: auto; }
   header .navbar .container-fluid .navbar-collapse .navbar-nav { flex-direction: row; border-radius: 50px; padding: 5px 40px; }
   header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link { padding: 10px 30px; }
-  header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu { position: absolute; box-shadow: 0 2px 6px #5c8a3940; min-width: 100%; padding: 15px; margin-top: 0; }
+  header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu { position: absolute; box-shadow: 0 2px 6px #5c8a3940; min-width: 100%; padding: 15px; margin-top: 0; left: 50%; transform: translate(-50%, 15px); }
   header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .dropdown-menu li .dropdown-item { padding: 10px 30px; }
   header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:nth-child(1) .nav-link { padding: 10px 30px; } }
 
@@ -336,234 +344,70 @@ main .test_area.select_page_area .select_page_btn .select_page_btn_item.select_p
 
 main .test_area.select_page_area .select_page_btn .select_page_btn_item.select_page_btn_item_four { background-color: #132A13; border: 1px solid #132A13; }
 
-main .test_area .test_badge_area { position: relative; display: flex; align-items: center; justify-content: center; width: 200px; margin: 30px auto; }
+main .test_area .report_selector_tittle, main .test_area .report_selector_text { display: flex; justify-content: center; color: #385423; margin: 0 auto 30px; }
 
-main .test_area .test_badge_area .badge_inner_layer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; }
+main .test_area .score_report_area .table { border: 1px solid #58391C; }
 
-main .test_area .test_badge_area .badge_inner_layer .badge_score { position: absolute; z-index: 1; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+main .test_area .score_report_area .table thead .score_report_header { display: flex; justify-content: flex-end; padding: 15px 0; background-color: #5c8a39; border-bottom: 0; }
 
-main .test_area .test_badge_area .badge_inner_layer .badge_score p { font-size: 60px; font-weight: bold; color: #58391C; }
+main .test_area .score_report_area .table thead .score_report_header .score_report_header_text { color: #fff; text-align: center; }
 
-main .test_area .test_badge_area .badge_inner_layer .badge_inner_item { width: 150px; height: 150px; border-radius: 5px; text-align: center; background-color: #f8ebbb; padding: 10px; }
+main .test_area .score_report_area .table tbody.score_report_body { border-top: 0; background-color: #fff; }
 
-main .test_area .test_badge_area .badge_inner_layer .badge_inner_item:nth-child(2), main .test_area .test_badge_area .badge_inner_layer .badge_inner_item:nth-child(3) { position: absolute; top: 0; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item { position: relative; display: flex; align-items: center; border-top: 1px solid #58391C; cursor: pointer; }
 
-main .test_area .test_badge_area .badge_inner_layer .badge_inner_item:nth-child(2) { transform: rotate(30deg); -webkit-transform: rotate(30deg); -moz-transform: rotate(30deg); -ms-transform: rotate(30deg); -o-transform: rotate(30deg); }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 15px 8px; }
 
-main .test_area .test_badge_area .badge_inner_layer .badge_inner_item:nth-child(3) { transform: rotate(60deg); -webkit-transform: rotate(60deg); -moz-transform: rotate(60deg); -ms-transform: rotate(60deg); -o-transform: rotate(60deg); }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 37.5px; text-align: center; border: 0px; }
 
-main .test_area .test_badge_area .badge_outer_layer { position: relative; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { color: #ADADAD; font-size: 20px; }
 
-main .test_area .test_badge_area .badge_outer_layer .badge_outer_item { width: 170px; height: 170px; border-radius: 5px; text-align: center; background-color: #5c8a39; padding: 10px; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text { text-align: center; color: #58391C; word-break: break-all; }
 
-main .test_area .test_badge_area .badge_outer_layer .badge_outer_item:nth-child(2), main .test_area .test_badge_area .badge_outer_layer .badge_outer_item:nth-child(3) { position: absolute; top: 0; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_name p { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-main .test_area .test_badge_area .badge_outer_layer .badge_outer_item:nth-child(2) { transform: rotate(30deg); -webkit-transform: rotate(30deg); -moz-transform: rotate(30deg); -ms-transform: rotate(30deg); -o-transform: rotate(30deg); }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time { display: flex; flex-wrap: wrap; justify-content: center; }
 
-main .test_area .test_badge_area .badge_outer_layer .badge_outer_item:nth-child(3) { transform: rotate(60deg); -webkit-transform: rotate(60deg); -moz-transform: rotate(60deg); -ms-transform: rotate(60deg); -o-transform: rotate(60deg); }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time .text_date { margin: 0 10px 0 0; }
 
-main .test_area .test_badge_area .ribbon_area { min-width: 240px; position: absolute; bottom: 0; z-index: 1; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item { background-color: #5c8a3930; }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_text { font-size: 18px; text-align: center; font-weight: bold; background-color: #81b956; color: #58391C; padding: 5px 10px; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_icon .fa-circle-check { color: #385423; }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_text .label { font-size: 18px; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_text { color: #385423; }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_sides { border: 18px solid #81b956; position: absolute; bottom: 0; z-index: -1; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before, main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { content: ""; position: absolute; width: 1px; height: 100%; background-color: #58391C; bottom: 0; }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_sides::before { content: ""; border-color: #44662a transparent transparent transparent; position: absolute; border-style: solid; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before { left: 37.5px; }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_left { border-left: 18px solid #F3F3F3; left: 0; transform: translate(-50%, 50%); }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { left: calc(45% + 15px); }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_left::before { left: 0; border-width: 18px 0 0 18px; }
+main .test_area .score_report_area .table tbody.score_report_body .score_report_item:nth-child(1) { border-top: 0px; }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_right { border-right: 18px solid #F3F3F3; right: 0; transform: translate(50%, 50%); }
+main .test_area .score_report_area .table .score_report_header_name, main .test_area .score_report_area .table .score_report_item_name { width: calc(45% - 20.75px); }
 
-main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_right::before { right: 0%; border-width: 18px 18px 0 0; }
+main .test_area .score_report_area .table .score_report_header_time, main .test_area .score_report_area .table .score_report_item_time { width: calc(55% - 20.75px); }
 
-main .test_area .total_questions { margin: 80px 0 0px; display: flex; justify-content: center; flex-wrap: wrap; }
+@media screen and (min-width: 576px) { main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 15px 10px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 50px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { font-size: 25px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before { left: 50px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { left: calc(45% + 25px); }
+  main .test_area .score_report_area .table .score_report_header_name, main .test_area .score_report_area .table .score_report_item_name { width: calc(45% - 25px); }
+  main .test_area .score_report_area .table .score_report_header_time, main .test_area .score_report_area .table .score_report_item_time { width: calc(55% - 25px); } }
 
-main .test_area .total_questions h4 { color: #58391C; margin: 2px 5px; text-align: center; }
+@media screen and (min-width: 768px) { main .test_area .score_report_area .table thead .score_report_header { padding: 25px 0; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 25px 15px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 66.5px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { font-size: 35px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before { left: 66.5px; }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { left: calc(45% + 33.25px); }
+  main .test_area .score_report_area .table .score_report_header_name, main .test_area .score_report_area .table .score_report_item_name { width: calc(45% - 25px); }
+  main .test_area .score_report_area .table .score_report_header_time, main .test_area .score_report_area .table .score_report_item_time { width: calc(55% - 25px); } }
 
-main .test_area .literacy_diagnosis_area { margin: 40px auto; }
+main { padding: 0 0 60px; }
 
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_title { display: flex; justify-content: center; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_title h4 { display: inline-block; text-align: center; background-color: #58391C; color: #fff; border-radius: 50px; padding: 5px 20px; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_text { margin: 20px auto; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_text p { color: #58391C; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-top: 1px dotted #58391C; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item:nth-child(1) { border-top: 0px; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade { background-color: #5c8a39; padding: 5px 10px; border-radius: 5px; text-align: center; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade p { color: #fff; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade p i { transition: 0.3s; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade:hover.report_grade_btn.first_grade_label { background-color: #ff7001; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade:hover.report_grade_btn.second_grade_label { background-color: #c35500; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade:hover.report_grade_btn.third_grade_label { background-color: #d74803; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade:hover.report_grade_btn.fourth_grade_label { background-color: #7b2a00; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade:hover.report_grade_btn.fifth_grade_label { background-color: #371401; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade:hover.report_grade_btn.sixth_grade_label { background-color: #1a0101; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.report_grade_label { width: 90px; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.first_grade_label { background-color: #ff8120; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.second_grade_label { background-color: #e26200; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.third_grade_label { background-color: #f55203; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.fourth_grade_label { background-color: #9a3400; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.fifth_grade_label { background-color: #551f01; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.sixth_grade_label { background-color: #380202; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress { width: calc(100% - 170px); }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress .bg_line { width: 100%; height: 12px; background-color: #fff; border-radius: 10px; border: 1px solid #5c8a39; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress .bg_line .line { background-color: #5c8a39; height: 10px; border-radius: 10px; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.first_grade_progress .bg_line { border: 1px solid #ff8120; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.first_grade_progress .bg_line .line { background-color: #ff8120; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.second_grade_progress .bg_line { border: 1px solid #e26200; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.second_grade_progress .bg_line .line { background-color: #e26200; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.third_grade_progress .bg_line { border: 1px solid #f55203; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.third_grade_progress .bg_line .line { background-color: #f55203; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.fourth_grade_progress .bg_line { border: 1px solid #9a3400; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.fourth_grade_progress .bg_line .line { background-color: #9a3400; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.fifth_grade_progress .bg_line { border: 1px solid #551f01; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.fifth_grade_progress .bg_line .line { background-color: #551f01; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.sixth_grade_progress .bg_line { border: 1px solid #380202; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress.sixth_grade_progress .bg_line .line { background-color: #380202; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_percentage { min-width: 50px; text-align: right; }
-
-main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_percentage p { color: #58391C; }
-
-main .test_area .literacy_diagnosis_area .recommended_area { margin: 60px auto; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary { flex-wrap: wrap; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .report_grade_btn { width: calc(100% - 105px); }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade { display: flex; flex-wrap: wrap; width: 100%; margin: 20px auto 0; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade .dictionary_text_item { margin: 10px 10px 10px 0; border: 1px solid; border-color: #58391C; padding: 5px; border-radius: 5px; background-color: #fff; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade .dictionary_text_item .dictionary_text p { color: #58391C; font-weight: bold; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade .dictionary_text_item .dictionary_text.dictionary_text_english p { font-size: 25px; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade .dictionary_text_item .dictionary_text.dictionary_text_chinese p { font-size: 15px; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_first_grade .dictionary_text_item { border-color: #ff8120; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_first_grade .dictionary_text_item .dictionary_text p { color: #ff8120; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_second_grade .dictionary_text_item { border-color: #e26200; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_second_grade .dictionary_text_item .dictionary_text p { color: #e26200; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_third_grade .dictionary_text_item { border-color: #f55203; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_third_grade .dictionary_text_item .dictionary_text p { color: #f55203; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_fourth_grade .dictionary_text_item { border-color: #9a3400; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_fourth_grade .dictionary_text_item .dictionary_text p { color: #9a3400; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_fifth_grade .dictionary_text_item { border-color: #551f01; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_fifth_grade .dictionary_text_item .dictionary_text p { color: #551f01; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_sixth_grade .dictionary_text_item { border-color: #380202; }
-
-main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade.dictionary_sixth_grade .dictionary_text_item .dictionary_text p { color: #380202; }
-
-main .test_area .quiz_answer_area .quiz_answer_title { display: flex; justify-content: center; margin: 60px auto 10px; padding: 0 0 20px; border-bottom: 1px solid #58391C; }
-
-main .test_area .quiz_answer_area .quiz_answer_title h4 { display: inline-block; text-align: center; background-color: #58391C; color: #fff; border-radius: 50px; padding: 5px 20px; }
-
-main .test_area .quiz_answer_area .answer_display_area { margin: 20px auto; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item { display: flex; flex-wrap: wrap; margin: 10px auto; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item.correct_answer_area .correct_answer_item { background-color: #FFD7A9; border: 1px solid #5E3200; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item.correct_answer_area .correct_answer_item .answer_item_text { color: #5E3200; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item.wrong_answer_area { padding: 10px 0; border-top: 1px dotted #58391C; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item.wrong_answer_area .wrong_answer_item { background-color: #FFD1BC; border: 1px solid #EE5007; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item.wrong_answer_area .wrong_answer_item .answer_item_text { color: #EE5007; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item { position: relative; padding: 5px 10px; margin: 10px 10px 10px 0; border-radius: 5px; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item_text { font-weight: bold; color: #EE5007; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item_text.answer_item_english p { font-size: 25px; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item_text.answer_item_chinese { max-width: calc(100% - 20px); }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item_text.answer_item_chinese p { font-size: 15px; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_icon { position: absolute; right: 5px; bottom: 5px; line-height: 1; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_icon.correct_answer_icon i { color: #5E3200; }
-
-main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_icon.wrong_answer_icon i { color: #EE5007; }
-
-@media screen and (min-width: 768px) { main .test_area .test_badge_area { width: 380px; margin: 60px auto; }
-  main .test_area .test_badge_area .badge_inner_layer .badge_score p { font-size: 125px; }
-  main .test_area .test_badge_area .badge_inner_layer .badge_inner_item { width: 240px; height: 240px; }
-  main .test_area .test_badge_area .badge_outer_layer .badge_outer_item { width: 280px; height: 280px; }
-  main .test_area .test_badge_area .ribbon_area { min-width: 380px; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_text { font-size: 30px; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_text label { font-size: 30px; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_sides { border: 30px solid #81b956; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_left { border-left: 30px solid #F3F3F3; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_left::before { border-width: 30px 0 0 30px; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_right { border-right: 30px solid #F3F3F3; }
-  main .test_area .test_badge_area .ribbon_area .ribbon_sides.ribbon_area_right::before { border-width: 30px 30px 0 0; }
-  main .test_area .total_questions { margin: 100px 0 30px; }
-  main .test_area .literacy_diagnosis_area .literacy_diagnosis_text { margin: 40px auto 20px; }
-  main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item { padding: 25px 0; }
-  main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_grade.report_grade_label { width: 120px; }
-  main .test_area .literacy_diagnosis_area .literacy_diagnosis_report .literacy_diagnosis_report_item .literacy_diagnosis_report_progress { width: calc(100% - 200px); }
-  main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .report_grade_btn { width: calc(100% - 135px); }
-  main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade .dictionary_text_item .dictionary_text.dictionary_text_english p { font-size: 30px; }
-  main .test_area .literacy_diagnosis_area .recommended_area .recommended_report .recommended_report_dictionary .dictionary_grade .dictionary_text_item .dictionary_text.dictionary_text_chinese p { font-size: 20px; }
-  main .test_area .quiz_answer_area .answer_display_area { margin: 25px auto; }
-  main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item { margin: 20px auto; }
-  main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item_text.answer_item_english p { font-size: 30px; }
-  main .test_area .quiz_answer_area .answer_display_area .answer_display_area_item .answer_item_text.answer_item_chinese p { font-size: 20px; } }
-
-main .test_area.literacy_area .literacy_item_area .literacy_tittle { display: flex; justify-content: center; color: #385423; }
+main .test_area.literacy_area .literacy_item_area .literacy_tittle { display: flex; justify-content: center; color: #385423; margin: 0 auto 50px; }
 
 main .test_area.literacy_area .literacy_item_area .information_area .input_area { display: flex; align-items: flex-start; }
 
@@ -576,65 +420,3 @@ main .test_area.literacy_area .literacy_item_area .information_area .input_area 
   main .test_area.literacy_area .literacy_item_area .information_area .input_area .form-control { width: 80%; } }
 
 @media screen and (min-width: 992px) { main .test_area.literacy_area .literacy_item_area .information_area .input_area .input-group-label { padding: 10px 30px 10px 0; width: calc(20% - 30px); text-align: right; } }
-
-main .test_area .instructions { display: flex; justify-content: center; margin: 0px auto 20px; }
-
-main .test_area .instructions p { color: #58391C; }
-
-main .test_area .score_report_area .score_report_header { display: flex; justify-content: flex-end; padding: 15px 0; background-color: #5c8a39; border: 1px solid #58391C; border-bottom: 0; }
-
-main .test_area .score_report_area .score_report_header .score_report_header_text { color: #fff; text-align: center; }
-
-main .test_area .score_report_area .score_report_body { border: 1px solid #58391C; border-top: 0; background-color: #fff; }
-
-main .test_area .score_report_area .score_report_body .score_report_item { position: relative; display: flex; align-items: center; border-top: 1px solid #58391C; cursor: pointer; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content { padding: 15px 8px; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 37.5px; text-align: center; border: 0px; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { color: #ADADAD; font-size: 20px; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_text { text-align: center; color: #58391C; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_name p { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time { display: flex; flex-wrap: wrap; justify-content: center; }
-
-main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time .text_date { margin: 0 10px 0 0; }
-
-main .test_area .score_report_area .score_report_body .score_report_item.check_item { background-color: #5c8a3930; }
-
-main .test_area .score_report_area .score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_icon .fa-circle-check { color: #5c8a39; }
-
-main .test_area .score_report_area .score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_text { color: #5c8a39; }
-
-main .test_area .score_report_area .score_report_body .score_report_item::before, main .test_area .score_report_area .score_report_body .score_report_item::after { content: ""; position: absolute; width: 1px; height: 100%; background-color: #58391C; bottom: 0; }
-
-main .test_area .score_report_area .score_report_body .score_report_item::before { left: 37.5px; }
-
-main .test_area .score_report_area .score_report_body .score_report_item::after { left: calc(45% + 15px); }
-
-main .test_area .score_report_area .score_report_body .score_report_item:nth-child(1) { border-top: 0px; }
-
-main .test_area .score_report_area .score_report_header_name, main .test_area .score_report_area .score_report_item_name { width: calc(45% - 15px); }
-
-main .test_area .score_report_area .score_report_header_time, main .test_area .score_report_area .score_report_item_time { width: calc(55% - 15px); }
-
-@media screen and (min-width: 576px) { main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content { padding: 15px 10px; }
-  main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 50px; }
-  main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { font-size: 25px; }
-  main .test_area .score_report_area .score_report_body .score_report_item::before { left: 50px; }
-  main .test_area .score_report_area .score_report_body .score_report_item::after { left: calc(45% + 25px); }
-  main .test_area .score_report_area .score_report_header_name, main .test_area .score_report_area .score_report_item_name { width: calc(45% - 25px); }
-  main .test_area .score_report_area .score_report_header_time, main .test_area .score_report_area .score_report_item_time { width: calc(55% - 25px); } }
-
-@media screen and (min-width: 768px) { main .test_area .instructions { margin: 0px auto 40px; }
-  main .test_area .score_report_area .score_report_header { padding: 25px 0; }
-  main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content { padding: 25px 15px; }
-  main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 66.5px; }
-  main .test_area .score_report_area .score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { font-size: 35px; }
-  main .test_area .score_report_area .score_report_body .score_report_item::before { left: 66.5px; }
-  main .test_area .score_report_area .score_report_body .score_report_item::after { left: calc(45% + 33.25px); }
-  main .test_area .score_report_area .score_report_header_name, main .test_area .score_report_area .score_report_item_name { width: calc(45% - 25px); }
-  main .test_area .score_report_area .score_report_header_time, main .test_area .score_report_area .score_report_item_time { width: calc(55% - 25px); } }
