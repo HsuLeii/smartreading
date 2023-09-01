@@ -12,7 +12,8 @@ main {
 
         .score_report_area {
             .table {
-                border: 1px solid $main_color_brown;
+                border: 1px solid darken($main_color, 15%);
+                margin: 0 auto 40px;
 
                 thead {
                     .score_report_header {
@@ -21,17 +22,30 @@ main {
                         padding: 15px 0;
                         background-color: $main_color;
                         border-bottom: 0;
+                        flex-wrap: wrap;
+                        padding: 0 0 0 37.5px;
 
                         .score_report_header_text {
+                            display: flex;
+                            justify-content: center;
                             color: $white;
-                            text-align: center;
+                            padding: 8px 5px;
+
+                            &.score_report_header_name{
+                                width: 45%;
+                                border-left: 1px solid;
+                            }
+
+                            &.score_report_header_time{
+                                width: 55%;
+                                border-left: 1px solid;
+                            }
                         }
                     }
                 }
 
                 tbody {
                     &.score_report_body {
-
                         border-top: 0;
                         background-color: $white;
 
@@ -39,7 +53,7 @@ main {
                             position: relative;
                             display: flex;
                             align-items: center;
-                            border-top: 1px solid $main_color_brown;
+                            border-top: 1px solid $main_color_grey;
                             cursor: pointer;
 
                             .score_report_item_content {
@@ -59,8 +73,9 @@ main {
                                 }
 
                                 &.score_report_item_text {
-                                    text-align: center;
-                                    color: $main_color_brown;
+                                    display: flex;
+                                    justify-content: center;
+                                    color: $main_color_grey;
                                     word-break: break-word;
 
                                     &.score_report_item_name {
@@ -106,7 +121,7 @@ main {
                                 position: absolute;
                                 width: 1px;
                                 height: 100%;
-                                background-color: $main_color_brown;
+                                background-color: darken($main_color, 15%);
                                 bottom: 0;
                             }
 
@@ -115,7 +130,7 @@ main {
                             }
 
                             &::after {
-                                left: calc(45% + 18.75px);
+                                left: calc(37.5px + ( 100% - 37.5px ) * 0.45);
                             }
 
                             &:nth-child(1) {
@@ -147,6 +162,16 @@ main {
         .test_area {
             .score_report_area {
                 .table {
+                    thead {
+                        .score_report_header {
+                            padding: 0 0 0 50px;
+    
+                            .score_report_header_text {
+                                padding: 12px 5px;
+                            }
+                        }
+                    }
+
                     tbody {
                         &.score_report_body {
 
@@ -170,7 +195,7 @@ main {
                                 }
 
                                 &::after {
-                                    left: calc(45% + 25px);
+                                    left: calc(50px + ( 100% - 50px ) * 0.45);
                                 }
                             }
                         }
@@ -197,9 +222,11 @@ main {
         .test_area {
             .score_report_area {
                 .table {
+                    margin: 0 auto 60px;
+
                     thead {
                         .score_report_header {
-                            padding: 25px 0;
+                            padding: 0 0 0 66.5px;
                         }
                     }
 
@@ -226,7 +253,7 @@ main {
                                 }
 
                                 &::after {
-                                    left: calc(45% + 33.25px);
+                                    left: calc(66.5px + ( 100% - 66.5px ) * 0.45);
                                 }
                             }
                         }

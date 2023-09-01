@@ -8,20 +8,8 @@ main {
 
                     thead {
                         .score_report_header {
-                            flex-wrap: wrap;
-                            padding: 0 0 0 37.5px;
-    
-                            .score_report_header_text {
-                                padding: 8px 0;
-                                &.score_report_header_name{
-                                    width: 45%;
-                                    border-left: 1px solid;
-                                }
 
-                                &.score_report_header_time{
-                                    width: 55%;
-                                    border-left: 1px solid;
-                                }
+                            .score_report_header_text {
 
                                 &.score_report_header_progress{
                                     width: 100%;
@@ -53,24 +41,14 @@ main {
                                             width: 100%;
                                             margin: 0 0 0 37.5px;
                                             background-color: $white;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: space-between;
                                             z-index: 1;
                                             border-top: 1px solid;
                                             border-left: 1px solid;
 
-                                            .bg_line {
-                                                width: calc(100% - 100px);
-                                                height: 12px;
-                                                background: $white;
-                                                border-radius: 10px;
-                                                border: 1px solid $main_color;
-
-                                                .line {
-                                                    background-color: $main_color;
-                                                    height: 10px;
-                                                    border-radius: 10px;
+                                            &.progress_area{
+                                                justify-content: space-between;
+                                                .progress_value{
+                                                    color: $main_color_grey;
                                                 }
                                             }
 
@@ -89,6 +67,12 @@ main {
                                 &.check_item {
                                     .score_report_item_content {
                                         &.score_report_item_progress {
+                                            &.progress_area{
+
+                                                .progress_value{
+                                                    color: $main_color;
+                                                }
+                                            }
                                             &::before{
                                                 background-color: $main_color_30;
                                             }
@@ -115,17 +99,6 @@ main {
             &.continue_challenge {
                 .score_report_area {
                     .table {
-    
-                        thead {
-                            .score_report_header {
-                                padding: 0 0 0 50px;
-        
-                                .score_report_header_text {
-                                    padding: 12px 0;
-                                }
-                            }
-                        }
-    
                         tbody {
                             &.score_report_body {
     
@@ -158,13 +131,7 @@ main {
             &.continue_challenge {
                 .score_report_area {
                     .table {
-    
-                        thead {
-                            .score_report_header {
-                                padding: 0 0 0 66.5px;
-                            }
-                        }
-    
+                        
                         tbody {
                             &.score_report_body {
     
@@ -267,7 +234,7 @@ main {
                                     z-index: 1;
                                     height: 100%;
                                     width: 1px;
-                                    background-color: $main_color_brown;
+                                    background-color: darken($main_color, 15%);
                                 }
                             }
                         }
