@@ -75,36 +75,23 @@
 
                 <div class="quiz_btn_area">
                     <div id="optionSet" class="quiz_answer_area">
-                        <button id="option1" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
+                        <button class="button quiz_answer_btn recording_btn">
                             <div class="quiz_answer_btn_icon">
-                                <i class="fa-solid fa-volume-high"></i>
+                                <i class="fa-solid fa-microphone-lines"></i>
                             </div>
-                            <p>發音 1</p>
+
+                            <p>錄音</p>
                         </button>
-                        <button id="option2" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
+
+                        <button class="button quiz_answer_btn play_btn">
                             <div class="quiz_answer_btn_icon">
-                                <i class="fa-solid fa-volume-high"></i>
+                                <i class="fa-solid fa-play"></i>
                             </div>
-                            <p>發音 2</p>
-                        </button>
-                        <button id="option3" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
-                            <div class="quiz_answer_btn_icon">
-                                <i class="fa-solid fa-volume-high"></i>
-                            </div>
-                            <p>發音 3</p>
-                        </button>
-                        <button id="option4" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
-                            <div class="quiz_answer_btn_icon">
-                                <i class="fa-solid fa-volume-high"></i>
-                            </div>
-                            <p>發音 4</p>
+
+                            <p>播放</p>
                         </button>
                     </div>
-    
+
                     <button id="next" class="button next_question_btn">
                         <p>送出答案</p>
                         <div class="next_question_btn_icon">
@@ -113,7 +100,7 @@
                     </button>
                 </div>
 
-                
+
             </div>
 
         </div>
@@ -135,12 +122,21 @@
     </script>
 
     <script>
-        $(".quiz_answer_btn").click(function () {
-            $(this).siblings().removeClass("answer_check");
-            $(this).addClass("answer_check");
-            $(this).find('i').addClass('fa-regular fa-circle-check');
-            $(this).find('i').removeClass('fa-solid fa-volume-high');
-            $(this).siblings().find('i').addClass('fa-solid fa-volume-high');
+        $(".recording_btn").click(function () {
+            $(this).toggleClass("answer_check recording");
+        });
+        $(".play_btn").click(function () {
+            $(this).toggleClass("answer_check");
+            if ($(this).hasClass("answer_check")) {
+                $(this).find('i').addClass('fa-pause');
+                $(this).find('i').removeClass('fa-play');
+                $(".recording_btn").attr("disabled",  true);
+            } else {
+                $(this).find('i').removeClass('fa-pause');
+                $(this).find('i').addClass('fa-play');
+                $(".recording_btn").attr("disabled",  false);
+            }
+
         });
     </script>
 

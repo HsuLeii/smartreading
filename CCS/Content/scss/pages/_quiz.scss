@@ -7,9 +7,10 @@ main {
             width: 80%;
             margin: 30px auto;
 
-            .mic_frog_area {
+            .tittle_frog_area {
                 margin: 0 20px 0 0;
-                .mic_frog_img {
+
+                .tittle_frog_img {
                     width: 80px;
                 }
             }
@@ -25,10 +26,11 @@ main {
                     align-items: center;
                     padding: 10px 20px;
                     background-color: $white;
+                    border: 1px solid $bright_green;
 
                     .voice_btn_icon {
                         padding: 10px;
-                        background-color: $main_color;
+                        background-color: $bright_green;
                         border-radius: 50px;
 
                         .fa-volume-high {
@@ -40,7 +42,8 @@ main {
                     }
 
                     .voice_text {
-                        margin: 20px 0 20px 15px;
+                        color: darken($main_color, 20%);
+                        margin: 0 0 0 15px;
                         text-align: left;
                         display: flex;
                         justify-content: center;
@@ -53,7 +56,7 @@ main {
                         top: 50%;
                         left: 0;
                         transform: translate(-100%, -50%);
-                        border-right: 10px solid $main_color;
+                        border-right: 10px solid $bright_green;
                         border-bottom: 10px solid transparent;
                         border-top: 10px solid transparent;
                     }
@@ -69,13 +72,13 @@ main {
             .word_area {
                 display: flex;
                 justify-content: center;
-                margin: 50px auto;
+                margin: 50px auto 120px;
 
                 .word_writing {
                     font-size: 200px;
                     font-weight: 700;
                     color: darken($main_color, 20%);
-                    background-color: $main_color_25;
+                    background-color: $light_green;
                     border: 1px solid $main_color;
                     border-radius: 25px;
                     text-align: center;
@@ -87,51 +90,103 @@ main {
         .quiz_area_footer {
             padding: 30px 10%;
             background-color: $white;
+            border: 1px solid $bright_green;
+            border-bottom: 0;
             border-radius: 50px 50px 0 0;
+            position: relative;
 
-            .quiz_answer_area {
-                .quiz_answer_btn {
+            .mic_frog_area {
+                position: absolute;
+                width: 80px;
+                top: 0;
+                right: 0;
+                transform: translate(-50%, -100%);
+            }
+
+            .quiz_btn_area {
+                width: 100%;
+                max-width: 1600px;
+                margin: 0 auto;
+
+                .quiz_answer_area {
+                    .quiz_answer_btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $light_green;
+                        color: darken($main_color, 15%);
+
+                        .quiz_answer_btn_icon {
+                            margin: 0 10px;
+                        }
+
+                        &.answer_check {
+                            background-color: darken($main_color, 15%);
+                            color: $white;
+                        }
+
+                        &.recording {
+                            .quiz_answer_btn_icon{
+                                animation: recording 1500ms infinite;
+                            }
+                        }
+
+                        &.play_btn{
+                            background-color: $light_yellow;
+                            color: darken($main_color, 15%);
+                            border: 1px solid $yellow;
+
+                            &:hover,
+                            &.answer_check {
+                                background-color: $yellow;
+                                color: darken($main_color, 15%);
+                            }
+                        }
+
+                        &:hover {
+                            background-color: darken($main_color, 15%);
+                            color: $white;
+                        }
+                    }
+                }
+
+                .next_question_btn {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: darken($main_color, 15%);
+                    border: 1px solid $orange;
+                    border-radius: 10px;
+                    padding: 12px 10px;
+                    background-color: $orange;
+                    margin: 60px auto 40px;
+                    color: $white;
 
-                    .quiz_answer_btn_icon {
+                    .next_question_btn_icon {
                         margin: 0 10px;
                     }
 
-                    &.answer_check {
-                        background-color: darken($main_color, 15%);
-                        color: $white;
-                    }
-
                     &:hover {
-                        background-color: darken($main_color, 15%);
-                        color: $white;
+                        background-color: darken($orange, 10%);
                     }
                 }
             }
 
-            .next_question_btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid $orange;
-                border-radius: 10px;
-                padding: 12px 10px;
-                background-color: $orange;
-                margin: 60px auto 0px;
-                color: $white;
 
-                .next_question_btn_icon {
-                    margin: 0 10px;
-                }
-
-                &:hover {
-                    background-color: darken($orange, 10%);
-                }
-            }
         }
+    }
+}
+
+@keyframes recording {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -140,18 +195,11 @@ main {
 @media screen and (min-width: 768px) {
     main {
         .quiz_area {
-            .quiz_area_header {
-                margin: 0 auto 30px;
-            }
 
             .quiz_area_body {
 
                 .word_area {
-
-                    // .word_writing {
-                    //     font-size: 150px;
-                    //     width: calc(150px * 1.7 + 2px);
-                    // }
+                    margin: 50px auto;
                 }
             }
 
@@ -159,13 +207,47 @@ main {
                 padding: 50px 10%;
                 border-radius: 80px 80px 0 0;
 
-                .quiz_answer_area {
-                    display: flex;
-                    flex-wrap: wrap;
+                .mic_frog_area {
+                    transform: translate(-100%, -100%);
+                }
 
-                    .quiz_answer_btn {
-                        width: 45%;
-                        margin: 20px auto;
+                .quiz_btn_area {
+                    .quiz_answer_area {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .quiz_answer_btn {
+                            width: 45%;
+                            margin: 20px auto;
+                        }
+                    }
+
+                    .next_question_btn {
+                        margin: 60px auto 0;
+                        max-width: 300px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        .quiz_area {
+
+            .quiz_area_footer {
+
+                .quiz_btn_area {
+
+                    .quiz_answer_area {
+                        justify-content: center;
+
+                        .quiz_answer_btn {
+                            width: calc(25% - 20px);
+                            margin: 0 20px 0 0;
+                        }
                     }
                 }
             }
@@ -173,30 +255,70 @@ main {
     }
 }
 
-@media screen and (min-width: 992px) {}
-
 @media screen and (min-width: 1200px) {
     main {
         .quiz_area {
+            min-height: calc(100vh - 144px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             .quiz_area_footer {
+                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 59px 10%;
+                padding: 45px 5%;
 
-                .quiz_answer_area {
-                    width: 80%;
+                .mic_frog_area {
+                    width: 140px;
+                }
 
-                    .quiz_answer_btn {
-                        width: 20%;
+                .quiz_btn_area {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .quiz_answer_area {
+                        width: calc(90% - 177px * 2);
+
+                        .quiz_answer_btn {
+                            width: calc(25% - 15px);
+                            margin: 0 15px 0 0;
+                        }
+                    }
+
+                    .next_question_btn {
+                        position: absolute;
+                        right: 0;
+                        width: auto;
+                        margin: 0;
+                        padding: 10px 25px;
                     }
                 }
 
-                .next_question_btn {
-                    width: 15%;
-                    margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        .quiz_area {
+            .quiz_area_footer {
+                padding: 45px 10%;
+
+                .quiz_btn_area {
+                    .quiz_answer_area {
+
+                        .quiz_answer_btn {
+                            width: calc(25% - 20px);
+                            margin: 0 20px 0 0;
+                        }
+                    }
                 }
+
             }
         }
     }
