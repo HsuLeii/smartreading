@@ -2,12 +2,14 @@ main {
 
     .test_area {
 
-        &.report_score{
+        &.report_score {
             width: 100%;
+            max-width: 800px;
 
-            .report_header{
+            .report_header {
                 position: relative;
-                .frog_head_text{
+
+                .frog_head_text {
                     position: absolute;
                     bottom: 3%;
                     left: 50%;
@@ -17,43 +19,221 @@ main {
                     align-items: center;
                     flex-direction: column;
 
-                    .frog_head_title{
-                        h5{
+                    .frog_head_title {
+                        h5 {
                             font-weight: 700;
                             color: darken($main_color, 20%);
                         }
                     }
 
-                    .frog_head_date{
-                        p{
+                    .frog_head_date {
+                        p {
                             font-weight: 500;
                             color: darken($main_color, 20%);
                         }
                     }
                 }
-                
             }
 
-            .report_content_area{
+            .report_content_area {
                 background-color: $frog_green;
                 border-radius: 0 0 50px 50px;
                 padding: 10px 5% 30px;
 
-                .report_content{
+                .report_content {
                     background-color: $body_bg;
                     border-radius: 50px;
                     padding: 25px;
 
-                    .paper_data{
-                        .table_data{
-                            tbody{
-                                tr{
+                    .paper_data {
+                        .table_data {
+                            width: 100%;
+                            tbody {
+                                tr {
                                     display: flex;
                                     flex-wrap: wrap;
+                                    justify-content: center;
 
-                                    td{
+                                    td {
                                         margin: 10px 10px 0 0;
                                         word-break: break-word;
+                                        color: $main_color_grey;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .paper_score {
+                        position: relative;
+                        margin: 25px auto;
+
+                        .paper_score_img {
+                            .lotus_vein {
+                                position: absolute;
+                                left: 0;
+                            }
+
+                            .frog_hand_right,
+                            .frog_hand_left {
+                                position: absolute;
+                                width: 25%;
+                                z-index: 1;
+                            }
+
+                            .frog_hand_right {
+                                right: 0%;
+                                top: 50%;
+                                transform: translate(calc(0% + 25px), 0);
+                            }
+
+                            .frog_hand_left {
+                                left: 0%;
+                                top: 40%;
+                                transform: translate(calc(0% - 25px), -50%);
+                            }
+                        }
+
+                        .paper_score_text {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 70%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            color: $white;
+
+                            .paper_score_text_one,
+                            .paper_score_text_two {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 10px 0;
+                                width: 100%;
+
+                                span {
+                                    font-weight: 600;
+                                    color: $yellow;
+                                    text-shadow: 0px 0px 5px darken($main_color, 20%);
+                                    margin: 0 8px 0 0;
+                                    line-height: 1.4;
+                                }
+                            }
+
+                            .paper_score_text_one {
+                                border-bottom: 1px solid;
+
+                                span {
+                                    font-size: 50px;
+                                }
+                            }
+
+                            .paper_score_text_two {
+
+                                span {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    }
+
+                    .paper_bar {
+                        .table_bar {
+                            width: 100%;
+                            tbody {
+                                tr {
+                                    td {
+                                        display: flex;
+
+                                        .bar_bg{
+                                            position: relative;
+
+                                            .table_frog {
+                                                width: 25px;
+                                                margin: 0 auto;
+                                                position: absolute;
+                                                top: 50%;
+                                                right: 0;
+                                                transform: translate(calc(100% + 5px), -50%);
+                                            }
+                                        }
+                                        
+                                        &.bar_one {
+                                            span{
+                                                background-color: $green_bar_one;
+                                                border-right: 1.5px solid darken($green_bar_one, 10%);
+                                            }
+                                            .bar_bg{
+                                                width: calc((100% - 85px - 25px - 5px) / 6 * 1);
+                                                background-color: $green_bar_one;
+                                            }
+                                        }
+
+                                        &.bar_two {
+                                            span{
+                                                background-color: $green_bar_two;
+                                                border-right: 1.5px solid darken($green_bar_two, 10%);
+                                            }
+                                            .bar_bg{
+                                                width: calc((100% - 85px - 25px - 5px) / 6 * 2);
+                                                background-color: $green_bar_two;
+                                            }
+                                        }
+
+                                        &.bar_three {
+                                            span{
+                                                background-color: $green_bar_three;
+                                                border-right: 1.5px solid darken($green_bar_three, 10%);
+                                            }
+                                            .bar_bg{
+                                                width: calc((100% - 85px - 25px - 5px) / 6 * 3);
+                                                background-color: $green_bar_three;
+                                            }
+                                        }
+
+                                        &.bar_four {
+                                            span{
+                                                background-color: $green_bar_four;
+                                                border-right: 1.5px solid darken($green_bar_four, 10%);
+                                            }
+                                            .bar_bg{
+                                                width: calc((100% - 85px - 25px - 5px) / 6 * 4);
+                                                background-color: $green_bar_four;
+                                            }
+                                        }
+
+                                        &.bar_five {
+                                            span{
+                                                background-color: $green_bar_five;
+                                                border-right: 1.5px solid darken($green_bar_five, 10%);
+                                            }
+                                            .bar_bg{
+                                                width: calc((100% - 85px - 25px - 5px) / 6 * 5);
+                                                background-color: $green_bar_five;
+                                            }
+                                        }
+
+                                        &.bar_six {
+                                            span{
+                                                background-color: $green_bar_six;
+                                                border-right: 1.5px solid darken($green_bar_six, 10%);
+                                            }
+                                            .bar_bg{
+                                                width: calc((100% - 85px - 25px - 5px) / 6 * 6);
+                                                background-color: $green_bar_six;
+                                            }
+                                        }
+
+                                        span {
+                                            color: $white;
+                                            padding: 5px 0;
+                                            width: 85px;
+                                            text-align: center;
+                                        }
                                     }
                                 }
                             }
@@ -63,64 +243,234 @@ main {
             }
         }
 
-        
     }
 }
 
+@media screen and (min-width: 500px) {
+    main {
+
+        .test_area {
+            &.report_score {
+    
+                .report_content_area {
+    
+                    .report_content {
+                        .paper_score{
+
+                            .paper_score_text {
+
+                            .paper_score_text_one,
+                            .paper_score_text_two {
+                                p{
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .paper_score_text_one {
+
+                                span {
+                                    font-size: 65px;
+                                }
+                            }
+
+                            .paper_score_text_two {
+
+                                span {
+                                    font-size: 45px;
+                                }
+                            }
+                        }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 576px) {
     main {
 
         .test_area {
-            .score_report_area {
-                .table {
-                    thead {
-                        .score_report_header {
-                            padding: 0 0 0 50px;
+            &.report_score {
     
-                            .score_report_header_text {
-                                padding: 12px 5px;
+                .report_content_area {
+    
+                    .report_content {
+                        .paper_score{
+                            margin: 40px auto 80px;
+
+                            .paper_score_img {
+                                width: 80%;
+                                margin: 0 auto;
+                                .lotus_vein {
+                                    left: 50%;
+                                    transform: translate(-50% , 0);
+                                    width: 80%;
+                                }
+                            }
+
+                            .paper_score_text {
+
+                            .paper_score_text_one,
+                            .paper_score_text_two {
+                                p{
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .paper_score_text_one {
+
+                                span {
+                                    font-size: 65px;
+                                }
+                            }
+
+                            .paper_score_text_two {
+
+                                span {
+                                    font-size: 45px;
+                                }
                             }
                         }
-                    }
+                        }
+                        .paper_bar {
+                            .table_bar {
+                                tbody {
+                                    tr {
+                                        display: flex;
+                                        align-items: flex-end;
+                                        td {
+                                            position: relative;
+                                            width: calc(100% / 6);
+                                            align-items: flex-end;
+                                            justify-content: center;
+                                            flex-direction: column;
+    
+                                            .bar_bg{
+                                                order: 1;
+    
+                                                .table_frog {
+                                                    width: 75%;
+                                                    top: 0;
+                                                    left: 50%;
+                                                    right: auto;
+                                                    transform: translate(-50%, calc(-100% - 5px));
+                                                }
+                                            }
+    
+                                            &.bar_one {
+                                                span{
+                                                    border-right: 0;
+                                                    border-top: 1.5px solid darken($green_bar_one, 10%);
 
-                    tbody {
-                        &.score_report_body {
+                                                    &::before {
+                                                        border-left: 6px solid $green_bar_one;
+                                                    }
+                                                }
+                                                .bar_bg{
+                                                    width: 100%;
+                                                    height: 30px;
+                                                }
+                                            }
+    
+                                            &.bar_two {
+                                                span{
+                                                    border-right: 0;
+                                                    border-top: 1.5px solid darken($green_bar_two, 10%);
 
-                            .score_report_item {
+                                                    &::before {
+                                                        border-left: 6px solid $green_bar_two;
+                                                    }
+                                                }
+                                                .bar_bg{
+                                                    width: 100%;
+                                                    height: calc(30px * 2);
+                                                }
+                                            }
+    
+                                            &.bar_three {
+                                                span{
+                                                    border-right: 0;
+                                                    border-top: 1.5px solid darken($green_bar_three, 10%);
 
-                                .score_report_item_content {
-                                    padding: 15px 10px;
+                                                    &::before {
+                                                        border-left: 6px solid $green_bar_three;
+                                                    }
+                                                }
+                                                .bar_bg{
+                                                    width: 100%;
+                                                    height: calc(30px * 3);
+                                                }
+                                            }
+    
+                                            &.bar_four {
+                                                span{
+                                                    border-right: 0;
+                                                    border-top: 1.5px solid darken($green_bar_four, 10%);
 
-                                    &.score_report_item_icon {
-                                        width: 50px;
+                                                    &::before {
+                                                        border-left: 6px solid $green_bar_four;
+                                                    }
+                                                }
+                                                .bar_bg{
+                                                    width: 100%;
+                                                    height: calc(30px * 4);
+                                                }
+                                            }
+    
+                                            &.bar_five {
+                                                span{
+                                                    border-right: 0;
+                                                    border-top: 1.5px solid darken($green_bar_five, 10%);
 
-                                        .fa-circle-check {
-                                            font-size: 25px;
+                                                    &::before {
+                                                        border-left: 6px solid $green_bar_five;
+                                                    }
+                                                }
+                                                .bar_bg{
+                                                    width: 100%;
+                                                    height: calc(30px * 5);
+                                                }
+                                            }
+    
+                                            &.bar_six {
+                                                span{
+                                                    border-right: 0;
+                                                    border-top: 1.5px solid darken($green_bar_six, 10%);
+
+                                                    &::before {
+                                                        display: none;
+                                                    }
+                                                }
+                                                .bar_bg{
+                                                    width: 100%;
+                                                    height: calc(30px * 6);
+                                                }
+                                            }
+
+                                            span{
+                                                width: 100%;
+                                                order: 2;
+                                                position: relative;
+
+                                                &::before {
+                                                    content: "";
+                                                    position: absolute;
+                                                    z-index: 1;
+                                                    border-width: 10px 0px 10px 10px;
+                                                    top: 50%;
+                                                    right: 0;
+                                                    transform: translate(calc(100% - 0px) , -50%);
+                                                    border-bottom: 19px solid transparent;
+                                                    border-top: 19px solid transparent;
+                                                }
+                                            }
                                         }
                                     }
-
-                                }
-
-                                &::before {
-                                    left: 50px;
-                                }
-
-                                &::after {
-                                    left: calc(50px + ( 100% - 50px ) * 0.45);
                                 }
                             }
                         }
-                    }
-
-                    .score_report_header_name,
-                    .score_report_item_name {
-                        width: calc(45% - 25px - 10px);
-                    }
-
-                    .score_report_header_time,
-                    .score_report_item_time {
-                        width: calc(55% - 25px - 10px);
                     }
                 }
             }
@@ -132,56 +482,6 @@ main {
     main {
 
         .test_area {
-            .score_report_area {
-                .table {
-                    margin: 0 auto 60px;
-
-                    thead {
-                        .score_report_header {
-                            padding: 0 0 0 66.5px;
-                        }
-                    }
-
-                    tbody {
-                        &.score_report_body {
-
-                            .score_report_item {
-
-                                .score_report_item_content {
-                                    padding: 25px 15px;
-
-                                    &.score_report_item_icon {
-                                        width: 66.5px;
-
-                                        .fa-circle-check {
-                                            font-size: 35px;
-                                        }
-                                    }
-
-                                }
-
-                                &::before {
-                                    left: 66.5px;
-                                }
-
-                                &::after {
-                                    left: calc(66.5px + ( 100% - 66.5px ) * 0.45);
-                                }
-                            }
-                        }
-                    }
-
-                    .score_report_header_name,
-                    .score_report_item_name {
-                        width: calc(45% - 25px - 15px);
-                    }
-
-                    .score_report_header_time,
-                    .score_report_item_time {
-                        width: calc(55% - 25px - 15px);
-                    }
-                }
-            }
         }
     }
 }
