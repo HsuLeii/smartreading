@@ -15,7 +15,7 @@ h3 { font-size: 28px; line-height: 1.7; font-weight: bold; }
 
 h4 { font-size: 22px; line-height: 1.5; font-weight: bold; }
 
-h5 { font-size: 18px; line-height: 1.5; font-weight: bold; }
+h5 { font-size: 20px; line-height: 1.5; font-weight: bold; }
 
 p, i { font-size: 16px; line-height: 1.7; }
 
@@ -54,7 +54,7 @@ body { background-color: #f8f5c8; }
 @media screen and (min-width: 768px) { h1 { font-size: 38px; }
   h3 { font-size: 35px; }
   h4 { font-size: 24px; }
-  h5 { font-size: 22px; }
+  h5 { font-size: 24px; }
   p, i { font-size: 20px; }
   span, th, td, .form-control { font-size: 20px; }
   a { font-size: 20px; }
@@ -639,35 +639,93 @@ main .test_area.report_score .report_content_area .report_content .paper_bar .ta
 
 main .test_area.report_score .report_content_area .report_content .paper_diagnosis { margin: 40px auto; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_section_title h5 { margin: 0 auto 10px; text-align: center; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area { margin: 15px auto; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area { display: flex; align-items: center; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark { width: 50%; margin: 10px 0 10px 30%; display: flex; justify-content: space-between; position: relative; padding: 0 0 0 15px; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_grade_name { width: 30%; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span { position: absolute; color: #385423; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar { width: calc(40% - 8.8px - 8.8px); display: flex; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_one { position: relative; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body { display: flex; width: 100%; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_two { left: 25%; transform: translate(calc(-50% + 15px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area { width: 100%; justify-content: flex-start; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_three { left: 50%; transform: translate(calc(-50% + 10px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area .progress_foot { height: 20px; display: flex; align-items: center; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_four { left: 75%; transform: translate(calc(-50% + 5px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area .progress_foot img { height: 100%; width: auto; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_five { left: 100%; transform: translate(calc(-50% + 0px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area .progress_head { height: 20px; display: flex; background-image: url(../image/photo/frog/progress_head.png); }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area { position: relative; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area .progress { width: calc(100% - 8.7px - 8.7px); height: 20px; background-color: transparent; border-radius: 0; border: 0; overflow: initial; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line { position: absolute; width: 50%; height: 100%; margin: 0 0 0 30%; padding: 0 0 0 15px; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar { position: relative; height: 20px; border-radius: 0; background-image: url(../image/photo/frog/progress_head.png); background-color: #8fc31f; background-position: right; background-size: contain; background-repeat: no-repeat; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span { position: absolute; height: 100%; border-right: 1.5px dotted #385423; }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar::before { content: ""; position: absolute; right: 0; height: 100%; width: 8.8px; background-image: url(../image/photo/frog/progress_head.png); background-size: contain; background-repeat: no-repeat; transform: translate(0%, 0px); }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_one { left: 0%; transform: translate(calc(0% + 20px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_head, main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_foot { display: flex; height: 20px; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_two { left: 25%; transform: translate(calc(-50% + 15px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_head img, main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_bar .progress_bar_foot img { height: 20px; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_three { left: 50%; transform: translate(calc(-50% + 10px), 0); }
 
-main .test_area.report_score .report_content_area .report_content .paper_diagnosis .percentage_grade_area .percentage_progress_value { width: 30%; }
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_four { left: 75%; transform: translate(calc(-50% + 5px), 0); }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_five { left: 100%; transform: translate(calc(-50% + 0px), 0); }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar { width: 50%; display: flex; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body { display: flex; width: 100%; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area { width: 100%; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress { width: 100%; height: 100%; background-color: transparent; border-radius: 0; border: 0; overflow: initial; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar { height: 100%; position: relative; border-radius: 0; background-image: none; background-color: #8FC31F; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar::before { content: ""; position: absolute; width: 100%; height: 50%; background-color: #f8f5c8; top: 50%; transform: translate(0, -50%); border-radius: 50px; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_foot, main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_head { width: 10px; line-height: 1; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_foot img, main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_head img { height: 100%; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_value { width: 20%; display: flex; justify-content: flex-end; }
+
+main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_value p { color: #385423; }
+
+main .test_area.report_score .report_content_area .report_content .paper_recommend { margin: 40px auto; }
+
+main .test_area.report_score .report_content_area .report_content .paper_section_title h5 { margin: 0 auto 10px; text-align: center; color: #385423; }
+
+main .test_area.report_score .report_content_area .report_content .paper_section_title p { color: #20221f; }
+
+main .test_area.report_score .report_content_area .report_content .paper_phase_title { display: flex; margin: 15px auto 0; }
+
+main .test_area.report_score .report_content_area .report_content .paper_phase_title .paper_phase_left { width: 28%; margin: 0 2% 0 0; }
+
+main .test_area.report_score .report_content_area .report_content .paper_phase_title .paper_phase_right { width: 70%; }
+
+main .test_area.report_score .report_content_area .report_content .paper_phase_title p { display: flex; justify-content: center; color: #fff; background-color: #5c8a39; border-radius: 5px; padding: 5px 0; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item { display: flex; align-items: center; position: relative; margin: 20px auto; z-index: 1; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.first_grade { margin: 0 auto; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.first_grade .percentage_grade_name { background-color: #FFD000; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.second_grade .percentage_grade_name { background-color: #FFB600; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.third_grade .percentage_grade_name { background-color: #FF9C00; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.fourth_grade .percentage_grade_name { background-color: #FF7600; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.fifth_grade .percentage_grade_name { background-color: #FF6400; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item.sixth_grade .percentage_grade_name { background-color: #FF5100; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item .percentage_grade_name { display: flex; justify-content: center; width: 28%; margin: 0 2% 0 0; border-radius: 5px; }
+
+main .test_area.report_score .report_content_area .report_content .percentage_grade_item .percentage_grade_name p { color: #20221f; display: inline-block; padding: 3px 5px; border-radius: 5px; }
+
+:root { --progress-width: calc((100% - 10px - 10px) / 100); }
 
 @media screen and (min-width: 500px) { main .test_area.report_score .report_content_area .report_content .paper_score .paper_score_text .paper_score_text_one p, main .test_area.report_score .report_content_area .report_content .paper_score .paper_score_text .paper_score_text_two p { font-size: 20px; }
   main .test_area.report_score .report_content_area .report_content .paper_score .paper_score_text .paper_score_text_one span { font-size: 55px; }
@@ -703,7 +761,29 @@ main .test_area.report_score .report_content_area .report_content .paper_diagnos
   main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td.bar_six span::before { display: none; }
   main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td.bar_six .bar_bg { width: 100%; height: calc(30px * 6); }
   main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td span { width: 100%; order: 2; position: relative; border-top: 1.5px solid #fff; }
-  main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td span::before { content: ""; position: absolute; z-index: 1; border-width: 10px 0px 10px 10px; top: 50%; right: 0; transform: translate(calc(100% - 0px), -50%); border-bottom: 19px solid transparent; border-top: 19px solid transparent; } }
+  main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td span::before { content: ""; position: absolute; z-index: 1; border-width: 10px 0px 10px 10px; top: 50%; right: 0; transform: translate(calc(100% - 0px), -50%); border-bottom: 19px solid transparent; border-top: 19px solid transparent; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis { margin: 60px auto; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark { padding: 0 0 0 22.5px; width: 65%; margin: 10px 0 10px 20%; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_two { transform: translate(calc(-50% + 22.5px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_three { transform: translate(calc(-50% + 15px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_four { transform: translate(calc(-50% + 7.5px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_five { transform: translate(calc(-50% + 0px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line { width: 65%; margin: 0 0 0 20%; padding: 0 0 0 20px; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_one { transform: translate(calc(0% + 30px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_two { transform: translate(calc(-50% + 22.5px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_three { transform: translate(calc(-50% + 15px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_four { transform: translate(calc(-50% + 7.5px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_five { transform: translate(calc(-50% + 0px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar { width: 65%; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_foot, main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_head { width: 15px; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_value { width: 15%; }
+  main .test_area.report_score .report_content_area .report_content .paper_phase_title { margin: 30px auto 0; }
+  main .test_area.report_score .report_content_area .report_content .paper_phase_title .paper_phase_left { width: 18%; }
+  main .test_area.report_score .report_content_area .report_content .paper_phase_title .paper_phase_right { width: 80%; }
+  main .test_area.report_score .report_content_area .report_content .percentage_grade_item { margin: 30px auto; }
+  main .test_area.report_score .report_content_area .report_content .percentage_grade_item .percentage_grade_name { width: 18%; }
+  main .test_area.report_score .report_content_area .report_content .percentage_grade_item .percentage_grade_name p { padding: 5px 10px; }
+  :root { --progress-width: calc((100% - 15px - 15px) / 100); } }
 
 @media screen and (min-width: 650px) { main .test_area.report_score .report_content_area .report_content .paper_score .paper_score_img { width: 75%; }
   main .test_area.report_score .report_content_area .report_content .paper_score .paper_score_img .lotus_vein { width: 75%; }
@@ -718,4 +798,22 @@ main .test_area.report_score .report_content_area .report_content .paper_diagnos
   main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td.bar_three span::before { border-left: 10px solid #FF9C00; }
   main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td.bar_four span::before { border-left: 10px solid #FF7600; }
   main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td.bar_five span::before { border-left: 10px solid #FF6400; }
-  main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td span::before { border-bottom: 22.5px solid transparent; border-top: 22.5px solid transparent; } }
+  main .test_area.report_score .report_content_area .report_content .paper_bar .table_bar tbody tr td span::before { border-bottom: 22.5px solid transparent; border-top: 22.5px solid transparent; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark { padding: 0 0 0 30px; width: 70%; margin: 10px 0 10px 17%; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_two { transform: translate(calc(-50% + 30px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_three { transform: translate(calc(-50% + 20px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_four { transform: translate(calc(-50% + 10px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_mark span.mark_five { transform: translate(calc(-50% + 0px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line { width: 70%; margin: 0 0 0 17%; padding: 0 0 0 30px; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_one { transform: translate(calc(0% + 40px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_two { transform: translate(calc(-50% + 30px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_three { transform: translate(calc(-50% + 20px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_four { transform: translate(calc(-50% + 10px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_mark_line span.line_five { transform: translate(calc(-50% + 0px), 0); }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar { width: 70%; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_foot, main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_head { width: 20px; }
+  main .test_area.report_score .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_value { width: 13%; }
+  main .test_area.report_score .report_content_area .report_content .paper_phase_title .paper_phase_left { width: 15%; }
+  main .test_area.report_score .report_content_area .report_content .paper_phase_title .paper_phase_right { width: 83%; }
+  main .test_area.report_score .report_content_area .report_content .percentage_grade_item .percentage_grade_name { width: 15%; }
+  :root { --progress-width: calc((100% - 20px - 20px) / 100); } }

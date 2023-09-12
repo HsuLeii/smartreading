@@ -65,6 +65,7 @@ main {
                         }
                     }
 
+                    // 成绩 start
                     .paper_score {
                         position: relative;
                         margin: 40px auto;
@@ -146,7 +147,9 @@ main {
                             }
                         }
                     }
+                    // 成绩 end
 
+                    // 量尺 start
                     .paper_bar {
                         .table_bar {
                             width: 100%;
@@ -172,73 +175,73 @@ main {
 
                                         &.bar_one {
                                             span {
-                                                background-color: $bar_one;
-                                                border-right: 1.5px solid darken($bar_one, 10%);
+                                                background-color: $first_grade;
+                                                border-right: 1.5px solid darken($first_grade, 10%);
                                             }
 
                                             .bar_bg {
                                                 width: calc((100% - 85px - 25px - 5px) / 6 * 1);
-                                                background-color: $bar_one;
+                                                background-color: $first_grade;
                                             }
                                         }
 
                                         &.bar_two {
                                             span {
-                                                background-color: $bar_two;
-                                                border-right: 1.5px solid darken($bar_two, 10%);
+                                                background-color: $second_grade;
+                                                border-right: 1.5px solid darken($second_grade, 10%);
                                             }
 
                                             .bar_bg {
                                                 width: calc((100% - 85px - 25px - 5px) / 6 * 2);
-                                                background-color: $bar_two;
+                                                background-color: $second_grade;
                                             }
                                         }
 
                                         &.bar_three {
                                             span {
-                                                background-color: $bar_three;
-                                                border-right: 1.5px solid darken($bar_three, 10%);
+                                                background-color: $third_grade;
+                                                border-right: 1.5px solid darken($third_grade, 10%);
                                             }
 
                                             .bar_bg {
                                                 width: calc((100% - 85px - 25px - 5px) / 6 * 3);
-                                                background-color: $bar_three;
+                                                background-color: $third_grade;
                                             }
                                         }
 
                                         &.bar_four {
                                             span {
-                                                background-color: $bar_four;
-                                                border-right: 1.5px solid darken($bar_four, 10%);
+                                                background-color: $fourth_grade;
+                                                border-right: 1.5px solid darken($fourth_grade, 10%);
                                             }
 
                                             .bar_bg {
                                                 width: calc((100% - 85px - 25px - 5px) / 6 * 4);
-                                                background-color: $bar_four;
+                                                background-color: $fourth_grade;
                                             }
                                         }
 
                                         &.bar_five {
                                             span {
-                                                background-color: $bar_five;
-                                                border-right: 1.5px solid darken($bar_five, 10%);
+                                                background-color: $fifth_grade;
+                                                border-right: 1.5px solid darken($fifth_grade, 10%);
                                             }
 
                                             .bar_bg {
                                                 width: calc((100% - 85px - 25px - 5px) / 6 * 5);
-                                                background-color: $bar_five;
+                                                background-color: $fifth_grade;
                                             }
                                         }
 
                                         &.bar_six {
                                             span {
-                                                background-color: $bar_six;
-                                                border-right: 1.5px solid darken($bar_six, 10%);
+                                                background-color: $sixth_grade;
+                                                border-right: 1.5px solid darken($sixth_grade, 10%);
                                             }
 
                                             .bar_bg {
                                                 width: calc((100% - 85px - 25px - 5px) / 6 * 6);
-                                                background-color: $bar_six;
+                                                background-color: $sixth_grade;
                                             }
                                         }
 
@@ -253,123 +256,280 @@ main {
                             }
                         }
                     }
-
+                    // 量尺 end
+                    
+                    // 诊断 start
                     .paper_diagnosis {
                         margin: 40px auto;
 
-                        .paper_section_title {
-                            h5 {
-                                margin: 0 auto 10px;
-                                text-align: center;
+                        .paper_percentage_area {
+                            margin: 15px auto;
+
+                            .percentage_mark {
+                                width: 50%;
+                                margin: 10px 0 10px 30%;
+                                display: flex;
+                                justify-content: space-between;
+                                position: relative;
+                                padding: 0 0 0 15px;
+
+                                span {
+                                    position: absolute;
+                                    color: darken($main_color, 15%);
+
+                                    &.mark_one {
+                                        position: relative;
+                                    }
+
+                                    &.mark_two {
+                                        left: 25%;
+                                        transform: translate(calc(-50% + 15px), 0);
+                                    }
+
+                                    &.mark_three {
+                                        left: 50%;
+                                        transform: translate(calc(-50% + 10px), 0);
+                                    }
+
+                                    &.mark_four {
+                                        left: 75%;
+                                        transform: translate(calc(-50% + 5px), 0);
+                                    }
+
+                                    &.mark_five {
+                                        left: 100%;
+                                        transform: translate(calc(-50% + 0px), 0);
+                                    }
+                                }
+                            }
+
+                            .percentage_grade_area {
+                                position: relative;
+
+                                .percentage_mark_line {
+                                    position: absolute;
+                                    width: 50%;
+                                    height: 100%;
+                                    margin: 0 0 0 30%;
+                                    padding: 0 0 0 15px;
+
+                                    span {
+                                        position: absolute;
+                                        height: 100%;
+                                        border-right: 1.5px dotted darken($main_color, 15%);
+
+                                        &.line_one {
+                                            left: 0%;
+                                            transform: translate(calc(0% + 20px), 0);
+                                        }
+
+                                        &.line_two {
+                                            left: 25%;
+                                            transform: translate(calc(-50% + 15px), 0);
+                                        }
+
+                                        &.line_three {
+                                            left: 50%;
+                                            transform: translate(calc(-50% + 10px), 0);
+                                        }
+
+                                        &.line_four {
+                                            left: 75%;
+                                            transform: translate(calc(-50% + 5px), 0);
+                                        }
+
+                                        &.line_five {
+                                            left: 100%;
+                                            transform: translate(calc(-50% + 0px), 0);
+                                        }
+                                    }
+
+                                }
+
+                                .percentage_grade_item {
+
+                                    .percentage_progress_bar {
+                                        width: 50%;
+                                        display: flex;
+
+                                        .progress_bar_body {
+                                            display: flex;
+                                            width: 100%;
+
+                                            .progress_area {
+                                                width: 100%;
+
+                                                .progress {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    background-color: transparent;
+                                                    border-radius: 0;
+                                                    border: 0;
+                                                    overflow: initial;
+
+                                                    .progress_bar {
+                                                        height: 100%;
+                                                        position: relative;
+                                                        border-radius: 0;
+                                                        background-image: none;
+                                                        background-color: $frog_green;
+
+                                                        &::before {
+                                                            content: "";
+                                                            position: absolute;
+                                                            width: 100%;
+                                                            height: 50%;
+                                                            background-color: $body_bg;
+                                                            top: 50%;
+                                                            transform: translate(0, -50%);
+                                                            border-radius: 50px;
+                                                        }
+                                                    }
+
+                                                    .progress_foot,
+                                                    .progress_head {
+                                                        width: 10px;
+                                                        line-height: 1;
+
+                                                        img {
+                                                            height: 100%;
+                                                        }
+                                                    }
+
+                                                }
+                                            }
+                                        }
+
+                                    }
+
+                                    .percentage_progress_value {
+                                        width: 20%;
+                                        display: flex;
+                                        justify-content: flex-end;
+
+                                        p {
+                                            color: darken($main_color, 15%);
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+
+                    }
+                    // 诊断 end
+
+                    .paper_recommend {
+                        margin: 40px auto;
+                    }
+
+                    // report_score通用 start
+                    .paper_section_title {
+                        h5 {
+                            margin: 0 auto 10px;
+                            text-align: center;
+                            color: darken($main_color, 15%);
+                        }
+
+                        p {
+                            color: $main_color_grey;
+                        }
+                    }
+
+                    .paper_phase_title {
+                        display: flex;
+                        margin: 15px auto 0;
+
+                        .paper_phase_left {
+                            width: 28%;
+                            margin: 0 2% 0 0;
+                        }
+
+                        .paper_phase_right {
+                            width: 70%;
+                        }
+
+                        p {
+                            display: flex;
+                            justify-content: center;
+                            color: $white;
+                            background-color: $main_color;
+                            border-radius: 5px;
+                            padding: 5px 0;
+                        }
+                    }
+                    
+                    .percentage_grade_item {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        margin: 20px auto;
+                        z-index: 1;
+
+                        &.first_grade {
+                            margin: 0 auto;
+
+                            .percentage_grade_name {
+                                    background-color: $first_grade;
                             }
                         }
 
-                        .percentage_grade_area {
-                            display: flex;
-                            align-items: center;
-
+                        &.second_grade {
                             .percentage_grade_name {
-                                width: 30%;
+                                    background-color: $second_grade;
                             }
+                        }
 
-                            .percentage_progress_bar {
-                                width: calc(40% - 8.8px - 8.8px);
-                                display: flex;
-
-                                .progress_bar_body {
-                                    display: flex;
-                                    width: 100%;
-
-                                    .progress_area {
-                                        width: 100%;
-                                        justify-content: flex-start;
-
-                                        .progress_foot{
-                                            height: 20px;
-                                            display: flex;
-                                            align-items: center;
-
-                                            img{
-                                                height: 100%;
-                                                width: auto;
-                                            }
-                                        }
-
-                                        .progress_head{
-                                            height: 20px;
-                                            display: flex;
-                                            background-image: url(../image/photo/frog/progress_head.png);
-                                        }
-
-                                        .progress {
-                                            width: calc(100% - 8.7px - 8.7px);
-                                            height: 20px;
-                                            background-color: transparent;
-                                            border-radius: 0;
-                                            border: 0;
-                                            overflow: initial;
-
-                                            .progress_bar {
-                                                position: relative;
-                                                height: 20px;
-                                                border-radius: 0;
-                                                background-image: url(../image/photo/frog/progress_head.png);
-                                                background-color: #8fc31f;
-                                                background-position: right;
-    background-size: contain;
-    background-repeat: no-repeat;
-
-                                                &::before {
-                                                    content: "";
-                                                    position: absolute;
-                                                    right: 0;
-                                                    height: 100%;
-                                                    width: 8.8px;
-                                                    background-image: url(../image/photo/frog/progress_head.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    transform: translate(0%, 0px);
-                                                }
-
-                                                // &::after {
-                                                //     content: "";
-                                                //     position: absolute;
-                                                //     left: 0;
-                                                //     height: 100%;
-                                                //     width: 8.8px;
-                                                //     background-image: url(../image/photo/frog/progress_foot.png);
-                                                //     background-size: contain;
-                                                //     background-repeat: no-repeat;
-                                                //     transform: translate(-100%, 0px);
-                                                // }
-                                            }
-
-                                        }
-                                    }
-                                }
-
-                                .progress_bar_head,
-                                .progress_bar_foot {
-                                    display: flex;
-                                    height: 20px;
-
-                                    img {
-                                        height: 20px;
-                                    }
-                                }
-
+                        &.third_grade {
+                            .percentage_grade_name {
+                                    background-color: $third_grade;
                             }
+                        }
 
-                            .percentage_progress_value {
-                                width: 30%;
+                        &.fourth_grade {
+                            .percentage_grade_name {
+                                    background-color: $fourth_grade;
+                            }
+                        }
+
+                        &.fifth_grade {
+                            .percentage_grade_name {
+                                    background-color: $fifth_grade;
+                            }
+                        }
+
+                        &.sixth_grade {
+                            .percentage_grade_name {
+                                    background-color: $sixth_grade;
+                            }
+                        }
+
+                        .percentage_grade_name {
+                            display: flex;
+                            justify-content: center;
+                            width: 28%;
+                            margin: 0 2% 0 0;
+                            border-radius: 5px;
+
+                            p {
+                                color: $main_color_grey;
+                                display: inline-block;
+                                padding: 3px 5px;
+                                border-radius: 5px;
                             }
                         }
                     }
+                    // report_score通用 end
                 }
             }
         }
 
     }
+}
+
+:root {
+    --progress-width: calc((100% - 10px - 10px) / 100);
 }
 
 @media screen and (min-width: 500px) {
@@ -380,6 +540,7 @@ main {
                 .report_content_area {
 
                     .report_content {
+                        // 成绩 start
                         .paper_score {
 
                             .paper_score_text {
@@ -406,6 +567,7 @@ main {
                                 }
                             }
                         }
+                        // 成绩 end
                     }
                 }
             }
@@ -439,6 +601,7 @@ main {
                 .report_content_area {
 
                     .report_content {
+                        // 成绩 start
                         .paper_score {
                             margin: 40px auto 80px;
 
@@ -467,7 +630,9 @@ main {
                                 }
                             }
                         }
+                        // 成绩 end
 
+                        // 量尺 start
                         .paper_bar {
                             .table_bar {
                                 tbody {
@@ -499,7 +664,7 @@ main {
                                                     border-right: 0;
 
                                                     &::before {
-                                                        border-left: 6px solid $bar_one;
+                                                        border-left: 6px solid $first_grade;
                                                     }
                                                 }
 
@@ -514,7 +679,7 @@ main {
                                                     border-right: 0;
 
                                                     &::before {
-                                                        border-left: 6px solid $bar_two;
+                                                        border-left: 6px solid $second_grade;
                                                     }
                                                 }
 
@@ -529,7 +694,7 @@ main {
                                                     border-right: 0;
 
                                                     &::before {
-                                                        border-left: 6px solid $bar_three;
+                                                        border-left: 6px solid $third_grade;
                                                     }
                                                 }
 
@@ -544,7 +709,7 @@ main {
                                                     border-right: 0;
 
                                                     &::before {
-                                                        border-left: 8px solid $bar_four;
+                                                        border-left: 8px solid $fourth_grade;
                                                     }
                                                 }
 
@@ -559,7 +724,7 @@ main {
                                                     border-right: 0;
 
                                                     &::before {
-                                                        border-left: 6px solid $bar_five;
+                                                        border-left: 6px solid $fifth_grade;
                                                     }
                                                 }
 
@@ -607,10 +772,135 @@ main {
                                 }
                             }
                         }
+                        // 量尺 end
+                        
+                        // 诊断 start
+                        .paper_diagnosis {
+                            margin: 60px auto;
+
+                            .paper_percentage_area {
+
+                                .percentage_mark {
+                                    padding: 0 0 0 22.5px;
+                                    width: 65%;
+                                    margin: 10px 0 10px 20%;
+
+                                    span {
+
+                                        &.mark_two {
+                                            transform: translate(calc(-50% + 22.5px), 0);
+                                        }
+
+                                        &.mark_three {
+                                            transform: translate(calc(-50% + 15px), 0);
+                                        }
+
+                                        &.mark_four {
+                                            transform: translate(calc(-50% + 7.5px), 0);
+                                        }
+
+                                        &.mark_five {
+                                            transform: translate(calc(-50% + 0px), 0);
+                                        }
+                                    }
+                                }
+
+                                .percentage_grade_area {
+                                    .percentage_mark_line {
+                                        width: 65%;
+                                        margin: 0 0 0 20%;
+                                        padding: 0 0 0 20px;
+
+                                        span {
+
+                                            &.line_one {
+                                                transform: translate(calc(0% + 30px), 0);
+                                            }
+
+                                            &.line_two {
+                                                transform: translate(calc(-50% + 22.5px), 0);
+                                            }
+
+                                            &.line_three {
+                                                transform: translate(calc(-50% + 15px), 0);
+                                            }
+
+                                            &.line_four {
+                                                transform: translate(calc(-50% + 7.5px), 0);
+                                            }
+
+                                            &.line_five {
+                                                transform: translate(calc(-50% + 0px), 0);
+                                            }
+                                        }
+                                    }
+
+                                    .percentage_grade_item {
+
+                                        .percentage_progress_bar {
+                                            width: 65%;
+
+                                            .progress_bar_body {
+
+                                                .progress_area {
+
+                                                    .progress {
+
+                                                        .progress_foot,
+                                                        .progress_head {
+                                                            width: 15px;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                        .percentage_progress_value {
+                                            width: 15%;
+                                        }
+                                    }
+                                }
+                            }
+
+
+                        }
+                        // 诊断 end
+
+                        // report_score通用 start
+                        .paper_phase_title {
+                            margin: 30px auto 0;
+
+                            .paper_phase_left {
+                                width: 18%;
+                            }
+
+                            .paper_phase_right {
+                                width: 80%;
+                            }
+                        }
+
+                        .percentage_grade_item {
+                            margin: 30px auto;
+
+                            .percentage_grade_name {
+                                width: 18%;
+
+                                p {
+                                    padding: 5px 10px;
+                                }
+                            }
+                        }
+                        // report_score通用 end
                     }
                 }
             }
         }
+    }
+
+    :root {
+        --progress-width: calc((100% - 15px - 15px) / 100);
     }
 }
 
@@ -623,6 +913,7 @@ main {
                 .report_content_area {
 
                     .report_content {
+                        // 成绩 start
                         .paper_score {
 
                             .paper_score_img {
@@ -643,6 +934,7 @@ main {
                                 }
                             }
                         }
+                        // 成绩 end
                     }
                 }
             }
@@ -675,6 +967,7 @@ main {
 
                 .report_content_area {
                     .report_content {
+                        // 成绩 start
                         .paper_score {
 
                             .paper_score_text {
@@ -694,7 +987,9 @@ main {
                                 }
                             }
                         }
+                        // 成绩 end
 
+                        // 量尺 start
                         .paper_bar {
                             .table_bar {
                                 tbody {
@@ -704,7 +999,7 @@ main {
                                             &.bar_one {
                                                 span {
                                                     &::before {
-                                                        border-left: 10px solid $bar_one;
+                                                        border-left: 10px solid $first_grade;
                                                     }
                                                 }
                                             }
@@ -712,7 +1007,7 @@ main {
                                             &.bar_two {
                                                 span {
                                                     &::before {
-                                                        border-left: 10px solid $bar_two;
+                                                        border-left: 10px solid $second_grade;
                                                     }
                                                 }
                                             }
@@ -720,7 +1015,7 @@ main {
                                             &.bar_three {
                                                 span {
                                                     &::before {
-                                                        border-left: 10px solid $bar_three;
+                                                        border-left: 10px solid $third_grade;
                                                     }
                                                 }
                                             }
@@ -728,7 +1023,7 @@ main {
                                             &.bar_four {
                                                 span {
                                                     &::before {
-                                                        border-left: 10px solid $bar_four;
+                                                        border-left: 10px solid $fourth_grade;
                                                     }
                                                 }
                                             }
@@ -736,7 +1031,7 @@ main {
                                             &.bar_five {
                                                 span {
                                                     &::before {
-                                                        border-left: 10px solid $bar_five;
+                                                        border-left: 10px solid $fifth_grade;
                                                     }
                                                 }
                                             }
@@ -753,10 +1048,127 @@ main {
                                 }
                             }
                         }
+                        // 量尺 end
+
+                        // 诊断 start
+                        .paper_diagnosis {
+
+                            .paper_percentage_area {
+
+                                .percentage_mark {
+                                    padding: 0 0 0 30px;
+                                    width: 70%;
+                                    margin: 10px 0 10px 17%;
+
+                                    span {
+
+                                        &.mark_two {
+                                            transform: translate(calc(-50% + 30px), 0);
+                                        }
+
+                                        &.mark_three {
+                                            transform: translate(calc(-50% + 20px), 0);
+                                        }
+
+                                        &.mark_four {
+                                            transform: translate(calc(-50% + 10px), 0);
+                                        }
+
+                                        &.mark_five {
+                                            transform: translate(calc(-50% + 0px), 0);
+                                        }
+                                    }
+                                }
+
+                                .percentage_grade_area {
+                                    .percentage_mark_line {
+                                        width: 70%;
+                                        margin: 0 0 0 17%;
+                                        padding: 0 0 0 30px;
+
+                                        span {
+
+                                            &.line_one {
+                                                transform: translate(calc(0% + 40px), 0);
+                                            }
+
+                                            &.line_two {
+                                                transform: translate(calc(-50% + 30px), 0);
+                                            }
+
+                                            &.line_three {
+                                                transform: translate(calc(-50% + 20px), 0);
+                                            }
+
+                                            &.line_four {
+                                                transform: translate(calc(-50% + 10px), 0);
+                                            }
+
+                                            &.line_five {
+                                                transform: translate(calc(-50% + 0px), 0);
+                                            }
+                                        }
+                                    }
+
+                                    .percentage_grade_item {
+
+                                        .percentage_progress_bar {
+                                            width: 70%;
+
+                                            .progress_bar_body {
+
+                                                .progress_area {
+
+                                                    .progress {
+
+                                                        .progress_foot,
+                                                        .progress_head {
+                                                            width: 20px;
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                        .percentage_progress_value {
+                                            width: 13%;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        // 诊断 end
+
+                        // report_score通用 start
+                        .paper_phase_title {
+
+                            .paper_phase_left {
+                                width: 15%;
+                            }
+
+                            .paper_phase_right {
+                                width: 83%;
+                            }
+                        }
+
+                        .percentage_grade_item {
+
+                            .percentage_grade_name {
+                                width: 15%;
+                            }
+                        }
+                        // report_score通用 end
                     }
                 }
             }
         }
+    }
+
+    :root {
+        --progress-width: calc((100% - 20px - 20px) / 100);
     }
 }
 
