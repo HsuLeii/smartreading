@@ -147,6 +147,7 @@ main {
                             }
                         }
                     }
+
                     // 成绩 end
 
                     // 量尺 start
@@ -256,8 +257,9 @@ main {
                             }
                         }
                     }
+
                     // 量尺 end
-                    
+
                     // 诊断 start
                     .paper_diagnosis {
                         margin: 40px auto;
@@ -384,6 +386,18 @@ main {
                                                             transform: translate(0, -50%);
                                                             border-radius: 50px;
                                                         }
+
+                                                        &::after{
+                                                            content: "";
+                                                            position: absolute;
+                                                            width: 100%;
+                                                            height: 50%;
+                                                            background-image: linear-gradient(45deg, rgba($main_color, .5) 25%, transparent 25%, transparent 50%, rgba($main_color, .5) 50%, rgba($main_color, .5) 75%, transparent 75%, transparent);
+                                                            background-size: 1rem 1rem;
+                                                            top: 50%;
+                                                            transform: translate(0, -50%);
+                                                            border-radius: 50px;
+                                                        }
                                                     }
 
                                                     .progress_foot,
@@ -420,9 +434,187 @@ main {
                     }
                     // 诊断 end
 
+                    // 推荐 start
                     .paper_recommend {
-                        margin: 40px auto;
+                        margin: 30px auto;
+
+                        .table_recommend {
+                            display: block;
+
+                            .table_recommend_thead,
+                            .table_recommend_tbody {
+                                display: block;
+                                width: 100%;
+                            }
+
+                            .table_recommend_tbody {
+                                .percentage_grade_item {
+                                    align-items: flex-start;
+                                    margin: 40px auto 70px;
+
+                                    .table_recommend_words {
+                                        width: 70%;
+                                        padding: 0 0 40px;
+                                        border-bottom: 1px solid $main_color;
+
+                                        .table_recommend_words_item{
+                                            height: 39.19px;
+                                            overflow: hidden;
+                                            margin: 0 auto 10px;
+
+                                            &.open{
+                                                height: auto !important;
+                                                overflow: visible;
+                                            }
+
+                                            span {
+                                                mark {
+                                                    padding: 5px;
+                                                    margin: 0 5px 10px ;
+                                                    display: inline-block;
+                                                    width: calc(20% - 10px);
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+
+                                        .more_btn{
+                                            padding: 5px 10px;
+                                            border-radius: 5px;
+                                            color: $main_color_grey;
+                                            cursor: pointer;
+                                            background-color: $main_color_30;
+                                            position: absolute;
+                                            right: 0;
+                                            bottom: 0;
+                                            transform: translate(0px, 50%);
+
+                                            &:hover{
+                                                background-color: $main_color;
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &.first_grade {
+                                        .table_recommend_words {
+                                            .table_recommend_words_item{
+                                                span {
+                                                    mark {
+                                                        background-color: lighten($first_grade, 30%);
+                                                        border: 1px solid $first_grade;
+                                                    }
+                                                }
+                                            }
+                                            .more_btn{
+                                                background-color: $first_grade;
+
+                                                &:hover{
+                                                    background-color: darken($first_grade, 5%);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.second_grade {
+                                        .table_recommend_words {
+                                            .table_recommend_words_item{
+                                                span {
+                                                    mark {
+                                                        background-color: lighten($second_grade, 30%);
+                                                        border: 1px solid $second_grade;
+                                                    }
+                                                }
+                                            }
+                                            .more_btn{
+                                                background-color: $second_grade;
+                                                &:hover{
+                                                    background-color: darken($second_grade, 5%);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.third_grade {
+                                        .table_recommend_words {
+                                            .table_recommend_words_item{
+                                                span {
+                                                    mark {
+                                                        background-color: lighten($third_grade, 30%);
+                                                        border: 1px solid $third_grade;
+                                                    }
+                                                }
+                                            }
+                                            .more_btn{
+                                                background-color: $third_grade;
+                                                &:hover{
+                                                    background-color: darken($third_grade, 5%);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.fourth_grade {
+                                        .table_recommend_words {
+                                            .table_recommend_words_item{
+                                                span {
+                                                    mark {
+                                                        background-color: lighten($fourth_grade, 30%);
+                                                        border: 1px solid $fourth_grade;
+                                                    }
+                                                }
+                                            }
+                                            .more_btn{
+                                                background-color: $fourth_grade;
+                                                &:hover{
+                                                    background-color: darken($fourth_grade, 5%);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.fifth_grade {
+                                        .table_recommend_words {
+                                            .table_recommend_words_item{
+                                                span {
+                                                    mark {
+                                                        background-color: lighten($fifth_grade, 30%);
+                                                        border: 1px solid $fifth_grade;
+                                                    }
+                                                }
+                                            }
+                                            .more_btn{
+                                                background-color: $fifth_grade;
+                                                &:hover{
+                                                    background-color: darken($fifth_grade, 5%);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.sixth_grade {
+                                        .table_recommend_words {
+                                            .table_recommend_words_item{
+                                                span {
+                                                    mark {
+                                                        background-color: lighten($sixth_grade, 30%);
+                                                        border: 1px solid $sixth_grade;
+                                                    }
+                                                }
+                                            }
+                                            .more_btn{
+                                                background-color: $sixth_grade;
+                                                &:hover{
+                                                    background-color: darken($sixth_grade, 5%);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
+                    // 推荐 end
 
                     // report_score通用 start
                     .paper_section_title {
@@ -459,7 +651,7 @@ main {
                             padding: 5px 0;
                         }
                     }
-                    
+
                     .percentage_grade_item {
                         display: flex;
                         align-items: center;
@@ -471,37 +663,37 @@ main {
                             margin: 0 auto;
 
                             .percentage_grade_name {
-                                    background-color: $first_grade;
+                                background-color: $first_grade;
                             }
                         }
 
                         &.second_grade {
                             .percentage_grade_name {
-                                    background-color: $second_grade;
+                                background-color: $second_grade;
                             }
                         }
 
                         &.third_grade {
                             .percentage_grade_name {
-                                    background-color: $third_grade;
+                                background-color: $third_grade;
                             }
                         }
 
                         &.fourth_grade {
                             .percentage_grade_name {
-                                    background-color: $fourth_grade;
+                                background-color: $fourth_grade;
                             }
                         }
 
                         &.fifth_grade {
                             .percentage_grade_name {
-                                    background-color: $fifth_grade;
+                                background-color: $fifth_grade;
                             }
                         }
 
                         &.sixth_grade {
                             .percentage_grade_name {
-                                    background-color: $sixth_grade;
+                                background-color: $sixth_grade;
                             }
                         }
 
@@ -520,6 +712,7 @@ main {
                             }
                         }
                     }
+
                     // report_score通用 end
                 }
             }
@@ -540,6 +733,7 @@ main {
                 .report_content_area {
 
                     .report_content {
+
                         // 成绩 start
                         .paper_score {
 
@@ -567,6 +761,7 @@ main {
                                 }
                             }
                         }
+
                         // 成绩 end
                     }
                 }
@@ -601,6 +796,7 @@ main {
                 .report_content_area {
 
                     .report_content {
+
                         // 成绩 start
                         .paper_score {
                             margin: 40px auto 80px;
@@ -773,7 +969,7 @@ main {
                             }
                         }
                         // 量尺 end
-                        
+
                         // 诊断 start
                         .paper_diagnosis {
                             margin: 60px auto;
@@ -868,6 +1064,35 @@ main {
                         }
                         // 诊断 end
 
+                        // 推荐 start
+                    .paper_recommend {
+                        margin: 60px auto;
+
+                        .table_recommend {
+
+                            .table_recommend_tbody {
+                                .percentage_grade_item {
+                                    margin: 50px auto 80px;
+
+                                    .table_recommend_words {
+                                        width: 80%;
+                                        padding: 0 0 50px;
+
+                                        .table_recommend_words_item{
+                                            height: 45.19px;
+                                            span {
+                                                mark {
+                                                    width: calc(100% / 8 - 10px);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 推荐 end
+
                         // report_score通用 start
                         .paper_phase_title {
                             margin: 30px auto 0;
@@ -892,6 +1117,7 @@ main {
                                 }
                             }
                         }
+
                         // report_score通用 end
                     }
                 }
@@ -913,6 +1139,7 @@ main {
                 .report_content_area {
 
                     .report_content {
+
                         // 成绩 start
                         .paper_score {
 
@@ -934,6 +1161,7 @@ main {
                                 }
                             }
                         }
+
                         // 成绩 end
                     }
                 }
@@ -967,6 +1195,7 @@ main {
 
                 .report_content_area {
                     .report_content {
+
                         // 成绩 start
                         .paper_score {
 
@@ -987,6 +1216,7 @@ main {
                                 }
                             }
                         }
+
                         // 成绩 end
 
                         // 量尺 start
@@ -1048,6 +1278,7 @@ main {
                                 }
                             }
                         }
+
                         // 量尺 end
 
                         // 诊断 start
@@ -1140,7 +1371,35 @@ main {
                             }
 
                         }
+
                         // 诊断 end
+
+                        // 推荐 start
+                    .paper_recommend {
+
+                        .table_recommend {
+
+                            .table_recommend_tbody {
+                                .percentage_grade_item {
+
+                                    .table_recommend_words {
+                                        width: 83%;
+                                        padding: 0 0 40px;
+
+                                        .table_recommend_words_item{
+                                            height: 46px;
+                                            span {
+                                                mark {
+                                                    width: calc(100% / 10 - 10px);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 推荐 end
 
                         // report_score通用 start
                         .paper_phase_title {
@@ -1160,6 +1419,7 @@ main {
                                 width: 15%;
                             }
                         }
+
                         // report_score通用 end
                     }
                 }
