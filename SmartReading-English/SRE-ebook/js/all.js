@@ -94,15 +94,17 @@ $("#word-id").change(function () {
 });
 
 //唸讀切換
-$("#read-id").change(function () {
+$("#listen-id").change(function () {
   if ($(this).is(":checked")) {
-    $(play).show();
+    $(".play .btn-play").attr("disabled", false);
+    $(".play .btn-play").removeClass("disabled");
     $('.sound-img').prop('disabled', false);
     $('.btn-speak').prop('disabled', false);
     $('.sound-line').removeClass("grey");
     $('.sound-draggable-button').removeClass("grey");
   } else {
-    $(play).hide();
+    $(".play .btn-play").attr("disabled", true);
+    $(".play .btn-play").addClass("disabled");
     $('.sound-img').prop('disabled', true);
     $('.btn-speak').prop('disabled', true);
     $('.sound-line').addClass("grey");
@@ -126,7 +128,7 @@ $('.disabled').prop('disabled', true);
 // });
 
 //聽讀切換
-$("#listen-id").change(function () {
+$("#read-id").change(function () {
   if ($(this).is(":checked")) {
     $(".listen_sentence").addClass("microphone_show");
     alert("此功能需插入麥克風");

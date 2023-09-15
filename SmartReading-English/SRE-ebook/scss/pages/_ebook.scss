@@ -83,6 +83,15 @@
                     text-align: left;
                     text-align: -webkit-left;
                 }
+
+                label { 
+                    text-align: left; 
+                    text-align: -webkit-left; 
+
+                    &:hover {
+                        color: $main_color;
+                    }
+                }
             }
 
             &.full-back {
@@ -215,6 +224,15 @@
                         line-height: 1.5;
                         word-break: break-word;
                         margin: 10px 3px;
+                    }
+
+                    label { 
+                        display: inline-block; 
+                        width: calc(100% - 50px); 
+                        color: $brown; 
+                        line-height: 1.5; 
+                        word-break: break-word;
+                        margin: 10px 3px; 
                     }
 
                     .microphone_icon{
@@ -860,42 +878,44 @@
                         }
                     }
                 }
+
+                .background-icon {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 20px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    mask-size: cover;
+                    mask-position: center;
+                    mask-repeat: no-repeat;
+                    -webkit-mask-size: cover;
+                    -webkit-mask-position: center;
+                    -webkit-mask-repeat: no-repeat;
+                    transition: 0.3s;
+                    background-color: transparent;
+                
+                    &:hover {
+                        transform: scale(1.2);
+                        -webkit-transform: scale(1.2);
+                        -ms-transform: scale(1.2);
+                    }
+                
+                    &:disabled {
+                        &:hover {
+                            transform: scale(1);
+                            -webkit-transform: scale(1);
+                            -ms-transform: scale(1);
+                            cursor: default !important;
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-.background-icon {
-    width: 30px;
-    height: 30px;
-    margin-left: 20px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    mask-size: cover;
-    mask-position: center;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    transition: 0.3s;
-    background-color: transparent;
 
-    &:hover {
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-    }
-
-    &:disabled {
-        &:hover {
-            transform: scale(1);
-            -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            cursor: default !important;
-        }
-    }
-}
 
 // 下方控制區結束
 
@@ -942,6 +962,27 @@
     }
 
     // 電子書區域結束
+
+        // 下方控制區開始
+    
+        .button-area {
+    
+            .button-menu {
+                ul {
+    
+                    li {
+    
+                        .background-icon {
+                            width: 25px;
+                            height: 25px;
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        // 下方控制區結束
 }
 
 @media (max-width: 768px) {
