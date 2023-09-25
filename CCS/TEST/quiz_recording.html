@@ -79,11 +79,11 @@
                             <div class="quiz_answer_btn_icon">
                                 <i class="fa-solid fa-microphone-lines"></i>
                             </div>
-                            
-                            <p id="playText">錄音</p>
+
+                            <p id="recordingText">錄音</p>
                         </button>
 
-                        <button class="button quiz_answer_btn play_btn">
+                        <button disabled class="button quiz_answer_btn play_btn">
                             <div class="quiz_answer_btn_icon">
                                 <i class="fa-solid fa-play"></i>
                             </div>
@@ -122,12 +122,14 @@
     <script>
         $(".recording_btn").click(function () {
             $(this).toggleClass("answer_check recording");
-            var playText = document.getElementById("playText");
-    if (playText.innerHTML === "錄音") {
-        playText.innerHTML = "停止錄音";
-      } else {
-        playText.innerHTML = "錄音";
-      }
+            var recordingText = document.getElementById("recordingText");
+            if (recordingText.innerHTML === "錄音") {
+                recordingText.innerHTML = "停止錄音";
+            } else if (recordingText.innerHTML === "停止錄音") {
+                recordingText.innerHTML = "完成錄音";
+                $(".recording_btn").attr("disabled", true);
+                $(".play_btn").attr("disabled", false);
+            }
         });
         $(".play_btn").click(function () {
             $(this).toggleClass("answer_check");
@@ -135,11 +137,9 @@
             if ($(this).hasClass("answer_check")) {
                 $(this).find('i').addClass('fa-pause');
                 $(this).find('i').removeClass('fa-play');
-                $(".recording_btn").attr("disabled",  true);
             } else {
                 $(this).find('i').removeClass('fa-pause');
                 $(this).find('i').addClass('fa-play');
-                $(".recording_btn").attr("disabled",  false);
             }
 
 
