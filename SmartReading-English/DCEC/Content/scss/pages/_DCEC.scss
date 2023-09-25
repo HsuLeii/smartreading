@@ -431,6 +431,75 @@ body {
             }
         }
     }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-wrapper {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            transition-property: transform;
+            box-sizing: content-box;
+
+            .swiper-slide {
+                position: relative;
+                background: $white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 10px;
+                overflow: hidden;
+                transform: scale(0.95);
+                height: auto;
+                // @extend %boxShadow_gray;
+                justify-content: space-between;
+                
+                img{
+                    object-fit: cover;
+                }
+
+                &:hover {
+                    transform: scale(0.98);
+                }
+
+                .swiper-slide {
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .book_content {
+                    width: 80%;
+                    margin: 0px auto;
+                    padding: 15px 0px;
+
+                    h4 {
+                        color: $brown;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        white-space: normal;
+                        width: 100%;
+                        height: 55px;
+                        margin-bottom: 8px;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+
+    }
 }
 
 @page {
@@ -1061,5 +1130,7 @@ body {
                 z-index: -1;
             }
         }
+
+        
     }
   }
