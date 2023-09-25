@@ -125,8 +125,12 @@
             var recordingText = document.getElementById("recordingText");
             if (recordingText.innerHTML === "錄音") {
                 recordingText.innerHTML = "停止錄音";
+                $(this).find('i').removeClass('fa-microphone-lines');
+                $(this).find('i').addClass('fa-stop');
             } else if (recordingText.innerHTML === "停止錄音") {
                 recordingText.innerHTML = "完成錄音";
+                $(this).find('i').removeClass('fa-solid fa-stop');
+                $(this).find('i').addClass('fa-regular fa-circle-check');
                 $(".recording_btn").attr("disabled", true);
                 $(".play_btn").attr("disabled", false);
             }
