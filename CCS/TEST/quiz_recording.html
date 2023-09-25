@@ -79,8 +79,8 @@
                             <div class="quiz_answer_btn_icon">
                                 <i class="fa-solid fa-microphone-lines"></i>
                             </div>
-
-                            <p>錄音</p>
+                            
+                            <p id="playText">錄音</p>
                         </button>
 
                         <button class="button quiz_answer_btn play_btn">
@@ -122,6 +122,12 @@
     <script>
         $(".recording_btn").click(function () {
             $(this).toggleClass("answer_check recording");
+            var playText = document.getElementById("playText");
+    if (playText.innerHTML === "錄音") {
+        playText.innerHTML = "停止錄音";
+      } else {
+        playText.innerHTML = "錄音";
+      }
         });
         $(".play_btn").click(function () {
             $(this).toggleClass("answer_check");
@@ -135,6 +141,8 @@
                 $(this).find('i').addClass('fa-play');
                 $(".recording_btn").attr("disabled",  false);
             }
+
+
 
         });
     </script>
