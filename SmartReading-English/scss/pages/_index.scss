@@ -289,7 +289,7 @@
 
         .book_introduction_right {
             width: calc(65% - 16%);
-            background-color: #ede8d2;
+            background-color: $ticket_light_bg;
             margin: 15px auto;
             padding: 15px;
             position: relative;
@@ -385,11 +385,10 @@
                 }
             }
 
-            .book_introduction_left_border {
+            .book_introduction_left_border,
+            .book_introduction_right_border{
                 position: absolute;
-                left: 5px;
                 top: 0;
-                transform: translate(-100%, 0%);
                 height: 100%;
 
                 img {
@@ -397,17 +396,16 @@
                     width: auto;
                 }
             }
+            .book_introduction_left_border {
+                left: 5px;
+                transform: translate(-100%, 0%);
+            }
 
             .book_introduction_right_border {
-                position: absolute;
                 right: 5px;
-                top: 0;
                 transform: translate(100%, 0%);
-                height: 100%;
 
                 img {
-                    height: 100%;
-                    width: auto;
                     transform: rotate(180deg);
                 }
             }
@@ -445,6 +443,82 @@
 
     }
 
+    .project_modal{
+        width: calc(95% - 16%);
+        margin: 0 auto;
+        position: relative;
+        .project_modal_content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: $ticket_light_bg;
+    
+            .project_information_left{
+                margin: 0 40px 0 0;
+    
+                h4{
+                    color: $brown;
+                    margin: 0 0 10px 0;
+                }
+            }
+    
+            .project_information_right{
+                width: 50%;
+                max-width: 280px;
+            }
+        }
+
+        .book_introduction_top_border,
+        .book_introduction_bottom_border,
+        .book_introduction_left_border,
+        .book_introduction_right_border{
+            position: absolute;
+        }
+
+        .book_introduction_top_border,
+        .book_introduction_bottom_border {
+            display: none;
+            left: 0px;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .book_introduction_top_border{
+            top: 0px;
+            transform: translate(0%, -100%);
+        }
+        .book_introduction_bottom_border {
+            bottom: 0px;
+            transform: translate(0%, 100%) rotate(180deg);
+        }
+
+        .book_introduction_left_border,
+        .book_introduction_right_border{
+            top: 0;
+            height: 100%;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        .book_introduction_left_border {
+            left: 5px;
+            transform: translate(-100%, 0%);
+        }
+    
+        .book_introduction_right_border {
+            right: 5px;
+            transform: translate(100%, 0%);
+            
+            img {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    
     a.close-modal {
         right: -17.5px;
     }
@@ -613,8 +687,6 @@
     }
 }
 
-
-
 @media screen and (max-width: 768px) {
     .slide_index {
         .swiper-slide{
@@ -709,7 +781,7 @@
 
             .book_introduction_left {
                 width: 100%;
-                background-color: #ede8d2;
+                background-color: $ticket_light_bg;
                 border-right: 0px dotted $white;
                 position: relative;
 
@@ -724,14 +796,9 @@
                     }
                 }
 
-                .book_introduction_top_border {
+                .book_introduction_top_border,
+                .book_introduction_bottom_border {
                     display: block;
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    transform: translate(0%, -100%);
-                    width: 100%;
-                    line-height: 0;
                 }
 
             }
@@ -789,6 +856,32 @@
                 }
             }
 
+        }
+
+        .project_modal{
+            .project_modal_content{
+                flex-direction: column;
+        
+                .project_information_left{
+                    width: 80%;
+                    margin: 0 0 40px 0;
+                }
+        
+                .project_information_right{
+                    width: 80%;
+                    max-width: none;
+                }
+            }
+        
+            .book_introduction_right_border,
+                .book_introduction_left_border {
+                    display: none;
+                }
+
+                .book_introduction_top_border,
+                .book_introduction_bottom_border {
+                    display: block;
+                }
         }
 
     }

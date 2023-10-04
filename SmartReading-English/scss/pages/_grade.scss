@@ -928,6 +928,18 @@
     }
 }
 
+.grade_text{
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+    p{
+        span{
+            color: $main_color;
+            border-bottom: 1px solid $main_color;
+        }
+    }
+}
+
 .grade_information_modal{
     width: 80%;
     max-width: 1024px;
@@ -938,68 +950,71 @@
         margin-bottom: 10px;
     }
 
-    // background-color: $circus_blue;
-    // max-height: 80vh;
-    // padding: 5px 0px;
     .lightbulb_bg{
-    //     background-color: $circus_blue;
-    //     background-image: url(../image/svg/lightbulb.svg);
-    //     background-repeat: space;
-    //     background-size: 25px 25px;
-    //     background-position: center center;
         padding: 25px;
-    //     border-radius: 10px;
-    //     max-height: calc(80vh - 10px);
 
-    //     .grade_introduction{
-    //         background-color: $white;
-    //         border: 10px solid #B83A26;
-    //         border-radius: 10px;
-    //         padding: 25px;
-    //         padding: 25px;
-    //         max-height: calc(80vh - 60px);
-    //         overflow: auto;
+        .chart_area{
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            position: relative;
+            width: 100%;
+            margin: 20px 0 0;
+
+            .chart_item {
+                width: calc(100% / 7);
+
+                .chart_item_meter {
+                    width: 100%;
+                    position: relative;
+
+                    span {
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        bottom: 0;
+                        font-size: 15px;
+                        padding: 10px 0px;
+                        border-top: 1px solid $white;
+                        color: $white;
+                        background-color: darken($main_color, 5%);
+                        text-align: center;
+                    }
+
+                    .chart_item_bar{
+                        background-color: $main_color;
+                        border-radius: 10px;
+
+                        &.a1-bg {
+                            height: calc(var(--meter-height) * 2 + 40.64px);
+                        }
     
-    //         &::-webkit-scrollbar {
-    //             background: transparent;
-    //             height: 3px;
-    //             width: 5px;
-    //         }
-        
-    //         &::-webkit-scrollbar-thumb {
-    //             border: none;
-    //             box-shadow: none;
-    //             background: $main_color;
-    //             border-radius: 10px;
-    //             min-height: 20px;
-    //         }
-        
-    //         &::-webkit-scrollbar-track {
-    //             margin: 3px 0;
-    //         }
-    //     }
+                        &.a2-bg {
+                            height: calc(var(--meter-height) * 3 + 40.64px);
+                        }
+    
+                        &.b1-bg {
+                            height: calc(var(--meter-height) * 4 + 40.64px);
+                        }
+    
+                        &.b2-bg {
+                            height: calc(var(--meter-height) * 5 + 40.64px);
+                        }
+    
+                        &.c1-bg {
+                            height: calc(var(--meter-height) * 6 + 40.64px);
+                        }
+    
+                        &.c2-bg {
+                            height: calc(var(--meter-height) * 7 + 40.64px);
+                        }
+                    }
+
+                    
+                }
+            }
+        }
     }
-
-    // .decorative_figure{
-    //     position: absolute;
-    //     z-index: -1;
-    //     top: 50%;
-    //     width: 15%;
-
-    //     &.modal_stationery_right{
-    //         right: 0;
-            
-    //         transform: translate(75%, -50%);
-            
-    //     }
-
-    //     &.modal_rides_left{
-    //         left: 0;
-    //         transform: translate(-75% , -50%);
-    //     }
-    // }
-    
-
 }
 
 @media screen and (max-width: 1200px){
@@ -1068,6 +1083,12 @@
                                 }
                             }
 
+                            &.eleventh_grade_introduction {
+                                &::before {
+                                    border-right: 0px solid $eleventh_grade_color;
+                                }
+                            }
+
                             &.second_grade_introduction {
                                 &::before {
                                     border-right: 10px solid $second_grade_color;
@@ -1103,13 +1124,29 @@
                                     top: calc(75px / 2);
                                 }
                             }
+
+                            &.tenth_grade_introduction {
+                                &::before {
+                                    border-right: 10px solid $tenth_grade_color;
+                                    border-left: 0px solid;
+                                    left: -13px;
+                                    top: calc(75px / 2);
+                                }
+                            }
+
+                            &.twelfth_grade_introduction {
+                                &::before {
+                                    border-right: 10px solid $twelfth_grade_color;
+                                    border-left: 0px solid;
+                                    left: -13px;
+                                    top: calc(75px / 2);
+                                }
+                            }
                         }
                     }
 
                     &.left {
                         margin-right: 0px;
-
-
 
                         .level_introduction {
 
@@ -1158,6 +1195,15 @@
                                 }
                             }
 
+                            &.eleventh_grade_introduction {
+                                &::before {
+                                    border-right: 10px solid $eleventh_grade_color;
+                                    border-left: 0px solid;
+                                    left: -13px;
+                                    top: calc(75px / 2);
+                                }
+                            }
+
                             &.second_grade_introduction {
                                 &::before {
                                     border-left: 0px solid;
@@ -1177,6 +1223,18 @@
                             }
 
                             &.eighth_grade_introduction {
+                                &::before {
+                                    border-left: 0px solid;
+                                }
+                            }
+
+                            &.tenth_grade_introduction {
+                                &::before {
+                                    border-left: 0px solid;
+                                }
+                            }
+
+                            &.twelfth_grade_introduction {
                                 &::before {
                                     border-left: 0px solid;
                                 }
@@ -1244,6 +1302,21 @@
                                     background-color: rgba($ninth_grade_color, 0.1);
                                 }
 
+                                &.tenth_grade_introduction {
+                                    border-color: $tenth_grade_color;
+                                    background-color: rgba($tenth_grade_color, 0.1);
+                                }
+
+                                &.eleventh_grade_introduction {
+                                    border-color: $eleventh_grade_color;
+                                    background-color: rgba($eleventh_grade_color, 0.1);
+                                }
+
+                                &.twelfth_grade_introduction {
+                                    border-color: $twelfth_grade_color;
+                                    background-color: rgba($twelfth_grade_color, 0.1);
+                                }
+
                             }
                         }
 
@@ -1295,6 +1368,21 @@
                                 &.ninth_grade_introduction {
                                     border-color: $ninth_grade_color;
                                     background-color: rgba($ninth_grade_color, 0.1);
+                                }
+
+                                &.tenth_grade_introduction {
+                                    border-color: $tenth_grade_color;
+                                    background-color: rgba($tenth_grade_color, 0.1);
+                                }
+
+                                &.eleventh_grade_introduction {
+                                    border-color: $eleventh_grade_color;
+                                    background-color: rgba($eleventh_grade_color, 0.1);
+                                }
+
+                                &.twelfth_grade_introduction {
+                                    border-color: $twelfth_grade_color;
+                                    background-color: rgba($twelfth_grade_color, 0.1);
                                 }
                             }
                         }
@@ -1356,6 +1444,21 @@
                                 &.ninth_grade_introduction {
                                     border-color: $ninth_grade_color;
                                     background-color: rgba($ninth_grade_color, 0.1);
+                                }
+
+                                &.tenth_grade_introduction {
+                                    border-color: $tenth_grade_color;
+                                    background-color: rgba($tenth_grade_color, 0.1);
+                                }
+
+                                &.eleventh_grade_introduction {
+                                    border-color: $eleventh_grade_color;
+                                    background-color: rgba($eleventh_grade_color, 0.1);
+                                }
+
+                                &.twelfth_grade_introduction {
+                                    border-color: $twelfth_grade_color;
+                                    background-color: rgba($twelfth_grade_color, 0.1);
                                 }
                             }
                         }
@@ -1608,6 +1711,66 @@
                 width: calc(100% + 5px);
                 height: calc(100% + 5px);
                 border: 1.5px solid;
+            }
+        }
+    }
+
+    .grade_information_modal{
+    
+        .lightbulb_bg{
+            padding: 25px 0;
+    
+            .chart_area{
+                flex-direction: column;
+    
+                .chart_item {
+                    width: 100%;
+                    margin-bottom: 10px;
+    
+                    .chart_item_meter {
+                        display: flex;
+    
+                        span {
+                            position: initial;
+                            width: 85px;
+                            padding: 10px;
+                            border-top: 0px;
+                        }
+    
+                        .chart_item_bar{
+                            width: 100%;
+                            height: auto !important;
+                            order: 2;
+                            border-radius: 0 10px 10px 0;
+    
+                            &.a1-bg {
+                                width: calc((100% - 85px) / 2);
+                            }
+        
+                            &.a2-bg {
+                                width: calc((100% - 85px) / 1.8);
+                            }
+        
+                            &.b1-bg {
+                                width: calc((100% - 85px) / 1.6);
+                            }
+        
+                            &.b2-bg {
+                                width: calc((100% - 85px) / 1.4);
+                            }
+        
+                            &.c1-bg {
+                                width: calc((100% - 85px) / 1.2);
+                            }
+        
+                            &.c2-bg {
+                                width: calc((100% - 85px) / 1);
+                            }
+                        }
+    
+                        
+                    }
+                }
             }
         }
     }

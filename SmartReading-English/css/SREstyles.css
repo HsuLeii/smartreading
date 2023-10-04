@@ -9,6 +9,8 @@ body input[type="radio" i] ~ label, .header nav .menu div li a { font-weight: bo
 
 .main.booklist, .main.about_dcec, .main.about_sre, .main.test, .main.question { max-width: 1200px; }
 
+:root { --meter-height: 30px; }
+
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure { margin: 0; padding: 0; list-style: none; }
 
 h1 { font-size: 40px; color: #ff6464; line-height: 1.7; }
@@ -196,7 +198,7 @@ div#toggle span:after { margin: 10px 0 0 0; }
 
 .header nav .menu div li.dropdown .dropdown_content { position: absolute; display: none; left: 50%; transform: translate(-50%, 0px); z-index: 1; background-color: #EFE8E0; border-radius: 10px; margin: 15px 0; white-space: nowrap; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
 
-.header nav .menu div li.dropdown .dropdown_content li { padding: 5px 15px; }
+.header nav .menu div li.dropdown .dropdown_content li { padding: 5px 8px; }
 
 .header nav .menu div li.dropdown .dropdown_content.open { display: block; }
 
@@ -204,7 +206,7 @@ div#toggle span:after { margin: 10px 0 0 0; }
 
 .header nav .menu div li.dropdown .dropdown_content.open a:hover { color: #ff6464; }
 
-.header nav .menu div li a { color: #5B3716; padding: 5px 12px; font-size: 18px; }
+.header nav .menu div li a { color: #5B3716; padding: 5px 8px; }
 
 .header nav .menu div li:hover a { color: #ff6464; }
 
@@ -250,12 +252,12 @@ div#toggle span:after { margin: 10px 0 0 0; }
 
 .header nav .menu div.menu_avatar .avatar_dropdown .avatar_menu li { text-align: center; }
 
-@media screen and (max-width: 1300px) { .header { padding: 15px 2.5%; }
+@media screen and (max-width: 1400px) { .header { padding: 15px 2.5%; }
   .header .header_logo { margin: 0; }
   .header .header_logo img { height: 50px; }
-  .header nav .menu div li a { padding: 5px 10px; } }
+  .header nav .menu div li a { font-size: 15px; } }
 
-@media screen and (max-width: 1300px) { .header nav .menu div li a { font-size: 15px; } }
+@media screen and (max-width: 1300px) { .header { flex-direction: column; } }
 
 @media screen and (max-width: 1100px) { div#toggle { display: block; right: 10px; top: 20px; z-index: 5; }
   div#toggle.open span { background-color: rgba(0, 0, 0, 0); }
@@ -419,7 +421,7 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 
 .book_information_modal .book_introduction .book_introduction_left .book_introduction_top_border { display: none; }
 
-.book_information_modal .book_introduction .book_introduction_right { width: calc(65% - 16%); background-color: #ede8d2; margin: 15px auto; padding: 15px; position: relative; display: flex; align-items: center; }
+.book_information_modal .book_introduction .book_introduction_right { width: calc(65% - 16%); background-color: #ece1ce; margin: 15px auto; padding: 15px; position: relative; display: flex; align-items: center; }
 
 .book_information_modal .book_introduction .book_introduction_right .introduction_content { max-height: 250px; overflow-y: auto; width: 100%; height: 100%; }
 
@@ -453,13 +455,15 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 
 .book_information_modal .book_introduction .book_introduction_right .modal_book_button a.disabled { pointer-events: none; color: grey; border: 1px solid grey; }
 
-.book_information_modal .book_introduction .book_introduction_right .book_introduction_left_border { position: absolute; left: 5px; top: 0; transform: translate(-100%, 0%); height: 100%; }
+.book_information_modal .book_introduction .book_introduction_right .book_introduction_left_border, .book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border { position: absolute; top: 0; height: 100%; }
 
-.book_information_modal .book_introduction .book_introduction_right .book_introduction_left_border img { height: 100%; width: auto; }
+.book_information_modal .book_introduction .book_introduction_right .book_introduction_left_border img, .book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border img { height: 100%; width: auto; }
 
-.book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border { position: absolute; right: 5px; top: 0; transform: translate(100%, 0%); height: 100%; }
+.book_information_modal .book_introduction .book_introduction_right .book_introduction_left_border { left: 5px; transform: translate(-100%, 0%); }
 
-.book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border img { height: 100%; width: auto; transform: rotate(180deg); }
+.book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border { right: 5px; transform: translate(100%, 0%); }
+
+.book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border img { transform: rotate(180deg); }
 
 .book_information_modal .book_introduction .book_introduction_right .book_introduction_bottom_border { display: none; }
 
@@ -470,6 +474,34 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 .book_information_modal .modal_wave_line.modal_wave_line_right { right: -5px; transform: rotate(180deg); }
 
 .book_information_modal .modal_wave_line .modal_wave_line_internal { height: 100%; width: 100%; background: radial-gradient(circle at 0 50%, rgba(0, 0, 0, 0.75) 50%, #f6d367 0); background-size: 0.3rem 0.7rem; background-repeat: repeat-y; }
+
+.book_information_modal .project_modal { width: calc(95% - 16%); margin: 0 auto; position: relative; }
+
+.book_information_modal .project_modal .project_modal_content { display: flex; justify-content: center; align-items: center; margin: 20px 0; padding: 20px; background-color: #ece1ce; }
+
+.book_information_modal .project_modal .project_modal_content .project_information_left { margin: 0 40px 0 0; }
+
+.book_information_modal .project_modal .project_modal_content .project_information_left h4 { color: #5B3716; margin: 0 0 10px 0; }
+
+.book_information_modal .project_modal .project_modal_content .project_information_right { width: 50%; max-width: 280px; }
+
+.book_information_modal .project_modal .book_introduction_top_border, .book_information_modal .project_modal .book_introduction_bottom_border, .book_information_modal .project_modal .book_introduction_left_border, .book_information_modal .project_modal .book_introduction_right_border { position: absolute; }
+
+.book_information_modal .project_modal .book_introduction_top_border, .book_information_modal .project_modal .book_introduction_bottom_border { display: none; left: 0px; width: 100%; line-height: 0; }
+
+.book_information_modal .project_modal .book_introduction_top_border { top: 0px; transform: translate(0%, -100%); }
+
+.book_information_modal .project_modal .book_introduction_bottom_border { bottom: 0px; transform: translate(0%, 100%) rotate(180deg); }
+
+.book_information_modal .project_modal .book_introduction_left_border, .book_information_modal .project_modal .book_introduction_right_border { top: 0; height: 100%; }
+
+.book_information_modal .project_modal .book_introduction_left_border img, .book_information_modal .project_modal .book_introduction_right_border img { height: 100%; width: auto; }
+
+.book_information_modal .project_modal .book_introduction_left_border { left: 5px; transform: translate(-100%, 0%); }
+
+.book_information_modal .project_modal .book_introduction_right_border { right: 5px; transform: translate(100%, 0%); }
+
+.book_information_modal .project_modal .book_introduction_right_border img { transform: rotate(180deg); }
 
 .book_information_modal a.close-modal { right: -17.5px; }
 
@@ -518,10 +550,10 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .best_book .swiper .swiper-wrapper .swiper-slide .book_content h4 { margin-bottom: 5px; }
   .book_information_modal { padding: 15% 0px; }
   .book_information_modal .book_introduction { flex-direction: column; width: 90%; margin: 0 auto; }
-  .book_information_modal .book_introduction .book_introduction_left { width: 100%; background-color: #ede8d2; border-right: 0px dotted #fff; position: relative; }
+  .book_information_modal .book_introduction .book_introduction_left { width: 100%; background-color: #ece1ce; border-right: 0px dotted #fff; position: relative; }
   .book_information_modal .book_introduction .book_introduction_left .modal_book_img { max-width: 100%; max-height: 200px; }
   .book_information_modal .book_introduction .book_introduction_left .modal_book_img .audio_icon { background-size: 15px; width: 25px; height: 25px; }
-  .book_information_modal .book_introduction .book_introduction_left .book_introduction_top_border { display: block; position: absolute; left: 0px; top: 0px; transform: translate(0%, -100%); width: 100%; line-height: 0; }
+  .book_information_modal .book_introduction .book_introduction_left .book_introduction_top_border, .book_information_modal .book_introduction .book_introduction_left .book_introduction_bottom_border { display: block; }
   .book_information_modal .book_introduction .book_introduction_right { width: 100%; margin: 0px auto; border-top: 2px dotted #5B3716; }
   .book_information_modal .book_introduction .book_introduction_right .introduction_content { width: 80%; margin: 0 auto; max-height: none; overflow-y: initial; }
   .book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_modal ul { flex-direction: column; border-bottom: 0px; }
@@ -530,7 +562,12 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_modal ul .introduction { margin: 0 0 10px 0; }
   .book_information_modal .book_introduction .book_introduction_right .modal_book_button { margin: 10px 0px 0px; }
   .book_information_modal .book_introduction .book_introduction_right .book_introduction_right_border, .book_information_modal .book_introduction .book_introduction_right .book_introduction_left_border { display: none; }
-  .book_information_modal .book_introduction .book_introduction_right .book_introduction_bottom_border { display: block; position: absolute; left: 0px; bottom: 0px; transform: translate(0%, 100%) rotate(180deg); width: 100%; line-height: 0; } }
+  .book_information_modal .book_introduction .book_introduction_right .book_introduction_bottom_border { display: block; position: absolute; left: 0px; bottom: 0px; transform: translate(0%, 100%) rotate(180deg); width: 100%; line-height: 0; }
+  .book_information_modal .project_modal .project_modal_content { flex-direction: column; }
+  .book_information_modal .project_modal .project_modal_content .project_information_left { width: 80%; margin: 0 0 40px 0; }
+  .book_information_modal .project_modal .project_modal_content .project_information_right { width: 80%; max-width: none; }
+  .book_information_modal .project_modal .book_introduction_right_border, .book_information_modal .project_modal .book_introduction_left_border { display: none; }
+  .book_information_modal .project_modal .book_introduction_top_border, .book_information_modal .project_modal .book_introduction_bottom_border { display: block; } }
 
 @media screen and (max-width: 499px) { .slide_index .swiper-slide .slide_index_text { bottom: 20px; left: 30px; width: calc(100% - 60px); }
   .slide_index .swiper-slide .slide_index_text p { font-size: 12px; }
@@ -870,11 +907,37 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 
 .level_correspondence_marker .level_correspondence_marker_inner.twelfth_grade_marker_inner::after { border-color: #670087; }
 
+.grade_text { display: flex; justify-content: center; margin: 80px 0; }
+
+.grade_text p span { color: #ff6464; border-bottom: 1px solid #ff6464; }
+
 .grade_information_modal { width: 80%; max-width: 1024px; background-color: #EFE8E0; }
 
 .grade_information_modal h3 { color: #5B3716; margin-bottom: 10px; }
 
 .grade_information_modal .lightbulb_bg { padding: 25px; }
+
+.grade_information_modal .lightbulb_bg .chart_area { display: flex; justify-content: space-between; align-items: baseline; position: relative; width: 100%; margin: 20px 0 0; }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item { width: calc(100% / 7); }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter { width: 100%; position: relative; }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter span { position: absolute; width: 100%; left: 0; bottom: 0; font-size: 15px; padding: 10px 0px; border-top: 1px solid #fff; color: #fff; background-color: #ff4b4b; text-align: center; }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar { background-color: #ff6464; border-radius: 10px; }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.a1-bg { height: calc(var(--meter-height) * 2 + 40.64px); }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.a2-bg { height: calc(var(--meter-height) * 3 + 40.64px); }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.b1-bg { height: calc(var(--meter-height) * 4 + 40.64px); }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.b2-bg { height: calc(var(--meter-height) * 5 + 40.64px); }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.c1-bg { height: calc(var(--meter-height) * 6 + 40.64px); }
+
+.grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.c2-bg { height: calc(var(--meter-height) * 7 + 40.64px); }
 
 @media screen and (max-width: 1200px) { .level_correspondence_area { margin: 40px auto; }
   .level_correspondence_area h3 { margin: 40px auto; text-align: left; }
@@ -889,20 +952,26 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.fifth_grade_introduction::before { border-right: 0px solid #00AD5E; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.seventh_grade_introduction::before { border-right: 0px solid #238cf6; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.ninth_grade_introduction::before { border-right: 0px solid #00349b; }
+  .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.eleventh_grade_introduction::before { border-right: 0px solid #8910ff; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.second_grade_introduction::before { border-right: 10px solid #EB772A; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.fourth_grade_introduction::before { border-right: 10px solid #8DA429; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.sixth_grade_introduction::before { border-right: 10px solid #00B1B9; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.eighth_grade_introduction::before { border-right: 10px solid #0163C6; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
+  .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.tenth_grade_introduction::before { border-right: 10px solid #6c4bdc; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
+  .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.twelfth_grade_introduction::before { border-right: 10px solid #670087; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left { margin-right: 0px; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.first_grade_introduction::before { border-right: 10px solid #d72b2b; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.third_grade_introduction::before { border-right: 10px solid #F3BA03; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.fifth_grade_introduction::before { border-right: 10px solid #00AD5E; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.seventh_grade_introduction::before { border-right: 10px solid #238cf6; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.ninth_grade_introduction::before { border-right: 10px solid #00349b; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
+  .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.eleventh_grade_introduction::before { border-right: 10px solid #8910ff; border-left: 0px solid; left: -13px; top: calc(75px / 2); }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.second_grade_introduction::before { border-left: 0px solid; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.fourth_grade_introduction::before { border-left: 0px solid; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.sixth_grade_introduction::before { border-left: 0px solid; }
   .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.eighth_grade_introduction::before { border-left: 0px solid; }
+  .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.tenth_grade_introduction::before { border-left: 0px solid; }
+  .level_correspondence_area .level_correspondence_item .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.twelfth_grade_introduction::before { border-left: 0px solid; }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content:nth-child(1) { order: 2; }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction { border-left: 3px solid; border-right: 0px; border-radius: 0px 0px 10px 10px; }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.first_grade_introduction { border-color: #d72b2b; background-color: rgba(215, 43, 43, 0.1); }
@@ -914,6 +983,9 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.seventh_grade_introduction { border-color: #238cf6; background-color: rgba(35, 140, 246, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.eighth_grade_introduction { border-color: #0163C6; background-color: rgba(1, 99, 198, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.ninth_grade_introduction { border-color: #00349b; background-color: rgba(0, 52, 155, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.tenth_grade_introduction { border-color: #6c4bdc; background-color: rgba(108, 75, 220, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.eleventh_grade_introduction { border-color: #8910ff; background-color: rgba(137, 16, 255, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.twelfth_grade_introduction { border-color: #670087; background-color: rgba(103, 0, 135, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction { border-left: 3px solid; border-radius: 10px 10px 0px 0px; }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.first_grade_introduction { border-color: #d72b2b; background-color: rgba(215, 43, 43, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.second_grade_introduction { border-color: #EB772A; background-color: rgba(235, 119, 42, 0.1); }
@@ -924,6 +996,9 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.seventh_grade_introduction { border-color: #238cf6; background-color: rgba(35, 140, 246, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.eighth_grade_introduction { border-color: #0163C6; background-color: rgba(1, 99, 198, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.ninth_grade_introduction { border-color: #00349b; background-color: rgba(0, 52, 155, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.tenth_grade_introduction { border-color: #6c4bdc; background-color: rgba(108, 75, 220, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.eleventh_grade_introduction { border-color: #8910ff; background-color: rgba(137, 16, 255, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(even) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction.twelfth_grade_introduction { border-color: #670087; background-color: rgba(103, 0, 135, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left { display: flex; justify-content: flex-end; }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction { border-left: 3px solid; border-radius: 10px 10px 0px 0px; }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.first_grade_introduction { border-color: #d72b2b; background-color: rgba(215, 43, 43, 0.1); }
@@ -935,6 +1010,9 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.seventh_grade_introduction { border-color: #238cf6; background-color: rgba(35, 140, 246, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.eighth_grade_introduction { border-color: #0163C6; background-color: rgba(1, 99, 198, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.ninth_grade_introduction { border-color: #00349b; background-color: rgba(0, 52, 155, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.tenth_grade_introduction { border-color: #6c4bdc; background-color: rgba(108, 75, 220, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.eleventh_grade_introduction { border-color: #8910ff; background-color: rgba(137, 16, 255, 0.1); }
+  .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.left .level_introduction.twelfth_grade_introduction { border-color: #670087; background-color: rgba(103, 0, 135, 0.1); }
   .level_correspondence_area .level_correspondence_item:nth-child(odd) .level_correspondence_content .level_correspondence_content_inner.right .level_introduction { border-radius: 0px 0px 10px 10px; border-bottom: 0px; border-top: 0px; border-right: 0px; }
   .level_correspondence_marker { position: absolute; left: 0; height: 100%; top: 0; align-items: flex-start; }
   .level_correspondence_marker::before { bottom: -40px; }
@@ -976,7 +1054,19 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
   .level_correspondence_marker::before { width: 1.5px; }
   .level_correspondence_marker .level_correspondence_marker_inner { width: 50px; }
   .level_correspondence_marker .level_correspondence_marker_inner img { padding: 3px; }
-  .level_correspondence_marker .level_correspondence_marker_inner:after { width: calc(100% + 5px); height: calc(100% + 5px); border: 1.5px solid; } }
+  .level_correspondence_marker .level_correspondence_marker_inner:after { width: calc(100% + 5px); height: calc(100% + 5px); border: 1.5px solid; }
+  .grade_information_modal .lightbulb_bg { padding: 25px 0; }
+  .grade_information_modal .lightbulb_bg .chart_area { flex-direction: column; }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item { width: 100%; margin-bottom: 10px; }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter { display: flex; }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter span { position: initial; width: 85px; padding: 10px; border-top: 0px; }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar { width: 100%; height: auto !important; order: 2; border-radius: 0 10px 10px 0; }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.a1-bg { width: calc((100% - 85px) / 2); }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.a2-bg { width: calc((100% - 85px) / 1.8); }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.b1-bg { width: calc((100% - 85px) / 1.6); }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.b2-bg { width: calc((100% - 85px) / 1.4); }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.c1-bg { width: calc((100% - 85px) / 1.2); }
+  .grade_information_modal .lightbulb_bg .chart_area .chart_item .chart_item_meter .chart_item_bar.c2-bg { width: calc((100% - 85px) / 1); } }
 
 @media screen and (max-width: 499px) { .main.grade { width: 80%; }
   .main.grade .chart_content { margin: 20px auto; }
@@ -1173,6 +1263,10 @@ footer .footer_copyright p { color: #5B3716; font-size: 12px; }
 .main.about_dcec .diagnostic_test h4 span { color: #ff6464; font-size: 22px; }
 
 .main.about_dcec .diagnostic_test img { width: 30%; margin: 0 auto; display: block; margin-bottom: 35px; }
+
+.main.about_dcec .diagnostic_test a { color: #ff6464; border-bottom: 1px solid; }
+
+.main.about_dcec .diagnostic_test a:hover { color: #ff1818; }
 
 .main.about_dcec .detection_report { margin: 60px auto; }
 
