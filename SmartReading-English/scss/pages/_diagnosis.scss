@@ -199,6 +199,45 @@
                             }
                         }
                     }
+
+                    .recommended_book_value{
+                        display: flex;
+                        margin: 20px 10px;
+                        .recommended_book_value_left{
+                            width: 40%;
+                            .value_tittle{
+                                background-color: darken($body_bg, 10%);
+                                }
+                                .value{
+                                    border-right: 2px solid darken($body_bg, 10%);
+                                }
+                        }
+                        .recommended_book_value_right{
+                            width: 60%;
+                            .value_tittle{
+                                background-color: $main_color;
+                                p{
+                                    color: $white;
+                                }
+                                }
+                        }
+
+                        .value_tittle,
+                        .value{
+                            display: flex;
+                            justify-content: center;
+                            padding: 10px 20px;
+                            width: 100%;
+                            background-color: $white;
+                        }
+                    }
+
+                    .book_area {
+                        margin: 20px auto 40px;
+                        .best_book{
+                            width: 100%;
+                        }
+                    }
                 }
 
                 canvas {
@@ -355,6 +394,34 @@
                         td {
                             border-color: $brown;
                             padding: 0px 5px;
+
+                            .dcec_icon_readinSkills {
+                                font-size: 14px;
+                                display: inline-block;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 20px;
+                                border-radius: 50%;
+                                color: $white;
+                                vertical-align: text-bottom;
+                                margin-bottom: 2px;
+
+                                &.skill_word {
+                                    background-color: $main_color;
+                                }
+
+                                &.skill_superficiall {
+                                    background-color: $main_yellow_color;
+                                }
+
+                                &.skill_textual {
+                                    background-color: $main_blue_color;
+                                }
+
+                                &.skill_analysis {
+                                    background-color: $main_green_color;
+                                }
+                            }
 
                             .dcec_icon_times {
                                 display: inline-block;
@@ -536,6 +603,30 @@
     }
 }
 
+@media screen and (max-width: 992px) {
+    .main {
+        &.diagnosis {
+            .frame_effect {
+                .folder {
+                    .folder_content {
+                        .book_area {
+                            .grade_map_booklist {
+                                .swiper {
+                                  .swiper-wrapper {
+                                    .swiper-slide {
+                                      width: calc(50% - 20px);
+                                    }
+                                  }
+                                }
+                              }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .main {
         &.diagnosis {
@@ -587,6 +678,56 @@
                                     }
                                 }
                             }
+                        }
+
+                        .recommended_book_value{
+                            flex-direction: column;
+                            margin: 20px 15px;
+                            .recommended_book_value_left{
+                                width: 100%;
+                                    .value{
+                                        border-right: 0;
+                                    }
+                            }
+                            .recommended_book_value_right{
+                                width: 100%;
+                            }
+                        }
+
+                        .book_area {
+                            .grade_map_booklist {
+                                .swiper {
+                                  .swiper-wrapper {
+                                    .swiper-slide {
+                                      width: calc(50% - 30px);
+                                    }
+                                  }
+                                }
+                              }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        &.diagnosis {
+            .frame_effect {
+                .folder {
+                    .folder_content {
+                        .book_area {
+                            .grade_map_booklist {
+                                .swiper {
+                                  .swiper-wrapper {
+                                    .swiper-slide {
+                                      width: calc(100% - 30px);
+                                    }
+                                  }
+                                }
+                              }
                         }
                     }
                 }

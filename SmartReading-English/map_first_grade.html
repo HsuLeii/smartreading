@@ -268,6 +268,10 @@
                     <div class="swiper_ticket_prev"></div>
                 </div>
 
+                <a href="#recording_result_modal" rel="modal:open" class="swiper-slide">
+                    A Fox, An Old Man, and Rice Dumplings
+                </a>
+
                 <!-- <div class="swiper mySwiper_slide_level">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide swiper-slide_level">
@@ -968,6 +972,494 @@
                         </span>
                     </div>
                 </div>
+
+
+                <!-- 第一本書彈跳視窗開始 -->
+                <div id="recording_result_modal" class="modal e-book_teach" style="display: inline-block;">
+                    <div class="page_item page_one">
+                        <div id="book-page" class="book-page noMove">
+                            <div id="book-page-img" class="book-page-img"><div class="book-page-bg"><img src="https://srenglish.net/ebook/material/NU0003/images/NU0003150PC800.jpg" alt=""></div></div>
+                        </div>
+    
+                        <div class="play-area">
+                            <div class="progress">
+                                <div class="drag-line">
+                                    <div class="line" style="width: 2.14286%; height: 4px;"></div>
+                                    <div class="draggable-button"></div>
+                                </div>
+                                <div class="number-page">1/15</div>
+                    
+                            </div>
+                            <div class="play">
+                                <button class="cursor btn-prev background-icon disabled" disabled="disabled"></button>
+                                <button class="cursor btn-play background-icon"></button>
+                                <button class="cursor btn-next background-icon"></button>
+                    
+                                <audio id="audio1" style="display:none">
+                                    <source type="audio/mp3">
+                                </audio>
+                            </div>
+                        </div>
+    
+                        <div class="button-area">
+                            <!--喇叭 音量-->
+                            <div class="sound">
+                                <button class="sound-img cursor background-icon"></button>
+                                <div id="bar_mc" class="sound-drag-line">
+                                    <div class="sound-back-line">
+                                    </div>
+                                    <div class="sound-line" style="width:50%; height: 4px;">
+                                    </div>
+                                    <div id="move_mc" class="sound-draggable-button cursor ui-draggable ui-draggable-handle" style="left: 50px;"></div>
+                                </div>
+                            </div>
+                    
+                            <div class="button-menu">
+                                <ul>
+                                    <li class="cursor" aria-label="加入書庫" style="display:none">
+                                        <button class="btn-favorite cursor background-icon"></button>
+                                    </li>
+                    
+                                    <li id="li_listen" class="cursor" aria-label="聽讀 Listen">
+                                        <button class="btn-listen cursor background-icon"></button>
+                                        <div class="read-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="listen-id" checked="">
+                                                <span>聽讀<br>Listen</span>
+                                                <label for="listen-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                    
+                                    <li id="li_read" class="cursor" aria-label="唸讀 Read Aloud">
+                                        <button class="btn-verbatim cursor background-icon" disabled=""></button>
+                                        <div class="read-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="read-id">
+                                                <span>唸讀<br>
+                                                    Read Aloud</span>
+                                                <label for="read-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                    
+                    
+                                    <li id="li_text" class="cursor" aria-label="文字 Text">
+                                        <button class="btn-font cursor background-icon" disabled=""></button>
+                                        <div class="font-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="text-id" checked="">
+                                                <span>文字 Text</span>
+                                                <label for="text-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li id="li_word" class="cursor" aria-label="單字 Word">
+                                        <button class="btn-word cursor background-icon" disabled=""></button>
+                                    </li>
+                    
+                                    <li id="li_speed" class="cursor" aria-label="語速 Speed">
+                                        <button class="btn-speak cursor background-icon"></button>
+                                        <div class="speak-menu-container">
+                                            <p>0.5</p>
+                                            <p>0.75</p>
+                                            <p>1.0</p>
+                                            <p>1.25</p>
+                                            <p>1.5</p>
+                                        </div>
+                                    </li>
+                    
+                                    <li class="cursor" aria-label="錄音" style="display:none;">
+                                        <button class="btn-record cursor background-icon"></button>
+                                    </li>
+                                    <li class="cursor" aria-label="放大" style="display:none;">
+                                        <button class="btn-magnifier cursor background-icon"></button>
+                                        <div class="magnifier-menu-container">
+                                            <p>0.5</p>
+                                            <p>1.0</p>
+                                            <p>1.5</p>
+                                        </div>
+                                    </li>
+                                    <li class="cursor" aria-label="全螢幕 Full Screen">
+                                        <button id="btn-screen" class="btn-screen cursor background-icon"></button>
+                                    </li>
+                                    <li class="cursor" aria-label="版權 copyright">
+                                        <button class="btn-copyright cursor background-icon"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page_item page_one">
+                        <div id="book-page" class="book-page noMove">
+                            <div id="book-page-img" class="book-page-img">
+                                <div class="book-page-bg two-right-book-page-bg">
+                                    <img src="https://srenglish.net/ebook/material/NU0003/images/NU0003150P1.jpg">
+                                </div>
+
+                                <div class="text two-right-text full-back">
+                                    <div class="article">
+                                        <p>
+                                            <span class="listen_sentence">
+                                                <label sindex="0">Rabbit sees two monkeys playing in a tree.</label>
+                                                <a class="microphone_icon">
+                                                    <i class="fa-solid fa-microphone-lines"></i>
+                                                </a>
+                                            </span>
+                                            <br>
+                                            <span class="listen_sentence">
+                                                <label sindex="1">One monkey says, "Give me five!"</label>
+                                                <a class="microphone_icon">
+                                                    <i class="fa-solid fa-microphone-lines"></i>
+                                                </a>
+                                            </span>
+                                            <br>
+                                            <span class="listen_sentence">
+                                                <label sindex="2">The monkeys are happy.</label>
+                                                <a class="microphone_icon">
+                                                    <i class="fa-solid fa-microphone-lines"></i>
+                                                </a>
+                                            </span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+    
+                        <div class="play-area">
+                            <div class="progress">
+                                <div class="drag-line">
+                                    <div class="line" style="width: 2.14286%; height: 4px;"></div>
+                                    <div class="draggable-button"></div>
+                                </div>
+                                <div class="number-page">2/15</div>
+                    
+                            </div>
+                            <div class="play">
+                                <button class="cursor btn-prev background-icon disabled" disabled="disabled"></button>
+                                <button class="cursor btn-play background-icon"></button>
+                                <button class="cursor btn-next background-icon"></button>
+                    
+                                <audio id="audio1" style="display:none">
+                                    <source type="audio/mp3">
+                                </audio>
+                            </div>
+                        </div>
+    
+                        <div class="button-area">
+                            <!--喇叭 音量-->
+                            <div class="sound">
+                                <button class="sound-img cursor background-icon"></button>
+                                <div id="bar_mc" class="sound-drag-line">
+                                    <div class="sound-back-line">
+                                    </div>
+                                    <div class="sound-line" style="width:50%; height: 4px;">
+                                    </div>
+                                    <div id="move_mc" class="sound-draggable-button cursor ui-draggable ui-draggable-handle" style="left: 50px;"></div>
+                                </div>
+                            </div>
+                    
+                            <div class="button-menu">
+                                <ul>
+                
+                                    <li id="li_listen" class="cursor" aria-label="聽讀 Listen">
+                                        <button class="btn-listen cursor background-icon"></button>
+                                        <div class="read-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="listen-id" checked="">
+                                                <span>聽讀<br>Listen</span>
+                                                <label for="listen-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                    
+                                    <li id="li_read" class="cursor" aria-label="唸讀 Read Aloud">
+                                        <button class="btn-verbatim cursor background-icon" disabled=""></button>
+                                        <div class="read-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="read-id">
+                                                <span>唸讀<br>
+                                                    Read Aloud</span>
+                                                <label for="read-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                    
+                    
+                                    <li id="li_text" class="cursor" aria-label="文字 Text">
+                                        <button class="btn-font cursor background-icon" disabled=""></button>
+                                        <div class="font-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="text-id" checked="">
+                                                <span>文字 Text</span>
+                                                <label for="text-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li id="li_word" class="cursor" aria-label="單字 Word">
+                                        <button class="btn-word cursor background-icon" disabled=""></button>
+                                    </li>
+                    
+                                    <li id="li_speed" class="cursor" aria-label="語速 Speed">
+                                        <button class="btn-speak cursor background-icon"></button>
+                                        <div class="speak-menu-container">
+                                            <p>0.5</p>
+                                            <p>0.75</p>
+                                            <p>1.0</p>
+                                            <p>1.25</p>
+                                            <p>1.5</p>
+                                        </div>
+                                    </li>
+                    
+                                    <li class="cursor" aria-label="錄音" style="display:none;">
+                                        <button class="btn-record cursor background-icon"></button>
+                                    </li>
+                                    <li class="cursor" aria-label="放大" style="display:none;">
+                                        <button class="btn-magnifier cursor background-icon"></button>
+                                        <div class="magnifier-menu-container">
+                                            <p>0.5</p>
+                                            <p>1.0</p>
+                                            <p>1.5</p>
+                                        </div>
+                                    </li>
+                                    <li class="cursor" aria-label="全螢幕 Full Screen">
+                                        <button id="btn-screen" class="btn-screen cursor background-icon"></button>
+                                    </li>
+                                    <li class="cursor" aria-label="版權 copyright">
+                                        <button class="btn-copyright cursor background-icon"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page_item">
+                        <div id="book-page" class="book-page noMove">
+                            <div id="book-page-img" class="book-page-img"><div class="book-page-bg"><img src="https://srenglish.net/ebook/material/NU0003/images/NU0003150PC800.jpg" alt=""></div></div>
+                        </div>
+    
+                        <div class="play-area">
+                            <div class="progress">
+                                <div class="drag-line">
+                                    <div class="line" style="width: 2.14286%; height: 4px;"></div>
+                                    <div class="draggable-button"></div>
+                                </div>
+                                <div class="number-page">1/15</div>
+                    
+                            </div>
+                            <div class="play">
+                                <button class="cursor btn-prev background-icon disabled" disabled="disabled"></button>
+                                <button class="cursor btn-play background-icon"></button>
+                                <button class="cursor btn-next background-icon"></button>
+                    
+                                <audio id="audio1" style="display:none">
+                                    <source type="audio/mp3">
+                                </audio>
+                            </div>
+                        </div>
+    
+                        <div class="button-area">
+                            <!--喇叭 音量-->
+                            <div class="sound">
+                                <button class="sound-img cursor background-icon"></button>
+                                <div id="bar_mc" class="sound-drag-line">
+                                    <div class="sound-back-line">
+                                    </div>
+                                    <div class="sound-line" style="width:50%; height: 4px;">
+                                    </div>
+                                    <div id="move_mc" class="sound-draggable-button cursor ui-draggable ui-draggable-handle" style="left: 50px;"></div>
+                                </div>
+                            </div>
+                    
+                            <div class="button-menu">
+                                <ul>
+                                    <li class="cursor" aria-label="加入書庫" style="display:none">
+                                        <button class="btn-favorite cursor background-icon"></button>
+                                    </li>
+                    
+                                    <li id="li_listen" class="cursor" aria-label="聽讀 Listen">
+                                        <button class="btn-listen cursor background-icon"></button>
+                                        <div class="read-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="listen-id" checked="">
+                                                <span>聽讀<br>Listen</span>
+                                                <label for="listen-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                    
+                                    <li id="li_read" class="cursor" aria-label="唸讀 Read Aloud">
+                                        <button class="btn-verbatim cursor background-icon" disabled=""></button>
+                                        <div class="read-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="read-id">
+                                                <span>唸讀<br>
+                                                    Read Aloud</span>
+                                                <label for="read-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                    
+                    
+                                    <li id="li_text" class="cursor" aria-label="文字 Text">
+                                        <button class="btn-font cursor background-icon" disabled=""></button>
+                                        <div class="font-menu-container">
+                                            <p class="label-text">
+                                                <input type="checkbox" id="text-id" checked="">
+                                                <span>文字 Text</span>
+                                                <label for="text-id" style="cursor: pointer;"></label>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li id="li_word" class="cursor" aria-label="單字 Word">
+                                        <button class="btn-word cursor background-icon" disabled=""></button>
+                                    </li>
+                    
+                                    <li id="li_speed" class="cursor" aria-label="語速 Speed">
+                                        <button class="btn-speak cursor background-icon"></button>
+                                        <div class="speak-menu-container">
+                                            <p>0.5</p>
+                                            <p>0.75</p>
+                                            <p>1.0</p>
+                                            <p>1.25</p>
+                                            <p>1.5</p>
+                                        </div>
+                                    </li>
+                    
+                                    <li class="cursor" aria-label="錄音" style="display:none;">
+                                        <button class="btn-record cursor background-icon"></button>
+                                    </li>
+                                    <li class="cursor" aria-label="放大" style="display:none;">
+                                        <button class="btn-magnifier cursor background-icon"></button>
+                                        <div class="magnifier-menu-container">
+                                            <p>0.5</p>
+                                            <p>1.0</p>
+                                            <p>1.5</p>
+                                        </div>
+                                    </li>
+                                    <li class="cursor" aria-label="全螢幕 Full Screen">
+                                        <button id="btn-screen" class="btn-screen cursor background-icon"></button>
+                                    </li>
+                                    <li class="cursor" aria-label="版權 copyright">
+                                        <button class="btn-copyright cursor background-icon"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="page_item">
+                        <div class="recording_modal_content">
+                            <div class="recording_modal_title">
+                                <h4>
+                                    以下是你朗讀這個句子的表現
+                                </h4>
+                            </div>
+                    
+                            <div class="results_comments">
+                                <h4>
+                                    評語
+                                </h4>
+                                <div class="results_comments_item results_comments_good">
+                                    <h4>Perfect</h4>
+                                </div>
+                            </div>
+                    
+                            <div class="results_presented_area">
+                                <div class="results_presented_area_title">
+                                    <h4>
+                                        表現敘述
+                                    </h4>
+                                </div>
+                                <div class="recording_modal_text">
+                                    <h4><span style="
+                        color: #ffbc42;
+                    ">Rabbit</span> <span style="
+                        color: #d81159;
+                    ">sees </span><span style="
+                        color: #2ec4b6;
+                    ">two monkeys playing in a</span> <span style="
+                        color: #ffbc42;
+                    ">tree</span></h4>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="results_comments" style="padding-right:5px">
+                                    
+                                    <div class="results_comments_item results_comments_perfect">
+                                        <h6>Perfect</h6>
+                                    </div>&nbsp;
+                    
+                                     <div class="results_comments_item results_comments_good">
+                                        <h6>Good</h6>
+                                    </div>&nbsp;
+                    
+                                    <div class="results_comments_item results_comments_bad">
+                                        <h6>Fair</h6>
+                                    </div>                
+                                </div>
+                    
+                            <div class="sound_bar_area">
+                                <!-- 播放時class加上"play_animation" -->
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                    
+                            <div class="record_play_area">
+                                <button class="recording_modal_icon_area record_play_area_item your_voice_item">
+                                    <div class="recording_modal_icon">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+                    
+                                    <p id="recordText">你的聲音</p>
+                                </button>
+                    
+                                <button class="recording_modal_icon_area record_play_area_item teacher_voice_item">
+                                    <div class="recording_modal_icon">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+                    
+                                    <p id="playText">老師的聲音</p>
+                                </button>
+                    
+                                <a href="#recording_modal" rel="modal:open" class="recording_modal_icon_area record_play_area_item record_item">
+                                    <div class="recording_modal_icon">
+                                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                                    </div>
+                                    <p id="playText">重錄</p>
+                                </a>
+                            </div>
+                    
+                            <div class="recording_modal_medal_area">
+                                <div class="recording_modal_medal">
+                                    <img src="image/photo/map/ebookman.png" alt="">
+                                </div>
+                            </div>
+                    
+                            <div class="recording_modal_button_area">
+                                <div class="recording_modal_button">
+                                    <a id="close-modal" href="#close-modal" rel="modal:close" class="recording_modal_button_item recording_modal_close">
+                                        關閉 Close
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                <a href="#close-modal" rel="modal:close" class="close-modal ">Close</a></div>
+                <!-- 第一本書彈跳視窗結束 -->
 
             </div>
 
