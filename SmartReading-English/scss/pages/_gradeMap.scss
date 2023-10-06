@@ -1787,17 +1787,30 @@
   padding: 20px 0;
 
   .e-book_teach {
-    max-width: none;
-    width: 95%;
+    max-width: 1024px;
+    width: 85%;
     border-radius: 10px;
     padding: 40px 0px;
     background-color: $body_bg;
 
-    .page_one {
-      position: relative;
-    }
+    .page_item{
+      margin: 0 auto 60px;
 
-    // 電子書區域開始
+      &.page_one {
+        position: relative;
+      }
+
+      .e-book_teach_tittle{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 20px auto;
+        h3,h4{
+          color: $brown;
+        }
+      }
+
+      // 電子書區域開始
     .book-page {
       width: 70%;
       margin: 0 auto;
@@ -1806,7 +1819,6 @@
       .book-page-img {
         display: flex;
         justify-content: center;
-        align-items: center;
 
         .book-page-bg {
           display: flex;
@@ -1944,6 +1956,8 @@
 
     // 下方控制區開始
     .play-area {
+      margin: 15px auto;
+
       .progress {
         width: 100%;
         display: flex;
@@ -1960,7 +1974,7 @@
           display: flex;
 
           .line {
-            background: $main_color;
+            background: $ebook_main_color;
             border-radius: 8px;
             margin-top: 0px;
             margin-left: 0px;
@@ -1970,7 +1984,7 @@
             width: 20px;
             height: 20px;
             background: $white;
-            border: 1px solid $main_color;
+            border: 1px solid $ebook_main_color;
             border-radius: 50%;
             top: calc(50% - 0.5px);
             transform: translateY(-50%);
@@ -1987,7 +2001,7 @@
           font-size: 17px;
           font-weight: bold;
           letter-spacing: 5px;
-          color: $main_color;
+          color: $ebook_main_color;
           text-align: center;
           margin-top: 14px;
         }
@@ -2063,6 +2077,7 @@
         width: 100%;
         display: flex;
         align-items: center;
+        position: relative;
 
         .sound-img {
           width: 30px;
@@ -2073,6 +2088,7 @@
           background-position: center;
           background-repeat: no-repeat;
           background-color: transparent;
+          cursor: auto;
 
           &:disabled {
             background-image: url(../image/button/sound-gray.svg);
@@ -2097,7 +2113,7 @@
           }
 
           .sound-line {
-            background: $main_color;
+            background: $ebook_main_color;
             border-radius: 8px;
             margin-top: -4px;
             margin-left: 0px;
@@ -2111,12 +2127,11 @@
             width: 10px;
             height: 10px;
             background: $white;
-            border: 1px solid $main_color;
+            border: 1px solid $ebook_main_color;
             border-radius: 50%;
             top: 0px;
             margin-left: -5px;
             margin-right: -5px;
-            cursor: pointer;
             position: absolute;
 
             &.grey {
@@ -2131,7 +2146,8 @@
           display: flex;
 
           li {
-            z-index: 100;
+            display: flex;
+            position: relative;
 
             &:nth-child(1) {
               &[aria-label] {
@@ -2154,10 +2170,6 @@
               &:disabled {
                 background-image: url(../image/button/font-gray.svg);
               }
-            }
-
-            .btn-magnifier {
-              background-image: url(../image/button/magnifier.svg);
             }
 
             .btn-speak {
@@ -2186,10 +2198,18 @@
 
             .btn-screen {
               background-image: url(../image/button/screen.svg);
+
+              &:disabled {
+                background-image: url(../image/button/screen-gray.svg);
+              }
             }
 
             .btn-copyright {
               background-image: url(../image/button/copyright.svg);
+
+              &:disabled {
+                background-image: url(../image/button/copyright-gray.svg);
+              }
             }
 
             .btn-word {
@@ -2221,10 +2241,8 @@
             }
 
             .speak-menu-container,
-            .magnifier-menu-container,
             .font-menu-container,
-            .read-menu-container,
-            .word-menu-container {
+            .read-menu-container {
               display: none;
               position: absolute;
               z-index: 1;
@@ -2468,12 +2486,12 @@
       .recording_modal_text {
         margin: 0 auto;
         padding: 15px 20px;
-        border: 1.5px solid $main_color;
+        border: 1.5px solid $ebook_main_color;
         border-radius: 5px;
         background-color: $white;
 
         h4 {
-          color: $main_color;
+          color: $ebook_main_color;
 
           span {
             font-size: 22px;
@@ -2522,7 +2540,7 @@
 
           .recording_modal_button_item {
             margin: 5px 10px;
-            background-color: $main_color;
+            background-color: $ebook_main_color;
             color: $white;
             padding: 5px 10px;
             border-radius: 10px;
@@ -2538,7 +2556,7 @@
       .results_presented_area {
 
         .results_presented_area_title {
-          background-color: $main_color;
+          background-color: $ebook_main_color;
           padding: 5px 20px;
           border-radius: 5px 5px 0 0;
 
@@ -2559,6 +2577,152 @@
     }
 
     // 彈跳錄音結束
+
+    .instructions{
+      position: absolute;
+      z-index: 5;
+      width: 150px;
+      background-color: $brown;
+      border-radius: 10px;
+      padding: 5px 0;
+      display: flex;
+      justify-content: center;
+
+      p{
+        color: $white;
+      }
+
+      &.full_screen{
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, calc(-100% - 20px));
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          transform: translate(0 , 100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid $brown;
+        }
+      }
+
+      &.copyright{
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, calc(100% + 20px));
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          transform: translate(0 , -100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid $brown;
+        }
+      }
+
+      &.btn-prev{
+        left: 0%;
+        top: 50%;
+        transform: translate(calc(-100% - 20px), -50%);
+        &::after{
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(100% , -50%);
+          border-left: 7px solid $brown;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+        }
+      }
+
+      &.btn-next{
+        right: 0%;
+        top: 50%;
+        transform: translate(calc(100% + 20px), -50%);
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(-100% , -50%);
+          border-right: 7px solid $brown;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+        }
+      }
+
+      &.listen{
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, calc(-100% - 20px));
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          transform: translate(0 , 100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid $brown;
+        }
+      }
+
+      &.speed{
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, calc(-100% - 20px));
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          transform: translate(0 , 100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid $brown;
+        }
+      }
+
+      &.btn_sound{
+        left: 0;
+        top: 0;
+        transform: translate(0, calc(-100% - 20px));
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          transform: translate(0 , 100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid $brown;
+        }
+      }
+
+      &.btn-play{
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, calc(-100% - 20px));
+        margin: 0 0 0 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          transform: translate(0 , 100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid $brown;
+        }
+      }
+    }
+    }
+    
   }
 
 }
@@ -2805,6 +2969,7 @@
 
   .blocker {
     .e-book_teach {
+      .page_item{
 // 電子書區域開始
 .book-page {
   width: 45%;
@@ -2857,6 +3022,8 @@
 }
 
 // 下方控制區結束
+      }
+
     }
   }
 
@@ -2978,6 +3145,8 @@
 
   .blocker {
     .e-book_teach {
+
+      .page_item{
   // 電子書區域開始
   .book-page {
 
@@ -3080,7 +3249,6 @@
   // 下方控制區開始
   .play-area {
     width: 100%;
-    margin: 15px auto;
 
     .progress {
       .number-page {
@@ -3156,6 +3324,8 @@
   }
 
   // 下方控制區結束
+      }
+
     }
   }
 
