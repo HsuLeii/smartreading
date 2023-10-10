@@ -1833,17 +1833,17 @@
         // 文字版型開始
         .text {
           text-align: center;
-          overflow: auto;
           display: flex;
           align-items: center;
 
           .article {
+            position: relative;
 
             p {
               text-align: left;
               word-break: break-word;
               margin: 0 auto;
-              padding: 25px 20px;
+              padding: 0 20px;
               
             }
 
@@ -1928,27 +1928,6 @@
       }
 
       // 電子書內容區域結束
-
-
-
-      // 詞彙未顯示開始
-      &.noMove {
-        .book-page-img {
-
-          // 文字版型開始
-          .text {
-
-            &.two-right-text {
-              // max-height: calc(100vh - 240px);
-            }
-          }
-
-          // 文字版型結束
-        }
-      }
-
-      // 詞彙未顯示結束
-
 
     }
 
@@ -2092,6 +2071,16 @@
 
           &:disabled {
             background-image: url(../image/button/sound-gray.svg);
+
+            &~.sound-drag-line{
+              .sound-line{
+                background-color: $grey;
+              }
+
+              .sound-draggable-button{
+                border: 1px solid $grey;
+              }
+            }
           }
         }
 
@@ -2301,7 +2290,6 @@
                 }
 
                 label {
-                  cursor: pointer;
                   text-indent: -9999px;
                   width: 40px;
                   height: 25px;
@@ -2584,15 +2572,16 @@
       width: 150px;
       background-color: $brown;
       border-radius: 10px;
-      padding: 5px 0;
+      padding: 5px;
       display: flex;
       justify-content: center;
 
       p{
         color: $white;
+        padding: 0 !important;
       }
 
-      &.full_screen{
+      &.instructions_full_screen{
         left: 50%;
         top: 0;
         transform: translate(-50%, calc(-100% - 20px));
@@ -2608,7 +2597,7 @@
         }
       }
 
-      &.copyright{
+      &.instructions_copyright{
         left: 50%;
         bottom: 0;
         transform: translate(-50%, calc(100% + 20px));
@@ -2624,7 +2613,7 @@
         }
       }
 
-      &.btn-prev{
+      &.instructions_prev{
         left: 0%;
         top: 50%;
         transform: translate(calc(-100% - 20px), -50%);
@@ -2640,7 +2629,7 @@
         }
       }
 
-      &.btn-next{
+      &.instructions_next{
         right: 0%;
         top: 50%;
         transform: translate(calc(100% + 20px), -50%);
@@ -2657,7 +2646,22 @@
         }
       }
 
-      &.listen{
+      &.instructions_sentence{
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, calc(-100% - 20px));
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          transform: translate(0 , 100%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid $brown;
+        }
+      }
+
+      &.instructions_listen{
         left: 50%;
         top: 0;
         transform: translate(-50%, calc(-100% - 20px));
@@ -2673,11 +2677,10 @@
         }
       }
 
-      &.speed{
+      &.instructions_speed{
         left: 50%;
         top: 0;
         transform: translate(-50%, calc(-100% - 20px));
-        margin: 0 0 0 10px;
         &::after{
           content: "";
           position: absolute;
@@ -2689,7 +2692,7 @@
         }
       }
 
-      &.btn_sound{
+      &.instructions_sound{
         left: 0;
         top: 0;
         transform: translate(0, calc(-100% - 20px));
@@ -2705,19 +2708,18 @@
         }
       }
 
-      &.btn-play{
+      &.instructions_play{
         left: 50%;
-        top: 0;
-        transform: translate(-50%, calc(-100% - 20px));
-        margin: 0 0 0 10px;
+        bottom: 0;
+        transform: translate(-50%, calc(100% + 20px));
         &::after{
           content: "";
           position: absolute;
-          bottom: 0;
-          transform: translate(0 , 100%);
+          top: 0;
+          transform: translate(0 , -100%);
           border-left: 7px solid transparent;
           border-right: 7px solid transparent;
-          border-top: 7px solid $brown;
+          border-bottom: 7px solid $brown;
         }
       }
     }

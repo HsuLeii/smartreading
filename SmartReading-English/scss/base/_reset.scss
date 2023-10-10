@@ -135,6 +135,28 @@ body {
         overflow: hidden;
 }
 
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+
+    &:checked {
+        &~span {
+            color: $brown !important;
+            font-weight: bold;
+        }
+
+        &~label {
+            background: $brown !important;
+
+            &:after {
+                left: calc(100% - 5px) !important;
+                transform: translateX(-100%);
+            }
+        }
+    }
+}
+
 input[type="radio"]:checked+*,
 input[type="radio"]:hover+* {
     color: $main_color;
