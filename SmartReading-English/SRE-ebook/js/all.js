@@ -95,7 +95,7 @@ $("#word-id").change(function () {
 
 //唸讀切換
 $("#listen-id").change(function () {
-  if ($(this).is(":checked")) {
+  if ($(this).hasClass("open")) {
     $(".play .btn-play").attr("disabled", false);
     $(".play .btn-play").removeClass("disabled");
     $('.sound-img').prop('disabled', false);
