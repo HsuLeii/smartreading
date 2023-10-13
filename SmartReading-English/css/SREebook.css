@@ -475,7 +475,7 @@ header .book-title { width: 50%; max-width: calc(100% - 600px); font-size: 30px;
 
 .button-area .button-menu ul { display: flex; }
 
-.button-area .button-menu ul li { z-index: 100; }
+.button-area .button-menu ul li { z-index: 100; margin-left: 20px; }
 
 .button-area .button-menu ul li:nth-child(1)[aria-label]:hover:before { right: auto; left: 0; }
 
@@ -485,37 +485,45 @@ header .book-title { width: 50%; max-width: calc(100% - 600px); font-size: 30px;
 
 .button-area .button-menu ul li .btn-favorite.click { background-image: url(../image/button/favorite-on.svg); }
 
-.button-area .button-menu ul li .btn-font { background-image: url(../image/button/font.svg); }
+.button-area .button-menu ul li .btn-font { background-image: url(../image/button/font-gray.svg); }
 
-.button-area .button-menu ul li .btn-font:disabled { background-image: url(../image/button/font-gray.svg); }
+.button-area .button-menu ul li .btn-font.open { background-image: url(../image/button/font.svg); }
+
+.button-area .button-menu ul li .btn-font:disabled { background-image: url(../image/button/font-disabled.svg); }
 
 .button-area .button-menu ul li .btn-magnifier { background-image: url(../image/button/magnifier.svg); }
 
 .button-area .button-menu ul li .btn-record { background-image: url(../image/button/record.svg); }
 
-.button-area .button-menu ul li .btn-speak { background-image: url(../image/button/speak.svg); }
+.button-area .button-menu ul li .btn-speak { background-image: url(../image/button/speak-gray.svg); }
 
-.button-area .button-menu ul li .btn-speak:disabled { background-image: url(../image/button/speak-gray.svg); }
+.button-area .button-menu ul li .btn-speak.open { background-image: url(../image/button/speak.svg); }
 
-.button-area .button-menu ul li .btn-listen { background-image: url(../image/button/listen.svg); }
+.button-area .button-menu ul li .btn-speak.open ~ .speak-menu-container { display: block; }
 
-.button-area .button-menu ul li .btn-listen:disabled { background-image: url(../image/button/listen-gray.svg); }
+.button-area .button-menu ul li .btn-speak:disabled { background-image: url(../image/button/speak-disabled.svg); }
 
-.button-area .button-menu ul li .btn-verbatim { background-image: url(../image/button/read.svg); }
+.button-area .button-menu ul li .btn-listen { background-image: url(../image/button/listen-gray.svg); }
 
-.button-area .button-menu ul li .btn-verbatim:disabled { background-image: url(../image/button/read-gray.svg); }
+.button-area .button-menu ul li .btn-listen.open { background-image: url(../image/button/listen.svg); }
+
+.button-area .button-menu ul li .btn-listen:disabled { background-image: url(../image/button/listen-disabled.svg); }
+
+.button-area .button-menu ul li .btn-verbatim { background-image: url(../image/button/read-gray.svg); }
+
+.button-area .button-menu ul li .btn-verbatim.open { background-image: url(../image/button/read.svg); }
+
+.button-area .button-menu ul li .btn-verbatim:disabled { background-image: url(../image/button/read-disabled.svg); }
 
 .button-area .button-menu ul li .btn-screen { background-image: url(../image/button/screen.svg); }
 
 .button-area .button-menu ul li .btn-copyright { background-image: url(../image/button/copyright.svg); }
 
-.button-area .button-menu ul li .btn-word { background-image: url(../image/button/word.svg); }
+.button-area .button-menu ul li .btn-word { background-image: url(../image/button/word-gray.svg); }
 
-.button-area .button-menu ul li .btn-word.simplified { background-image: url(../image/button/word-simplified.svg); }
+.button-area .button-menu ul li .btn-word.open { background-image: url(../image/button/word.svg); }
 
-.button-area .button-menu ul li .btn-word.traditionale { background-image: url(../image/button/word-traditionale.svg); }
-
-.button-area .button-menu ul li .btn-word:disabled { background-image: url(../image/button/word-gray.svg); }
+.button-area .button-menu ul li .btn-word:disabled { background-image: url(../image/button/word-disabled.svg); }
 
 .button-area .button-menu ul li .mute { background-image: url(../image/button/mute.svg); }
 
@@ -541,7 +549,7 @@ header .book-title { width: 50%; max-width: calc(100% - 600px); font-size: 30px;
 
 .button-area .button-menu ul li .speak-menu-container .label-text label:after, .button-area .button-menu ul li .magnifier-menu-container .label-text label:after, .button-area .button-menu ul li .font-menu-container .label-text label:after, .button-area .button-menu ul li .read-menu-container .label-text label:after, .button-area .button-menu ul li .word-menu-container .label-text label:after { content: ''; position: absolute; top: 5px; left: 5px; width: 15px; height: 15px; background: #fff; border-radius: 90px; transition: 0.1s; }
 
-.button-area .button-menu ul li .background-icon { width: 30px; height: 30px; margin-left: 20px; background-size: cover; background-position: center; background-repeat: no-repeat; mask-size: cover; mask-position: center; mask-repeat: no-repeat; -webkit-mask-size: cover; -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; transition: 0.3s; background-color: transparent; }
+.button-area .button-menu ul li .background-icon { width: 30px; height: 30px; background-size: cover; background-position: center; background-repeat: no-repeat; mask-size: cover; mask-position: center; mask-repeat: no-repeat; -webkit-mask-size: cover; -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; transition: 0.3s; background-color: transparent; }
 
 .button-area .button-menu ul li .background-icon:hover { transform: scale(1.2); -webkit-transform: scale(1.2); -ms-transform: scale(1.2); }
 
@@ -551,7 +559,8 @@ header .book-title { width: 50%; max-width: calc(100% - 600px); font-size: 30px;
   .book-page .book-page-img .text.two-right-text { max-width: 100%; max-height: calc(50vh - 240px); }
   .book-page.two-right-book-page .book-page-img { flex-direction: column; justify-content: center; max-height: calc(100vh - 200px); }
   .book-page.two-right-book-page .book-page-img img { max-height: calc((100vh - 200px) / 2) !important; }
-  .button-area .button-menu ul li .background-icon { width: 25px; height: 25px; margin-left: 15px; } }
+  .button-area .button-menu ul li { margin-left: 15px; }
+  .button-area .button-menu ul li .background-icon { width: 25px; height: 25px; } }
 
 @media (max-width: 768px) { .book-page .book-page-img .book-page-bg { width: auto; height: auto; max-width: 90%; max-height: calc(100vh - 240px); display: flex; justify-content: center; align-items: center; }
   .book-page .book-page-img .book-page-bg img { max-width: 100%; }
@@ -592,4 +601,5 @@ header .book-title { width: 50%; max-width: calc(100% - 600px); font-size: 30px;
   .button-area .sound .sound-drag-line { width: 4px; height: 75px; flex-direction: column; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); }
   .button-area .sound .sound-drag-line .sound-draggable-button { margin-left: -8px; top: -10px; }
   .button-area .button-menu ul { justify-content: space-around; }
-  .button-area .button-menu ul li .background-icon { width: 20px; height: 20px; margin-left: 0px; } }
+  .button-area .button-menu ul li { margin-left: 0; }
+  .button-area .button-menu ul li .background-icon { width: 20px; height: 20px; } }
