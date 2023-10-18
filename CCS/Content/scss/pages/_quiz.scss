@@ -9,7 +9,7 @@ main {
             align-items: flex-start;
             justify-content: center;
             width: 90%;
-            margin: 15px auto;
+            margin: 15px auto 0;
 
             .tittle_frog_area {
                 display: none;
@@ -58,7 +58,7 @@ main {
 
         .quiz_area_body {
             width: 80%;
-            margin: 0 auto 20px;
+            margin: 20px auto;
 
             .word_area {
                 display: flex;
@@ -130,21 +130,14 @@ main {
                             }
                         }
 
-                        &.answer_check {
+                        &.answer_check,
+                        &.play_answer {
                             background-color: $orange;
                             color: $white;
                             border: 1px solid $orange;
-                        }
 
-                        &.recording {
-                            .quiz_answer_btn_icon{
-                                animation: recording 1500ms infinite;
-                            }
-
-                            &.answer_check {
-                                border: 1px solid $red;
-                                background-color: $red;
-                                color: $white;
+                            &~.next_question_btn{
+                                display: none;
                             }
                         }
 
@@ -169,7 +162,7 @@ main {
                 }
 
                 .next_question_btn {
-                    display: flex;
+                    display: none;
                     align-items: center;
                     justify-content: center;
                     border: 1px solid $orange;
@@ -181,6 +174,10 @@ main {
 
                     .next_question_btn_icon {
                         margin: 0 10px;
+                    }
+
+                    &.show{
+                        display: flex;
                     }
 
                     &:hover {
@@ -212,7 +209,7 @@ main {
     main {
         .quiz_area {
             .quiz_area_body {
-                margin: 0 auto 25px;
+                margin: 25px auto;
                 .word_area {
                     margin: 0 auto 25px;
                     .word_writing {
@@ -230,7 +227,7 @@ main {
         .quiz_area {
             height: calc(100vh - 87px);
             .quiz_area_header {
-                margin: 30px auto;
+                margin: 30px auto 0;
     
                 .tittle_frog_area {
                     display: block;
@@ -352,7 +349,7 @@ main {
         .quiz_area {
             .quiz_area_body {
                 .word_area {
-                    margin: 0 auto 40px;
+                    margin: 40px auto;
                     .word_writing {
                         font-size: 150px;
                         width: calc(150px * 1.7 + 2px);
