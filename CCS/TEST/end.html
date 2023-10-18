@@ -37,33 +37,40 @@
     </header>
 
     <main>
-        <div class="test_area select_page_area">
-            <div id="flex" class="">
+        <div class="test_area">
+            <div class="report_selector_tittle">
+                <h3>測驗結束</h3>
+            </div>
 
-                <button id="report" type="button" onclick="location.href='report_selector.html'"
-                        class="button solid_color select_page_btn_item select_page_btn_item_four">
-                        <p><i class="fa-solid fa-book"></i> 成績報告</p>
-                </button>
-
-                <div class="select_page_img">
-                    <img id="logo" src="../Content/image/photo/frog/magnifier.png" alt="">
+            <div class="end_content">
+                <div class="end_content_img">
+                    <img src="../Content/image/photo/frog/tongue.png" alt="">
                 </div>
-                <div class="select_page_btn">
-                    <button id="newTest" type="button" onclick="location.href='literacy.html'"
-                        class="button solid_color select_page_btn_item select_page_btn_item_one">
-                        <p>識字闖關</p>
-                    </button>
-                    <button id="continue" type="button" onclick="location.href='continue_challenge.html'"
-                        class="button solid_color select_page_btn_item select_page_btn_item_two">
-                        <p>繼續挑戰</p>
-                    </button>
-                    <button id="practice" type="button" onclick="location.href='quiz_recording.html'"
-                        class="button solid_color select_page_btn_item select_page_btn_item_three">
-                        <p>練習一下</p>
-                    </button>
-                    
+
+                <div class="report_selector_text">
+                    <h4>你好棒！全部做完了！</h4>
+                </div>
+
+                <form action="/CCS2023/Award/ViewScoreReport" method="post">
+                    <input type="hidden" id="recordId" name="recordId" value="3586">
+                    <input type="hidden" id="culture" name="culture" value="zh-TW">
+
+                    <div class="">
+                        <div class="">
+                            <input type="submit" value="檢視成績報告" class="button solid_color">
+                        </div>
+                    </div>
+                    <input name="__RequestVerificationToken" type="hidden"
+                        value="CfDJ8N4FdXl-WJpDgyRUqckL25HsWUOSu_j_4WTgnyA3UPfGB5n49SSXCKc_Yq_BbI_ElwelKLToBy-TowBt5GI-GjwiHtjqyNnoKlw8VT9Z3FJiva2Kxb-QScF6aem6lq2HfGh0m0PIcwMzv0myHbZe07jw8xDvnYYKOLzf_y0hIIxIHXKy_oKQN_ZajxzjYM7VyA">
+                </form>
+
+                <div class="fireworks_area">
+                    <div class="fireworks_img">
+                        <img src="../Content/image/photo/fireworks/fireworks.png" alt="">
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -77,6 +84,15 @@
     <script>
         $(document).ready(function () {
             $("header").load("header.html", function () {});
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".fireworks_area").show();
+            setTimeout(function () {
+                $(".fireworks_area").fadeOut();
+            }, 5000);
         });
     </script>
 
