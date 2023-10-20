@@ -32,7 +32,7 @@
         <div class="text two-right-text full-back">
             <div class="article">
                 <p>
-                    <span sindex="0" style="cursor: pointer;" class="listen_sentence">
+                    <span sindex="0" style="cursor: pointer;" class="listen_sentence microphone_show">
                         <label style="font-size: 20px;">
                             Rabbit sees two monkeys playing in a tree.
                         </label>
@@ -42,7 +42,7 @@
                     </span>
                     <br>
 
-                        <span sindex="0" style="cursor: pointer;" class="listen_sentence">
+                        <span sindex="0" style="cursor: pointer;" class="listen_sentence microphone_show">
                             <label style="font-size: 20px;">
                                 Rabbit sees two monkeys playing in a tree.
                             </label>
@@ -52,7 +52,7 @@
                         </span>
                     <br>
 
-                    <span sindex="1" style="cursor: pointer;" class="listen_sentence">
+                    <span sindex="1" style="cursor: pointer;" class="listen_sentence microphone_show">
                         <label style="font-size: 20px;">
                             One monkey says, "Give me five!"
                         </label>
@@ -62,7 +62,7 @@
                     </span>
                     <br>
 
-                    <span sindex="2" style="cursor: pointer;" class="listen_sentence">
+                    <span sindex="2" style="cursor: pointer;" class="listen_sentence microphone_show">
                         <label style="font-size: 20px;">
                             A
                         </label>
@@ -218,7 +218,7 @@
             </li>
 
             <li id="li_read" class="cursor" aria-label="唸讀 Read Aloud">
-                <button id="read-id" class="btn-verbatim cursor background-icon"></button>
+                <button id="read-id" class="btn-verbatim cursor background-icon open"></button>
                 <div class="read-menu-container">
                     <p class="label-text">
                         <input type="checkbox">
@@ -321,27 +321,31 @@
 </div>
 <!-- 彈跳沒有麥克風結束 -->
 
+
+
 <!-- 彈跳錄音開始 -->
 <div id="recording_modal" class="modal recording_modal">
     <div class="recording_modal_content">
         <div class="recording_modal_title">
-            <h4>
-                請點選錄音並朗讀下面句子
-            </h4>
+            <h4>請點選錄音並朗讀下面句子</h4>
+            <h4>Press the record button and read the following sentences aloud</h4>
         </div>
 
-        <button class="recording_modal_icon_area listen_sentence_btn">
+        <button id="Btn_listen" class="recording_modal_icon_area listen_sentence_btn">
             <div class="recording_modal_icon">
                 <i class="fa-solid fa-play"></i>
             </div>
 
-            <p id="listenText">播放句子</p>
+            <div class="modal_text" style="display: flex; flex-direction: column;">
+                <p>播放句子</p>
+                <p>Play sentence audio</p>
+    
+            </div>
+
         </button>
 
-        <div class="recording_modal_text">
-            <h4>
-                One monkey says, "Give me five!"
-            </h4>
+        <div id="recordingText" class="recording_modal_text">
+            <h4>One monkey says, "Give me five!"</h4>
         </div>
 
         <div class="sound_bar_area">
@@ -359,20 +363,20 @@
         </div>
 
         <div class="record_play_area">
-            <button class="recording_modal_icon_area record_play_area_item record_area_item">
+            <button id="Btn_record" atWork="0" class="recording_modal_icon_area record_play_area_item record_area_item">
                 <div class="recording_modal_icon">
                     <i class="fa-solid fa-microphone-lines"></i>
                 </div>
 
-                <p id="recordText">錄製聲音</p>
+                <p>錄製聲音<br>Voice recording</p>
             </button>
 
-            <button disabled="disabled" class="recording_modal_icon_area record_play_area_item play_area_item">
+            <button id="Btn_playRec" disabled="disabled" class="recording_modal_icon_area record_play_area_item play_area_item">
                 <div class="recording_modal_icon">
                     <i class="fa-solid fa-play"></i>
                 </div>
 
-                <p id="playText">播放錄音</p>
+                <p>播放錄音<br>Play recording</p>
             </button>
         </div>
 
@@ -385,13 +389,10 @@
         <div class="recording_modal_button_area">
             <div class="recording_modal_button">
                 <a id="close-modal" href="#close-modal" rel="modal:close"
-                    class="recording_modal_button_item recording_modal_close">
-                    关闭 Close
+                    class="recording_modal_button_item recording_modal_close">關閉 Close
                 </a>
 
-                <a href="#recording_result_modal" class="recording_modal_button_item">
-                    送出 send
-                </a>
+                <a id="Btn_send" href="#recording_result_modal" class="recording_modal_button_item">送出 send</a>
             </div>
         </div>
     </div>
@@ -402,61 +403,52 @@
 <div id="recording_result_modal" class="modal recording_modal recording_result_modal">
     <div class="recording_modal_content">
         <div class="recording_modal_title">
-            <h4>
-                以下是你朗讀這個句子的表現
-            </h4>
+            <h4>以下是你朗讀這個句子的表現</h4>
+            <h4>Your sentence reading performance</h4>
         </div>
 
         <div class="results_comments">
-            <h4>
-                評語
-            </h4>
-            
-            <div class="results_comments_item results_comments_perfect">
-                <h4>
-                    Perfect
-                </h4>
+            <h4>評語 Evaluation</h4>
+
+            <div id="div_comment" class="results_comments_item">
+                <h4 style="color:darkred">你沒有錄音成功，可以再錄一次。</h4>
+                <h4 style="color:darkred">Your voice wasn't successfully recorded. You may re-record your voice one more time.</h4>
+            </div>
+        
+            <div id="div_comment" class="results_comments_item results_comments_perfect">
+                <h4>Perfect</h4>
             </div>
 
-            <div class="results_comments_item results_comments_good">
-                <h4>
-                    Good
-                </h4>
+             <div class="results_comments_item results_comments_good">
+                <h4>Good</h4>
             </div>
 
             <div class="results_comments_item results_comments_bad">
-                <h4>
-                    Fair
-                </h4>
+                <h4>Fair</h4>
             </div>
         </div>
 
         <div class="results_presented_area">
             <div class="results_presented_area_title">
-                <h4>
-                    表現敘述
-                </h4>
+                <h4>表現敘述 Performance Details</h4>
             </div>
-            <div class="recording_modal_text">
-                <h4>
-                    <span class="perfect">One</span> <span class="good">monkey</span> <span class="bad">says Give me five</span>
-                </h4>
+            <div id="recordingResult" class="recording_modal_text">
+                <h4>One <span>monkey</span> says, "Give me five!"</h4>
             </div>
-        </div>
-        <br/>
+        </div><br />            
         <div class="results_comments">
             <h4>發音：</h4>
             <div class="results_comments_item results_comments_perfect">
                 <p>Perfect</p>
             </div>
 
-             <div class="results_comments_item results_comments_good">
+            <div class="results_comments_item results_comments_good">
                 <p>Good</p>
             </div>
 
             <div class="results_comments_item results_comments_bad">
                 <p>Fair</p>
-            </div>                
+            </div>
         </div>
 
         <div class="sound_bar_area">
@@ -474,37 +466,37 @@
         </div>
 
         <div class="record_play_area">
-            <button class="recording_modal_icon_area record_play_area_item your_voice_item">
+            <button id="Btn_playRec2" class="recording_modal_icon_area record_play_area_item your_voice_item">
                 <div class="recording_modal_icon">
                     <i class="fa-solid fa-play"></i>
                 </div>
 
-                <p id="recordText">你的聲音</p>
+                <p id="recordText">你的聲音<br>Your recording</p>
             </button>
 
-            <button class="recording_modal_icon_area record_play_area_item teacher_voice_item">
+            <button id="Btn_listen2" class="recording_modal_icon_area record_play_area_item teacher_voice_item">
                 <div class="recording_modal_icon">
                     <i class="fa-solid fa-play"></i>
                 </div>
 
-                <p id="playText">老師的聲音</p>
+                <p id="playText">老師的聲音<br>Instructor's recording</p>
             </button>
 
-            <a href="#recording_modal" rel="modal:open"
+            <a id="Btn_reRecord" href="#recording_modal" rel="modal:open"
                 class="recording_modal_icon_area record_play_area_item record_item">
                 <div class="recording_modal_icon">
                     <i class="fa-solid fa-arrow-rotate-right"></i>
                 </div>
-                <p id="playText">重錄</p>
+                <p>重錄<br>Record again</p>
             </a>
 
             <!-- <button onclick="#recording_result_modal" >
-                <div class="recording_modal_icon">
-                    <i class="fa-solid fa-arrow-rotate-right"></i>
-                </div>
+            <div class="recording_modal_icon">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </div>
 
-                <p id="playText">重錄</p>
-            </button> -->
+            <p id="playText">重錄</p>
+        </button> -->
         </div>
 
         <div class="recording_modal_medal_area">
@@ -515,10 +507,9 @@
 
         <div class="recording_modal_button_area">
             <div class="recording_modal_button">
-                <a id="close-modal" href="#close-modal" rel="modal:close"
-                    class="recording_modal_button_item recording_modal_close">
-                    关闭 Close
-                </a>
+                <a href="#close-modal" rel="modal:close"
+                    class="recording_modal_button_item recording_modal_close">關閉 Close
+            </a>
             </div>
         </div>
     </div>
