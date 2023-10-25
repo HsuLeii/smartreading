@@ -177,6 +177,63 @@
                 height: 100%;
                 position: static;
             }
+
+            // 麥克風按鈕
+            .microphone_icon{
+                display: none;
+            }
+            .listen_sentence {
+                
+                &.microphone_show{
+                    display: flex;
+
+                    span {
+                        display: inline-block;
+                        width: calc(100% - 50px);
+                        color: $brown;
+                        line-height: 1.5;
+                        word-break: break-word;
+                        margin: 0 3px;
+                    }
+
+                    label { 
+                        display: inline-block; 
+                        color: $brown; 
+                        line-height: 1.5; 
+                        word-break: break-word;
+                        margin: 0 5px; 
+                    }
+
+                    .microphone_icon{
+                        display: inline;
+
+                        i {
+                            display: inline-block;
+                            font-size: 20px;
+                            vertical-align: top;
+                            width: 30px;
+                            height: 30px;
+                            color: $white;
+                            background-color: $brown;
+                            border-radius: 50%;
+                            position: relative;
+                            margin: 5px 3px;
+        
+                            &::before {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+        
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+                
+            }
         }
 
         // 文字版型結束
@@ -526,7 +583,7 @@
             background-color: transparent;
 
             &:disabled {
-                background-image: url(../image/button/sound-gray.svg);
+                background-image: url(../image/button/mute-gray.svg);
             }
         }
 
@@ -614,6 +671,10 @@
                     &:disabled {
                         background-image: url(../image/button/speak-gray.svg);
                     }
+                }
+
+                .btn-listen {
+                    background-image: url(../image/button/listen.svg);
                 }
 
                 .btn-verbatim {

@@ -147,6 +147,369 @@
 }
 // 彈跳獎章開結束
 
+// 彈跳錄音開始
+.recording_modal {
+    border-radius: 10px;
+    background-color: $body_bg;
+    padding: 40px 0px;
+    width: 70%;
+    max-width: 1200px;
+    position: relative;
+
+    .recording_modal_content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 90%;
+
+        .recording_modal_title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px auto 60px;
+
+            h4 {
+                color: $brown;
+            }
+        }
+
+
+        .results_comments{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0 auto 25px;
+
+            h4{
+                color: $brown;
+                margin: 0 10px 0;
+            }
+
+            &.results_comments_evaluation{
+                flex-direction: column;
+
+                .results_comments_fail{
+                    display: none;
+
+                    &.show{
+                        display: flex;
+                    }
+
+                    h4{
+                        color:darkred;
+                    }
+                }
+
+                .results_comments_good,
+                    .results_comments_perfect,
+                    .results_comments_bad{
+                        h4{
+                            font-size: 28px;
+                            color: $white;
+                        }
+                    }
+            }
+
+            .results_comments_mark{
+                display: flex;
+                flex-wrap: wrap;
+                .results_comments_good{
+                    background-color: $results_comments_good;
+                }
+
+                .results_comments_perfect{
+                    background-color: $results_comments_perfect;
+                }
+
+                .results_comments_bad{
+                    background-color: $results_comments_bad;
+                }
+            }
+            
+
+            .results_comments_item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5px 10px;
+                color: $white;
+                border-radius: 5px;
+                margin: 10px;
+
+                h4{
+                    color: $white;
+                    margin: 0;
+                }
+            }
+        }
+
+        .recording_modal_text {
+            margin: 0 auto;
+            padding: 15px 20px;
+            border: 1.5px solid $main_color;
+            border-radius: 5px;
+            background-color: $white;
+
+            h4 {
+                color: $main_color;
+
+                span{
+                    font-size: 22px;
+                    line-height: 1.5;
+                    font-weight: bold;
+                    color: $brown;
+
+                    &.perfect{
+                        color: $results_comments_perfect;
+                    }
+
+                    &.good{
+                        color: $results_comments_good;
+                    }
+
+                    &.bad{
+                        color: $results_comments_bad;
+                    }
+                }
+            }
+        }
+
+        .sound_bar_area {
+            width: 60px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin: 40px auto;
+
+            &.play_animation {
+                .bar {
+                    animation: sound 0ms -800ms linear infinite alternate;
+                }
+            }
+
+            .bar {
+                background-color: $main_color;
+                height: 0px;
+                width: 3px;
+                margin: 0px 1px;
+
+                &:nth-child(1) {
+                    animation-duration: 474ms;
+                }
+
+                &:nth-child(2) {
+                    animation-duration: 433ms;
+                }
+
+                &:nth-child(3) {
+                    animation-duration: 407ms;
+                }
+
+                &:nth-child(4) {
+                    animation-duration: 458ms;
+                }
+
+                &:nth-child(5) {
+                    animation-duration: 400ms;
+                }
+
+                &:nth-child(6) {
+                    animation-duration: 427ms;
+                }
+
+                &:nth-child(7) {
+                    animation-duration: 441ms;
+                }
+
+                &:nth-child(8) {
+                    animation-duration: 419ms;
+                }
+
+                &:nth-child(9) {
+                    animation-duration: 487ms;
+                }
+
+                &:nth-child(10) {
+                    animation-duration: 442ms;
+                }
+            }
+
+        }
+
+        .record_play_area{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto 40px;
+        }
+
+        .recording_modal_icon_area{
+            display: flex;
+            align-items: center;
+            margin: 0 auto 40px;
+            padding: 10px 15px;
+            border: 1.5px solid $brown;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: $white;
+
+            .recording_modal_icon {
+                margin: 0 15px 0 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                i {
+                    color: $brown;
+                    font-size: 25px;
+                }
+                
+            }
+
+            .modal_text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                p{
+                    line-height: 1.3;
+                    font-weight: bold;
+                }
+            }
+
+            &.record_play_area_item{
+                margin: 10px;
+            }
+
+            &:hover{
+                background-color: $brown;
+
+                .recording_modal_icon {
+                    
+                    i {
+                        color: $white;
+                    }
+                }
+
+                p{
+                    color: $white;
+                }
+            }
+
+            &.active{
+                background-color: $brown;
+
+                .recording_modal_icon {
+                    
+                    i {
+                        color: $white;
+                    }
+                }
+
+                p{
+                    color: $white;
+                }
+            }
+
+            &:disabled{
+                background-color: $disabled;
+                border-color: $disabled;
+                cursor: auto;
+
+                i{
+                    color: $white;
+                }
+
+                p{
+                    color: $white;
+                }
+            }
+        }
+
+        .recording_modal_medal_area{
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            z-index: -1;
+
+            .recording_modal_medal{
+                max-width: 150px;
+            }
+        }
+
+        .recording_modal_button_area {
+            margin: 20px auto 0px;
+
+            .recording_modal_button {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .recording_modal_button_item {
+                    margin: 5px 10px;
+                    background-color: $main_color;
+                    color: $white;
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    text-align: center;
+
+                    &.recording_modal_close {
+                        background-color: $grey;
+                    }
+                }
+            }
+        }
+    }
+
+    .close-modal {
+        display: none !important;
+    }
+
+    &.recording_result_modal{
+
+        .recording_modal_title{
+            margin: 0 auto 25px;
+        }
+
+        .results_presented_area{
+
+            .results_presented_area_title{
+                background-color: $main_color;
+                padding: 5px 20px;
+                border-radius: 5px 5px 0 0;
+                h4{
+                    color: $white;
+                }
+            }
+
+            .recording_modal_text {
+                border: 0;
+                border-radius: 0 0 5px 5px;
+
+                h4{
+                    color: $brown;
+                }
+            }
+        }
+    }
+}
+
+// 彈跳錄音結束
+
+@keyframes sound {
+    0% {
+        opacity: .55;
+        height: 3px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 40px;
+    }
+}
+
 @media (max-width: 1024px) {
     // 彈跳獎章開始
     .blocker {
