@@ -945,6 +945,11 @@
     max-width: 1024px;
     background-color: $body_bg;
 
+    &.CEFR_modal{
+        width: 95%;
+        max-width: 1250px;
+    }
+
     h3{
         color: $brown;
         margin-bottom: 10px;
@@ -962,25 +967,12 @@
             margin: 20px 0 0;
 
             .chart_item {
-                width: calc(100% / 7);
+                width: calc((100% - 90px) / 6 - 10px);
 
                 .chart_item_meter {
                     width: 100%;
                     position: relative;
-
-                    span {
-                        position: absolute;
-                        width: 100%;
-                        left: 0;
-                        bottom: 0;
-                        font-size: 15px;
-                        padding: 10px 0px;
-                        border-top: 1px solid $white;
-                        color: $white;
-                        background-color: darken($main_color, 5%);
-                        text-align: center;
-                    }
-
+                    
                     .chart_item_bar{
                         background-color: $main_color;
                         border-radius: 10px;
@@ -989,7 +981,7 @@
                             height: calc(var(--meter-height) * 2 + 40.64px);
                             background-color: $a1_bg;
 
-                            &~span{
+                            &~.chart_item_text{
                                 background-color: darken($a1_bg, 10%);
                             }
 
@@ -999,7 +991,7 @@
                             background-color: $a2_bg;
                             height: calc(var(--meter-height) * 3 + 40.64px);
 
-                            &~span{
+                            &~.chart_item_text{
                                 background-color: darken($a2_bg, 10%);
                             }
                         }
@@ -1008,7 +1000,7 @@
                             background-color: $b1_bg;
                             height: calc(var(--meter-height) * 4 + 40.64px);
 
-                            &~span{
+                            &~.chart_item_text{
                                 background-color: darken($b1_bg, 10%);
                             }
                         }
@@ -1017,7 +1009,7 @@
                             background-color: $b2_bg;
                             height: calc(var(--meter-height) * 5 + 40.64px);
 
-                            &~span{
+                            &~.chart_item_text{
                                 background-color: darken($b2_bg, 10%);
                             }
                         }
@@ -1026,7 +1018,7 @@
                             background-color: $c1_bg;
                             height: calc(var(--meter-height) * 6 + 40.64px);
 
-                            &~span{
+                            &~.chart_item_text{
                                 background-color: darken($c1_bg, 10%);
                             }
                         }
@@ -1035,13 +1027,49 @@
                             background-color: $c2_bg;
                             height: calc(var(--meter-height) * 7 + 40.64px);
 
-                            &~span{
+                            &~.chart_item_text{
                                 background-color: darken($c2_bg, 10%);
                             }
                         }
                     }
 
-                    
+                    .chart_item_text{
+                            position: absolute;
+                            width: 100%;
+                            left: 0;
+                            bottom: 0;
+                            padding: 10px 0px;
+                            text-align: center;
+                            border-top: 1px solid $white;
+                            background-color: darken($main_color, 5%);
+                        span {
+                            color: $white;
+
+                            &.caption{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                &.pre{
+                    position: relative;
+                    width: 90px;
+                    .chart_item_meter{
+                        width: auto;
+                        position: absolute;
+                        top: 25%;
+                        left: 50%;
+                        transform: translate(calc(-50% + 3px), -50%);
+
+                        .chart_item_text {
+                            position: relative;
+                            padding: 0px;
+                            border-top: 0px;
+                            background-color: transparent;
+                            white-space: nowrap;
+                        }
+                    }
                 }
             }
         }
@@ -1524,6 +1552,71 @@
             width: 75px;
         }
     }
+
+    .grade_information_modal{
+    
+        .lightbulb_bg{
+            padding: 25px 0;
+    
+            .chart_area{
+                flex-direction: column;
+    
+                .chart_item {
+                    width: 100%;
+                    margin-bottom: 10px;
+    
+                    .chart_item_meter {
+                        display: flex;
+    
+                        .chart_item_bar{
+                            width: 100%;
+                            height: auto !important;
+                            order: 2;
+                            border-radius: 0 10px 10px 0;
+    
+                            &.a1-bg {
+                                width: calc((100% - 160px) / 6 * 1);
+                            }
+        
+                            &.a2-bg {
+                                width: calc((100% - 160px) / 6 * 2);
+                            }
+        
+                            &.b1-bg {
+                                width: calc((100% - 160px) / 6 * 3);
+                            }
+        
+                            &.b2-bg {
+                                width: calc((100% - 160px) / 6 * 4);
+                            }
+        
+                            &.c1-bg {
+                                width: calc((100% - 160px) / 6 * 5);
+                            }
+        
+                            &.c2-bg {
+                                width: calc((100% - 160px) / 6 * 6);
+                            }
+                        }
+    
+                        .chart_item_text{
+                            position: initial;
+                            width: 160px;
+                            padding: 10px;
+                            border-top: 0px;
+                        span {
+                            color: $white;
+
+                            &.caption{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1024px){
@@ -1745,66 +1838,7 @@
             }
         }
     }
-
-    .grade_information_modal{
     
-        .lightbulb_bg{
-            padding: 25px 0;
-    
-            .chart_area{
-                flex-direction: column;
-    
-                .chart_item {
-                    width: 100%;
-                    margin-bottom: 10px;
-    
-                    .chart_item_meter {
-                        display: flex;
-    
-                        span {
-                            position: initial;
-                            width: 75px;
-                            padding: 10px;
-                            border-top: 0px;
-                        }
-    
-                        .chart_item_bar{
-                            width: 100%;
-                            height: auto !important;
-                            order: 2;
-                            border-radius: 0 10px 10px 0;
-    
-                            &.a1-bg {
-                                width: calc((100% - 75px) / 6 * 1);
-                            }
-        
-                            &.a2-bg {
-                                width: calc((100% - 75px) / 6 * 2);
-                            }
-        
-                            &.b1-bg {
-                                width: calc((100% - 75px) / 6 * 3);
-                            }
-        
-                            &.b2-bg {
-                                width: calc((100% - 75px) / 6 * 4);
-                            }
-        
-                            &.c1-bg {
-                                width: calc((100% - 75px) / 6 * 5);
-                            }
-        
-                            &.c2-bg {
-                                width: calc((100% - 75px) / 6 * 6);
-                            }
-                        }
-    
-                        
-                    }
-                }
-            }
-        }
-    }
 }
 
 @media screen and (max-width: 499px){
