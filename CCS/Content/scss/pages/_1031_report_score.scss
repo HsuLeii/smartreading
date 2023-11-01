@@ -1,4 +1,5 @@
 .page {
+    max-width: 800px;
     .page_content{
         .report_header {
             position: relative;
@@ -1520,7 +1521,6 @@
     
             .report_content_area {
                 background-color: $frog_green;
-                padding: 0 5%;
                 position: relative;
                 min-height: 1448px;
 
@@ -2314,12 +2314,24 @@
     
             .report_content_area {
                 background-color: $frog_green;
-                padding: 0 5%;
+                position: relative;
+                min-height: 1448px;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: 5%;
+                    width: 90%;
+                    height: 100%;
+                    background-color: $body_bg;
+                    padding: 0 5%;
+                }
 
                 .report_content {
-                    background-color: $body_bg;
-                    padding: 25px;
-    
+                    padding: 0 calc(5% + 25px);
+                    position: relative;
+                    z-index: 1;
+                    
                     .paper_data {
                         .table_data {
                             width: 100%;
@@ -2343,7 +2355,8 @@
                     // 成绩 start
                     .paper_score {
                         position: relative;
-                        margin: 40px auto 80px;
+                        margin: 0 auto;
+                        padding: 40px 0 80px;
     
                         .paper_score_img {
                             width: 575px;
@@ -2596,6 +2609,7 @@
                     // 诊断 start
                     .paper_diagnosis {
                         margin: 0 auto;
+                        padding: 60px 0 0;
     
                         .paper_percentage_area {
                             margin: 15px auto;
@@ -2770,6 +2784,7 @@
                     // 推荐 start
                     .paper_recommend {
                         margin: 0 auto;
+                        padding: 60px 0 0;
     
                         .table_recommend {
                             display: block;
@@ -2783,7 +2798,6 @@
                             .table_recommend_tbody {
                                 .percentage_grade_item {
                                     align-items: flex-start;
-                                    margin: 20px auto;
                                     margin: 18.5px auto; //print
     
                                     .table_recommend_words {
@@ -2813,7 +2827,6 @@
                                         }
     
                                         .more_btn{
-                                            display: none;
                                             display: none !important; //print
                                         }
                                     }
@@ -2941,7 +2954,6 @@
                         display: flex;
                         align-items: center;
                         position: relative;
-                        margin: 30px auto;
                         margin: 18.5px auto; //print
                         z-index: 1;
     
@@ -3003,14 +3015,20 @@
                 }
 
                 &.first_page{
+                    &::before{
+                        border-radius: 50px 50px 0 0;
+                    }
                     .report_content{
                         border-radius: 50px 50px 0 0;
                     }
                 }
     
                 &.last_page{
-                    border-radius: 0 0 50px 50px;
-                    padding: 0 5% 30px;
+                    padding: 0 0 60px;
+                    &::before{
+                        border-radius: 0 0 50px 50px;
+                        height: calc(100% - 30px);
+                    }
                     .report_content{
                         border-radius: 0 0 50px 50px;
                     }
