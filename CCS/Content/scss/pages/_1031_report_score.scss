@@ -31,11 +31,22 @@
 
         .report_content_area {
             background-color: $frog_green;
-            padding: 0 5%;
+            position: relative;
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        left: 5%;
+                        width: 90%;
+                        height: 100%;
+                        background-color: $body_bg;
+                        padding: 0 5%;
+                    }
 
             .report_content {
-                background-color: $body_bg;
-                padding: 25px;
+                    padding: 0 calc(5% + 25px);
+                    position: relative;
+                    z-index: 1;
 
                 .paper_data {
                     .table_data {
@@ -60,7 +71,8 @@
                 // 成绩 start
                 .paper_score {
                     position: relative;
-                    margin: 40px auto;
+                    margin: 0 auto;
+                    padding: 40px 0;
 
                     .paper_score_img {
                         width: 90%;
@@ -254,7 +266,8 @@
 
                 // 诊断 start
                 .paper_diagnosis {
-                    margin: 40px auto;
+                    margin: 0 auto;
+                    padding: 40px 0 0;
 
                     .paper_percentage_area {
                         margin: 15px auto;
@@ -428,7 +441,8 @@
 
                 // 推荐 start
                 .paper_recommend {
-                    margin: 30px auto;
+                    margin: 0 auto;
+                    padding: 40px 0 0;
 
                     .table_recommend {
                         display: block;
@@ -709,20 +723,36 @@
             }
 
             &.first_page{
+                &::before{
+                    border-radius: 50px 50px 0 0;
+                }
                 .report_content{
                     border-radius: 50px 50px 0 0;
                 }
             }
 
             &.last_page{
-                border-radius: 0 0 50px 50px;
-                padding: 0 5% 30px;
+                padding: 0 0 60px;
+                &::before{
+                    border-radius: 0 0 50px 50px;
+                    height: calc(100% - 30px);
+                }
                 .report_content{
                     border-radius: 0 0 50px 50px;
                 }
             }
 
-            
+        }
+    }
+}
+
+.paper_copyright{
+    .paper_copyright_word{
+        display: flex;
+        justify-content: center;
+        p{
+            font-size: 14px;
+            color: $main_color_grey;
         }
     }
 }
@@ -800,7 +830,7 @@
 
                     // 成绩 start
                     .paper_score {
-                        margin: 40px auto 80px;
+                        padding: 40px 0 80px;
 
                         .paper_score_img {
                             width: 80%;
@@ -975,7 +1005,7 @@
 
                     // 诊断 start
                     .paper_diagnosis {
-                        margin: 60px auto;
+                        padding: 60px 0 0;
 
                         .paper_percentage_area {
 
@@ -1076,7 +1106,7 @@
 
                     // 推荐 start
                     .paper_recommend {
-                        margin: 60px auto;
+                        padding: 60px 0 0;
 
                         .table_recommend {
 
@@ -1456,17 +1486,6 @@
         margin: 0 auto;
         background-color: $body_bg;
 
-        //之後刪除
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1024px;
-            height: 1448px;
-            border: 1px solid;
-        }
-
         .page_content{
             .report_header {
                 position: relative;
@@ -1502,11 +1521,24 @@
             .report_content_area {
                 background-color: $frog_green;
                 padding: 0 5%;
+                position: relative;
+                min-height: 1448px;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: 5%;
+                    width: 90%;
+                    height: 100%;
+                    background-color: $body_bg;
+                    padding: 0 5%;
+                }
 
                 .report_content {
-                    background-color: $body_bg;
-                    padding: 25px;
-    
+                    padding: 0 calc(5% + 25px);
+                    position: relative;
+                    z-index: 1;
+                    
                     .paper_data {
                         .table_data {
                             width: 100%;
@@ -1530,11 +1562,13 @@
                     // 成绩 start
                     .paper_score {
                         position: relative;
-                        margin: 40px auto 80px;
+                        margin: 0 auto;
+                        padding: 40px 0 80px;
     
                         .paper_score_img {
                             width: 575px;
                             margin: 0 auto;
+                            // width: 300px;
     
                             .lotus_vein {
                                 width: 80%;
@@ -1783,6 +1817,7 @@
                     // 诊断 start
                     .paper_diagnosis {
                         margin: 0 auto;
+                        padding: 60px 0 0;
     
                         .paper_percentage_area {
                             margin: 15px auto;
@@ -1957,6 +1992,7 @@
                     // 推荐 start
                     .paper_recommend {
                         margin: 0 auto;
+                        padding: 60px 0 0;
     
                         .table_recommend {
                             display: block;
@@ -2190,14 +2226,20 @@
                 }
 
                 &.first_page{
+                    &::before{
+                        border-radius: 50px 50px 0 0;
+                    }
                     .report_content{
                         border-radius: 50px 50px 0 0;
                     }
                 }
     
                 &.last_page{
-                    border-radius: 0 0 50px 50px;
-                    padding: 0 5% 30px;
+                    padding: 0 0 60px;
+                    &::before{
+                        border-radius: 0 0 50px 50px;
+                        height: calc(100% - 30px);
+                    }
                     .report_content{
                         border-radius: 0 0 50px 50px;
                     }
