@@ -156,7 +156,7 @@
                     <div class="paper_diagnosis">
                         <div class="paper_section_title">
                             <h5>識字量診斷</h5>
-                            <p>〈以下是推測您各階段已經認識的字數百分比。百分比的數字越大，表示您認識的字越多；百分比的數字越小，表示您認識的字越少。〉</p>
+                            <p class="paper_section_text">〈以下是推測您各階段已經認識的字數百分比。百分比的數字越大，表示您認識的字越多；百分比的數字越小，表示您認識的字越少。〉</p>
                         </div>
 
                         <div class="paper_percentage_area">
@@ -362,7 +362,7 @@
                             <h5>
                                 推薦學習的字
                             </h5>
-                            <p>
+                            <p class="paper_section_text">
                                 〈根據教育部國小學童常用字詞調查報告書，建議您按照字的難度從簡單到困難，由上而下，由左而右的順序學習。〉
                             </p>
                         </div>
@@ -506,8 +506,10 @@
 
         });
 
-
-        var declaration = getComputedStyle(document.documentElement);
+        const mediaQuery = window.matchMedia('(min-width: 1024px)')
+if (mediaQuery.matches) {
+//   var progressValue = "(100% - 30px - 30px) / 100";
+  var declaration = getComputedStyle(document.documentElement);
         var progressValue = declaration.getPropertyValue('--progress-width');
         var progressBar0 = document.getElementsByClassName('progress_bar')[0];
         var progressBar1 = document.getElementsByClassName('progress_bar')[1];
@@ -517,13 +519,14 @@
         var progressBar5 = document.getElementsByClassName('progress_bar')[5];
         var progressBar6 = document.getElementsByClassName('progress_bar')[6];
 
-        progressBar0.style.setProperty("width", "calc(" + progressValue + " * 100)");
-        progressBar1.style.setProperty("width", "calc(" + progressValue + " * 75)");
-        progressBar2.style.setProperty("width", "calc(" + progressValue + " * 50)");
-        progressBar3.style.setProperty("width", "calc(" + progressValue + " * 25)");
-        progressBar4.style.setProperty("width", "calc(" + progressValue + " * 15)");
-        progressBar5.style.setProperty("width", "calc(" + progressValue + " * 0)");
-        progressBar6.style.setProperty("width", "calc(" + progressValue + " * 0)");
+        progressBar0.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 100)");
+        progressBar1.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 75)");
+        progressBar2.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 50)");
+        progressBar3.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 25)");
+        progressBar4.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 15)");
+        progressBar5.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 0)");
+        progressBar6.style.setProperty("width", "calc((100% - 30px - 30px) / 100 * 0)");
+}
 
     </script>
 </body>
