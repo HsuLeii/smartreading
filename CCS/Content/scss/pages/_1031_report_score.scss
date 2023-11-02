@@ -23,6 +23,7 @@
 
                 .frog_head_date {
                     p {
+                        font-size: 14px;
                         font-weight: 500;
                         color: darken($main_color, 20%);
                     }
@@ -76,7 +77,7 @@
                     padding: 40px 0;
 
                     .paper_score_img {
-                        width: 90%;
+                        width: 100%;
                         margin: 0 auto;
 
                         .lotus_vein {
@@ -676,7 +677,7 @@
                         color: $white;
                         background-color: $main_color;
                         border-radius: 5px;
-                        padding: 5px 0;
+                        padding: 5px;
                     }
                 }
 
@@ -768,223 +769,83 @@
 
         &.page_content_L2{
             .report_content_area {
-                background-color: $frog_green;
-                position: relative;
-    
-                        &::before{
-                            content: "";
-                            position: absolute;
-                            left: 5%;
-                            width: 90%;
-                            height: 100%;
-                            background-color: $body_bg;
-                            padding: 0 5%;
-                        }
     
                 .report_content {
-                        padding: 0 calc(5% + 25px);
-                        position: relative;
-                        z-index: 1;
-    
-                    .paper_data {
-                        .table_data {
-                            width: 100%;
-    
-                            tbody {
-                                tr {
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    justify-content: center;
-    
-                                    td {
-                                        margin: 10px 10px 0 0;
-                                        word-break: break-word;
-                                        color: $main_color_grey;
-                                    }
-                                }
-                            }
-                        }
-                    }
     
                     // 成绩 start
-                    .paper_score {
-                        position: relative;
-                        margin: 0 auto;
-                        padding: 40px 0;
-    
-                        .paper_score_img {
-                            width: 90%;
-                            margin: 0 auto;
-    
-                            .lotus_vein {
-                                width: 90%;
-                                position: absolute;
-                                left: 50%;
-                                transform: translate(-50%, 0);
+                .paper_score {
+
+                    .paper_score_text {
+
+                        .paper_score_text_one,
+                        .paper_score_text_two {
+                            p{
+                                line-height: 1.4;
                             }
-    
-                            .frog_hand_right,
-                            .frog_hand_left {
-                                position: absolute;
-                                width: 25%;
-                                z-index: 1;
-                            }
-    
-                            .frog_hand_right {
-                                right: 0%;
-                                top: 50%;
-                                transform: translate(calc(0% + 25px), -25%);
-                            }
-    
-                            .frog_hand_left {
-                                left: 0%;
-                                top: 40%;
-                                transform: translate(calc(0% - 25px), -50%);
+                            span {
+                                margin: 0;
                             }
                         }
-    
-                        .paper_score_text {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            width: 70%;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            color: $white;
-    
-                            .paper_score_text_one,
-                            .paper_score_text_two {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: center;
-                                padding: 10px 0;
-                                width: 100%;
-    
-                                span {
-                                    font-weight: 600;
-                                    color: $yellow;
-                                    text-shadow: 0px 0px 5px darken($main_color, 20%);
-                                    margin: 0 8px 0 0;
-                                    line-height: 1.4;
-                                }
+
+                        .paper_score_text_one {
+
+                            span {
+                                font-size: 18px;
                             }
-    
-                            .paper_score_text_one {
-                                border-bottom: 1px solid;
-    
-                                span {
-                                    font-size: 50px;
-                                }
-                            }
-    
-                            .paper_score_text_two {
-    
-                                span {
-                                    font-size: 30px;
-                                }
+                        }
+
+                        .paper_score_text_two {
+
+                            span {
+                                font-size: 18px;
                             }
                         }
                     }
-    
-                    // 成绩 end
-    
+                }
+
+                // 成绩 end
+
                     // 量尺 start
                     .paper_bar {
                         .table_bar {
-                            width: 100%;
     
                             tbody {
                                 tr {
                                     td {
-                                        display: flex;
-    
-                                        .bar_bg {
-                                            position: relative;
-    
-                                            .table_frog {
-                                                width: 25px;
-                                                max-width: 60px;
-                                                margin: 0 auto;
-                                                position: absolute;
-                                                top: 50%;
-                                                right: 0;
-                                                transform: translate(calc(100% + 5px), -50%);
-                                            }
-                                        }
     
                                         &.bar_one {
-                                            span {
-                                                background-color: $first_grade;
-                                                border-right: 1.5px solid darken($first_grade, 10%);
-                                            }
-    
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 1);
-                                                background-color: $first_grade;
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 1);
                                             }
                                         }
     
                                         &.bar_two {
-                                            span {
-                                                background-color: $second_grade;
-                                                border-right: 1.5px solid darken($second_grade, 10%);
-                                            }
-    
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 2);
-                                                background-color: $second_grade;
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 2);
                                             }
                                         }
     
                                         &.bar_three {
-                                            span {
-                                                background-color: $third_grade;
-                                                border-right: 1.5px solid darken($third_grade, 10%);
-                                            }
-    
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 3);
-                                                background-color: $third_grade;
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 3);
                                             }
                                         }
     
                                         &.bar_four {
-                                            span {
-                                                background-color: $fourth_grade;
-                                                border-right: 1.5px solid darken($fourth_grade, 10%);
-                                            }
-    
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 4);
-                                                background-color: $fourth_grade;
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 4);
                                             }
                                         }
     
                                         &.bar_five {
-                                            span {
-                                                background-color: $fifth_grade;
-                                                border-right: 1.5px solid darken($fifth_grade, 10%);
-                                            }
-    
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 5);
-                                                background-color: $fifth_grade;
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 5);
                                             }
                                         }
     
                                         &.bar_six {
-                                            span {
-                                                background-color: $sixth_grade;
-                                                border-right: 1.5px solid darken($sixth_grade, 10%);
-                                            }
-    
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 6);
-                                                background-color: $sixth_grade;
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 6);
                                             }
                                         }
 
@@ -995,16 +856,9 @@
                                             }
     
                                             .bar_bg {
-                                                width: calc((100% - 85px - 25px - 5px) / 6 * 6);
+                                                width: calc((100% - 85px - 25px - 5px) / 7 * 7);
                                                 background-color: $seventh_grade;
                                             }
-                                        }
-    
-                                        span {
-                                            color: $main_color_grey;
-                                            padding: 5px 0;
-                                            width: 85px;
-                                            text-align: center;
                                         }
                                     }
                                 }
@@ -1016,171 +870,12 @@
     
                     // 诊断 start
                     .paper_diagnosis {
-                        margin: 0 auto;
-                        padding: 40px 0 0;
     
                         .paper_percentage_area {
-                            margin: 15px auto;
-    
-                            .percentage_mark {
-                                width: 50%;
-                                margin: 10px 0 10px 30%;
-                                display: flex;
-                                justify-content: space-between;
-                                position: relative;
-    
-                                span {
-                                    position: absolute;
-                                    color: darken($main_color, 15%);
-    
-                                    &.mark_one {
-                                        position: relative;
-                                        transform: translate(calc(-50% + calc(20px * 2)), 0);
-                                    }
-    
-                                    &.mark_two {
-                                        left: 25%;
-                                        transform: translate(calc(-50% + calc(20px * 1.5)), 0);
-                                        display: none;
-                                    }
-    
-                                    &.mark_three {
-                                        left: 50%;
-                                        transform: translate(calc(-50% + calc(20px * 1)), 0);
-                                    }
-    
-                                    &.mark_four {
-                                        left: 75%;
-                                        transform: translate(calc(-50% + calc(20px * 0.5)), 0);
-                                        display: none;
-                                    }
-    
-                                    &.mark_five {
-                                        left: 100%;
-                                        transform: translate(calc(-50% + calc(20px * 0)), 0);
-                                    }
-                                }
-                            }
     
                             .percentage_grade_area {
-                                position: relative;
-    
-                                .percentage_mark_line {
-                                    position: absolute;
-                                    width: 50%;
-                                    height: 100%;
-                                    margin: 0 0 0 30%;
-                                    padding: 0 0 0 20px;
-    
-                                    span {
-                                        position: absolute;
-                                        height: 100%;
-                                        border-right: 1.5px solid rgba($main_color, 0.5);
-    
-                                        &.line_one {
-                                            left: 0%;
-                                            transform: translate(calc(0% + calc(20px * 2)), 0);
-                                        }
-    
-                                        &.line_two {
-                                            left: 25%;
-                                            transform: translate(calc(-50% + calc(20px * 1.5)), 0);
-                                            display: none;
-                                        }
-    
-                                        &.line_three {
-                                            left: 50%;
-                                            transform: translate(calc(-50% + calc(20px * 1)), 0);
-                                        }
-    
-                                        &.line_four {
-                                            left: 75%;
-                                            transform: translate(calc(-50% + calc(20px * 0.5)), 0);
-                                            display: none;
-                                        }
-    
-                                        &.line_five {
-                                            left: 100%;
-                                            transform: translate(calc(-50% + calc(20px * 0)), 0);
-                                        }
-                                    }
-    
-                                }
     
                                 .percentage_grade_item {
-    
-                                    .percentage_progress_bar {
-                                        width: 50%;
-                                        display: flex;
-    
-                                        .progress_bar_body {
-                                            display: flex;
-                                            width: 100%;
-    
-                                            .progress_area {
-                                                width: 100%;
-    
-                                                .progress {
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    background-color: transparent;
-                                                    border-radius: 0;
-                                                    border: 0;
-                                                    overflow: initial;
-    
-                                                    .progress_bar {
-                                                        height: 100%;
-                                                        position: relative;
-                                                        border-radius: 0;
-                                                        background-image: none;
-                                                        background-color: $frog_green;
-    
-                                                        &::before,
-                                                        &::after{
-                                                            content: "";
-                                                            position: absolute;
-                                                            width: 100%;
-                                                            height: 50%;
-                                                            top: 50%;
-                                                            transform: translate(0, -50%);
-                                                            border-radius: 50px;
-                                                        }
-    
-                                                        &::before {
-                                                            background-color: $body_bg;
-                                                        }
-    
-                                                        &::after{
-                                                            background-image: linear-gradient(45deg, rgba($main_color, .5) 25%, transparent 25%, transparent 50%, rgba($main_color, .5) 50%, rgba($main_color, .5) 75%, transparent 75%, transparent);
-                                                            background-size: 1rem 1rem;
-                                                        }
-                                                    }
-    
-                                                    .progress_foot,
-                                                    .progress_head {
-                                                        width: 20px;
-                                                        line-height: 1;
-    
-                                                        img {
-                                                            height: 100%;
-                                                        }
-                                                    }
-    
-                                                }
-                                            }
-                                        }
-    
-                                    }
-    
-                                    .percentage_progress_value {
-                                        width: 20%;
-                                        display: flex;
-                                        justify-content: flex-end;
-    
-                                        p {
-                                            color: darken($main_color, 15%);
-                                        }
-                                    }
                                 }
                             }
     
@@ -1191,177 +886,26 @@
     
                     // 推荐 start
                     .paper_recommend {
-                        margin: 0 auto;
-                        padding: 40px 0 0;
     
                         .table_recommend {
-                            display: block;
-    
-                            .table_recommend_thead,
-                            .table_recommend_tbody {
-                                display: block;
-                                width: 100%;
-                            }
     
                             .table_recommend_tbody {
                                 .percentage_grade_item {
-                                    align-items: flex-start;
-                                    margin: 40px auto 70px;
-    
-                                    .table_recommend_words {
-                                        width: 70%;
-                                        padding: 0 0 40px;
-                                        border-bottom: 1px solid $main_color;
-    
-                                        .table_recommend_words_item{
-                                            height: 39.19px;
-                                            overflow: hidden;
-                                            margin: 0 auto 10px;
-    
-                                            &.open{
-                                                height: auto !important;
-                                                overflow: visible;
-                                            }
-    
-                                            span {
-                                                mark {
-                                                    padding: 5px;
-                                                    margin: 0 5px 10px ;
-                                                    display: inline-block;
-                                                    width: calc(20% - 10px);
-                                                    text-align: center;
-                                                }
-                                            }
-                                        }
-    
-                                        .more_btn{
-                                            padding: 5px 10px;
-                                            border-radius: 5px;
-                                            color: $main_color_grey;
-                                            cursor: pointer;
-                                            background-color: $main_color_30;
-                                            position: absolute;
-                                            right: 0;
-                                            bottom: 0;
-                                            transform: translate(0px, 50%);
-    
-                                            &:hover{
-                                                background-color: $main_color;
-                                                color: $white;
-                                            }
-                                        }
-                                    }
-    
-                                    &.first_grade {
+
+                                    &.seventh_grade {
                                         .table_recommend_words {
                                             .table_recommend_words_item{
                                                 span {
                                                     mark {
-                                                        background-color: lighten($first_grade, 30%);
-                                                        border: 1px solid $first_grade;
+                                                        background-color: lighten($seventh_grade, 30%);
+                                                        border: 1px solid $seventh_grade;
                                                     }
                                                 }
                                             }
                                             .more_btn{
-                                                background-color: $first_grade;
-    
+                                                background-color: $seventh_grade;
                                                 &:hover{
-                                                    background-color: darken($first_grade, 5%);
-                                                }
-                                            }
-                                        }
-                                    }
-    
-                                    &.second_grade {
-                                        .table_recommend_words {
-                                            .table_recommend_words_item{
-                                                span {
-                                                    mark {
-                                                        background-color: lighten($second_grade, 30%);
-                                                        border: 1px solid $second_grade;
-                                                    }
-                                                }
-                                            }
-                                            .more_btn{
-                                                background-color: $second_grade;
-                                                &:hover{
-                                                    background-color: darken($second_grade, 5%);
-                                                }
-                                            }
-                                        }
-                                    }
-    
-                                    &.third_grade {
-                                        .table_recommend_words {
-                                            .table_recommend_words_item{
-                                                span {
-                                                    mark {
-                                                        background-color: lighten($third_grade, 30%);
-                                                        border: 1px solid $third_grade;
-                                                    }
-                                                }
-                                            }
-                                            .more_btn{
-                                                background-color: $third_grade;
-                                                &:hover{
-                                                    background-color: darken($third_grade, 5%);
-                                                }
-                                            }
-                                        }
-                                    }
-    
-                                    &.fourth_grade {
-                                        .table_recommend_words {
-                                            .table_recommend_words_item{
-                                                span {
-                                                    mark {
-                                                        background-color: lighten($fourth_grade, 30%);
-                                                        border: 1px solid $fourth_grade;
-                                                    }
-                                                }
-                                            }
-                                            .more_btn{
-                                                background-color: $fourth_grade;
-                                                &:hover{
-                                                    background-color: darken($fourth_grade, 5%);
-                                                }
-                                            }
-                                        }
-                                    }
-    
-                                    &.fifth_grade {
-                                        .table_recommend_words {
-                                            .table_recommend_words_item{
-                                                span {
-                                                    mark {
-                                                        background-color: lighten($fifth_grade, 30%);
-                                                        border: 1px solid $fifth_grade;
-                                                    }
-                                                }
-                                            }
-                                            .more_btn{
-                                                background-color: $fifth_grade;
-                                                &:hover{
-                                                    background-color: darken($fifth_grade, 5%);
-                                                }
-                                            }
-                                        }
-                                    }
-    
-                                    &.sixth_grade {
-                                        .table_recommend_words {
-                                            .table_recommend_words_item{
-                                                span {
-                                                    mark {
-                                                        background-color: lighten($sixth_grade, 30%);
-                                                        border: 1px solid $sixth_grade;
-                                                    }
-                                                }
-                                            }
-                                            .more_btn{
-                                                background-color: $sixth_grade;
-                                                &:hover{
-                                                    background-color: darken($sixth_grade, 5%);
+                                                    background-color: darken($seventh_grade, 5%);
                                                 }
                                             }
                                         }
@@ -1373,98 +917,11 @@
                     // 推荐 end
     
                     // report_score通用 start
-                    .paper_section_title {
-                        h5 {
-                            margin: 0 auto 10px;
-                            text-align: center;
-                            color: darken($main_color, 15%);
-                        }
-    
-                        p {
-                            color: $main_color_grey;
-                        }
-                    }
-    
-                    .paper_phase_title {
-                        display: flex;
-                        margin: 15px auto 0;
-    
-                        .paper_phase_left {
-                            width: 28%;
-                            margin: 0 2% 0 0;
-                        }
-    
-                        .paper_phase_right {
-                            width: 70%;
-                        }
-    
-                        p {
-                            display: flex;
-                            justify-content: center;
-                            color: $white;
-                            background-color: $main_color;
-                            border-radius: 5px;
-                            padding: 5px 0;
-                        }
-                    }
-    
                     .percentage_grade_item {
-                        display: flex;
-                        align-items: center;
-                        position: relative;
-                        margin: 20px auto;
-                        z-index: 1;
-    
-                        &.first_grade {
-                            margin: 0 auto;
-    
+
+                        &.seventh_grade {
                             .percentage_grade_name {
-                                background-color: $first_grade;
-                            }
-                        }
-    
-                        &.second_grade {
-                            .percentage_grade_name {
-                                background-color: $second_grade;
-                            }
-                        }
-    
-                        &.third_grade {
-                            .percentage_grade_name {
-                                background-color: $third_grade;
-                            }
-                        }
-    
-                        &.fourth_grade {
-                            .percentage_grade_name {
-                                background-color: $fourth_grade;
-                            }
-                        }
-    
-                        &.fifth_grade {
-                            .percentage_grade_name {
-                                background-color: $fifth_grade;
-                            }
-                        }
-    
-                        &.sixth_grade {
-                            .percentage_grade_name {
-                                background-color: $sixth_grade;
-                            }
-                        }
-    
-                        .percentage_grade_name {
-                            display: flex;
-                            justify-content: center;
-                            width: 28%;
-                            margin: 0 2% 0 0;
-                            border-radius: 5px;
-    
-                            p {
-                                color: $main_color_grey;
-                                display: inline-block;
-                                padding: 3px 5px;
-                                border-radius: 5px;
+                                background-color: $seventh_grade;
                             }
                         }
                     }
