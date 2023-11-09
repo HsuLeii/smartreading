@@ -1446,16 +1446,16 @@
           }
         }
 
-        .e-book_teach_link{
+        .e-book_teach_link {
           display: flex;
           justify-content: flex-end;
           width: 90%;
           margin: 0 auto;
 
-          a{
+          a {
             color: $brown;
 
-            &:hover{
+            &:hover {
               color: $main_color;
             }
           }
@@ -1810,12 +1810,12 @@
       margin: 0 auto 60px;
       position: relative;
 
-      &.page_border{
+      &.page_border {
         border-top: 1px solid $brown;
         padding: 60px 0 0 0;
       }
 
-      &:nth-child(1){
+      &:nth-child(1) {
         padding: 0;
       }
 
@@ -1829,6 +1829,7 @@
 
       .e-book_teach_tittle {
         margin: 0 auto 20px;
+
         h3,
         h4 {
           color: $brown;
@@ -1837,7 +1838,7 @@
 
       .e-book_teach_caption {
         margin: 0 auto 30px;
-        
+
         h4 {
           color: $white;
           background-color: $main_color;
@@ -2042,14 +2043,20 @@
             cursor: auto;
             position: relative;
 
+            &:disabled {
+              opacity: 1;
+            }
+
             &.btn-play {
               width: 40px;
               height: 40px;
               margin-left: 0px;
               background-image: url(../image/button/play.svg);
 
-              &.disabled {
-                background-image: url(../image/button/play.svg);
+
+              &:disabled {
+                // 調整opacity影響到說明文字直接改圖片透明度
+                background-image: url(../image/button/play-disabled.svg);
               }
             }
 
@@ -2057,8 +2064,9 @@
               margin-left: 10px;
               background-image: url(../image/button/next.svg);
 
-              &.disabled {
-                background-image: url(../image/button/next.svg);
+              &:disabled {
+                // 調整opacity影響到說明文字直接改圖片透明度
+                background-image: url(../image/button/next-disabled.svg);
               }
             }
 
@@ -2067,8 +2075,9 @@
               margin-left: 0px;
               background-image: url(../image/button/prev.svg);
 
-              &.disabled {
-                background-image: url(../image/button/prev.svg);
+              &:disabled {
+                // 調整opacity影響到說明文字直接改圖片透明度
+                background-image: url(../image/button/prev-disabled.svg);
               }
             }
           }
@@ -2105,6 +2114,7 @@
 
             &:disabled {
               background-image: url(../image/button/sound-gray.svg);
+              opacity: 1;
 
               &~.sound-drag-line {
                 .sound-line {
@@ -2187,67 +2197,81 @@
                 }
               }
 
+              .background-icon {
+                &:disabled {
+                  opacity: 1;
+                }
+              }
+
               .btn-font {
-                background-image: url(../image/button/font.svg);
+                background-image: url(../image/button/font-gray.svg);
+
+                &.open {
+                  background-image: url(../image/button/font.svg);
+                }
 
                 &:disabled {
-                  background-image: url(../image/button/font-gray.svg);
+                  background-image: url(../image/button/font-disabled.svg);
                 }
               }
 
               .btn-speak {
-                background-image: url(../image/button/speak.svg);
+                background-image: url(../image/button/speak-gray.svg);
+
+                &.open {
+                  background-image: url(../image/button/speak.svg);
+
+                  &~.speak-menu-container {
+                    display: block;
+                  }
+                }
 
                 &:disabled {
-                  background-image: url(../image/button/speak-gray.svg);
+                  background-image: url(../image/button/speak-disabled.svg);
                 }
               }
 
               .btn-listen {
-                background-image: url(../image/button/listen.svg);
+                background-image: url(../image/button/listen-gray.svg);
+
+                &.open {
+                  background-image: url(../image/button/listen.svg);
+                }
 
                 &:disabled {
-                  background-image: url(../image/button/listen-gray.svg);
+                  background-image: url(../image/button/listen-disabled.svg);
                 }
               }
 
               .btn-verbatim {
-                background-image: url(../image/button/read.svg);
+                background-image: url(../image/button/read-gray.svg);
+
+                &.open {
+                  background-image: url(../image/button/read.svg);
+                }
 
                 &:disabled {
-                  background-image: url(../image/button/read-gray.svg);
+                  background-image: url(../image/button/read-disabled.svg);
                 }
               }
 
               .btn-screen {
                 background-image: url(../image/button/screen.svg);
-
-                &:disabled {
-                  background-image: url(../image/button/screen-gray.svg);
-                }
               }
 
               .btn-copyright {
                 background-image: url(../image/button/copyright.svg);
-
-                &:disabled {
-                  background-image: url(../image/button/copyright-gray.svg);
-                }
               }
 
               .btn-word {
-                background-image: url(../image/button/word.svg);
+                background-image: url(../image/button/word-gray.svg);
 
-                &.simplified {
-                  background-image: url(../image/button/word-simplified.svg);
-                }
-
-                &.traditionale {
-                  background-image: url(../image/button/word-traditionale.svg);
+                &.open {
+                  background-image: url(../image/button/word.svg);
                 }
 
                 &:disabled {
-                  background-image: url(../image/button/word-gray.svg);
+                  background-image: url(../image/button/word-disabled.svg);
                 }
               }
 
@@ -2390,20 +2414,48 @@
           background-color: $white;
           position: relative;
 
+          &.disabled {
+            background-color: $disabled;
+            border-color: $disabled;
+
+            .recording_modal_icon {
+
+              i {
+                color: $white;
+              }
+
+            }
+
+            .modal_text {
+
+              p {
+                color: $white;
+              }
+            }
+          }
+
           .recording_modal_icon {
-            margin: 0 5px 0 0;
+            margin: 0 15px 0 0;
             display: flex;
             justify-content: center;
             align-items: center;
 
             i {
               color: $brown;
+              font-size: 25px;
             }
 
           }
 
-          p {
-            font-weight: bold;
+          .modal_text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+              line-height: 1.3;
+              font-weight: bold;
+            }
           }
         }
 
@@ -2419,6 +2471,7 @@
         .results_comments {
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
           margin: 0 auto 25px;
 
           h4 {
@@ -2426,33 +2479,65 @@
             margin: 0 10px 0 0;
           }
 
+          &.results_comments_evaluation {
+            flex-direction: column;
+
+            .results_comments_fail {
+              display: none;
+
+              &.show {
+                display: flex;
+              }
+
+              h4 {
+                color: darkred;
+              }
+            }
+
+            .results_comments_good,
+            .results_comments_perfect,
+            .results_comments_bad {
+              h4 {
+                font-size: 28px;
+                color: $white;
+              }
+            }
+          }
+
+          .results_comments_mark {
+            display: flex;
+            flex-wrap: wrap;
+
+            .results_comments_good {
+              background-color: $results_comments_good;
+            }
+
+            .results_comments_perfect {
+              background-color: $results_comments_perfect;
+            }
+
+            .results_comments_bad {
+              background-color: $results_comments_bad;
+            }
+          }
+
           .results_comments_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 5px 10px;
             color: $white;
             border-radius: 5px;
-            margin: 0 10px;
+            margin: 10px;
             position: relative;
 
             h4 {
               color: $white;
               margin: 0;
-              font-size: 28px;
-            }
 
-            p{
-              color: $white;
-            }
-
-            &.results_comments_good {
-              background-color: $results_comments_good;
-            }
-
-            &.results_comments_perfect {
-              background-color: $results_comments_perfect;
-            }
-
-            &.results_comments_bad {
-              background-color: $results_comments_bad;
+              i {
+                font-size: 25px;
+              }
             }
           }
         }
@@ -2610,8 +2695,8 @@
 
         &.instructions_copyright {
           right: 0;
-    bottom: 0;
-    transform: translate(5px, calc(100% + 10px));
+          bottom: 0;
+          transform: translate(5px, calc(100% + 10px));
 
           &::after {
             content: "";
@@ -2645,7 +2730,7 @@
         &.instructions_next {
           left: 0;
           top: 0;
-          transform: translate(-10px , calc(-100% - 5px));
+          transform: translate(-10px, calc(-100% - 5px));
 
           &::after {
             content: "";
@@ -2782,17 +2867,17 @@
         &.instructions_listen_sentence {
           left: 50%;
           bottom: 0;
-    transform: translate(-50%, calc(100% + 0px));
+          transform: translate(-50%, calc(100% + 0px));
           width: 380px;
 
           &::after {
             content: "";
-    position: absolute;
-    top: 0;
-    transform: translate(0, -100%);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid $instructions;
+            position: absolute;
+            top: 0;
+            transform: translate(0, -100%);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid $instructions;
           }
         }
 
@@ -3147,6 +3232,7 @@
   .blocker {
     .e-book_teach {
       width: 95%;
+
       .page_item {
 
         // 電子書區域開始
@@ -3203,8 +3289,43 @@
 
         // 下方控制區結束
 
+        // 彈跳錄音開始
+
+        .recording_modal_content {
+          .results_comments {
+            &.results_comments_evaluation {
+
+              .results_comments_good,
+              .results_comments_perfect,
+              .results_comments_bad {
+                h4 {
+                  font-size: 24px;
+                }
+              }
+            }
+
+            .results_comments_item {
+              h4 {
+                i {
+                  font-size: 21px;
+                }
+              }
+            }
+          }
+
+          .recording_modal_text {
+            h4 {
+              span {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+
+        // 彈跳錄音結束
+
         .instructions {
-  
+
           &.instructions_copyright {
             transform: translate(calc(25px / 2), calc(100% + 10px));
           }
@@ -3299,7 +3420,7 @@
             }
           }
 
-          
+
         }
       }
     }
@@ -3347,20 +3468,20 @@
             }
 
             // 文字版型開始
-          .text {
-            text-align: center;
-            display: flex;
-            align-items: center;
+            .text {
+              text-align: center;
+              display: flex;
+              align-items: center;
 
-            .article {
+              .article {
 
-              p {
-                padding: 25px 0px;
+                p {
+                  padding: 25px 0px;
+                }
               }
             }
-          }
 
-          // 文字版型結束
+            // 文字版型結束
 
           }
 
@@ -3530,6 +3651,41 @@
 
         // 下方控制區結束
 
+        // 彈跳錄音開始
+
+        .recording_modal_content {
+          .results_comments {
+            &.results_comments_evaluation {
+
+              .results_comments_good,
+              .results_comments_perfect,
+              .results_comments_bad {
+                h4 {
+                  font-size: 22px;
+                }
+              }
+            }
+
+            .results_comments_item {
+              h4 {
+                i {
+                  font-size: 19px;
+                }
+              }
+            }
+          }
+
+          .recording_modal_text {
+            h4 {
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        // 彈跳錄音結束
+
         .instructions {
           &.instructions_full_screen {
             left: 0%;
@@ -3539,7 +3695,8 @@
 
             &::after {
               left: auto;
-              right: 0;top: 50%;
+              right: 0;
+              top: 50%;
               transform: translate(100%, -50%);
               border-left: 7px solid $instructions;
               border-right: 7px solid transparent;
@@ -3547,13 +3704,13 @@
               border-bottom: 7px solid transparent;
             }
           }
-  
+
           &.instructions_listen {
             top: auto;
             bottom: 0;
             transform: translate(-50%, calc(100% + 10px));
             margin: 0;
-  
+
             &::after {
               bottom: auto;
               top: 0;
@@ -3564,20 +3721,21 @@
               border-bottom: 7px solid $instructions;
             }
           }
-  
+
           &.instructions_speed {
             transform: translate(-50%, calc(-100% - 10px));
           }
-  
+
           &.instructions_play {
             left: 0%;
             top: 50%;
             bottom: auto;
-            transform: translate(-100% , -50%);
-  
+            transform: translate(-100%, -50%);
+
             &::after {
               left: auto;
-              right: 0;top: 50%;
+              right: 0;
+              top: 50%;
               transform: translate(100%, -50%);
               border-left: 7px solid $instructions;
               border-right: 7px solid transparent;
@@ -3585,13 +3743,13 @@
               border-bottom: 7px solid transparent;
             }
           }
-  
+
           &.instructions_microphone {
             right: 0;
             top: 0;
             transform: translate(0%, calc(-100% - -15px));
             margin: 0;
-  
+
             &::after {
               left: auto;
               right: 0;
@@ -3603,27 +3761,27 @@
               border-right: 7px solid transparent;
             }
           }
-  
+
           &.instructions_sentence {
             width: 330px;
           }
-  
+
           &.instructions_text {
             width: 200px;
           }
-  
+
           &.instructions_listen_sentence {
             width: 340px;
           }
-  
+
           &.instructions_record {
             width: 250px;
           }
-  
+
           &.instructions_play_record {
             width: 200px;
           }
-  
+
         }
       }
 
