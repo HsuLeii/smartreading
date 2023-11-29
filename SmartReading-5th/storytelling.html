@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SmartReading 適性閱讀">
+    <meta name="author" content="SmartReading 適性閱讀">
+    <title>SmartReading 適性閱讀</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
+    <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+    <link href="Content/css/global.css" rel="stylesheet" />
+
+    <!-- this page widgets CSS -->     
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">   
+
+
+    <!-- SR core CSS -->
+    <link rel="stylesheet" type="text/css" href="Content/css/promote-styles.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navi-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span
+                                    class="sr-only">展開選單</span> <span class="icon-bar"></span> <span
+                                    class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <a class="navbar-brand" href="../index-student.html"><img
+                                    src="../Content/images/HeaderLogo.png" alt="SmartReading 適性閱讀"
+                                    class="img-responsive"></a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="navTab-index"><a href="../index-student.html">首頁</a></li>
+                                <li class="navTab-dacc dropdown"> <a href="../DACC/DACC.html">能力檢測</a> </li>
+                                <li class="navTab-RecommendedBookList dropdown"> <a
+                                        href="RecommendedBookList.html">推薦書單</a> </li>
+                                <li class="navTab-RPList dropdown"><a href="RPList.html">閱讀計畫</a> </li>
+                                <li class="navTab-superBoard dropdown"><a href="superBoard.html">SR金榜</a> </li>
+                                <li class="navTab-CourseList dropdown"> <a href="Course.html">閱讀歷程檔案</a> </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown"><a class="navi-main__loginedBtn" data-target="#" href="#"
+                                        data-toggle="dropdown" role="button" aria-haspopup="true"
+                                        aria-expanded="false">你好，張花花！</a>
+                                    <ul class="dropdown-menu navi-main__userMenu">
+                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdcvlWityd3GvuaFTmMc2ZM-TBVDQeMXUVrejDktGskw1Hzig/viewform"
+                                                target="_blank"><i class="fas fa-bullhorn"></i>&nbsp;問題回報</a></li>
+                                        <li><a href="index.html" class="btn navi-main__logoutBtn">登出</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a class="navi-main__languageBtn" data-target="#" href="#"
+                                        data-toggle="dropdown" role="button" aria-haspopup="true"
+                                        aria-expanded="false">中文(正體)&nbsp;<span class="caret"></span></a>
+                                    <ul class="dropdown-menu navi-main__languageMenu">
+                                        <li><a href="" check="checked"><span class="language-icon"><span
+                                                        class="glyphicon glyphicon-ok"
+                                                        aria-hidden="true"></span></span>&nbsp;中文(正體)</a></li>
+                                        <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok"
+                                                        aria-hidden="true"></span></span>&nbsp;中文(简体)</a></li>
+                                        <li><a href=""><span class="language-icon"><span class="glyphicon glyphicon-ok"
+                                                        aria-hidden="true"></span></span>&nbsp;English(United
+                                                States)</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <main class="main storytelling">
+
+        <!-- banner start -->
+        <div class="page-banner storytelling">
+            <div class="container">
+                <div class="page-banner__text">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <h1>說書頻道</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+
+        <!-- RPList-search start -->
+        <div class="RPList-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-1"> <img src="Content/images/reading_plan/books.png"
+                            class="img-responsive"> </div>
+                    <div class="col-md-8">
+                        <div class="RPList-search__text">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-3">
+                                    <h2>搜索計畫書籍</h2>
+                                </div>
+                                <div class="col-md-8 col-lg-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-lg searchBook_input"
+                                            id="searchBook" placeholder="輸入書名..." value="">
+                                        <div class="input-group-btn">
+                                            <button type="button"
+                                                class="btn btn-lg btn-main RPList-search__btn-search">查詢</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="RPList-search__info"> <span>計畫書籍總數：
+                                            <label>8</label>
+                                        </span> <span>最低難度：
+                                            <label>450</label>
+                                        </span> <span>最高難度：
+                                            <label>450</label>
+                                        </span> <span>最近修改時間：
+                                            <label>2021-05-04 11:15:19</label>
+                                        </span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RPList-search end -->
+
+        <!-- RPList-books start -->
+        <div class="RPList-books">
+            <div class="container">
+                <div class="RPList-header">
+                    <h2>書籍清單</h2>
+                </div>
+                <div class="tab-content RPList-books__tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="list">
+                        <div class="RPList-books__tab-pane__functions list">
+                            <div class="functions-btns">
+                                <button id="btn-search-all" class="btn functions-btns__nav active"
+                                    type="submit">我的頻道</button>
+                                <button id="btn-search-tobe" class="btn functions-btns__nav" type="submit">總頻道</button>
+                            </div>
+                        </div>
+
+                        <table id="RPList-books__table" class="table RPList-books__table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>優選書</th>
+                                    <th>書封面</th>
+                                    <th>書名</th>
+                                    <th>電子書</th>
+                                    <th>ISBN</th>
+                                    <th>分類</th>
+                                    <th>開始閱讀~結束閱讀</th>
+                                    <th>功能</th>
+                                    <th>刪除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="book-id">1</td>
+                                    <td class="book-good"><img src="Content/images/reading_plan/goodBook.png" width="66"
+                                            height="65"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#modal-bookIntro"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/001.jpg"></a>
+                                    </td>
+                                    <td class="book-name">我會關心別人我會關心別人</td>
+                                    <td class="book-ebook"></td>
+                                    <td class="book-SR" data-th="ISBN">ISBN：12345678901234567</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育成長/生命教</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button" data-toggle="modal" data-target="#storytelling"><i
+                                                        class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">2</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/002.jpg"></a>
+                                    </td>
+                                    <td class="book-name">三隻餓狼想吃雞</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 265</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">3</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/005.jpg"></a>
+                                    </td>
+                                    <td class="book-name">害怕的時候</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">---</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">4</td>
+                                    <td class="book-good"><img src="Content/images/reading_plan/goodBook.png" width="66"
+                                            height="65"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/006.jpg"></a>
+                                    </td>
+                                    <td class="book-name">第一條魚</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 187</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">5</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/010.jpg"></a>
+                                    </td>
+                                    <td class="book-name">走進生命花園</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 448</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">6</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/012.jpg"></a>
+                                    </td>
+                                    <td class="book-name">10隻橡皮小鴨</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 342</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">7</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/025.jpg"></a>
+                                    </td>
+                                    <td class="book-name">團圓</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 258</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">8</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/027.jpg"></a>
+                                    </td>
+                                    <td class="book-name">影子和我</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 279</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">9</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/028.jpg"></a>
+                                    </td>
+                                    <td class="book-name">小琪的房間</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 330</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="book-id">10</td>
+                                    <td class="book-good"></td>
+                                    <td class="book-front"><a role="button" class="hover-effect-dark"
+                                            data-toggle="modal" data-target="#frameModal"
+                                            data-href="bookIntro.html"><img
+                                                src="https://smartreading.net/RP/BookContent/BookFront/029.jpg"></a>
+                                    </td>
+                                    <td class="book-name">瘋狂愛上書</td>
+                                    <td class="book-ebook">
+                                        <img src="Content/images/reading_plan/icon-ebook.png" width="18" height="18">
+                                    </td>
+                                    <td class="book-SR" data-th="圖書難度">SR 338</td>
+                                    <td class="book-sort" data-th="分類">成長/生命教育</td>
+                                    <td class="book-date">
+                                        <div class="book-date-start">
+                                            <div class="book-date-start__title"> 開始閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/7/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="book-date-end">
+                                            <div class="book-date-start__title"> 結束閱讀 </div>
+                                            <div class="book-date-start__content">
+                                                <div class="SR-datepicker">
+                                                    <input type="text" class="datepicker form-control"
+                                                        value="2021/8/29">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-tools">
+                                        <div class="book-tools_item question_book">
+                                            <p>系統題本</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 選擇題</button>
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-pen-to-square"></i> 摘要題</button>
+                                            </div>
+                                        </div>
+                                        <div class="book-tools_item question_book">
+                                            <p>說書頻道</p>
+                                            <div class="book-tools_item_btn_area">
+                                                <button
+                                                    class="btn btn-default btn-default-main RPbookList-table__btn-add"
+                                                    type="button"><i class="fa-solid fa-video"></i> 說書趣</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="book-delete"><button class="RPbookList-table__btn-delete"
+                                            type="button">×</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- for yinfang page here start -->
+                        <!-- pagination star/... -->
+                        <!--<div id="div_page" aria-label="Page navigation" class="text-center commontPage" style="display:block"> <a id="Btn_pre" class="btn btn-default btn-lg disabled" href="javascript: void(0)" role="button" onclick="toPrePage()"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;上一頁</a>
+              <div id="div_pageNO" class="commontPage-pages">
+                <label style="color:red">1</label>
+                <a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" onclick="toTargetPage(1)">2</a><a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" onclick="toTargetPage(2)">3</a><a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" onclick="toTargetPage(3)">4</a><a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" onclick="toTargetPage(4)">5</a>
+                <label> ... </label>
+                <a class="btn btn-default btn-lg" href="javascript:void(0);" role="button" onclick="toTargetPage(16)">16</a></div>
+              <a id="Btn_next" class="btn btn-default btn-lg" href="javascript: void(0)" role="button" onclick="toNextPage()">下一頁&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a> 共
+              <label id="pageCount_txt">16</label>
+              頁
+              <div class="add_dataTables_input"> 到第
+                <input id="txt_goPage" type="text" class="form-control input-lg input-inline paginate_input noRadius" value="" onkeypress="goPageByEnter(event)">
+                頁 <a id="Btn_goPage" class="btn btn-default btn-lg paginate_button" onclick="goPage()">確定</a> </div>
+            </div>-->
+                        <!-- .../pagination end -->
+                        <!-- for yinfang page here end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <footer class="footer"></footer>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+
+    <!-- Modal #modal-bookIntro START/... -->
+    <div class="modal fade modal-style1 modal-starScore in" id="storytelling" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg modal-md-full" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="myStudy">
+                        <div class="container-fluid">
+                            <div class="myStudy-block video">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="myStudy-title">
+                                            <h2>影片</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="myStudy-content">
+                                            <!-- -->
+                                            <div class="upload-video">
+                                                <div class="upload-video__area">
+                                                    <div class="upload-video__area-default">
+                                                        <div class="upload-video__area-default__text">
+                                                            快將你的感動或觀察，化為影像記錄下來吧！<img
+                                                                src="Content/images/reading_plan/myStudy/video-default-img.png"
+                                                                class="img-responsive center-block">
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload-video__area-answer" style="display:none;">
+                                                        <div class="upload-video__area-answer__videoWidth">
+                                                            <div class="embed-responsive embed-responsive-56pre">
+                                                                <iframe id="AddVideo" class="embed-responsive-item"
+                                                                    src="https://www.youtube.com/embed/rp-FAlPNQIA"
+                                                                    data-ruffle-polyfilled=""></iframe>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-video__btns">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control noRadius"
+                                                            placeholder="http://" value="https://youtu.be/KD_1Z8iUDho">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default noRadius" type="button"
+                                                                id="">預覽</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- -->
+                                        </div>
+                                        <div class="myStudy-btns">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-7 col-md-8 text-left">
+                                                    <div class="input-group input-group-lg video-httpInput">
+                                                        <input type="text" id="AddVideoInput"
+                                                            class="form-control noRadius" placeholder="http://"
+                                                            value="">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn myStudy-btns_preview" type="button"
+                                                                onclick="AddVideoData();">預覽</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-5 col-md-4 text-right">
+                                                    <button class="btn myStudy-btns_submit" type="submit" disabled=""
+                                                        onclick="window.alert('已成功送出。')">送出</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="myStudy-text">
+                                            <p class="sent_success">你的作品已成功送出至<a href="http://">說書頻道>></a>。</p>
+                                        </div>
+                                        <div class="video_check_area">
+                                            <div class="myStudy-text">
+                                                <input type="checkbox" id="video_check" onclick="videoCheckFunction()"
+                                                    class="video_check_checkbox">
+                                                <label for="video_check">
+                                                    <p>我已確認本影片無以下內容，並可「分享」並公開到說書頻道。</p>
+                                                </label>
+                                            </div>
+                                            <div class="video_check_item_area">
+                                                <div class="video_check_item_both">
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>不當言語</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>暴力內容</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>成人內容</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>駭人內容</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>有害或危險舉動</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>仇恨及貶抑他人的內容</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>娛樂性藥物和藥物相關內容</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="video_check_item_both">
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>槍械相關內容</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>爭議性話題</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>敏感事件</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>助長欺騙行為</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>不適合兒童和家庭觀看的內容</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span>
+                                                                <i class="fa-solid fa-xmark"></i>
+                                                            </span>
+                                                            <span>
+                                                                辱罵及貶抑他人的內容
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="video_check_item">
+                                                        <p>
+                                                            <span><i
+                                                                    class="fa-solid fa-xmark"></i></span><span>菸草相關內容</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 video_check_submit">
+                                        <button class="btn video_check_submit_btn" type="submit" disabled=""
+                                            onclick="window.alert('已成功送出。')">確認送出</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .../Modal #modal-bookIntro END -->
+
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script src="Script/jquery.min.js"></script>
+    <script src="Script/bootstrap-lg.min.js"></script>
+    <script src="Script/ie10-viewport-bug-workaround.js"></script>
+    <script src="Content/widgets/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1.min.js"></script>
+    <!-- widgets js -->
+    <script src="Content/widgets/DataTables/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.13.1/sorting/any-number.js"></script>      
+
+    <script>
+        $(document).ready(function () {
+            //nowPage
+            $('.navTab-CourseList').addClass('active');
+            $('footer').load('footer.html');
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            //書籍清單#RPList-books__table/.RPList-books__table
+            $('#RPList-books__table').DataTable({
+                responsive: true,
+                searching: false,
+                pageLength: 6,
+                pagingType: "simple_numbers",
+                columnDefs: [{
+                        "targets": 0,
+                        orderable: false
+                    },
+                    {
+                        "targets": 1,
+                        orderable: false
+                    },
+                    {
+                        "targets": 2,
+                        orderable: false
+                    },
+                    {
+                        "targets": 3,
+                        orderable: false
+                    },
+                    {
+                        "targets": 4,
+                        orderable: false
+                    },
+                    {
+                        "targets": 5,
+                        orderable: false
+                    },
+                    {
+                        "targets": 6,
+                        orderable: false
+                    },
+                    {
+                        "targets": 7,
+                        orderable: false
+                    },
+                    {
+                        "targets": 8,
+                        orderable: false
+                    },
+                    {
+                        "targets": 9,
+                        orderable: false
+                    },
+                ],
+                buttons:[
+            {
+              text: '文章難度&nbsp;<i class="fa-solid fa-up-long"></i>',
+              attr:  { id: 'sort_SR'},
+              action:  function ( ) { 
+                if( $('#sort_SR').hasClass('asc')){ //原本asc↑，變desc↓
+                    this.order( [ 3, 'desc' ] ).draw();
+                    $('#sort_SR').removeClass('active asc desc').addClass('active desc');
+                    $('#sort_SR').find('svg').removeClass('fa-up-long').addClass('fa-down-long');
+                }else{//原本null or desc↓變asc↑
+                    this.order( [ 3, 'asc' ] ).draw();
+                    $('#sort_SR').removeClass('active asc desc').addClass('active asc');
+                    $('#sort_SR').find('svg').removeClass('fa-down-long').addClass('fa-up-long');
+                }
+              }
+            }
+        ],
+                dom: '<"datatables-custom-header clearfix"B<"float-end"ip>>'+
+                'r' +
+                    '<""<""t>>' +
+                    '<"RPList-footer clearfix"pi>',
+                language: {
+                    "processing": "處理中...",
+                    "loadingRecords": "載入中...",
+                    "lengthMenu": "顯示 _MENU_ 項結果",
+                    "zeroRecords": "沒有符合的結果",
+                    "info": "<span class='footer-hide'>共&nbsp;_TOTAL_&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;_PAGE_&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;_PAGES_&nbsp;<span class='header-hide'>頁</span>",
+                    "infoEmpty": "<span class='footer-hide'>共&nbsp;0&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;0&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;0&nbsp;<span class='header-hide'>頁</span>",
+                    "infoFiltered": "(從 _MAX_ 本書中篩選的結果)",
+                    "infoPostFix": "",
+                    "search": "搜尋：",
+                    "paginate": {
+                        "first": "第一頁",
+                        "previous": "<i class='fa fa-angle-left' aria-hidden='true'></i><span>&nbsp;上一頁</span>",
+                        "next": "<span>下一頁&nbsp;</span><i class='fa fa-angle-right' aria-hidden='true'></i>",
+                        "last": "最後一頁"
+                    },
+                    "aria": {
+                        "sortAscending": ": 升冪排列",
+                        "sortDescending": ": 降冪排列"
+                    }
+                },
+            });
+            //我的書單	請工程師寫...
+            //待評量		請工程師寫...
+            //已評量		請工程師寫...
+            //到第X頁
+            var books_inputHTML = '<div class="add_dataTables_input">' +
+                '到第&nbsp;' +
+                '<input type="text" class="form-control input-lg input-inline paginate_input" id="RPList-books__textGoPage" data-prev="" value="">' +
+                '&nbsp;頁' +
+                '<a class="btn btn-lg paginate_button" id="RPList-books__btnGoPage">確定</a>' +
+                '</div>';
+            $('#RPList-books__table_wrapper .RPList-footer').append(books_inputHTML);
+            $("#RPList-books__btnGoPage").click(function () {
+                var books_textGoPage = $("#RPList-books__textGoPage").val();
+                var books_info = $('#RPList-books__table').DataTable().page.info();
+                if (parseInt(books_textGoPage) > 0 && parseInt(books_textGoPage) <= books_info.pages) {
+                    $('#RPList-books__table').DataTable().page(parseInt(books_textGoPage) - 1).draw(
+                        false);
+                } else {
+                    alert('請輸入正確頁數。');
+                }
+            });
+            //點擊頁碼滑動至最表格上方
+            $('#RPList-books__table').on('page.dt', function () {
+                $('html, body').animate({
+                    scrollTop: $(".RPList-books").offset().top - 80
+                }, 500);
+            });
+        });
+    </script>
+
+    <script>
+        //新增卡片影片
+        function AddVideoData() {
+            var AddURL = document.getElementById("AddVideoInput");
+            var AddURLstr = AddURL.value;
+            var strIndex = AddURLstr.indexOf("=");
+            var strAry = AddURLstr.substr(strIndex + 1, 11);
+            var embeddedAddURL = "https://www.youtube.com/embed/" + strAry;
+            $("#AddVideo").attr("src", embeddedAddURL);
+            $(".upload-video__area-answer").show();
+            $(".myStudy-btns_submit").attr('disabled', false);
+        }
+
+        //影片送出
+        $(".myStudy-btns_submit").click(function () {
+            $(".video_check_area").show();
+            $(".video_check_submit").show();
+        });
+
+        //確認影片可分享
+        function videoCheckFunction() {
+            var checkBox = document.getElementById("video_check");
+            if (checkBox.checked == true) {
+                $(".video_check_submit_btn").attr('disabled', false);
+            } else {
+                $(".video_check_submit_btn").attr('disabled', true);
+            }
+        }
+
+        //確認影片送出
+        $(".video_check_submit_btn").click(function () {
+            $(".video_check_area").hide();
+            $(this).hide();
+            $(".sent_success").show();
+        });
+    </script>
+
+    <!-- 選時間 -->
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $('.datepicker').datepicker({
+                dateFormat: "yy/mm/dd"
+            });
+        });
+    </script>
+
+    <!-- K's js -->
+    <script>
+        $(window).on('resize', function () {
+            //modify bootstrap Collapse.js
+            $('.bookIntro-btnBorrow[data-toggle="collapse"]').click(function () {
+                $(this).parents('.modal-bookIntro').find('.bookIntro-btnBorrow').attr("aria-expanded",
+                    "false");
+                $(this).attr("aria-expanded", "true");
+                $($(this).attr('href')).parents('.modal-bookIntro').find('.bookIntro-collapse')
+                    .removeClass('in');
+            });
+
+            //#frameModal iframe RWD height
+            $("#frameModal iframe").css({
+                width: '100%',
+                height: $(window).height() - 30 - 30 - $('#frameModal .modal-header').outerHeight() - 2,
+                border: '0',
+                margin: '0',
+                display: 'block'
+            });
+        });
+    </script>
+</body>
+
+</html>
