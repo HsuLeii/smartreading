@@ -1,88 +1,102 @@
 main {
   &.storytelling {
-    .page-banner{
-        &.storytelling { 
-          background-image: url(../images/storytelling/banner-bg.jpg); 
-          background-position: center center; 
-          margin-bottom: 0;
-  
-          h1 { 
-            font-size: 1.5em; 
-            font-weight: 400; 
-            line-height: 1em; 
-            margin-top: 10px; 
-            margin-bottom: 20px; 
-            color: #FFF; 
-            text-align: left; 
-          }
-  
-          p { font-size: 0.9em; 
-            line-height: 1.875em; 
-            color: #FFF; 
-            text-align: left !important; 
-          }
-        }
-      }
-    .RPList-search{
-      .img-responsive{
-        max-width: 80px;
-      }
-      .RPList-search__text{
-        h2{
-          padding: 10px 0;
-        }
-        .searchBook_input{
-          height: auto;
+    .page-banner {
+      &.storytelling {
+        background-image: url(../images/storytelling/banner-bg.jpg);
+        background-position: center center;
+        margin-bottom: 0;
+
+        h1 {
+          font-size: 1.5em;
+          font-weight: 400;
+          line-height: 1em;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          color: #FFF;
+          text-align: left;
         }
 
-        .RPList-search__btn-search{
-          font-size: 14px;
-          background-color: $SR_green;
+        p {
+          font-size: 0.9em;
+          line-height: 1.875em;
+          color: #FFF;
+          text-align: left !important;
         }
       }
     }
+
+    .storytelling-search{
+      .storytelling-search_left{
+        width: 47%;
+        .storytelling-search_left_input{
+          .input-group{
+            display: flex;
+            align-items: center;
+
+            .input-group-btn{
+              &.more_select_group{
+                width: auto;
+                position: relative;
+                z-index: 2;
+                transform: translate(-100% , 0);
+              }
+              .more_select{
+                
+              }
+            }
+          }
+        }
+      }
+      .storytelling-search_left{
+        width: 39%;
+      }
+    }
+
     .RPList-books {
       .tab-content {
         margin: 0;
 
         .tab-pane {
 
-            .RPList-books__tab-pane__functions{
-                .functions-btns{
-                    border-bottom: 1px solid $main_color;
+          .dataTables_wrapper {
+            .datatables-custom-header {
+              .dt-buttons {
+                display: flex;
+                justify-content: flex-start;
 
-                    .functions-btns__nav { 
-                        color: $main_color;
-    
-                        &:hover,
-                        &:focus { 
-                            background-color: #ececec; 
-                            box-shadow: none; 
-                        }
-    
-                        &.active,
-                        &:active { 
-                            border: 1px solid $main_color; 
-                            background-color: $main_color; 
-                            color: $white; 
-                        }
-                    }
-                }
-            }
+                .channel_btn {
+                  border: 1px solid #c6c6c6;
+                  color: $main_color;
+                  min-width: 100px;
+                  text-align: center;
+                  padding: 10px 20px;
+                  border-radius: 6px 6px 0 0;
+                  margin: 0 5px 0 0;
 
-            .dataTables_wrapper{
-              .datatables-custom-header{
-                .dt-buttons{
-                  display: flex;
-                  justify-content: flex-end;
-                  .dt-button{
-                    padding: 12px 30px;
+                  &:hover,
+                  &:focus {
+                    background-color: #ececec;
+                    box-shadow: none;
+                  }
+
+                  &.active,
+                  &:active {
+                    border: 1px solid $main_color;
                     background-color: $main_color;
                     color: $white;
                   }
                 }
+
+                .dt-button {
+                  margin: 0 0 0 30px;
+                  padding: 12px 30px;
+                  background-color: $main_color;
+                  color: $white;
+                  border-radius: 0;
+                }
               }
             }
+          }
 
           .table {
             .book-tools {
@@ -92,9 +106,11 @@ main {
               margin: 10px auto 0;
               padding: 15px 10%;
               height: auto;
-              .book-tools_item{
+
+              .book-tools_item {
                 margin: 5px auto;
-                .book-tools_item_btn_area{
+
+                .book-tools_item_btn_area {
                   margin: 5px auto;
                 }
               }
@@ -144,11 +160,12 @@ main {
                 }
 
                 .myStudy-btns {
-                  .myStudy-btns_preview{
+                  .myStudy-btns_preview {
                     color: $SR_green;
                     border: 1px solid #ccc;
                     border-radius: 0;
                   }
+
                   .myStudy-btns_submit {
                     background-color: $SR_green;
                     color: $white;
@@ -164,7 +181,7 @@ main {
                   justify-content: center;
                   margin: 10px auto 0;
 
-                  .sent_success{
+                  .sent_success {
                     display: none;
                   }
 
@@ -182,6 +199,7 @@ main {
 
                 .video_check_area {
                   display: none;
+
                   .video_check_checkbox {
                     position: absolute;
                     opacity: 0;
@@ -247,6 +265,7 @@ main {
                         p {
                           display: flex;
                           margin: 5px 0;
+
                           i {
                             color: $default-red;
                             margin: 0 5px 0 0;
@@ -257,16 +276,17 @@ main {
                   }
                 }
 
-                .video_check_submit{
+                .video_check_submit {
                   display: none;
                   margin: 20px auto;
-                  .video_check_submit_btn{
+
+                  .video_check_submit_btn {
                     display: block;
                     margin: 0 auto;
                     background-color: $SR_green;
                     color: $white;
 
-                    &:hover{
+                    &:hover {
                       background-color: $SR_green_dark;
                     }
                   }
@@ -284,21 +304,22 @@ main {
 @media screen and (min-width: 768px) {
   main {
     &.reading_plan {
-      .RPList-search{
-        .RPList-search__text{
-          .RPList-search__btn-search{
+      .RPList-search {
+        .RPList-search__text {
+          .RPList-search__btn-search {
             font-size: 15px;
           }
         }
       }
     }
   }
+
   .modal {
     .modal-dialog {
       .modal-content {
-  
+
         .modal-body {
-  
+
           .myStudy {
             .container-fluid {
               .myStudy-block {
@@ -307,7 +328,7 @@ main {
                     .video_check_item_area {
                       display: flex;
                       justify-content: space-between;
-  
+
                       .video_check_item_both {
                         width: 47.5%;
                       }
@@ -326,16 +347,19 @@ main {
 @media screen and (min-width: 992px) {
   main {
     &.reading_plan {
-      .RPList-search{
-        .img-responsive{
+      .RPList-search {
+        .img-responsive {
           max-width: 150px;
         }
-        .RPList-search__text{
+
+        .RPList-search__text {
           padding-top: 0;
-          h2{
+
+          h2 {
             margin: 0;
           }
-          .RPList-search__btn-search{
+
+          .RPList-search__btn-search {
             font-size: 17px;
           }
         }
@@ -344,26 +368,26 @@ main {
   }
 }
 
-@media screen and (min-width: 1200px) { 
-    main {
-      &.reading_plan {
-        .page-banner{
-          &.reading_plan { 
-            p { 
-              white-space: nowrap;
-            }
+@media screen and (min-width: 1200px) {
+  main {
+    &.reading_plan {
+      .page-banner {
+        &.reading_plan {
+          p {
+            white-space: nowrap;
           }
         }
       }
     }
   }
+}
 
 @media screen and (min-width: 1400px) {
   main {
     &.reading_plan {
-      .RPList-search{
-        .RPList-search__text{
-          .RPList-search__btn-search{
+      .RPList-search {
+        .RPList-search__text {
+          .RPList-search__btn-search {
             font-size: 19px;
           }
         }
