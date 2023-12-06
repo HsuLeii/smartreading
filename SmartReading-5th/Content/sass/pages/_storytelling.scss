@@ -853,6 +853,83 @@ main {
                 }
               }
 
+              .video_check_area {
+                display: none;
+                .video_check_checkbox {
+                  position: absolute;
+                  opacity: 0;
+
+                  &+label {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+
+                    p {
+                      max-width: calc(100% - 30px);
+                    }
+
+                    &:before {
+                      content: '';
+                      margin-right: 10px;
+                      display: inline-block;
+                      vertical-align: text-top;
+                      width: 20px;
+                      height: 20px;
+                      background: $white;
+                      border: 1px solid $main_color;
+                    }
+                  }
+
+                  &:hover {
+                    &+label {
+                      color: $main_color;
+
+                      &:before {
+                        border: 1px solid $main_color;
+                      }
+                    }
+                  }
+
+                  &:checked {
+                    &+label {
+                      &:before {
+                        border: 1px solid $main_color;
+                        background-color: $main_color;
+                      }
+
+                      &:after {
+                        font-family: 'FontAwesome', sans-serif;
+                        content: '\f00c';
+                        position: absolute;
+                        color: $white;
+                        width: 20px;
+                        font-size: 15px;
+                        text-align: center;
+                      }
+                    }
+                  }
+                }
+
+                .video_check_item_area {
+                  margin: 10px auto;
+
+                  .video_check_item_both {
+                    .video_check_item {
+                      p {
+                        display: flex;
+                        margin: 5px 0;
+                        i {
+                          color: $default-red;
+                          margin: 0 5px 0 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
               .feedback_check_submit{
                 display: flex;
                 justify-content: center;
@@ -999,6 +1076,18 @@ main {
                             min-height: 220px;
                             }
                         }
+                    }
+                  }
+                }
+
+                .video_check_area {
+                  padding: 20px;
+                  .video_check_item_area {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .video_check_item_both {
+                      width: 47.5%;
                     }
                   }
                 }
