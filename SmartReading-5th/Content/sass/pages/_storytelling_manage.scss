@@ -1,0 +1,289 @@
+main {
+    &.storytelling_manage {
+        background-color: $white;
+
+        .join-all {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+
+            .nav-wrap {
+                display: flex;
+                justify-content: center;
+
+                .fixed-nav {
+                    top: 0;
+                    left: 0%;
+                    list-style: none;
+                    font-weight: 400;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    margin: 0px 5px;
+
+                    li {
+                        margin: 12px 0;
+
+                        .fixed-nav-tittle {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            color: #8c9292;
+                            font-weight: bold;
+
+                            img {
+                                width: 33px;
+                            }
+
+                            &:hover,
+                            &:focus {
+                                color: $SR_green;
+                            }
+                        }
+
+                        &.dropdown {
+                            .caret {
+                                margin: 0;
+                            }
+
+                            .dropdown-menu {
+                                position: absolute;
+                                top: calc(100% + 12px);
+
+                                li {
+                                    &.inside_dropdown {
+                                        display: flex;
+                                        align-items: center;
+                                        flex-wrap: wrap;
+
+                                        .caret {
+                                            margin: 0;
+                                            transform: rotate(180deg);
+                                        }
+
+                                        .dropdown-menu {
+                                            display: block;
+                                            position: relative;
+                                            border: 0;
+                                            box-shadow: none;
+                                            padding: 0 0 0 25px;
+                                        }
+
+                                        &:hover {
+                                            .dropdown-menu {
+                                                li {
+                                                    a {
+                                                        color: $default-black;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.current,
+                                    &:hover,
+                                    &:focus {
+                                        a {
+                                            color: $SR_green;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+
+                            &.open {
+                                .fixed-nav-tittle {
+                                    color: $SR_green;
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+
+                    &.last-fixed-nav {
+                        li {
+                            &.dropdown {
+                                .dropdown-menu {
+                                    left: auto;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 499px) {
+
+    main {
+        &.storytelling_manage {
+
+            .join-all {
+
+                .nav-wrap {
+
+                    .fixed-nav {
+                        margin: 0px 15px;
+
+                        li {
+                            &.dropdown {
+                                .dropdown-menu {
+                                    left: 50%;
+                                    transform: translate(-50%, 0);
+                                }
+                            }
+                        }
+
+                        &.last-fixed-nav {
+                            li {
+                                &.dropdown {
+                                    .dropdown-menu {
+                                        left: 50%;
+                                        right: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {
+    main {
+        &.storytelling_manage {
+            background-color: $white;
+
+            .join-all {
+
+                .nav-wrap {
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    .fixed-nav {
+
+                        li {
+                            margin: 12px 0;
+
+                            .fixed-nav-tittle {
+                                cursor: auto;
+
+                                &:hover,
+                                &:focus {
+                                    color: #8c9292;
+                                    text-decoration: none;
+                                }
+                            }
+
+                            &.dropdown {
+
+                                .dropdown-menu {
+                                    display: block;
+                                    position: initial;
+                                    transform: translate(0px, 0px);
+                                    border: 0;
+                                    box-shadow: none;
+                                    margin: 0 0 0 33px;
+
+                                    li {
+                                        text-align: left;
+
+                                        a {
+                                            padding: 0;
+                                        }
+
+                                        &.inside_dropdown {
+
+                                            .caret {
+                                                margin: 0 0 0 5px;
+                                                transform: rotate(0deg);
+                                            }
+
+                                            .dropdown-menu {
+                                                display: none;
+                                                left: 0;
+                                                padding: 0;
+
+                                            }
+
+                                            &.open {
+
+                                                .caret {
+                                                    transform: rotate(180deg);
+                                                }
+
+                                                .dropdown-menu {
+                                                    display: block;
+
+                                                    li {
+                                                        
+                                                            a {
+                                                            &:hover {
+                                                                color: $SR_green;
+                                                                }
+                                                            }
+                                                        
+                                                    }
+                                                }
+
+                                                &:hover {
+                                                    .dropdown-menu {
+                                                        li {
+                                                            a {
+                                                                color: $default-black;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                    }
+
+                                    &.open {
+                                        .fixed-nav-tittle {
+                                            color: $SR_green;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            &.last-fixed-nav {
+                                li {
+                                    &.dropdown {
+                                        .dropdown-menu {
+                                            left: 50%;
+                                            right: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
