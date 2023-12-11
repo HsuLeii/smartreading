@@ -5,8 +5,9 @@ main {
         .join-all {
             display: flex;
             flex-wrap: wrap;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
+            padding: 0 15px;
 
             .nav-wrap {
                 display: flex;
@@ -121,44 +122,283 @@ main {
                 }
             }
 
-            .order-wrap{
-                .order-page{
+            .order-wrap {
+                padding: 0;
+
+                .order-page {
                     padding: 0;
-                    .order-body{
-                        .storytelling_manage__table_area{
+
+                    .order-body {
+                        .storytelling_manage__table_area {
                             overflow-x: scroll;
 
-                            .storytelling_manage__table{
+                            .storytelling_search_area {
+                                display: flex;
+                                flex-direction: column;
+
+                                .storytelling_search {
+                                    border: 0;
+
+                                    tbody {
+                                        tr {
+                                            td {
+                                                border: 0;
+                                                display: inline-block;
+                                                padding: 0;
+                                                margin: 10px auto;
+
+                                                &.storytelling_search_text {
+                                                    width: 100%;
+                                                }
+
+                                                &.storytelling_search_input {
+                                                    width: 45%;
+                                                    margin: 0 2.5%;
+
+                                                    input {
+                                                        width: 100%;
+                                                        padding: 5px 10px;
+                                                        border: 1px solid $default-gray;
+
+                                                        &:focus{
+                                                            border-color: opacify($SR_green, 0.6);
+                                                    outline: 0;
+                                                    box-shadow: 0 0 8px opacify($SR_green, 0.6);
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .storytelling-search_left_area{
+                                    .storytelling-search_left_input {
+                                        margin: 20px 2.5%;
+                                
+                                        .input-group {
+                                            display: flex;
+                                            align-items: center;
+                                
+                                            .storytelling-search_input_text {
+                                                width: 25%;
+                                                margin: 0 10px 0 0;
+                                                text-align: right;
+                                            }
+                                
+                                            .form-control {
+                                                width: calc(57% - 10px);
+                                                padding: 6px calc(18% + 16px) 6px 16px;
+                                                height: auto;
+                                                &:focus {
+                                                    border-color: opacify($SR_green, 0.6);
+                                                    outline: 0;
+                                                    box-shadow: 0 0 8px opacify($SR_green, 0.6);
+                                                }
+                                            }
+                                
+                                            .input-group-btn {
+                                                &.more_select_group {
+                                                    width: calc(55% - 10px);
+                                                    position: absolute;
+                                                    left: calc(25% + 10px);
+                                                    display: flex;
+                                                    justify-content: flex-end;
+
+                                                    .btn {
+                                                        position: relative;
+                                                        z-index: 6;
+                                                    }
+                                
+                                                    .more_select_dropdown_menu {
+                                                        width: 100%;
+                                                        position: absolute;
+                                                        top: 100%;
+                                                        left: 0;
+                                                        z-index: 1000;
+                                                        display: none;
+                                                        min-width: 160px;
+                                                        padding: 5px 0;
+                                                        background-color: $white;
+                                                        border: 1px solid $SR_green;
+                                
+                                                        .more_select_grade_area {
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                
+                                                            .more_select_grade {
+                                                                width: 45%;
+                                                                margin: 5px calc(10% / 6);
+                                                                border: 1px solid $button-gray;
+                                                                border-radius: 0;
+                                
+                                                                &:hover,
+                                                                &.check {
+                                                                    border: 1px solid $SR_green;
+                                                                }
+                                                            }
+                                                        }
+                                
+                                                        .icheck_area {
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                
+                                                            .type_check_area {
+                                                                width: 95%;
+                                                                margin: 5px 2.5%;
+                                
+                                                                .type_check_checkbox {
+                                                                    position: absolute;
+                                                                    opacity: 0;
+                                
+                                                                    &+label {
+                                                                        display: flex;
+                                                                        align-items: center;
+                                                                        position: relative;
+                                                                        cursor: pointer;
+                                                                        padding: 0;
+                                
+                                                                        &:before {
+                                                                            content: '';
+                                                                            margin-right: 10px;
+                                                                            display: inline-block;
+                                                                            vertical-align: text-top;
+                                                                            width: 20px;
+                                                                            height: 20px;
+                                                                            background: $white;
+                                                                            border: 1px solid $SR_green;
+                                                                        }
+                                                                    }
+                                
+                                                                    &:hover {
+                                                                        &+label {
+                                                                            color: $SR_green;
+                                
+                                                                            &:before {
+                                                                                border: 1px solid $SR_green;
+                                                                            }
+                                                                        }
+                                                                    }
+                                
+                                                                    &:checked {
+                                                                        &+label {
+                                                                            &:before {
+                                                                                border: 1px solid $SR_green;
+                                                                                background-color: $SR_green;
+                                                                            }
+                                
+                                                                            &:after {
+                                                                                font-family: 'FontAwesome', sans-serif;
+                                                                                content: '\f00c';
+                                                                                position: absolute;
+                                                                                color: $white;
+                                                                                width: 20px;
+                                                                                font-size: 15px;
+                                                                                text-align: center;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                
+                                                        .dropdown_menu_btn_area {
+                                                            margin: 10px;
+                                
+                                                            .dropdown_menu_btn {
+                                                                background-color: $SR_green;
+                                                                color: $white;
+                                                                margin: 0 0 0 auto;
+                                                                display: block;
+                                
+                                                                &:hover {
+                                                                    background-color: darken($SR_green, 5%);
+                                                                }
+                                                            }
+                                                        }
+
+                                                        &.open {
+                                                                display: block;
+                                                        }
+                                                    }
+                                                }
+                                
+                                                &.select_group {
+                                                    width: 20%;
+                                                    background-color: $SR_green;
+                                
+                                                    .btn {
+                                                        display: block;
+                                                        margin: 0 auto;
+                                                        color: $white;
+                                                    }
+                                
+                                                    .dropdown-menu {
+                                                        margin: 0;
+                                                        border: 1px solid $SR_green;
+                                                        border-radius: 0;
+                                                        right: 0;
+                                                        left: auto;
+                        
+                                
+                                                        .select_group_item {
+                                                            padding: 0 5%;
+                                                            cursor: pointer;
+                                
+                                                            &:hover {
+                                                                background-color: $SR_green;
+                                                                color: $white;
+                                                            }
+                                                        }
+                                
+                                                    }
+                                
+                                                    &:hover {
+                                                        background-color: darken($SR_green, 5%);
+                                
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .storytelling_manage__table {
                                 min-width: 1330px;
-                                thead{
-                                    tr{
-                                        th{
+
+                                thead {
+                                    tr {
+                                        th {
+
                                             &.th_eight,
-                                            &.th_nine{
-                                                i{
+                                            &.th_nine {
+                                                i {
                                                     color: $SR_green;
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                tbody{
-                                    tr{
-                                        td{
+
+                                tbody {
+                                    tr {
+                                        td {
                                             white-space: nowrap;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             vertical-align: baseline;
 
-                                            &.td_ten{
-                                                a{
+                                            &.td_ten {
+                                                a {
                                                     display: inline-block;
                                                     padding: 5px 15px;
                                                     color: $SR_green;
                                                     border: 1px solid $SR_green;
                                                     border-radius: 5px;
 
-                                                    &:hover{
+                                                    &:hover {
                                                         background-color: $SR_green;
                                                         color: $white;
                                                     }
@@ -167,129 +407,140 @@ main {
                                         }
                                     }
                                 }
-                                            .th_one,
-                                            .td_one{
-                                                width: 5%;
-                                            }
-                                            .th_two,
-                                            .td_two{
-                                                width: 8%;
-                                            }
-                                            .th_three,
-                                            .td_three{
-                                                width: 8%;
-                                            }
-                                            .th_four,
-                                            .td_four{
-                                                width: 5%;
-                                            }
-                                            .th_five,
-                                            .td_five{
-                                                width: 10%;
-                                            }
-                                            .th_six,
-                                            .td_six{
-                                                width: 8%;
-                                            }
-                                            .th_seven,
-                                            .td_seven{
-                                                width: 5%;
-                                            }
-                                            .th_eight,
-                                            .td_eight{
-                                                width: 7%;
-                                            }
-                                            .th_nine,
-                                            .td_nine{
-                                                width: 7%;
-                                            }
-                                            .th_ten,
-                                            .td_ten{
-                                                width: 7%;
-                                            }
-                                            .th_eleven,
-                                            .td_eleven{
-                                                width: 7%;
-                                            }
+
+                                .th_one,
+                                .td_one {
+                                    width: 5%;
+                                }
+
+                                .th_two,
+                                .td_two {
+                                    width: 8%;
+                                }
+
+                                .th_three,
+                                .td_three {
+                                    width: 8%;
+                                }
+
+                                .th_four,
+                                .td_four {
+                                    width: 5%;
+                                }
+
+                                .th_five,
+                                .td_five {
+                                    width: 10%;
+                                }
+
+                                .th_six,
+                                .td_six {
+                                    width: 8%;
+                                }
+
+                                .th_seven,
+                                .td_seven {
+                                    width: 5%;
+                                }
+
+                                .th_eight,
+                                .td_eight {
+                                    width: 7%;
+                                }
+
+                                .th_nine,
+                                .td_nine {
+                                    width: 7%;
+                                }
+
+                                .th_ten,
+                                .td_ten {
+                                    width: 7%;
+                                }
+
+                                .th_eleven,
+                                .td_eleven {
+                                    width: 7%;
+                                }
                             }
 
                             .storytelling-footer {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-direction: column;
-              text-align: center;
-              padding: 30px 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                                text-align: center;
+                                padding: 30px 0;
 
-              .dataTables_paginate,
-              .dataTables_info,
-              .add_dataTables_input {
-                margin: 10px;
-              }
+                                .dataTables_paginate,
+                                .dataTables_info,
+                                .add_dataTables_input {
+                                    margin: 10px;
+                                }
 
-              .dataTables_paginate {
-                min-width: 1.5em;
-                padding: 0.45em 0.85em;
-                margin: 4px 2px;
-                border-radius: 0;
-                color: #2e3233 !important;
-                text-decoration: none !important;
+                                .dataTables_paginate {
+                                    min-width: 1.5em;
+                                    padding: 0.45em 0.85em;
+                                    margin: 4px 2px;
+                                    border-radius: 0;
+                                    color: #2e3233 !important;
+                                    text-decoration: none !important;
 
-                .paginate_button {
-                  &.disabled {
+                                    .paginate_button {
+                                        &.disabled {
 
-                    &:hover,
-                    &:focus,
-                    &:active {
-                      background-color: #f9f9f9;
-                      border: 1px solid #c6c6c6;
-                      color: #7c8284 !important;
-                      box-shadow: none !important;
-                      cursor: default;
-                    }
-                  }
+                                            &:hover,
+                                            &:focus,
+                                            &:active {
+                                                background-color: #f9f9f9;
+                                                border: 1px solid #c6c6c6;
+                                                color: #7c8284 !important;
+                                                box-shadow: none !important;
+                                                cursor: default;
+                                            }
+                                        }
 
-                  &.current {
+                                        &.current {
 
-                    &:hover,
-                    &:focus,
-                    &:active {
-                      color: #ff0000 !important;
-                      font-weight: 500;
-                      border: 1px solid transparent;
-                      background: none;
-                      box-shadow: none;
-                      cursor: default;
-                    }
-                  }
-                }
-              }
+                                            &:hover,
+                                            &:focus,
+                                            &:active {
+                                                color: #ff0000 !important;
+                                                font-weight: 500;
+                                                border: 1px solid transparent;
+                                                background: none;
+                                                box-shadow: none;
+                                                cursor: default;
+                                            }
+                                        }
+                                    }
+                                }
 
-              .dataTables_info {
-                .footer-hide {
-                  display: none;
-                }
-              }
+                                .dataTables_info {
+                                    .footer-hide {
+                                        display: none;
+                                    }
+                                }
 
-              .add_dataTables_input {
-                .paginate_input {
-                  border-radius: 0;
-                  width: 48px;
-                  padding: 10px;
-                }
+                                .add_dataTables_input {
+                                    .paginate_input {
+                                        border-radius: 0;
+                                        width: 48px;
+                                        padding: 10px;
+                                    }
 
-                .paginate_button {
-                  margin-left: 35px;
-                  background-color: #f1f1f1;
-                  border: 1px solid #c6c6c6;
-                  color: #2e3233;
-                  padding: 11px 18px;
-                  margin-top: -5px;
-                }
-              }
-            }
+                                    .paginate_button {
+                                        margin-left: 35px;
+                                        background-color: #f1f1f1;
+                                        border: 1px solid #c6c6c6;
+                                        color: #2e3233;
+                                        padding: 11px 18px;
+                                        margin-top: -5px;
+                                    }
+                                }
+                            }
                         }
-                        
+
                     }
                 }
             }
@@ -359,64 +610,69 @@ main {
             opacity: 0;
         }
     }
+
+    
+    
 }
 
 .storytelling_manage_video_modal {
 
-  .modal-dialog {
-    .modal-content {
-      .modal-body {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
 
-        .storytelling_video_body {
+                .storytelling_video_body {
 
-          .container-fluid {
-            .storytelling_video_body_content {
+                    .container-fluid {
+                        .storytelling_video_body_content {
 
-              .feedback_area {
+                            .feedback_area {
 
-                .feedback_title {
-                  background-color: #d5e7d5;
-                }
+                                .feedback_title {
+                                    background-color: #d5e7d5;
+                                }
 
-                .feedback_item_area {
+                                .feedback_item_area {
 
-                  .feedback_item {
+                                    .feedback_item {
 
-                    &.feedback_item_btn {
+                                        &.feedback_item_btn {
 
-                      .feedback_item_btn_thumbs,
-                      .feedback_item_btn_comment {
-                      color: $SR_green;
-                        p {
-                          color: $SR_green;
+                                            .feedback_item_btn_thumbs,
+                                            .feedback_item_btn_comment {
+                                                color: $SR_green;
+
+                                                p {
+                                                    color: $SR_green;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .comment_area {
+                                    border-top: 1px solid $SR_green;
+
+                                    .comment_item {
+
+                                        &.comment_item_btn {
+
+                                            .comment_item_btn_thumbs,
+                                            .comment_item_btn_comment {
+                                                p {
+                                                    color: $SR_green;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
-                      }
                     }
-                  }
                 }
-
-                .comment_area {
-                  border-top: 1px solid $SR_green;
-
-                  .comment_item {
-
-                    &.comment_item_btn {
-                      .comment_item_btn_thumbs,
-                      .comment_item_btn_comment {
-                        p {
-                          color: $SR_green;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
             }
-          }
         }
-      }
     }
-  }
 }
 
 @media screen and (min-width: 499px) {
@@ -458,9 +714,92 @@ main {
 }
 
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    main {
+        &.storytelling_manage {
+    
+            .join-all {
+    
+                .order-wrap {
+                    .order-page {
+    
+                        .order-body {
+                            .storytelling_manage__table_area {
+    
+                                .storytelling_search_area {
+                                    .storytelling_search {
+    
+                                        tbody {
+                                            tr {
+                                                td {    
+                                                    &.storytelling_search_text {
+                                                        width: 95px;
+                                                    }
+    
+                                                    &.storytelling_search_input {
+                                                        width: calc(45% - 95px / 2);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-@media screen and (min-width: 992px) {}
+@media screen and (min-width: 992px) {
+    main {
+        &.storytelling_manage {
+    
+            .join-all {
+    
+                .order-wrap {
+                    .order-page {
+    
+                        .order-body {
+                            .storytelling_manage__table_area {
+    
+                                .storytelling_search_area {
+                                    .storytelling_search {
+    
+                                        tbody {
+                                            tr {
+                                                td {    
+                                                    &.storytelling_search_text {
+                                                        width: 95px;
+                                                    }
+    
+                                                    &.storytelling_search_input {
+                                                        width: calc(45% - 95px / 2);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .storytelling-search_left_area{
+                                        display: flex;
+                                        .storytelling-search_left_input {
+                                            width: 45%;
+                                        }
+                                    }
+                                }
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 1200px) {
     main {
@@ -567,6 +906,46 @@ main {
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    main {
+        &.storytelling_manage {
+    
+            .join-all {
+    
+                .order-wrap {
+                    .order-page {
+    
+                        .order-body {
+                            .storytelling_manage__table_area {
+    
+                                .storytelling_search_area {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    .storytelling_search {
+                                        width: 450px;
+                                        margin: 0;
+                                    }
+
+                                    .storytelling-search_left_area{
+                                        width: calc(100% - 450px);
+
+                                        .storytelling-search_left_input{
+                                            width: 50%;
+                                            margin: 20px 0;
+                                        }
+                                    }
+                                }
+                            }
+    
                         }
                     }
                 }
