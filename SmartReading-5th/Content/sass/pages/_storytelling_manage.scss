@@ -1,3 +1,47 @@
+header{
+    .manage-nav{
+        .container-fluid{
+            padding: 15px 10px;
+            .manage-nav-content{
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-direction: column;
+                .navbar-header{
+                    display: flex;
+                    align-items: center;
+                    .navbar-brand{
+                        height: auto;
+                        width: 80px;
+                        padding: 0 15px 0 0;
+                        margin: 0 15px 0 0;
+                        border-right: 1px solid $default-gray;
+                    }
+                    .head_arrow{
+                        margin: 0 5px;
+                    }
+                }
+
+                .navbar-collapse{
+                    display: block;
+                    width: 100%;
+                    padding: 0;
+                    margin: 10px 0;
+                    .navbar-nav{
+                        display: flex;
+                        justify-content: flex-end;
+                        .navTab-name{
+                            i{
+                                color: $SR_green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 main {
     &.storytelling_manage {
         background-color: $white;
@@ -552,7 +596,7 @@ main {
         position: relative;
         border: none;
         height: 30px;
-        width: 65px;
+        width: 80px;
         border-radius: 2.5rem;
 
         .handle {
@@ -599,18 +643,15 @@ main {
 
         &::before {
             content: 'Off';
-            right: 5%;
+            right: 10%;
         }
 
         &::after {
             content: 'On';
-            left: 5%;
+            left: 10%;
             opacity: 0;
         }
     }
-
-    
-    
 }
 
 .storytelling_manage_video_modal {
@@ -674,7 +715,6 @@ main {
 }
 
 @media screen and (min-width: 499px) {
-
     main {
         &.storytelling_manage {
 
@@ -711,7 +751,42 @@ main {
     }
 }
 
+@media screen and (min-width: 576px)  {
+    header{
+        .manage-nav{
+            .container-fluid{
+                .manage-nav-content{
+                    align-items: center;
+                    flex-direction: row;
+                    .navbar-header{
+                        .navbar-brand{
+                            width: 120px;
+                        }
+                    }
+    
+                    .navbar-collapse{
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }    
+}
+
 @media screen and (min-width: 768px) {
+    header{
+        .manage-nav{
+            .container-fluid{
+                .manage-nav-content{
+                    .navbar-header{
+                        .navbar-brand{
+                            width: 155px;
+                        }
+                    }
+                }
+            }
+        }
+    } 
     main {
         &.storytelling_manage {
     
@@ -799,6 +874,13 @@ main {
 }
 
 @media screen and (min-width: 1200px) {
+    header{
+        .manage-nav{
+            .container-fluid{
+                padding: 30px 100px 30px 50px;
+            }
+        }
+    } 
     main {
         &.storytelling_manage {
             background-color: $white;
