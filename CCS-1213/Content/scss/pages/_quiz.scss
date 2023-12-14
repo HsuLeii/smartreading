@@ -85,12 +85,12 @@ main {
 
         .quiz_area_body {
             width: 80%;
-            margin: 10px auto;
+            margin: 0 auto 10px;
 
             .word_area {
                 display: flex;
                 justify-content: center;
-                margin: 0 auto 20px;
+                margin: 20px auto 0;
 
                 .word_writing {
                     font-size: 75px;
@@ -106,6 +106,7 @@ main {
         }
 
         .quiz_area_footer {
+            position: relative;
             padding: 15px 5%;
             background-color: $white;
             border: 1px solid $bright_green;
@@ -114,11 +115,41 @@ main {
 
             .mic_frog_area {
                 position: absolute;
-                width: 80px;
                 top: 0;
-                right: 0;
-                transform: translate(-50%, -100%);
-                display: none;
+                right: 5%;
+                transform: translate(0%, -100%);
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                .mic_frog_text{
+                    width: 65%;
+                    position: relative;
+                    transform: translate(0px, -10px);
+                    padding: 10px 20px;
+                    background-color: #fff;
+                    border: 1px solid #7cb027;
+                    border-radius: 20px;
+                    margin: 0 10px 0 0;
+
+                    &::before{
+                        content: "";
+    position: absolute;
+    border-width: 10px 0px 10px 10px;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #7cb027;;
+    border-top: 10px solid transparent;
+                    }
+                }
+
+    .mic_frog_img{
+        width: calc((100% - (75px * 1.7 + 2px)) / 3);
+        max-width: 80px;
+    }
             }
 
             .quiz_btn_area {
@@ -172,6 +203,15 @@ main {
                             i {
                                 font-size: 16px;
                                 line-height: 1.7;
+                            }
+
+                            &:hover{
+                                background-color: $bright_green;
+                                color: $white;
+                            }
+
+                            &:active{
+                                background-color: darken($main_color, 20%);
                             }
     
                             &.play_answer {
@@ -327,10 +367,10 @@ main {
     main {
         .quiz_area {
             .quiz_area_body {
-                margin: 25px auto;
+                margin: 0 auto 25px;
 
                 .word_area {
-                    margin: 0 auto 25px;
+                    margin: 25px auto 0;
 
                     .word_writing {
                         font-size: 120px;
@@ -537,9 +577,9 @@ main {
                 position: relative;
 
                 .mic_frog_area {
-                    display: block;
-                    transform: translate(-80px, -100%);
-                    width: 140px;
+                    .mic_frog_img{
+                        max-width: 140px;
+                    }
                 }
 
                 .quiz_btn_area {
