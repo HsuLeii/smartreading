@@ -72,7 +72,8 @@
 
             <div class="quiz_area_footer">
                 <div class="mic_frog_area">
-                    <div class="mic_frog_text">
+                    <!-- 使用者十秒尚未作答，顯示對話框且撥放提示語 -->
+                    <div class="mic_frog_text" style="display: none;">
                         <p>oh oh！你還沒選擇答案唷！ </p>
                     </div>
                     <div class="mic_frog_img">
@@ -93,7 +94,7 @@
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
                             </button>
-                            <button class="quiz_answer_text">
+                            <button class="quiz_answer_text" disabled>
                                 <p><i class="fa-solid fa-check"></i> 發音1</p>
                             </button>
                         </div>
@@ -103,7 +104,7 @@
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
                             </button>
-                            <button class="quiz_answer_text">
+                            <button class="quiz_answer_text" disabled>
                                 <p><i class="fa-solid fa-check"></i> 發音2</p>
                             </button>
                         </div>
@@ -113,7 +114,7 @@
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
                             </button>
-                            <button class="quiz_answer_text">
+                            <button class="quiz_answer_text" disabled>
                                 <p><i class="fa-solid fa-check"></i> 發音3</p>
                             </button>
                         </div>
@@ -123,7 +124,7 @@
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
                             </button>
-                            <button class="quiz_answer_text">
+                            <button class="quiz_answer_text" disabled>
                                 <p><i class="fa-solid fa-check"></i> 發音4</p>
                             </button>
                         </div>
@@ -202,6 +203,7 @@
             setTimeout(function () {
                 $(".quiz_answer_btn").attr("disabled", false);
                 $(".quiz_answer_btn").removeClass("play_answer");
+                $(".quiz_answer_text").attr("disabled", false);
             }, 4500);
         });
     </script>

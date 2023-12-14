@@ -71,7 +71,7 @@ main {
                                     transform: translate(0%, -50%);
                                     background-size: 100% 100%;
                                     background-repeat: no-repeat;
-                                    animation: volume 1s infinite;
+                                    animation: volume 1.5s infinite;
                                     background-image: url(../image/svg/volume-high-solid-1.svg);
                                 }
                             }
@@ -93,6 +93,7 @@ main {
                 margin: 20px auto 0;
 
                 .word_writing {
+                    font-family: DFKai-SB, BiauKai, myWebFont;
                     font-size: 75px;
                     font-weight: 400;
                     color: darken($main_color, 20%);
@@ -121,14 +122,15 @@ main {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
+                width: 100%;
 
                 .mic_frog_text {
                     width: 65%;
                     position: relative;
                     transform: translate(0px, -10px);
                     padding: 10px 20px;
-                    background-color: #fff;
-                    border: 1px solid #7cb027;
+                    background-color: $white;
+                    border: 1px solid $bright_green;
                     border-radius: 20px;
                     margin: 0 10px 0 0;
 
@@ -141,7 +143,7 @@ main {
                         transform: translate(100%, -50%);
                         border-right: 10px solid transparent;
                         border-bottom: 10px solid transparent;
-                        border-left: 10px solid #7cb027;
+                        border-left: 10px solid $bright_green;
                         ;
                         border-top: 10px solid transparent;
                     }
@@ -319,6 +321,8 @@ main {
                     background-color: $bright_green;
                     margin: 15px auto;
                     color: $white;
+                    transform: scale(1);
+                    animation: next_question 2s infinite ease-in-out;
 
                     .next_question_btn_icon {
                         margin: 0 10px;
@@ -331,6 +335,11 @@ main {
                     &:hover {
                         transform: scale(1.05);
                         background-color: darken($bright_green, 5%);
+                    }
+
+                    &:disabled{
+                        transform: scale(1);
+                        animation: none;
                     }
                 }
             }
@@ -365,6 +374,18 @@ main {
 
     100% {
         background-image: url(../image/svg/volume-high-solid-3.svg);
+    }
+}
+
+@keyframes next_question {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -448,7 +469,8 @@ main {
 
                 .mic_frog_area {
                     .mic_frog_text {
-                        width: 75%;
+                        width: 56%;
+                        max-width: 270px;
                     }
                 }
 
@@ -469,6 +491,7 @@ main {
 
                             &.answer_check {
                                 .quiz_answer_text {
+                                    outline: solid calc(1em * 5 / 16) $bright_green;
                                     transform: scale(1.18);
                                 }
                             }
@@ -519,7 +542,7 @@ main {
 
                 .mic_frog_area {
                     .mic_frog_text {
-                        width: 80%;
+                        max-width: 320px;
                     }
                 }
 
