@@ -54,10 +54,6 @@
             </div>
 
             <div class="quiz_area_body">
-                
-                <div class="word_area">
-                    <p id="word" class="word_writing">矗</p>
-                </div>
 
                 <div class="progress_area">
                     <div class="progress">
@@ -66,51 +62,86 @@
                     </div>
                     <p class="progress_value">60/100</p>
                 </div>
+                
+                <div class="word_area">
+                    <p id="word" class="word_writing">矗</p>
+                </div>
+
+                
             </div>
 
             <div class="quiz_area_footer">
-                <div class="mic_frog_area">
+                <!-- <div class="mic_frog_area">
+                    <div class="mic_frog_text" style="display: none;">
+                        <p>oh oh！你還沒選擇答案唷！ </p>
+                    </div>
                     <div class="mic_frog_img">
                         <img src="../Content/image/photo/frog/mic.png" alt="">
                     </div>
-                </div>
+                    
+                </div> -->
+                
 
                 <div class="quiz_btn_area">
                     <div class="quiz_btn_text">
                         <p>請選擇：</p>
                     </div>
                     <div id="optionSet" class="quiz_answer_area">
-                        <button id="option1" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
-                            <div class="quiz_answer_btn_icon">
-                                <i class="fa-solid fa-volume-high"></i>
+                        <div class="quiz_answer_item quiz_answer_item_one">
+                            <button class="quiz_answer_radio" disabled>
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                            <div class="quiz_answer_num">
+                                <p>發音1.</p>
                             </div>
-                            <p>發音 1</p>
-                        </button>
-                        <button id="option2" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
-                            <div class="quiz_answer_btn_icon">
+                            <button id="option1" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
+                                class="button quiz_answer_btn play_answer">
                                 <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                            
+                        </div>
+
+                        <div class="quiz_answer_item quiz_answer_item_two">
+                            <button class="quiz_answer_radio" disabled>
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                            <div class="quiz_answer_num">
+                                <p>發音2.</p>
                             </div>
-                            <p>發音 2</p>
-                        </button>
-                        <button id="option3" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
-                            <div class="quiz_answer_btn_icon">
+                            <button id="option2" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
+                                class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+
+                        <div class="quiz_answer_item quiz_answer_item_three">
+                            <button class="quiz_answer_radio" disabled>
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                            <div class="quiz_answer_num">
+                                <p>發音3.</p>
                             </div>
-                            <p>發音 3</p>
-                        </button>
-                        <button id="option4" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                            class="button quiz_answer_btn">
-                            <div class="quiz_answer_btn_icon">
+                            <button id="option3" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
+                                class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+
+                        <div class="quiz_answer_item quiz_answer_item_four">
+                            <button class="quiz_answer_radio" disabled>
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                            <div class="quiz_answer_num">
+                                <p>發音4.</p>
                             </div>
-                            <p>發音 4</p>
-                        </button>
+                            <button id="option4" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
+                                class="button quiz_answer_btn">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
                     </div>
-    
-                    <button id="next" type="button" onclick="location.href='end.html'" class="button next_question_btn">
+
+                    <button id="next" type="button" onclick="location.href='end.html'" disabled class="button next_question_btn">
                         <p>下一題</p>
                         <div class="next_question_btn_icon">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -118,7 +149,7 @@
                     </button>
                 </div>
 
-                
+
             </div>
 
         </div>
@@ -138,38 +169,55 @@
     </script>
 
     <script>
+        $(".quiz_answer_radio").click(function () {
+            $(".quiz_answer_item").removeClass("answer_check");
+            $(this).parents(".quiz_answer_item").addClass("answer_check");
+            $(".next_question_btn").removeAttr("disabled");
+        });
+
         $(".quiz_answer_btn").click(function () {
-            $(this).siblings().removeClass("answer_check");
-            $(this).addClass("answer_check");
-            $(this).find("i").addClass("fa-regular fa-circle-check");
-            $(this).find("i").removeClass("fa-solid fa-volume-high");
-            $(this).siblings().find("i").addClass("fa-solid fa-volume-high");
-            $(".next_question_btn").addClass("show");
+            $(".quiz_answer_btn").attr("disabled", true);
+            $(this).attr("disabled", false);
+            $(this).addClass("play_answer");
+            setTimeout(function () {
+                $(".quiz_answer_btn").attr("disabled", false);
+                $(".quiz_answer_btn").removeClass("play_answer");
+            }, 1500);
         });
     </script>
 
-    <script> 
-      $(document).ready(function () { 
-        setTimeout(function () { 
-            $(".quiz_answer_btn:nth-child(1)").addClass("play_answer"); 
-          }, 500); 
-          setTimeout(function () { 
-            $(".quiz_answer_btn:nth-child(1)").removeClass("play_answer"); 
-            $(".quiz_answer_btn:nth-child(2)").addClass("play_answer");
-          }, 1500); 
-          setTimeout(function () { 
-            $(".quiz_answer_btn:nth-child(2)").removeClass("play_answer"); 
-            $(".quiz_answer_btn:nth-child(3)").addClass("play_answer"); 
-          }, 2500); 
-          setTimeout(function () { 
-            $(".quiz_answer_btn:nth-child(3)").removeClass("play_answer"); 
-            $(".quiz_answer_btn:nth-child(4)").addClass("play_answer"); 
-          }, 3500); 
-          setTimeout(function () { 
-            $(".quiz_answer_btn:nth-child(4)").removeClass("play_answer");
-          }, 4500); 
-      }); 
-    </script> 
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".quiz_answer_btn").attr("disabled", true);
+                $(".quiz_answer_item_one > .quiz_answer_btn").attr("disabled", false);
+                $(".quiz_answer_item_one > .quiz_answer_btn").addClass("play_answer");
+            }, 500);
+            setTimeout(function () {
+                $(".quiz_answer_btn").attr("disabled", true);
+                $(".quiz_answer_item_two > .quiz_answer_btn").attr("disabled", false);
+                $(".quiz_answer_item_one > .quiz_answer_btn").removeClass("play_answer");
+                $(".quiz_answer_item_two > .quiz_answer_btn").addClass("play_answer");
+            }, 1500);
+            setTimeout(function () {
+                $(".quiz_answer_btn").attr("disabled", true);
+                $(".quiz_answer_item_three > .quiz_answer_btn").attr("disabled", false);
+                $(".quiz_answer_item_two > .quiz_answer_btn").removeClass("play_answer");
+                $(".quiz_answer_item_three > .quiz_answer_btn").addClass("play_answer");
+            }, 2500);
+            setTimeout(function () {
+                $(".quiz_answer_btn").attr("disabled", true);
+                $(".quiz_answer_item_four > .quiz_answer_btn").attr("disabled", false);
+                $(".quiz_answer_item_three > .quiz_answer_btn").removeClass("play_answer");
+                $(".quiz_answer_item_four > .quiz_answer_btn").addClass("play_answer");
+            }, 3500);
+            setTimeout(function () {
+                $(".quiz_answer_btn").attr("disabled", false);
+                $(".quiz_answer_btn").removeClass("play_answer");
+                $(".quiz_answer_radio").attr("disabled", false);
+            }, 4500);
+        });
+    </script>
 
 </body>
 
