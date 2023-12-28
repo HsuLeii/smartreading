@@ -33,6 +33,18 @@
 <body>
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="select_page.html">
+                    <img src="../Content/image/logo/logo.png" alt="SmartReading" class="logo_frog">
+                    <img src="../Content/image/logo/traditional_logo.svg" alt="漢字詞系列" class="logo_text">
+                </a>
+
+                <span class="navbar-text user-info quiz-user-info">
+                    <i class="fa-solid fa-circle-user"></i> NTNU
+                </span>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -49,11 +61,15 @@
                     <div class="voice_btn_icon">
                         <i class="fa-solid fa-volume-high"></i>
                     </div>
-                    <p class="voice_text">請問下面這個字的唸法，哪一個是正確的？</p>
+                    <p class="voice_text">How to read the Chinese character below?</p>
                 </button>
             </div>
 
             <div class="quiz_area_body">
+
+                <div class="word_area">
+                    <p id="word" class="word_writing">矗</p>
+                </div>
 
                 <div class="progress_area">
                     <div class="progress">
@@ -61,10 +77,6 @@
                             aria-valuemax="100" style="width:33.33333333333333%" class="progress_bar"></div>
                     </div>
                     <p class="progress_value">60/100</p>
-                </div>
-                
-                <div class="word_area">
-                    <p id="word" class="word_writing">矗</p>
                 </div>
 
                 
@@ -88,12 +100,11 @@
                     </div>
                     <div id="optionSet" class="quiz_answer_area">
                         <div class="quiz_answer_item quiz_answer_item_one">
-                            <button class="quiz_answer_radio" disabled>
+                            <input type="radio" class="quiz_answer_radio" id="Speech_1" name="drone" value="Speech_1" disabled>
+                            <label class="quiz_answer_label" for="Speech_1">Speech 1</label>
+                            <!-- <button class="quiz_answer_radio" disabled>
                                 <i class="fa-solid fa-check"></i>
-                            </button>
-                            <div class="quiz_answer_num">
-                                <p>發音1.</p>
-                            </div>
+                            </button> -->
                             <button id="option1" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
                                 class="button quiz_answer_btn play_answer">
                                 <i class="fa-solid fa-volume-high"></i>
@@ -102,12 +113,14 @@
                         </div>
 
                         <div class="quiz_answer_item quiz_answer_item_two">
-                            <button class="quiz_answer_radio" disabled>
+                            <input type="radio" class="quiz_answer_radio" id="Speech_2" name="drone" value="Speech_2" disabled>
+                            <label class="quiz_answer_label" for="Speech_2">Speech 2</label>
+                            <!-- <button class="quiz_answer_radio" disabled>
                                 <i class="fa-solid fa-check"></i>
                             </button>
                             <div class="quiz_answer_num">
-                                <p>發音2.</p>
-                            </div>
+                                <p>Speech 2</p>
+                            </div> -->
                             <button id="option2" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
@@ -115,12 +128,14 @@
                         </div>
 
                         <div class="quiz_answer_item quiz_answer_item_three">
-                            <button class="quiz_answer_radio" disabled>
+                            <input type="radio" class="quiz_answer_radio" id="Speech_3" name="drone" value="Speech_3"  disabled>
+                            <label class="quiz_answer_label" for="Speech_3">Speech 3</label>
+                            <!-- <button class="quiz_answer_radio" disabled>
                                 <i class="fa-solid fa-check"></i>
                             </button>
                             <div class="quiz_answer_num">
-                                <p>發音3.</p>
-                            </div>
+                                <p>Speech 3</p>
+                            </div> -->
                             <button id="option3" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
@@ -128,12 +143,14 @@
                         </div>
 
                         <div class="quiz_answer_item quiz_answer_item_four">
-                            <button class="quiz_answer_radio" disabled>
+                            <input type="radio" class="quiz_answer_radio" id="Speech_4" name="drone" value="Speech_4" disabled>
+                            <label class="quiz_answer_label" for="Speech_4">Speech 4</label>
+                            <!-- <button class="quiz_answer_radio" disabled>
                                 <i class="fa-solid fa-check"></i>
                             </button>
                             <div class="quiz_answer_num">
-                                <p>發音4.</p>
-                            </div>
+                                <p>Speech 4</p>
+                            </div> -->
                             <button id="option4" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
                                 class="button quiz_answer_btn">
                                 <i class="fa-solid fa-volume-high"></i>
@@ -163,17 +180,6 @@
     <!-- this page widgets JS -->
 
     <script>
-        $(document).ready(function () {
-            $("header").load("header.html", function () {});
-        });
-    </script>
-
-    <script>
-        $(".quiz_answer_radio").click(function () {
-            $(".quiz_answer_item").removeClass("answer_check");
-            $(this).parents(".quiz_answer_item").addClass("answer_check");
-            $(".next_question_btn").removeAttr("disabled");
-        });
 
         $(".quiz_answer_btn").click(function () {
             $(".quiz_answer_btn").attr("disabled", true);
@@ -215,6 +221,7 @@
                 $(".quiz_answer_btn").attr("disabled", false);
                 $(".quiz_answer_btn").removeClass("play_answer");
                 $(".quiz_answer_radio").attr("disabled", false);
+                $(".next_question_btn").removeAttr("disabled");
             }, 4500);
         });
     </script>

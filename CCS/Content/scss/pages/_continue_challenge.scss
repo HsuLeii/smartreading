@@ -44,6 +44,7 @@ main {
                                             z-index: 1;
                                             border-top: 1px solid;
                                             border-left: 1px solid;
+                                            max-width: none;
 
                                             &.progress_area{
                                                 justify-content: space-between;
@@ -156,7 +157,7 @@ main {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
     main {
 
         .test_area {
@@ -172,15 +173,19 @@ main {
         
                                 .score_report_header_text {
                                     &.score_report_header_name{
-                                        width: calc(30% - 66.5px/3);
+                                        width: calc(25% - 66.5px / 4);
+                                    }
+
+                                    &.score_report_header_model{
+                                        width: calc(25% - 66.5px / 4);
                                     }
     
                                     &.score_report_header_time{
-                                        width: calc(30% - 66.5px/3);
+                                        width: calc(25% - 66.5px / 4);
                                     }
     
                                     &.score_report_header_progress{
-                                        width: calc(40% - 66.5px/3);
+                                        width: calc(25% - 66.5px / 4);
                                         border-top: 0px;
                                     }
                                 }
@@ -202,39 +207,41 @@ main {
                                         }
     
                                         &.score_report_item_text {
-                                            &.score_report_item_name {
-                                                width: calc(30% - 66.5px/3);
-                                            }
+                &.score_report_item_name {
+                    width: calc(25% - 16.625px);
+                }
+
+                &.score_report_item_model {
+                    width: calc(25% - 16.625px);
+                }
         
-                                            &.score_report_item_time {
-                                                width: calc(30% - 66.5px/3);
-                                            }
+                &.score_report_item_time {
+                    width: calc(25% - 16.625px);
+                }
 
                                             &.score_report_item_progress {
-                                                width: calc(40% - 66.5px/3);
+                                                width: calc(25% - 16.625px);
                                                 margin: 0;
                                                 border-top: 0;
                                                 border-left: 0;
+                                                background-color: transparent;
                                             }
                                         }
     
                                     }
 
-                                    &::after {
-                                        left: calc(66.5px + 30% - 66.5px/3);
+                                    &::before {
+                                        width: calc(25% - 15.625px);
                                     }
-    
-                                }
 
-                                &::after{
-                                    content: "";
-                                    position: absolute;
-                                    left: calc(66.5px + 30% - 22.2px + 30% - 22.2px);
-                                    top: 0;
-                                    z-index: 1;
-                                    height: 100%;
-                                    width: 1px;
-                                    background-color: darken($main_color, 15%);
+                                    &::after {
+                                        width: calc(25% - 15.625px);
+                                        left: calc(66.5px + 50% - 16.625px * 2);
+                                        border: 1px solid darken($main_color, 15%);
+                                border-top: 0;
+                                border-bottom: 0;
+                                        background-color: transparent;
+                                    }
                                 }
                             }
                         }
@@ -245,7 +252,5 @@ main {
         }
     }
 }
-
-@media screen and (min-width: 1200px) {}
 
 @media screen and (min-width: 1400px) {}
