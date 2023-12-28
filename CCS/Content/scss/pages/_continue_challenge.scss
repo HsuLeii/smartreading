@@ -13,8 +13,8 @@ main {
 
                                 &.score_report_header_progress{
                                     width: 100%;
-                                    border-left: 1px solid;
-                                    border-top: 1px solid;
+                                    border-left: 1px solid $white;
+                                    border-top: 1px solid $white;
                                 }
                             }
                         }
@@ -24,16 +24,8 @@ main {
                         &.score_report_body {
 
                             .score_report_item {
-                                flex-wrap: wrap;
 
                                 .score_report_item_content {
-                                    &.score_report_item_icon {
-                                        .fa-circle-check {
-                                            position: absolute;
-                                            top: 50%;
-                                            transform: translate(-50%, -50%);
-                                        }
-                                    }
 
                                     &.score_report_item_text {
                                         &.score_report_item_progress {
@@ -42,8 +34,8 @@ main {
                                             margin: 0 0 0 37.5px;
                                             background-color: $white;
                                             z-index: 1;
-                                            border-top: 1px solid;
-                                            border-left: 1px solid;
+                                            border-top: 1px solid darken($main_color, 15%);
+                                            border-left: 1px solid darken($main_color, 15%);
                                             max-width: none;
 
                                             &.progress_area{
@@ -132,7 +124,21 @@ main {
             &.continue_challenge {
                 .score_report_area {
                     .table {
-                        
+                        thead {
+                            .score_report_header {
+    
+                                .score_report_header_text {
+                                    &.score_report_header_time {
+                                        width: 50%;
+                                    }
+    
+                                    &.score_report_header_progress{
+                                        width: 50%;
+                                    }
+                                }
+                            }
+                        }
+
                         tbody {
                             &.score_report_body {
     
@@ -141,8 +147,16 @@ main {
                                     .score_report_item_content {
     
                                         &.score_report_item_text {
+                                            &.score_report_item_time {
+                                                width: calc(50% - 66.5px / 2);
+                                            }
                                             &.score_report_item_progress {
-                                                margin: 0 0 0 66.5px;
+                                                width: calc(50% - 66.5px / 2);
+                                                margin: 0;
+                                                border-top: 0;
+                                                border-left: 0;
+                                                z-index: 0;
+                                                border-top: 1px solid darken($main_color, 15%);
                                             }
                                         }
                                     }
@@ -169,24 +183,21 @@ main {
                         thead {
                             .score_report_header {
                                 padding: 0;
-                                
-        
                                 .score_report_header_text {
-                                    &.score_report_header_name{
-                                        width: calc(25% - 66.5px / 4);
+                                    width: 25%;
+                                    &.score_report_header_name {
+                                        width: calc(20% - 66.5px / 4);
                                     }
-
-                                    &.score_report_header_model{
-                                        width: calc(25% - 66.5px / 4);
+                                    &.score_report_header_model {
+                                        width: calc(30% - 66.5px / 4);
                                     }
-    
-                                    &.score_report_header_time{
+                                    &.score_report_header_time {
                                         width: calc(25% - 66.5px / 4);
                                     }
     
                                     &.score_report_header_progress{
                                         width: calc(25% - 66.5px / 4);
-                                        border-top: 0px;
+                                        border-top: 0;
                                     }
                                 }
                             }
@@ -199,49 +210,37 @@ main {
                                 .score_report_item {
     
                                     .score_report_item_content {
-                                        &.score_report_item_icon {
-                                            .fa-circle-check {
-                                                position: relative;
-                                                transform: translate(0%, 0%);
-                                            }
-                                        }
     
                                         &.score_report_item_text {
-                &.score_report_item_name {
-                    width: calc(25% - 16.625px);
-                }
-
-                &.score_report_item_model {
-                    width: calc(25% - 16.625px);
-                }
-        
-                &.score_report_item_time {
-                    width: calc(25% - 16.625px);
-                }
-
+                                            width: calc(25% - 66.5px / 4);
+                                            &.score_report_item_name {
+                                                width: calc(20% - 66.5px / 4);
+                                            }
+                                            &.score_report_item_model {
+                                                width: calc(30% - 66.5px / 4);
+                                            }
+                                            &.score_report_item_time {
+                                                width: calc(25% - 66.5px / 4);
+                                            }
                                             &.score_report_item_progress {
-                                                width: calc(25% - 16.625px);
-                                                margin: 0;
+                                                width: calc(25% - 66.5px / 4);
                                                 border-top: 0;
-                                                border-left: 0;
-                                                background-color: transparent;
                                             }
                                         }
     
                                     }
 
-                                    &::before {
-                                        width: calc(25% - 15.625px);
-                                    }
+                                &::before{
+                                    width: calc(20% - 66.5px / 4);
+                                }
 
-                                    &::after {
-                                        width: calc(25% - 15.625px);
-                                        left: calc(66.5px + 50% - 16.625px * 2);
-                                        border: 1px solid darken($main_color, 15%);
-                                border-top: 0;
-                                border-bottom: 0;
-                                        background-color: transparent;
-                                    }
+                                &::after{
+                                    width: calc(25% - 66.5px / 4);
+                                    left: calc(66.5px + calc(50% - 66.5px / 4 * 2));
+                                    background-color: transparent;
+                                    border-left: 1px solid darken($main_color, 15%);
+                                    border-right: 1px solid darken($main_color, 15%);
+                                }
                                 }
                             }
                         }
