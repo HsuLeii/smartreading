@@ -25,7 +25,7 @@
 
                 .frog_head_date {
                     p {
-                        font-size: 14px;
+                        font-size: 10px;
                         font-weight: 500;
                         color: darken($main_color, 20%);
                     }
@@ -131,9 +131,11 @@
                             width: 100%;
                             p{
                                 text-align: center;
+                                font-size: 11px;
                             }
 
                             span {
+                                font-size: 11px;
                                 font-weight: 600;
                                 color: $yellow;
                                 text-shadow: 0px 0px 5px darken($main_color, 20%);
@@ -281,8 +283,8 @@
                         margin: 15px auto;
 
                         .percentage_mark {
-                            width: 50%;
-                            margin: 10px 0 10px 30%;
+                            width: 41%;
+                            margin: 10px 0 10px 39%;
                             display: flex;
                             justify-content: space-between;
                             position: relative;
@@ -290,32 +292,29 @@
                             span {
                                 position: absolute;
                                 color: darken($main_color, 15%);
+                                transform: translate(-50%, 0);
 
                                 &.mark_one {
                                     position: relative;
-                                    transform: translate(calc(-50% + calc(20px * 2)), 0);
                                 }
 
                                 &.mark_two {
                                     left: 25%;
-                                    transform: translate(calc(-50% + calc(20px * 1.5)), 0);
                                     display: none;
                                 }
 
                                 &.mark_three {
                                     left: 50%;
-                                    transform: translate(calc(-50% + calc(20px * 1)), 0);
+                                    display: none;
                                 }
 
                                 &.mark_four {
                                     left: 75%;
-                                    transform: translate(calc(-50% + calc(20px * 0.5)), 0);
                                     display: none;
                                 }
 
                                 &.mark_five {
                                     left: 100%;
-                                    transform: translate(calc(-50% + calc(20px * 0)), 0);
                                 }
                             }
                         }
@@ -325,41 +324,37 @@
 
                             .percentage_mark_line {
                                 position: absolute;
-                                width: 50%;
+                                width: 41%;
                                 height: 100%;
-                                margin: 0 0 0 30%;
-                                padding: 0 0 0 20px;
+                                margin: 0 0 0 39%;
 
                                 span {
                                     position: absolute;
                                     height: 100%;
                                     border-right: 1.5px solid rgba($main_color, 0.5);
+                                    transform: translate(-50%, 0);
 
                                     &.line_one {
                                         left: 0%;
-                                        transform: translate(calc(0% + calc(20px * 2)), 0);
                                     }
 
                                     &.line_two {
                                         left: 25%;
-                                        transform: translate(calc(-50% + calc(20px * 1.5)), 0);
                                         display: none;
                                     }
 
                                     &.line_three {
                                         left: 50%;
-                                        transform: translate(calc(-50% + calc(20px * 1)), 0);
+                                        display: none;
                                     }
 
                                     &.line_four {
                                         left: 75%;
-                                        transform: translate(calc(-50% + calc(20px * 0.5)), 0);
                                         display: none;
                                     }
 
                                     &.line_five {
                                         left: 100%;
-                                        transform: translate(calc(-50% + calc(20px * 0)), 0);
                                     }
                                 }
 
@@ -431,6 +426,7 @@
                                     justify-content: flex-end;
 
                                     p {
+                                        font-size: 12px;
                                         color: darken($main_color, 15%);
                                     }
                                 }
@@ -463,7 +459,7 @@
                                 margin: 40px auto 70px;
 
                                 .table_recommend_words {
-                                    width: 70%;
+                                    width: 61%;
                                     padding: 0 0 40px;
                                     border-bottom: 1px solid $main_color;
 
@@ -482,7 +478,7 @@
                                                 padding: 5px;
                                                 margin: 0 5px 10px;
                                                 display: inline-block;
-                                                width: calc(20% - 10px);
+                                                width: calc(33.33333% - 10px);
                                                 text-align: center;
                                             }
                                         }
@@ -663,6 +659,7 @@
                     .paper_phase_left {
                         width: 37%;
                         margin: 0 2% 0 0;
+                        text-align: center;
                     }
 
                     .paper_phase_right {
@@ -736,6 +733,7 @@
                         width: 37%;
                         margin: 0 2% 0 0;
                         border-radius: 5px;
+                        text-align: center;
 
                         p {
                             color: $main_color_grey;
@@ -942,13 +940,317 @@
     }
 }
 
-:root {
-    --progress-width: calc((100% - 20px - 20px) / 100);
+
+@media screen and (min-width: 375px) {
+    .page {
+    
+        .page_content {
+            .report_header {
+    
+                .frog_head_text {
+    
+                    .frog_head_date {
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+    
+            .report_content_area {
+    
+                .report_content {
+    
+                    // 成绩 start
+                    .paper_score {
+    
+                        .paper_score_text {
+    
+                            .paper_score_text_one,
+                            .paper_score_text_two {
+                                p{
+                                    font-size: 16px;
+                                }
+    
+                                span {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+    
+                    // 成绩 end
+    
+                    // 诊断 start
+                    .paper_diagnosis {
+    
+                        .paper_percentage_area {
+    
+                            .percentage_mark {
+                                width: calc(100% - 85px - 2% - 20%);
+                                margin: 10px 0 10px calc(85px + 2%);
+
+                                span{
+                                    &.mark_three{
+                                        display: block;
+                                    }
+                                }
+                            }
+    
+                            .percentage_grade_area {
+    
+                                .percentage_mark_line {
+                                    width: calc(100% - 85px - 2% - 20%);
+                                margin: 0 0 0 calc(85px + 2%);
+    
+                                    span {    
+    
+                                        &.line_three {
+                                            display: block;
+                                        }
+                                    }
+    
+                                }
+
+                                .percentage_grade_item {
+                                    .percentage_progress_bar {
+                                        width: calc(100% - 85px - 2% - 20%);
+                                    }
+                                    .percentage_progress_value {
+                                        p {
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    // 诊断 end
+    
+                    // 推荐 start
+                    .paper_recommend {
+    
+                        .table_recommend {
+    
+                            .table_recommend_tbody {
+                                .percentage_grade_item {
+    
+                                    .table_recommend_words {
+                                        width: calc(100% - 85px - 2%);
+    
+                                        .table_recommend_words_item {
+                                            span {
+                                                mark {
+                                                    width: calc(20% - 10px);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    // 推荐 end
+    
+                    // report_score通用 start
+    
+                    .paper_phase_title {
+    
+                        .paper_phase_left {
+                            width: 85px;
+                        }
+    
+                        .paper_phase_right {
+                            width: calc(100% - 85px - 2%);
+                        }
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .percentage_grade_item {
+    
+                        .percentage_grade_name {
+                            width: 85px;
+                        }
+                    }
+    
+                    // report_score通用 end
+                }
+            }
+    
+            &.page_content_L2 {
+                .report_content_area {
+    
+                    .report_content {
+    
+                        // 成绩 start
+                        .paper_score {
+    
+                            .paper_score_text {
+    
+                                .paper_score_text_one,
+                                .paper_score_text_two {
+                                    p {
+                                        line-height: 1.4;
+                                    }
+    
+                                    span {
+                                        margin: 0;
+                                    }
+                                }
+    
+                                .paper_score_text_one {
+    
+                                    span {
+                                        font-size: 18px;
+                                    }
+                                }
+    
+                                .paper_score_text_two {
+    
+                                    span {
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        }
+    
+                        // 成绩 end
+    
+                        // 量尺 start
+                        .paper_bar {
+                            .table_bar {
+    
+                                tbody {
+                                    tr {
+                                        td {
+    
+                                            &.bar_one {
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 1);
+                                                }
+                                            }
+    
+                                            &.bar_two {
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 2);
+                                                }
+                                            }
+    
+                                            &.bar_three {
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 3);
+                                                }
+                                            }
+    
+                                            &.bar_four {
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 4);
+                                                }
+                                            }
+    
+                                            &.bar_five {
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 5);
+                                                }
+                                            }
+    
+                                            &.bar_six {
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 6);
+                                                }
+                                            }
+    
+                                            &.bar_seven {
+                                                span {
+                                                    background-color: $seventh_grade;
+                                                    border-right: 1.5px solid darken($seventh_grade, 10%);
+                                                }
+    
+                                                .bar_bg {
+                                                    width: calc((100% - 85px - 25px - 5px) / 7 * 7);
+                                                    background-color: $seventh_grade;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        // 量尺 end
+    
+                        // 推荐 start
+                        .paper_recommend {
+    
+                            .table_recommend {
+    
+                                .table_recommend_tbody {
+                                    .percentage_grade_item {
+    
+                                        &.seventh_grade {
+                                            .table_recommend_words {
+                                                .table_recommend_words_item {
+                                                    span {
+                                                        mark {
+                                                            background-color: lighten($seventh_grade, 30%);
+                                                            border: 1px solid $seventh_grade;
+                                                        }
+                                                    }
+                                                }
+    
+                                                .more_btn {
+                                                    background-color: $seventh_grade;
+    
+                                                    &:hover {
+                                                        background-color: darken($seventh_grade, 5%);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        // 推荐 end
+    
+                        // report_score通用 start
+                        .percentage_grade_item {
+    
+                            &.seventh_grade {
+                                .percentage_grade_name {
+                                    background-color: $seventh_grade;
+                                }
+                            }
+                        }
+    
+                        // report_score通用 end
+                    }
+    
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 500px) {
     .page {
         .page_content {
+            .report_header {
+                .frog_head_text {
+                    .frog_head_date {
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
             .report_content_area {
 
                 .report_content {
@@ -975,7 +1277,7 @@
                             .paper_score_text_two {
 
                                 span {
-                                    font-size: 35px;
+                                    font-size: 23px;
                                 }
                             }
                         }
@@ -1069,14 +1371,7 @@
                             .paper_score_text_one {
 
                                 span {
-                                    font-size: 65px;
-                                }
-                            }
-
-                            .paper_score_text_two {
-
-                                span {
-                                    font-size: 45px;
+                                    font-size: 40px;
                                 }
                             }
                         }
@@ -1230,62 +1525,33 @@
                         .paper_percentage_area {
 
                             .percentage_mark {
-                                width: 62%;
-                                margin: 15px 0 15px 23%;
+                                width: calc(100% - 85px - 2% - 50px);
+                                margin: 15px 0 15px calc(85px + 2%);
 
                                 span {
 
-                                    &.mark_one {
-                                        transform: translate(calc(-50% + calc(25px * 2)), 0);
-                                    }
-
                                     &.mark_two {
-                                        transform: translate(calc(-50% + calc(25px * 1.5)), 0);
                                         display: block;
-                                    }
-
-                                    &.mark_three {
-                                        transform: translate(calc(-50% + calc(25px * 1)), 0);
                                     }
 
                                     &.mark_four {
-                                        transform: translate(calc(-50% + calc(25px * 0.5)), 0);
                                         display: block;
-                                    }
-
-                                    &.mark_five {
-                                        transform: translate(calc(-50% + calc(25px * 0)), 0);
                                     }
                                 }
                             }
 
                             .percentage_grade_area {
                                 .percentage_mark_line {
-                                    width: 62%;
-                                    margin: 0 0 0 23%;
+                                    width: calc(100% - 85px - 2% - 50px);
+                                    margin: 0 0 0 calc(85px + 2%);
 
                                     span {
 
-                                        &.line_one {
-                                            transform: translate(calc(0% + calc(25px * 2)), 0);
-                                        }
-
                                         &.line_two {
-                                            transform: translate(calc(-50% + calc(25px * 1.5)), 0);
                                             display: block;
                                         }
-
-                                        &.line_three {
-                                            transform: translate(calc(-50% + calc(25px * 1)), 0);
-                                        }
-
                                         &.line_four {
-                                            transform: translate(calc(-50% + calc(25px * 0.5)), 0);
                                             display: block;
-                                        }
-
-                                        &.line_five {
-                                            transform: translate(calc(-50% + calc(25px * 0)), 0);
                                         }
                                     }
                                 }
@@ -1293,27 +1559,11 @@
                                 .percentage_grade_item {
 
                                     .percentage_progress_bar {
-                                        width: 62%;
-
-                                        .progress_bar_body {
-
-                                            .progress_area {
-
-                                                .progress {
-
-                                                    .progress_foot,
-                                                    .progress_head {
-                                                        width: 25px;
-                                                    }
-
-                                                }
-                                            }
-                                        }
-
+                                        width: calc(100% - 85px - 2% - 50px);
                                     }
 
                                     .percentage_progress_value {
-                                        width: 15%;
+                                        width: 50px;
                                     }
                                 }
                             }
@@ -1335,11 +1585,9 @@
                                     margin: 50px auto 80px;
 
                                     .table_recommend_words {
-                                        width: 77%;
                                         padding: 0 0 50px;
 
                                         .table_recommend_words_item {
-                                            height: 45.19px;
 
                                             span {
                                                 mark {
@@ -1358,22 +1606,12 @@
                     // report_score通用 start
                     .paper_phase_title {
                         margin: 30px auto 0;
-
-                        .paper_phase_left {
-                            width: 21%;
-                        }
-
-                        .paper_phase_right {
-                            width: 77%;
-                        }
                     }
 
                     .percentage_grade_item {
                         margin: 30px auto;
 
                         .percentage_grade_name {
-                            width: 21%;
-
                             p {
                                 padding: 5px 10px;
                             }
@@ -1481,10 +1719,6 @@
             }
         }
     }
-
-    :root {
-        --progress-width: calc((100% - 25px - 25px) / 100);
-    }
 }
 
 @media screen and (min-width: 650px) {
@@ -1585,7 +1819,7 @@
                             .paper_score_text_two {
 
                                 span {
-                                    font-size: 40px;
+                                    font-size: 35px;
                                 }
                             }
                         }
@@ -1661,89 +1895,7 @@
                         .paper_percentage_area {
 
                             .percentage_mark {
-                                width: 64%;
-                                margin: 20px 0 20px 23%;
-
-                                span {
-
-                                    &.mark_one {
-                                        transform: translate(calc(-50% + calc(30px * 2)), 0);
-                                    }
-
-                                    &.mark_two {
-                                        transform: translate(calc(-50% + calc(30px * 1.5)), 0);
-                                    }
-
-                                    &.mark_three {
-                                        transform: translate(calc(-50% + calc(30px * 1)), 0);
-                                    }
-
-                                    &.mark_four {
-                                        transform: translate(calc(-50% + calc(30px * 0.5)), 0);
-                                    }
-
-                                    &.mark_five {
-                                        transform: translate(calc(-50% + calc(30px * 0)), 0);
-                                    }
-                                }
-                            }
-
-                            .percentage_grade_area {
-                                .percentage_mark_line {
-                                    width: 64%;
-                                    margin: 0 0 0 23%;
-                                    padding: 0 0 0 30px;
-
-                                    span {
-
-                                        &.line_one {
-                                            transform: translate(calc(0% + calc(30px * 2)), 0);
-                                        }
-
-                                        &.line_two {
-                                            transform: translate(calc(-50% + calc(30px * 1.5)), 0);
-                                        }
-
-                                        &.line_three {
-                                            transform: translate(calc(-50% + calc(30px * 1)), 0);
-                                        }
-
-                                        &.line_four {
-                                            transform: translate(calc(-50% + calc(30px * 0.5)), 0);
-                                        }
-
-                                        &.line_five {
-                                            transform: translate(calc(-50% + calc(30px * 0)), 0);
-                                        }
-                                    }
-                                }
-
-                                .percentage_grade_item {
-
-                                    .percentage_progress_bar {
-                                        width: 64%;
-
-                                        .progress_bar_body {
-
-                                            .progress_area {
-
-                                                .progress {
-
-                                                    .progress_foot,
-                                                    .progress_head {
-                                                        width: 30px;
-                                                    }
-
-                                                }
-                                            }
-                                        }
-
-                                    }
-
-                                    .percentage_progress_value {
-                                        width: 13%;
-                                    }
-                                }
+                                margin: 20px 0 20px calc(85px + 2%);
                             }
                         }
 
@@ -1780,12 +1932,6 @@
                     // 推荐 end
 
                     // report_score通用 start
-                    .paper_phase_title {
-
-                        p {
-                            font-size: 16px;
-                        }
-                    }
 
                     // report_score通用 end
                 }
@@ -1845,10 +1991,6 @@
                 }
             }
         }
-    }
-
-    :root {
-        --progress-width: (100% - 30px - 30px) / 100;
     }
 }
 
@@ -3196,8 +3338,8 @@
                             margin: 15px auto;
 
                             .percentage_mark {
-                                width: 64%;
-                                margin: 20px 0 20px 23%;
+                                width: calc(100% - 85px - 2% - 20%);
+                                margin: 20px 0 20px calc(85px + 2%);
                                 display: flex;
                                 justify-content: space-between;
                                 position: relative;
@@ -3205,42 +3347,29 @@
                                 span {
                                     position: absolute;
                                     color: darken($main_color, 15%);
+                                    transform: translate(-50%, 0);
 
                                     &.mark_one {
                                         position: relative;
-                                        transform: translate(calc(-50% + 60px), 0);
-                                        // transform: translate(-50%, 0);
-                                        // margin-left: calc(0% + calc(30px * 2));
                                     }
 
                                     &.mark_two {
                                         left: 25%;
-                                        transform: translate(calc(-50% + 45px), 0);
-                                        // transform: translate(-50%, 0);
                                         display: block;
-                                        // margin-left: calc(0% + calc(30px * 1.5));
                                     }
 
                                     &.mark_three {
                                         left: 50%;
-                                        transform: translate(calc(-50% + 30px), 0);
-                                        // transform: translate(-50%, 0);
-                                        // margin-left: calc(0% + calc(30px * 1));
+                                        display: block;
                                     }
 
                                     &.mark_four {
                                         left: 75%;
-                                        transform: translate(calc(-50% + 15px), 0);
-                                        // transform: translate(-50%, 0);
                                         display: block;
-                                        // margin-left: calc(0% + calc(30px * 0.5));
                                     }
 
                                     &.mark_five {
                                         left: 100%;
-                                        transform: translate(-50%, 0);
-                                        // transform: translate(-50%, 0);
-                                        // margin-left: calc(0% + calc(30px * 0));
                                     }
                                 }
                             }
@@ -3251,40 +3380,36 @@
                                 .percentage_mark_line {
                                     position: absolute;
                                     height: 100%;
-                                    width: 64%;
-                                    margin: 0 0 0 23%;
-                                    padding: 0 0 0 30px;
+                                    width: calc(100% - 85px - 2% - 50px);
+                                    margin: 0 0 0 calc(85px + 2%);
 
                                     span {
                                         position: absolute;
                                         height: 100%;
                                         border-right: 1.5px solid rgba($main_color, 0.5);
+                                        transform: translate(-50%, 0);
 
                                         &.line_one {
                                             left: 0%;
-                                            transform: translate(calc(0% + 60px), 0);
                                         }
 
                                         &.line_two {
                                             left: 25%;
-                                            transform: translate(calc(-50% + 45px), 0);
                                             display: block;
                                         }
 
                                         &.line_three {
                                             left: 50%;
-                                            transform: translate(calc(-50% + 30px), 0);
+                                            display: block;
                                         }
 
                                         &.line_four {
                                             left: 75%;
-                                            transform: translate(calc(-50% + 15px), 0);
                                             display: block;
                                         }
 
                                         &.line_five {
                                             left: 100%;
-                                            transform: translate(calc(-50%), 0);
                                         }
                                     }
 
@@ -3293,7 +3418,7 @@
                                 .percentage_grade_item {
 
                                     .percentage_progress_bar {
-                                        width: 64%;
+                                        width: calc(100% - 85px - 2% - 50px);
                                         display: flex;
 
                                         .progress_bar_body {
@@ -3334,7 +3459,7 @@
 
                                                     .progress_foot,
                                                     .progress_head {
-                                                        width: 30px;
+                                                        width: 20px;
                                                         line-height: 1;
 
                                                         img {
@@ -3349,7 +3474,7 @@
                                     }
 
                                     .percentage_progress_value {
-                                        width: 13%;
+                                        width: 50px;
                                         display: flex;
                                         justify-content: flex-end;
 
@@ -3520,15 +3645,15 @@
 
                     .paper_phase_title {
                         display: flex;
-                        margin: 30px auto 20px;
+                        margin: 30px auto 0;
 
                         .paper_phase_left {
-                            width: 21%;
+                            width: 85px;
                             margin: 0 2% 0 0;
                         }
 
                         .paper_phase_right {
-                            width: 77%;
+                            width: calc(100% - 85px - 2%);
                         }
 
                         .paper_phase_left,
@@ -3595,7 +3720,7 @@
                         .percentage_grade_name {
                             display: flex;
                             justify-content: center;
-                            width: 21%;
+                            width: 85px;
                             margin: 0 2% 0 0;
                             border-radius: 5px;
 
@@ -3823,9 +3948,5 @@
                 }
             }
         }
-    }
-
-    :root {
-        --progress-width: calc((100% - 30px - 30px) / 100);
     }
 }
