@@ -1819,8 +1819,10 @@
 }
 
 // @media screen and (min-width: 1024px) {
-
 //     //print
+//     header {
+//         display: none; //print
+//     }
 
 //     .page {
 //         /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
@@ -1965,7 +1967,7 @@
 //                                 width: 100%;
 
 //                                 p {
-//                                     font-size: 25px;
+//                                     font-size: 23px;
 //                                 }
 
 //                                 span {
@@ -1988,7 +1990,7 @@
 //                             .paper_score_text_two {
 
 //                                 span {
-//                                     font-size: 55px;
+//                                     font-size: 35px;
 //                                 }
 //                             }
 //                         }
@@ -2160,14 +2162,14 @@
 //                     // 诊断 start
 //                     .paper_diagnosis {
 //                         margin: 0 auto;
-//                         padding: 40px 0 0;
+//                         padding: 15px 0 0;
 
 //                         .paper_percentage_area {
 //                             margin: 15px auto;
 
 //                             .percentage_mark {
-//                                 width: 64%;
-//                                 margin: 20px 0 20px 23%;
+//                                 width: calc(100% - 85px - 2% - 20%);
+//                                 margin: 20px 0 20px calc(85px + 2%);
 //                                 display: flex;
 //                                 justify-content: space-between;
 //                                 position: relative;
@@ -2175,42 +2177,29 @@
 //                                 span {
 //                                     position: absolute;
 //                                     color: darken($main_color, 15%);
+//                                     transform: translate(-50%, 0);
 
 //                                     &.mark_one {
 //                                         position: relative;
-//                                         transform: translate(calc(-50% + 60px), 0);
-//                                         // transform: translate(-50%, 0);
-//                                         // margin-left: calc(0% + calc(30px * 2));
 //                                     }
 
 //                                     &.mark_two {
 //                                         left: 25%;
-//                                         transform: translate(calc(-50% + 45px), 0);
-//                                         // transform: translate(-50%, 0);
 //                                         display: block;
-//                                         // margin-left: calc(0% + calc(30px * 1.5));
 //                                     }
 
 //                                     &.mark_three {
 //                                         left: 50%;
-//                                         transform: translate(calc(-50% + 30px), 0);
-//                                         // transform: translate(-50%, 0);
-//                                         // margin-left: calc(0% + calc(30px * 1));
+//                                         display: block;
 //                                     }
 
 //                                     &.mark_four {
 //                                         left: 75%;
-//                                         transform: translate(calc(-50% + 15px), 0);
-//                                         // transform: translate(-50%, 0);
 //                                         display: block;
-//                                         // margin-left: calc(0% + calc(30px * 0.5));
 //                                     }
 
 //                                     &.mark_five {
 //                                         left: 100%;
-//                                         transform: translate(-50%, 0);
-//                                         // transform: translate(-50%, 0);
-//                                         // margin-left: calc(0% + calc(30px * 0));
 //                                     }
 //                                 }
 //                             }
@@ -2221,40 +2210,36 @@
 //                                 .percentage_mark_line {
 //                                     position: absolute;
 //                                     height: 100%;
-//                                     width: 64%;
-//                                     margin: 0 0 0 23%;
-//                                     padding: 0 0 0 30px;
+//                                     width: calc(100% - 85px - 2% - 50px);
+//                                     margin: 0 0 0 calc(85px + 2%);
 
 //                                     span {
 //                                         position: absolute;
 //                                         height: 100%;
 //                                         border-right: 1.5px solid rgba($main_color, 0.5);
+//                                         transform: translate(-50%, 0);
 
 //                                         &.line_one {
 //                                             left: 0%;
-//                                             transform: translate(calc(0% + 60px), 0);
 //                                         }
 
 //                                         &.line_two {
 //                                             left: 25%;
-//                                             transform: translate(calc(-50% + 45px), 0);
 //                                             display: block;
 //                                         }
 
 //                                         &.line_three {
 //                                             left: 50%;
-//                                             transform: translate(calc(-50% + 30px), 0);
+//                                             display: block;
 //                                         }
 
 //                                         &.line_four {
 //                                             left: 75%;
-//                                             transform: translate(calc(-50% + 15px), 0);
 //                                             display: block;
 //                                         }
 
 //                                         &.line_five {
 //                                             left: 100%;
-//                                             transform: translate(calc(-50%), 0);
 //                                         }
 //                                     }
 
@@ -2263,7 +2248,7 @@
 //                                 .percentage_grade_item {
 
 //                                     .percentage_progress_bar {
-//                                         width: 64%;
+//                                         width: calc(100% - 85px - 2% - 50px);
 //                                         display: flex;
 
 //                                         .progress_bar_body {
@@ -2304,7 +2289,7 @@
 
 //                                                     .progress_foot,
 //                                                     .progress_head {
-//                                                         width: 30px;
+//                                                         width: 20px;
 //                                                         line-height: 1;
 
 //                                                         img {
@@ -2319,7 +2304,7 @@
 //                                     }
 
 //                                     .percentage_progress_value {
-//                                         width: 13%;
+//                                         width: 50px;
 //                                         display: flex;
 //                                         justify-content: flex-end;
 
@@ -2339,7 +2324,7 @@
 //                     // 推荐 start
 //                     .paper_recommend {
 //                         margin: 0 auto;
-//                         padding: 40px 0 0;
+//                         padding: 15px 0 0;
 
 //                         .table_recommend {
 //                             display: block;
@@ -2356,7 +2341,7 @@
 //                                     margin: 15px auto; //print
 
 //                                     .table_recommend_words {
-//                                         width: 77%;
+//                                         width: calc(100% - 85px - 2%);
 //                                         padding: 0;
 //                                         border-bottom: 0;
 
@@ -2490,15 +2475,15 @@
 
 //                     .paper_phase_title {
 //                         display: flex;
-//                         margin: 30px auto 20px;
+//                         margin: 30px auto 0;
 
 //                         .paper_phase_left {
-//                             width: 21%;
+//                             width: 85px;
 //                             margin: 0 2% 0 0;
 //                         }
 
 //                         .paper_phase_right {
-//                             width: 77%;
+//                             width: calc(100% - 85px - 2%);
 //                         }
 
 //                         .paper_phase_left,
@@ -2565,7 +2550,7 @@
 //                         .percentage_grade_name {
 //                             display: flex;
 //                             justify-content: center;
-//                             width: 21%;
+//                             width: 85px;
 //                             margin: 0 2% 0 0;
 //                             border-radius: 5px;
 
@@ -2609,41 +2594,6 @@
 //                 .report_content_area {
 
 //                     .report_content {
-
-//                         // 成绩 start
-//                         .paper_score {
-
-//                             .paper_score_text {
-
-//                                 .paper_score_text_one,
-//                                 .paper_score_text_two {
-//                                     p {
-//                                         font-size: 25px;
-//                                         line-height: 1.4;
-//                                     }
-
-//                                     span {
-//                                         margin: 0;
-//                                     }
-//                                 }
-
-//                                 .paper_score_text_one {
-
-//                                     span {
-//                                         font-size: 60px;
-//                                     }
-//                                 }
-
-//                                 .paper_score_text_two {
-
-//                                     span {
-//                                         font-size: 40px;
-//                                     }
-//                                 }
-//                             }
-//                         }
-
-//                         // 成绩 end
 
 //                         // 量尺 start
 //                         .paper_bar {
@@ -2716,16 +2666,8 @@
 
 //                         // 量尺 end
 
-//                         // 诊断 start
-//                         .paper_diagnosis {
-//                             padding: 40px 0 0;
-//                         }
-
-//                         // 诊断 end
-
 //                         // 推荐 start
 //                         .paper_recommend {
-//                             padding: 40px 0 0;
 
 //                             .table_recommend {
 //                                 .table_recommend_tbody {
@@ -2793,10 +2735,6 @@
 //                 }
 //             }
 //         }
-//     }
-
-//     :root {
-//         --progress-width: (100% - 30px - 30px) / 100;
 //     }
 // }
 
@@ -3335,7 +3273,7 @@
                                     margin: 15px auto; //print
 
                                     .table_recommend_words {
-                                        width: 77%;
+                                        width: calc(100% - 85px - 2%);
                                         padding: 0;
                                         border-bottom: 0;
 
