@@ -13,8 +13,8 @@ main {
 
                                 &.score_report_header_progress{
                                     width: 100%;
-                                    border-left: 1px solid $white;
-                                    border-top: 1px solid $white;
+                                    border-left: 1px dotted $white;
+                                    border-top: 1px dotted $white;
                                 }
                             }
                         }
@@ -34,8 +34,8 @@ main {
                                             margin: 0 0 0 37.5px;
                                             background-color: $white;
                                             z-index: 1;
-                                            border-top: 1px solid darken($main_color, 15%);
-                                            border-left: 1px solid darken($main_color, 15%);
+                                            border-top: 1px dotted darken($main_color, 15%);
+                                            border-left: 1px dotted darken($main_color, 15%);
                                             max-width: none;
 
                                             &.progress_area{
@@ -149,6 +149,7 @@ main {
                                         &.score_report_item_text {
                                             &.score_report_item_time {
                                                 width: calc(50% - 66.5px / 2);
+                                                z-index: 0;
                                             }
                                             &.score_report_item_progress {
                                                 width: calc(50% - 66.5px / 2);
@@ -156,10 +157,16 @@ main {
                                                 border-top: 0;
                                                 border-left: 0;
                                                 z-index: 0;
-                                                border-top: 1px solid darken($main_color, 15%);
+                                                border-top: 1px dotted darken($main_color, 15%);
                                             }
                                         }
                                     }
+
+                                    &::before,
+                                &::after{
+                                    content: "";
+                                    z-index: 1;
+                                }
                                 }
                             }
                         }
@@ -238,8 +245,8 @@ main {
                                     width: calc(25% - 66.5px / 4);
                                     left: calc(66.5px + calc(50% - 66.5px / 4 * 2));
                                     background-color: transparent;
-                                    border-left: 1px solid darken($main_color, 15%);
-                                    border-right: 1px solid darken($main_color, 15%);
+                                    border-left: 1px dotted darken($main_color, 15%);
+                                    border-right: 1px dotted darken($main_color, 15%);
                                 }
                                 }
                             }
