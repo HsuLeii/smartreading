@@ -323,6 +323,10 @@ main {
                       width: 100%;
                     }
 
+                    &.book-delete {
+                      float: right;
+                    }
+
                     &.book-id {
                       display: none;
                     }
@@ -354,19 +358,12 @@ main {
                         display: none;
                       }
 
-                      &:hover {
-                        .modal_link_bg {
-                          display: block;
-                        }
-                      }
-                    }
-
-                    &.storytelling-book-logo {
-                      position: absolute;
+                      .storytelling-book-logo-area{
+                        position: absolute;
                       z-index: 1;
+                      top: 50%;
                       left: 50%;
                       transform: translate(-50%, -50%);
-                      top: calc(14px * 1.7 + 8px + 8px + 180px / 2);
                       overflow: initial;
 
                       .modal_link {
@@ -379,6 +376,7 @@ main {
                       .storytelling-book-logo-text {
                         p {
                           color: $white;
+                          text-align: center;
                         }
                       }
 
@@ -394,15 +392,58 @@ main {
                         background-color: rgba($black, .7);
                         z-index: -1;
                       }
+                      
+                      }
 
                       &:hover {
-                        &~.book-front {
-                          .modal_link_bg {
-                            display: block;
-                          }
+                        .modal_link_bg {
+                          display: block;
                         }
                       }
                     }
+
+                    // &.storytelling-book-logo {
+                    //   position: absolute;
+                    //   z-index: 1;
+                    //   top: 50%;
+                    //   left: 50%;
+                    //   transform: translate(-50%, -50%);
+                    //   overflow: initial;
+
+                    //   .modal_link {
+                    //     display: flex;
+                    //     flex-direction: column;
+                    //     justify-content: center;
+                    //     align-items: center;
+                    //   }
+
+                    //   .storytelling-book-logo-text {
+                    //     p {
+                    //       color: $white;
+                    //     }
+                    //   }
+
+                    //   &::after {
+                    //     content: "";
+                    //     position: absolute;
+                    //     left: 50%;
+                    //     top: 50%;
+                    //     transform: translate(-50%, -50%);
+                    //     width: 120px;
+                    //     height: 120px;
+                    //     border-radius: 50%;
+                    //     background-color: rgba($black, .7);
+                    //     z-index: -1;
+                    //   }
+
+                    //   &:hover {
+                    //     &~.book-front {
+                    //       .modal_link_bg {
+                    //         display: block;
+                    //       }
+                    //     }
+                    //   }
+                    // }
 
                     &.book-name {
                       padding: 10px 10px 6px 10px;
@@ -460,10 +501,6 @@ main {
                         &:hover {
                           background-color: $main_color;
                         }
-                      }
-
-                      &.done {
-                        display: none;
                       }
                     }
 
@@ -525,6 +562,10 @@ main {
               .dataTables_info,
               .add_dataTables_input {
                 margin: 10px;
+              }
+
+              .footer-search{
+                font-size: 10px;
               }
 
               .dataTables_paginate {
@@ -736,6 +777,96 @@ main {
                 }
               }
 
+              .video_check_area {
+                display: none;
+
+                .video_checkbox_item {
+                  display: flex;
+                  justify-content: center;
+
+                  .video_check_checkbox {
+                    position: absolute;
+                    opacity: 0;
+
+                    &+label {
+                      display: flex;
+                      align-items: center;
+                      position: relative;
+                      cursor: pointer;
+                      padding: 0;
+
+                      p {
+                        max-width: calc(100% - 30px);
+                      }
+
+                      &:before {
+                        content: '';
+                        margin-right: 10px;
+                        display: inline-block;
+                        vertical-align: text-top;
+                        width: 20px;
+                        height: 20px;
+                        background: $white;
+                        border: 1px solid $main_color;
+                      }
+                    }
+
+                    &:hover {
+                      &+label {
+                        color: $main_color;
+
+                        &:before {
+                          border: 1px solid $main_color;
+                        }
+                      }
+                    }
+
+                    &:checked {
+                      &+label {
+                        &:before {
+                          border: 1px solid $main_color;
+                          background-color: $main_color;
+                        }
+
+                        &:after {
+                          font-family: 'FontAwesome', sans-serif;
+                          content: '\f00c';
+                          position: absolute;
+                          color: $white;
+                          width: 20px;
+                          font-size: 15px;
+                          text-align: center;
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .warning_text {
+                  p {
+                    color: $default-red;
+                  }
+                }
+
+                .video_check_item_area {
+                  margin: 10px auto;
+
+                  .video_check_item_both {
+                    .video_check_item {
+                      p {
+                        display: flex;
+                        margin: 5px 0;
+
+                        i {
+                          color: $default-red;
+                          margin: 0 5px 0 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
               .feedback_check_submit {
                 display: flex;
                 justify-content: center;
@@ -926,10 +1057,7 @@ main {
                   }
                 }
               }
-
-              .storytelling-footer {
-                flex-direction: row;
-              }
+              
             }
           }
         }
@@ -966,10 +1094,6 @@ main {
                     }
                   }
                 }
-              }
-
-              .storytelling-footer {
-                flex-direction: column;
               }
             }
           }
@@ -1043,6 +1167,15 @@ main {
 
                 .video_check_area {
                   padding: 20px;
+
+                  .video_check_item_area {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .video_check_item_both {
+                      width: 47.5%;
+                    }
+                  }
                 }
               }
             }
@@ -1113,10 +1246,6 @@ main {
                   }
                 }
               }
-
-              .storytelling-footer {
-                flex-direction: row;
-              }
             }
           }
         }
@@ -1138,6 +1267,25 @@ main {
                     }
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    &.storytelling {
+      .storytelling-books {
+        .tab-content {
+          .tab-pane {
+            .dataTables_wrapper {
+
+              .storytelling-footer {
+                flex-direction: row;
               }
             }
           }
