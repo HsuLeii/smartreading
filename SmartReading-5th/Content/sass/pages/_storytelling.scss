@@ -47,29 +47,23 @@ main {
             .input-group {
               display: flex;
               align-items: center;
+              flex-direction: column;
 
               .storytelling-search_input_text {
-                width: 25%;
-                margin: 0 10px 0 0;
-                text-align: right;
+                width: 100%;
+                margin: 0 0 10px 0;
               }
 
               .form-control {
-                width: calc(57% - 10px);
-                padding: 6px calc(18% + 16px) 6px 16px;
+                width: 100%;
+                padding: 6px 12px;
                 height: auto;
+                z-index: 3;
               }
 
               .input-group-btn {
                 &.more_select_group {
-                  width: auto;
-                  &.more_select_group_two{
-                    width: calc(55% - 10px);
-                    position: absolute;
-                    left: calc(25% + 10px);
-                    display: flex;
-                    justify-content: flex-end;
-                  }
+                  width: 100%;
                   
                   &.open {
                     .more_select_dropdown_menu {
@@ -78,8 +72,13 @@ main {
                   }
 
                   .btn {
+                    border: 1px solid #c6c6c6;
+                    background-color: $white;
+                    border-radius: 0;
                     position: relative;
                     z-index: 6;
+                    width: 100%;
+                    margin: 0;
                   }
 
                   .more_select_dropdown_menu {
@@ -175,13 +174,14 @@ main {
                     }
 
                     .dropdown_menu_btn_area {
-                      margin: 10px;
+                      margin: 10px 2.5%;
 
                       .dropdown_menu_btn {
                         background-color: $main_color;
                         color: $white;
                         margin: 0 0 0 auto;
                         display: block;
+                        text-align: center;
 
                         &:hover {
                           background-color: darken($main_color, 5%);
@@ -193,13 +193,18 @@ main {
                       display: block;
               }
                   }
+
+                  &.more_select_group_grade{
+                    width: 100%;
+                  }
                 }
 
-                &.select_group {
-                  width: 20%;
+                &.search_btn {
+                  width: 100%;
                   background-color: $main_color;
 
                   .btn {
+                    width: 100%;
                     display: block;
                     margin: 0 auto;
                     color: $white;
@@ -515,7 +520,6 @@ main {
                       .book-tools_item {
                         .book-tools_item_btn_area {
                           display: flex;
-                          justify-content: center;
 
                           .thumbs_icon,
                           .comment_icon {
@@ -526,7 +530,6 @@ main {
                           .storytelling-books_btn {
                             color: $main_color;
                             min-width: 120px;
-                            margin: 0 10px;
                           }
                         }
                       }
@@ -765,7 +768,6 @@ main {
                     }
 
                     &.comment_item_textarea {
-                      display: none;
 
                       textarea {
                         padding: 15px;
@@ -778,7 +780,6 @@ main {
               }
 
               .video_check_area {
-                display: none;
 
                 .video_checkbox_item {
                   display: flex;
@@ -1039,6 +1040,218 @@ main {
   }
 }
 
+@media screen and (min-width: 500px){
+  main {
+    &.storytelling {
+      .storytelling-search {
+  
+        .container {
+  
+          .storytelling-search_left {
+  
+            .storytelling-search_left_input {
+  
+              .input-group {
+                flex-direction: row;
+  
+                .storytelling-search_input_text {
+                  width: 25%;
+                  margin: 0 10px 0 0;
+                  text-align: right;
+                }
+  
+                .form-control {
+                  width: calc(40% - 10px);
+                }
+  
+                .input-group-btn {
+                  &.more_select_group {
+                    width: 35%;
+                    
+                    &.open {
+                      .more_select_dropdown_menu {
+                        display: block;
+                      }
+                    }
+  
+                    .btn {
+                      border: 1px solid #c6c6c6;
+                      border-radius: 0;
+                      position: relative;
+                      z-index: 6;
+                      width: 100%;
+                      text-align: left;
+                    }
+  
+                    .more_select_dropdown_menu {
+                      width: 100%;
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      z-index: 1000;
+                      display: none;
+                      min-width: 160px;
+                      padding: 5px 0;
+                      background-color: $white;
+                      border: 1px solid $main_color;
+  
+                      .more_select_grade_area {
+                        display: flex;
+                        flex-wrap: wrap;
+  
+                        .more_select_grade {
+                          width: 45%;
+                          margin: 5px calc(10% / 6);
+                          border: 1px solid $button-gray;
+                          border-radius: 0;
+  
+                          &:hover,
+                          &.check {
+                            border: 1px solid $main_color;
+                          }
+                        }
+                      }
+  
+                      .icheck_area {
+                        display: flex;
+                        flex-wrap: wrap;
+  
+                        .type_check_area {
+                          width: 95%;
+                          margin: 5px 2.5%;
+  
+                          .type_check_checkbox {
+                            position: absolute;
+                            opacity: 0;
+  
+                            &+label {
+                              display: flex;
+                              align-items: center;
+                              position: relative;
+                              cursor: pointer;
+                              padding: 0;
+  
+                              &:before {
+                                content: '';
+                                margin-right: 10px;
+                                display: inline-block;
+                                vertical-align: text-top;
+                                width: 20px;
+                                height: 20px;
+                                background: $white;
+                                border: 1px solid $main_color;
+                              }
+                            }
+  
+                            &:hover {
+                              &+label {
+                                color: $main_color;
+  
+                                &:before {
+                                  border: 1px solid $main_color;
+                                }
+                              }
+                            }
+  
+                            &:checked {
+                              &+label {
+                                &:before {
+                                  border: 1px solid $main_color;
+                                  background-color: $main_color;
+                                }
+  
+                                &:after {
+                                  font-family: 'FontAwesome', sans-serif;
+                                  content: '\f00c';
+                                  position: absolute;
+                                  color: $white;
+                                  width: 20px;
+                                  font-size: 15px;
+                                  text-align: center;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+  
+                      .dropdown_menu_btn_area {
+                        margin: 10px 2.5%;
+  
+                        .dropdown_menu_btn {
+                          background-color: $main_color;
+                          color: $white;
+                          margin: 0 0 0 auto;
+                          display: block;
+  
+                          &:hover {
+                            background-color: darken($main_color, 5%);
+                          }
+                        }
+                      }
+  
+                      &.open {
+                        display: block;
+                }
+                    }
+  
+                    &.more_select_group_grade{
+                      width: calc(40% - 10px);
+                    }
+                  }
+  
+                  &.search_btn {
+                    width: 35%;
+                    background-color: $main_color;
+  
+                    .btn {
+                      width: 100%;
+                      display: block;
+                      margin: 0 auto;
+                      color: $white;
+                    }
+  
+                    .dropdown-menu {
+                      margin: 0;
+                      border: 1px solid $main_color;
+                      border-radius: 0;
+                      right: 0;
+                      left: auto;
+  
+                      .select_group_item {
+                        padding: 0 5%;
+                        cursor: pointer;
+  
+                        &:hover {
+                          background-color: $main_color;
+                          color: $white;
+                        }
+                      }
+  
+                    }
+  
+                    &:hover {
+                      background-color: darken($main_color, 5%);
+  
+                    }
+                  }
+                }
+              }
+            }
+  
+          }
+  
+          .storytelling-search_right {
+            width: 100%;
+            margin: 20px auto;
+          }
+        }
+  
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 680px) {
   main {
     &.storytelling {
@@ -1127,7 +1340,14 @@ main {
                   .feedback_title {
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
+
+                    .feedback_name{
+                      margin: 0;
+                    }
+
+                    .feedback_icon{
+                      margin: 0 0 0 auto;
+                    }
                   }
 
                   .comment_area {
