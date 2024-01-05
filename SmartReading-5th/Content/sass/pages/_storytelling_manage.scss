@@ -187,6 +187,8 @@ main {
 
                                 .storytelling_search {
                                     border: 0;
+                                    max-width: 700px;
+                                    margin: 0;
 
                                     tbody {
                                         tr {
@@ -225,20 +227,20 @@ main {
                                 .storytelling-search_left_area {
                                     .storytelling-search_left_input {
                                         margin: 20px 2.5%;
-
+                                        
                                         .input-group {
                                             display: flex;
                                             align-items: center;
+                                            flex-wrap: wrap;
 
                                             .storytelling-search_input_text {
-                                                width: 25%;
-                                                margin: 0 10px 0 0;
-                                                text-align: right;
+                                                width: 100%;
+                                                margin: 0 0 10px 0;
                                             }
 
                                             .form-control {
-                                                width: calc(57% - 10px);
-                                                padding: 6px calc(18% + 16px) 6px 16px;
+                                                width: 100%;
+                                                padding: 6px 16px;
                                                 height: auto;
 
                                                 &:focus {
@@ -250,15 +252,16 @@ main {
 
                                             .input-group-btn {
                                                 &.more_select_group {
-                                                    width: calc(55% - 10px);
-                                                    position: absolute;
-                                                    left: calc(25% + 10px);
-                                                    display: flex;
-                                                    justify-content: flex-end;
+                                                    width: 100%;
+                                                    z-index: 3;
 
                                                     .btn {
+                                                        width: 100%;
                                                         position: relative;
                                                         z-index: 6;
+                                                        border: 1px solid #c6c6c6;
+                                                    background-color: $white;
+                                                    border-radius: 0;
                                                     }
 
                                                     .more_select_dropdown_menu {
@@ -372,36 +375,22 @@ main {
                                                             display: block;
                                                         }
                                                     }
+
+                                                    &.more_select_group_grade{
+                                                        z-index: 4;
+                                                    }
                                                 }
 
                                                 &.select_group {
-                                                    width: 20%;
+                                                    width: 100%;
                                                     background-color: $SR_green;
+                                                    margin: 20px auto;
 
                                                     .btn {
+                                                        width: 100%;
                                                         display: block;
                                                         margin: 0 auto;
                                                         color: $white;
-                                                    }
-
-                                                    .dropdown-menu {
-                                                        margin: 0;
-                                                        border: 1px solid $SR_green;
-                                                        border-radius: 0;
-                                                        right: 0;
-                                                        left: auto;
-
-
-                                                        .select_group_item {
-                                                            padding: 0 5%;
-                                                            cursor: pointer;
-
-                                                            &:hover {
-                                                                background-color: $SR_green;
-                                                                color: $white;
-                                                            }
-                                                        }
-
                                                     }
 
                                                     &:hover {
@@ -678,24 +667,6 @@ main {
                                     background-color: #d5e7d5;
                                 }
 
-                                .feedback_item_area {
-
-                                    .feedback_item {
-
-                                        &.feedback_item_btn {
-
-                                            .feedback_item_btn_thumbs,
-                                            .feedback_item_btn_comment {
-                                                color: $SR_green;
-
-                                                p {
-                                                    color: $SR_green;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
                                 .comment_area {
                                     border-top: 1px solid $SR_green;
 
@@ -943,6 +914,98 @@ main {
     }
 }
 
+@media screen and (min-width: 600px){
+    main {
+        &.storytelling_manage {
+
+            .join-all {
+
+                .order-wrap {
+    
+                    .order-page {
+    
+                        .order-body {
+                            .storytelling_manage__table_area {
+    
+                                .storytelling_search_area {
+    
+                                    .storytelling-search_left_area {
+                                        .storytelling-search_left_input {
+
+                                            &.storytelling-search_left_input_grade{
+                                                .input-group {
+    
+                                                    .storytelling-search_input_text {
+                                                        margin: 0 10px 0px 0;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            .input-group {
+    
+                                                .storytelling-search_input_text {
+                                                    width: 66px;
+                                                    margin: 0 10px 20px 0;
+                                                    text-align: right;
+                                                }
+    
+                                                .form-control {
+                                                    width: calc(100% - 76px);
+                                                    padding: 6px calc(250px + 16px) 6px 16px;
+                                                    margin: 0 0 20px;
+                                                }
+    
+                                                .input-group-btn {
+                                                    &.more_select_group {
+                                                        width: 250px;
+                                                        position: absolute;
+                                                        right: 0;
+                                                        top: 0%;
+                                                        transform: translate(0px, 0%);
+                                                        display: flex;
+                                                        justify-content: flex-end;
+    
+                                                        .btn {
+                                                            position: relative;
+                                                            z-index: 6;
+                                                            border: 1px solid #c6c6c6;
+                                                        }
+
+                                                        &.more_select_group_grade{
+                                                            position: relative;
+                                                            left: auto;
+                                                        }
+
+                                                        .more_select_dropdown_menu {
+                                                            .more_select_grade_area {
+                                                                .more_select_grade{
+                                                                    width: 90%;
+                                                                    margin: 5px auto;
+                                                                    padding: 3px 10px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+    
+                                                    &.select_group {
+                                                        width: 20%;
+                                                        margin: 0 auto;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     header {
         .manage-nav {
@@ -981,6 +1044,34 @@ main {
 
                                                     &.storytelling_search_input {
                                                         width: calc(45% - 95px / 2);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .storytelling-search_left_area {
+                                        .storytelling-search_left_input {
+                                            
+                                            .input-group {
+    
+                                                .storytelling-search_input_text {
+                                                    margin: 0 10px 0 0;
+                                                }
+    
+                                                .form-control {
+                                                    width: calc(500px - 76px);
+                                                    margin: 0;
+                                                }
+    
+                                                .input-group-btn {
+                                                    &.more_select_group {
+                                                        right: auto;
+                                                        left: 250px;
+                                                    }
+
+                                                    &.select_group {
+                                                        margin: 0 0 0 10px;
                                                     }
                                                 }
                                             }
@@ -1067,9 +1158,43 @@ main {
 
                                     .storytelling-search_left_area {
                                         display: flex;
+                                        
 
                                         .storytelling-search_left_input {
-                                            width: 45%;
+                                            width: calc(100% - 270px - 4%);
+                                            margin: 20px 1%;
+
+                                            &.storytelling-search_left_input_grade{
+                                                width: 270px;
+                                            }
+
+                                            .input-group {
+                                                .storytelling-search_input_text{
+                                                    width: auto;
+                                                }
+
+                                                .form-control{
+                                                    width: calc(100% - 85px - 80px - 10px);
+                                                    padding: 6px calc(220px + 16px) 6px 16px;
+                                                }
+
+                                                .input-group-btn {
+                                                    &.more_select_group {
+                                                        width: 220px;
+                                                        left: auto;
+                                                        right: 90px;
+
+                                                        &.more_select_group_grade{
+                                                            right: auto;
+                                                        }
+                                                    }
+
+                                                    &.select_group {
+                                                        width: 80px;
+                                                    }
+                                                }
+                                            }
+
                                         }
                                     }
                                 }
@@ -1082,6 +1207,8 @@ main {
         }
     }
 }
+
+
 
 @media screen and (min-width: 1200px) {
     header {
@@ -1204,6 +1331,52 @@ main {
     }
 }
 
+@media screen and (min-width: 1400px) {
+    main {
+        &.storytelling_manage {
+
+            .join-all {
+
+                .order-wrap {
+                    .order-page {
+
+                        .order-body {
+                            .storytelling_manage__table_area {
+
+                                .storytelling_search_area {
+
+                                    .storytelling-search_left_area {
+                                        display: flex;
+                                        
+
+                                        .storytelling-search_left_input {
+                                            width: calc(100% - 275px - 4%);
+
+                                            &.storytelling-search_left_input_grade{
+                                                width: 275px;
+                                            }
+
+                                            .input-group {
+
+                                                .form-control{
+                                                    width: calc(100% - 92px - 80px - 10px);
+                                                    padding: 6px calc(220px + 16px) 6px 16px;
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 1600px) {
     main {
         &.storytelling_manage {
@@ -1230,7 +1403,6 @@ main {
                                         width: calc(100% - 450px);
 
                                         .storytelling-search_left_input {
-                                            width: 50%;
                                             margin: 20px 0;
                                         }
                                     }

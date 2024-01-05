@@ -129,21 +129,20 @@
                                 </table>
 
                                 <div class="storytelling-search_left_area">
-                                    <div class="storytelling-search_left_input">
+                                    <div class="storytelling-search_left_input storytelling-search_left_input_grade">
                                         <div class="input-group">
-                                            <label for="" class="storytelling-search_input_text">
+                                            <div class="storytelling-search_input_text">
                                                 <p>年級</p>
-                                            </label>
-                                            <input type="text" class="form-control input-lg" id="searchBook" placeholder="輸入書名..." value="">
+                                            </div>
                 
-                                            <div class="input-group-btn more_select_group">
-                                                <button type="button" class="btn btn-lg dropdown-toggle more_select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">更多選項&nbsp;<span class="caret"></span></button>
+                                            <div class="input-group-btn more_select_group more_select_group_grade">
+                                                <button type="button" class="btn btn-lg dropdown-toggle more_select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">請選項年級&nbsp;<span class="caret"></span></button>
                                                 <div class="more_select_dropdown_menu">
                                                     <div class="more_select_grade_area">
                                                         <button class="more_select_grade">全部</button>
                                                         <button class="more_select_grade">三年級</button>
                                                         <button class="more_select_grade">四年級</button>
-                                                        <button class="more_select_grade check">五年級</button>
+                                                        <button class="more_select_grade">五年級</button>
                                                         <button class="more_select_grade">六年級</button>
                                                         <button class="more_select_grade">七年級</button>
                                                         <button class="more_select_grade">八年級</button>
@@ -155,32 +154,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                
-                                            <div class="input-group-btn select_group">
-                                                <button type="button" class="btn btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-domain="1"> <span class="caret"></span>&nbsp;選擇 </button>
-                                                <ul class="dropdown-menu">
-                                                    <li class="select_group_item">三年級組</li>
-                                                    <li class="select_group_item">四年級組</li>
-                                                    <li class="select_group_item">五年級組</li>
-                                                    <li class="select_group_item">六年級組</li>
-                                                    <li class="select_group_item">七年級組</li>
-                                                    <li class="select_group_item">八年級組</li>
-                                                    <li class="select_group_item">九年級組</li>
-                                                    <li class="select_group_item">十年級組</li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
             
                                     <div class="storytelling-search_left_input">
                                         <div class="input-group">
                                             <label for="" class="storytelling-search_input_text">
-                                                <p>書籍類別</p>
+                                                <p>書籍資訊</p>
                                             </label>
                                             <input type="text" class="form-control input-lg" id="searchBook" placeholder="輸入書名..." value="">
                 
                                             <div class="input-group-btn more_select_group">
-                                                <button type="button" class="btn btn-lg dropdown-toggle more_select" aria-haspopup="true" aria-expanded="false">更多選項&nbsp;<span class="caret"></span></button>
+                                                <button type="button" class="btn btn-lg dropdown-toggle more_select" aria-haspopup="true" aria-expanded="false">請選擇書籍類型&nbsp;<span class="caret"></span></button>
                                                 <div class="more_select_dropdown_menu">
                                                     <div class="icheck_area">
                                                         <div class="type_check_area">
@@ -228,17 +213,7 @@
                                             </div>
                 
                                             <div class="input-group-btn select_group">
-                                                <button type="button" class="btn btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-domain="1"> <span class="caret"></span>&nbsp;選擇 </button>
-                                                <ul class="dropdown-menu">
-                                                    <li class="select_group_item">三年級組</li>
-                                                    <li class="select_group_item">四年級組</li>
-                                                    <li class="select_group_item">五年級組</li>
-                                                    <li class="select_group_item">六年級組</li>
-                                                    <li class="select_group_item">七年級組</li>
-                                                    <li class="select_group_item">八年級組</li>
-                                                    <li class="select_group_item">九年級組</li>
-                                                    <li class="select_group_item">十年級組</li>
-                                                </ul>
+                                                <button type="button" class="btn btn-lg">搜尋</button>
                                             </div>
                                         </div>
                                     </div>
@@ -923,17 +898,6 @@
                                             <p class="feedback_item">
                                                 完成時間：2023/10/10
                                             </p>
-                                            <div class="feedback_item feedback_item_btn">
-                                                <button class="btn btn-default feedback_item_btn_thumbs">
-                                                    <i class="fa-solid fa-thumbs-up"></i>
-                                                    <p>讚</p>
-                                                </button>
-                                                <button onclick="feedbackFunction()"
-                                                    class="btn btn-default feedback_item_btn_comment">
-                                                    <i class="fa-solid fa-comment-dots"></i>
-                                                    <p>回饋</p>
-                                                </button>
-                                            </div>
                                         </div>
 
                                         <div class="comment_area">
@@ -951,7 +915,7 @@
                                                     <button class="btn btn-default comment_item_btn_comment">
                                                         <p>刪除</p>
                                                     </button>
-                                                </div>225
+                                                </div>
                                             </div>
                                             <div class="comment_item">
                                                 <p class="comment_item_name">
@@ -1072,8 +1036,11 @@
             });
 
             $(".more_select_grade").click(function () {
-                $(".more_select_grade").removeClass("check");
-                $(this).addClass("check");
+                if ($(this).hasClass("check")) {
+                    $(this).removeClass("check");
+                } else {
+                    $(this).addClass("check");
+                }
             });
             
             //關閉閱讀任務彈跳視窗
