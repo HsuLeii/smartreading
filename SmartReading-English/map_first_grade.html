@@ -541,6 +541,39 @@
                     <p>十二級</p>
                 </div>
 
+                <div class="level_introduction_search">
+                    <div class="level_introduction_btn_area">
+                        <p>
+                            Audiobook
+                        </p>
+                        <div class="level_introduction_btn">
+                            
+                            <button type="button" class="form-control">
+                                <p id="searchBtn_text">all</p>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+
+                            <ul>
+                                <li class="dropdown_item_li dropdown_item_li_one active">all</li>
+                                <li class="dropdown_item_li dropdown_item_li_two">Audiobook</li>
+                                <li class="dropdown_item_li dropdown_item_li_three">Non-Audio</li>
+                            </ul>
+            
+                            
+                        </div>
+                    </div>
+                    
+
+                    <div class="level_introduction_input">
+                        <input name="ctl00$Content_body$searchbook1" type="text" id="searchbook1" class="input_search">  
+                        <input type="submit" name="ctl00$Content_body$Bun_search" value="搜尋" id="Bun_search" class="input_search_btn">
+                    </div>
+                </div>
+
+                
+
+                
+
                 <div class="book_area">
                     <div class="best_book grade_map_booklist">
                         <div class="swiper">
@@ -2618,6 +2651,37 @@
             $(".level_introduction_two.active").css({
                 "display": "flex"
             });
+        });
+    </script>
+
+    <!-- 書本搜尋 -->
+    <script>
+        $(".level_introduction_btn button").click(function () {
+            $(this).toggleClass("open");
+});
+
+        var dropdown_item_one = $(".dropdown_item_li_one").text();
+        var dropdown_item_two = $(".dropdown_item_li_two").text();
+        var dropdown_item_three = $(".dropdown_item_li_three").text();
+
+        $(".dropdown_item_li").click(function () {
+            $(".level_introduction_btn button").toggleClass("open");
+        });
+
+        $(".dropdown_item_li_one").click(function () {
+            document.getElementById('searchBtn_text').innerHTML = dropdown_item_one;
+            $(".dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+        $(".dropdown_item_li_two").click(function () {
+            document.getElementById('searchBtn_text').innerHTML = dropdown_item_two;
+            $(".dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+        $(".dropdown_item_li_three").click(function () {
+            document.getElementById('searchBtn_text').innerHTML = dropdown_item_three;
+            $(".dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
         });
     </script>
 

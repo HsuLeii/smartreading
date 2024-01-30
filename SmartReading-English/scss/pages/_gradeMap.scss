@@ -1460,6 +1460,111 @@
             }
           }
         }
+
+        .level_introduction_search{
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin: 0 auto 40px;
+          width: 80%;
+          max-width: 1200px;
+
+          .level_introduction_btn_area{
+            display: flex;
+            align-items: center;
+
+            p{
+              font-weight: bold;
+            }
+
+            .level_introduction_btn{
+              position: relative;
+              margin: 0 0 0 10px;
+
+              .form-control{
+                display: flex;
+                align-items: center;
+                padding: 5px 10px;
+                border: 1px solid $brown;
+                background-color: $white;
+                min-width: 200px;
+                color: $brown;
+
+                i{
+                  margin: 0 0 0 auto;
+                  transition: 0.3s;
+                }
+
+                &.open{
+                  i{
+                    transform: rotate(180deg);
+                  }
+
+                  & ~ ul{
+                    visibility: visible;
+                  }
+                }
+              }
+
+              ul{
+                position: absolute;
+                left: 50%;
+                z-index: 2;
+                transform: translate(-50% , 10px);
+                width: auto;
+                min-width: 200px;
+                visibility: hidden;
+                border-radius: 10px;
+                border: 1px solid $brown;
+                background-color: $white;
+                overflow: hidden;
+                cursor: pointer;
+
+                .dropdown_item_li{
+                  padding: 5px 10px;
+                  color: $brown;
+
+                  &.active{
+                    background-color: $brown;
+                      color: $white;
+                  }
+
+                  &:hover{
+                    background-color: $brown;
+                      color: $white;
+                  }
+                }
+              }
+            }
+          }
+          
+          .level_introduction_input{
+            margin: 0 0 0 20px;
+            .input_search{
+              padding: 5px 10px;
+              border: 1px solid $brown;
+              border-radius: 10px;
+
+              &:focus { 
+                outline: none;
+                border: 1px solid $main_color;
+                box-shadow: 5px 5px 10px 3px #5c8a3925; }
+            }
+
+            .input_search_btn{
+              padding: 5px 10px;
+              border: 1px solid $brown;
+              border-radius: 10px;
+              background-color: $white;
+              cursor: pointer;
+
+              &:hover{
+                background-color: $brown;
+                color: $white;
+              }
+            }
+          }
+        }
       }
 
       &.map_book_area_first_grade {
@@ -3420,7 +3525,14 @@
             }
           }
 
-
+          .level_introduction_search{
+            flex-direction: column;
+            align-items: end;
+            
+            .level_introduction_input{
+              margin: 25px 0 0 0;
+            }
+          }
         }
       }
     }
@@ -3902,4 +4014,27 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 350px){
+  .main {
+    &.grade_map {
+      .map_book_area_bg {
+        .map_book_area {
+          .level_introduction_search{
+            align-items: flex-start;
+  
+            .level_introduction_btn_area{
+              flex-direction: column;
+              align-items: flex-start;
+  
+              .level_introduction_btn{
+                margin: 10px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+}
 }
