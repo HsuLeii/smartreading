@@ -1,0 +1,388 @@
+main {
+
+    .test_area {
+
+        .report_selector_tittle,
+        .report_selector_text {
+            display: flex;
+            justify-content: center;
+            color: darken($main_color, 15%);
+            margin: 0 auto 30px;
+        }
+
+        .score_report_area {
+            .table {
+                border: 1px solid darken($main_color, 15%);
+                margin: 0 auto 40px;
+
+                thead {
+                    .score_report_header {
+                        display: flex;
+                        justify-content: flex-end;
+                        padding: 15px 0;
+                        background-color: $main_color;
+                        border-bottom: 0;
+                        flex-wrap: wrap;
+                        padding: 0 0 0 37.5px;
+
+                        .score_report_header_text {
+                            display: flex;
+                            justify-content: center;
+                            color: $white;
+                            padding: 8px 5px;
+                            width: 100%;
+                            border-left: 1px dotted;
+                            border-top: 1px dotted;
+                            transform: translate(-1px, 0px);
+
+                        }
+                    }
+                }
+
+                tbody {
+                    &.score_report_body {
+                        border-top: 0;
+                        background-color: $white;
+
+                        .score_report_item {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            border-top: 1px solid darken($main_color, 15%);
+                            cursor: pointer;
+
+                            .score_report_item_content {
+                                padding: 15px 2px;
+
+                                &.score_report_item_icon {
+                                    width: 37.5px;
+                                    text-align: center;
+                                    border: 0px;
+                                    line-height: 0;
+                                    padding: 0;
+
+                                    .fa-circle-check {
+                                        position: absolute;
+                                        top: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: $bright_green;
+                                        font-size: 20px;
+                                        display: none;
+                                    }
+                                }
+
+                                &.score_report_item_text {
+                                    display: flex;
+                                    justify-content: center;
+                                    color: $main_color_grey;
+                                    word-break: break-word;
+                                    width: 100%;
+                                    margin: 0 0 0 37.5px;
+                                    border-top: 1px dotted darken($main_color, 15%);
+                                    border-left: 1px dotted darken($main_color, 15%);
+
+                                    &.score_report_item_name {
+                                        p {
+                                            overflow: hidden;
+                                            white-space: nowrap;
+                                            text-overflow: ellipsis;
+                                        }
+                                    }
+
+                                    &.score_report_item_time {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: center;
+
+                                        .text_date {
+                                            margin: 0 10px 0 0;
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            &.check_item {
+                                background-color: $main_color_30;
+
+                                .score_report_item_content {
+                                    &.score_report_item_icon {
+                                        .fa-circle-check {
+                                            display: inline-block;
+                                        }
+                                    }
+
+                                    &.score_report_item_text {
+                                        color: darken($main_color, 15%);
+                                    }
+                                }
+                            }
+
+                            &:nth-child(1) {
+                                border-top: 0;
+                            }
+                        }
+                    }
+                }
+
+                .score_report_header_name,
+                .score_report_item_name {
+                    border-top: 0px solid !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 350px){
+    main {
+
+        .test_area {
+    
+            .score_report_area {
+                .table {
+    
+                    tbody {
+                        &.score_report_body {
+    
+                            .score_report_item {
+    
+                                .score_report_item_content {
+                                    padding: 15px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    main {
+
+        .test_area {
+            .score_report_area {
+                .table {
+                    thead {
+                        .score_report_header {
+                            padding: 0 0 0 50px;
+
+                            .score_report_header_text {
+                                padding: 12px 5px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        &.score_report_body {
+
+                            .score_report_item {
+
+                                .score_report_item_content {
+                                    padding: 15px 10px;
+
+                                    &.score_report_item_icon {
+                                        width: 50px;
+
+                                        .fa-circle-check {
+                                            font-size: 25px;
+                                        }
+                                    }
+
+                                    &.score_report_item_text {
+                                        margin: 0 0 0 50px;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+
+        .test_area {
+            .score_report_area {
+                .table {
+                    margin: 0 auto 60px;
+
+                    thead {
+                        .score_report_header {
+                            padding: 0 0 0 66.5px;
+
+                            .score_report_header_text {
+                                width: 50%;
+
+                                &.score_report_header_model {
+                                    border-top: 0;
+                                }
+
+                                &.score_report_header_time {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    tbody {
+                        &.score_report_body {
+
+                            .score_report_item {
+
+                                .score_report_item_content {
+                                    padding: 15px;
+
+                                    &.score_report_item_icon {
+                                        width: 66.5px;
+
+                                        .fa-circle-check {
+                                            font-size: 35px;
+                                        }
+                                    }
+
+                                    &.score_report_item_text {
+                                        width: calc(50% - 66.5px / 2);
+                                        margin: 0;
+                                        border-top: 0;
+                                        border-left: 0;
+
+                                        &.score_report_item_time {
+                                            width: 100%;
+                                            margin: 0 0 0 66.5px;
+                                            position: relative;
+                                            z-index: 1;
+                                            background-color: $white;
+                                            border-top: 1px dotted darken($main_color, 15%);
+
+                                            &::before{
+                                                content: "";
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                left: 0;
+                                                top: 0;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                &.check_item {
+                                    .score_report_item_content {
+                                        &.score_report_item_text {
+                                            &::before{
+                                                background-color: $main_color_30;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &::before,
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    width: 1px;
+                                    height: 100%;
+                                    border: 1px dotted darken($main_color, 15%);
+                                    transform: translate(-100%, 0px);
+                                }
+
+                                &::before{
+                                    left: 66.5px;
+                                }
+
+                                &::after{
+                                    left: calc(66.5px + calc(50% - 66.5px / 2));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {
+    main {
+
+        .test_area {
+            .score_report_area {
+                .table {
+
+                    thead {
+                        .score_report_header {
+
+                            .score_report_header_text {
+                                width: 33.33333%;
+                                border-top: 0;
+                                transform: translate(0 , 0);
+
+                                &.score_report_header_time {
+                                    width: 33.33333%;
+                                }
+                            }
+                        }
+                    }
+
+                    tbody {
+                        &.score_report_body {
+
+                            .score_report_item {
+
+                                .score_report_item_content {
+
+                                    &.score_report_item_text {
+                                        width: calc(33.33333% - 66.5px / 3);
+
+                                        &.score_report_item_time {
+                                            width: calc(33.33333% - 66.5px / 3);
+                                            margin: 0;
+                                            z-index: 0;
+                                            border-top: 0;
+                                            border-left: 0;
+                                        }
+                                    }
+                                }
+
+                                &::before,
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    width: 1px;
+                                    height: 100%;
+                                    border: 0px;
+                                    transform: translate(0 , 0);
+                                }
+
+                                &::before{
+                                    width: calc(33.33333% - 66.5px / 3);
+                                    background-color: transparent;
+                                    border-left: 1px dotted darken($main_color, 15%);
+                                    border-right: 1px dotted darken($main_color, 15%);
+                                }
+
+                                &::after{
+                                    border-left: 1px dotted darken($main_color, 15%);
+                                    left: calc(66.5px + calc(66.66666% - 66.5px / 3 * 2));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {}
