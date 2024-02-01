@@ -43,7 +43,7 @@ button:disabled a { color: #fff !important; cursor: auto; }
 
 *, body { letter-spacing: 1.5px; box-sizing: border-box; }
 
-body { background-color: #9DDCFF; }
+body { background-color: #fff5ba; }
 
 .cursor { cursor: pointer; }
 
@@ -65,7 +65,7 @@ body { background-color: #9DDCFF; }
 
 .modal .modal-dialog { margin: 0.5rem 10%; }
 
-.modal .modal-dialog .modal-content { border: 1px solid #20221f; background-color: #9DDCFF; box-shadow: 0px 5px 30px rgba(92, 138, 57, 0.3); }
+.modal .modal-dialog .modal-content { border: 1px solid #20221f; background-color: #fff5ba; box-shadow: 0px 5px 30px rgba(92, 138, 57, 0.3); }
 
 .modal .modal-dialog .modal-content .modal-body { padding: 20px 30px 40px; }
 
@@ -81,7 +81,7 @@ body { background-color: #9DDCFF; }
 
 @media screen and (min-width: 576px) { .modal .modal-dialog { margin: 0.5rem auto; } }
 
-body { background-color: #9DDCFF; }
+body { background-color: #fff5ba; }
 
 main .input_area { margin: 30px auto; display: flex; flex-direction: column; position: relative; }
 
@@ -375,11 +375,13 @@ main .login_area .register_btn a:hover { color: #5c8a39; border-bottom: 1px soli
 
 main .test_area { margin: 40px auto; width: 80%; max-width: 1200px; }
 
-main .test_area.cat_frame { max-width: 1000px; }
+main .test_area.cat_frame { width: 100%; max-width: 1000px; }
 
-main .test_area.cat_frame .cat_body { background-color: #FCC900; padding: 20px 5%; }
+main .test_area.cat_frame .cat_body { background-color: #FCC900; padding: 20px 5% 40px; border-radius: 0 0 20px 20px; }
 
-main .test_area.cat_frame .cat_body .cat_content { background-color: #F3F3B7; border-radius: 15px; padding: 20px; }
+main .test_area.cat_frame .cat_body .cat_content { background-color: #F3F3B7; border-radius: 20px; padding: 20px; }
+
+@media screen and (min-width: 500px) { main .test_area.cat_frame .cat_body .cat_content { padding: 20px 10%; } }
 
 @media screen and (min-width: 1024px) { main .test_area { margin: 0 auto 40px; } }
 
@@ -395,56 +397,41 @@ main .test_area.select_page_area .select_page_btn .select_page_btn_item.select_p
 
 @media screen and (min-width: 768px) { main .test_area.select_page_area .select_page_btn_item_four { padding: 20px 25px; } }
 
-main .test_area .report_selector_tittle, main .test_area .report_selector_text { display: flex; justify-content: center; color: #385423; margin: 0 auto 30px; }
+main .test_area .report_selector_tittle, main .test_area .report_selector_text { display: flex; justify-content: center; color: #6A3906; margin: 0 auto 20px; }
 
-main .test_area .score_report_area .table { border: 1px solid #385423; margin: 0 auto 40px; }
+main .test_area .score_report_area .table { margin: 0 auto 40px; }
 
-main .test_area .score_report_area .table thead .score_report_header { display: flex; justify-content: flex-end; padding: 15px 0; background-color: #5c8a39; border-bottom: 0; flex-wrap: wrap; padding: 0 0 0 37.5px; }
+main .test_area .score_report_area .table thead .score_report_header { display: flex; padding: 15px 5px; background-color: #6A3906; border-bottom: 0; flex-wrap: wrap; display: none; }
 
 main .test_area .score_report_area .table thead .score_report_header .score_report_header_text { display: flex; justify-content: center; color: #fff; padding: 8px 5px; width: 100%; border-left: 1px dotted; border-top: 1px dotted; transform: translate(-1px, 0px); }
 
-main .test_area .score_report_area .table tbody.score_report_body { border-top: 0; background-color: #fff; }
+main .test_area .score_report_area .table thead .score_report_header .item_box_content { display: flex; justify-content: center; width: calc(33.33333% - 60px); color: #fff; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item { position: relative; display: flex; align-items: center; flex-wrap: wrap; border-top: 1px solid #385423; cursor: pointer; }
+main .test_area .score_report_area .table thead .score_report_header .item_box_content.item_box_content_progress { width: 180px; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 15px 2px; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box { display: flex; flex-wrap: wrap; border: 2px solid #FCC900; border-radius: 10px; overflow: hidden; margin: 0 auto 40px; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 37.5px; text-align: center; border: 0px; line-height: 0; padding: 0; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content { display: flex; flex-wrap: wrap; width: 100%; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { position: absolute; top: 50%; transform: translate(-50%, -50%); color: #7cb027; font-size: 20px; display: none; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle, main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_data { width: 100%; display: flex; justify-content: center; padding: 12px 5px; background-color: #fff; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text { display: flex; justify-content: center; color: #20221f; word-break: break-word; width: 100%; margin: 0 0 0 37.5px; border-top: 1px dotted #385423; border-left: 1px dotted #385423; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle { background-color: #6A3906; color: #fff; background-color: #FCC900; color: #6A3906; font-weight: bold; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_name p { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_progress .progress_area { width: 100%; max-width: 300px; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time { display: flex; flex-wrap: wrap; justify-content: center; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_link { position: relative; margin: 30px auto 15px; padding: 8px 20px; background-color: #6A3906; border-radius: 50px; transition: 0.3s; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time .text_date { margin: 0 10px 0 0; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_link a { color: #fff; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item { background-color: #5c8a3930; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_link:hover { padding: 8px 30px; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_icon .fa-circle-check { display: inline-block; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_link:hover a { color: #FCC900; }
 
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_text { color: #385423; }
-
-main .test_area .score_report_area .table tbody.score_report_body .score_report_item:nth-child(1) { border-top: 0; }
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_link .footprint { position: absolute; width: 30px; right: 0; top: 0; transform: translate(calc(100% + 0px), calc(-100% - 0px)); transition: 0.3s; }
 
 main .test_area .score_report_area .table .score_report_header_name, main .test_area .score_report_area .table .score_report_item_name { border-top: 0px solid !important; }
 
-@media screen and (min-width: 350px) { main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 15px 10px; } }
-
-@media screen and (min-width: 576px) { main .test_area .score_report_area .table thead .score_report_header { padding: 0 0 0 50px; }
-  main .test_area .score_report_area .table thead .score_report_header .score_report_header_text { padding: 12px 5px; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 15px 10px; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 50px; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { font-size: 25px; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text { margin: 0 0 0 50px; } }
-
 @media screen and (min-width: 768px) { main .test_area .score_report_area .table { margin: 0 auto 60px; }
-  main .test_area .score_report_area .table thead .score_report_header { padding: 0 0 0 66.5px; }
-  main .test_area .score_report_area .table thead .score_report_header .score_report_header_text { width: 50%; }
-  main .test_area .score_report_area .table thead .score_report_header .score_report_header_text.score_report_header_model { border-top: 0; }
-  main .test_area .score_report_area .table thead .score_report_header .score_report_header_text.score_report_header_time { width: 100%; }
   main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content { padding: 15px; }
   main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon { width: 66.5px; }
   main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_icon .fa-circle-check { font-size: 35px; }
@@ -454,15 +441,15 @@ main .test_area .score_report_area .table .score_report_header_name, main .test_
   main .test_area .score_report_area .table tbody.score_report_body .score_report_item.check_item .score_report_item_content.score_report_item_text::before { background-color: #5c8a3930; }
   main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before, main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { content: ""; position: absolute; width: 1px; height: 100%; border: 1px dotted #385423; transform: translate(-100%, 0px); }
   main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before { left: 66.5px; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { left: calc(66.5px + calc(50% - 66.5px / 2)); } }
+  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { left: calc(66.5px + calc(50% - 66.5px / 2)); }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content { width: 50%; } }
 
-@media screen and (min-width: 1200px) { main .test_area .score_report_area .table thead .score_report_header .score_report_header_text { width: 33.33333%; border-top: 0; transform: translate(0, 0); }
-  main .test_area .score_report_area .table thead .score_report_header .score_report_header_text.score_report_header_time { width: 33.33333%; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text { width: calc(33.33333% - 66.5px / 3); }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item .score_report_item_content.score_report_item_text.score_report_item_time { width: calc(33.33333% - 66.5px / 3); margin: 0; z-index: 0; border-top: 0; border-left: 0; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before, main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { content: ""; position: absolute; width: 1px; height: 100%; border: 0px; transform: translate(0, 0); }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::before { width: calc(33.33333% - 66.5px / 3); background-color: transparent; border-left: 1px dotted #385423; border-right: 1px dotted #385423; }
-  main .test_area .score_report_area .table tbody.score_report_body .score_report_item::after { border-left: 1px dotted #385423; left: calc(66.5px + calc(66.66666% - 66.5px / 3 * 2)); } }
+@media screen and (min-width: 1024px) { main .test_area .score_report_area .table thead .score_report_header { display: flex; }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content { width: calc(33.33333% - 60px); }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle, main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_data { padding: 10px 5px; }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle { display: none; }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_progress { width: 180px; }
+  main .test_area .score_report_area .table .score_report_header_name, main .test_area .score_report_area .table .score_report_item_name { border-top: 0px solid !important; } }
 
 main .test_area.continue_challenge .score_report_area .table thead .score_report_header .score_report_header_text.score_report_header_progress { width: 100%; border-left: 1px dotted #fff; border-top: 1px dotted #fff; }
 
@@ -755,7 +742,7 @@ main .quiz_area .quiz_area_footer .quiz_btn_area .next_question_btn:disabled { t
 
 .page .page_content .report_content_area { background-color: #8FC31F; position: relative; }
 
-.page .page_content .report_content_area::before { content: ""; position: absolute; left: 5%; width: 90%; height: 100%; background-color: #9DDCFF; padding: 0 5%; }
+.page .page_content .report_content_area::before { content: ""; position: absolute; left: 5%; width: 90%; height: 100%; background-color: #fff5ba; padding: 0 5%; }
 
 .page .page_content .report_content_area .report_content { padding: 0 calc(5% + 25px); position: relative; z-index: 1; }
 
@@ -867,7 +854,7 @@ main .quiz_area .quiz_area_footer .quiz_btn_area .next_question_btn:disabled { t
 
 .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar { position: relative; border-radius: 0; background-image: none; background-color: #8FC31F; display: flex; align-items: center; }
 
-.page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar .progress_bar_bg { background-color: #9DDCFF; width: 100%; height: 50%; border-radius: 50px; overflow: hidden; }
+.page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar .progress_bar_bg { background-color: #fff5ba; width: 100%; height: 50%; border-radius: 50px; overflow: hidden; }
 
 .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar .progress_bar_bg .progress_bar_bg_one { background-image: linear-gradient(45deg, rgba(92, 138, 57, 0.5) 25%, transparent 25%, transparent 50%, rgba(92, 138, 57, 0.5) 50%, rgba(92, 138, 57, 0.5) 75%, transparent 75%, transparent); background-size: 1rem 1rem; height: 100%; }
 
@@ -1126,13 +1113,13 @@ main .quiz_area .quiz_area_footer .quiz_btn_area .next_question_btn:disabled { t
   /* 邊界與內容的距離 */ }
 
 @media print { header { display: none; }
-  .page { /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */ /* page-break-after: always;  碰到此元素會直接換頁 */ page-break-inside: avoid; position: relative; max-width: 1024px; height: 1448px; width: 100%; margin: 0 auto; overflow: hidden; background-color: #9DDCFF; }
+  .page { /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */ /* page-break-after: always;  碰到此元素會直接換頁 */ page-break-inside: avoid; position: relative; max-width: 1024px; height: 1448px; width: 100%; margin: 0 auto; overflow: hidden; background-color: #fff5ba; }
   .page .page_content .report_header { position: relative; }
   .page .page_content .report_header .frog_head_text { position: absolute; bottom: 3%; left: 50%; transform: translate(-50%, 0px); display: flex; justify-content: center; align-items: center; flex-direction: column; }
   .page .page_content .report_header .frog_head_text .frog_head_title h5 { font-size: 28px; font-weight: 700; color: #2c421b; }
   .page .page_content .report_header .frog_head_text .frog_head_date p { font-size: 26px; font-weight: 500; color: #2c421b; }
   .page .page_content .report_content_area { background-color: #8FC31F; position: relative; min-height: 1448px; }
-  .page .page_content .report_content_area::before { content: ""; position: absolute; left: 5%; width: 90%; height: 100%; background-color: #9DDCFF; padding: 0 5%; }
+  .page .page_content .report_content_area::before { content: ""; position: absolute; left: 5%; width: 90%; height: 100%; background-color: #fff5ba; padding: 0 5%; }
   .page .page_content .report_content_area .report_content { padding: 0 calc(5% + 25px); position: relative; z-index: 1; }
   .page .page_content .report_content_area .report_content .paper_data .table_data { width: 100%; }
   .page .page_content .report_content_area .report_content .paper_data .table_data tbody tr { display: flex; flex-wrap: wrap; justify-content: center; }
@@ -1196,7 +1183,7 @@ main .quiz_area .quiz_area_footer .quiz_btn_area .next_question_btn:disabled { t
   .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area { width: 100%; }
   .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress { width: 100%; height: auto; background-color: transparent; border-radius: 0; border: 0; overflow: initial; }
   .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar { position: relative; border-radius: 0; background-image: none; background-color: #8FC31F; display: flex; align-items: center; }
-  .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar .progress_bar_bg { background-color: #9DDCFF; width: 100%; height: 25px; border-radius: 50px; overflow: hidden; }
+  .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar .progress_bar_bg { background-color: #fff5ba; width: 100%; height: 25px; border-radius: 50px; overflow: hidden; }
   .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_bar .progress_bar_bg .progress_bar_bg_one { display: none; }
   .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_foot, .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_head { width: 20px; line-height: 1; }
   .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_foot img, .page .page_content .report_content_area .report_content .paper_diagnosis .paper_percentage_area .percentage_grade_area .percentage_grade_item .percentage_progress_bar .progress_bar_body .progress_area .progress .progress_head img { height: 100%; }

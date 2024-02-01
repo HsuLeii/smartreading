@@ -6,24 +6,22 @@ main {
         .report_selector_text {
             display: flex;
             justify-content: center;
-            color: darken($main_color, 15%);
-            margin: 0 auto 30px;
+            color: $main_color_brown;
+            margin: 0 auto 20px;
         }
 
         .score_report_area {
             .table {
-                border: 1px solid darken($main_color, 15%);
                 margin: 0 auto 40px;
 
                 thead {
                     .score_report_header {
                         display: flex;
-                        justify-content: flex-end;
-                        padding: 15px 0;
-                        background-color: $main_color;
+                        padding: 15px 5px;
+                        background-color: $main_color_brown;
                         border-bottom: 0;
                         flex-wrap: wrap;
-                        padding: 0 0 0 37.5px;
+                        display: none;
 
                         .score_report_header_text {
                             display: flex;
@@ -36,94 +34,100 @@ main {
                             transform: translate(-1px, 0px);
 
                         }
+
+                        .item_box_content{
+                            display: flex;
+                            justify-content: center;
+                            width: calc(33.33333% - 60px);
+                            color: $white;
+
+                            &.item_box_content_progress{
+                                width: 180px;
+                            }
+                        }
                     }
                 }
 
                 tbody {
                     &.score_report_body {
-                        border-top: 0;
-                        background-color: $white;
 
-                        .score_report_item {
-                            position: relative;
+                        .item_box{
                             display: flex;
-                            align-items: center;
                             flex-wrap: wrap;
-                            border-top: 1px solid darken($main_color, 15%);
-                            cursor: pointer;
+                            border: 2px solid $cat_yellow;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            margin: 0 auto 40px;
 
-                            .score_report_item_content {
-                                padding: 15px 2px;
-
-                                &.score_report_item_icon {
-                                    width: 37.5px;
-                                    text-align: center;
-                                    border: 0px;
-                                    line-height: 0;
-                                    padding: 0;
-
-                                    .fa-circle-check {
-                                        position: absolute;
-                                        top: 50%;
-                                        transform: translate(-50%, -50%);
-                                        color: $bright_green;
-                                        font-size: 20px;
-                                        display: none;
-                                    }
-                                }
-
-                                &.score_report_item_text {
+                                .item_box_content{
                                     display: flex;
-                                    justify-content: center;
-                                    color: $main_color_grey;
-                                    word-break: break-word;
+                                    flex-wrap: wrap;
                                     width: 100%;
-                                    margin: 0 0 0 37.5px;
-                                    border-top: 1px dotted darken($main_color, 15%);
-                                    border-left: 1px dotted darken($main_color, 15%);
 
-                                    &.score_report_item_name {
-                                        p {
-                                            overflow: hidden;
-                                            white-space: nowrap;
-                                            text-overflow: ellipsis;
-                                        }
-                                    }
-
-                                    &.score_report_item_time {
+                                    .item_box_content_tittle,
+                                    .item_box_content_data{
+                                        width: 100%;
                                         display: flex;
-                                        flex-wrap: wrap;
                                         justify-content: center;
+                                        padding: 12px 5px;
+                                        background-color: $white;
+                                    }
 
-                                        .text_date {
-                                            margin: 0 10px 0 0;
+                                    .item_box_content_tittle{
+                                        background-color: $main_color_brown;
+                                        color: $white;
+                                        background-color: $cat_yellow;
+                                        color: $main_color_brown;
+                                        font-weight: bold;
+                                    }
+
+                                    &.item_box_content_progress{
+                                        .progress_area{
+                                            width: 100%;
+                                            max-width: 300px;
                                         }
                                     }
-                                }
 
-                            }
+                                    &.item_box_content_btn{
+                                        
 
-                            &.check_item {
-                                background-color: $main_color_30;
+                                        
+                                        
+                                        .item_box_content_link{
+                                            position: relative;
+                                            margin: 30px auto 15px;
+                                            padding: 8px 20px;
+                                            background-color: $main_color_brown;
+                                            border-radius: 50px;
+                                            transition: 0.3s;
 
-                                .score_report_item_content {
-                                    &.score_report_item_icon {
-                                        .fa-circle-check {
-                                            display: inline-block;
+                                            a{
+                                                color: $white;
+                                            }
+
+                                            &:hover{
+                                                padding: 8px 30px;
+                                                a{
+                                                    color: $cat_yellow;
+                                                }
+                                            }
+
+                                            .footprint{
+                                                position: absolute;
+                                                width: 30px;
+                                                right: 0;
+                                                top: 0;
+                                                transform: translate(calc(100% + 0px), calc(-100% - 0px));
+                                                transition: 0.3s;
+                                            }
                                         }
                                     }
-
-                                    &.score_report_item_text {
-                                        color: darken($main_color, 15%);
-                                    }
+                                    
                                 }
-                            }
-
-                            &:nth-child(1) {
-                                border-top: 0;
-                            }
                         }
                     }
+
+                    
                 }
 
                 .score_report_header_name,
@@ -135,76 +139,6 @@ main {
     }
 }
 
-@media screen and (min-width: 350px){
-    main {
-
-        .test_area {
-    
-            .score_report_area {
-                .table {
-    
-                    tbody {
-                        &.score_report_body {
-    
-                            .score_report_item {
-    
-                                .score_report_item_content {
-                                    padding: 15px 10px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 576px) {
-    main {
-
-        .test_area {
-            .score_report_area {
-                .table {
-                    thead {
-                        .score_report_header {
-                            padding: 0 0 0 50px;
-
-                            .score_report_header_text {
-                                padding: 12px 5px;
-                            }
-                        }
-                    }
-
-                    tbody {
-                        &.score_report_body {
-
-                            .score_report_item {
-
-                                .score_report_item_content {
-                                    padding: 15px 10px;
-
-                                    &.score_report_item_icon {
-                                        width: 50px;
-
-                                        .fa-circle-check {
-                                            font-size: 25px;
-                                        }
-                                    }
-
-                                    &.score_report_item_text {
-                                        margin: 0 0 0 50px;
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 
 @media screen and (min-width: 768px) {
     main {
@@ -213,24 +147,6 @@ main {
             .score_report_area {
                 .table {
                     margin: 0 auto 60px;
-
-                    thead {
-                        .score_report_header {
-                            padding: 0 0 0 66.5px;
-
-                            .score_report_header_text {
-                                width: 50%;
-
-                                &.score_report_header_model {
-                                    border-top: 0;
-                                }
-
-                                &.score_report_header_time {
-                                    width: 100%;
-                                }
-                            }
-                        }
-                    }
 
                     tbody {
                         &.score_report_body {
@@ -303,6 +219,12 @@ main {
                                     left: calc(66.5px + calc(50% - 66.5px / 2));
                                 }
                             }
+
+                            .item_box{
+                                    .item_box_content{
+                                        width: 50%;
+                                    }
+                            }
                         }
                     }
                 }
@@ -313,71 +235,50 @@ main {
 
 @media screen and (min-width: 992px) {}
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
     main {
 
         .test_area {
+
+    
             .score_report_area {
                 .table {
-
+    
                     thead {
                         .score_report_header {
-
-                            .score_report_header_text {
-                                width: 33.33333%;
-                                border-top: 0;
-                                transform: translate(0 , 0);
-
-                                &.score_report_header_time {
-                                    width: 33.33333%;
-                                }
-                            }
+                            display: flex;
                         }
                     }
-
+    
                     tbody {
                         &.score_report_body {
+    
+                            .item_box{
+                                    .item_box_content{
+                                        width: calc(33.33333% - 60px);
+    
+                                        .item_box_content_tittle,
+                                    .item_box_content_data{
+                                        padding: 10px 5px;
+                                    }
 
-                            .score_report_item {
-
-                                .score_report_item_content {
-
-                                    &.score_report_item_text {
-                                        width: calc(33.33333% - 66.5px / 3);
-
-                                        &.score_report_item_time {
-                                            width: calc(33.33333% - 66.5px / 3);
-                                            margin: 0;
-                                            z-index: 0;
-                                            border-top: 0;
-                                            border-left: 0;
+                                        .item_box_content_tittle{
+                                            display: none;
+                                        }
+                                        
+                                        &.item_box_content_progress{
+                                            width: 180px;
                                         }
                                     }
-                                }
-
-                                &::before,
-                                &::after{
-                                    content: "";
-                                    position: absolute;
-                                    width: 1px;
-                                    height: 100%;
-                                    border: 0px;
-                                    transform: translate(0 , 0);
-                                }
-
-                                &::before{
-                                    width: calc(33.33333% - 66.5px / 3);
-                                    background-color: transparent;
-                                    border-left: 1px dotted darken($main_color, 15%);
-                                    border-right: 1px dotted darken($main_color, 15%);
-                                }
-
-                                &::after{
-                                    border-left: 1px dotted darken($main_color, 15%);
-                                    left: calc(66.5px + calc(66.66666% - 66.5px / 3 * 2));
-                                }
                             }
                         }
+    
+                        
+                    }
+    
+                    .score_report_header_name,
+                    .score_report_item_name {
+                        border-top: 0px solid !important;
                     }
                 }
             }
