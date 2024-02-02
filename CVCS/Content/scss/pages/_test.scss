@@ -5,18 +5,72 @@ main {
         max-width: 1200px;
 
         &.cat_frame{
+            margin: 40px auto 0;
             width: 100%;
-            max-width: 1000px;
 
             .cat_body{
+                position: relative;
                 background-color: $cat_yellow;
-                padding: 20px 5% 40px;
-                border-radius: 0 0 20px 20px;
+                padding: 20px 5% 80px;
+                border-radius: 0 0 10px 10px;
 
                 .cat_content{
+                    position: relative;
+                    z-index: 1;
                     background-color: $cat_content;
-                    border-radius: 20px;
+                    border-radius: 10px;
                     padding: 20px;
+                }
+
+                .cat_hand_area{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0 0 10px 10px;
+                    overflow: hidden;
+                
+                    .cat_hand{
+                        position: absolute;
+                        top: 0;
+                        width: 10%;
+                        z-index: 1;
+                        line-height: 0;
+
+                        &.cat_hand_right{
+                            right: 0;
+                        }
+
+                        &.cat_hand_left{
+                            left: 0;
+                        }
+                    }
+
+                    .cat_arm{
+                        position: absolute;
+                        width: 2.5%;
+                        height: 100%;
+                        background-image: url(../image/photo/cat/hand_arm_right.svg);
+                        
+                        &.cat_arm_right{
+                            right: 0;
+                        }
+
+                        &.cat_arm_left{
+                            left: 0;
+                            background-image: url(../image/photo/cat/hand_arm_left.svg);
+                        }
+                    }
+                }
+
+                .cat_tail{
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50% , 0);
+                    width: 80%;
+                    max-width: 500px;
                 }
             }
         }
@@ -32,7 +86,7 @@ main {
                 .cat_body{
     
                     .cat_content{
-                        padding: 20px 10%;
+                        padding: 20px 5%;
                     }
                 }
             }
@@ -47,6 +101,16 @@ main {
     main {
         .test_area {
             margin: 0 auto 40px;
+
+            &.cat_frame{
+    
+                .cat_body{
+    
+                    .cat_content{
+                        padding: 20px 28px;
+                    }
+                }
+            }
         }
     }
 }

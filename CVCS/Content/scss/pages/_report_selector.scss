@@ -13,36 +13,35 @@ main {
         .score_report_area {
             .table {
                 margin: 0 auto 40px;
+                display: block;
+                width: 100%;
 
                 thead {
+                    position: sticky;
+                    top: 10px;
+                    z-index: 1;
+                    display: block;
+                    width: 100%;
+
                     .score_report_header {
                         display: flex;
-                        padding: 15px 5px;
-                        background-color: $main_color_brown;
-                        border-bottom: 0;
                         flex-wrap: wrap;
+                        background-color: $cat_yellow;
+                        border: 2px solid $main_color_brown;
+                        border-radius: 10px;
                         display: none;
 
-                        .score_report_header_text {
+                        .item_box_content {
                             display: flex;
                             justify-content: center;
-                            color: $white;
-                            padding: 8px 5px;
-                            width: 100%;
-                            border-left: 1px dotted;
-                            border-top: 1px dotted;
-                            transform: translate(-1px, 0px);
+                            padding: 15px 5px;
+                            width: calc(33.33333% - 50px);
+                            color: $main_color_brown;
+                            border-right: 2px solid $main_color_brown;
 
-                        }
-
-                        .item_box_content{
-                            display: flex;
-                            justify-content: center;
-                            width: calc(33.33333% - 60px);
-                            color: $white;
-
-                            &.item_box_content_progress{
-                                width: 180px;
+                            &.item_box_content_progress {
+                                width: 150px;
+                                border-right: 0;
                             }
                         }
                     }
@@ -50,8 +49,10 @@ main {
 
                 tbody {
                     &.score_report_body {
+                        display: block;
+                        width: 100%;
 
-                        .item_box{
+                        .item_box {
                             display: flex;
                             flex-wrap: wrap;
                             border: 2px solid $cat_yellow;
@@ -59,86 +60,143 @@ main {
                             overflow: hidden;
                             margin: 0 auto 40px;
 
-                                .item_box_content{
-                                    display: flex;
-                                    flex-wrap: wrap;
+                            .item_box_content {
+                                display: flex;
+                                flex-wrap: wrap;
+                                width: 100%;
+
+                                .item_box_content_tittle,
+                                .item_box_content_data {
                                     width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    padding: 15px 5px;
+                                    background-color: $white;
+                                }
 
-                                    .item_box_content_tittle,
-                                    .item_box_content_data{
-                                        width: 100%;
-                                        display: flex;
-                                        justify-content: center;
-                                        padding: 12px 5px;
-                                        background-color: $white;
+                                .item_box_content_data {
+                                    p {
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
                                     }
+                                }
 
-                                    .item_box_content_tittle{
-                                        background-color: $main_color_brown;
-                                        color: $white;
-                                        background-color: $cat_yellow;
-                                        color: $main_color_brown;
-                                        font-weight: bold;
-                                    }
 
-                                    &.item_box_content_progress{
-                                        .progress_area{
+
+                                .item_box_content_tittle {
+                                    background-color: $main_color_brown;
+                                    color: $white;
+                                    background-color: $cat_yellow;
+                                    color: $main_color_brown;
+                                    font-weight: bold;
+                                }
+
+                                &.item_box_content_progress {
+                                    .item_box_content_data {
+                                        .progress_area {
                                             width: 100%;
                                             max-width: 300px;
                                         }
                                     }
 
-                                    &.item_box_content_btn{
-                                        
+                                }
 
-                                        
-                                        
-                                        .item_box_content_link{
+                                &.item_box_content_btn {
+                                    border-top: 2px solid $cat_yellow;
+
+                                    .item_box_content_data {
+                                        border-bottom: 0px;
+
+                                        .item_box_content_link {
                                             position: relative;
-                                            margin: 30px auto 15px;
-                                            padding: 8px 20px;
-                                            background-color: $main_color_brown;
+                                            margin: 10px auto;
+                                            background-color: $main_color_blue;
                                             border-radius: 50px;
                                             transition: 0.3s;
 
-                                            a{
+                                            .footprint {
+                                                position: absolute;
+                                                width: 30px;
+                                                right: 0;
+                                                top: 50%;
+                                                transform: translate(calc(100% + 10px), -50%);
+                                                display: none;
+                                            }
+
+                                            a {
+                                                display: block;
+                                                padding: 8px 20px;
                                                 color: $white;
                                             }
 
-                                            &:hover{
-                                                padding: 8px 30px;
-                                                a{
+                                            &:hover {
+                                                background-color: $main_color_brown;
+
+                                                a {
+                                                    padding: 8px 30px;
                                                     color: $cat_yellow;
                                                 }
                                             }
 
-                                            .footprint{
-                                                position: absolute;
-                                                width: 30px;
-                                                right: 0;
-                                                top: 0;
-                                                transform: translate(calc(100% + 0px), calc(-100% - 0px));
-                                                transition: 0.3s;
-                                            }
                                         }
                                     }
-                                    
+
                                 }
+
+                            }
                         }
                     }
 
-                    
-                }
 
-                .score_report_header_name,
-                .score_report_item_name {
-                    border-top: 0px solid !important;
                 }
             }
         }
     }
 }
 
+@media screen and (min-width: 350px) {
+    main {
+
+        .test_area {
+
+            .score_report_area {
+                .table {
+
+                    tbody {
+                        &.score_report_body {
+
+                            .item_box {
+
+                                .item_box_content {
+
+                                    &.item_box_content_btn {
+                                        .item_box_content_data {
+                                            .item_box_content_link {
+
+                                                &:hover {
+
+                                                    .footprint {
+                                                        display: block;
+                                                    }
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 768px) {
     main {
@@ -151,79 +209,24 @@ main {
                     tbody {
                         &.score_report_body {
 
-                            .score_report_item {
+                            .item_box {
+                                .item_box_content {
+                                    width: 50%;
 
-                                .score_report_item_content {
-                                    padding: 15px;
-
-                                    &.score_report_item_icon {
-                                        width: 66.5px;
-
-                                        .fa-circle-check {
-                                            font-size: 35px;
-                                        }
+                                    .item_box_content_tittle,
+                                    .item_box_content_data {
+                                        padding: 15px 10px;
                                     }
 
-                                    &.score_report_item_text {
-                                        width: calc(50% - 66.5px / 2);
-                                        margin: 0;
-                                        border-top: 0;
-                                        border-left: 0;
-
-                                        &.score_report_item_time {
-                                            width: 100%;
-                                            margin: 0 0 0 66.5px;
-                                            position: relative;
-                                            z-index: 1;
-                                            background-color: $white;
-                                            border-top: 1px dotted darken($main_color, 15%);
-
-                                            &::before{
-                                                content: "";
-                                                position: absolute;
-                                                width: 100%;
-                                                height: 100%;
-                                                left: 0;
-                                                top: 0;
-                                            }
-                                        }
+                                    &:nth-child(odd) {
+                                        border-right: 2px solid $cat_yellow;
                                     }
 
-                                }
-
-                                &.check_item {
-                                    .score_report_item_content {
-                                        &.score_report_item_text {
-                                            &::before{
-                                                background-color: $main_color_30;
-                                            }
-                                        }
+                                    &.item_box_content_btn {
+                                        width: 100%;
+                                        border-right: 0px;
                                     }
                                 }
-
-                                &::before,
-                                &::after{
-                                    content: "";
-                                    position: absolute;
-                                    width: 1px;
-                                    height: 100%;
-                                    border: 1px dotted darken($main_color, 15%);
-                                    transform: translate(-100%, 0px);
-                                }
-
-                                &::before{
-                                    left: 66.5px;
-                                }
-
-                                &::after{
-                                    left: calc(66.5px + calc(50% - 66.5px / 2));
-                                }
-                            }
-
-                            .item_box{
-                                    .item_box_content{
-                                        width: 50%;
-                                    }
                             }
                         }
                     }
@@ -240,45 +243,49 @@ main {
 
         .test_area {
 
-    
+
             .score_report_area {
                 .table {
-    
+
                     thead {
                         .score_report_header {
                             display: flex;
                         }
                     }
-    
+
                     tbody {
                         &.score_report_body {
-    
-                            .item_box{
-                                    .item_box_content{
-                                        width: calc(33.33333% - 60px);
-    
-                                        .item_box_content_tittle,
-                                    .item_box_content_data{
-                                        padding: 10px 5px;
+
+                            .item_box {
+                                margin: 20px auto;
+
+                                .item_box_content {
+                                    width: calc(33.33333% - 50px);
+                                    border-right: 2px solid $cat_yellow;
+
+                                    .item_box_content_tittle {
+                                        display: none;
                                     }
 
-                                        .item_box_content_tittle{
-                                            display: none;
-                                        }
-                                        
-                                        &.item_box_content_progress{
-                                            width: 180px;
+                                    &.item_box_content_progress {
+                                        width: 150px;
+                                        border-right: 0;
+
+                                        .item_box_content_data {
+                                            .progress_area {
+                                                flex-direction: column;
+                                                justify-content: center;
+
+                                                .progress {
+                                                    width: 100%;
+                                                }
+                                            }
                                         }
                                     }
+                                }
                             }
                         }
-    
-                        
-                    }
-    
-                    .score_report_header_name,
-                    .score_report_item_name {
-                        border-top: 0px solid !important;
+
                     }
                 }
             }
