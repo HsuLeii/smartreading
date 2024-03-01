@@ -41,13 +41,13 @@
                 </h3>
 
                 <div class="contest_regulations_link">
-                    <a href="#taipei" class="contest_regulations_link_text">
+                    <a href="#taipei" class="contest_regulations_link_text taipei_tittle">
                         <h4>台北市</h4>
                     </a>
-                    <a href="#hualien" class="contest_regulations_link_text">
+                    <a href="#hualien" class="contest_regulations_link_text hualien_tittle">
                         <h4>花蓮縣</h4>
                     </a>
-                    <a href="#taitung" class="contest_regulations_link_text">
+                    <a href="#taitung" class="contest_regulations_link_text taitung_tittle">
                         <h4>台東縣</h4>
                     </a>
                 </div>
@@ -875,28 +875,29 @@
         <!-- this page widgets JS -->
 
         <script>
-            var testDiv = document.getElementById("div");
-            var a = testDiv.offsetTop
+            var hualien = document.getElementById("hualien");
+            var hualienTop = hualien.offsetTop
+            var taitung = document.getElementById("taitung");
+            var taitungTop = taitung.offsetTop
 
 
             window.addEventListener('scroll', () => {
   const verticalScrollPx = window.scrollY || window.pageYOffset;
 
-  if (verticalScrollPx < a) {
-    document.body.style.backgroundColor = 'red';
-  } else if (verticalScrollPx > a && verticalScrollPx < 1000) {
-    document.body.style.backgroundColor = 'green';
+  if (verticalScrollPx < hualienTop) {
+    $(".taipei_tittle").addClass("active");
+    $(".hualien_tittle").removeClass("active");
+    $(".taitung_tittle").removeClass("active");
+  } else if (verticalScrollPx > hualienTop && verticalScrollPx < taitungTop) {
+    $(".taipei_tittle").removeClass("active");
+    $(".hualien_tittle").addClass("active");
+    $(".taitung_tittle").removeClass("active");
   } else {
-    document.body.style.backgroundColor = 'lightblue';
+    $(".taipei_tittle").removeClass("active");
+    $(".hualien_tittle").removeClass("active");
+    $(".taitung_tittle").addClass("active");
   }
 });
-
-            var scroll = $(window).scrollTop(); // Check scroll distance
-    if (scroll >= testDiv.offsetTop) { // If it is equal or more than 300 - you can change this to what you want
-      $(".tittle").addClass("change-bg-color"); // Add custom class to .tittle which will change the color
-    } else {
-      $(".tittle").removeClass("change-bg-color"); // When scrolled to the top, remove the class which changes the color back
-    }
         </script>
 
         <script>
