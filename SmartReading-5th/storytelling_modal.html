@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SmartReading 適性閱讀">
+    <meta name="author" content="SmartReading 適性閱讀">
+    <title>SmartReading 適性閱讀</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
+    <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+    <link href="Content/css/global.css" rel="stylesheet" />
+
+    <!-- this page widgets CSS -->
+    <link rel="stylesheet" href="Content/css/dataTables/1.5.1dataTables.dateTime.min.css">
+
+
+    <!-- SR core CSS -->
+    <link rel="stylesheet" type="text/css" href="Content/css/promote-styles.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/SR-contest.css" />
+    <link rel="stylesheet" type="text/css" href="Content/css/SR-storytelling-modal.css" />
+</head>
+
+<body class="">
+
+    <!-- 閱讀任務完成進度 彈跳視窗開始 -->
+    <a class="reading_task_modal_link" data-toggle="modal" data-target="#reading_task_modal"></a>
+
+    <div class="modal reading_task_modal in" id="reading_task_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-header-cloud">
+                        <img src="Content/images/icon/cloud.png" alt="">
+                    </div>
+                    <button type="button" class="close reading_task_close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="reading_task_body">
+                        <div class="container-fluid">
+                            <div class="reading_task_body_content">
+                                    <div class="reading_task_text">
+                                        <h3>
+                                            閱讀任務完成進度
+                                        </h3>
+                                        <p>
+                                            截至2024/12/12 15:39
+                                        </p>
+                                    </div>
+
+                                    <div class="reading_task_value">
+                                        <p>書籍評量：已完成<span class="value_green">00</span>本，還差<span class="value_red">01</span>本。</p>
+                                        <p>文章評論：已完成<span class="value_green">05</span>篇，還差<span class="value_red">02</span>篇。</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 閱讀任務完成進度 彈跳視窗結束 -->
+
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script src="Script/jquery.min.js"></script>
+    <script src="Script/bootstrap-lg.min.js"></script>
+    <script src="Script/ie10-viewport-bug-workaround.js"></script>
+    <script src="Content/widgets/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1.min.js"></script>
+    <!-- widgets js -->
+
+    <script src="Content/js/dataTables/jquery.1.13.7dataTables.min.js"></script>
+    <script src="Content/js/dataTables/2.29.2moment.min.js"></script>
+    <script src="Content/js/dataTables/1.5.1dataTables.dateTime.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            //年級書籍類別選項
+            $(".more_select").click(function () {
+                if ($(this).siblings(".more_select_dropdown_menu").hasClass("open")) {
+                    $(this).siblings(".more_select_dropdown_menu").removeClass("open");
+                } else {
+                    $(".more_select_dropdown_menu").removeClass("open");
+                    $(this).siblings(".more_select_dropdown_menu").addClass("open");
+                }
+            });
+
+            $(".dropdown_menu_btn").click(function () {
+                $(this).parents(".more_select_dropdown_menu").removeClass("open");
+            });
+
+            $(".more_select_grade").click(function () {
+                if ($(this).hasClass("check")) {
+                    $(this).removeClass("check");
+                } else {
+                    $(this).addClass("check");
+                }
+            });
+            
+            //關閉閱讀任務彈跳視窗
+            $(".reading_task_modal_link").click();
+            $(".reading_task_close").click(function () {
+                $(".reading_task_modal").hide();
+                $(".modal-backdrop").hide();
+                $("body").removeClass("modal-open")
+            });
+        });
+    </script>
+
+<!-- 日期篩選 -->
+    <script>
+        let minDate, maxDate;
+ 
+ // Custom filtering function which will search data in column four between two values
+ DataTable.ext.search.push(function (settings, data, dataIndex) {
+     let min = minDate.val();
+     let max = maxDate.val();
+     let date = new Date(data[1]);
+  
+     if (
+         (min === null && max === null) ||
+         (min === null && date <= max) ||
+         (min <= date && max === null) ||
+         (min <= date && date <= max)
+     ) {
+         return true;
+     }
+     return false;
+ });
+  
+ // Create date inputs
+ minDate = new DateTime('#min', {
+     format: 'MMMM Do YYYY'
+ });
+ maxDate = new DateTime('#max', {
+     format: 'MMMM Do YYYY'
+ });
+  
+ // DataTables initialisation
+var table = $('#storytelling_manage__table').DataTable({
+            responsive: true,
+            searching: true,
+            select: true,
+            pageLength: 10,
+            pagingType: "simple_numbers",
+            columnDefs: [{
+                    "targets": 0,
+                    orderable: false
+                },
+                {
+                    "targets": 1,
+                    orderable: false
+                },
+                {
+                    "targets": 2,
+                    orderable: false
+                },
+                {
+                    "targets": 3,
+                    orderable: false
+                },
+                {
+                    "targets": 4,
+                    orderable: false
+                },
+                {
+                    "targets": 5,
+                    orderable: false
+                },
+                {
+                    "targets": 6,
+                    orderable: false
+                },
+                {
+                    "targets": 7,
+                    orderable: false
+                },
+                {
+                    "targets": 8,
+                    orderable: false
+                },
+                {
+                    "targets": 9,
+                    orderable: false
+                },
+                {
+                    "targets": 10,
+                    orderable: false
+                }
+            ],
+            dom: '<"datatables-custom-header clearfix"B>' +
+                'r' +
+                '<""<""t>>' +
+                '<"RPList-footer storytelling-footer clearfix"pi>',
+            language: {
+                "processing": "處理中...",
+                "loadingRecords": "載入中...",
+                "lengthMenu": "顯示 _MENU_ 項結果",
+                "zeroRecords": "沒有符合的結果",
+                "info": "<span class='footer-hide'>共&nbsp;_TOTAL_&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;_PAGE_&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;_PAGES_&nbsp;<span class='header-hide'>頁</span>",
+                "infoEmpty": "<span class='footer-hide'>共&nbsp;0&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;0&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;0&nbsp;<span class='header-hide'>頁</span>",
+                "infoFiltered": "(從 _MAX_ 本書中篩選的結果)",
+                "infoPostFix": "",
+                "search": "搜尋：",
+                "paginate": {
+                    "first": "第一頁",
+                    "previous": "<i class='fa fa-angle-left' aria-hidden='true'></i><span>&nbsp;上一頁</span>",
+                    "next": "<span>下一頁&nbsp;</span><i class='fa fa-angle-right' aria-hidden='true'></i>",
+                    "last": "最後一頁"
+                },
+                "aria": {
+                    "sortAscending": ": 升冪排列",
+                    "sortDescending": ": 降冪排列"
+                }
+            },
+        });
+
+        var books_inputHTML = '<div class="add_dataTables_input">' +
+            '到第&nbsp;' +
+            '<input type="text" class="form-control input-lg input-inline paginate_input" id="storytelling-books__textGoPage" data-prev="" value="">' +
+            '&nbsp;頁' +
+            '<a class="btn btn-lg paginate_button" id="storytelling-books__btnGoPage">確定</a>' +
+            '</div>';
+        $('#storytelling_manage__table_wrapper .RPList-footer').append(books_inputHTML);
+        $("#storytelling-books__btnGoPage").click(function () {
+            var books_textGoPage = $("#storytelling-books__textGoPage").val();
+            var books_info = $('#storytelling_manage__table').DataTable().page.info();
+            if (parseInt(books_textGoPage) > 0 && parseInt(books_textGoPage) <= books_info.pages) {
+                $('#storytelling_manage__table').DataTable().page(parseInt(books_textGoPage) - 1)
+                    .draw(
+                        false);
+            } else {
+                alert('請輸入正確頁數。');
+            }
+        });
+        //點擊頁碼滑動至最表格上方
+        $('#storytelling_manage__table').on('page.dt', function () {
+            $('html, body').animate({
+                scrollTop: $(".storytelling_manage__table").offset().top - 80
+            }, 500);
+        });
+
+  
+ // Refilter the table
+ document.querySelectorAll('#min, #max').forEach((el) => {
+     el.addEventListener('change', () => table.draw());
+ });
+
+    </script>
+
+</body>
+
+</html>
