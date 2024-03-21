@@ -1,5 +1,63 @@
 main {
   &.storytelling {
+    span, th, td, button, .btn {
+      font-size: 14px;
+      text-decoration: none;
+      line-height: 1.7;
+    }
+    
+    input, label, textarea {
+      font-size: 14px !important;
+      line-height: 1.7;
+    }
+    
+    p, select, li, .form-control {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #2e3233;
+    }
+    
+    a {
+      font-size: 14px;
+      text-decoration: none;
+      line-height: 1.7;
+      color: #2e3233;
+    }
+    
+    button {
+      padding: 0;
+      border-width: 0px;
+      border-style: none;
+      background-color: transparent;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    .form-control{
+      &:focus {
+        border-color: $main_color;
+        outline: 0;
+        box-shadow: 0 0 8px $main_color;
+      }
+    }
+
+    img{
+      width: 100%;
+    }
+
+    .btn-default {
+      background-color: #FFF;
+      border: 1px solid #c6c6c6;
+      color: #5c6466;
+      text-decoration: none;
+      padding: 6px 12px;
+  
+      &:hover{
+        background-color: #f9f9f9;
+      border: 1px solid #b9b9b9;
+      }
+  }
+
     .page-banner {
       &.storytelling {
         background-image: url(../images/storytelling/banner-bg.jpg);
@@ -39,6 +97,10 @@ main {
           .storytelling-search_left_top {
             width: 80%;
             margin: 0 auto 30px;
+
+            img{
+              width: 100%;
+            }
           }
 
           .storytelling-search_left_input {
@@ -79,6 +141,7 @@ main {
                     z-index: 6;
                     width: 100%;
                     margin: 0;
+                    padding: 6px 12px;
                   }
 
                   .more_select_dropdown_menu {
@@ -208,6 +271,7 @@ main {
                     display: block;
                     margin: 0 auto;
                     color: $white;
+                    padding: 6px 12px;
                   }
 
                   .dropdown-menu {
@@ -498,6 +562,8 @@ main {
                       color: $white;
                       line-height: 1.42857143;
                       float: right;
+                      padding: 6px 12px;
+                      border-radius: 4px;
 
                       &:hover {
                         background-color: darken($main_color, 5%);
@@ -529,8 +595,17 @@ main {
                           }
 
                           .storytelling-books_btn {
+                            padding: 6px 12px;
                             color: $main_color;
                             min-width: 120px;
+                            background-color: #FFF;
+                            border: 1px solid #c6c6c6;
+                            border-radius: 4px;
+
+                            &:hover{
+                              background-color: #f9f9f9;
+                              border: 1px solid #b9b9b9;
+                            }
                           }
                         }
                       }
@@ -561,6 +636,7 @@ main {
               flex-direction: column;
               text-align: center;
               padding: 30px 0;
+              text-align: center;
 
               .dataTables_paginate,
               .dataTables_info,
@@ -643,6 +719,60 @@ main {
 }
 
 .storytelling_video_modal {
+
+  span, th, td, button, .btn {
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.7;
+  }
+  
+  input, label, textarea {
+    font-size: 14px !important;
+    line-height: 1.7;
+  }
+  
+  p, select, li, .form-control {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2e3233;
+  }
+  
+  a {
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.7;
+    color: #2e3233;
+  }
+  
+  button {
+    padding: 0;
+    border-width: 0px;
+    border-style: none;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn-default {
+    background-color: #FFF;
+    border: 1px solid #c6c6c6;
+    color: #5c6466;
+    text-decoration: none;
+    padding: 6px 12px;
+
+    &:hover{
+      background-color: #f9f9f9;
+    border: 1px solid #b9b9b9;
+    }
+}
+  
+  .form-control{
+    &:focus {
+      border-color: $main_color;
+      outline: 0;
+      box-shadow: 0 0 8px $main_color;
+    }
+  }
 
   .modal-dialog {
     .modal-content {
@@ -764,6 +894,7 @@ main {
 
                         p {
                           color: $main_color;
+                          margin: 0;
                         }
                       }
                     }
@@ -874,10 +1005,26 @@ main {
                 justify-content: center;
                 margin: 40px auto 0;
 
+                .feedback_check_cancel_btn,
+                  .feedback_check_submit_btn{
+                    background-color: #FFF;
+    border: 1px solid #c6c6c6;
+    color: #5c6466;
+    text-decoration: none;
+    padding: 6px 12px;
+
+    &:hover{
+      background-color: #f9f9f9;
+    border: 1px solid #b9b9b9;
+    }
+                  }
+
                 .feedback_check_submit_btn {
                   margin: 0 10px;
                   background-color: $main_color;
                   color: $white;
+
+                  
 
                   &:hover {
                     background-color: darken($main_color, 5%);
@@ -1134,8 +1281,6 @@ main {
       }
     }
   }
-  
-
 }
 
 @media screen and (min-width: 680px) {
@@ -1168,6 +1313,32 @@ main {
 @media screen and (min-width: 768px) {
   main {
     &.storytelling {
+
+      .container{
+        width: calc(100% - 260px);
+        max-width: 1200px;
+      }
+
+      span, th, td, button, .btn {
+        font-size: 15px;
+      }
+      
+      input, label, textarea {
+        font-size: 15px !important;
+      }
+      
+      p, select, li, .form-control {
+        font-size: 15px;
+      }
+      
+      a {
+        font-size: 15px;
+      }
+
+      h5 {
+        font-size: 19px;
+      }
+
       .storytelling-books {
         .tab-content {
           .tab-pane {
@@ -1202,6 +1373,31 @@ main {
   }
 
   .storytelling_video_modal {
+    .container{
+      width: calc(100% - 260px);
+      max-width: 1200px;
+    }
+
+    span, th, td, button, .btn {
+      font-size: 15px;
+    }
+    
+    input, label, textarea {
+      font-size: 15px !important;
+    }
+    
+    p, select, li, .form-control {
+      font-size: 15px;
+    }
+    
+    a {
+      font-size: 15px;
+    }
+
+    h5 {
+      font-size: 19px;
+    }
+
     .modal-dialog {
       .modal-content {
         .modal-body {
@@ -1295,6 +1491,27 @@ main {
 @media screen and (min-width: 992px) {
   main {
     &.storytelling {
+
+      span, th, td, button, .btn {
+        font-size: 17px;
+      }
+      
+      input, label, textarea {
+        font-size: 17px !important;
+      }
+      
+      p, select, li, .form-control {
+        font-size: 17px;
+      }
+      
+      a {
+        font-size: 17px;
+      }
+
+      h5 {
+        font-size: 21px;
+      }
+
       .page-banner {
         &.storytelling {
           background-position: center center;
@@ -1360,6 +1577,26 @@ main {
   }
 
   .storytelling_video_modal {
+    span, th, td, button, .btn {
+      font-size: 17px;
+    }
+    
+    input, label, textarea {
+      font-size: 17px !important;
+    }
+    
+    p, select, li, .form-control {
+      font-size: 17px;
+    }
+    
+    a {
+      font-size: 17px;
+    }
+
+    h5 {
+      font-size: 21px;
+    }
+
     .modal-dialog {
       .modal-content {
         .modal-body {
@@ -1438,6 +1675,25 @@ main {
 @media screen and (min-width: 1400px) {
   main {
     &.storytelling {
+      span, th, td, button, .btn {
+        font-size: 19px;
+      }
+      
+      input, label, textarea {
+        font-size: 19px !important;
+      }
+      
+      p, select, li, .form-control {
+        font-size: 19px;
+      }
+      
+      a {
+        font-size: 19px;
+      }
+
+      h5 {
+        font-size: 23px;
+      }
       .storytelling-search {
 
         .container {
@@ -1517,6 +1773,28 @@ main {
           }
         }
       }
+    }
+  }
+
+  .storytelling_video_modal{
+    span, th, td, button, .btn {
+      font-size: 19px;
+    }
+    
+    input, label, textarea {
+      font-size: 19px !important;
+    }
+    
+    p, select, li, .form-control {
+      font-size: 19px;
+    }
+    
+    a {
+      font-size: 19px;
+    }
+
+    h5 {
+      font-size: 23px;
     }
   }
 }
