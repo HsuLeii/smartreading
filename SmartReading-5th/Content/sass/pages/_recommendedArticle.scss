@@ -6,6 +6,7 @@ body {
 }
 main {
   &.recommendedArticle {
+    background-color: $white;
     h3 {
       font-size: 21px;
       line-height: 1.7;
@@ -112,6 +113,7 @@ main {
         .order-body {
           .recommendedBook-search {
             padding: 0 5%;
+            border-top: 0;
 
             .recommendedBook-search__book {
               display: flex;
@@ -141,16 +143,17 @@ main {
                   }
 
                   .input-group-btn {
-                    border: 1px solid $main_color;
                     width: 100%;
 
                     .recommendedBook-search__btn-search {
-                      color: $main-color;
+                      color: $white;
                       z-index: auto;
                       width: 100%;
                       border-radius: 0;
                       margin: -1px auto 0px;
                       padding: 10px 16px;
+                      background-color: $main_color;
+                      border: 1px solid $main_color;
                     }
 
                     &:hover {
@@ -176,6 +179,13 @@ main {
                   label {
                     &::before {
                       border: 1px solid $main-color;
+                      top: 50%;
+                      transform: translate(0px, -50%);
+                    }
+
+                    &::after {
+                      top: 50%;
+                      transform: translate(7.75px, -50%) rotate(45deg);
                     }
                   }
                 }
@@ -355,6 +365,7 @@ main {
           }
 
           .recommendedBook-list {
+            background-color: $white;
             .dataTables_wrapper {
               padding: 10px 5%;
               background-color: $dataTables-bg;
@@ -467,6 +478,7 @@ main {
                         line-height: 0;
                         max-width: none !important;
                         width: 100%;
+                        height: 185px;
 
                         a {
                           margin: 0 auto;
@@ -648,6 +660,7 @@ main {
 
               .dataTables_info{
                 padding: 0;
+                display: none;
               }
             }
           }
@@ -1006,8 +1019,6 @@ main {
   }
 }
 
-
-
 @media screen and (min-width: 576px) {
   main {
     &.recommendedArticle {
@@ -1294,7 +1305,7 @@ main {
       .join-all {
         .order-wrap {
           width: calc(100% - 260px);
-          padding: 80px 60px;
+          padding: 0 60px 80px ;
           .order-body {
             .recommendedBook-search {
               .recommendedBook-search__book {
