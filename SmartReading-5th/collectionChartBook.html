@@ -17,7 +17,6 @@
     <!-- this page widgets CSS -->
     <link rel="stylesheet" href="Content/css/swiper-bundle-11.0.7.min.css" />
 
-
     <!-- SR core CSS -->
     <link rel="stylesheet" href="https://beta.smartreading.net/v3/Content/css/promote-styles.css">
 
@@ -470,6 +469,12 @@
                                 <div class="tittle">
                                     <h5>每月評論篇數紀錄</h5>
                                 </div>
+
+                                <div class="data-page-scroll">
+                                    <div class="chart-control">
+                                        <canvas id="anisotropic-pr-value" style="width: 300px; height: 150px;"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -522,11 +527,15 @@
     <!-- Swiper JS -->
     <script src="Content/js/swiper-bundle-11.0.7.min.js"></script>
 
+    <!-- Chart JS -->
+    <script src="Content/js/chart.min.js"></script>
+
     <!-- Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
+            allowTouchMove: false,
             autoHeight: true,
-            cssMode: true,
+
             navigation: {
                 nextEl: ".swiper_btn_next",
                 prevEl: ".swiper_btn_prev",
@@ -538,8 +547,111 @@
                     return '<span class="' + className + '">' + (index + 1) + "</span>";
                 },
             },
-            mousewheel: true,
+            mousewheel: false,
             keyboard: true,
+        });
+
+        //點擊頁碼滑動至最表格上方
+        $('.swiper-pagination-bullet').click(function () {
+                $('html, body').animate({
+                    scrollTop: $(".collectionBook_area ").offset().top - 80
+                }, 500);
+            });
+    </script>
+
+    <!-- Chart -->
+    <script>
+        Chart.Tooltip.positioners.custom = function (elements, position) {
+            return {
+                x: elements[0]._model.x,
+                y: 30
+            }
+        }
+
+        var ctx11 = document.getElementById('anisotropic-pr-value').getContext('2d');
+        var myChart = new Chart(ctx11, {
+            type: "line",
+            data: {
+                labels: [
+                    "",
+                    "1月",
+                    "2月",
+                    "3月",
+                    "4月",
+                    "5月",
+                    "6月",
+                    "7月",
+                    "8月",
+                    "9月",
+                    "10月",
+                    "11月",
+                    "12月",
+                ],
+                datasets: [{
+                    backgroundColor: "#446ef6",
+                    borderColor: "#446ef6",
+                    fill: false,
+                    data: [, 15, 25, 30, 22, 20, 24, 26, 27, 23],
+                    pointRadius: 6,
+                    pointHoverRadius: 6,
+                    tension: 0.5
+                }, ],
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 0,
+                },
+                tooltips: {
+                    // Disable the on-canvas tooltip
+                    enabled: true,
+                    yAlign: 'none',
+                    position: 'custom',
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [{
+                        position: 'bottom',
+                        ticks: {
+                            fontColor: '#595757',
+                            fontSize: 17,
+                            fontStyle: "bold",
+                        }
+                    }],
+                    yAxes: [{
+                        position: 'left',
+                        ticks: {
+                            min: 0,
+                            stepSize: 5,
+                            fontColor: '#595757',
+                            fontSize: 17,
+                            fontStyle: "bold",
+                        }
+                    }]
+                },
+            },
+
+            plugins: [{
+                afterDraw: function (chartInstance) {
+                    ctx = chartInstance.ctx;
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = '#000';
+                    ctx.font = "bold 14px 'Arial'";
+                    chartInstance.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        if (i == 0) {
+                            meta.data.forEach(function (bar, index) {
+                                var data = dataset.data[index];
+                                ctx.fillText(data, bar._model.x, bar._model.y +
+                                20); //bar數值y軸-10
+                            });
+                        }
+                    });
+                }
+            }],
         });
     </script>
 
