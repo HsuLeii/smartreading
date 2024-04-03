@@ -58,7 +58,10 @@
                     <p>
                         SRE平台專為EFL (English as a Foreign Language) 學生設計，在經過快速測驗後，為每位學生提供各自程度的閱讀書單，藉由有聲書與AI系統自行練習聽力與口說，在過程中得到不同的閱讀樂趣。
                     </p>
-                    <div id="taipei" class="contest_regulations_content_item">
+                    <div id="taipei" >
+
+                    
+                    <div class="contest_regulations_content_item">
                         <div class="regulations_content_tittle">
                             <h4>
                                 SRE英語適性閱讀比賽－台北市
@@ -322,8 +325,13 @@
                         </div>
                     </div>
 
+                </div>
+
                     <!-- 花蓮版還沒確認 -->
-                    <div id="hualien" class="contest_regulations_content_item">
+                    <div id="hualien">
+
+                    
+                    <div class="contest_regulations_content_item">
                         <div class="regulations_content_tittle">
                             <h4>
                                 SRE英語適性閱讀比賽－花蓮縣
@@ -621,8 +629,13 @@
                         </div>
                     </div>
 
+                </div>
+
                     <!-- 台東版還沒確認 -->
-                    <div id="taitung" class="contest_regulations_content_item">
+                    <div id="taitung">
+
+                    
+                    <div class="contest_regulations_content_item">
                         <div class="regulations_content_tittle">
                             <h4>
                                 SRE英語適性閱讀比賽－臺東縣
@@ -955,6 +968,8 @@
                             </p>
                         </div>
                     </div>
+
+                </div>
                 </div>
 
 
@@ -966,7 +981,8 @@
         <!-- this page widgets JS -->
 
         <script>
-            var scrollToHeight = $(".contest_regulations_link").height();
+            var scrollToHeight = $(".contest_regulations_link").height() + 21;
+            // var scrollToHeight = 0;
             $(".scrollTo").click(function () {
               $("html, body").animate({
                 scrollTop: $($(this).attr("href")).offset().top - scrollToHeight
@@ -982,13 +998,13 @@
             var taitungTop = taitung.offsetTop;
 
             window.addEventListener('scroll', () => {
-                const verticalScrollPx = window.scrollY || window.pageYOffset;
+                const verticalScrollPx = window.scrollY + scrollToHeight + 40 || window.pageYOffset + scrollToHeight + 40;
 
-                if (verticalScrollPx < hualienTop - scrollToHeight) {
+                if (verticalScrollPx < hualienTop) {
                     $(".taipei_tittle").addClass("active");
                     $(".hualien_tittle").removeClass("active");
                     $(".taitung_tittle").removeClass("active");
-                } else if (verticalScrollPx > hualienTop - scrollToHeight && verticalScrollPx < taitungTop - scrollToHeight) {
+                } else if (verticalScrollPx > hualienTop && verticalScrollPx < taitungTop) {
                     $(".taipei_tittle").removeClass("active");
                     $(".hualien_tittle").addClass("active");
                     $(".taitung_tittle").removeClass("active");
