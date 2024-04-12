@@ -309,7 +309,7 @@ main {
             }
 
             .collectionBook_content {
-                width: calc(100% - 0px);
+                width: 100%;
 
                 .collectionBook_top {
                     background-color: $white;
@@ -380,6 +380,11 @@ main {
                             width: 130px;
                             margin: 20px auto;
                         }
+
+                        .listImg {
+                            max-width: 270px;
+                            margin: 20px auto;
+                        }
                     }
 
                     .collectionBook_top_right {
@@ -396,6 +401,10 @@ main {
                                     color: $main_color;
                                     font-weight: bold;
                                 }
+                            }
+
+                            &:nth-last-child(1) {
+                                border-bottom: 0;
                             }
                         }
                     }
@@ -505,6 +514,113 @@ main {
                                 }
                             }
                         }
+
+                        // datatables
+                        .dataTables_wrapper {
+
+                            .booklist_table,
+                            .article_table {
+                                border-bottom: 0px;
+                            }
+
+                            .booklist_table_footer,
+                            .article_table_footer {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                                text-align: center;
+                                padding: 30px 0;
+                                text-align: center;
+
+                                .paging_simple_numbers {
+                                    .paginate_button {
+                                        background: $button-bg;
+                                        border: 1px solid $button-gray;
+                                        color: #2e3233;
+
+                                        &.current {
+                                            color: $default-red !important;
+                                            background: transparent;
+                                            border: 0px solid $button-gray;
+                                        }
+
+                                        &:hover,
+                                        &:focus,
+                                        &:active {
+                                            background-color: #f9f9f9;
+                                            border: 1px solid #c6c6c6;
+                                            color: #2e3233 !important;
+                                            box-shadow: none !important;
+                                        }
+
+                                        &.previous,
+                                        &.next {
+                                            display: none;
+                                        }
+
+                                        &.disabled {
+                                            cursor: default;
+                                            color: #666 !important;
+                                            border: 1px solid transparent;
+                                            background: transparent;
+                                            box-shadow: none;
+                                        }
+                                    }
+
+                                    span {
+                                        .paginate_button {
+                                            border-radius: 50%;
+                                            width: calc(14px * 1.7 + 6px);
+                                            padding: 2px;
+                                            margin: 5px;
+                                            min-width: auto;
+                                        }
+                                    }
+                                }
+
+                                .dataTables_paginate {
+                                    margin: 4px 2px;
+                                    border-radius: 0;
+                                    color: #2e3233 !important;
+                                    text-decoration: none !important;
+
+                                    .paginate_button {
+                                        &.disabled {
+
+                                            &:hover,
+                                            &:focus,
+                                            &:active {
+                                                background-color: #f9f9f9;
+                                                border: 1px solid #c6c6c6;
+                                                color: #2e3233 !important;
+                                                box-shadow: none !important;
+                                                cursor: default;
+                                            }
+                                        }
+
+                                        &.current {
+
+                                            &:hover,
+                                            &:focus,
+                                            &:active {
+                                                color: #ff0000 !important;
+                                                font-weight: 500;
+                                                border: 1px solid transparent;
+                                                background: none;
+                                                box-shadow: none;
+                                                cursor: default;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .dataTables_info {
+                                    display: none;
+                                }
+                            }
+                        }
+
                     }
 
                     .data-page-scroll {
@@ -766,6 +882,21 @@ main {
 
                         .table_content {
                             margin: 0 auto 40px;
+
+                            // datatables
+                            .dataTables_wrapper {
+                                .booklist_table_footer,
+                                .article_table_footer {
+                                    .paging_simple_numbers {
+
+                                        span {
+                                            .paginate_button {
+                                                width: calc(15px * 1.7 + 6px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -841,6 +972,28 @@ main {
                         .collectionBook_top_bottom {
                             display: flex;
                             align-items: flex-end;
+                        }
+                    }
+
+                    .collectionBook_bottom {
+
+                        .table_content {
+
+                            // datatables
+                            .dataTables_wrapper {
+                                .booklist_table_footer,
+                                .article_table_footer {
+                                    .paging_simple_numbers {
+
+                                        span {
+                                            .paginate_button {
+                                                width: calc(17px * 1.7 + 6px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
                         }
                     }
                 }
@@ -921,6 +1074,7 @@ main {
 
                         .collectionBook_top_right {
                             width: 60%;
+                            margin: 0 auto;
                         }
                     }
 
@@ -948,105 +1102,153 @@ main {
         }
 
     }
+}
 
-    @media screen and (min-width: 1200px) {
-        main {
-            &.collectionBook {
-                p {
-                    font-size: 19px;
-                }
+@media screen and (min-width: 1200px) {
+    main {
+        &.collectionBook {
+            p {
+                font-size: 19px;
+            }
 
-                span,
-                th,
-                td,
-                .form-control {
-                    font-size: 19px;
-                }
+            span,
+            th,
+            td,
+            .form-control {
+                font-size: 19px;
+            }
 
-                a {
-                    font-size: 19px;
-                }
+            a {
+                font-size: 19px;
+            }
 
-                input,
-                label {
-                    font-size: 19px;
+            input,
+            label {
+                font-size: 19px;
+            }
+
+            .collectionBook_area {
+                .collectionBook_content {
+                    .collectionBook_bottom {
+                        .table_content {
+
+                            // datatables
+                            .dataTables_wrapper {
+                                .booklist_table_footer,
+                                .article_table_footer {
+                                    .paging_simple_numbers {
+
+                                        span {
+                                            .paginate_button {
+                                                width: calc(19px * 1.7 + 6px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
                 }
             }
         }
     }
+}
 
-    @media screen and (min-width: 1400px) {
-        main {
-            &.collectionBook {
-                h1 {
-                    font-size: 40px;
+@media screen and (min-width: 1400px) {
+    main {
+        &.collectionBook {
+            h1 {
+                font-size: 40px;
+            }
+
+            h3 {
+                font-size: 33px;
+            }
+
+            h4 {
+                font-size: 27px;
+            }
+
+            h5 {
+                font-size: 22px;
+            }
+
+            p,
+            td,
+            li {
+                font-size: 20px;
+            }
+
+            span,
+            th,
+            td,
+            .form-control {
+                font-size: 20px;
+            }
+
+            a {
+                font-size: 20px;
+            }
+
+            input,
+            label {
+                font-size: 20px;
+            }
+
+            .page-banner {
+                &.collectionBook {
+                    background-image: url(../images/collectionBook/collectionBook_kv.png);
+                    background-position: left center;
+
+                    h1 {
+                        text-align: right;
+                    }
                 }
+            }
 
-                h3 {
-                    font-size: 33px;
-                }
+            .collectionBook_area {
 
-                h4 {
-                    font-size: 27px;
-                }
+                .collectionBook_content {
+                    .collectionBook_bottom {
+                        .table_content {
 
-                h5 {
-                    font-size: 22px;
-                }
+                            // datatables
+                            .dataTables_wrapper {
+                                .booklist_table_footer,
+                                .article_table_footer {
+                                    .paging_simple_numbers {
 
-                p,
-                td,
-                li {
-                    font-size: 20px;
-                }
+                                        span {
+                                            .paginate_button {
+                                                width: calc(20px * 1.7 + 6px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
 
-                span,
-                th,
-                td,
-                .form-control {
-                    font-size: 20px;
-                }
-
-                a {
-                    font-size: 20px;
-                }
-
-                input,
-                label {
-                    font-size: 20px;
-                }
-
-                .page-banner {
-                    &.collectionBook {
-                        background-image: url(../images/collectionBook/collectionBook_kv.png);
-                        background-position: left center;
-
-                        h1 {
-                            text-align: right;
                         }
                     }
                 }
 
-                .collectionBook_area {
+                .swiper_btn_next,
+                .swiper_btn_prev {
+                    width: 50px;
+                    height: 50px;
+                    padding: 20px;
 
-                    .swiper_btn_next,
-                    .swiper_btn_prev {
-                        width: 50px;
-                        height: 50px;
-                        padding: 20px;
-
-                        &::after {
-                            font-size: 35px;
-                        }
+                    &::after {
+                        font-size: 35px;
                     }
+                }
 
-                    .swiper_btn_prev {
-                        transform: translate(calc(-100% - 15px), 0);
-                    }
+                .swiper_btn_prev {
+                    transform: translate(calc(-100% - 15px), 0);
+                }
 
-                    .swiper_btn_next {
-                        transform: translate(calc(100% + 15px), 0);
-                    }
+                .swiper_btn_next {
+                    transform: translate(calc(100% + 15px), 0);
                 }
             }
         }
