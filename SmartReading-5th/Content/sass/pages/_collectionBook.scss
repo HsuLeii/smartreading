@@ -718,7 +718,215 @@ main {
                 }
             }
         }
+
+        .calendar {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(7, 14.285%);
+            grid-template-rows: 60px 35px 100px 100px 100px 100px 100px 100px;
+            height: 735px;
+            background-color: $white;
+            padding: 20px;
+
+            .fc-header-toolbar {
+                grid-column: 1 / span 7;
+                grid-row: 1;
+                width: 100%;
+
+                .fc-left {
+                    float: left;
+                }
+
+                .fc-right {
+                    float: right;
+                    .fc-today-button{
+                        color: $white;
+                        padding: 6px 12px;
+                        background-color: $main_color;
+                        border-color: $main_color;
+                        margin: 0 10px 0 0;
+
+                        &:hover{
+                            background-color: darken($main_color, 5%);
+                            border-color: darken($main_color, 5%);
+                    }
+                    }
+
+                    .btn-group{
+                        .fc-prev-button,.fc-next-button{
+                            color: $white;
+                            padding: 6px 12px;
+                            background-color: $main_color;
+                            border-color: $main_color;
+
+                            &:hover{
+                                
+                                    
+                                    background-color: darken($main_color, 5%);
+                                    border-color: darken($main_color, 5%);
+                                
+                            }
+                        }
+
+                        
+                    }
+                }
+
+                .fc-center{
+                    display: none;
+                }
+            }
+
+            .fc-view-container {
+                grid-column: 1 / span 7;
+                grid-row: 2;
+                display: table;
+
+                .table-bordered {
+                    border: 1px solid $default-gray;
+
+                    thead {
+                        border-bottom: 0px;
+
+                        .table-bordered {
+                            border: 0px;
+                        }
+
+                        tr {
+                            border: 0;
+
+                            th,
+                            td {
+                                border: 0px;
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        border: 1px solid $default-gray;
+
+                        .fc-day-grid-container {
+                            overflow: initial !important;
+                            height: auto !important;
+                        }
+
+                        .table-bordered {
+                            border: 0px;
+
+                            thead {
+                                border: 0px;
+
+                                tr {
+                                    border: 0px;
+                                }
+                            }
+                        }
+
+                        tr {
+
+                            th,
+                            td {
+                                border: 0px;
+                            }
+                        }
+
+                        .fc-other-month {
+                            opacity: 0.3;
+                        }
+
+                        .fc-week {
+                            height: 100px !important;
+                            min-height: auto;
+                            position: relative;
+
+                            .fc-bg {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                height: 100%;
+
+                                table {
+                                    height: 100%;
+                                }
+
+                                .alert-info{
+                                    background-color: lighten($main_color, 30%);
+                                    border-radius: 0;
+                                }
+                            }
+
+                            .fc-content-skeleton {
+                                position: relative;
+                                z-index: 1;
+
+                                thead {
+                                    td {
+                                        border-left: 1px solid $default-gray;
+
+                                        &.fc-sun {
+                                            border-left: 0;
+                                        }
+                                    }
+                                }
+
+                                .alert-info{
+                                    color: $main_color;
+                                    background-color: transparent;
+                                }
+                            }
+
+                            tbody {
+                                border: 0px;
+
+                                .fc-day {
+                                    border: 1px solid $default-gray;
+                                    border-top: 0px;
+                                    
+                                    &.fc-sat {
+                                        border-right: 0;
+                                    }
+
+                                    &.fc-sun {
+                                        border-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            table {
+                width: 100%;
+                box-sizing: border-box;
+                table-layout: fixed;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+        }
     }
+}
+
+.task {
+    border-left-width: 3px;
+    padding: 8px 12px;
+    margin: 10px;
+    border-left-style: solid;
+    font-size: 14px;
+    position: relative;
+    z-index: 10;
+}
+
+.task--danger {
+    border-left-color: #fa607e;
+    grid-column: 2 / span 3;
+    grid-row: 3;
+    margin-top: 15px;
+    background: rgba(253, 197, 208, 0.7);
+    align-self: end;
+    color: #f8254e;
 }
 
 @media screen and (min-width: 576px) {
@@ -885,6 +1093,7 @@ main {
 
                             // datatables
                             .dataTables_wrapper {
+
                                 .booklist_table_footer,
                                 .article_table_footer {
                                     .paging_simple_numbers {
@@ -981,6 +1190,7 @@ main {
 
                             // datatables
                             .dataTables_wrapper {
+
                                 .booklist_table_footer,
                                 .article_table_footer {
                                     .paging_simple_numbers {
@@ -1134,6 +1344,7 @@ main {
 
                             // datatables
                             .dataTables_wrapper {
+
                                 .booklist_table_footer,
                                 .article_table_footer {
                                     .paging_simple_numbers {
@@ -1215,6 +1426,7 @@ main {
 
                             // datatables
                             .dataTables_wrapper {
+
                                 .booklist_table_footer,
                                 .article_table_footer {
                                     .paging_simple_numbers {
