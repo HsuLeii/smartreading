@@ -780,8 +780,8 @@ main {
             display: grid;
             width: 100%;
             grid-template-columns: repeat(7, 14.285%);
-            grid-template-rows: 60px 35px 100px 100px 100px 100px 100px 100px;
-            height: 735px;
+            grid-template-rows: 60px 35px 180px 180px 180px 180px 180px 180px;
+            height: 1217px;
             background-color: $white;
             padding: 20px;
 
@@ -893,7 +893,7 @@ main {
                         }
 
                         .fc-week {
-                            height: 100px !important;
+                            height: 180px !important;
                             min-height: auto;
                             position: relative;
 
@@ -962,29 +962,54 @@ main {
                 border-collapse: collapse;
                 border-spacing: 0;
             }
+
+            .task {
+                padding: 8px 12px;
+                margin: 35px 10px 10px;
+                position: relative;
+                z-index: 10;
+            
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                &.task_one{
+                    align-self: baseline;
+                }
+
+                &.task_two{
+                    align-self:center;
+                }
+
+                &.task_three{
+                    align-self:end;
+                }
+
+                &.task_red {
+                    background: rgba(248, 37, 78, 0.5);
+                    color: rgb(248, 37, 78);
+                }
+
+                &.task_blue {
+                    background: rgba(10, 62, 235, 0.5);
+                    color: rgb(10, 62, 235);
+                }
+
+                &.task_green {
+                    background: rgba(3, 99, 0, 0.5);
+                    color: rgb(3, 99, 0);
+                }
+            }
+
+            
         }
     }
 }
 
-.task {
-    border-left-width: 3px;
-    padding: 8px 12px;
-    margin: 10px;
-    border-left-style: solid;
-    font-size: 14px;
-    position: relative;
-    z-index: 10;
-}
 
-.task--danger {
-    border-left-color: #fa607e;
-    grid-column: 2 / span 3;
-    grid-row: 3;
-    margin-top: 15px;
-    background: rgba(253, 197, 208, 0.7);
-    align-self: end;
-    color: #f8254e;
-}
+
+
 
 @media screen and (min-width: 576px) {
     main {
