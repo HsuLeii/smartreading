@@ -780,23 +780,29 @@ main {
             display: grid;
             width: 100%;
             grid-template-columns: repeat(7, 14.285%);
-            grid-template-rows: 60px 35px 180px 180px 180px 180px 180px 180px;
-            height: 1217px;
+            grid-template-rows: 60px 35px 145px 145px 145px 145px 145px 145px;
+            height: 1005px;
             background-color: $white;
             padding: 20px;
 
             .fc-header-toolbar {
                 grid-column: 1 / span 7;
                 grid-row: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 width: 100%;
 
                 .fc-left {
-                    float: left;
+                    h2{
+                        font-size: 20px;
+                    }
                 }
 
                 .fc-right {
-                    float: right;
+                    margin: 0 0 0 auto;
                     .fc-today-button{
+                        display: none;
                         color: $white;
                         padding: 6px 12px;
                         background-color: $main_color;
@@ -830,6 +836,10 @@ main {
                 }
 
                 .fc-center{
+                    display: none;
+                }
+
+                .fc-clear{
                     display: none;
                 }
             }
@@ -893,7 +903,7 @@ main {
                         }
 
                         .fc-week {
-                            height: 180px !important;
+                            height: 145px !important;
                             min-height: auto;
                             position: relative;
 
@@ -964,8 +974,9 @@ main {
             }
 
             .task {
-                padding: 8px 12px;
-                margin: 35px 10px 10px;
+                padding: 3px 5px;
+                margin: 25px 0px 10px;
+                overflow: hidden;
                 position: relative;
                 z-index: 10;
             
@@ -1006,10 +1017,6 @@ main {
         }
     }
 }
-
-
-
-
 
 @media screen and (min-width: 576px) {
     main {
@@ -1202,6 +1209,51 @@ main {
                             padding: 10px 15px;
                         }
                     }
+                }
+            }
+
+            .calendar {
+                grid-template-rows: 60px 35px 180px 180px 180px 180px 180px 180px;
+                height: 1217px;
+    
+                .fc-header-toolbar {
+    
+                    .fc-left {
+                        h2{
+                            font-size: 25px;
+                        }
+                    }
+    
+                    .fc-right {
+                        .fc-today-button{
+                            display: inline-block;
+                        }
+                    }
+                }
+    
+                .fc-view-container {
+    
+                    .table-bordered {
+    
+                        tbody {
+                            .fc-week {
+                                height: 180px !important;
+                            }
+                        }
+                    }
+                }
+    
+                table {
+                    width: 100%;
+                    box-sizing: border-box;
+                    table-layout: fixed;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                }
+    
+                .task {
+                    padding: 8px 10px;
+                    margin: 35px 10px 10px;
                 }
             }
         }
