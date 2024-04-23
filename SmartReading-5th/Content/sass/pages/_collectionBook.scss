@@ -563,6 +563,7 @@ main {
                                 tr {
                                     td {
                                         border-top: 0;
+                                        padding: 8px 10px;
                                     }
 
                                     &:nth-child(even) {
@@ -689,6 +690,10 @@ main {
                             min-width: 768px;
                         }
                     }
+                }
+
+                .copyright_area{
+                    display: none;
                 }
             }
 
@@ -1959,6 +1964,7 @@ main {
                 .collectionBook_content {
                     width: 100%;
                     height: 100%;
+                    position: relative;
     
                     .cover_area{
                         border: 3px dotted #b5d6e8;
@@ -1967,7 +1973,9 @@ main {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        height: 100%;
+                        height: calc(100% - 80px);
+                        margin: 0 auto;
+                        padding: 0;
     
                         .cover_decoration{
                             width: 100%;
@@ -2000,14 +2008,14 @@ main {
                         }
     
                         .cover_center{
-                            margin: 400px auto;
+                            margin: 380px auto;
                             text-align: left;
                         }
                     }
     
                     .collectionBook_top {
                         background-color: $white;
-                        padding: 20px 10px;
+                        padding: 10px;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
@@ -2077,12 +2085,12 @@ main {
     
                             .articleImg {
                                 width: 180px;
-                                margin: 20px auto;
+                                margin: 10px auto;
                             }
     
                             .listImg {
                                 max-width: 270px;
-                                margin: 20px auto;
+                                margin: 10px auto;
                             }
                         }
     
@@ -2204,8 +2212,8 @@ main {
                         .tittle {
                             display: flex;
                             justify-content: center;
-                            padding: 15px 0;
-                            margin: 40px auto 20px;
+                            padding: 0;
+                            margin: 15px auto 10px;
                         }
     
                         .summary_content{
@@ -2219,7 +2227,7 @@ main {
     
                         .table_content {
                             overflow-x: scroll;
-                            margin: 0 auto 40px;
+                            margin: 0 auto;
     
                             .collectionBook_table {
                                 min-width: 800px;
@@ -2240,6 +2248,7 @@ main {
                                     tr {
                                         td {
                                             border-top: 0;
+                                            padding: 7px 10px;
                                         }
     
                                         &:nth-child(even) {
@@ -2266,6 +2275,7 @@ main {
                                     text-align: center;
                                     padding: 30px 0;
                                     text-align: center;
+                                    display: none;
     
                                     .paging_simple_numbers {
                                         .paginate_button {
@@ -2366,6 +2376,14 @@ main {
                                 min-width: 768px;
                             }
                         }
+                    }
+
+                    .copyright_area{
+                        display: flex;
+                        position: absolute;
+                        bottom: 5px;
+                        left: 50%;
+                        transform: translate(-50% , 0);
                     }
                 }
     
@@ -2698,7 +2716,7 @@ main {
     }
 }
 
-@media print and (min-width: 1024px) {
+@media print {
     .page {
         /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
         /* page-break-after: always;  碰到此元素會直接換頁 */
@@ -2831,42 +2849,43 @@ main {
             }
     
             .page-banner {
-                &.collectionBook {
-                    background-image: url(../images/collectionBook/collectionBook_kv.png);
-                    background-position: left center;
-                    margin-bottom: 0;
+                display: none;
+                // &.collectionBook {
+                //     background-image: url(../images/collectionBook/collectionBook_kv.png);
+                //     background-position: left center;
+                //     margin-bottom: 0;
     
-                    h1 {
-                        font-size: 1.5em;
-                        font-weight: 400;
-                        line-height: 1em;
-                        margin-top: 10px;
-                        margin-bottom: 20px;
-                        color: #FFF;
-                        text-align: left;
-                    }
+                //     h1 {
+                //         font-size: 1.5em;
+                //         font-weight: 400;
+                //         line-height: 1em;
+                //         margin-top: 10px;
+                //         margin-bottom: 20px;
+                //         color: #FFF;
+                //         text-align: left;
+                //     }
     
-                    p {
-                        font-size: 0.9em;
-                        line-height: 1.875em;
-                        color: #FFF;
-                        text-align: left !important;
-                    }
+                //     p {
+                //         font-size: 0.9em;
+                //         line-height: 1.875em;
+                //         color: #FFF;
+                //         text-align: left !important;
+                //     }
     
-                    .container {
-                        padding-right: 15px;
-                        padding-left: 15px;
-                        margin-right: auto;
-                        margin-left: auto;
-                        width: calc(100% - 260px);
-                        max-width: 1200px;
+                //     .container {
+                //         padding-right: 15px;
+                //         padding-left: 15px;
+                //         margin-right: auto;
+                //         margin-left: auto;
+                //         width: calc(100% - 260px);
+                //         max-width: 1200px;
     
-                        .row {
-                            margin-right: -15px;
-                            margin-left: -15px;
-                        }
-                    }
-                }
+                //         .row {
+                //             margin-right: -15px;
+                //             margin-left: -15px;
+                //         }
+                //     }
+                // }
             }
     
             .level_introduction_search {
@@ -2876,82 +2895,83 @@ main {
                 margin: 40px auto;
                 width: 90%;
                 max-width: 1200px;
+                display: none;
     
-                .level_introduction_btn_area {
-                    display: flex;
-                    align-items: center;
+                // .level_introduction_btn_area {
+                //     display: flex;
+                //     align-items: center;
     
-                    p {
-                        font-weight: bold;
-                    }
+                //     p {
+                //         font-weight: bold;
+                //     }
     
-                    .level_introduction_btn {
-                        position: relative;
-                        margin: 0 0 0 10px;
+                //     .level_introduction_btn {
+                //         position: relative;
+                //         margin: 0 0 0 10px;
     
-                        .form-control {
-                            display: flex;
-                            align-items: center;
-                            padding: 0 0 0 10px;
-                            border: 1px solid #ababab;
-                            background-color: #fff;
-                            min-width: 150px;
-                            border-radius: 0;
-                            height: auto;
-                            overflow: hidden;
+                //         .form-control {
+                //             display: flex;
+                //             align-items: center;
+                //             padding: 0 0 0 10px;
+                //             border: 1px solid #ababab;
+                //             background-color: #fff;
+                //             min-width: 150px;
+                //             border-radius: 0;
+                //             height: auto;
+                //             overflow: hidden;
     
-                            &:focus {
-                                box-shadow: none;
-                            }
+                //             &:focus {
+                //                 box-shadow: none;
+                //             }
     
-                            i {
-                                padding: 10px;
-                                margin: 0 0 0 auto;
-                                background-color: #f1f1f1;
-                            }
+                //             i {
+                //                 padding: 10px;
+                //                 margin: 0 0 0 auto;
+                //                 background-color: #f1f1f1;
+                //             }
     
-                            &.open {
-                                i {
-                                    &::before {
-                                        content: "\f077";
-                                    }
-                                }
+                //             &.open {
+                //                 i {
+                //                     &::before {
+                //                         content: "\f077";
+                //                     }
+                //                 }
     
-                                &~ul {
-                                    visibility: visible;
-                                }
-                            }
-                        }
+                //                 &~ul {
+                //                     visibility: visible;
+                //                 }
+                //             }
+                //         }
     
-                        ul {
-                            position: absolute;
-                            left: 50%;
-                            z-index: 2;
-                            transform: translate(-50%, 10px);
-                            width: auto;
-                            min-width: 150px;
-                            visibility: hidden;
-                            border: 1px solid #ababab;
-                            background-color: #fff;
-                            overflow: hidden;
-                            cursor: pointer;
+                //         ul {
+                //             position: absolute;
+                //             left: 50%;
+                //             z-index: 2;
+                //             transform: translate(-50%, 10px);
+                //             width: auto;
+                //             min-width: 150px;
+                //             visibility: hidden;
+                //             border: 1px solid #ababab;
+                //             background-color: #fff;
+                //             overflow: hidden;
+                //             cursor: pointer;
     
-                            .dropdown_item_li {
-                                padding: 5px 10px;
+                //             .dropdown_item_li {
+                //                 padding: 5px 10px;
     
-                                &.active {
-                                    background-color: #446ef6;
-                                    color: #fff;
-                                }
+                //                 &.active {
+                //                     background-color: #446ef6;
+                //                     color: #fff;
+                //                 }
     
-                                &:hover {
-                                    background-color: #446ef6;
-                                    color: #fff;
-                                }
-                            }
-                        }
-                    }
-                }
+                //                 &:hover {
+                //                     background-color: #446ef6;
+                //                     color: #fff;
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
             }
     
             .collectionBook_area {
@@ -2961,11 +2981,13 @@ main {
                 width: 90%;
                 margin: 0 auto;
                 position: relative;
+                width: 100%;
+                padding: 0;
     
                 .swiper {
                     width: 100%;
                     height: auto;
-                    overflow: auto;
+                    overflow: initial;
 
                     .swiper-wrapper{
                         flex-direction: column;
@@ -2977,6 +2999,13 @@ main {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        align-items: flex-start;
+                        padding: 30px 20px;
+                        background-color: #d4f0ff;
+
+                        &.page{
+                            height: 1448px;
+                        }
                     }
                 }
     
@@ -2994,6 +3023,7 @@ main {
                     height: 40px;
                     padding: 18px;
                     border-radius: 50%;
+                    display: none;
     
                     &::after {
                         font-family: swiper-icons;
@@ -3032,6 +3062,8 @@ main {
     
                 .collectionBook_content {
                     width: 100%;
+                    height: 100%;
+                    position: relative;
     
                     .cover_area{
                         border: 3px dotted #b5d6e8;
@@ -3040,6 +3072,9 @@ main {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        height: calc(100% - 80px);
+                        margin: 0 auto;
+                        padding: 0;
     
                         .cover_decoration{
                             width: 100%;
@@ -3072,14 +3107,14 @@ main {
                         }
     
                         .cover_center{
-                            margin: 150px auto;
+                            margin: 380px auto;
                             text-align: left;
                         }
                     }
     
                     .collectionBook_top {
                         background-color: $white;
-                        padding: 20px 10px;
+                        padding: 10px;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
@@ -3149,12 +3184,12 @@ main {
     
                             .articleImg {
                                 width: 180px;
-                                margin: 20px auto;
+                                margin: 10px auto;
                             }
     
                             .listImg {
                                 max-width: 270px;
-                                margin: 20px auto;
+                                margin: 10px auto;
                             }
                         }
     
@@ -3276,8 +3311,8 @@ main {
                         .tittle {
                             display: flex;
                             justify-content: center;
-                            padding: 15px 0;
-                            margin: 40px auto 20px;
+                            padding: 0;
+                            margin: 15px auto 10px;
                         }
     
                         .summary_content{
@@ -3291,7 +3326,7 @@ main {
     
                         .table_content {
                             overflow-x: scroll;
-                            margin: 0 auto 40px;
+                            margin: 0 auto;
     
                             .collectionBook_table {
                                 min-width: 800px;
@@ -3312,6 +3347,7 @@ main {
                                     tr {
                                         td {
                                             border-top: 0;
+                                            padding: 7px 10px;
                                         }
     
                                         &:nth-child(even) {
@@ -3338,6 +3374,7 @@ main {
                                     text-align: center;
                                     padding: 30px 0;
                                     text-align: center;
+                                    display: none;
     
                                     .paging_simple_numbers {
                                         .paginate_button {
@@ -3439,6 +3476,14 @@ main {
                             }
                         }
                     }
+
+                    .copyright_area{
+                        display: flex;
+                        position: absolute;
+                        bottom: 5px;
+                        left: 50%;
+                        transform: translate(-50% , 0);
+                    }
                 }
     
                 .copyright_area {
@@ -3458,6 +3503,7 @@ main {
                 display: flex;
                 justify-content: center;
                 margin: 80px auto 50px;
+                display: none;
     
                 .swiper-pagination {
                     &.swiper-pagination-bullets {
@@ -3498,6 +3544,7 @@ main {
                 align-items: center;
                 flex-direction: column;
                 cursor: pointer;
+                display: none;
     
                 .download_icon {
                     background-color: #446ef6;
