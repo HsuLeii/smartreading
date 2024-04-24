@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 main {
     &.collectionBook {
         background-color: $white;
@@ -238,8 +241,7 @@ main {
         }
 
         .collectionBook_area {
-            padding: 30px 20px;
-            background-color: #d4f0ff;
+            // padding: 30px 20px;
             max-width: 1200px;
             width: 90%;
             margin: 0 auto;
@@ -248,6 +250,8 @@ main {
             .swiper {
                 width: 100%;
                 height: auto;
+                background-color: #d4f0ff;
+                padding: 30px 20px; 
 
                 .swiper-slide {
                     text-align: center;
@@ -272,6 +276,7 @@ main {
                 height: 20px;
                 padding: 12px;
                 border-radius: 50%;
+                box-sizing: border-box;
 
                 &::after {
                     font-family: swiper-icons;
@@ -309,7 +314,7 @@ main {
             }
 
             .collectionBook_content {
-                width: 100%;
+                width: calc(100% - 40px);
 
                 .cover_area{
                     border: 3px dotted #b5d6e8;
@@ -353,6 +358,10 @@ main {
                         margin: 150px auto;
                         text-align: left;
                     }
+                }
+
+                &.calendar_content{
+                    background-color: $white;
                 }
 
                 .collectionBook_top {
@@ -783,12 +792,12 @@ main {
 
         .calendar {
             display: grid;
-            width: 100%;
+            width: calc(100% - 10px);
+            margin: 0 auto;
             grid-template-columns: repeat(7, 14.285%);
-            grid-template-rows: 60px 35px 145px 145px 145px 145px 145px 145px;
-            height: 1005px;
+            grid-template-rows: 60px 24.8px 145px 145px 145px 145px 145px 145px;
+            height: 994.8px;
             background-color: $white;
-            padding: 20px;
 
             .fc-header-toolbar {
                 grid-column: 1 / span 7;
@@ -805,6 +814,7 @@ main {
                 }
 
                 .fc-right {
+                    display: flex;
                     margin: 0 0 0 auto;
                     .fc-today-button{
                         display: none;
@@ -824,6 +834,7 @@ main {
                         .fc-prev-button,.fc-next-button{
                             color: $white;
                             padding: 6px 12px;
+                            margin: 0 5px;
                             background-color: $main_color;
                             border-color: $main_color;
 
@@ -836,7 +847,21 @@ main {
                             }
                         }
 
-                        
+                        .fc-prev-button{
+                            .fa-chevron-left{
+                                &::before{
+                                    content: "\f053";
+                                }
+                            }
+                        }
+
+                        .fc-next-button{
+                            .fa-chevron-right{
+                                &::before{
+                                    content: "\f054";
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -1218,8 +1243,8 @@ main {
             }
 
             .calendar {
-                grid-template-rows: 60px 35px 180px 180px 180px 180px 180px 180px;
-                height: 1217px;
+                grid-template-rows: 60px 26.5px 180px 180px 180px 180px 180px 180px;
+                height: 1208.5px;
     
                 .fc-header-toolbar {
     
@@ -1346,6 +1371,11 @@ main {
                         }
                     }
                 }
+            }
+
+            .calendar {
+                grid-template-rows: 60px 28.89px 180px 180px 180px 180px 180px 180px;
+                height: 1206.11px;
             }
         }
     }
@@ -1631,13 +1661,17 @@ main {
     .page {
         /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
         /* page-break-after: always;  碰到此元素會直接換頁 */
-        // page-break-inside: avoid;
-        // position: relative;
-        // max-width: 1024px;
-        // height: 1448px;
-        // width: 100%;
-        // margin: 0 auto;
-        // overflow: hidden;
+        page-break-inside: avoid;
+        position: relative;
+        max-width: 1024px;
+        height: 1448px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    body{
+        margin: 0;
     }
 
     main {
@@ -1895,6 +1929,8 @@ main {
                 .swiper {
                     width: 100%;
                     height: auto;
+                    background-color: transparent;
+                    padding: 0; 
                     overflow: initial;
 
                     .swiper-wrapper{
@@ -1930,6 +1966,7 @@ main {
                     height: 40px;
                     padding: 18px;
                     border-radius: 50%;
+                    box-sizing: border-box;
                     display: none;
     
                     &::after {
@@ -1968,10 +2005,9 @@ main {
                 }
     
                 .collectionBook_content {
-                    width: 100%;
+                    width: calc(100% - 40px);
                     height: 100%;
                     position: relative;
-                    padding: 30px 20px;
     
                     .cover_area{
                         border: 3px dotted #b5d6e8;
@@ -2018,6 +2054,10 @@ main {
                             margin: 380px auto;
                             text-align: left;
                         }
+                    }
+
+                    &.calendar_content{
+                        background-color: $white;
                     }
     
                     .collectionBook_top {
@@ -2483,12 +2523,12 @@ main {
     
             .calendar {
                 display: grid;
-                width: 100%;
+                width: calc(100% - 20px);
+                margin: 0 auto;
                 grid-template-columns: repeat(7, 14.285%);
                 grid-template-rows: 60px 35px 180px 180px 180px 180px 180px 180px;
                 height: 1217px;
                 background-color: $white;
-                padding: 20px;
     
                 .fc-header-toolbar {
                     grid-column: 1 / span 7;
@@ -2536,7 +2576,21 @@ main {
                                 }
                             }
     
-                            
+                            .fc-prev-button{
+                                .fa-chevron-left{
+                                    &::before{
+                                        content: "\f053";
+                                    }
+                                }
+                            }
+    
+                            .fc-next-button{
+                                .fa-chevron-right{
+                                    &::before{
+                                        content: "\f054";
+                                    }
+                                }
+                            }
                         }
                     }
     
@@ -3643,7 +3697,21 @@ main {
                                 }
                             }
     
-                            
+                            .fc-prev-button{
+                                .fa-chevron-left{
+                                    &::before{
+                                        content: "\f053";
+                                    }
+                                }
+                            }
+    
+                            .fc-next-button{
+                                .fa-chevron-right{
+                                    &::before{
+                                        content: "\f054";
+                                    }
+                                }
+                            }
                         }
                     }
     
