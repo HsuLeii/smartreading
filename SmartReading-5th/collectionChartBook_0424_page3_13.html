@@ -841,6 +841,42 @@
         });
     </script>
 
+    <!-- datepicker -->
+<script>
+    $(document).ready(function () {
+        $('.datetimepicker').datepicker({
+            timepicker: true,
+            language: 'en',
+            range: true,
+            multipleDates: true,
+            multipleDatesSeparator: " - "
+        });
+
+        $('#calendar').fullCalendar({
+            themeSystem: 'bootstrap4',
+            // emphasizes business hours
+            businessHours: false,
+            defaultView: 'month',
+            // event dragging & resizing
+            editable: true,
+            // header
+            header: {
+                left: 'title',
+                center: 'month,agendaWeek,agendaDay',
+                right: 'today prev,next'
+            },
+            events: [
+
+            ],
+            eventRender: function (event, element) {
+                if (event.icon) {
+                    element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
+                        "'></i>");
+                }
+            },
+        });
+    });
+</script>
 </body>
 
 </html>
