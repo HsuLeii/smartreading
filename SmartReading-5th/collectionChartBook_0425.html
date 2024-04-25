@@ -84,7 +84,7 @@
                     <!-- 第二頁 行事曆 -->
                     <div class="swiper-slide page">
                         <div class="collectionBook_content calendar_content">
-                            
+
                             <div id="calendar" class="calendar">
                                 <section class="task task_one task_red" style="grid-column: 2 / span 3; grid-row: 3;">
                                     <p>red</p>
@@ -108,7 +108,7 @@
                                     <p>red</p>
                                 </section>
                             </div>
-                            
+
                             <!-- 轉PDF用的copyright_area -->
                             <div class="copyright_area">
                                 <img src="Content/images/logo-SR.png" alt="">
@@ -1363,7 +1363,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js'></script>
 
 
-    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <!-- Swiper -->
     <script>
@@ -1384,6 +1384,43 @@
             },
             mousewheel: false,
             keyboard: true,
+        });
+    </script>
+
+    <!-- datepicker -->
+    <script>
+        $(document).ready(function () {
+            $('.datetimepicker').datepicker({
+                timepicker: true,
+                language: 'en',
+                range: true,
+                multipleDates: true,
+                multipleDatesSeparator: " - "
+            });
+
+            $('#calendar').fullCalendar({
+                themeSystem: 'bootstrap4',
+                // emphasizes business hours
+                businessHours: false,
+                defaultView: 'month',
+                // event dragging & resizing
+                editable: true,
+                // header
+                header: {
+                    left: 'title',
+                    center: 'month,agendaWeek,agendaDay',
+                    right: 'today prev,next'
+                },
+                events: [
+
+                ],
+                eventRender: function (event, element) {
+                    if (event.icon) {
+                        element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
+                            "'></i>");
+                    }
+                },
+            });
         });
     </script>
 
@@ -1636,45 +1673,13 @@
         });
     </script>
 
-    <!-- datepicker -->
     <script>
         $(document).ready(function () {
-            $('.datetimepicker').datepicker({
-                timepicker: true,
-                language: 'en',
-                range: true,
-                multipleDates: true,
-                multipleDatesSeparator: " - "
-            });
-
-            $('#calendar').fullCalendar({
-                themeSystem: 'bootstrap4',
-                // emphasizes business hours
-                businessHours: false,
-                defaultView: 'month',
-                // event dragging & resizing
-                editable: true,
-                // header
-                header: {
-                    left: 'title',
-                    center: 'month,agendaWeek,agendaDay',
-                    right: 'today prev,next'
-                },
-                events: [
-
-                ],
-                eventRender: function (event, element) {
-                    if (event.icon) {
-                        element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
-                            "'></i>");
-                    }
-                },
-            });
-
-        //     html2canvas(document.querySelector("#calendar")).then(canvas => {
-        //     $("#img-out").append(canvas);
-        // });
-
+            setTimeout(function () {
+                html2canvas(document.querySelector("#calendar")).then(canvas => {
+                    $("#img-out").append(canvas);
+                });
+            }, 2000);
         });
     </script>
 </body>
