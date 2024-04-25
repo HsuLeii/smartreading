@@ -252,7 +252,7 @@ main {
             position: relative;
 
             .swiper {
-                width: 100%;
+                // width: 100%;
                 height: auto;
                 background-color: #d4f0ff;
                 padding: 30px 20px; 
@@ -366,6 +366,7 @@ main {
 
                 &.calendar_content{
                     background-color: $white;
+                    position: relative;
                 }
 
                 .collectionBook_top {
@@ -795,7 +796,6 @@ main {
         }
 
         .calendar {
-            display: grid;
             width: calc(100% - 10px);
             margin: 0 auto;
             grid-template-columns: repeat(7, 14.285%);
@@ -810,6 +810,7 @@ main {
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
+                padding: 12.1px 0;
 
                 .fc-left {
                     h2{
@@ -1046,8 +1047,86 @@ main {
                     color: rgb(3, 99, 0);
                 }
             }
+        }
 
+        .calendar_items{
+            position: absolute;
+            overflow: hidden;
+            top: 84.78px;
+            left: 5px;
+            width: calc(100% - 10px);
+            height: calc(145px * 6);
+
+            .calendar_items_week{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                &.week_first{
+                    top: 0;
+                }
+
+                &.week_second{
+                    top: calc(145px * 1);
+                }
+
+                &.week_third{
+                    top: calc(145px * 2);
+                }
+
+                &.week_fourth{
+                    top: calc(145px * 3);
+                }
+
+                &.week_fifth{
+                    top: calc(145px * 4);
+                }
+
+                &.week_sixth{
+                    top: calc(145px * 5);
+                }
+            }
+
+            .task {
+                padding: 3px 0px;
+                margin: 10px 0px;
+                overflow: hidden;
+                position: relative;
+                z-index: 10;
             
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                &.task_one{
+                    align-self: baseline;
+                    margin: 25px 0px 10px;
+                }
+
+                &.task_two{
+                    align-self:center;
+                }
+
+                &.task_three{
+                    align-self:end;
+                }
+
+                &.task_red {
+                    background: rgba(248, 37, 78, 0.5);
+                    color: rgb(248, 37, 78);
+                }
+
+                &.task_blue {
+                    background: rgba(10, 62, 235, 0.5);
+                    color: rgb(10, 62, 235);
+                }
+
+                &.task_green {
+                    background: rgba(3, 99, 0, 0.5);
+                    color: rgb(3, 99, 0);
+                }
+            }
         }
     }
 }
@@ -1290,6 +1369,38 @@ main {
                     margin: 35px 10px 10px;
                 }
             }
+
+            .calendar_items{
+                top: 88.19px;
+                height: calc(180px * 6);
+    
+                .calendar_items_week{
+    
+                    &.week_first{
+                        top: 0;
+                    }
+    
+                    &.week_second{
+                        top: calc(180px * 1);
+                    }
+    
+                    &.week_third{
+                        top: calc(180px * 2);
+                    }
+    
+                    &.week_fourth{
+                        top: calc(180px * 3);
+                    }
+    
+                    &.week_fifth{
+                        top: calc(180px * 4);
+                    }
+    
+                    &.week_sixth{
+                        top: calc(180px * 5);
+                    }
+                }
+            }
         }
 
     }
@@ -1380,6 +1491,11 @@ main {
             .calendar {
                 grid-template-rows: 60px 28.89px 180px 180px 180px 180px 180px 180px;
                 height: 1206.11px;
+            }
+
+            .calendar_items{
+                top: 94.97px;
+                height: calc(180px * 6);
             }
         }
     }
@@ -2784,6 +2900,86 @@ main {
     
                 
             }
+
+            .calendar_items{
+                position: absolute;
+            overflow: hidden;
+            left: 10px;
+            width: calc(100% - 20px);
+                top: 94.97px;
+                height: calc(180px * 6);
+    
+                .calendar_items_week{
+                    position: absolute;
+                width: 100%;
+                height: 100%;
+    
+                    &.week_first{
+                        top: 0;
+                    }
+    
+                    &.week_second{
+                        top: calc(180px * 1);
+                    }
+    
+                    &.week_third{
+                        top: calc(180px * 2);
+                    }
+    
+                    &.week_fourth{
+                        top: calc(180px * 3);
+                    }
+    
+                    &.week_fifth{
+                        top: calc(180px * 4);
+                    }
+    
+                    &.week_sixth{
+                        top: calc(180px * 5);
+                    }
+                }
+
+                .task {
+                    padding: 3px 0px;
+                    margin: 10px 0px;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 10;
+                
+                    p{
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+    
+                    &.task_one{
+                        align-self: baseline;
+                        margin: 25px 0px 10px;
+                    }
+    
+                    &.task_two{
+                        align-self:center;
+                    }
+    
+                    &.task_three{
+                        align-self:end;
+                    }
+    
+                    &.task_red {
+                        background: rgba(248, 37, 78, 0.5);
+                        color: rgb(248, 37, 78);
+                    }
+    
+                    &.task_blue {
+                        background: rgba(10, 62, 235, 0.5);
+                        color: rgb(10, 62, 235);
+                    }
+    
+                    &.task_green {
+                        background: rgba(3, 99, 0, 0.5);
+                        color: rgb(3, 99, 0);
+                    }
+                }
+            }
         }
     }
 }
@@ -3921,6 +4117,86 @@ main {
                 }
     
                 
+            }
+
+            .calendar_items{
+                position: absolute;
+            overflow: hidden;
+            left: 10px;
+            width: calc(100% - 20px);
+                top: 94.97px;
+                height: calc(180px * 6);
+    
+                .calendar_items_week{
+                    position: absolute;
+                width: 100%;
+                height: 100%;
+    
+                    &.week_first{
+                        top: 0;
+                    }
+    
+                    &.week_second{
+                        top: calc(180px * 1);
+                    }
+    
+                    &.week_third{
+                        top: calc(180px * 2);
+                    }
+    
+                    &.week_fourth{
+                        top: calc(180px * 3);
+                    }
+    
+                    &.week_fifth{
+                        top: calc(180px * 4);
+                    }
+    
+                    &.week_sixth{
+                        top: calc(180px * 5);
+                    }
+                }
+
+                .task {
+                    padding: 3px 0px;
+                    margin: 10px 0px;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 10;
+                
+                    p{
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+    
+                    &.task_one{
+                        align-self: baseline;
+                        margin: 25px 0px 10px;
+                    }
+    
+                    &.task_two{
+                        align-self:center;
+                    }
+    
+                    &.task_three{
+                        align-self:end;
+                    }
+    
+                    &.task_red {
+                        background: rgba(248, 37, 78, 0.5);
+                        color: rgb(248, 37, 78);
+                    }
+    
+                    &.task_blue {
+                        background: rgba(10, 62, 235, 0.5);
+                        color: rgb(10, 62, 235);
+                    }
+    
+                    &.task_green {
+                        background: rgba(3, 99, 0, 0.5);
+                        color: rgb(3, 99, 0);
+                    }
+                }
             }
         }
     }

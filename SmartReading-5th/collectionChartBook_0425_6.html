@@ -34,34 +34,30 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
 
-                    <!-- 第一頁 封面 -->
-                    <div id="abc" class="swiper-slide page">
-                        <div class="collectionBook_content">
-                            <div class="cover_area">
-                                <div class="cover_decoration">
-                                    <img src="Content/images/collectionChartBook/cover_decoration.png" alt="">
-                                </div>
-                                <div class="cover_top">
-                                    <div class="cover_top_logo">
-                                        <img src="Content/images/logo-SR.png" alt="">
-                                    </div>
-                                    <div class="cover_top_text">
-                                        <h4>
-                                            閱讀歷程收集冊
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="cover_center">
-                                    <p>姓名：</p>
-                                    <p>學校：</p>
-                                    <p>年級：</p>
-                                    <p>活動日期：</p>
-                                </div>
-                                <div class="cover_bottom">
-                                    <p>主辦單位：</p>
-                                    <p>協辦單位：</p>
-                                    <p>贊助單位：</p>
-                                </div>
+                    <!-- 第二頁 行事曆 -->
+                    <div class="swiper-slide page">
+                        <div class="collectionBook_content calendar_content">
+                            <div id="calendar" class="calendar">
+                                <section class="task task_one task_red" style="grid-column: 2 / span 3; grid-row: 3;">
+                                    <p>red</p>
+                                </section>
+                                <section class="task task_two task_blue" style="grid-column: 2 / span 3; grid-row: 3;">
+                                    <p>blue</p>
+                                </section>
+                                <section class="task task_three task_green" style="grid-column: 2 / span 3; grid-row: 3;">
+                                    <p>green</p>
+                                </section>
+
+                                <section class="task task_one task_red" style="grid-column: 3 / span 1; grid-row: 5;">
+                                    <p>red</p>
+                                </section>
+                                <section class="task task_two task_blue" style="grid-column: 3 / span 1; grid-row: 5;">
+                                    <p>blue</p>
+                                </section>
+
+                                <section class="task task_one task_red" style="grid-column: 6 / span 2; grid-row: 6;">
+                                    <p>red</p>
+                                </section>
                             </div>
                             <!-- 轉PDF用的copyright_area -->
                             <div class="copyright_area">
@@ -73,10 +69,55 @@
                         </div>
                     </div>
 
+                    <!-- 第二頁 行事曆 -->
                     <div class="swiper-slide page">
-                        <div class="collectionBook_content">
+                        <div class="collectionBook_content calendar_content">
 
-                            <div id="img-out"></div>
+                            <div id="calendar_one" class="calendar">
+                            </div>
+
+                            <div class="calendar_items">
+                                <div class="calendar_items_week week_first">
+                                    <div class="task task_one task_red" style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                    <div class="task task_two task_blue" style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>blue</p>
+                                    </div>
+                                    <div class="task task_three task_green" style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>green</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_second">
+                                    <div class="task task_one task_red" style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                    <div class="task task_two task_blue" style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>blue</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_third"></div>
+
+                                <div class="calendar_items_week week_fourth">
+                                    <div class="task task_one task_red" style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_fifth"></div>
+
+                                <div class="calendar_items_week week_sixth"></div>
+                            </div>
+
+                            <!-- 轉PDF用的copyright_area -->
+                            <div class="copyright_area">
+                                <img src="Content/images/logo-SR.png" alt="">
+                                <p>
+                                    版權所有 ‧ 翻印必究
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,9 +166,6 @@
     <script src='Content/js/moment-2.22.2.js'></script>
     <script src='Content/js/fullcalendar-3.9.0.min.js'></script>
     <script src='Content/js/datepicker-2.2.3.js'></script>
-
-    <!-- html2canvas -->
-    <script src="Content/js/html2canvas-1.4.1.min.js"></script>
 
     <!-- Swiper -->
     <script>
@@ -185,19 +223,32 @@
                     }
                 },
             });
+
+            $('#calendar_one').fullCalendar({
+                themeSystem: 'bootstrap4',
+                // emphasizes business hours
+                businessHours: false,
+                defaultView: 'month',
+                // event dragging & resizing
+                editable: true,
+                // header
+                header: {
+                    left: 'title',
+                    center: 'month,agendaWeek,agendaDay',
+                    right: 'today prev,next'
+                },
+                events: [
+
+                ],
+                eventRender: function (event, element) {
+                    if (event.icon) {
+                        element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
+                            "'></i>");
+                    }
+                },
+            });
         });
     </script>
-
-<script>
-    $(document).ready(function () {
-            html2canvas(document.querySelector("#abc")).then(canvas => {
-                $("#img-out").append(canvas);
-            });
-
-var img    = canvas.toDataURL("image/png");
-document.write('<img src="'+img+'"/>');
-    });
-</script>
 
     <!-- Chart -->
     <script>
@@ -447,8 +498,6 @@ document.write('<img src="'+img+'"/>');
             });
         });
     </script>
-
-    
 </body>
 
 </html>

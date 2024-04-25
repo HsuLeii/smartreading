@@ -38,30 +38,44 @@
 
                     <!-- 第二頁 行事曆 -->
                     <div class="swiper-slide page">
-                        <div class="collectionBook_content calendar_content">
+                        <div class="collectionBook_content calendar_content" style="position: relative;">
 
                             <div id="calendar" class="calendar">
-                                <section class="task task_one task_red" style="grid-column: 2 / span 3; grid-row: 3;">
-                                    <p>red</p>
-                                </section>
-                                <section class="task task_two task_blue" style="grid-column: 2 / span 3; grid-row: 3;">
-                                    <p>blue</p>
-                                </section>
-                                <section class="task task_three task_green"
-                                    style="grid-column: 2 / span 3; grid-row: 3;">
-                                    <p>green</p>
-                                </section>
+                            </div>
 
-                                <section class="task task_one task_red" style="grid-column: 3 / span 1; grid-row: 5;">
-                                    <p>red</p>
-                                </section>
-                                <section class="task task_two task_blue" style="grid-column: 3 / span 1; grid-row: 5;">
-                                    <p>blue</p>
-                                </section>
+                            <div class="calendar_items">
+                                <div class="calendar_items_week week_first">
+                                    <div class="task task_one task_red" style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                    <div class="task task_two task_blue" style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>blue</p>
+                                    </div>
+                                    <div class="task task_three task_green" style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>green</p>
+                                    </div>
+                                </div>
 
-                                <section class="task task_one task_red" style="grid-column: 6 / span 2; grid-row: 6;">
-                                    <p>red</p>
-                                </section>
+                                <div class="calendar_items_week week_second">
+                                    <div class="task task_one task_red" style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                    <div class="task task_two task_blue" style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>blue</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_third"></div>
+
+                                <div class="calendar_items_week week_fourth">
+                                    <div class="task task_one task_red" style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_fifth"></div>
+
+                                <div class="calendar_items_week week_sixth"></div>
                             </div>
 
                             <!-- 轉PDF用的copyright_area -->
@@ -71,13 +85,6 @@
                                     版權所有 ‧ 翻印必究
                                 </p>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide page">
-                        <div class="collectionBook_content calendar_content">
-
-                            <div id="img-out"></div>
                         </div>
                     </div>
                 </div>
@@ -126,9 +133,6 @@
     <script src='Content/js/moment-2.22.2.js'></script>
     <script src='Content/js/fullcalendar-3.9.0.min.js'></script>
     <script src='Content/js/datepicker-2.2.3.js'></script>
-
-    <!-- html2canvas -->
-    <script src="Content/js/html2canvas-1.4.1.min.js"></script>
 
     <!-- Swiper -->
     <script>
@@ -435,14 +439,6 @@
                 booklistTable.page(1).draw();
                 articleTable.page(1).draw();
             });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-                html2canvas(document.querySelector("#calendar")).then(canvas => {
-                    $("#img-out").append(canvas);
-                });
         });
     </script>
 </body>
