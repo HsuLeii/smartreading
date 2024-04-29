@@ -9,24 +9,17 @@
     <meta name="author" content="SmartReading 適性閱讀">
     <title>SmartReading 適性閱讀</title>
     <link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
-    <link rel="stylesheet" type="text/css" href="https://beta.smartreading.net/v3/Content/css/bootstrap-lg.min.css">
-    <link rel="stylesheet" type="text/css" href="Content/css/ie10-viewport-bug-workaround.css">
-    <link rel="stylesheet" type="text/css" href="Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
-    <link href="Content/css/global.css" rel="stylesheet" />
 
     <!-- this page widgets CSS -->
+    <!-- Swiper 開始 -->
     <link rel="stylesheet" href="Content/css/swiper-bundle-11.0.7.min.css" />
+    <!-- Swiper 結束 -->
 
     <!-- datatables 開始 -->
     <link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
-
     <!-- datatables 結束 -->
 
-    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css'> -->
-
-    <!-- SR core CSS -->
-    <!-- <link rel="stylesheet" href="https://beta.smartreading.net/v3/Content/css/promote-styles.css"> -->
-
+    <link rel="stylesheet" href="https://beta.smartreading.net/v3/Content/css/promote-styles.css">
     <link rel="stylesheet" type="text/css" href="Content/css/SR-collectionBook.css" />
 </head>
 
@@ -71,7 +64,6 @@
             </div>
         </div>
 
-
         <div class="collectionBook_area ">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -115,30 +107,30 @@
                         </div>
                     </div>
 
-                    <!-- 第二頁 行事曆 -->
+                    <!-- 第二頁 行事曆 轉PDF display: grid;會失敗-->
                     <div class="swiper-slide page">
-                        <div class="collectionBook_content">
-                            <div id="calendar" class="calendar">
-                                <section class="task task_one task_red" style="grid-column: 2 / span 3; grid-row: 3;">
+                        <div class="collectionBook_content calendar_content">
+                            <div id="calendar" class="calendar" style="display: grid;">
+                                <div class="task task_one task_red" style="grid-column: 2 / span 3; grid-row: 3;">
                                     <p>red</p>
-                                </section>
-                                <section class="task task_two task_blue" style="grid-column: 2 / span 3; grid-row: 3;">
+                                </div>
+                                <div class="task task_two task_blue" style="grid-column: 2 / span 3; grid-row: 3;">
                                     <p>blue</p>
-                                </section>
-                                <section class="task task_three task_green" style="grid-column: 2 / span 3; grid-row: 3;">
+                                </div>
+                                <div class="task task_three task_green" style="grid-column: 2 / span 3; grid-row: 3;">
                                     <p>green</p>
-                                </section>
+                                </div>
 
-                                <section class="task task_one task_red" style="grid-column: 3 / span 1; grid-row: 5;">
+                                <div class="task task_one task_red" style="grid-column: 3 / span 1; grid-row: 5;">
                                     <p>red</p>
-                                </section>
-                                <section class="task task_two task_blue" style="grid-column: 3 / span 1; grid-row: 5;">
+                                </div>
+                                <div class="task task_two task_blue" style="grid-column: 3 / span 1; grid-row: 5;">
                                     <p>blue</p>
-                                </section>
+                                </div>
 
-                                <section class="task task_one task_red" style="grid-column: 6 / span 2; grid-row: 6;">
+                                <div class="task task_one task_red" style="grid-column: 6 / span 2; grid-row: 6;">
                                     <p>red</p>
-                                </section>
+                                </div>
                             </div>
                             <!-- 轉PDF用的copyright_area -->
                             <div class="copyright_area">
@@ -149,6 +141,65 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- 第二頁 行事曆 -->
+                    <div class="swiper-slide page">
+                        <div class="collectionBook_content calendar_content">
+
+                            <div id="calendar_one" class="calendar">
+                            </div>
+
+                            <div class="calendar_items">
+                                <div class="calendar_items_week week_first">
+                                    <div class="task task_one task_red"
+                                        style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                    <div class="task task_two task_blue"
+                                        style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>blue</p>
+                                    </div>
+                                    <div class="task task_three task_green"
+                                        style="width: calc(100% / 7 * 3); margin-left: calc(100% / 7 * 2);">
+                                        <p>green</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_second">
+                                    <div class="task task_one task_red"
+                                        style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                    <div class="task task_two task_blue"
+                                        style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>blue</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_third"></div>
+
+                                <div class="calendar_items_week week_fourth">
+                                    <div class="task task_one task_red"
+                                        style="width: calc(100% / 7 * 5); margin-left: calc(100% / 7 * 2);">
+                                        <p>red</p>
+                                    </div>
+                                </div>
+
+                                <div class="calendar_items_week week_fifth"></div>
+
+                                <div class="calendar_items_week week_sixth"></div>
+                            </div>
+
+                            <!-- 轉PDF用的copyright_area -->
+                            <div class="copyright_area">
+                                <img src="Content/images/logo-SR.png" alt="">
+                                <p>
+                                    版權所有 ‧ 翻印必究
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 第三頁 統計圖表 -->
                     <div class="swiper-slide page">
                         <div class="collectionBook_content">
@@ -1276,7 +1327,8 @@
                             <div class="collectionBook_top">
                                 <div class="collectionBook_top_left">
                                     <div class="listImg">
-                                        <img src="Content/images/recommendedArticle/book.png" class="chartbook_list_img">
+                                        <img src="Content/images/recommendedArticle/book.png"
+                                            class="chartbook_list_img">
                                     </div>
                                     <p>
                                         分類：生態/生命科學
@@ -1358,34 +1410,28 @@
                 </p>
             </div>
 
-        </div>
-
-        <div class="swiper_wrapper_pagination">
-            <div class="swiper-pagination"></div>
-        </div>
-
-        <a href="" class="downloadPDF_area" download="">
-            <div class="download_icon">
-                <i class="fa-solid fa-download"></i>
+            <div class="swiper_wrapper_pagination">
+                <div class="swiper-pagination"></div>
             </div>
-            <p>下載PDF</p>
-        </a>
 
-
+            <a href="" class="downloadPDF_area" download="">
+                <div class="download_icon">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <p>下載PDF</p>
+            </a>
+        </div>
     </main>
 
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <script src="Script/jquery.min.js"></script>
-    <!-- <script src="Script/bootstrap-lg.min.js"></script> -->
+    <script src="Script/bootstrap-lg.min.js"></script>
     <script src="Script/ie10-viewport-bug-workaround.js"></script>
     <script src="Content/widgets/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1.min.js"></script>
     <!-- widgets js -->
     <script src="Content/widgets/DataTables/datatables.min.js"></script>
-
-    <!-- <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script> -->
-
 
     <!-- Swiper JS -->
     <script src="Content/js/swiper-bundle-11.0.7.min.js"></script>
@@ -1393,11 +1439,10 @@
     <!-- Chart JS -->
     <script src="Content/js/chart.min.js"></script>
 
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js'></script>
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.js'></script> -->
+    <!-- datepicker月曆 -->
+    <script src='Content/js/moment-2.22.2.js'></script>
+    <script src='Content/js/fullcalendar-3.9.0.min.js'></script>
+    <script src='Content/js/datepicker-2.2.3.js'></script>
 
     <!-- Swiper -->
     <script>
@@ -1418,6 +1463,67 @@
             },
             mousewheel: false,
             keyboard: true,
+        });
+    </script>
+
+    <!-- datepicker -->
+    <script>
+        $(document).ready(function () {
+            $('.datetimepicker').datepicker({
+                timepicker: true,
+                language: 'en',
+                range: true,
+                multipleDates: true,
+                multipleDatesSeparator: " - "
+            });
+
+            $('#calendar').fullCalendar({
+                themeSystem: 'bootstrap4',
+                // emphasizes business hours
+                businessHours: false,
+                defaultView: 'month',
+                // event dragging & resizing
+                editable: true,
+                // header
+                header: {
+                    left: 'title',
+                    center: 'month,agendaWeek,agendaDay',
+                    right: 'today prev,next'
+                },
+                events: [
+
+                ],
+                eventRender: function (event, element) {
+                    if (event.icon) {
+                        element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
+                            "'></i>");
+                    }
+                },
+            });
+
+            $('#calendar_one').fullCalendar({
+                themeSystem: 'bootstrap4',
+                // emphasizes business hours
+                businessHours: false,
+                defaultView: 'month',
+                // event dragging & resizing
+                editable: true,
+                // header
+                header: {
+                    left: 'title',
+                    center: 'month,agendaWeek,agendaDay',
+                    right: 'today prev,next'
+                },
+                events: [
+
+                ],
+                eventRender: function (event, element) {
+                    if (event.icon) {
+                        element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
+                            "'></i>");
+                    }
+                },
+            });
         });
     </script>
 
@@ -1579,10 +1685,10 @@
                         "next": "<i class='fa fa-angle-right' aria-hidden='true'></i>",
                         "last": "最後一頁"
                     },
-                    "aria": {
-                        "sortAscending": ": 升冪排列",
-                        "sortDescending": ": 降冪排列"
-                    }
+                    // "aria": {
+                    //     "sortAscending": ": 升冪排列",
+                    //     "sortDescending": ": 降冪排列"
+                    // }
                 },
             });
 
@@ -1669,43 +1775,6 @@
             });
         });
     </script>
-
-<!-- datepicker -->
-<script>
-    $(document).ready(function () {
-        $('.datetimepicker').datepicker({
-            timepicker: true,
-            language: 'en',
-            range: true,
-            multipleDates: true,
-            multipleDatesSeparator: " - "
-        });
-
-        $('#calendar').fullCalendar({
-            themeSystem: 'bootstrap4',
-            // emphasizes business hours
-            businessHours: false,
-            defaultView: 'month',
-            // event dragging & resizing
-            editable: true,
-            // header
-            header: {
-                left: 'title',
-                center: 'month,agendaWeek,agendaDay',
-                right: 'today prev,next'
-            },
-            events: [
-
-            ],
-            eventRender: function (event, element) {
-                if (event.icon) {
-                    element.find(".fc-title").prepend("<i class='fa fa-" + event.icon +
-                        "'></i>");
-                }
-            },
-        });
-    });
-</script>
 </body>
 
 </html>
