@@ -61,8 +61,9 @@
                     <div class="voice_btn_icon">
                         <i class="fa-solid fa-volume-high"></i>
                     </div>
-                    <p class="voice_text">請根據目標詞，選出語意對應的英文詞彙。</p><br/>
-                    <p class="voice_text">Please select the English vocabulary corresponding to the semantic meaning based on the target word.</p>
+                    <p class="voice_text">請根據目標詞，選出語意對應的英文詞彙。<br/>
+                        Please select the English vocabulary corresponding to the semantic meaning based on the target word.
+                    </p>
                 </button>
             </div>
 
@@ -102,60 +103,22 @@
                     <div id="optionSet" class="quiz_answer_area">
                         <div class="quiz_answer_item quiz_answer_item_one">
                             <input type="radio" class="quiz_answer_radio" id="Speech_1" name="drone" value="Speech_1" disabled>
-                            <label class="quiz_answer_label" id="SpeechOne" for="Speech_1">(1)</label>
-                            <!-- <button class="quiz_answer_radio" disabled>
-                                <i class="fa-solid fa-check"></i>
-                            </button> -->
-                            <button id="option1" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                                class="button quiz_answer_btn play_answer">
-                                <i class="fa-solid fa-volume-high"></i>
-                            </button>
-                            
+                            <label class="quiz_answer_label" id="SpeechOne" for="Speech_1">Before</label>
                         </div>
 
                         <div class="quiz_answer_item quiz_answer_item_two">
                             <input type="radio" class="quiz_answer_radio" id="Speech_2" name="drone" value="Speech_2" disabled>
-                            <label class="quiz_answer_label" id="SpeechTwo" for="Speech_2">(2)</label>
-                            <!-- <button class="quiz_answer_radio" disabled>
-                                <i class="fa-solid fa-check"></i>
-                            </button>
-                            <div class="quiz_answer_num">
-                                <p>Speech 2</p>
-                            </div> -->
-                            <button id="option2" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                                class="button quiz_answer_btn">
-                                <i class="fa-solid fa-volume-high"></i>
-                            </button>
+                            <label class="quiz_answer_label" id="SpeechTwo" for="Speech_2">Later</label>
                         </div>
 
                         <div class="quiz_answer_item quiz_answer_item_three">
                             <input type="radio" class="quiz_answer_radio" id="Speech_3" name="drone" value="Speech_3"  disabled>
-                            <label class="quiz_answer_label" id="SpeechThree" for="Speech_3">(3)</label>
-                            <!-- <button class="quiz_answer_radio" disabled>
-                                <i class="fa-solid fa-check"></i>
-                            </button>
-                            <div class="quiz_answer_num">
-                                <p>Speech 3</p>
-                            </div> -->
-                            <button id="option3" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                                class="button quiz_answer_btn">
-                                <i class="fa-solid fa-volume-high"></i>
-                            </button>
+                            <label class="quiz_answer_label" id="SpeechThree" for="Speech_3">Currently</label>
                         </div>
 
                         <div class="quiz_answer_item quiz_answer_item_four">
                             <input type="radio" class="quiz_answer_radio" id="Speech_4" name="drone" value="Speech_4" disabled>
-                            <label class="quiz_answer_label" id="SpeechFour" for="Speech_4">(4)</label>
-                            <!-- <button class="quiz_answer_radio" disabled>
-                                <i class="fa-solid fa-check"></i>
-                            </button>
-                            <div class="quiz_answer_num">
-                                <p>Speech 4</p>
-                            </div> -->
-                            <button id="option4" data-toggle="tooltip" title="點擊按鈕進行發音並選擇答案" data-number="" data-word=""
-                                class="button quiz_answer_btn">
-                                <i class="fa-solid fa-volume-high"></i>
-                            </button>
+                            <label class="quiz_answer_label" id="SpeechFour" for="Speech_4">The day after tomorrow</label>
                         </div>
                     </div>
 
@@ -179,80 +142,6 @@
     <script src="../Content/js/bootstrap@5.3.2.bundle.min.js"></script>
 
     <!-- this page widgets JS -->
-
-    <script>
-
-        $(".quiz_answer_btn").click(function () {
-            $(".quiz_answer_btn").attr("disabled", true);
-            $(this).attr("disabled", false);
-            $(this).addClass("play_answer");
-            setTimeout(function () {
-                $(".quiz_answer_btn").attr("disabled", false);
-                $(".quiz_answer_btn").removeClass("play_answer");
-            }, 1500);
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            setTimeout(function () {
-                $(".quiz_answer_btn").attr("disabled", true);
-                $(".quiz_answer_item_one > .quiz_answer_btn").attr("disabled", false);
-                $(".quiz_answer_item_one > .quiz_answer_btn").addClass("play_answer");
-            }, 500);
-            setTimeout(function () {
-                $(".quiz_answer_btn").attr("disabled", true);
-                $(".quiz_answer_item_two > .quiz_answer_btn").attr("disabled", false);
-                $(".quiz_answer_item_one > .quiz_answer_btn").removeClass("play_answer");
-                $(".quiz_answer_item_two > .quiz_answer_btn").addClass("play_answer");
-            }, 1500);
-            setTimeout(function () {
-                $(".quiz_answer_btn").attr("disabled", true);
-                $(".quiz_answer_item_three > .quiz_answer_btn").attr("disabled", false);
-                $(".quiz_answer_item_two > .quiz_answer_btn").removeClass("play_answer");
-                $(".quiz_answer_item_three > .quiz_answer_btn").addClass("play_answer");
-            }, 2500);
-            setTimeout(function () {
-                $(".quiz_answer_btn").attr("disabled", true);
-                $(".quiz_answer_item_four > .quiz_answer_btn").attr("disabled", false);
-                $(".quiz_answer_item_three > .quiz_answer_btn").removeClass("play_answer");
-                $(".quiz_answer_item_four > .quiz_answer_btn").addClass("play_answer");
-            }, 3500);
-            setTimeout(function () {
-                $(".quiz_answer_btn").attr("disabled", false);
-                $(".quiz_answer_btn").removeClass("play_answer");
-                $(".quiz_answer_radio").attr("disabled", false);
-                $(".next_question_btn").removeAttr("disabled");
-            }, 4500);
-        });
-    </script>
-
-    <script>
-        const SpeechOne = document.getElementById("SpeechOne")
-        const SpeechTwo = document.getElementById("SpeechTwo")
-        const SpeechThree = document.getElementById("SpeechThree")
-        const SpeechFour = document.getElementById("SpeechFour")
-updateWindowSize()
-
-function updateWindowSize() {
-	let large = window.matchMedia("(min-width: 768px)").matches
-  
-  if (large) {
-    SpeechOne.innerHTML = "Speech 1"
-    SpeechTwo.innerHTML = "Speech 2"
-    SpeechThree.innerHTML = "Speech 3"
-    SpeechFour.innerHTML = "Speech 4"
-  } else {
-    SpeechOne.innerHTML = "(1)"
-    SpeechTwo.innerHTML = "(2)"
-    SpeechThree.innerHTML = "(3)"
-    SpeechFour.innerHTML = "(4)"
-  }
-}
-
-window.matchMedia("(min-width: 768px)").addListener(updateWindowSize)
-    </script>
-
 </body>
 
 </html>
