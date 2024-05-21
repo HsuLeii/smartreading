@@ -36,7 +36,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="select_page.html">
-                    <img src="../Content/image/logo/logo.png" alt="SmartReading" class="logo_frog">
+                    <img src="../Content/image/logo/logo.png" alt="SmartReading" class="logo_cat">
                     <img src="../Content/image/logo/traditional_logo.svg" alt="漢字詞系列" class="logo_text">
                 </a>
 
@@ -51,9 +51,9 @@
         <div class="quiz_area">
 
             <div class="quiz_area_header">
-                <div class="tittle_frog_area">
-                    <div class="tittle_frog_img">
-                        <img src="../Content/image/photo/frog/tittle.png" alt="">
+                <div class="tittle_cat_area">
+                    <div class="tittle_cat_img">
+                        <img src="../Content/image/photo/cat/tittle.png" alt="">
                     </div>
                 </div>
                 <!-- 播放時加上class play -->
@@ -61,16 +61,25 @@
                     <div class="voice_btn_icon">
                         <i class="fa-solid fa-volume-high"></i>
                     </div>
-                    <p class="voice_text">請根據目標詞，選出語意對應的英文詞彙。<br/>
-                        Please select the English vocabulary corresponding to the semantic meaning based on the target word.
-                    </p>
+                    <p class="voice_text">請根據題目，讓孩子指出正確答案</p>
                 </button>
             </div>
 
             <div class="quiz_area_body">
 
-                <div class="word_area">
-                    <p id="word" class="word_writing">以前</p>
+                <div class="photo_area">
+                    <div class="photo_project">
+                        <img src="../Content/image/photo/topic/01/01.jpg" alt="">
+                    </div>
+                    <div class="photo_project">
+                        <img src="../Content/image/photo/topic/01/02.jpg" alt="">
+                    </div>
+                    <div class="photo_project">
+                        <img src="../Content/image/photo/topic/01/03.jpg" alt="">
+                    </div>
+                    <div class="photo_project">
+                        <img src="../Content/image/photo/topic/01/04.jpg" alt="">
+                    </div>
                 </div>
 
                 <div class="progress_area">
@@ -81,48 +90,23 @@
                     <p class="progress_value">60/100</p>
                 </div>
 
-                
+
             </div>
 
             <div class="quiz_area_footer">
-                <!-- <div class="mic_frog_area">
-                    <div class="mic_frog_text" style="display: none;">
+                <div class="mic_cat_area" style="display: none;">
+                    <div class="mic_cat_text">
                         <p>oh oh！你還沒選擇答案唷！ </p>
                     </div>
-                    <div class="mic_frog_img">
-                        <img src="../Content/image/photo/frog/mic.png" alt="">
+                    <div class="mic_cat_img">
+                        <img src="../Content/image/photo/cat/mic.png" alt="">
                     </div>
-                    
-                </div> -->
-                
+                </div>
+
 
                 <div class="quiz_btn_area">
-                    <div class="quiz_btn_text">
-                        <p>請選擇：</p>
-                    </div>
-                    <div id="optionSet" class="quiz_answer_area">
-                        <div class="quiz_answer_item quiz_answer_item_one">
-                            <input type="radio" class="quiz_answer_radio" id="Speech_1" name="drone" value="Speech_1" disabled>
-                            <label class="quiz_answer_label" id="SpeechOne" for="Speech_1">Before</label>
-                        </div>
-
-                        <div class="quiz_answer_item quiz_answer_item_two">
-                            <input type="radio" class="quiz_answer_radio" id="Speech_2" name="drone" value="Speech_2" disabled>
-                            <label class="quiz_answer_label" id="SpeechTwo" for="Speech_2">Later</label>
-                        </div>
-
-                        <div class="quiz_answer_item quiz_answer_item_three">
-                            <input type="radio" class="quiz_answer_radio" id="Speech_3" name="drone" value="Speech_3"  disabled>
-                            <label class="quiz_answer_label" id="SpeechThree" for="Speech_3">Currently</label>
-                        </div>
-
-                        <div class="quiz_answer_item quiz_answer_item_four">
-                            <input type="radio" class="quiz_answer_radio" id="Speech_4" name="drone" value="Speech_4" disabled>
-                            <label class="quiz_answer_label" id="SpeechFour" for="Speech_4">The day after tomorrow</label>
-                        </div>
-                    </div>
-
-                    <button id="next" type="button" onclick="location.href='end.html'" disabled class="button next_question_btn">
+                    <button id="next" type="button" onclick="location.href='end.html'" disabled
+                        class="button next_question_btn">
                         <p>下一題</p>
                         <div class="next_question_btn_icon">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -142,6 +126,28 @@
     <script src="../Content/js/bootstrap@5.3.2.bundle.min.js"></script>
 
     <!-- this page widgets JS -->
+    <script>
+        $(document).ready(function () {
+            $(".photo_project").click(function () {
+                $(this).siblings(".photo_project").removeClass("active");
+                $(this).addClass("active");
+                $(".next_question_btn").removeAttr("disabled");
+                $(".mic_cat_area").hide();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                if ($(".photo_project").hasClass("active")) {
+                    $(".mic_cat_area").hide();
+                } else {
+                    $(".mic_cat_area").show();
+                }
+            }, 3000);
+        });
+    </script>
 </body>
 
 </html>
