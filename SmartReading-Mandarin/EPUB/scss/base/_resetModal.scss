@@ -1,0 +1,633 @@
+// 彈跳獎章開始
+.blocker {
+    z-index: 6;
+    overflow-x: hidden;
+
+    .modal {
+        max-width: none;
+        width: 60%;
+        padding: 25px 30px;
+        background: $modal_bg;
+
+        .badge-modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            .read-first,
+            .read-second,
+            .read-preview {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .bookman {
+                    position: absolute;
+                    right: 0%;
+                    bottom: 0%;
+                    transform: translate(30%, -100px);
+                    width: 30%;
+                    z-index: -1;
+                }
+
+                .modal-text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h3 {
+                        font-size: 26px;
+                        text-align: center;
+                        border-bottom: 0px solid $white;
+                        padding: 0px;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                .modal-img {
+                    border: 1.5px solid transparent;
+                    background-color: transparent;
+                    margin: 20px auto 0px;
+                    border-radius: 10px;
+                    width: 60%;
+
+                    .badge-box {
+                        position: relative;
+                        margin: 0px auto;
+                        padding: 0% 10%;
+                        background: $white;
+                        border-radius: 10px 10px 0px 0px;
+
+                        .light {
+                            animation: 1.5s linear 0.8s infinite normal none running light;
+                            transform-origin: center center;
+                            opacity: 0;
+                            z-index: -2;
+                        }
+
+                        .readbadge-modal {
+                            position: absolute;
+                            left: 0px;
+                            z-index: 1;
+                            animation: 0.8s ease 0s 1 normal forwards running badge;
+                            transform-origin: center center;
+                            transform: scale(0);
+                            padding: 0% 10%;
+
+                            &.bookmanbadge {
+                                position: relative;
+                            }
+                        }
+                    }
+
+                    .modal-text {
+                        padding: 10px;
+                        border-radius: 0px 0px 10px 10px;
+
+                        h3,
+                        p {
+                            color: $white;
+                            text-align: center;
+                        }
+                    }
+
+                    &.modal-img-read {
+                        border: 1.5px solid $main_color;
+                        background-color: $main_color;
+                    }
+
+                    &.modal-img-bookman {
+                        .modal-text {
+                            h3,
+                            p {
+                                color: $dark_grey;
+                            }
+                        }
+
+                        .badge-box {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            .button {
+                display: flex;
+                justify-content: center;
+                padding: 20px 0px 0px;
+                margin-top: 20px;
+                width: 100%;
+                text-align: center;
+
+                a {
+                    padding: 10px;
+                    margin: 10px auto;
+                    border-radius: 10px;
+                    color: $white;
+                    background-color: $orange;
+                    display: inline-block;
+                    min-width: 200px;
+                    width: calc(45% - 24px);
+                    text-align: center;
+
+                    &:nth-child(1) {
+                        background-color: $dark_grey;
+                    }
+                }
+            }
+        }
+    }
+}
+// 彈跳獎章開結束
+
+// 彈跳錄音開始
+.recording_modal {
+    border-radius: 10px;
+    background-color: $body_bg;
+    padding: 40px 0px;
+    width: 70%;
+    max-width: 1200px;
+    position: relative;
+
+    .recording_modal_content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 90%;
+
+        .recording_modal_title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px auto 60px;
+
+            h4 {
+                color: $brown;
+            }
+        }
+
+
+        .results_comments{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0 auto 25px;
+
+            h4{
+                color: $brown;
+                margin: 0 10px 0;
+            }
+
+            &.results_comments_evaluation{
+                flex-direction: column;
+
+                .results_comments_fail{
+                    display: none;
+
+                    &.show{
+                        display: flex;
+                    }
+
+                    h4{
+                        color:darkred;
+                    }
+                }
+
+                .results_comments_good,
+                    .results_comments_perfect,
+                    .results_comments_bad{
+                        h4{
+                            font-size: 28px;
+                            color: $white;
+                        }
+                    }
+            }
+
+            .results_comments_mark{
+                display: flex;
+                flex-wrap: wrap;
+                .results_comments_good{
+                    background-color: $results_comments_good;
+                }
+
+                .results_comments_perfect{
+                    background-color: $results_comments_perfect;
+                }
+
+                .results_comments_bad{
+                    background-color: $results_comments_bad;
+                }
+            }
+            
+
+            .results_comments_item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5px 10px;
+                color: $white;
+                border-radius: 5px;
+                margin: 10px;
+
+                h4{
+                    color: $white;
+                    margin: 0;
+                }
+            }
+        }
+
+        .recording_modal_text {
+            margin: 0 auto;
+            padding: 15px 20px;
+            border: 1.5px solid $main_color;
+            border-radius: 5px;
+            background-color: $white;
+
+            h4 {
+
+                ruby{
+                    font-size: 25px;
+                    line-height: 1.5;
+                    font-weight: bold;
+                    color: $brown;
+
+                    &.perfect{
+                        color: $results_comments_perfect;
+                        rt{
+                            color: $results_comments_perfect;
+                        }
+                    }
+
+                    &.good{
+                        color: $results_comments_good;
+                        rt{
+                            color: $results_comments_good;
+                        }
+                    }
+
+                    &.bad{
+                        color: $results_comments_bad;
+                        rt{
+                            color: $results_comments_bad;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sound_bar_area {
+            width: 60px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin: 40px auto;
+
+            &.play_animation {
+                .bar {
+                    animation: sound 0ms -800ms linear infinite alternate;
+                }
+            }
+
+            .bar {
+                background-color: $main_color;
+                height: 0px;
+                width: 3px;
+                margin: 0px 1px;
+
+                &:nth-child(1) {
+                    animation-duration: 474ms;
+                }
+
+                &:nth-child(2) {
+                    animation-duration: 433ms;
+                }
+
+                &:nth-child(3) {
+                    animation-duration: 407ms;
+                }
+
+                &:nth-child(4) {
+                    animation-duration: 458ms;
+                }
+
+                &:nth-child(5) {
+                    animation-duration: 400ms;
+                }
+
+                &:nth-child(6) {
+                    animation-duration: 427ms;
+                }
+
+                &:nth-child(7) {
+                    animation-duration: 441ms;
+                }
+
+                &:nth-child(8) {
+                    animation-duration: 419ms;
+                }
+
+                &:nth-child(9) {
+                    animation-duration: 487ms;
+                }
+
+                &:nth-child(10) {
+                    animation-duration: 442ms;
+                }
+            }
+
+        }
+
+        .record_play_area{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto 40px;
+        }
+
+        .recording_modal_icon_area{
+            display: flex;
+            align-items: center;
+            margin: 0 auto 40px;
+            padding: 10px 15px;
+            border: 1.5px solid $brown;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: $white;
+
+            .recording_modal_icon {
+                margin: 0 15px 0 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                i {
+                    color: $brown;
+                    font-size: 25px;
+                }
+                
+            }
+
+            .modal_text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                p{
+                    line-height: 1.3;
+                    font-weight: bold;
+                }
+            }
+
+            &.record_play_area_item{
+                margin: 10px;
+            }
+
+            &:hover{
+                background-color: $brown;
+
+                .recording_modal_icon {
+                    
+                    i {
+                        color: $white;
+                    }
+                }
+
+                p{
+                    color: $white;
+                }
+            }
+
+            &.active{
+                background-color: $brown;
+
+                .recording_modal_icon {
+                    
+                    i {
+                        color: $white;
+                    }
+                }
+
+                p{
+                    color: $white;
+                }
+            }
+
+            &:disabled{
+                background-color: $disabled;
+                border-color: $disabled;
+                cursor: auto;
+
+                i{
+                    color: $white;
+                }
+
+                p{
+                    color: $white;
+                }
+            }
+        }
+
+        .recording_modal_medal_area{
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            z-index: -1;
+
+            .recording_modal_medal{
+                max-width: 150px;
+            }
+        }
+
+        .recording_modal_button_area {
+            margin: 20px auto 0px;
+
+            .recording_modal_button {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .recording_modal_button_item {
+                    margin: 5px 10px;
+                    background-color: $main_color;
+                    color: $white;
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    text-align: center;
+
+                    &.recording_modal_close {
+                        background-color: $grey;
+                    }
+                }
+            }
+        }
+    }
+
+    .close-modal {
+        display: none !important;
+    }
+
+    &.recording_result_modal{
+
+        .recording_modal_title{
+            margin: 0 auto 25px;
+        }
+
+        .results_presented_area{
+
+            .results_presented_area_title{
+                background-color: $main_color;
+                padding: 5px 20px;
+                border-radius: 5px 5px 0 0;
+                display: flex;
+                justify-content: center;
+                h4{
+                    color: $white;
+                }
+            }
+
+            .recording_modal_text {
+                border: 0;
+                border-radius: 0 0 5px 5px;
+
+                h4{
+                    color: $brown;
+                }
+            }
+        }
+    }
+}
+
+// 彈跳錄音結束
+
+@keyframes sound {
+    0% {
+        opacity: .55;
+        height: 3px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    // 彈跳獎章開始
+    .blocker {
+        .modal {
+            width: 80%;
+        }
+    }
+    // 彈跳獎章開結束
+}
+
+@media (max-width: 768px) {
+    // 彈跳獎章開始
+    .blocker {
+        .modal {
+            width: 95%;
+            padding: 20px 10px;
+
+            .badge-modal-content {
+                .read-first,
+                .read-second,
+                .read-preview {
+                    .bookman {
+                        display: none;
+                    }
+
+                    .modal-text {
+                        h3 {
+                            font-size: 17px;
+                        }
+                    }
+
+                    .modal-img {
+                        width: 80%;
+                    }
+                }
+
+                .button {
+                    width: 90%;
+                    flex-direction: column;
+
+                    a {
+                        margin: 10px auto;
+                        text-align: center;
+                        width: 100%;
+                        max-width: calc(100% - 40px);
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    // 彈跳獎章開結束
+}
+
+@media (max-width: 499px) {
+    // 彈跳獎章開始
+    .blocker {
+        .modal {
+            .badge-modal-content {
+                .read-first,
+                .read-second,
+                .read-preview {
+                    .modal-text {
+                        h3 {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 彈跳獎章開結束
+}
+
+@-webkit-keyframes badge {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes badge {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes light {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+@keyframes light {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}

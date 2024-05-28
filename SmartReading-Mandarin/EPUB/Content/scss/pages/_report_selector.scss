@@ -1,0 +1,358 @@
+main {
+
+    .test_area {
+
+        .report_selector_tittle,
+        .report_selector_text {
+            display: flex;
+            justify-content: center;
+            color: $main_color_brown;
+            margin: 0 auto 20px;
+        }
+
+        .score_report_area {
+            .table {
+                margin: 0 auto 40px;
+                display: block;
+                width: 100%;
+
+                thead {
+                    position: sticky;
+                    top: 10px;
+                    z-index: 1;
+                    display: block;
+                    width: 100%;
+
+                    .score_report_header {
+                        display: flex;
+                        flex-wrap: wrap;
+                        background-color: $cat_yellow;
+                        border: 2px solid $main_color_brown;
+                        border-radius: 10px;
+                        display: none;
+
+                        .item_box_content {
+                            display: flex;
+                            justify-content: center;
+                            padding: 15px 5px;
+                            width: calc(33.33333% - 50px);
+                            color: $main_color_brown;
+                            border-right: 2px solid $main_color_brown;
+
+                            &.item_box_content_time{
+                                border-right: 0;
+                            }
+
+                            &.item_box_content_progress {
+                                width: 150px;
+                                border-right: 0;
+                                border-left: 2px solid $main_color_brown;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    &.score_report_body {
+                        display: block;
+                        width: 100%;
+
+                        .item_box {
+                            display: flex;
+                            flex-wrap: wrap;
+                            border: 2px solid $cat_yellow;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            margin: 0 auto 40px;
+
+                            .item_box_content {
+                                display: flex;
+                                flex-wrap: wrap;
+                                width: 100%;
+
+                                .item_box_content_tittle,
+                                .item_box_content_data {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    padding: 15px 5px;
+                                    background-color: $white;
+                                }
+
+                                .item_box_content_data {
+                                    p {
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+
+
+
+                                .item_box_content_tittle {
+                                    background-color: $main_color_brown;
+                                    color: $white;
+                                    background-color: $cat_yellow;
+                                    color: $main_color_brown;
+                                    font-weight: bold;
+                                }
+
+                                &.item_box_content_progress {
+                                    .item_box_content_data {
+                                        .progress_area {
+                                            width: 100%;
+                                            max-width: 300px;
+                                        }
+                                    }
+
+                                }
+
+                                &.item_box_content_btn {
+                                    border-top: 2px solid $cat_yellow;
+
+                                    .item_box_content_data {
+                                        border-bottom: 0px;
+
+                                        .item_box_content_link {
+                                            position: relative;
+                                            margin: 10px auto;
+                                            background-color: $main_color_orange;
+                                            border-radius: 50px;
+                                            transition: 0.3s;
+
+                                            .footprint {
+                                                position: absolute;
+                                                width: 30px;
+                                                right: 0;
+                                                top: 50%;
+                                                transform: translate(calc(100% + 10px), -50%);
+                                                display: none;
+                                            }
+
+                                            a {
+                                                display: block;
+                                                padding: 8px 20px;
+                                                color: $white;
+                                            }
+
+                                            &:hover {
+                                                background-color: $main_color_brown;
+
+                                                a {
+                                                    padding: 8px 30px;
+                                                    color: $cat_yellow;
+                                                }
+                                            }
+
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        &.report_selector{
+            .score_report_area {
+                .table {
+                    thead {
+                        .score_report_header {
+                            .item_box_content {
+                                width: 33.33333%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 350px) {
+    main {
+
+        .test_area {
+
+            .score_report_area {
+                .table {
+
+                    tbody {
+                        &.score_report_body {
+
+                            .item_box {
+
+                                .item_box_content {
+
+                                    &.item_box_content_btn {
+                                        .item_box_content_data {
+                                            .item_box_content_link {
+
+                                                &:hover {
+
+                                                    .footprint {
+                                                        display: block;
+                                                    }
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+
+        .test_area {
+            .score_report_area {
+                .table {
+                    margin: 0 auto 60px;
+
+                    tbody {
+                        &.score_report_body {
+
+                            .item_box {
+                                .item_box_content {
+                                    width: 50%;
+
+                                    .item_box_content_tittle,
+                                    .item_box_content_data {
+                                        padding: 15px 10px;
+                                    }
+
+                                    &:nth-child(odd) {
+                                        border-right: 2px solid $cat_yellow;
+                                    }
+
+                                    &.item_box_content_btn {
+                                        width: 100%;
+                                        border-right: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.report_selector{
+                .score_report_area {
+                    .table {
+    
+                        tbody {
+                            &.score_report_body {
+    
+                                .item_box {
+                                    .item_box_content {
+                                        width: 33.33333%;
+                                        border-right: 2px solid $cat_yellow;
+
+                                        &:nth-child(3) {
+                                            border-right: 0px;
+                                        }
+
+                                        &.item_box_content_btn {
+                                            width: 100%;
+                                            border-right: 0px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1024px) {
+    main {
+
+        .test_area {
+            .score_report_area {
+                .table {
+
+                    thead {
+                        .score_report_header {
+                            display: flex;
+                        }
+                    }
+
+                    tbody {
+                        &.score_report_body {
+
+                            .item_box {
+                                margin: 20px auto;
+
+                                .item_box_content {
+                                    width: calc(33.33333% - 50px);
+                                    border-right: 2px solid $cat_yellow;
+
+                                    .item_box_content_tittle {
+                                        display: none;
+                                    }
+
+                                    &.item_box_content_time{
+                                        border-right: 0;
+                                    }
+
+                                    &.item_box_content_progress {
+                                        width: 150px;
+                                        border-right: 0;
+
+                                        .item_box_content_data {
+                                            .progress_area {
+                                                flex-direction: column;
+                                                justify-content: center;
+
+                                                .progress {
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            &.report_selector{
+                .score_report_area {
+                    .table {
+    
+                        thead {
+                            .score_report_header {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {}

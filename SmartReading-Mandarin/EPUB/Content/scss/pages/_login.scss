@@ -1,0 +1,152 @@
+main {
+
+    .login_area {
+        max-width: 500px;
+        margin: 40px auto;
+        width: 80%;
+
+        .login_img{
+            width: 80%;
+            margin: 0 10%;
+        }
+
+        .login_title {
+            color: $main_color_brown;
+            margin: 30px auto 0;
+
+            h3 {
+                text-align: center;
+            }
+        }
+
+        .input_area {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            .input-group-text {
+
+                &.icon_password,
+                &.icon_user {
+                    padding: 10px;
+                    background-color: $main_color;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    i {
+                        color: $white;
+                    }
+                }
+            }
+
+            .form-control {
+                padding: 10px 45px 10px 15px;
+                width: calc(100% - 50px);
+            }
+
+            .password_input {
+                width: 100%;
+            }
+        }
+
+        .save_password{
+            display: flex;
+            justify-content: flex-end;
+            .save_password_checkbox {
+                position: absolute;
+                opacity: 0;
+    
+                &+label {
+                    color: $main_color_grey;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+    
+                    &:before {
+                        content: '';
+                        margin-right: 10px;
+                        display: inline-block;
+                        vertical-align: text-top;
+                        width: 20px;
+                        height: 20px;
+                        background: $white;
+                        border: 1px solid $main_color_grey;
+                    }
+                }
+
+                &:hover {
+                    &+label {
+                        color: $main_color_blue;
+                        &:before {
+                            border: 1px solid $main_color_blue;
+                        }
+                    }
+                }
+
+                &:checked {
+                    &+label {
+                        &:before {
+                            border: 1px solid $main_color_blue;
+                            background-color: $main_color_blue;
+                        }
+
+                        &:after {
+                            font-family: 'FontAwesome', sans-serif;
+                            content: '\f00c';
+                            position: absolute;
+                            color: $white;
+                            width: 20px;
+                            font-size: 15px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .register_btn{
+            display: flex;
+            justify-content: center;
+            margin: 60px auto 0;
+            a{
+                color: $main_color_grey;
+                border-bottom: 0px solid transparent;
+
+                &:hover{
+                    color: $main_color_blue;
+                    border-bottom: 1px solid $main_color_blue;
+                }
+            }
+        }
+
+        
+    }
+
+    .login_cat{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 28%;
+        max-width: calc(50% - 300px);
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 576px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {
+    main {
+        .login_cat{
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {}

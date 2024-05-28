@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        SRM-eBook
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
+    <!-- this page widgets CSS -->
+    <!-- modal -->
+    <link rel="stylesheet" href="css/jquery.modal.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="css/SRMebook.css">
+
+</head>
+<header>
+    <div class="book-logo">
+        <img src="image/logo.png" alt="">
+    </div>
+    <div class="book-title">A Small Seed with a Big Dream</div>
+    <button class="close cursor background-icon"></button>
+</header>
+<div class="book-page two-right-book-page noMove">
+    <div class="book-page-img">
+        <div class="book-page-bg two-right-book-page-bg">
+            <img src="image/picturebook/B1.png" alt="">
+        </div>
+        <div class="text two-right-text full-back">
+            <div class="article">
+                <p>
+                    <span class="listen_sentence microphone_show">
+                        <label sindex="0">
+                            <ruby>
+                                <rt>&nbsp;Yī&nbsp;</rt>一
+                            </ruby><ruby>
+                                <rt>&nbsp;èr&nbsp;</rt>二
+                            </ruby><ruby>
+                                <rt>&nbsp;sān&nbsp;</rt>三
+                            </ruby><ruby>
+                                <rt>&nbsp;sì&nbsp;</rt>四
+                            </ruby><ruby>
+                                <rt>&nbsp;wǔ&nbsp;</rt>五
+                            </ruby>。
+                        </label>
+                        <a href="#recording_modal" rel="modal:open" class="microphone_icon">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </a>
+                    </span>
+                    <br>
+                    <span class="listen_sentence microphone_show">
+                        <label sindex="1">
+                            <ruby>
+                                <rt>&nbsp;Wǔ&nbsp;</rt>五
+                            </ruby>
+                            <ruby>
+                                <rt>&nbsp;ge&nbsp;</rt>個
+                            </ruby>
+                            <ruby>
+                                <rt>&nbsp;hǎo&nbsp;</rt>好
+                            </ruby>
+                            <ruby>
+                                <rt>&nbsp;péng&nbsp;</rt>朋
+                            </ruby>
+                            <ruby>
+                                <rt>&nbsp;yǒu&nbsp;</rt>友
+                            </ruby>。
+                        </label>
+                        <a href="#recording_result_modal" rel="modal:open" class="microphone_icon">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                        </a>
+                    </span>
+                    <br>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="word-area">
+        <div class="book-circle">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="arrow cursor">
+            <img src="image/button/arrow.svg" alt="">
+        </div>
+        <div class="word-title">
+            詞彙
+        </div>
+        <div class="word">
+            <p>
+                eye:
+                <ruby>
+                    <rb>眼睛</rb>
+                    <rp>(</rp>
+                    <rt>Yǎnjīng</rt>
+                    <rp>)</rp>
+                </ruby>
+            </p>
+            <p>
+                eye:
+                <ruby>
+                    <rb>眼睛</rb>
+                    <rp>(</rp>
+                    <rt>Yǎnjīng</rt>
+                    <rp>)</rp>
+                </ruby>
+            </p>
+            <p>
+                eye:
+                <ruby>
+                    <rb>眼睛</rb>
+                    <rp>(</rp>
+                    <rt>Yǎnjīng</rt>
+                    <rp>)</rp>
+                </ruby>
+            </p>
+            <p>
+                eye:
+                <ruby>
+                    <rb>眼睛</rb>
+                    <rp>(</rp>
+                    <rt>Yǎnjīng</rt>
+                    <rp>)</rp>
+                </ruby>
+            </p>
+            <p>
+                eye:
+                <ruby>
+                    <rb>眼睛</rb>
+                    <rp>(</rp>
+                    <rt>Yǎnjīng</rt>
+                    <rp>)</rp>
+                </ruby>
+            </p>
+            <p>
+                eye:
+                <ruby>
+                    <rb>眼睛</rb>
+                    <rp>(</rp>
+                    <rt>Yǎnjīng</rt>
+                    <rp>)</rp>
+                </ruby>
+            </p>
+
+
+        </div>
+    </div>
+</div>
+<div class="play-area">
+    <div class="progress">
+        <div class="drag-line">
+            <div class="line" style="width: 40%; height: 4px;"></div>
+            <div class="draggable-button cursor"></div>
+        </div>
+        <div class="number-page">
+            4/10
+        </div>
+
+    </div>
+    <div class="play">
+        <button class="cursor btn-prev background-icon"></button>
+        <button class="cursor btn-play background-icon"></button>
+        <button class="cursor btn-pause background-icon" style="display: none;"></button>
+        <button class="cursor btn-next background-icon"></button>
+    </div>
+</div>
+<div class="button-area">
+    <div class="sound">
+        <button class="sound-img cursor background-icon"></button>
+        <div id="bar_mc" class="sound-drag-line">
+            <div class="sound-back-line">
+            </div>
+            <div class="sound-line" style="width:50%; height: 4px;">
+            </div>
+            <div id="move_mc" class="sound-draggable-button cursor" style="left: 50px;"></div>
+        </div>
+    </div>
+
+    <div class="button-menu">
+        <ul>
+            <!-- <li class="cursor" aria-label="加入書庫">
+                <button class="btn-favorite cursor background-icon"></button>
+            </li> -->
+            <li id="li_listen" class="cursor" aria-label="聽讀 Listen">
+                <button class="btn-listen cursor background-icon"></button>
+                <div class="read-menu-container">
+                    <p class="label-text">
+                        <input type="checkbox" id="listen-id" checked>
+                        <span>聽讀 Listen</span>
+                        <label for="listen-id"></label></p>
+                </div>
+            </li>
+            <li class="cursor" aria-label="唸讀 ReadOut">
+                <button class="btn-verbatim cursor background-icon"></button>
+                <div class="read-menu-container">
+                    <p class="label-text"><input type="checkbox" id="read-id" checked="">
+                        <span style="cursor: pointer;">唸讀 ReadOut</span>
+                        <label for="read-id"></label></p>
+                </div>
+            </li>
+            <li class="cursor" aria-label="文字 Text">
+                <button class="btn-font cursor background-icon"></button>
+                <div class="font-menu-container">
+                    <p class="label-text">
+                        <input type="checkbox" id="text-id" checked="">
+                        <span style="cursor: pointer;">文字 Text</span>
+                        <label for="text-id"></label></p>
+                    <p class="label-text"><input type="checkbox" id="pinyin-id" checked="">
+                        <span style="cursor: pointer;">拼音 Pinyin</span>
+                        <label for="pinyin-id"></label></p>
+                </div>
+            </li>
+            <!-- <li class="cursor" aria-label="詞彙">
+                <button class="btn-word cursor background-icon simplified"></button>
+                <div class="word-menu-container">
+                    <p class="label-text"><input type="checkbox" id="word-id">
+                        <span>詞彙</span>
+                        <label for="word-id"></label></p>
+                </div>
+            </li> -->
+            <li class="cursor" aria-label="詞彙 Vocabulary">
+                <button class="btn-word cursor background-icon traditionale"></button>
+                <div class="word-menu-container">
+                    <p class="label-text"><input type="checkbox" id="word-id">
+                        <span style="cursor: pointer;">詞彙 Vocabulary</span>
+                        <label for="word-id"></label></p>
+                </div>
+            </li>
+            <li id="li_speed" class="cursor" aria-label="語速 Speed">
+                <button class="btn-speak cursor background-icon"></button>
+                <div class="speak-menu-container">
+                    <p>0.5</p>
+                    <p>1.0</p>
+                    <p>1.5</p>
+                </div>
+            </li>
+            <!-- <li class="cursor" aria-label="錄音">
+                <button class="btn-record cursor background-icon"></button>
+            </li> -->
+            <li class="cursor" aria-label="放大" style="display: none;">
+                <button class="btn-magnifier cursor background-icon"></button>
+                <div class="magnifier-menu-container">
+                    <p>0.5</p>
+                    <p>1.0</p>
+                    <p>1.5</p>
+                </div>
+            </li>
+            <li class="cursor btn_screen" aria-label="全螢幕 Full Screen">
+                <button id="btn-screen" class="btn-screen cursor background-icon"></button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- 彈跳錄音開始 -->
+<div id="recording_modal" class="modal recording_modal">
+    <div class="recording_modal_content">
+        <div class="recording_modal_title">
+            <h4>請點選錄音並朗讀下面句子</h4>
+            <h4>Press the record button and read the following sentences aloud</h4>
+        </div>
+
+        <button id="Btn_listen" class="recording_modal_icon_area listen_sentence_btn">
+            <div class="recording_modal_icon">
+                <i class="fa-solid fa-play"></i>
+            </div>
+
+            <!-- <div class="modal_text">
+                <p class="modal_text_play_tw">播放句子</p>
+                <p class="modal_text_play_en">Play sentence audio</p>
+            </div> -->
+
+        </button>
+
+        <div id="recordingText" class="recording_modal_text">
+            <h4>「<ruby><rt> Wǒ </rt>我</ruby><ruby><rt> tǎo </rt>討</ruby><ruby><rt> yàn </rt>厭</ruby><ruby><rt> xià </rt>下</ruby><ruby><rt> yǔ </rt>雨</ruby><ruby><rt> tiān </rt>天</ruby>!」</h4>
+        </div>
+
+        <div class="sound_bar_area">
+            <!-- 播放時class加上"play_animation" -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="record_play_area">
+            <button id="Btn_record" class="recording_modal_icon_area record_play_area_item record_area_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+
+                <!-- <div class="modal_text">
+                    <p>錄製聲音</p>
+                    <p>Voice recording</p>
+                </div> -->
+            </button>
+
+            <button id="Btn_playRec" disabled="disabled"
+                class="recording_modal_icon_area record_play_area_item play_area_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <!-- <div class="modal_text">
+                    <p>播放錄音</p>
+                    <p>Play recording</p>
+                </div> -->
+            </button>
+        </div>
+
+        <div class="recording_modal_medal_area">
+            <div class="recording_modal_medal">
+                <img src="image/photo/map/ebookman.png" alt="">
+            </div>
+        </div>
+
+        <div class="recording_modal_button_area">
+            <div class="recording_modal_button">
+                <a id="close-modal" href="#close-modal" rel="modal:close"
+                    class="recording_modal_button_item recording_modal_close">關閉 Close
+                </a>
+
+                <a id="Btn_send" href="#recording_result_modal"
+                    class="recording_modal_button_item recording_modal_close">送出 send</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 彈跳錄音結束 -->
+
+<!-- 彈跳錄音結果開始 -->
+<div id="recording_result_modal" class="modal recording_modal recording_result_modal">
+    <div class="recording_modal_content">
+        <div class="recording_modal_title">
+            <h4>以下是你朗讀這個句子的表現</h4>
+            <h4>Your sentence reading performance</h4>
+        </div>
+
+        <div class="results_comments results_comments_evaluation">
+            <h4>評語</h4>
+            <h4>Evaluation</h4>
+
+            <!-- 錄音失敗加入class show -->
+            <div id="div_comment" class="results_comments_item results_comments_fail show">
+                <h4>你沒有錄音成功，可以再錄一次。</h4>
+                <h4>Your voice wasn't successfully recorded. You may re-record your voice one more time.</h4>
+            </div>
+
+            <div class="results_comments_mark">
+                <div id="div_comment" class="results_comments_item results_comments_perfect">
+                    <h4>
+                        Perfect
+                        <i class="fa-solid fa-face-grin-stars"></i>
+                    </h4>
+                </div>
+
+                <div class="results_comments_item results_comments_good">
+                    <h4>
+                        Good
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                    </h4>
+                </div>
+
+                <div class="results_comments_item results_comments_bad">
+                    <h4>
+                        Fair
+                        <i class="fa-solid fa-face-meh"></i>
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="results_presented_area">
+            <div class="results_presented_area_title">
+                <h4>表現敘述 Performance Details</h4>
+            </div>
+            <div id="recordingResult" class="recording_modal_text">
+                <h4>
+                    <ruby class="perfect">
+                        <rt>&nbsp;Yī&nbsp;</rt>一
+                    </ruby>
+                    <ruby class="bad">
+                        <rt>&nbsp;èr&nbsp;</rt>二
+                    </ruby>
+                    <ruby class="bad">
+                        <rt>&nbsp;sān&nbsp;</rt>三
+                    </ruby>
+                    <ruby class="good">
+                        <rt>&nbsp;sì&nbsp;</rt>四
+                    </ruby>
+                    <ruby class="perfect">
+                        <rt>&nbsp;wǔ&nbsp;</rt>五
+                    </ruby>
+
+                </h4>
+            </div>
+        </div>
+        <br />
+
+        <div class="results_comments">
+            <h4>發音：</h4>
+            <div class="results_comments_mark">
+                <div id="div_comment" class="results_comments_item results_comments_perfect">
+                    <h4>Perfect</h4>
+                </div>
+
+                <div class="results_comments_item results_comments_good">
+                    <h4>Good</h4>
+                </div>
+
+                <div class="results_comments_item results_comments_bad">
+                    <h4>Fair</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="sound_bar_area">
+            <!-- 播放時class加上"play_animation" -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="record_play_area">
+            <button id="Btn_playRec2" class="recording_modal_icon_area record_play_area_item your_voice_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <div id="recordText" class="modal_text">
+                    <p>你的聲音</p>
+                    <p>Your recording</p>
+                </div>
+            </button>
+
+            <button id="Btn_listen2" class="recording_modal_icon_area record_play_area_item teacher_voice_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <div id="playText" class="modal_text">
+                    <p>老師的聲音</p>
+                    <p>Instructor's recording</p>
+                </div>
+            </button>
+
+            <a id="Btn_reRecord" href="#recording_modal" rel="modal:open"
+                class="recording_modal_icon_area record_play_area_item record_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                </div>
+
+                <div class="modal_text">
+                    <p>重錄</p>
+                    <p>Record again</p>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="recording_modal_medal_area">
+            <div class="recording_modal_medal">
+                <img src="image/photo/map/ebookman.png" alt="">
+            </div>
+        </div>
+
+        <div class="recording_modal_button_area">
+            <div class="recording_modal_button">
+                <a href="#close-modal" rel="modal:close" class="recording_modal_button_item recording_modal_close">關閉
+                    Close
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 彈跳錄音結果結束 -->
+
+<script src="https://mandarin.smartreading.net/js/jquery.min.js"></script>
+<!-- <script src="js/jquery-3.5.1.min.js"></script> -->
+<script src="js/fontawesome-free-6.1.1.min.js"></script>
+<style media="all" id="fa-v5-font-face">/*!
+    * Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com
+    * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+    * Copyright 2022 Fonticons, Inc.
+    */@font-face{font-family:"Font Awesome 5 Brands";font-display:block;font-weight:400;src:url(https://ka-f.fontawesome.com/releases/v6.1.1/webfonts/free-fa-brands-400.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v6.1.1/webfonts/free-fa-brands-400.ttf) format("truetype")}@font-face{font-family:"Font Awesome 5 Free";font-display:block;font-weight:900;src:url(https://ka-f.fontawesome.com/releases/v6.1.1/webfonts/free-fa-solid-900.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v6.1.1/webfonts/free-fa-solid-900.ttf) format("truetype")}@font-face{font-family:"Font Awesome 5 Free";font-display:block;font-weight:400;src:url(https://ka-f.fontawesome.com/releases/v6.1.1/webfonts/free-fa-regular-400.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v6.1.1/webfonts/free-fa-regular-400.ttf) format("truetype")}</style>
+<script src="js/all.js"></script>
+
+<!-- this page widgets JS -->
+<!-- modal -->
+<script src="js/jquery.modal.min.js"></script>
+
+<script src="js/jquery-ui.js"></script>
+
+<!--pad拖曳-->
+<script src="js/drag/jquery.ui.touch-punch.js"></script>
+
+
+<script>
+    // var lang = (urlPara["lang"] == null) ? "" : urlPara["lang"];
+    // var path = (urlPara["path"] == null) ? "" : urlPara["path"];
+    var pageIndex = 0;
+    var pagesCount = 0;
+    var data = "";
+    var fontSize = "17px";
+
+    var audio;
+    var soundMode = true; //預設非聲音模式
+
+    // $(document).ready(function () {
+    //     if (path != "") {
+    //         LoadBook();
+
+    //         //設定字型大小
+    //         SetFontsize();
+    //     }
+    // });
+
+    // function SetFontsize() {
+    //     //調整字體大小
+    //     if (path.indexOf("pre") != -1) fontSize = "25px";//45
+    //     if (path.indexOf("A1") != -1) fontSize = "25px";
+    //     if (path.indexOf("A2") != -1) fontSize = "25px";
+    //     if (path.indexOf("B1") != -1 || path.indexOf("B2") != -1) fontSize = "30px";
+    //     if (path.indexOf("C1") != -1 || path.indexOf("C2") != -1) fontSize = "25px";
+    // }
+
+    // function LoadBook() {
+    //     $.ajax({
+    //         type: "GET",
+    //         url: path + "detail.json?time=" + new Date().getTime(),
+    //         data: "",
+    //         dataType: "json",
+    //         success: function (response) {
+    //             data = response;
+    //             //getOut(data["myID"]);
+
+    //             //初始書本基本資料
+    //             $(".book-title").html(data["name"]);
+    //             pagesCount = data["pagesCount"];
+
+    //             //無音檔時，沒有聲音相關的元件
+    //             if (!data["hasSound"]) {
+    //                 $(".sound").css("visibility", "hidden");
+    //                 $("#li_sentence").hide();
+    //                 $("#li_speed").hide();
+    //             }
+    //             //無拼音時，拼音元件不可點選
+    //             if (!data["hasPinyin"]) $("#pinyin-id").prop("disabled",true).prop("checked",false).css("cursor", "");;
+
+
+    //             //內容
+    //             ShowPage();
+
+    //             //頁碼
+    //             pagesLine();
+    //         },
+    //         error: function (jqXHR, textStatus, err) {
+    //             document.write(jqXHR.responseText);
+    //             //console.log("[LoadBook]：" + jqXHR.responseText);
+    //         }
+    //     }).then(function () {                
+
+    //         });
+    // }
+
+    //設定無插圖時，文字框大小
+    var nopic_w = 0;
+    var nopic_h = 0;
+    var page;
+    var now_type = "cover"; //所在頁的版型
+    function ShowPage() {
+        $("#book-page").removeClass().addClass("book-page").addClass("noMove");;
+        $("#book-page-img").removeClass().addClass("book-page-img").empty();
+        $(".word").empty();
+
+        page = data["pages"][pageIndex];
+        now_type = page["type"];
+
+        var text = (page["type"] != "cover" && page["type"] != "end" && page["type"] != "none" && page["type"] !=
+            "copyright") ? TextMergePinyin() : "";
+
+        switch (page["type"]) {
+            case "cover":
+            case "none":
+            case "end":
+                $("#book-page-img").append('<div class="book-page-bg"><img src="' + path + 'images/' + page["image"] +
+                    '" alt="" /></div>');
+                break;
+
+            case "top-center":
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text sentence top-center-text"><div class="article"><p>' + text +
+                    '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "top-left":
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text sentence top-left-text"><div class="article"><p>' + text + '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "top-right":
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text sentence top-right-text"><div class="article"><p>' + text + '</p></div></div>'
+                    );
+                addImage(page["image"]);
+                break;
+
+            case "top-half":
+                $("#book-page-img").addClass("half-book-page-img");
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append('<div class="text half-text"><div class="article"><p>' +
+                    text + '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "bottom-center":
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text sentence bottom-center-text"><div class="article"><p>' + text +
+                    '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "bottom-left":
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text sentence bottom-left-text"><div class="article"><p>' + text +
+                    '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "bottom-right":
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text sentence bottom-right-text"><div class="article"><p>' + text +
+                    '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "bottom-half":
+                $("#book-page-img").addClass("half-book-page-img picture-below");
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append('<div class="text half-text"><div class="article"><p>' +
+                    text + '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "two-right":
+                $("#book-page").addClass("two-right-book-page");
+                $("#book-page-img").append('<div class="book-page-bg two-right-book-page-bg"></div>');
+                if (text != "") $("#book-page-img").append(
+                    '<div class="text two-right-text full-back"><div class="article"><p>' + text +
+                    '</p></div></div>');
+                var img = new Image();
+                img.onload = function () {
+                    Resize();
+                }
+                img.src = path + 'images/' + page["image"];
+                $(".book-page-bg").append(img);
+                break;
+
+            case "nopic":
+                $("#book-page-img").append('<div class="book-page-bg top-book-page-bg"></div>');
+                $("#book-page-img").append('<div class="text top-text"><div class="article"><p>' + text +
+                    '</p></div></div>');
+                var img = new Image();
+                img.onload = function () {
+                    Resize();
+                }
+                img.src = 'image/bg/nopic-bg.png';
+                $(".book-page-bg").append(img);
+                break;
+
+            case "top":
+                $("#book-page-img").addClass("template-book-page-img");
+                $("#book-page-img").append('<div class="book-page-bg"></div>');
+
+                if (text != "") $("#book-page-img").append('<div class="text top-text"><div class="article"><p>' +
+                    text + '</p></div></div>');
+                addImage(page["image"]);
+                break;
+
+            case "copyright":
+                var changeText = (page["replace"] == undefined) ? "" : page["replace"]; //版權頁內容替換
+                var addText = (page["text"] == undefined) ? "" : page["text"]; //版權頁增加內容
+                text = getCopyright(data["name"], addText, changeText);
+                //console.log(text);
+                $("#book-page-img").append('<div class="book-page-bg top-book-page-bg"></div>');
+                $("#book-page-img").append('<div class="text top-text copyright-text"><div class="article"><p>' + text +
+                    '</p></div></div>');
+
+                addImage(data["pages"][0]["image"]);
+                break;
+        }
+
+        //詞彙
+        if (page["type"] != "end" && page["type"] != "none" && page["type"] != "copyright") {
+            if (page["vocabulary"] != undefined && page["vocabulary"] != "") {
+                page["vocabulary"].forEach(function (word) {
+                    if (data["hasSound"]) {
+                        //有音檔
+
+                        if (data["hasPinyin"] && word["pinyin"] != "") {
+                            //有拼音
+                            $(".word").append('<span id="' + word["sound"] + '"><p><ruby><rp>(</rp><rt>' + word[
+                                    "pinyin"] + '</rt><rp>)</rp><rb>' + word["word"] + '</rb></ruby> ' +
+                                word["en"] + '</p></span>');
+                        } else {
+                            //無拼音
+                            $(".word").append('<span id="' + word["sound"] + '"><p><ruby><rb>' + word["word"] +
+                                '</rb></ruby> ' + word["en"] + '</p></span>');
+                        }
+                    } else {
+                        //無音檔
+
+                        if (data["hasPinyin"] && word["pinyin"] != "") {
+                            //有拼音
+                            $(".word").append('<p><ruby><rp>(</rp><rt>' + word["pinyin"] +
+                                '</rt><rp>)</rp><rb>' + word["word"] + '</rb></ruby> ' + word["en"] + '</p>'
+                                );
+                        } else {
+                            //無拼音
+                            $(".word").append('<p><ruby><rb>' + word["word"] + '</rb></ruby> ' + word["en"] +
+                                '</p>');
+                        }
+
+                    }
+
+                });
+                //單字功能鍵可點選
+                $('.btn-word').prop('disabled', false);
+                $("#word-id").prop("checked", false);
+
+                if ($(".word-area").hasClass("open")) $("#word-id").prop("checked", true);
+            } else {
+                //單字功能鍵不可點選
+                $('.btn-word').prop('disabled', true);
+                $("#word-id").prop("checked", false);
+
+                $(".word-area").removeClass("open");
+                $(".book-page").removeClass("move");
+                $(".book-page").addClass("noMove");
+            }
+        } else {
+            //單字功能鍵不可點選
+            $('.btn-word').prop('disabled', true);
+            $("#word-id").prop("checked", false);
+
+            $(".word-area").removeClass("open");
+            $(".book-page").removeClass("move");
+            $(".book-page").addClass("noMove");
+        }
+        if ($(".word-menu-container").hasClass("open")) $(".word-menu-container").removeClass("open");
+        if ($(".speak-menu-container").hasClass("open")) $(".speak-menu-container").removeClass("open");
+        if ($(".font-menu-container").hasClass("open")) $(".font-menu-container").removeClass("open");
+        if ($(".read-menu-container").hasClass("open")) $(".read-menu-container").removeClass("open");
+
+        if ($(".word-area").hasClass("open")) $(".book-page").addClass("move");
+
+        //文字按鈕點選
+        if (data["hasSound"]) {
+            //有音檔，文字功能可點選
+            $('.btn-font').prop('disabled', false);
+        } else {
+            //無音檔，文字功能不可點選
+            $('.btn-font').prop('disabled', true);
+        }
+
+        //調整字體大小
+        if (page["type"] != "copyright") {
+            $(".text p").css("font-size", fontSize);
+            $(".text p ruby").css("font-size", fontSize);
+        }
+
+        //內文白底透明度
+        if (page["type"] == "nopic" || page["type"] == "copyright") {
+            $(".text .article p").css("background-color", "rgba(255, 255, 255, 0.8)");
+        } else {
+            //$(".text .article p").css("background-color", "rgba(255, 255, 255, 0.45) !important;");
+            $(".text .article p").css("background-color", "");
+        }
+
+        //音檔
+        if (page["type"] != "end" && page["type"] != "none" && page["type"] != "copyright" && data["hasSound"]) {
+            if ($("#listen-id").is(":checked")) {
+                $(".play .btn-play").attr("disabled", false);
+                $(".play .btn-play").removeClass("disabled");
+            }
+
+            mp3_arr = page["sound"].split("|");
+
+            if (soundMode) {
+                $("label").css("cursor", "pointer");
+            } else {
+                $("label").css("cursor", "");
+            }
+
+            //正文，逐句點選播放
+            $(".text label").click(function () {
+
+                //點選處理
+                wordsClick($(this));
+                //播放聲音
+                playSentence($(this).attr("sIndex"));
+            });
+
+            if (page["vocabulary"] != undefined) {
+                //詞彙點播
+                $(".word span").click(function () {
+                    //點選處理
+                    wordsClick($(this));
+                    //播放聲音
+                    playVocabulary(this, $(this).attr("id"), 0);
+                });
+            }
+        } else {
+            $(".play .btn-play").attr("disabled", true);
+            $(".play .btn-play").addClass("disabled");
+        }
+
+        ShowPinyin();
+        ShowText();
+        pageBtnReset();
+    }
+
+    //每一頁加入圖檔，並調整文字框大小
+    function addImage(image) {
+        var img = new Image();
+        img.onload = function () {
+            Resize();
+        }
+        img.src = path + 'images/' + image;
+        $(".book-page-bg").append(img);
+    }
+
+    $(window).on('resize', function () {
+        Resize();
+    });
+
+    function Resize() {
+        switch (now_type) {
+            // 版型:句子開始
+            case "top-center":
+            case "top-left":
+            case "top-right":
+            case "bottom-center":
+            case "bottom-left":
+            case "bottom-right":
+                var sentenceWidth = $(".book-page-bg > img").width();
+                var sentenceHeight = $(".book-page-bg > img").height();
+                $(".sentence").css({
+                    "width": sentenceWidth,
+                    "height": sentenceHeight
+                });
+                break;
+                // 版型:句子結束
+
+                // 版型:上下圖文開始
+            case "top-half":
+            case "bottom-half":
+            case "big-top-half":
+            case "big-bottom-half":
+                var halfTextWidth = $(".book-page-bg > img").width();
+                $(".half-text").css({
+                    "max-width": halfTextWidth
+                });
+                break;
+                // 版型:上下圖文結束
+
+
+                // 版型:文壓圖開始
+            case "nopic":
+            case "top":
+            case "copyright":
+                var topTextWidth = $(".book-page-bg > img").width();
+                var topTextHeight = $(".book-page-bg > img").width();
+                $(".top-text").css({
+                    "width": topTextWidth,
+                    "height": topTextHeight
+                });
+                break;
+                // 版型:文壓圖結束
+
+                // 版型:兩頁開始
+            case "two-right":
+                if ($(window).width() <= 1024) {
+                    var twoRightTextWidth = $(".book-page-bg > img").width();
+                    $(".two-right-text").css({
+                        "width": twoRightTextWidth
+                    });
+                    var twoRightTextHeight = $(".book-page-bg > img").height() / 2;
+                    $(".two-right-text").css({
+                        "max-height": twoRightTextHeight
+                    });
+                } else {
+                    var twoRightTextWidth = $(".book-page-bg > img").width();
+                    $(".two-right-text").css({
+                        "width": twoRightTextWidth
+                    });
+                    var twoRightTextHeight = $(".book-page-bg > img").height();
+                    console.log($(window).width(), twoRightTextHeight);
+                    $(".two-right-text").css({
+                        "max-height": twoRightTextHeight
+                    });
+                }
+                break;
+                // 版型:兩頁結束
+        }
+    }
+
+    function TextMergePinyin() {
+        var text = "";
+        var page = data["pages"][pageIndex];
+        var hasPinyin = data["hasPinyin"];
+
+        //B1級以上，設定為無拼音
+        if (path.indexOf("B1") != -1 || path.indexOf("B2") != -1 || path.indexOf("C1") != -1 || path.indexOf("C2") != -
+            1) hasPinyin = false;
+
+        if (hasPinyin && page["pinyin"] != "") {
+
+            //段落
+            var text_part_arr = page["text"].split('<br/>');
+            var pin_part_arr = page["pinyin"].split('<br/>');
+            var index = 0; //標記句子索引，以便和音檔相對應
+
+            text_part_arr.forEach(function (part, i) {
+
+                if (part != "") {
+
+                    //句子
+                    var text_span_arr = part.split("|");
+                    var pin_span_arr = pin_part_arr[i].split("|");
+
+                    text_span_arr.forEach(function (span, j) {
+                        if (span != "") {
+                            //單字
+                            var text_unit_arr = span.split("");
+                            var pin_unit_arr = pin_span_arr[j].split(" ");
+
+                            text += "<span sIndex='" + index + "'>";
+                            text_unit_arr.forEach(function (unit, k) {
+                                //檢查是否為符號
+                                if (isSymbol(unit)) {
+                                    text += unit;
+                                } else {
+                                    if (unit == " ") {
+                                        //加空白
+                                        text += unit;
+                                    } else {
+                                        text += "<ruby><rt>&nbsp;" + pin_unit_arr[k] +
+                                            "&nbsp;</rt>" + unit + "</ruby>";
+                                    }
+                                }
+                            });
+                            text += "</span>";
+                            index++;
+                        }
+                    });
+                }
+                text += "<br />";
+
+            });
+        } else {
+
+            //沒有拼音的情況
+
+            //段落
+            var text_part_arr = page["text"].split('<br/>');
+            var index = 0; //標記句子索引，以便和音檔相對應
+
+            text_part_arr.forEach(function (part, i) {
+
+                if (part != "") {
+
+                    //句子
+                    var text_span_arr = part.split("|");
+
+                    text_span_arr.forEach(function (span, j) {
+                        if (span != "") {
+                            //單字
+                            var text_unit_arr = span.split("");
+
+                            text += "<span sIndex='" + index + "'>";
+                            text_unit_arr.forEach(function (unit, k) {
+                                //檢查是否為符號
+                                if (isSymbol(unit)) {
+                                    text += unit;
+                                } else {
+                                    if (unit == " ") {
+                                        //加空白
+                                        text += unit;
+                                    } else {
+                                        text += "<ruby>" + unit + "</ruby>";
+                                    }
+                                }
+                            });
+                            text += "</span>";
+                            index++;
+                        }
+                    });
+                }
+                text += "<br />";
+
+            });
+        }
+
+        //console.log("text", text);
+        return text;
+    }
+
+    function isSymbol(_unit) {
+
+        var symbol = "<>-，。？?！!：:、-「」“”〈〉《》—…….–";
+        if (symbol.indexOf(_unit) == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+
+<!--audio-->
+<script>
+    var mp3_arr = [];
+    var audio = document.createElement('audio');
+    var source = document.createElement('source');
+
+    var audio_type = 0; //播放模式。0：auto、1：pause、2：continue
+    var audio_rate = 1; //語速
+    var audio_volume = 0.5; //音量。0~1
+    var audio_index = 0; //目前播放的索引mp3
+    var isEnd = true; //當頁全文自動播放是否結束的狀態，預設為結束狀態，音軌回到最前面。
+
+    $(document).ready(function () {
+        //語速調整
+        $("#li_speed p").click(function () {
+            $("#li_speed p").css("font-weight", "");
+            $(this).css("font-weight", "bold");
+
+            audio_rate = $(this).text();
+            audio.playbackRate = audio_rate;
+
+            speaking.classList.toggle("open"); //關閉選單
+        });
+
+        //初始設定音量
+        $("#move_mc").css("left", "50px");
+    });
+
+    //pause 或 play
+    //全文自動播放
+    $(".btn-play").click(function () {
+        $(this).toggleClass("pause");
+
+        $("ruby").css("color", "");
+
+        if (isEnd) {
+            //在這之前是句字詞彙點選播放的情況
+
+            isEnd = false;
+            if (pageIndex == 0) {
+
+            } else {
+                $("span:eq(" + audio_index + ")").find("ruby").css("color", "red");
+            }
+            play(audio_index);
+
+        } else {
+            if (pageIndex == 0) {
+                //首頁播放
+                play(0);
+
+            } else {
+                if ($(this).hasClass("pause")) {
+                    $("span:eq(" + audio_index + ")").find("ruby").css("color", "red");
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            }
+        }
+    });
+
+    function play(index) {
+
+        //唸讀模式下，且不是詞彙句字的點播模式
+        if (soundMode && !isEnd) {
+            audio_index = index;
+            audio.src = path + 'audio/' + mp3_arr[index];
+            //console.log(mp3_arr[index]);
+            audio.volume = audio_volume; //音量 
+            audio.playbackRate = audio_rate; //語速
+            audio.play();
+
+            if (!$(".btn-play").hasClass("pause")) $(".btn-play").addClass("pause");
+            $("span:eq(" + index + ")").find("ruby").css("color", "red");
+
+            audio.onended = function () {
+                $("ruby").css("color", "");
+
+                if (index < mp3_arr.length - 1) {
+                    index++;
+
+                    play(index);
+                } else {
+                    $(".btn-play").removeClass("pause");
+                    audio_index = 0; //回到第一句話
+                    isEnd = true;
+                }
+            }
+        }
+    }
+
+    //點選處理。句子或詞彙變色，播放鍵樣式處裡
+    function wordsClick(target) {
+        isEnd = true;
+        audio_index = 0; //全文自動播放的音軌，回到第一句話
+
+        if (soundMode) {
+            $("ruby").css("color", "");
+            $(target).find("ruby").css("color", "red");
+
+            $(".btn-play").removeClass("pause");
+        }
+    }
+
+    //句子播放
+    function playSentence(index) {
+        //唸讀模式下
+        if (soundMode) {
+            audio.src = path + 'audio/' + mp3_arr[index];
+            //console.log(mp3_arr[index]);
+            audio.volume = audio_volume; //音量 
+            audio.playbackRate = audio_rate; //語速
+            audio.play();
+
+            audio.onended = function () {
+                $("ruby").css("color", "");
+            }
+        }
+    }
+
+    //詞彙播放
+    function playVocabulary(target, files, index) {
+        //唸讀模式下
+        if (soundMode) {
+            //播放鍵改成播放樣式
+            if ($(".btn-verbatim").hasClass("end-verbatim")) $(".btn-verbatim").removeClass("end-verbatim");
+            //audio_index = 0;
+
+            var file_arr = files.split("|");
+            //wordsClick(target);
+            //console.log(file);
+            audio.src = path + 'audio/' + file_arr[index];
+            audio.volume = audio_volume; //音量 
+            audio.playbackRate = audio_rate; //語速
+            audio.play();
+
+            audio.onended = function () {
+                index++;
+                if (index == file_arr.length) {
+                    $("ruby").css("color", "");
+                } else {
+                    playVocabulary(target, files, index);
+                }
+
+            }
+
+        }
+    }
+
+    //設定靜音
+    $(".sound-img").click(function () {
+        if (audio.volume == 0) {
+            audio_volume = 0.5;
+            $(".sound-line").css("width", "50%");
+            $("#move_mc").css("left", "50px");
+        } else {
+            audio_volume = 0;
+            $(".sound-line").css("width", "0%");
+            $("#move_mc").css("left", "0px");
+        }
+        SetVolume();
+    });
+
+
+    //設定音量
+    function SetVolume() {
+        if (audio_volume == 0) {
+            $(".sound-img").addClass("mute");
+        } else {
+            $(".sound-img").removeClass("mute");
+        }
+        audio.volume = audio_volume;
+    }
+
+    //拖曳-音量
+    $(function () {
+        $("#bar_mc div[id='move_mc']").draggable({
+            containment: "#bar_mc",
+
+            start: function (event, ui) {
+                //console.log($(this).offset().left + "_" + $(this).offset().top);
+            },
+
+            drag: function (event, ui) {
+                //console.log($(this).offset().left + "_" + parseInt($("#bar_mc").offset().left) + "_" + parseInt($("#bar_mc").width()));
+
+                var volume = parseInt($(this).offset().left) + 5 - parseInt($("#bar_mc").offset()
+                    .left);
+                $(".sound-line").css("width", volume + "%");
+                audio_volume = volume / 100;
+                SetVolume();
+            },
+
+            stop: function (event, ui) {
+                var volume = parseInt($(this).offset().left) + 5 - parseInt($("#bar_mc").offset()
+                    .left);
+                $(".sound-line").css("width", volume + "%");
+                //console.log("stop_音量", volume);
+                audio_volume = volume / 100;
+                SetVolume();
+
+            }
+        });
+    });
+</script>
+
+<!--頁碼-->
+<script>
+    //鍵盤方向鍵控制上下頁
+    $(document).ready(function () {
+        $("body").keydown(function (event) {
+            if (event.keyCode == 37) toPre();
+            if (event.keyCode == 39) toNext();
+        });
+    });
+
+    $(".btn-prev").click(toPre);
+    $(".btn-next").click(toNext);
+
+    function toPre() {
+        $.ajax({
+            type: "POST",
+            url: "ebook_cn.aspx/Visit",
+            data: JSON.stringify({
+                path: path
+            }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                getOut(data["myID"]);
+
+                //翻頁後
+                isEnd = true;
+                audio.pause();
+                audio_index = 0;
+                if ($(".btn-play").hasClass("pause")) $(".btn-play").removeClass("pause");
+
+                if (pageIndex > 0) {
+                    pageIndex--;
+                    pagesLine();
+
+                    ShowPage();
+                }
+            },
+            error: function (jqXHR, textStatus, err) {
+                console.log("[pre_visit]: " + jqXHR.responseText);
+            }
+        }).then(function () {
+            stopSpin(); //關閉lodaing畫面
+        });
+    }
+
+    function toNext() {
+        $.ajax({
+            type: "POST",
+            url: "ebook_cn.aspx/Visit",
+            data: JSON.stringify({
+                path: path
+            }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                getOut(data["myID"]);
+
+                //下一頁
+                isEnd = true;
+                audio.pause();
+                audio_index = 0;
+                if ($(".btn-play").hasClass("pause")) $(".btn-play").removeClass("pause");
+
+                toNextPage();
+            },
+            error: function (jqXHR, textStatus, err) {
+                console.log("[next_visit]: " + jqXHR.responseText);
+            }
+        }).then(function () {
+            stopSpin(); //關閉lodaing畫面
+        });
+    }
+
+    var testURL = ""; //讀後測驗網址
+    function toNextPage() {
+        if (pageIndex < pagesCount - 1) {
+            pageIndex++;
+            pagesLine();
+
+            ShowPage();
+        } else {
+            //閱讀完成，跳出是否前往測驗的小視窗
+
+            startSpin();
+
+            $.ajax({
+                type: "POST",
+                url: "ebook_cn.aspx/ReadEnd",
+                data: JSON.stringify({
+                    path: path
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    //閱讀章顯示效果
+                    if (data["toShow"] == "1") {
+                        $("#div_1").css("display", "block");
+                        $("#div_2").css("display", "none");
+                        $("#div_3").css("display", "none");
+
+                        //是否可測驗
+                        if (data["canTest"] == "1") {
+                            $("#div_btnTest").css("display", "block");
+                            $("#div_btnClose").css("display", "none");
+                        } else {
+                            $("#div_btnTest").css("display", "none");
+                            $("#div_btnClose").css("display", "block");
+                        }
+                    } else {
+                        $("#div_1").css("display", "none");
+                        //是否可測驗
+                        if (data["canTest"] == "1") {
+                            $("#div_2").css("display", "block");
+                            $("#div_3").css("display", "none");
+
+                            $("#div_btnTest").css("display", "block");
+                            $("#div_btnClose").css("display", "none");
+                        } else {
+                            $("#div_2").css("display", "none");
+                            $("#div_3").css("display", "block");
+
+                            $("#div_btnTest").css("display", "none");
+                            $("#div_btnClose").css("display", "block");
+                        }
+                    }
+
+                    testURL = data["url"] + "&lang=" + lang;
+
+                    $(".line").css("width", "100%");
+                    $(".number-page").html((pagesCount + 1) + "/" + (pagesCount + 1));
+
+                    //開啟小視窗，點選空白處不可關閉
+                    $("#readbadge").modal({
+                        escapeClose: false,
+                        clickClose: false,
+                        showClose: false
+                    });
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[next_visit]: " + jqXHR.responseText);
+                }
+            }).then(function () {
+                stopSpin(); //關閉lodaing畫面
+            });
+        }
+    }
+
+    //頁碼百分比
+    function pagesLine() {
+        var currentPage = pageIndex + 1;
+        var percentage = (pageIndex + 1) / parseInt(pagesCount) * 100 - 5;
+        $(".line").css("width", percentage + "%");
+        $(".number-page").html(currentPage + "/" + (pagesCount + 1));
+    }
+
+    function pageBtnReset() {
+        $(".play .btn-prev").attr("disabled", false);
+        $(".play .btn-next").attr("disabled", false);
+
+        //上一頁
+        if (pageIndex == 0) {
+            $(".play .btn-prev").attr("disabled", true);
+            $(".play .btn-prev").addClass("disabled");
+        } else {
+            $(".play .btn-prev").removeClass("disabled");
+        }
+
+        //下一頁
+        if (pageIndex == pagesCount) {
+            $(".play .btn-next").attr("disabled", true);
+            $(".play .btn-next").addClass("disabled");
+        } else {
+            $(".play .btn-next").removeClass("disabled");
+        }
+    }
+</script>
+
+<!--功能切換-->
+<script>
+    var textShow = true;
+    var pinyinShow = true;
+
+    $(document).ready(function () {
+        //關閉
+        $('.close').click(function () {
+            window.opener = null;
+            window.close();
+        });
+
+        //功能點選，打開或關閉選單
+        $(".button-menu ul li button").click(function () {
+            $(this).siblings().toggleClass("open");
+            $(this).parent().siblings().children().siblings().removeClass("open");
+        });
+
+        //全螢幕
+        $('.btn-screen').click(function () {
+            if (document.fullscreen) {
+                //關
+                $("#btn-screen").removeClass("end-screen").addClass("btn-screen");
+            } else {
+                //開
+                $("#btn-screen").removeClass("btn-screen").addClass("end-screen");
+            }
+
+            screenfull.toggle();
+        });
+
+        //拼音、文字切換
+        $("#pinyin-id").change(function () {
+            if ($(this).is(":checked")) {
+
+                pinyinShow = true;
+            } else {
+
+                pinyinShow = false;
+            }
+
+            ShowPinyin();
+        });
+
+        $("#text-id").change(function () {
+            if ($(this).is(":checked")) {
+                //$(".text p").show();
+                textShow = true;
+            } else {
+                //$(".text p").hide();
+                textShow = false;
+            }
+
+            ShowText()
+        });
+
+        //聽切換
+        $("#listen-id").click(function () {
+            if ($(this).is(":checked")) {
+                soundMode = true;
+
+                //PLAY鍵
+                // if ((page["type"] != "end" && page["type"] != "none" && page["type"] != "copyright") || (page["type"] == "none" && page["sound"] != undefined)) {
+                //     //$(".btn-play").css("visibility", "visible");
+                //     $(".play .btn-play").attr("disabled", false);
+                //     $(".play .btn-play").removeClass("disabled");
+                // }
+                if ($(this).is(":checked")) {
+                    //$(".btn-play").css("visibility", "visible");
+                    $(".play .btn-play").attr("disabled", false);
+                    $(".play .btn-play").removeClass("disabled");
+                }
+
+                //喇叭與音量
+                $(".sound-draggable-button").removeClass("grey");
+                $(".sound-line").removeClass("grey");
+                $('.sound-img').prop('disabled', false);
+                $('.btn-speak').prop('disabled', false);
+                //句子
+                $("span").css("cursor", "pointer");
+            } else {
+                soundMode = false;
+
+                //PLAY鍵
+                //$(".btn-play").css("visibility","hidden");//$(".btn-play").hide();
+                $(".play .btn-play").attr("disabled", true);
+                $(".play .btn-play").addClass("disabled");
+
+                //喇叭與音量
+                $(".sound-draggable-button").addClass("grey");
+                $(".sound-line").addClass("grey");
+                $('.sound-img').prop('disabled', true);
+                $('.btn-speak').prop('disabled', true);
+                //句子
+                $("span").css("cursor", "");
+
+                //關閉正在播放的聲音
+                isEnd = true;
+                audio.pause();
+                audio_index = 0;
+                if ($(".btn-play").hasClass("pause")) $(".btn-play").removeClass("pause");
+                $("label").css("color", "");
+
+            }
+        });
+
+        //唸讀切換
+        $("#read-id").click(function () {
+            if ($(this).is(":checked")) {
+                $(".listen_sentence").addClass("microphone_show");
+                //alert("此功能需插入麥克風");
+            } else {
+                $(".listen_sentence").removeClass("microphone_show");
+            }
+        });
+
+        //唸讀切換
+        // $("#read-id").change(function () {
+        //     if ($(this).is(":checked")) {
+        //         soundMode = true;
+
+        //         //PLAY鍵
+        //         // if ((page["type"] != "end" && page["type"] != "none" && page["type"] != "copyright") || (page["type"] == "none" && page["sound"] != undefined)) {
+        //         //     //$(".btn-play").css("visibility", "visible");
+        //         //     $(".play .btn-play").attr("disabled", false);
+        //         //     $(".play .btn-play").removeClass("disabled");
+        //         // }
+        //         $(".play .btn-play").attr("disabled", false);
+        //         $(".play .btn-play").removeClass("disabled");
+
+        //         //喇叭與音量
+        //         $(".sound-draggable-button").removeClass("grey");
+        //         $(".sound-line").removeClass("grey");
+        //         $('.sound-img').prop('disabled', false);
+        //         $('.btn-speak').prop('disabled', false);
+        //         //句子
+        //         $("span").css("cursor", "pointer");
+        //     } else {
+        //         soundMode = false;
+
+        //         //PLAY鍵
+        //         //$(".btn-play").css("visibility","hidden");//$(".btn-play").hide();
+        //         $(".play .btn-play").attr("disabled", true);
+        //         $(".play .btn-play").addClass("disabled");
+
+        //         //喇叭與音量
+        //         $(".sound-draggable-button").addClass("grey");
+        //         $(".sound-line").addClass("grey");
+        //         $('.sound-img').prop('disabled', true);
+        //         $('.btn-speak').prop('disabled', true);
+        //         //句子
+        //         $("span").css("cursor", "");
+
+        //         //關閉正在播放的聲音
+        //         isEnd = true;
+        //         audio.pause();
+        //         audio_index = 0;
+        //         if ($(".btn-play").hasClass("pause")) $(".btn-play").removeClass("pause");
+        //         $("ruby").css("color", "");
+
+        //     }
+        // });
+
+        //詞彙表
+        $("#word-id").change(function () {
+            if ($(this).is(":checked")) {
+                $(".word-area").addClass("open");
+                $(".book-page").addClass("move");
+                $(".book-page").removeClass("noMove");
+
+                // 版型:兩頁開始
+                var twoRightHeight = $(".book-page-bg > img").height();
+                $(".two-right-text").css({
+                    "max-height": twoRightHeight
+                });
+                // 版型:兩頁結束
+
+                // 版型:文壓圖開始
+                var topTextHeight = $(".book-page-bg > img").height();
+                $(".top-text").css({
+                    "max-height": topTextHeight
+                });
+                // 版型:文壓圖結束
+
+                // 版型:句子開始
+                var sentenceHeight = $(".book-page-bg > img").height();
+                $(".sentence").css({
+                    "max-height": sentenceHeight
+                });
+                // 版型:句子結束
+
+                if ($(window).width() <= 1024) {
+
+                    // 版型:兩頁開始
+                    var twoRightTextHeight = $(".book-page-bg > img").height() / 2;
+                    $(".two-right-text").css({
+                        "max-height": twoRightTextHeight
+                    });
+                    // 版型:兩頁結束
+                }
+
+            } else {
+                $(".word-area").removeClass("open");
+                $(".book-page").removeClass("move");
+                $(".book-page").addClass("noMove");
+
+                // 版型:兩頁開始
+                $(".two-right-text").css({
+                    "max-height": "calc(100vh - 240px)"
+                });
+                // 版型:兩頁結束
+
+                // 版型:文壓圖開始
+                $(".top-text").css({
+                    "max-height": "calc(100vh - 240px)"
+                });
+                // 版型:文壓圖結束
+
+                // 版型:句子開始
+                $(".sentence").css({
+                    "max-height": "calc(100vh - 240px)"
+                });
+                // 版型:句子結束
+
+                if ($(window).width() <= 1024) {
+
+                    // 版型:兩頁開始
+                    var twoRightTextHeight = $(".book-page-bg > img").height() / 2;
+                    $(".two-right-text").css({
+                        "max-height": twoRightTextHeight
+                    });
+                    // 版型:兩頁結束
+                }
+            }
+        });
+
+        //modal
+        //關閉：提示前往測驗的小視窗，回到真正的最後一頁，調整進度條
+        $("#close-modal").click(function () {
+            pagesLine();
+        });
+        $("#close-modal1").click(function () {
+            pagesLine();
+        });
+    });
+
+    //拼音顯示
+    function ShowPinyin() {
+        if (pinyinShow) {
+            //$('.text rt').css("visibility", "visible");
+            $(".text p > span > label > ruby > rt").show();
+        } else {
+            //$('.text rt').css("visibility", "hidden");
+            $(".text p > span > label > ruby > rt").hide();
+        }
+    }
+
+    //內文顯示
+    function ShowText() {
+        if (textShow) {
+            $(".text").show();
+        } else {
+            $(".text").hide();
+        }
+    }
+</script>
+
+<!--讀後測驗-->
+<script>
+    function GoTest() {
+        startSpin();
+
+        location.href = testURL;
+    }
+</script>
+
+
+
+<!--版權設定-->
+<script>
+    function getCopyright(bookName, text, changeText) {
+        var right = "適性閱讀系列<br /><br />";
+        right += "創辦人: 宋曜廷 <br />";
+        right += "書名: " + bookName + "<br />";
+        right += "編撰者: 適性閱讀團隊<br />";
+        //right += "出版者: 臺灣師範大學<br />";
+        right += "總編輯: 胡翠君<br />";
+        right += "副總編輯: 彭玉琴<br />";
+        right += "執行編輯: 林秀玲、江佳蓁<br />";
+        right += "版次: 初版<br /><br />";
+
+        if (text != "") right += text;
+
+        right += "未經正式書面同意，不得以任何形式做全部或局部之翻印、仿製、改編或轉載。<br />";
+        //right += "Printed in Taiwan.<br /><br />";
+        right +=
+            "No part of this book may be used or reproduced in any manner whatsoever without written permission except in the case of brief quotations embodied in critical articles and reviews.<br /><br />";
+        //right += "Published by National Taiwan Normal University.";
+
+        if (changeText != "") {
+            var change_arr = changeText.split("*");
+            change_arr.forEach(function (change) {
+                var tmp_arr = change.split("|");
+                //把版權內容中的tmp_arr[0]替換成tmp_arr[1]
+                right = right.replace(tmp_arr[0], tmp_arr[1]);
+            });
+        }
+
+        return right;
+    }
+</script>
+
+
+
+</body>
+
+</html>

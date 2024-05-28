@@ -1,24 +1,26 @@
-header{
+header {
     .navbar {
         width: 90%;
         margin: 0 auto;
         padding: 10px 0;
-        .container-fluid{
+
+        .container-fluid {
             position: relative;
             padding: 0 !important;
-            .navbar-brand{
+
+            .navbar-brand {
                 width: 130px;
                 padding: 0;
                 margin: 0;
                 display: flex;
                 align-items: center;
 
-                .logo_frog{
+                .logo_frog {
                     width: 55px;
                     margin: 0 5px 0 0;
                 }
 
-                .logo_text{
+                .logo_text {
                     height: 35px;
                     width: auto;
                 }
@@ -33,48 +35,49 @@ header{
                 border-radius: 0;
                 box-shadow: none;
 
-                span{
+                span {
                     position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 30px;
-                height: 3px;
-                margin: 0px;
-                background: $main_color;
-                transition: 350ms ease all;
-                z-index: 5;
-            
-                &::before,
-                &::after{
-                    content: " ";
-                    position: absolute;
-                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 30px;
                     height: 3px;
+                    margin: 0px;
                     background: $main_color;
                     transition: 350ms ease all;
+                    z-index: 5;
+
+                    &::before,
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        background: $main_color;
+                        transition: 350ms ease all;
+                    }
+
+                    &::before {
+                        margin: -10px 0 0 0;
+                    }
+
+
+                    &::after {
+                        margin: 10px 0 0 0;
+                    }
                 }
-            
-                &::before{
-                    margin: -10px 0 0 0;
-                }
-            
-                
-                &::after{
-                    margin: 10px 0 0 0;
-                }
-                }
-            
+
                 &.open {
-                    span{
+                    span {
                         background-color: rgba(0, 0, 0, 0);
-                
-                        &::before{
+
+                        &::before {
                             transform: rotate(45deg);
                             margin: 0;
                         }
-                
-                        &::after{
+
+                        &::after {
                             transform: rotate(-45deg);
                             margin: 0;
                         }
@@ -101,13 +104,14 @@ header{
                 }
             }
 
-            .navbar-collapse{
+            .navbar-collapse {
                 position: absolute;
                 top: 100%;
                 width: 100%;
                 flex-grow: initial;
                 margin: 20px 0;
-                .navbar-nav{
+
+                .navbar-nav {
                     background-color: $white;
                     box-shadow: 0 2px 6px $main_color_40;
                     border-radius: 20px;
@@ -115,55 +119,55 @@ header{
                     position: relative;
                     z-index: 1;
 
-                    .nav-item{
-                        .nav-link{
+                    .nav-item {
+                        .nav-link {
                             font-size: 16px;
                             padding: 30px 0 0;
                             color: $main-color;
 
-                            &:hover{
+                            &:hover {
                                 color: darken($main_color, 15%);
                             }
 
-                            &.dropdown-toggle{
-                                &::after{
+                            &.dropdown-toggle {
+                                &::after {
                                     display: none;
                                 }
 
-                                &.show{
-                                    &>.fa-angle-down{
+                                &.show {
+                                    &>.fa-angle-down {
                                         transform: rotate(180deg);
                                     }
                                 }
 
-                                &>.fa-angle-down{
+                                &>.fa-angle-down {
                                     transition: 0.3s;
                                 }
                             }
                         }
 
-                        .dropdown-menu{
+                        .dropdown-menu {
                             border: 0;
                             border-radius: 20px;
 
-                            li{
+                            li {
                                 .dropdown-item {
                                     padding: 10px 20px;
                                     border-radius: 20px;
 
-                                    i{
+                                    i {
                                         display: none;
                                     }
 
-                                    &:hover{
+                                    &:hover {
                                         color: $main_color;
                                         background-color: $main_color_25;
                                     }
 
-                                    &.check{
+                                    &.check {
                                         color: $main_color;
 
-                                        i{
+                                        i {
                                             display: inline-block;
                                         }
                                     }
@@ -171,41 +175,41 @@ header{
                             }
                         }
 
-                        &:nth-child(1){
-                            .nav-link{
+                        &:nth-child(1) {
+                            .nav-link {
                                 padding: 0;
                             }
                         }
                     }
                 }
-                
+
             }
 
-            .quiz-user-info{
+            .quiz-user-info {
                 color: darken($main_color, 15%);
             }
         }
     }
 }
 
-@media screen and (min-width: 500px){
-    header{
+@media screen and (min-width: 500px) {
+    header {
         .navbar {
             padding: 20px 0;
         }
     }
 }
 
-@media screen and (min-width: 576px){
-    header{
+@media screen and (min-width: 576px) {
+    header {
         .navbar {
-            .container-fluid{
-                .navbar-brand{
-                    .logo_frog{
+            .container-fluid {
+                .navbar-brand {
+                    .logo_frog {
                         width: 65px;
                     }
-    
-                    .logo_text{
+
+                    .logo_text {
                         height: 45px;
                     }
                 }
@@ -214,33 +218,34 @@ header{
     }
 }
 
-@media screen and (min-width: 768px){
-    header{
+@media screen and (min-width: 768px) {
+    header {
         .navbar {
-            .container-fluid{
-    
+            .container-fluid {
+
                 .navbar-toggler {
                     display: none;
                 }
-    
-                .navbar-collapse{
+
+                .navbar-collapse {
                     position: relative;
                     width: auto;
                     display: flex;
                     align-items: center;
                     flex-basis: auto;
-                    .navbar-nav{
+
+                    .navbar-nav {
                         flex-direction: row;
                         border-radius: 50px;
                         padding: 5px 40px;
-    
-                        .nav-item{
-                            .nav-link{
+
+                        .nav-item {
+                            .nav-link {
                                 font-size: 20px;
                                 padding: 10px 15px;
                             }
 
-                            .dropdown-menu{
+                            .dropdown-menu {
                                 position: absolute;
                                 box-shadow: 0 2px 6px $main_color_40;
                                 min-width: 100%;
@@ -248,38 +253,38 @@ header{
                                 margin-top: 0;
                                 left: 50%;
                                 transform: translate(-50%, 15px);
-    
-                                li{
+
+                                li {
                                     .dropdown-item {
                                         padding: 10px 15px;
                                     }
                                 }
                             }
 
-                            &:nth-child(1){
-                                .nav-link{
+                            &:nth-child(1) {
+                                .nav-link {
                                     padding: 10px 30px;
                                 }
                             }
                         }
                     }
-                    
+
                 }
             }
         }
     }
 }
 
-@media screen and (min-width: 992px){
-    header{
+@media screen and (min-width: 992px) {
+    header {
         .navbar {
-            .container-fluid{
-                .navbar-brand{
-                    .logo_frog{
+            .container-fluid {
+                .navbar-brand {
+                    .logo_frog {
                         width: 80px;
                     }
-    
-                    .logo_text{
+
+                    .logo_text {
                         height: 60px;
                     }
                 }
