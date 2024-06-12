@@ -47,64 +47,52 @@
         </nav>
     </header>
 
-    <main>
-        <div class="test_area">
-            <div class="report_selector_tittle">
-                <h3>測驗結束</h3>
-            </div>
+    <img src="../Content/image/photo/report/20200325-TW-1.jpg" alt="" style="max-width: 1200px; margin: 0 auto; display: block;">
 
-            <div class="end_content">
-                <div class="end_content_img">
-                    <img src="../Content/image/photo/cat/end.png" alt="">
-                </div>
-
-                <div class="report_selector_text">
-                    <h4>你好棒！全部做完了！</h4>
-                </div>
-
-                <div class="">
-                    <a href="report.html" target="_blank" style="text-align: center;" class="button solid_color">檢視成績報告</a>    
-                </div>
-
-                <!-- <form action="/CCS2023/Award/ViewScoreReport" method="post">
-                    <input type="hidden" id="recordId" name="recordId" value="3586">
-                    <input type="hidden" id="culture" name="culture" value="zh-TW">
-
-                    <div class="">
-                        <div class="">
-                            <input type="submit" value="檢視成績報告" class="button solid_color">
-                        </div>
-                    </div>
-                    <input name="__RequestVerificationToken" type="hidden"
-                        value="CfDJ8N4FdXl-WJpDgyRUqckL25HsWUOSu_j_4WTgnyA3UPfGB5n49SSXCKc_Yq_BbI_ElwelKLToBy-TowBt5GI-GjwiHtjqyNnoKlw8VT9Z3FJiva2Kxb-QScF6aem6lq2HfGh0m0PIcwMzv0myHbZe07jw8xDvnYYKOLzf_y0hIIxIHXKy_oKQN_ZajxzjYM7VyA">
-                </form> -->
-
-                <div class="fireworks_area">
-                    <div class="fireworks_img">
-                        <img src="../Content/image/photo/fireworks/fireworks.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- JS -->
-    <script src="../Content/js/jquery-3.5.1.min.js"></script>
-    <script src="../Content/js/fontawesome-free-6.1.1.min.js"></script>
-    <script src="../Content/js/bootstrap@5.3.2.bundle.min.js"></script>
+<!-- JS -->
+<script src="../Content/js/jquery-3.5.1.min.js"></script>
+<script src="../Content/js/fontawesome-free-6.1.1.min.js"></script>
+<script src="../Content/js/bootstrap@5.3.2.bundle.min.js"></script>
 
     <!-- this page widgets JS -->
 
     <script>
+        if ($(window).width() >= 768) {
+            $_wordNum = 10;
+        } else if ($(window).width() > 575 && $(window).width() < 767) {
+            $_wordNum = 8;
+        } else {
+            $_wordNum = 5;
+        }
         $(document).ready(function () {
-            $(".fireworks_area").show();
-            setTimeout(function () {
-                $(".fireworks_area").fadeOut();
-            }, 5000);
-        });
-    </script>
 
+            //偵測是否顯示MORE
+            $('.table_recommend_words_item').each(function () {
+                if ($(this).find('mark').length <= $_wordNum) {
+                    if ($(this).hasClass('open')) {
+                        $(this).next('.more_btn').show();
+                    } else {
+                        $(this).next('.more_btn').hide();
+                    }
+                } else {
+                    $(this).next('.more_btn').show();
+                }
+            });
+
+            $('.more_btn').click(function () {
+                $(this).toggleClass('less').prev('.table_recommend_words_item').toggleClass('open');
+                $(this).html(($(this).html() != "LESS") ? "LESS" : "MORE");
+                return false;
+            });
+
+        });
+
+
+        // var declaration = getComputedStyle(document.documentElement);
+        // var propvalue = declaration.getPropertyValue('--progress-width');
+        // var innerDiv = document.getElementsByClassName('progress_bar')[0];
+        // innerDiv.style.setProperty("width", "calc(" + propvalue + " * 75)");
+    </script>
 </body>
 
 </html>
