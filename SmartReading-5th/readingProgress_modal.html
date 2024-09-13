@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SmartReading 適性閱讀">
+    <meta name="author" content="SmartReading 適性閱讀">
+    <title>SmartReading 適性閱讀</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
+    <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/SR-readingProgress-modal.css" />
+</head>
+
+<body class="">
+
+    <!-- 閱讀任務完成進度 彈跳視窗開始 -->
+    <a class="reading_task_modal_link" data-toggle="modal" data-target="#reading_task_modal"></a>
+
+    <a class="reading_task_modal_link" data-toggle="modal" data-target="#readingProgress_modal"></a>
+
+    <div class="modal readingProgress_modal in" id="readingProgress_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+
+                    <div class="modal-header-frame">
+                        <img src="Content/images/readingProgress/modal-header-bg-top.png" alt="">
+                    </div>
+
+                    <div class="modal-header-content">
+                        <div class="modal-header-tittle">
+                            <img src="Content/images/readingProgress/tittle.png" alt="">
+                        </div>
+
+                        <div class="modal-header-text-area">
+                            <p class="modal-header-text modal-header-date">
+                                截至2024/OO/OO 15:39
+                            </p>
+    
+                            <p class="modal-header-text">
+                                <span class="tittle">
+                                    書籍評量：
+                                </span>
+                                <span>
+                                    已完成 OO 本，還差 O1 本。恭喜完成書籍評量任務，別忘了繼續保持閱讀好習慣！
+                                </span>
+                            </p>
+                            <p class="modal-header-text">
+                                <span class="tittle">
+                                    文章評論：
+                                </span>
+                                <span>
+                                    已完成 O5 篇，還差 O2 篇。恭喜完成文章評論任務，別忘了繼續保持閱讀好習慣！
+                                </span>
+                            </p>
+                        </div>
+                        
+
+                        <div class="modal-header-frame modal-header-frame-right">
+                            <img src="Content/images/readingProgress/modal-header-bg-right.png" alt="">
+                        </div>
+                    </div>
+
+                    
+                    
+                    <button type="button" class="close reading_task_close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="modal-header-bg">
+                    <img src="Content/images/readingProgress/modal-header-bg.png" alt="">
+                </div>
+                <div class="modal-body">
+                    <div class="reading_task_body">
+                        <div class="container-fluid">
+                            <div class="reading_task_body_content">
+                                    <div class="reading_task_text">
+                                        <h3>
+                                            閱讀任務完成進度
+                                        </h3>
+                                        <p>
+                                            截至2024/12/12 15:39
+                                        </p>
+                                    </div>
+
+                                    <div class="reading_task_value">
+                                        <p>書籍評量：已完成<span class="value_green">00</span>本，還差<span class="value_red">01</span>本。</p>
+                                        <p>文章評論：已完成<span class="value_green">05</span>篇，還差<span class="value_red">02</span>篇。</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="modal reading_task_modal in" id="reading_task_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-header-cloud">
+                        <img src="Content/images/icon/cloud.png" alt="">
+                    </div>
+                    <button type="button" class="close reading_task_close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="reading_task_body">
+                        <div class="container-fluid">
+                            <div class="reading_task_body_content">
+                                    <div class="reading_task_text">
+                                        <h3>
+                                            閱讀任務完成進度
+                                        </h3>
+                                        <p>
+                                            截至2024/12/12 15:39
+                                        </p>
+                                    </div>
+
+                                    <div class="reading_task_value">
+                                        <p>書籍評量：已完成<span class="value_green">00</span>本，還差<span class="value_red">01</span>本。</p>
+                                        <p>文章評論：已完成<span class="value_green">05</span>篇，還差<span class="value_red">02</span>篇。</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- 閱讀任務完成進度 彈跳視窗結束 -->
+
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script src="Script/jquery.min.js"></script>
+    <script src="Script/bootstrap-lg.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //關閉閱讀任務彈跳視窗
+            $(".reading_task_modal_link").click();
+            $(".reading_task_close").click(function () {
+                $(".reading_task_modal").hide();
+                $(".modal-backdrop").hide();
+                $("body").removeClass("modal-open")
+            });
+        });
+    </script>
+
+</body>
+
+</html>

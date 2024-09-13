@@ -1,5 +1,124 @@
 @charset "UTF-8";
 /*閱讀任務完成進度彈跳視窗*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  font-size: 25px;
+  line-height: 1.7;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 1.7;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+p,
+svg {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+span,
+th,
+td,
+.form-control {
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.7;
+}
+
+a {
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.7;
+}
+a:hover {
+  text-decoration: none;
+}
+
+input,
+label {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+input[type=file]::file-selector-button {
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  padding: 0;
+  border-width: 0px;
+  border-style: none;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #5a5f60 !important;
+  border: 1px solid #5a5f60 !important;
+  opacity: 0.5;
+  cursor: auto !important;
+}
+button:disabled a {
+  color: white !important;
+  cursor: auto;
+}
+
+*,
+body {
+  letter-spacing: 1.5px;
+  box-sizing: border-box;
+}
+
 .modal.reading_task_modal {
   overflow-x: hidden;
   overflow-y: auto;
@@ -90,8 +209,58 @@
 .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p .value_red {
   color: #ff5d5d;
 }
+.modal.readingProgress_modal {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog {
+  width: 80%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
 .modal.readingProgress_modal .modal-dialog .modal-content {
-  background-color: #253b72;
+  background-color: #304ac6;
+  padding: 50px 20px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header {
+  padding: 0;
+  border-bottom: 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content {
+  position: relative;
+  background-color: rgba(0, 19, 68, 0.5019607843);
+  width: 82.92%;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-tittle {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-tittle img {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-text-area {
+  width: 80%;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-text-area .modal-header-text {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 10px auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-text-area .modal-header-text.modal-header-date {
+  margin: 20px auto 30px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-text-area .modal-header-text .tittle {
+  word-break: keep-all;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-content .modal-header-frame-right {
+  position: absolute;
+  right: -8.54%;
+  width: 8.54%;
+  top: 7%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame {
+  width: 100%;
 }
 
 .modal-backdrop {
@@ -123,6 +292,35 @@
   }
 }
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 27px;
+  }
+  h4 {
+    font-size: 21px;
+  }
+  h5 {
+    font-size: 19px;
+  }
+  p,
+  svg {
+    font-size: 15px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 15px;
+  }
+  a {
+    font-size: 15px;
+  }
+  input,
+  label {
+    font-size: 15px;
+  }
   .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 {
     font-size: 48px;
   }
@@ -135,4 +333,85 @@
   .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span {
     font-size: 29px;
   }
-}/*# sourceMappingURL=SR-storytelling-modal.css.map */
+}
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 29px;
+  }
+  h4 {
+    font-size: 23px;
+  }
+  h5 {
+    font-size: 21px;
+  }
+  p,
+  svg {
+    font-size: 17px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 17px;
+  }
+  a {
+    font-size: 17px;
+  }
+  input,
+  label {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  p,
+  svg {
+    font-size: 19px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 19px;
+  }
+  a {
+    font-size: 19px;
+  }
+  input,
+  label {
+    font-size: 19px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  h1 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 33px;
+  }
+  h4 {
+    font-size: 27px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  p,
+  svg {
+    font-size: 20px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 20px;
+  }
+  a {
+    font-size: 20px;
+  }
+  input,
+  label {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=SR-readingProgress-modal.css.map */
