@@ -1,0 +1,567 @@
+@charset "UTF-8";
+/*閱讀任務完成進度彈跳視窗*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  font-size: 25px;
+  line-height: 1.7;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 1.7;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+p,
+svg {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+span,
+th,
+td,
+.form-control {
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.7;
+}
+
+a {
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.7;
+}
+a:hover {
+  text-decoration: none;
+}
+
+input,
+label {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+input[type=file]::file-selector-button {
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  padding: 0;
+  border-width: 0px;
+  border-style: none;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #5a5f60 !important;
+  border: 1px solid #5a5f60 !important;
+  opacity: 0.5;
+  cursor: auto !important;
+}
+button:disabled a {
+  color: white !important;
+  cursor: auto;
+}
+
+*,
+body {
+  letter-spacing: 1.5px;
+  box-sizing: border-box;
+}
+
+.modal.readingProgress_modal {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog {
+  width: 80%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content {
+  position: relative;
+  background-color: #304ac6;
+  padding: 50px 20px 80px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header {
+  padding: 0;
+  border-bottom: 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame {
+  position: relative;
+  width: 93.75%;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides {
+  display: flex;
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-frame-left,
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-frame-right {
+  width: 8.54%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-frame-left img,
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-frame-right img {
+  height: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content {
+  position: relative;
+  background-color: rgba(0, 19, 68, 0.5019607843);
+  width: 82.92%;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle img {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area {
+  width: 80%;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 10px auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text.modal-header-date {
+  margin: 20px auto 30px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text .tittle {
+  word-break: keep-all;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-frame-right {
+  position: absolute;
+  right: -8.54%;
+  width: 8.54%;
+  top: 7%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .decorate-area .decorate-area-item.decorate-area-item-one {
+  width: 3.55%;
+  position: absolute;
+  left: -2.5%;
+  top: 20%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .decorate-area .decorate-area-item.decorate-area-item-two {
+  width: 3.55%;
+  position: absolute;
+  right: -2.5%;
+  top: 70%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area {
+  background-color: #021650;
+  border-radius: 30px;
+  padding: 45px 5%;
+  margin: 15px auto 40px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content {
+  display: flex;
+  justify-content: center;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle h5,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle p,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content h5,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content p {
+  color: #0deaff;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle {
+  margin: 0 0 35px 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area {
+  margin: 30px auto 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 15px 25px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item {
+  display: flex;
+  align-items: center;
+  width: 33%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img {
+  width: calc(100% - 30px);
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img .robot_img_item_color {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img {
+  width: 30px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img .arrow_img_item_color {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .robot_img_item_img .robot_img_item_color {
+  display: block;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .robot_img_item_img .robot_img_item_grey {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .arrow_img_item_img .arrow_img_item_color {
+  display: block;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .arrow_img_item_img .arrow_img_item_grey {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_text p,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_num p {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
+  width: 40%;
+  height: 12px;
+  background-color: #821fb5;
+  border-radius: 6px;
+  margin: 0 16px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area .progress_bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: #ff4df5;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area {
+  position: relative;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+  position: relative;
+  z-index: 2;
+  background-color: #021650;
+  border-radius: 30px;
+  padding: 40px 25px 30px;
+  margin: 0 auto 40px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-last-child(1) {
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  top: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 1px solid #0deaff;
+  border-radius: 30px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle,
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle h5 {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content p {
+  color: #0deaff;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area {
+  width: 80%;
+  height: 12px;
+  background-color: #821fb5;
+  border-radius: 6px;
+  margin: 0 16px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area .progress_bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: #ff4df5;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .small_task_progress_num p {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link {
+  position: relative;
+  z-index: 1;
+  background-color: #0deaff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 20px auto 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link a {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #021650;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link:hover a {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-bg {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.modal-backdrop {
+  opacity: 0.5;
+}
+.modal-backdrop.hide {
+  position: relative;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 27px;
+  }
+  h4 {
+    font-size: 21px;
+  }
+  h5 {
+    font-size: 19px;
+  }
+  p,
+  svg {
+    font-size: 15px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 15px;
+  }
+  a {
+    font-size: 15px;
+  }
+  input,
+  label {
+    font-size: 15px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content {
+    padding: 50px 20px 55px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
+    width: 55%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+    width: 47.5%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-child(even) {
+    margin: 0 0 40px 2.5%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-child(odd) {
+    margin: 0 2.5% 40px 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 29px;
+  }
+  h4 {
+    font-size: 23px;
+  }
+  h5 {
+    font-size: 21px;
+  }
+  p,
+  svg {
+    font-size: 17px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 17px;
+  }
+  a {
+    font-size: 17px;
+  }
+  input,
+  label {
+    font-size: 17px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content {
+    padding: 50px 20px 70px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img {
+    width: calc(100% - 50px);
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img {
+    width: 50px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_text p,
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_num p {
+    color: white;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
+    width: 40%;
+    height: 12px;
+    background-color: #821fb5;
+    border-radius: 6px;
+    margin: 0 16px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area .progress_bar {
+    height: 100%;
+    border-radius: 6px;
+    background-color: #ff4df5;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+    width: 47.5%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-child(even) {
+    margin: 0 0 40px 2.5%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-child(odd) {
+    margin: 0 2.5% 40px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal.readingProgress_modal .modal-dialog .modal-content {
+    padding: 50px 20px 85px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+    width: 30%;
+    margin: 0 1.5% 40px 1.5% !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  p,
+  svg {
+    font-size: 19px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 19px;
+  }
+  a {
+    font-size: 19px;
+  }
+  input,
+  label {
+    font-size: 19px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content {
+    padding: 50px 20px 100px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  h1 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 33px;
+  }
+  h4 {
+    font-size: 27px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  p,
+  svg {
+    font-size: 20px;
+  }
+  span,
+  th,
+  td,
+  .form-control {
+    font-size: 20px;
+  }
+  a {
+    font-size: 20px;
+  }
+  input,
+  label {
+    font-size: 20px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content {
+    padding: 50px 20px 115px;
+  }
+}/*# sourceMappingURL=SR-readingProgress-modal.css.map */
