@@ -15,14 +15,15 @@
 
 <body class="">
 
-    <!-- 閱讀任務完成進度 彈跳視窗開始 -->
-    <a class="reading_task_modal_link" data-toggle="modal" data-target="#reading_task_modal"></a>
-
-    <a class="reading_task_modal_link" data-toggle="modal" data-target="#readingProgress_modal"></a>
+    <!-- 任務提示牆 彈跳視窗開始 -->
+    <a class="reading_progress_modal_link" data-toggle="modal" data-target="#readingProgress_modal"></a>
 
     <div class="modal readingProgress_modal in" id="readingProgress_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
+                <button type="button" class="reading_progress_close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
                 <div class="modal-content-header">
 
                     <div class="modal-content-header-frame">
@@ -79,9 +80,6 @@
                         </div>
                     </div>
 
-                    <button type="button" class="close reading_task_close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
                 </div>
 
                 <div class="task_area">
@@ -162,9 +160,17 @@
                             </div>
                             <div class="robot_progress_num">
                                 <p>
-                                    0%
+                                    75%
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="task_area_icon_area">
+                        <div class="task_area_icon_one">
+                            <img src="Content/images/readingProgress/task_area_icon_one.png" alt="">
+                        </div>
+                        <div class="task_area_icon_two">
+                            <img src="Content/images/readingProgress/task_area_icon_two.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -225,7 +231,7 @@
                             </div>
                             <div class="small_task_progress_num">
                                 <p>
-                                    0%
+                                    33%
                                 </p>
                             </div>
                         </div>
@@ -259,7 +265,7 @@
                             </div>
                             <div class="small_task_progress_num">
                                 <p>
-                                    0%
+                                    33%
                                 </p>
                             </div>
                         </div>
@@ -293,7 +299,7 @@
                             </div>
                             <div class="small_task_progress_num">
                                 <p>
-                                    0%
+                                    33%
                                 </p>
                             </div>
                         </div>
@@ -327,7 +333,41 @@
                             </div>
                             <div class="small_task_progress_num">
                                 <p>
-                                    0%
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link">
+                            <a href="">
+                                前往任務
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    小任務名稱
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    小任務說明小任務說明小任務說明小任務說明小任務說明
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    33%
                                 </p>
                             </div>
                         </div>
@@ -348,42 +388,7 @@
         </div>
     </div>
 
-    <!-- <div class="modal reading_task_modal in" id="reading_task_modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-header-cloud">
-                        <img src="Content/images/icon/cloud.png" alt="">
-                    </div>
-                    <button type="button" class="close reading_task_close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="reading_task_body">
-                        <div class="container-fluid">
-                            <div class="reading_task_body_content">
-                                    <div class="reading_task_text">
-                                        <h3>
-                                            閱讀任務完成進度
-                                        </h3>
-                                        <p>
-                                            截至2024/12/12 15:39
-                                        </p>
-                                    </div>
-
-                                    <div class="reading_task_value">
-                                        <p>書籍評量：已完成<span class="value_green">00</span>本，還差<span class="value_red">01</span>本。</p>
-                                        <p>文章評論：已完成<span class="value_green">05</span>篇，還差<span class="value_red">02</span>篇。</p>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- 閱讀任務完成進度 彈跳視窗結束 -->
+    <!-- 任務提示牆 彈跳視窗結束 -->
 
 
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
@@ -394,8 +399,8 @@
     <script>
         $(document).ready(function () {
             //關閉閱讀任務彈跳視窗
-            $(".reading_task_modal_link").click();
-            $(".reading_task_close").click(function () {
+            $(".reading_progress_modal_link").click();
+            $(".reading_progress_close").click(function () {
                 $(".reading_task_modal").hide();
                 $(".modal-backdrop").hide();
                 $("body").removeClass("modal-open")
