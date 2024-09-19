@@ -119,7 +119,7 @@ body {
     box-sizing: border-box;
 }
 
-.progress_icon_area{
+.progress_icon_area {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,11 +128,13 @@ body {
     right: 8px;
     bottom: 8px;
     cursor: pointer;
-    .progress_icon{
+
+    .progress_icon {
         width: 100px;
     }
-    .progress_icon_text{
-        p{
+
+    .progress_icon_text {
+        p {
             color: #ff4df5;
         }
     }
@@ -160,12 +162,12 @@ body {
                 border-radius: 0;
                 box-shadow: none;
 
-                .reading_progress_close{
+                .reading_progress_close {
                     position: absolute;
                     left: 15px;
                     top: 15px;
 
-                    span{
+                    span {
                         color: #10eeff;
                         font-size: 25px;
                     }
@@ -203,9 +205,62 @@ body {
 
                                 .modal-header-tittle {
                                     width: 100%;
+                                    margin: 0 auto 15px;
+                                    display: flex;
+                                    justify-content: center;
 
                                     img {
                                         width: 100%;
+                                        display: none;
+                                    }
+
+                                    h2 {
+                                        font-size: 25px;
+                                        font-family: "Noto Sans SC", "Noto Sans TC";
+                                        font-weight: 900;
+                                        text-align: center;
+                                        width: 100%;
+                                        line-height: 1.5;
+
+                                        &.modal-header-tittle-main{
+                                            background: linear-gradient(180deg, #f8ff84 50%, #fff 50%, #fff 60%, #f8ff84 60%, #f8ff84 80%, #fff 80%, #fff 100%);
+                                            /* background-clip 要在背景的後面 */
+                                            -webkit-background-clip: text;
+                                            color: transparent;
+                                            /* 	等同於：-webkit-text-fill-color: transparent; */
+                                            // -webkit-text-stroke: 2px #1e286b;
+                                            position: relative;
+                                            z-index: 2;
+                                        }
+
+                                        &.modal-header-tittle-border{
+                                            position: absolute;
+                                            left: 50%;
+                                            top: 0;
+                                            transform: translate(-50%, 0);
+                                            z-index: 1;
+                                            /* background-clip 要在背景的後面 */
+                                            -webkit-background-clip: text;
+                                            color: transparent;
+                                            /* 	等同於：-webkit-text-fill-color: transparent; */
+                                            -webkit-text-stroke: 2px #1e286b;
+                                        }
+
+                                        &.modal-header-tittle-pink{
+                                            color: #ff4df5;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 50%;
+                                            transform: translate(calc(-50% + 2px) , 2px);
+                                        }
+
+                                        &.modal-header-tittle-blue{
+                                            color: #27fcff;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 50%;
+                                            transform: translate(calc(-50% - 2px) , -2px);
+                                        }
                                     }
                                 }
 
@@ -378,7 +433,7 @@ body {
 
                         .task_area_icon_two {
                             position: absolute;
-                            right: 2.5%;
+                            right: 7.5%;
                             top: 0;
                             width: 13%;
                             transform: translate(0, -24%);
@@ -559,6 +614,33 @@ body {
                 .modal-content {
                     padding: 50px 0 8%;
 
+                    .modal-content-header{
+                        .modal-content-header-frame{
+                            .modal-header-frame-bothSides{
+                                .modal-header-content{
+                                    .modal-header-tittle{
+                                        h2 {
+                                            font-size: 40px;
+    
+                                            &.modal-header-tittle-border{
+                                                /* 	等同於：-webkit-text-fill-color: transparent; */
+                                                -webkit-text-stroke: 4px #1e286b;
+                                            }
+    
+                                            &.modal-header-tittle-pink{
+                                                transform: translate(calc(-50% + 4px) , 4px);
+                                            }
+    
+                                            &.modal-header-tittle-blue{
+                                                transform: translate(calc(-50% - 4px) , -4px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     .task_area {
                         .robot_progress_area {
                             .robot_progress {
@@ -632,6 +714,34 @@ body {
         &.readingProgress_modal {
             .modal-dialog {
                 .modal-content {
+                    .modal-content-header{
+                        .modal-content-header-frame{
+                            .modal-header-frame-bothSides{
+                                .modal-header-content{
+                                    .modal-header-tittle{
+                                        margin: 0 auto 30px;
+                                        h2 {
+                                            font-size: 50px;
+    
+                                            &.modal-header-tittle-border{
+                                                /* 	等同於：-webkit-text-fill-color: transparent; */
+                                                -webkit-text-stroke: 5px #1e286b;
+                                            }
+    
+                                            &.modal-header-tittle-pink{
+                                                transform: translate(calc(-50% + 5px) , 5px);
+                                            }
+    
+                                            &.modal-header-tittle-blue{
+                                                transform: translate(calc(-50% - 5px) , -5px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     .task_area {
                         .robot_progress_area {
                             .robot_img_area {
@@ -673,6 +783,12 @@ body {
                                 }
                             }
                         }
+
+                        .task_area_icon_area {
+                            .task_area_icon_two {
+                                right: 2.5%;
+                            }
+                        }
                     }
 
                     .small_task_area {
@@ -700,6 +816,19 @@ body {
         &.readingProgress_modal {
             .modal-dialog {
                 .modal-content {
+                    .modal-content-header{
+                        .modal-content-header-frame{
+                            .modal-header-frame-bothSides{
+                                .modal-header-content{
+                                    .modal-header-tittle{
+                                        h2 {
+                                            font-size: 55px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     .small_task_area {
                         display: flex;
                         flex-wrap: wrap;
@@ -737,6 +866,28 @@ body {
     input,
     label {
         font-size: 19px;
+    }
+
+    .modal {
+        &.readingProgress_modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-content-header{
+                        .modal-content-header-frame{
+                            .modal-header-frame-bothSides{
+                                .modal-header-content{
+                                    .modal-header-tittle{
+                                        h2 {
+                                            font-size: 65px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -776,5 +927,27 @@ body {
     input,
     label {
         font-size: 20px;
+    }
+
+    .modal {
+        &.readingProgress_modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-content-header{
+                        .modal-content-header-frame{
+                            .modal-header-frame-bothSides{
+                                .modal-header-content{
+                                    .modal-header-tittle{
+                                        h2 {
+                                            font-size: 75px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
