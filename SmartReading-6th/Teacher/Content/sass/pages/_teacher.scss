@@ -39,11 +39,11 @@ main {
     }
 
     .teacher_header_tittle {
-        padding: 70px 60px;
+        padding: 40px 30px;
         background-image: url(../images/photo/slide-teacher.jpg);
         background-position: center center;
         background-size: cover;
-        margin-bottom: 80px;
+        margin: 0 auto 40px;
 
         p {
             font-size: 30px;
@@ -57,23 +57,98 @@ main {
         margin: 0 auto;
         overflow-x: scroll;
 
+        .table_responsive_name{
+            position: sticky;
+            left: 0;
+            margin: 40px auto;
+            display: flex;
+            justify-content: flex-end;
+
+            h4 {
+                color: $dark_main_color;
+            }
+        }
+
         .table_responsive_tittle{
+            position: sticky;
+            left: 0;
             display: flex;
             justify-content: center;
+            margin: 40px auto;
+
             h4 {
                 color: $dark_main_color;
                 span{
                     font-size: 20px;
+                    font-weight: bold;
                 }
             }
         }
 
         .table_responsive_searchbar{
+            position: sticky;
+            left: 0;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            width: 90%;
-            margin: 0 auto;
+            margin: 40px auto;
+
+            .searchbar_download_area{
+                margin: 8px 5px 8px 0;
+                .download_excelfile{
+                    display: flex;
+                    align-items: center;
+
+                    .download_btn{
+                        margin: 0 0 0 10px;
+                        padding: 5px 10px;
+                        border: 1px solid $main_color;
+                        border-radius: 5px;
+                        color: $main_color;
+
+                        &:hover{
+                            background-color: $main_color;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .searchbar_search_area{
+                display: flex;
+                margin: 8px 0 8px 5px;
+                .search_input{
+                    padding-inline: 10px;
+                    padding-block: 5px;
+                    outline: $main_color auto 0px;
+                    border: 1px solid $main_color;
+                    border-radius: 5px 0 0 5px;
+
+                    &:focus{
+                        border: 1px solid $dark_main_color;
+                    }
+
+                    &:focus-visible{
+                        outline: transparent auto 0px;
+                        border: 1px solid $dark_main_color;
+                    }
+                }
+
+                .search_submit{
+                    padding-inline: 10px;
+                    padding-block: 5px;
+                        border: 1px solid $main_color;
+                        border-radius: 0 5px 5px 0;
+                        color: $main_color;
+                        background-color: $white;
+                        transform: translate(-1px , 0);
+
+                        &:hover{
+                            background-color: $main_color;
+                            color: $white;
+                        }
+                }
+            }
         }
 
         table {
@@ -146,7 +221,7 @@ main {
         }
     }
 
-    .page-teacher {
+    .page_teacher {
         width: 90%;
         margin: 40px auto 60px;
 
@@ -154,28 +229,32 @@ main {
             &.pagination {
                 display: flex;
                 justify-content: center;
+                flex-wrap: wrap;
                 border-radius: 0;
 
                 a,
                 span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;                
                     color: $main_color;
                     float: left;
                     text-decoration: none;
                     border-radius: 50%;
                     border: 1px solid $main_color;
-                    margin: 10px 15px;
+                    margin: 10px 5px;
                     width: 35px;
                     height: 35px;
                     text-align: center;
-                    line-height: 35px;
+                    line-height: 1;
 
                     &:nth-child(1),
                     &:nth-last-child(1) {
                         border: none;
                         width: auto;
                         height: auto;
-                        border-radius: 16px;
-                        padding: 2px 15px;
+                        border-radius: 5px;
+                        padding: 2px 5px;
                     }
 
                     &.active {
@@ -197,6 +276,10 @@ main {
 
 @media screen and (min-width: 768px) {
     main {
+        .teacher_header_tittle {
+            padding: 70px 30px;
+        }
+
         .table_responsive {
             .table_responsive_tittle{
                 h4 {
@@ -206,11 +289,31 @@ main {
                 }
             }
         }
+
+        .page_teacher {
+            span {
+                &.pagination {
+                    a,
+                    span {
+                        margin: 10px 15px;
+    
+                        &:nth-child(1),
+                        &:nth-last-child(1) {
+                            padding: 2px 15px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and (min-width: 992px) {
     main {
+        .teacher_header_tittle {
+            padding: 70px 60px;
+        }
+
         .table_responsive {
             .table_responsive_tittle{
                 h4 {

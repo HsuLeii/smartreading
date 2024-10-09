@@ -15,6 +15,38 @@
 </head>
 
 <body>
+    <header>
+        <div class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="Content/images/logo/logo.png" alt="">
+                </div>
+
+                <div class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item nowPage">
+                            <a class="nav-link" href="whole_test.html">檢視全體測驗結果<br><span>View the whole test results</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="readhistory.html">檢視閱讀記錄<br><span>View reading history</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">登出<br><span>Logout</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+    </header>
     <main>
         <div class="main teacher">
             <div class="color_line">
@@ -28,10 +60,8 @@
             </div>
 
             <div class="teacher_header_tittle">
-                <p>檢視全體測驗結果<br /> View the whole test results</p>
+                <p>檢視全體測驗結果<br/>View the whole test results</p>
             </div>
-
-
 
             <div class="table_responsive">
                 <div class="table_responsive_tittle">
@@ -39,18 +69,15 @@
                 </div>
 
                 <div class="table_responsive_searchbar">
-                    <div class="bookselect wrap">
-                        <div class="excelfile">
-                            <h3>下載全體報告</h3>
-                            <a class="download-btn" href=""> Excel</a>
-
+                    <div class="searchbar_download_area">
+                        <div class="download_excelfile">
+                            <p>下載全體報告</p>
+                            <a class="download_btn" href=""> Excel</a>
                         </div>
                     </div>
-                    <div class="booksearch">
-                        <input name="ctl00$Content_Body$TB_search" type="text" value="苒詩"
-                            id="ctl00_Content_Body_TB_search" placeholder="輸入姓名或帳號...">
-                        <input type="submit" name="ctl00$Content_Body$Button1" value="搜尋"
-                            id="ctl00_Content_Body_Button1" class="cursor">
+                    <div class="searchbar_search_area">
+                        <input type="text" name="" value="" class="search_input" id="" placeholder="輸入姓名或帳號...">
+                        <input type="submit" name="" value="搜尋" class="search_submit" id="">
                     </div>
                 </div>
 
@@ -104,12 +131,16 @@
                     </tbody>
                 </table>
             </div>
-            <div class="page page-teacher">
+            
+            <div class="page page_teacher">
 
                 <span class="pagination">
                     <a disabled="disabled" class="pagenumber firstnn">第一頁</a>
                     <span class="active">1</span>
                     <a class="pagenumber" href="">2</a>
+                    <a class="pagenumber" href="">3</a>
+                    <a class="pagenumber" href="">4</a>
+                    <a class="pagenumber" href="">5</a>
                     <a class="lastnn" href="">最後一頁</a>
                 </span>
             </div>
@@ -120,6 +151,14 @@
     <script src="Content/Script/jquery.min.js"></script>
     <script src="Content/Script/bootstrap-lg.min.js"></script>
     <script src="Content/Script/fontawesome-free-6.1.1.min.js"></script>
+
+    <script>
+        //選單按鈕
+        $(".navbar-toggler").click(function () {
+            $(this).toggleClass("open");
+            $(".navbar-collapse").toggleClass("show");
+        });
+    </script>
 </body>
 
 </html>
