@@ -38,7 +38,7 @@ main {
 
     }
 
-    .teacher-title {
+    .teacher_header_tittle {
         padding: 70px 60px;
         background-image: url(../images/photo/slide-teacher.jpg);
         background-position: center center;
@@ -57,10 +57,29 @@ main {
         margin: 0 auto;
         overflow-x: scroll;
 
+        .table_responsive_tittle{
+            display: flex;
+            justify-content: center;
+            h4 {
+                color: $dark_main_color;
+                span{
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .table_responsive_searchbar{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+        }
+
         table {
             overflow: hidden;
-            width: 90%;
-            margin: 40px auto 0;
+            width: 100%;
+            margin: 40px 0 0;
             display: table;
 
             thead {
@@ -98,18 +117,28 @@ main {
                             background-color: #f7f7f7;
                         }
 
-                        .table_link {
+                        &.table_link_td {
                             display: flex;
                             align-items: center;
                             justify-content: center;
 
-                            svg{
-                                margin: 0 5px 0 0;
-                            }
+                            .table_link{
+                                svg{
+                                    margin: 0 5px 0 0;
+                                }
 
-                            &:hover{
-                                color: $main_color;
+                                &:hover{
+                                        color: $main_color;
+                                }
                             }
+                            
+                            &:hover{
+                                background-color: #f7f7f7;
+                            }
+                        }
+
+                        &:hover{
+                            background-color: $main_color_yellow;
                         }
                     }
                 }
@@ -166,10 +195,46 @@ main {
 }
 
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    main {
+        .table_responsive {
+            .table_responsive_tittle{
+                h4 {
+                    span{
+                        font-size: 21px;
+                    }
+                }
+            }
+        }
+    }
+}
 
-@media screen and (min-width: 992px) {}
+@media screen and (min-width: 992px) {
+    main {
+        .table_responsive {
+            .table_responsive_tittle{
+                h4 {
+                    span{
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 1024px) {}
 
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1400px) {
+    main {
+        .table_responsive {
+            .table_responsive_tittle{
+                h4 {
+                    span{
+                        font-size: 27px;
+                    }
+                }
+            }
+        }
+    }
+}
