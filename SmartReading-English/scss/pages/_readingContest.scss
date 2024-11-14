@@ -13,14 +13,15 @@
             .contest_regulations_link{
                 display: flex;
                 justify-content: center;
-                margin: 20px auto 40px;
+                margin: 20px auto 0;
                 position: sticky;
                 top: 0;
+                z-index: 1;
                 padding: 10px 0;
                 background-color: $body_bg;
-                border-bottom: 1px solid $brown;
 
                 .contest_regulations_link_text{
+                    width: 25%;
                     padding: 20px 30px;
                     border: 1.5px solid $brown;
                     border-radius: 5px;
@@ -32,20 +33,48 @@
                         text-align: center;
                     }
 
-                    // &:hover{
-                    //     background-color: $brown;
-                        
-                    //     h4{
-                    //         color: $white;
-                    //     }
-                    // }
-
                     &.active{
                         background-color: $brown;
                         
                         h4{
                             color: $white;
                         }
+                    }
+                }
+            }
+
+            .winner_list_link{
+                display: flex;
+                justify-content: center;
+                margin: 10px auto 40px;
+                padding: 0 0 20px;
+                border-bottom: 1px solid $brown;
+
+                .winner_list_link_item{
+                    position: relative;
+                    margin: 0px 20px;
+                    width: 25%;
+                    transform: scale(0.95);
+
+                    &.disabled{
+                        filter: grayscale(100%);
+                        cursor: auto;
+                        &:hover{
+                            transform: scale(0.95);
+                        }
+                    }
+                    
+                    .winner_list_link_text{
+                        position: absolute;
+                        left: 50%;
+                        top: 30%;
+                        transform: translate(-50%, -50%);
+                        color: $brown;
+                        font-weight: bold;
+                    }
+
+                    &:hover{
+                        transform: scale(1);
                     }
                 }
             }
@@ -122,8 +151,18 @@
                     }
                 }
             }
+
+            
         }
     }
+}
+
+.winner_list_modal {
+    border-radius: 0px;
+    padding: 0;
+    width: 90%;
+    height: 90%;
+    max-width: none;
 }
 
 @media screen and (max-width: 1200px){
@@ -138,12 +177,6 @@
                         padding: 15px 30px;
                     }
                 }
-
-                .contest_regulations_content{
-
-                    .contest_regulations_content_item{
-                        }
-                        }
             }
         }
     }
@@ -152,15 +185,33 @@
 @media screen and (max-width: 768px){
     .main{
         &.readingContest{
+            width: 95%;
+
+            .reading_contest_area{
+                width: 95%;
+                margin: 0 auto;
+            }
             .contest_regulations_area {
                 .contest_regulations_link{
+                    margin: 20px auto 0;
                     .contest_regulations_link_text{
-                        padding: 10px 20px;
-                        margin: 10px 17px;
+                        width: 33.3333%;
+                        margin: 10px 0;
+                        transform: scale(0.95);
+                    }
+                }
+
+                .winner_list_link{
+                    margin: 0 auto 40px;
+                    .winner_list_link_item{
+                        margin: 0;
+                        width: 33.3333%;
                     }
                 }
 
                 .contest_regulations_content{
+                    width: 95%;
+                    margin: 0 auto;
                     .contest_regulations_content_item{
                         .regulations_content_text{
                             .regulations_content_text_item{
@@ -182,6 +233,14 @@
                     .contest_regulations_link_text{
                         padding: 10px 5px;
                         margin: 10px 6px;
+                    }
+                }
+
+                .winner_list_link{
+                    .winner_list_link_item{
+                        .winner_list_link_text{
+                            font-size: 12px;
+                        }
                     }
                 }
 
