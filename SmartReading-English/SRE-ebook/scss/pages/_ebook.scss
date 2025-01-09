@@ -104,6 +104,11 @@
                 display: flex;
                 align-items: center;
                 margin: 40px auto;
+                display: none;
+
+                &.show{
+                    display: flex;
+                }
     
                 &.play_animation {
                     .bar {
@@ -972,6 +977,10 @@
 
                     &.open {
                         background-image: url(../image/button/read.svg);
+
+                        &~.verbatim-menu-container{
+                            display: block;
+                        }
                     }
 
                     &:disabled {
@@ -1007,6 +1016,7 @@
                     background-image: url(../image/button/endscreen.svg);
                 }
 
+                .verbatim-menu-container,
                 .speak-menu-container,
                 .magnifier-menu-container,
                 .font-menu-container,
@@ -1024,7 +1034,6 @@
                     text-align: center;
                     bottom: 100%;
                     margin-bottom: 11px;
-                    padding: 5px 0px;
 
                     &.open {
                         display: block;
@@ -1091,6 +1100,26 @@
                                 border-radius: 90px;
                                 transition: 0.1s;
                             }
+                        }
+                    }
+                }
+
+                .verbatim-menu-container{
+                    min-width: 115px;
+                }
+
+                .verbatim-menu-container,
+                .speak-menu-container{
+
+                    p{
+                        cursor: pointer;
+                        &:hover{
+                            background-color: $brown;
+                            color: $white;
+                        }
+
+                        &.bold{
+                            font-weight: bold;
                         }
                     }
                 }

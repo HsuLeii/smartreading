@@ -32,7 +32,7 @@
         <div class="text two-right-text full-back">
             <div class="article">
                 <p>
-                    <span sindex="0" style="cursor: pointer;" class="listen_sentence microphone_show">
+                    <span sindex="0" style="cursor: pointer;" class="listen_sentence">
                         <label style="font-size: 20px;">
                             Rabbit sees two monkeys playing in a tree.
                         </label>
@@ -42,7 +42,7 @@
                     </span>
                     <br>
 
-                        <span sindex="0" style="cursor: pointer;" class="listen_sentence microphone_show">
+                        <span sindex="0" style="cursor: pointer;" class="listen_sentence">
                             <label style="font-size: 20px;">
                                 Rabbit sees two monkeys playing in a tree.
                             </label>
@@ -52,7 +52,7 @@
                         </span>
                     <br>
 
-                    <span sindex="1" style="cursor: pointer;" class="listen_sentence microphone_show">
+                    <span sindex="1" style="cursor: pointer;" class="listen_sentence">
                         <label style="font-size: 20px;">
                             One monkey says, "Give me five!"
                         </label>
@@ -62,7 +62,7 @@
                     </span>
                     <br>
 
-                    <span sindex="2" style="cursor: pointer;" class="listen_sentence microphone_show">
+                    <span sindex="2" style="cursor: pointer;" class="listen_sentence">
                         <label style="font-size: 20px;">
                             A
                         </label>
@@ -108,7 +108,7 @@
                 <div class="bar"></div>
             </div>
 
-            <div class="record_play_area fluency_btn_area show">
+            <div class="record_play_area fluency_btn_area">
                 <button id="Btn_record" class="recording_modal_icon_area fluency_area_item">
                     <div class="recording_modal_icon">
                         <i class="fa-solid fa-microphone-lines"></i>
@@ -245,15 +245,22 @@
                 </div>
             </li>
 
-            <li id="li_read" class="cursor" aria-label="發音流暢度 Accuracy Fluency">
-                <button id="read-id" class="btn-verbatim cursor background-icon open"></button>
-                <div class="read-menu-container">
+            <li id="li_read" class="cursor" aria-label="唸讀 Read Aloud">
+                <button id="read-id" class="btn-verbatim cursor background-icon"></button>
+                <!-- <div class="read-menu-container">
                     <p class="label-text">
                         <input type="checkbox">
-                        <span style="cursor: pointer;">發音流暢度<br>
-                            Accuracy Fluency</span>
+                        <span style="cursor: pointer;">唸讀<br>Read Aloud</span>
                         <label for="read-id" style="cursor: pointer;"></label>
                     </p>
+                </div> -->
+                <div class="verbatim-menu-container">
+                    <button id="accuracy-id" type="button">
+                        <p>發音 Accuracy</p>
+                    </button>
+                    <button id="fluency-id" type="button">
+                        <p>流暢度 Fluency</p>
+                    </button>
                 </div>
             </li>
 
@@ -387,6 +394,21 @@
     
                 <div class="results_comments_item results_comments_good">
                     <h4>Good <i class="fa-solid fa-face-smile-beam"></i></h4>
+                </div>
+
+                <div class="results_comments_content">
+                    <div class="results_comments_content_item">
+                        <h4>語速：</h4>
+                        <p>
+                            語速過慢或過快，影響整體理解與表達。
+                        </p>
+                    </div>
+                    <div class="results_comments_content_item">
+                        <h4>Speed：</h4>
+                        <p>
+                            The speaking speed is either too slow or too fast, affecting overall comprehension and delivery.
+                        </p>
+                    </div>
                 </div>
     
                 <!-- <div class="results_comments_item results_comments_bad">
@@ -861,9 +883,6 @@
             $(".btn-speak").click(function () {
                 $(this).toggleClass("open");
             });
-            //$(".button-menu ul li button").click(function () {
-            //    //$(this).toggleClass("open");
-            //});
 
             //全螢幕
             $('.btn-screen').click(function () {
@@ -926,16 +945,45 @@
                 }
             });
 
+            $("#li_speed p").click(function () {
+                $(this).siblings().removeClass("bold");
+                $(this).addClass("bold");
+            });
+
             //唸讀切換
             $("#read-id").click(function () {
                 $(this).toggleClass("open");
+            });
+            //發音 Accuracy切換
+            $("#accuracy-id").click(function () {
+                $(this).toggleClass("open");
                 if ($(this).hasClass("open")) {
                     $(".listen_sentence").addClass("microphone_show");
-                    //alert("此功能需插入麥克風");
-                    $(".fluency_btn_area").addClass("show");
+                    $(this).children("p").addClass("bold");
+
+                    $("#fluency-id").removeClass("open");
+                    $("#fluency-id").children("p").removeClass("bold");
+                    $(".fluency_btn_area").removeClass("show");
                 } else {
                     $(".listen_sentence").removeClass("microphone_show");
+                    $(this).children("p").removeClass("bold");
+                }
+            });
+            //流暢度 Fluency切換
+            $("#fluency-id").click(function () {
+                $(this).toggleClass("open");
+                if ($(this).hasClass("open")) {
+                    $(".fluency_btn_area").addClass("show");
+                    $(this).children("p").addClass("bold");
+                    $(".sound_bar_area").addClass("show");
+
+                    $("#accuracy-id").removeClass("open");
+                    $("#accuracy-id").children("p").removeClass("bold");
+                    $(".listen_sentence").removeClass("microphone_show");
+                } else {
                     $(".fluency_btn_area").removeClass("show");
+                    $(this).children("p").removeClass("bold");
+                    $(".sound_bar_area").removeClass("show");
                 }
             });
 

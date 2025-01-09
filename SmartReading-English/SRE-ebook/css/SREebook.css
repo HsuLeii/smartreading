@@ -824,6 +824,10 @@ header .book-title {
   display: flex;
   align-items: center;
   margin: 40px auto;
+  display: none;
+}
+.book-page .book-page-img .text .sound_bar_area.show {
+  display: flex;
 }
 .book-page .book-page-img .text .sound_bar_area.play_animation .bar {
   animation: sound 0ms -800ms linear infinite alternate;
@@ -1461,6 +1465,9 @@ header .book-title {
 .button-area .button-menu ul li .btn-verbatim.open {
   background-image: url(../image/button/read.svg);
 }
+.button-area .button-menu ul li .btn-verbatim.open ~ .verbatim-menu-container {
+  display: block;
+}
 .button-area .button-menu ul li .btn-verbatim:disabled {
   background-image: url(../image/button/read-disabled.svg);
 }
@@ -1485,6 +1492,7 @@ header .book-title {
 .button-area .button-menu ul li .end-screen {
   background-image: url(../image/button/endscreen.svg);
 }
+.button-area .button-menu ul li .verbatim-menu-container,
 .button-area .button-menu ul li .speak-menu-container,
 .button-area .button-menu ul li .magnifier-menu-container,
 .button-area .button-menu ul li .font-menu-container,
@@ -1502,8 +1510,8 @@ header .book-title {
   text-align: center;
   bottom: 100%;
   margin-bottom: 11px;
-  padding: 5px 0px;
 }
+.button-area .button-menu ul li .verbatim-menu-container.open,
 .button-area .button-menu ul li .speak-menu-container.open,
 .button-area .button-menu ul li .magnifier-menu-container.open,
 .button-area .button-menu ul li .font-menu-container.open,
@@ -1511,7 +1519,9 @@ header .book-title {
 .button-area .button-menu ul li .word-menu-container.open {
   display: block;
 }
-.button-area .button-menu ul li .speak-menu-container:before, .button-area .button-menu ul li .speak-menu-container:after,
+.button-area .button-menu ul li .verbatim-menu-container:before, .button-area .button-menu ul li .verbatim-menu-container:after,
+.button-area .button-menu ul li .speak-menu-container:before,
+.button-area .button-menu ul li .speak-menu-container:after,
 .button-area .button-menu ul li .magnifier-menu-container:before,
 .button-area .button-menu ul li .magnifier-menu-container:after,
 .button-area .button-menu ul li .font-menu-container:before,
@@ -1526,6 +1536,7 @@ header .book-title {
   height: 0;
   position: absolute;
 }
+.button-area .button-menu ul li .verbatim-menu-container:before,
 .button-area .button-menu ul li .speak-menu-container:before,
 .button-area .button-menu ul li .magnifier-menu-container:before,
 .button-area .button-menu ul li .font-menu-container:before,
@@ -1537,6 +1548,7 @@ header .book-title {
   bottom: -10px;
   left: 8px;
 }
+.button-area .button-menu ul li .verbatim-menu-container:after,
 .button-area .button-menu ul li .speak-menu-container:after,
 .button-area .button-menu ul li .magnifier-menu-container:after,
 .button-area .button-menu ul li .font-menu-container:after,
@@ -1548,6 +1560,7 @@ header .book-title {
   bottom: -7px;
   left: 10px;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text,
 .button-area .button-menu ul li .speak-menu-container .label-text,
 .button-area .button-menu ul li .magnifier-menu-container .label-text,
 .button-area .button-menu ul li .font-menu-container .label-text,
@@ -1562,6 +1575,7 @@ header .book-title {
   padding: 3px 0px;
   border-bottom: 1px solid #5B3716;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text:last-child,
 .button-area .button-menu ul li .speak-menu-container .label-text:last-child,
 .button-area .button-menu ul li .magnifier-menu-container .label-text:last-child,
 .button-area .button-menu ul li .font-menu-container .label-text:last-child,
@@ -1569,6 +1583,7 @@ header .book-title {
 .button-area .button-menu ul li .word-menu-container .label-text:last-child {
   border-bottom: 0px solid #5B3716;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text label,
 .button-area .button-menu ul li .speak-menu-container .label-text label,
 .button-area .button-menu ul li .magnifier-menu-container .label-text label,
 .button-area .button-menu ul li .font-menu-container .label-text label,
@@ -1584,6 +1599,7 @@ header .book-title {
   position: relative;
   margin-left: 7px;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text label:after,
 .button-area .button-menu ul li .speak-menu-container .label-text label:after,
 .button-area .button-menu ul li .magnifier-menu-container .label-text label:after,
 .button-area .button-menu ul li .font-menu-container .label-text label:after,
@@ -1598,6 +1614,22 @@ header .book-title {
   background: #fff;
   border-radius: 90px;
   transition: 0.1s;
+}
+.button-area .button-menu ul li .verbatim-menu-container {
+  min-width: 115px;
+}
+.button-area .button-menu ul li .verbatim-menu-container p,
+.button-area .button-menu ul li .speak-menu-container p {
+  cursor: pointer;
+}
+.button-area .button-menu ul li .verbatim-menu-container p:hover,
+.button-area .button-menu ul li .speak-menu-container p:hover {
+  background-color: #5B3716;
+  color: #fff;
+}
+.button-area .button-menu ul li .verbatim-menu-container p.bold,
+.button-area .button-menu ul li .speak-menu-container p.bold {
+  font-weight: bold;
 }
 .button-area .button-menu ul li .background-icon {
   width: 30px;
