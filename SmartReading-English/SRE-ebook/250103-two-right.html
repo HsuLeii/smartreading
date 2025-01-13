@@ -394,7 +394,7 @@
 
                 <div class="modal_text">
                     <p id="fluencyRecordText">錄製聲音</p>
-                    <p>Voice recording</p>
+                    <p id="fluencyRecordTextEnglish">Voice recording</p>
                 </div>
             </button>
         </div>
@@ -669,8 +669,8 @@
                 </div>
 
                 <div class="modal_text">
-                    <p>錄製聲音</p>
-                    <p>Voice recording</p>
+                    <p id="recordText">錄製聲音</p>
+                    <p id="recordTextEnglish">Voice recording</p>
                 </div>
             </button>
 
@@ -789,7 +789,7 @@
                     <i class="fa-solid fa-play"></i>
                 </div>
 
-                <div id="recordText" class="modal_text">
+                <div class="modal_text">
                     <p>你的聲音</p>
                     <p>Your recording</p>
                 </div>
@@ -915,6 +915,12 @@
             fluencyRecordText.innerHTML = "停止錄製";
         }
 
+        var fluencyRecordTextEnglish = document.getElementById("fluencyRecordTextEnglish");
+        if (fluencyRecordTextEnglish.innerHTML === "Stop recording") {
+            fluencyRecordTextEnglish.innerHTML = "Voice recording";
+        } else {
+            fluencyRecordTextEnglish.innerHTML = "Stop recording";
+        }
     });
 
     //點選錄製聲音跟播放顯示聲音動態
@@ -941,6 +947,12 @@
             recordText.innerHTML = "停止錄製";
         }
 
+        var recordTextEnglish = document.getElementById("recordTextEnglish");
+        if (recordTextEnglish.innerHTML === "Stop recording") {
+            recordTextEnglish.innerHTML = "Voice recording";
+        } else {
+            recordTextEnglish.innerHTML = "Stop recording";
+        }
     });
 
     //點選播放跟播放顯示聲音動態
@@ -1118,30 +1130,9 @@
             if ($(this).hasClass("open")) {
                 $(".listen_sentence").addClass("microphone_show");
                 $(this).children("p").addClass("bold");
-
-                $("#fluency-id").removeClass("open");
-                $("#fluency-id").children("p").removeClass("bold");
-                $(".fluency_btn_area").removeClass("show");
             } else {
                 $(".listen_sentence").removeClass("microphone_show");
                 $(this).children("p").removeClass("bold");
-            }
-        });
-        //流暢度 Fluency切換
-        $("#fluency-id").click(function () {
-            $(this).toggleClass("open");
-            if ($(this).hasClass("open")) {
-                $(".fluency_btn_area").addClass("show");
-                $(this).children("p").addClass("bold");
-                $(".sound_bar_area").addClass("show");
-
-                $("#accuracy-id").removeClass("open");
-                $("#accuracy-id").children("p").removeClass("bold");
-                $(".listen_sentence").removeClass("microphone_show");
-            } else {
-                $(".fluency_btn_area").removeClass("show");
-                $(this).children("p").removeClass("bold");
-                $(".sound_bar_area").removeClass("show");
             }
         });
 
