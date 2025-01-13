@@ -94,32 +94,6 @@
                 </p>
             </div>
 
-            <div class="sound_bar_area">
-                <!-- 播放時class加上"play_animation" -->
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-
-            <div class="record_play_area fluency_btn_area">
-                <button id="Btn_record" class="recording_modal_icon_area fluency_area_item">
-                    <div class="recording_modal_icon">
-                        <i class="fa-solid fa-microphone-lines"></i>
-                    </div>
-
-                    <div class="modal_text">
-                        <p id="recordText">錄製聲音</p>
-                        <p>Voice recording</p>
-                    </div>
-                </button>
-            </div>
 
         </div>
     </div>
@@ -195,8 +169,6 @@
                     <rp>)</rp>
                 </ruby>
             </p>
-
-
         </div>
     </div>
 </div>
@@ -258,7 +230,7 @@
                     <button id="accuracy-id" type="button">
                         <p>發音 Accuracy</p>
                     </button>
-                    <a href="#recording_modal" rel="modal:open" id="fluency-id" type="button">
+                    <a href="#fluency_modal" rel="modal:open" id="fluency-id" type="button">
                         <p>流暢度 Fluency</p>
                     </a>
                 </div>
@@ -357,6 +329,86 @@
 <!-- 彈跳沒有麥克風結束 -->
 
 <!-- 彈跳流暢度結果開始 -->
+<div id="fluency_modal" class="modal recording_modal recording_result_modal fluency">
+    <div class="recording_modal_content">
+        <div class="results_comments">
+            <div class="article">
+                <p>
+                    <span sindex="0" style="cursor: pointer;" class="listen_sentence">
+                        <label style="font-size: 20px;">
+                            Rabbit sees two monkeys playing in a tree.
+                        </label>
+                    </span>
+                    <br>
+
+                    <span sindex="0" style="cursor: pointer;" class="listen_sentence">
+                        <label style="font-size: 20px;">
+                            Rabbit sees two monkeys playing in a tree.
+                        </label>
+                    </span>
+                    <br>
+
+                    <span sindex="1" style="cursor: pointer;" class="listen_sentence">
+                        <label style="font-size: 20px;">
+                            One monkey says, "Give me five!"
+                        </label>
+                    </span>
+                    <br>
+
+                    <span sindex="0" style="cursor: pointer;" class="listen_sentence">
+                        <label style="font-size: 20px;">
+                            Rabbit sees two monkeys playing in a tree.
+                        </label>
+                    </span>
+                    <br>
+
+                    <span sindex="1" style="cursor: pointer;" class="listen_sentence">
+                        <label style="font-size: 20px;">
+                            One monkey says, "Give me five!"
+                        </label>
+                    </span>
+                    <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="sound_bar_area">
+            <!-- 播放時class加上"play_animation" -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="record_play_area fluency_btn_area">
+            <button id="Btn_record" class="recording_modal_icon_area fluency_area_item">
+                <div class="recording_modal_icon">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+
+                <div class="modal_text">
+                    <p id="fluencyRecordText">錄製聲音</p>
+                    <p>Voice recording</p>
+                </div>
+            </button>
+        </div>
+
+        <div class="recording_modal_medal_area">
+            <div class="recording_modal_medal">
+                <img src="image/photo/map/ebookman.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 彈跳流暢度結果結束 -->
+
+<!-- 彈跳流暢度結果分數開始 -->
 <div id="recording_fluency_modal" class="modal recording_modal recording_result_modal fluency">
     <div class="recording_modal_content">
         <div class="recording_modal_title">
@@ -544,7 +596,7 @@
                     <i class="fa-solid fa-play"></i>
                 </div>
 
-                <div id="recordText" class="modal_text">
+                <div class="modal_text">
                     <p>你的聲音</p>
                     <p>Your recording</p>
                 </div>
@@ -570,8 +622,7 @@
         </div>
     </div>
 </div>
-<!-- 彈跳流暢度結果結束 -->
-
+<!-- 彈跳流暢度結果分數結束 -->
 
 <!-- 彈跳錄音開始 -->
 <div id="recording_modal" class="modal recording_modal">
@@ -845,8 +896,6 @@
             $(this).addClass("active");
             // $("#recording_result_modal").dialog('open'); 
 
-
-
         } else { //原本是停止
             $(this).children('.recording_modal_icon').children('i').addClass("fa-microphone-lines");
             $(this).children('.recording_modal_icon').children('i').removeClass("fa-stop");
@@ -859,11 +908,11 @@
             });
         }
 
-        var recordText = document.getElementById("recordText");
-        if (recordText.innerHTML === "停止錄製") {
-            recordText.innerHTML = "錄製聲音";
+        var fluencyRecordText = document.getElementById("fluencyRecordText");
+        if (fluencyRecordText.innerHTML === "停止錄製") {
+            fluencyRecordText.innerHTML = "錄製聲音";
         } else {
-            recordText.innerHTML = "停止錄製";
+            fluencyRecordText.innerHTML = "停止錄製";
         }
 
     });
