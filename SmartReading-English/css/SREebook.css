@@ -180,7 +180,7 @@ input[type=checkbox]:checked ~ label:after {
   pointer-events: none;
   opacity: 0;
   bottom: 100%;
-  left: 50%;
+  left: 0;
   margin-bottom: 5px;
   display: inline-block;
   vertical-align: middle;
@@ -345,8 +345,9 @@ input[type=checkbox]:checked ~ label:after {
   border-radius: 10px;
   background-color: #EFE8E0;
   padding: 40px 0px;
-  width: 70%;
-  max-width: 1200px;
+  width: 100%;
+  min-height: 100%;
+  max-width: none;
   position: relative;
 }
 .blocker .recording_modal .recording_modal_content {
@@ -397,6 +398,7 @@ input[type=checkbox]:checked ~ label:after {
 .blocker .recording_modal .recording_modal_content .results_comments .results_comments_mark {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .blocker .recording_modal .recording_modal_content .results_comments .results_comments_mark .results_comments_good {
   background-color: #FFBC42;
@@ -423,6 +425,17 @@ input[type=checkbox]:checked ~ label:after {
 .blocker .recording_modal .recording_modal_content .results_comments .results_comments_item h4 i {
   font-size: 25px;
 }
+.blocker .recording_modal .recording_modal_content .results_comments .results_comments_content {
+  width: 100%;
+  margin: 10px;
+}
+.blocker .recording_modal .recording_modal_content .results_comments .results_comments_content .results_comments_content_item {
+  display: flex;
+  margin: 5px auto;
+}
+.blocker .recording_modal .recording_modal_content .results_comments .results_comments_content .results_comments_content_item h4 {
+  margin: 0;
+}
 .blocker .recording_modal .recording_modal_content .recording_modal_text {
   margin: 0 auto;
   padding: 15px 20px;
@@ -447,6 +460,9 @@ input[type=checkbox]:checked ~ label:after {
 }
 .blocker .recording_modal .recording_modal_content .recording_modal_text h4 span.bad {
   color: #D81159;
+}
+.blocker .recording_modal .recording_modal_content .recording_modal_text .article p label {
+  color: #ec6c00;
 }
 .blocker .recording_modal .recording_modal_content .sound_bar_area {
   width: 60px;
@@ -610,6 +626,13 @@ input[type=checkbox]:checked ~ label:after {
 .blocker .recording_modal.recording_result_modal .results_presented_area .recording_modal_text h4 {
   color: #5B3716;
 }
+.blocker .recording_modal.recording_result_modal.fluency .recording_modal_content .results_comments .recording_modal_text {
+  max-height: 37vh;
+  overflow-y: scroll;
+}
+.blocker .recording_modal.recording_result_modal.fluency .recording_modal_content .fluency_btn_area {
+  margin: 0 auto;
+}
 
 @keyframes sound {
   0% {
@@ -656,10 +679,6 @@ input[type=checkbox]:checked ~ label:after {
   }
 }
 @media (max-width: 768px) {
-  .blocker .ebook_medal_modal {
-    width: 90%;
-    padding: 20px 0px;
-  }
   .blocker .ebook_medal_modal .ebook_modal_content {
     width: 90%;
   }
@@ -790,6 +809,7 @@ header .book-title {
   overflow: auto;
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 .book-page .book-page-img .text .article ruby {
   text-align: left;
@@ -816,6 +836,128 @@ header .book-title {
 }
 .book-page .book-page-img .text .article label:hover {
   color: #ec6c00;
+}
+.book-page .book-page-img .text .sound_bar_area {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 40px auto;
+  display: none;
+}
+.book-page .book-page-img .text .sound_bar_area.show {
+  display: flex;
+}
+.book-page .book-page-img .text .sound_bar_area.play_animation .bar {
+  animation: sound 0ms -800ms linear infinite alternate;
+}
+.book-page .book-page-img .text .sound_bar_area .bar {
+  background-color: #ec6c00;
+  height: 0px;
+  width: 3px;
+  margin: 0px 1px;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(1) {
+  animation-duration: 474ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(2) {
+  animation-duration: 433ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(3) {
+  animation-duration: 407ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(4) {
+  animation-duration: 458ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(5) {
+  animation-duration: 400ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(6) {
+  animation-duration: 427ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(7) {
+  animation-duration: 441ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(8) {
+  animation-duration: 419ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(9) {
+  animation-duration: 487ms;
+}
+.book-page .book-page-img .text .sound_bar_area .bar:nth-child(10) {
+  animation-duration: 442ms;
+}
+.book-page .book-page-img .text .record_play_area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto 40px;
+  width: 100%;
+  display: none;
+}
+.book-page .book-page-img .text .record_play_area.show {
+  display: flex;
+}
+.book-page .book-page-img .text .recording_modal_icon_area {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 40px;
+  padding: 10px 15px;
+  border: 1.5px solid #5B3716;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.book-page .book-page-img .text .recording_modal_icon_area .recording_modal_icon {
+  margin: 0 15px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-page .book-page-img .text .recording_modal_icon_area .recording_modal_icon i {
+  color: #5B3716;
+  font-size: 25px;
+}
+.book-page .book-page-img .text .recording_modal_icon_area .modal_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.book-page .book-page-img .text .recording_modal_icon_area .modal_text p {
+  line-height: 1.3;
+  font-weight: bold;
+}
+.book-page .book-page-img .text .recording_modal_icon_area.record_play_area_item {
+  margin: 10px;
+}
+.book-page .book-page-img .text .recording_modal_icon_area:hover {
+  background-color: #5B3716;
+}
+.book-page .book-page-img .text .recording_modal_icon_area:hover .recording_modal_icon i {
+  color: #fff;
+}
+.book-page .book-page-img .text .recording_modal_icon_area:hover p {
+  color: #fff;
+}
+.book-page .book-page-img .text .recording_modal_icon_area.active {
+  background-color: #5B3716;
+}
+.book-page .book-page-img .text .recording_modal_icon_area.active .recording_modal_icon i {
+  color: #fff;
+}
+.book-page .book-page-img .text .recording_modal_icon_area.active p {
+  color: #fff;
+}
+.book-page .book-page-img .text .recording_modal_icon_area:disabled {
+  background-color: #ADADAD;
+  border-color: #ADADAD;
+  cursor: auto;
+}
+.book-page .book-page-img .text .recording_modal_icon_area:disabled i {
+  color: #fff;
+}
+.book-page .book-page-img .text .recording_modal_icon_area:disabled p {
+  color: #fff;
 }
 .book-page .book-page-img .text.full-back {
   background-color: rgba(255, 255, 255, 0.8);
@@ -1287,11 +1429,11 @@ header .book-title {
   z-index: 100;
   margin-left: 20px;
 }
-.button-area .button-menu ul li:nth-child(1)[aria-label]:hover:before {
+.button-area .button-menu ul li:nth-child(1)[aria-label]:hover:before, .button-area .button-menu ul li:nth-child(2)[aria-label]:hover:before {
   right: auto;
   left: 0;
 }
-.button-area .button-menu ul li:nth-child(1)[aria-label]:after {
+.button-area .button-menu ul li:nth-child(1)[aria-label]:after, .button-area .button-menu ul li:nth-child(2)[aria-label]:after {
   left: 11px;
 }
 .button-area .button-menu ul li .btn-favorite {
@@ -1342,6 +1484,9 @@ header .book-title {
 .button-area .button-menu ul li .btn-verbatim.open {
   background-image: url(../image/button/read.svg);
 }
+.button-area .button-menu ul li .btn-verbatim.open ~ .verbatim-menu-container {
+  display: block;
+}
 .button-area .button-menu ul li .btn-verbatim:disabled {
   background-image: url(../image/button/read-disabled.svg);
 }
@@ -1366,6 +1511,7 @@ header .book-title {
 .button-area .button-menu ul li .end-screen {
   background-image: url(../image/button/endscreen.svg);
 }
+.button-area .button-menu ul li .verbatim-menu-container,
 .button-area .button-menu ul li .speak-menu-container,
 .button-area .button-menu ul li .magnifier-menu-container,
 .button-area .button-menu ul li .font-menu-container,
@@ -1383,8 +1529,8 @@ header .book-title {
   text-align: center;
   bottom: 100%;
   margin-bottom: 11px;
-  padding: 5px 0px;
 }
+.button-area .button-menu ul li .verbatim-menu-container.open,
 .button-area .button-menu ul li .speak-menu-container.open,
 .button-area .button-menu ul li .magnifier-menu-container.open,
 .button-area .button-menu ul li .font-menu-container.open,
@@ -1392,7 +1538,9 @@ header .book-title {
 .button-area .button-menu ul li .word-menu-container.open {
   display: block;
 }
-.button-area .button-menu ul li .speak-menu-container:before, .button-area .button-menu ul li .speak-menu-container:after,
+.button-area .button-menu ul li .verbatim-menu-container:before, .button-area .button-menu ul li .verbatim-menu-container:after,
+.button-area .button-menu ul li .speak-menu-container:before,
+.button-area .button-menu ul li .speak-menu-container:after,
 .button-area .button-menu ul li .magnifier-menu-container:before,
 .button-area .button-menu ul li .magnifier-menu-container:after,
 .button-area .button-menu ul li .font-menu-container:before,
@@ -1407,6 +1555,7 @@ header .book-title {
   height: 0;
   position: absolute;
 }
+.button-area .button-menu ul li .verbatim-menu-container:before,
 .button-area .button-menu ul li .speak-menu-container:before,
 .button-area .button-menu ul li .magnifier-menu-container:before,
 .button-area .button-menu ul li .font-menu-container:before,
@@ -1418,6 +1567,7 @@ header .book-title {
   bottom: -10px;
   left: 8px;
 }
+.button-area .button-menu ul li .verbatim-menu-container:after,
 .button-area .button-menu ul li .speak-menu-container:after,
 .button-area .button-menu ul li .magnifier-menu-container:after,
 .button-area .button-menu ul li .font-menu-container:after,
@@ -1429,6 +1579,7 @@ header .book-title {
   bottom: -7px;
   left: 10px;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text,
 .button-area .button-menu ul li .speak-menu-container .label-text,
 .button-area .button-menu ul li .magnifier-menu-container .label-text,
 .button-area .button-menu ul li .font-menu-container .label-text,
@@ -1443,6 +1594,7 @@ header .book-title {
   padding: 3px 0px;
   border-bottom: 1px solid #5B3716;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text:last-child,
 .button-area .button-menu ul li .speak-menu-container .label-text:last-child,
 .button-area .button-menu ul li .magnifier-menu-container .label-text:last-child,
 .button-area .button-menu ul li .font-menu-container .label-text:last-child,
@@ -1450,6 +1602,7 @@ header .book-title {
 .button-area .button-menu ul li .word-menu-container .label-text:last-child {
   border-bottom: 0px solid #5B3716;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text label,
 .button-area .button-menu ul li .speak-menu-container .label-text label,
 .button-area .button-menu ul li .magnifier-menu-container .label-text label,
 .button-area .button-menu ul li .font-menu-container .label-text label,
@@ -1465,6 +1618,7 @@ header .book-title {
   position: relative;
   margin-left: 7px;
 }
+.button-area .button-menu ul li .verbatim-menu-container .label-text label:after,
 .button-area .button-menu ul li .speak-menu-container .label-text label:after,
 .button-area .button-menu ul li .magnifier-menu-container .label-text label:after,
 .button-area .button-menu ul li .font-menu-container .label-text label:after,
@@ -1479,6 +1633,26 @@ header .book-title {
   background: #fff;
   border-radius: 90px;
   transition: 0.1s;
+}
+.button-area .button-menu ul li .verbatim-menu-container {
+  min-width: 115px;
+}
+.button-area .button-menu ul li .verbatim-menu-container button,
+.button-area .button-menu ul li .speak-menu-container button {
+  background-color: #fff;
+}
+.button-area .button-menu ul li .verbatim-menu-container p,
+.button-area .button-menu ul li .speak-menu-container p {
+  cursor: pointer;
+}
+.button-area .button-menu ul li .verbatim-menu-container p:hover,
+.button-area .button-menu ul li .speak-menu-container p:hover {
+  background-color: #5B3716;
+  color: #fff;
+}
+.button-area .button-menu ul li .verbatim-menu-container p.bold,
+.button-area .button-menu ul li .speak-menu-container p.bold {
+  font-weight: bold;
 }
 .button-area .button-menu ul li .background-icon {
   width: 30px;

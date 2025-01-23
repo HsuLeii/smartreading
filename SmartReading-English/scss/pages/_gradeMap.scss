@@ -1849,6 +1849,88 @@
       .swiper-wrapper {
         flex-wrap: wrap;
 
+        .booklist_item_area {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+
+          h2{
+              color: $brown;
+          }
+
+          .booklist_item {
+              width: calc(25% - 20px);
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              background-color: $white;
+              border-radius: 10px;
+              overflow: hidden;
+              margin: 20px 1%;
+              transform: scale(0.95);
+              @extend %boxShadow_gray;
+              justify-content: space-between;
+              &:hover{
+                transform: scale(1);
+              }
+
+              .swiper-slide{
+                transform: scale(1);
+                width: 100%;
+                margin: 0px 10px 0px 10px;
+                box-shadow: none;
+              }
+
+              .book_tool_bar{
+                display: flex;
+                width: 80%;
+                margin: 10px auto;
+
+                .book_tool_bar_item{
+                  width: 25%;
+
+                  .book_tool_bar_icon{
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+
+                    &.disabled{
+                      i{
+                        color: $grey;
+                      }
+                    }
+                    i{
+                      font-size: 22px;
+                    }
+                  }
+                }
+              }
+
+              .book_information {
+                  width: 80%;
+                  margin: 0 auto;
+                  padding: 10px 0px;
+
+                  .total_medal {
+                      display: flex;
+                      margin: 10px auto;
+
+                      img {
+                          max-width: 100px;
+                          width: 28%;
+                          margin: 0px 2.6%;
+
+                          &.notget {
+                              filter: grayscale(1);
+                              opacity: 0.5;
+                          }
+                      }
+                  }
+              }
+
+          }
+      }
+
         .swiper-slide {
           width: calc(25% - 20px);
           margin: 0px 10px 40px 10px;
@@ -3178,6 +3260,13 @@
     .grade_map_booklist {
       .swiper {
         .swiper-wrapper {
+
+          .booklist_item_area {
+            .booklist_item {
+                width: calc(33% - 20px);
+            }
+        }
+
           .swiper-slide {
             width: calc(33% - 20px);
             margin: 0px 10px 30px 10px;
@@ -3542,6 +3631,11 @@
     .grade_map_booklist {
       .swiper {
         .swiper-wrapper {
+          .booklist_item_area {
+            .booklist_item {
+                width: calc(50% - 30px);
+            }
+        }
           .swiper-slide {
             width: calc(50% - 30px);
             margin: 0px 15px 30px 15px;
@@ -3994,8 +4088,13 @@
     .grade_map_booklist {
       .swiper {
         .swiper-wrapper {
+          .booklist_item_area {
+            .booklist_item {
+                width: 100%;
+            }
+        }
           .swiper-slide {
-            width: calc(100% - 0px);
+            width: 100%;
             margin: 0px auto 30px auto;
           }
         }
