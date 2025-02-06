@@ -456,6 +456,7 @@
                 &.fluency{
                     .recording_modal_content{
                         .results_comments{
+                            margin: 0 auto;
                             .recording_modal_text{
                                 max-height: 37vh;
                                 overflow-y: scroll;
@@ -467,10 +468,25 @@
                         }
                     }
                 }
+
+                &.fluency_results{
+                    box-shadow: none;
+                    border: 2px solid $main_color;
+                }
             }
         }
     
         // 彈跳錄音結束
+
+        &:has(.fluency_results) {
+            background-color: $white;
+            background-color: transparent;
+            width: 50%;
+            height: calc(100% - 68px);
+            max-width: 525px;
+            padding: 20px 0;
+            left: 3%;
+          }
 }
 
 @keyframes sound {
@@ -558,10 +574,25 @@
                     }
                 }
             }
+
+            &.recording_result_modal{
+
+                &.fluency_results{
+                    max-width: 525px;
+                    box-shadow: none;
+                    border: 2px solid $main_color;
+                }
+            }
         }
     
         // 彈跳錄音結束
 
+        &:has(.fluency_results) {
+            background-color: transparent;
+            width: 100%;
+            max-width: none;
+            left: 0;
+          }
     }
 
 }
