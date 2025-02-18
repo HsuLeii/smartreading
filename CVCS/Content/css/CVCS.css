@@ -1174,14 +1174,18 @@ main .test_area .score_report_area .table thead .score_report_header {
   border: 2px solid #7c411f;
   border-radius: 10px;
   display: none;
+  transform: scale(0.97);
 }
 main .test_area .score_report_area .table thead .score_report_header .item_box_content {
   display: flex;
   justify-content: center;
   padding: 15px 5px;
-  width: calc(33.33333% - 50px);
+  width: calc(33.33333% - 50px - 22.1666666667px);
   color: #7c411f;
   border-right: 2px solid #7c411f;
+}
+main .test_area .score_report_area .table thead .score_report_header .item_box_content.item_box_content_icon {
+  width: 66.5px;
 }
 main .test_area .score_report_area .table thead .score_report_header .item_box_content.item_box_content_time {
   border-right: 0;
@@ -1196,23 +1200,51 @@ main .test_area .score_report_area .table tbody.score_report_body {
   width: 100%;
 }
 main .test_area .score_report_area .table tbody.score_report_body .item_box {
+  position: relative;
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
   border: 2px solid #FCC900;
   border-radius: 10px;
   overflow: hidden;
   margin: 0 auto 40px;
+  cursor: pointer;
+  transform: scale(0.97);
+}
+main .test_area .score_report_area .table tbody.score_report_body .item_box:hover {
+  transform: scale(1);
 }
 main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: calc(100% - 37.5px);
+  margin: 0 0 0 37.5px;
+}
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon {
+  width: 37.5px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 5px;
+  margin: 0;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+  color: #ffb501;
+  border-right: 1px solid;
+}
+main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon i {
+  font-size: 20px;
 }
 main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle,
 main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_data {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 15px 5px;
   background-color: #fff;
 }
@@ -1238,39 +1270,52 @@ main .test_area .score_report_area .table tbody.score_report_body .item_box .ite
 main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data {
   border-bottom: 0px;
 }
-main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data .item_box_content_link {
+main .test_area .score_report_area .footprint_submit {
   position: relative;
   margin: 10px auto;
-  background-color: #f14c12;
   border-radius: 50px;
   transition: 0.3s;
+  width: 80%;
 }
-main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data .item_box_content_link .footprint {
+main .test_area .score_report_area .footprint_submit .footprint {
   position: absolute;
   width: 30px;
   right: 0;
   top: 50%;
-  transform: translate(calc(100% + 10px), -50%);
+  transform: translate(50px, -50%);
   display: none;
 }
-main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data .item_box_content_link a {
-  display: block;
-  padding: 8px 20px;
-  color: #fff;
-}
-main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data .item_box_content_link:hover {
+main .test_area .score_report_area .footprint_submit:hover .button {
   background-color: #7c411f;
-}
-main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data .item_box_content_link:hover a {
-  padding: 8px 30px;
-  color: #FCC900;
+  color: #ffb501;
+  border: 1px solid #7c411f;
 }
 main .test_area.report_selector .score_report_area .table thead .score_report_header .item_box_content {
   width: 33.33333%;
 }
 
-@media screen and (min-width: 350px) {
-  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn .item_box_content_data .item_box_content_link:hover .footprint {
+@media screen and (min-width: 576px) {
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content {
+    margin: 0 0 0 50px;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon {
+    width: 50px;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon i {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 576px) {
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content {
+    margin: 0 0 0 50px;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon {
+    width: 50px;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon i {
+    font-size: 25px;
+  }
+  main .test_area .score_report_area .footprint_submit:hover .footprint {
     display: block;
   }
 }
@@ -1279,11 +1324,21 @@ main .test_area.report_selector .score_report_area .table thead .score_report_he
     margin: 0 auto 60px;
   }
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content {
-    width: 50%;
+    width: calc(50% - 33.25px);
+    margin: 0;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon {
+    width: 66.5px;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon i {
+    font-size: 35px;
   }
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle,
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_data {
     padding: 15px 10px;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_progress .item_box_content_data .progress_area {
+    margin: 0;
   }
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content:nth-child(odd) {
     border-right: 2px solid #FCC900;
@@ -1291,6 +1346,11 @@ main .test_area.report_selector .score_report_area .table thead .score_report_he
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_btn {
     width: 100%;
     border-right: 0px;
+  }
+  main .test_area .score_report_area .footprint_submit .footprint {
+    right: auto;
+    left: 50%;
+    transform: translate(calc(0% + 280px), -50%);
   }
   main .test_area.report_selector .score_report_area .table tbody.score_report_body .item_box .item_box_content {
     width: 33.33333%;
@@ -1309,11 +1369,19 @@ main .test_area.report_selector .score_report_area .table thead .score_report_he
     display: flex;
   }
   main .test_area .score_report_area .table tbody.score_report_body .item_box {
+    justify-content: flex-start;
     margin: 20px auto;
   }
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content {
-    width: calc(33.33333% - 50px);
+    width: calc(33.33333% - 50px - 22.1666666667px);
     border-right: 2px solid #FCC900;
+  }
+  main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content.item_box_content_icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+    height: auto;
   }
   main .test_area .score_report_area .table tbody.score_report_body .item_box .item_box_content .item_box_content_tittle {
     display: none;
