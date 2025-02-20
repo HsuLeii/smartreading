@@ -145,6 +145,7 @@ input[type=checkbox]:checked ~ label:after {
   width: 25px;
   height: 25px;
   background-image: url(../image/button/close.svg);
+  background-color: transparent;
 }
 
 [aria-label] {
@@ -626,6 +627,9 @@ input[type=checkbox]:checked ~ label:after {
 .blocker .recording_modal.recording_result_modal .results_presented_area .recording_modal_text h4 {
   color: #5B3716;
 }
+.blocker .recording_modal.recording_result_modal.fluency .recording_modal_content .results_comments {
+  margin: 0 auto;
+}
 .blocker .recording_modal.recording_result_modal.fluency .recording_modal_content .results_comments .recording_modal_text {
   max-height: 37vh;
   overflow-y: scroll;
@@ -633,7 +637,20 @@ input[type=checkbox]:checked ~ label:after {
 .blocker .recording_modal.recording_result_modal.fluency .recording_modal_content .fluency_btn_area {
   margin: 0 auto;
 }
-
+.blocker .recording_modal.recording_result_modal.fluency_results {
+  box-shadow: none;
+}
+.blocker:has(.fluency_results) {
+  background-color: transparent;
+  width: 50%;
+  height: calc(95% - 68px);
+  max-width: 510px;
+  padding: 0;
+  left: 3%;
+  top: 2.5%;
+  border: 2px solid #ec6c00;
+  border-radius: 10px;
+}
 @keyframes sound {
   0% {
     opacity: 0.55;
@@ -676,6 +693,21 @@ input[type=checkbox]:checked ~ label:after {
   }
   .blocker .recording_modal .recording_modal_content .recording_modal_medal_area .recording_modal_medal {
     max-width: 120px;
+  }
+  .blocker .recording_modal.recording_result_modal.fluency_results {
+    max-width: 525px;
+    box-shadow: none;
+    border: 2px solid #ec6c00;
+  }
+  .blocker:has(.fluency_results) {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    max-width: none;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    height: 100%;
+    border: 0px solid #ec6c00;
   }
 }
 @media (max-width: 768px) {

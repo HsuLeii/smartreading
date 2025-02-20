@@ -11,7 +11,7 @@
   transition: all 0.3s ease;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area, .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item, .main.library .frame_effect .folder .folder_content, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .redeem_area_explain, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .medal_area_explain, .main .navigator_area .navigator_content .navigator_book_area, .main .navigator_area .navigator_content .navigator_text, .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area .swiper .swiper-wrapper a, .best_book .swiper .swiper-wrapper .swiper-slide, .owl-prev,
+.main.personal .frame_effect .folder .folder_content .membership_card_area, .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item, .main.library .frame_effect .folder .folder_content, .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .redeem_area_explain, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .medal_area_explain, .main .navigator_area .navigator_content .navigator_book_area, .main .navigator_area .navigator_content .navigator_text, .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area .swiper .swiper-wrapper a, .best_book .swiper .swiper-wrapper .swiper-slide, .owl-prev,
 .owl-next, .swiper_ticket_next,
 .swiper_ticket_prev {
   box-shadow: 1px 1px 5px rgba(75, 75, 75, 0.2705882353);
@@ -1229,17 +1229,14 @@ footer .footer_copyright p {
 }
 .best_book .swiper .swiper-wrapper .swiper-slide .book_content h4 {
   color: #5B3716;
+  margin-bottom: 8px;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  /*!autoprefixer:off*/
   -webkit-box-orient: vertical;
-  white-space: normal;
-  width: 100%;
-  height: 55px;
-  margin-bottom: 8px;
-  font-size: 17px;
+  /*!autoprefixer:on*/
 }
 .best_book .swiper-pagination {
   position: relative;
@@ -1572,9 +1569,7 @@ footer .footer_copyright p {
     right: 60%;
   }
   .best_book .swiper .swiper-wrapper .swiper-slide .book_content h4 {
-    height: 77px;
     margin-bottom: 15px;
-    -webkit-line-clamp: 3;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -1767,11 +1762,6 @@ footer .footer_copyright p {
   }
   .slide_index .swiper-slide .slide_index_text.slide_index_3 h4 {
     font-size: 16px;
-  }
-  .best_book .swiper .swiper-wrapper .swiper-slide .book_content h4 {
-    height: 47px;
-    font-size: 15px;
-    -webkit-line-clamp: 2;
   }
 }
 .main.grade {
@@ -7459,6 +7449,76 @@ h-word {
 .book_area .grade_map_booklist .swiper .swiper-wrapper {
   flex-wrap: wrap;
 }
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area h2 {
+  color: #5B3716;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
+  width: calc(25% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 1%;
+  transform: scale(0.95);
+  justify-content: space-between;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item:hover {
+  transform: scale(1);
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .swiper-slide {
+  transform: scale(1);
+  width: 100%;
+  margin: 0px 10px 0px 10px;
+  box-shadow: none;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar {
+  display: flex;
+  width: 80%;
+  margin: 10px auto;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item {
+  width: 25%;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled i {
+  color: grey;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon i {
+  font-size: 22px;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_num {
+  display: flex;
+  justify-content: center;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information .total_medal {
+  display: flex;
+  margin: 10px auto;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information .total_medal img {
+  max-width: 100px;
+  width: 28%;
+  margin: 0px 2.6%;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information .total_medal img.notget {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
 .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
   width: calc(25% - 20px);
   margin: 0px 10px 40px 10px;
@@ -8525,6 +8585,9 @@ h-word {
     bottom: 0;
     transform: translate(-50%, 0);
   }
+  .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
+    width: calc(33% - 20px);
+  }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
     width: calc(33% - 20px);
     margin: 0px 10px 30px 10px;
@@ -8680,6 +8743,9 @@ h-word {
   }
   .main.grade_map .map_book_area_bg .map_book_area .level_introduction_search .level_introduction_input {
     margin: 25px 0 0 0;
+  }
+  .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
+    width: calc(50% - 30px);
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
     width: calc(50% - 30px);
@@ -8940,8 +9006,11 @@ h-word {
   .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket.ticket_right .receive {
     margin: 10px auto 0px;
   }
+  .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
+    width: 100%;
+  }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
-    width: calc(100% - 0px);
+    width: 100%;
     margin: 0px auto 30px auto;
   }
   .blocker .e-book_teach {
@@ -9128,7 +9197,7 @@ h-word {
   transform: scale(0.95);
 }
 .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   padding: 10px 0px;
 }
@@ -9254,7 +9323,7 @@ h-word {
     padding: 5px 10px;
   }
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information {
-    width: 90%;
+    width: 80%;
   }
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
     -webkit-line-clamp: 3;
@@ -9288,9 +9357,6 @@ h-word {
   }
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_link img {
     max-width: none;
-  }
-  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information {
-    width: 90%;
   }
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
     height: 77px;
@@ -11067,16 +11133,16 @@ h-word {
 }
 .main.readingContest .contest_regulations_area .contest_regulations_link {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 20px auto 40px;
+  justify-content: space-around;
+  margin: 20px auto 0;
   position: sticky;
   top: 0;
+  z-index: 1;
   padding: 10px 0;
   background-color: #EFE8E0;
-  border-bottom: 1px solid #5B3716;
 }
 .main.readingContest .contest_regulations_area .contest_regulations_link .contest_regulations_link_text {
+  width: 25%;
   padding: 20px 30px;
   border: 1.5px solid #5B3716;
   border-radius: 5px;
@@ -11093,8 +11159,38 @@ h-word {
 .main.readingContest .contest_regulations_area .contest_regulations_link .contest_regulations_link_text.active h4 {
   color: #fff;
 }
-.main.readingContest .contest_regulations_area .contest_regulations_link .winner_list_link {
-  width: 100%;
+.main.readingContest .contest_regulations_area .winner_list_link {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto 40px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #5B3716;
+}
+.main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item {
+  position: relative;
+  margin: 0px 20px;
+  width: 22%;
+  max-width: 180px;
+  transform: scale(0.95);
+}
+.main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item.disabled {
+  filter: grayscale(100%);
+  cursor: auto;
+}
+.main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item.disabled:hover {
+  transform: scale(0.95);
+}
+.main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item .winner_list_link_text {
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  color: #5B3716;
+  font-weight: bold;
+}
+.main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item:hover {
+  transform: scale(1);
 }
 .main.readingContest .contest_regulations_area .contest_regulations_content .contest_regulations_content_item {
   padding: 40px 0 0;
@@ -11143,15 +11239,55 @@ h-word {
   background-color: #5B3716;
 }
 
+.winner_list_modal {
+  border-radius: 0px;
+  padding: 0;
+  width: 90%;
+  height: 90%;
+  max-width: none;
+}
+
 @media screen and (max-width: 1024px) {
   .main.readingContest .contest_regulations_area .contest_regulations_link .contest_regulations_link_text {
     padding: 15px 30px;
   }
+  .main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item {
+    width: 25%;
+    max-width: 140px;
+  }
+  .main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item .winner_list_link_text {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 768px) {
+  .main.readingContest {
+    width: 95%;
+  }
+  .main.readingContest .reading_contest_area {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .main.readingContest .contest_regulations_area .contest_regulations_link {
+    margin: 20px auto 0;
+  }
   .main.readingContest .contest_regulations_area .contest_regulations_link .contest_regulations_link_text {
-    padding: 10px 20px;
-    margin: 10px 17px;
+    width: 33.3333%;
+    margin: 10px 0;
+    transform: scale(0.95);
+  }
+  .main.readingContest .contest_regulations_area .winner_list_link {
+    margin: 0 auto 40px;
+  }
+  .main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item {
+    margin: 0;
+    width: 33.3333%;
+  }
+  .main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item .winner_list_link_text {
+    font-size: 14px;
+  }
+  .main.readingContest .contest_regulations_area .contest_regulations_content {
+    width: 95%;
+    margin: 0 auto;
   }
   .main.readingContest .contest_regulations_area .contest_regulations_content .contest_regulations_content_item .regulations_content_text .regulations_content_text_item {
     flex-direction: column;
@@ -11161,6 +11297,9 @@ h-word {
   .main.readingContest .contest_regulations_area .contest_regulations_link .contest_regulations_link_text {
     padding: 10px 5px;
     margin: 10px 6px;
+  }
+  .main.readingContest .contest_regulations_area .winner_list_link .winner_list_link_item .winner_list_link_text {
+    font-size: 12px;
   }
   .main.readingContest .contest_regulations_area .contest_regulations_content .contest_regulations_content_item .contest_regulations_document a {
     padding: 12px;

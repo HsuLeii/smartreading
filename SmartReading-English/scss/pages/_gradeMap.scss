@@ -1870,8 +1870,15 @@
               transform: scale(0.95);
               @extend %boxShadow_gray;
               justify-content: space-between;
-              &:hover{
+              // &:hover{
+              //   transform: scale(1);
+              // }
+
+              &:has( .swiper-slide:hover) {
                 transform: scale(1);
+                // &:hover{
+                //   transform: scale(1);
+                // }
               }
 
               .swiper-slide{
@@ -1879,6 +1886,12 @@
                 width: 100%;
                 margin: 0px 10px 0px 10px;
                 box-shadow: none;
+
+                &:hover{
+                  &~.booklist_item{
+                    transform: scale(1);
+                  }
+                }
               }
 
               .book_tool_bar{
@@ -1895,13 +1908,30 @@
                     cursor: pointer;
 
                     &.disabled{
+                      cursor: not-allowed;
                       i{
                         color: $grey;
+
+                        &:hover{
+                          transform: scale(0.9);
+                        }
                       }
                     }
                     i{
                       font-size: 22px;
+                      color: $main_color;
+                      transform: scale(0.9);
+
+                      &:hover{
+                        transform: scale(1);
+                      }
                     }
+                  }
+
+                  .book_tool_bar_num{
+                    display: flex;
+                    justify-content: center;
+                    margin: 5px auto 0;
                   }
                 }
               }

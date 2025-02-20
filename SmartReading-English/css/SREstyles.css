@@ -1369,6 +1369,14 @@ footer .footer_copyright p {
 }
 .book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item {
   width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item .introduction {
+  width: 100%;
+}
+.book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item .modal_book_button {
+  margin: 15px 10px 0 0;
 }
 .book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item .vocabulary_content .trial_paragraph {
   display: flex;
@@ -7469,7 +7477,7 @@ h-word {
   transform: scale(0.95);
   justify-content: space-between;
 }
-.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item:hover {
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item:has(.swiper-slide:hover) {
   transform: scale(1);
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .swiper-slide {
@@ -7477,6 +7485,9 @@ h-word {
   width: 100%;
   margin: 0px 10px 0px 10px;
   box-shadow: none;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .swiper-slide:hover ~ .booklist_item {
+  transform: scale(1);
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar {
   display: flex;
@@ -7491,11 +7502,27 @@ h-word {
   justify-content: center;
   cursor: pointer;
 }
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled {
+  cursor: not-allowed;
+}
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled i {
   color: grey;
 }
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled i:hover {
+  transform: scale(0.9);
+}
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon i {
   font-size: 22px;
+  color: #ff6464;
+  transform: scale(0.9);
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon i:hover {
+  transform: scale(1);
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_num {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto 0;
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information {
   width: 80%;
@@ -10169,7 +10196,13 @@ h-word {
   margin: 0px 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon_font {
+  margin: 10px 10px 10px 0px;
+}
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon_font i {
+  font-size: 17px;
+  color: #ff6464;
 }
 .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
   padding: 10px;
@@ -10501,8 +10534,6 @@ h-word {
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area {
     margin: 0px 5px;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
