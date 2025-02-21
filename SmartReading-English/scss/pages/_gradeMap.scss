@@ -1866,7 +1866,7 @@
               background-color: $white;
               border-radius: 10px;
               overflow: hidden;
-              margin: 20px 1%;
+              margin: 0px 10px 40px 10px;
               transform: scale(0.95);
               @extend %boxShadow_gray;
               justify-content: space-between;
@@ -1874,11 +1874,8 @@
               //   transform: scale(1);
               // }
 
-              &:has( .swiper-slide:hover) {
+              &:has(.swiper-slide:hover) {
                 transform: scale(1);
-                // &:hover{
-                //   transform: scale(1);
-                // }
               }
 
               .swiper-slide{
@@ -1907,6 +1904,12 @@
                     justify-content: center;
                     cursor: pointer;
 
+                    &.change_icon{
+                      i{
+                        color: $main_color;
+                      }
+                    }
+
                     &.disabled{
                       cursor: not-allowed;
                       i{
@@ -1917,9 +1920,10 @@
                         }
                       }
                     }
+
                     i{
-                      font-size: 22px;
-                      color: $main_color;
+                      font-size: 30px;
+                      color: $brown;
                       transform: scale(0.9);
 
                       &:hover{
@@ -1931,7 +1935,7 @@
                   .book_tool_bar_num{
                     display: flex;
                     justify-content: center;
-                    margin: 5px auto 0;
+                    margin: 3px auto 0;
                   }
                 }
               }
@@ -1947,8 +1951,8 @@
 
                       img {
                           max-width: 100px;
-                          width: 28%;
-                          margin: 0px 2.6%;
+                          width: calc(33.33333% - 10px);
+                          margin: 0px 5px;
 
                           &.notget {
                               filter: grayscale(1);
@@ -3294,6 +3298,7 @@
           .booklist_item_area {
             .booklist_item {
                 width: calc(33% - 20px);
+                margin: 0px 10px 30px 10px;
             }
         }
 
@@ -3663,12 +3668,23 @@
         .swiper-wrapper {
           .booklist_item_area {
             .booklist_item {
-                width: calc(50% - 30px);
+                width: calc(50% - 15px);
+                margin: 0px 7.5px 30px 7.5px;
+
+                .book_tool_bar{
+                  .book_tool_bar_item{
+                    .book_tool_bar_icon{
+                      i{
+                        font-size: 25px;
+                      }
+                    }
+                  }
+                }
             }
         }
           .swiper-slide {
-            width: calc(50% - 30px);
-            margin: 0px 15px 30px 15px;
+            width: calc(50% - 15px);
+            margin: 0px 7.5px 30px 7.5px;
           }
         }
       }
@@ -4121,6 +4137,7 @@
           .booklist_item_area {
             .booklist_item {
                 width: 100%;
+                margin: 0px auto 30px auto;
             }
         }
           .swiper-slide {
