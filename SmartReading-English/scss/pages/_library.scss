@@ -28,36 +28,6 @@
                 max-width: 1600px;
                 margin: 0 auto;
 
-                .folder_tag {
-                    display: flex;
-                    display: none;
-
-                    .option_tag {
-                        background-color: $white;
-                        border-radius: 10px 10px 0px 0px;
-                        text-align: center;
-
-                        a {
-                            color: $brown;
-                            padding: 5px 5px;
-                            cursor: pointer;
-                            display: block;
-                        }
-
-                        &.active {
-                            a {
-                                color: $white;
-                            }
-
-                            &.first_grade_tag {
-
-                                background-color: $first_grade_color;
-
-                            }
-                        }
-                    }
-                }
-
                 .folder_content {
                     background-color: $body_bg;
                     position: relative;
@@ -120,7 +90,7 @@
                                     content: "";
                                     background-image: url(../image/photo/library/library_magic_wand.png);
                                     background-size: cover;
-                                  }
+                                }
 
                                 &::after {
                                     background-color: $transparent;
@@ -164,7 +134,6 @@
                     }
 
                     .folder_item_area {
-
                         display: flex;
                         flex-wrap: wrap;
                         width: 100%;
@@ -181,45 +150,114 @@
                             background-color: $white;
                             border-radius: 10px;
                             overflow: hidden;
-                            padding: 10px 0px;
                             margin: 20px 1%;
                             @extend %boxShadow_gray;
                             justify-content: space-between;
+                            transform: scale(0.95);
+
+                            &:hover{
+                                transform: scale(1);
+
+                                .book_link{
+                                    .book_information{
+                                        .book_link_value{
+                                            h4{
+                                                color: $main_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
 
                             .book_link {
-                                line-height: 0;
-                                transform: scale(0.9);
                                 width: 100%;
-                                max-width: 280px;
 
                                 img {
                                     border-radius: 10px;
                                     object-fit: cover;
                                 }
 
-                                &:hover {
-                                    transform: scale(0.95);
+                                .book_grade_img{
+                                    width: 50px;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    background-color: $main_color;
+
+                                    &.first_grade{
+                                        background-color: $first_grade_color;
+                                    }
+
+                                    &.second_grade{
+                                        background-color: $second_grade_color;
+                                    }
+
+                                    &.third_grade{
+                                        background-color: $third_grade_color;
+                                    }
+
+                                    &.fourth_grade{
+                                        background-color: $fourth_grade_color;
+                                    }
+
+                                    &.fifth_grade{
+                                        background-color: $fifth_grade_color;
+                                    }
+
+                                    &.sixth_grade{
+                                        background-color: $sixth_grade_color;
+                                    }
+
+                                    &.seventh_grade{
+                                        background-color: $seventh_grade_color;
+                                    }
+
+                                    &.eighth_grade{
+                                        background-color: $eighth_grade_color;
+                                    }
+
+                                    &.ninth_grade{
+                                        background-color: $ninth_grade_color;
+                                    }
+
+                                    &.tenth_grade{
+                                        background-color: $tenth_grade_color;
+                                    }
+
+                                    &.eleventh_grade{
+                                        background-color: $eleventh_grade_color;
+                                    }
+
+                                    &.twelfth_grade{
+                                        background-color: $twelfth_grade_color;
+                                    }
                                 }
                             }
 
                             .book_information {
                                 width: 80%;
                                 margin: 0 auto;
-                                padding: 10px 0px;
+                                padding: 15px 0px;
 
-                                .book_link {
+                                .book_link_value {
                                     h4 {
                                         color: $brown;
+                                        overflow: hidden;
                                         text-overflow: ellipsis;
                                         display: -webkit-box;
                                         -webkit-line-clamp: 2;
+                                        /*!autoprefixer:off*/
                                         -webkit-box-orient: vertical;
-                                        white-space: normal;
-                                        overflow: hidden;
-                                        height: 65px;
+                                        /*!autoprefixer:on*/
 
                                         &:hover {
                                             color: $main_color;
+                                        }
+                                    }
+
+                                    .value{
+                                        p{
+                                            margin: 5px auto;
                                         }
                                     }
                                 }
@@ -285,25 +323,30 @@
             .frame_effect {
                 .folder {
                     .folder_content {
-
                         .folder_item_area {
                             .folder_item {
                                 width: 100%;
                                 flex-direction: row;
-                                padding: 10px 20px;
 
-                                .book_link {
-                                    img {
-                                        max-width: 280px;
+                                .book_link{
+                                    display: flex;
+
+                                    .book_img{
+                                        width: 30%;
+                                    }
+
+                                    .audio_icon{
+                                        right: auto;
+                                        left: 30%;
+                                        transform: translate(-100%, 0px);
                                     }
                                 }
 
-                                .book_information {
-                                    width: calc(90% - 280px);
+                                .book_information{
+                                    width: 65%;
                                 }
                             }
                         }
-
                     }
                 }
             }
@@ -320,21 +363,31 @@
                     align-items: flex-start;
                     justify-content: center;
 
-                    .folder_tag {
-                        width: 90px;
-                        flex-direction: column;
-                        margin: 0;
-
-                        .option_tag {
-                            border-radius: 10px 0px 0px 10px;
-                        }
-                    }
-
                     .folder_content {
                         width: calc(100% - 0px);
                         min-height: 500px;
                         margin: 0px;
                         padding: 30px 15px;
+
+                        .folder_item_area {
+                            .folder_item {
+
+                                .book_link{
+
+                                    .book_img{
+                                        width: 35%;
+                                    }
+
+                                    .audio_icon{
+                                        left: 35%;
+                                    }
+                                }
+
+                                .book_information{
+                                    width: 60%;
+                                }
+                            }
+                        }
 
                         .folder_data {
                             padding: 15px;
@@ -396,15 +449,27 @@
                             .folder_item {
                                 width: 48%;
                                 flex-direction: column;
-                                padding: 5px 10px;
+
+                                .book_link{
+                                    flex-direction: column;
+
+                                    .book_img{
+                                        width: 100%;
+                                    }
+
+                                    .audio_icon{
+                                        left: 100%;
+                                    }
+                                }
+
+                                .book_information{
+                                    width: 80%;
+                                }
 
                                 .book_information {
-                                    width: 80%;
-
-                                    .book_link {
+                                    .book_link_value {
                                         h4 {
                                             -webkit-line-clamp: 3;
-                                            height: 87px;
                                         }
                                     }
 
@@ -453,30 +518,6 @@
                                 border-top: 1px dashed $brown;
                             }
                         }
-
-                        .folder_item_area {
-                            .folder_item {
-                                width: 100%;
-
-                                .book_link {
-                                    img {
-                                        max-width: none;
-                                    }
-                                }
-
-                                .book_information {
-                                    .book_link {
-                                        h4 {
-                                            height: 77px;
-                                        }
-                                    }
-
-                                }
-
-                            }
-                        }
-
-
                     }
                 }
             }
@@ -484,14 +525,30 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .main {
+        &.library {
+            .frame_effect {
+                .folder {
+                    .folder_content {
+                        .folder_item_area {
+                            .folder_item {
+                                width: 90%;
+                                margin: 20px auto;
+                            }
+                            }
+                    }
+                }
+                }
+                }
+                }
+}
+
 @media screen and (max-width: 499px) {
     .main {
         &.library {
             .frame_effect {
                 .folder {
-                    .folder_tag {
-                        width: 80px;
-                    }
 
                     .folder_content {
                         width: calc(100% - 0px);
@@ -514,14 +571,6 @@
                         .folder_item_area {
                             .folder_item {
                                 margin: 10px auto;
-
-                                .book_information {
-                                    .book_link {
-                                        h4 {
-                                            height: 70px;
-                                        }
-                                    }
-                                }
                             }
                         }
 

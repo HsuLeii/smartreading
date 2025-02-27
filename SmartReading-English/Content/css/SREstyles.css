@@ -1369,6 +1369,14 @@ footer .footer_copyright p {
 }
 .book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item {
   width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item .introduction {
+  width: 100%;
+}
+.book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item .modal_book_button {
+  margin: 15px 10px 0 0;
 }
 .book_information_modal .book_introduction .book_introduction_right .introduction_content .introduction_item .vocabulary_content .trial_paragraph {
   display: flex;
@@ -7465,11 +7473,11 @@ h-word {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  margin: 20px 1%;
+  margin: 0px 10px 40px 10px;
   transform: scale(0.95);
   justify-content: space-between;
 }
-.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item:hover {
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item:has(.swiper-slide:hover) {
   transform: scale(1);
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .swiper-slide {
@@ -7477,6 +7485,9 @@ h-word {
   width: 100%;
   margin: 0px 10px 0px 10px;
   box-shadow: none;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .swiper-slide:hover ~ .booklist_item {
+  transform: scale(1);
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar {
   display: flex;
@@ -7491,15 +7502,30 @@ h-word {
   justify-content: center;
   cursor: pointer;
 }
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.change_icon i {
+  color: #ff6464;
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled {
+  cursor: not-allowed;
+}
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled i {
   color: grey;
 }
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon.disabled i:hover {
+  transform: scale(0.9);
+}
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon i {
-  font-size: 22px;
+  font-size: 30px;
+  color: #5B3716;
+  transform: scale(0.9);
+}
+.book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon i:hover {
+  transform: scale(1);
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_num {
   display: flex;
   justify-content: center;
+  margin: 3px auto 0;
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information {
   width: 80%;
@@ -7512,8 +7538,8 @@ h-word {
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information .total_medal img {
   max-width: 100px;
-  width: 28%;
-  margin: 0px 2.6%;
+  width: calc(33.33333% - 10px);
+  margin: 0px 5px;
 }
 .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_information .total_medal img.notget {
   filter: grayscale(1);
@@ -8587,6 +8613,7 @@ h-word {
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
     width: calc(33% - 20px);
+    margin: 0px 10px 30px 10px;
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
     width: calc(33% - 20px);
@@ -8745,11 +8772,15 @@ h-word {
     margin: 25px 0 0 0;
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
-    width: calc(50% - 30px);
+    width: calc(50% - 15px);
+    margin: 0px 7.5px 30px 7.5px;
+  }
+  .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item .book_tool_bar .book_tool_bar_item .book_tool_bar_icon i {
+    font-size: 25px;
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
-    width: calc(50% - 30px);
-    margin: 0px 15px 30px 15px;
+    width: calc(50% - 15px);
+    margin: 0px 7.5px 30px 7.5px;
   }
   .page .pagination a,
   .page .pagination span {
@@ -9008,6 +9039,7 @@ h-word {
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item {
     width: 100%;
+    margin: 0px auto 30px auto;
   }
   .book_area .grade_map_booklist .swiper .swiper-wrapper .swiper-slide {
     width: 100%;
@@ -9203,13 +9235,13 @@ h-word {
 }
 .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
   color: #5B3716;
+  overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  /*!autoprefixer:off*/
   -webkit-box-orient: vertical;
-  white-space: normal;
-  overflow: hidden;
-  height: 65px;
+  /*!autoprefixer:on*/
 }
 .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4:hover {
   color: #ff6464;
@@ -9327,7 +9359,6 @@ h-word {
   }
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
     -webkit-line-clamp: 3;
-    height: 87px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -9358,9 +9389,6 @@ h-word {
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_link img {
     max-width: none;
   }
-  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
-    height: 77px;
-  }
 }
 @media screen and (max-width: 499px) {
   .main.library .frame_effect .folder .folder_tag {
@@ -9381,9 +9409,6 @@ h-word {
   }
   .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item {
     margin: 10px auto;
-  }
-  .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item .book_information .book_link h4 {
-    height: 70px;
   }
 }
 /*閱讀里程*/
@@ -10173,7 +10198,13 @@ h-word {
   margin: 0px 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon_font {
+  margin: 10px 10px 10px 0px;
+}
+.main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon_font i {
+  font-size: 17px;
+  color: #ff6464;
 }
 .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
   padding: 10px;
@@ -10243,6 +10274,7 @@ h-word {
   display: flex;
   flex-wrap: wrap;
   display: inline-block;
+  width: 100%;
 }
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project {
   margin: 20px 0px 20px 10%;
@@ -10256,7 +10288,7 @@ h-word {
   margin: 0px 0px 0px -10%;
   width: 25%;
   background-color: #fff;
-  padding: 10px;
+  padding: 25px;
   border-radius: 50%;
 }
 .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_text {
@@ -10402,7 +10434,7 @@ h-word {
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .student_photo {
     display: flex;
@@ -10419,10 +10451,12 @@ h-word {
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area {
     flex-direction: column;
-    margin: 0px 10px 0px 0px;
+    margin: 0 10px;
+    width: calc(33.33333% - 20px);
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
     margin: 10px auto;
@@ -10496,18 +10530,13 @@ h-word {
     width: 100%;
     margin: 20px 0 0;
   }
-  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information {
-    text-align: center;
-  }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon {
     justify-content: center;
-    flex-direction: column;
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area {
     margin: 0px 5px;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
+    width: calc(50% - 10px);
   }
   .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area .member_icon {
     margin: 10px;
@@ -10526,7 +10555,7 @@ h-word {
   .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_img {
     margin: 0px 0px 0px -10%;
     width: 25%;
-    padding: 5px;
+    padding: 15px;
   }
   .main.personal .frame_effect .folder .folder_content .medal_statistics .medallion_area .medal_project .medal_project_text {
     margin: 5px 10px;
@@ -10542,6 +10571,9 @@ h-word {
 @media screen and (max-width: 499px) {
   .main.personal .frame_effect .folder .folder_content .membership_card_area {
     width: 100%;
+  }
+  .main.personal .frame_effect .folder .folder_content .membership_card_area .member_information_area .member_information_content .member_information_icon .member_icon_area {
+    width: calc(100% - 10px);
   }
   .main.personal .frame_effect .folder .folder_content .medal_statistics .medal_statistics_title {
     margin: 0 0 20px;
