@@ -275,6 +275,30 @@
                 <img src="image/photo/map/ebookman.png" alt="">
             </div>
         </div>
+
+        <div class="book_tool_bar">
+            <div class="book_tool_bar_item">
+                <div class="book_tool_bar_icon">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <p>喜歡<br/>Likes</p>
+            </div>
+
+            <div class="book_tool_bar_item">
+                <div class="book_tool_bar_icon">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <p>收藏<br/>Bookmarks</p>
+            </div>
+
+            <div class="book_tool_bar_item">
+                <div class="book_tool_bar_icon">
+                    <i class="fa-solid fa-comment-dots"></i>
+                </div>
+                <p>留言區<br/>Share Your Thoughts</p>
+            </div>
+        </div>
+
         <div class="ebook_modal_button_area" style="display: block;">
             <div class="ebook_modal_button">
                 <a id="close-modal" href="#close-modal" rel="modal:close"
@@ -356,8 +380,36 @@
 <!-- modal -->
 <script src="js/jquery.modal.min.js"></script>
 
+<!-- fontawesome -->
+<script src="js/fontawesome-free-6.1.1.min.js"></script>
 
 <script src="js/all.js"></script>
+
+<!-- 書本icon功能 -->
+<script>
+    // $(".book_tool_bar_icon").click(function(){
+    //     $(this).toggleClass("change_icon");
+    //     if($(this).hasClass("change_icon") && $(this).children().hasClass("fa-heart")){
+    //         $(this).find(".fa-heart").attr("class", "fa-solid fa-heart");
+    //     } else if ($(this).children().hasClass("fa-pen-to-square")) {
+    //         $(this).removeClass("change_icon");
+    //     } else {
+    //         $(this).find(".fa-heart").attr("class", "fa-regular fa-heart");
+    //     }
+    // });
+
+    $(".book_tool_bar_item").click(function(){
+        $(this).toggleClass("change_icon");
+        if($(this).hasClass("change_icon") && $(".book_tool_bar_icon").children().hasClass("fa-heart")){
+            $(this).find(".fa-heart").attr("class", "fa-solid fa-heart");
+        } else {
+            $(this).find(".fa-heart").attr("class", "fa-regular fa-heart");
+        }
+    });
+
+
+    
+</script>
 </body>
 
 </html>
