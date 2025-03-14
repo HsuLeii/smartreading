@@ -1,24 +1,269 @@
 // 電子書區域開始
-.book-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-
+.book-page-one {
     .course_area{
         width: 90%;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
     padding: 20px 0 0;
-    margin: 0 auto;
+    margin: 0 auto 20px;
+
+    .course_name{
+        h4{
+            font-size: 25px;
+            color: $main_color;
+        }
+    }
+
+    .course_img_area{
+        .course_img{
+            img {
+                max-width: 150px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+    .test_area_content_img_area{
+        width: 90%;
+        margin: 0 auto;
+
+        .test_area_content_img_area_content{
+            .test_area_content_img {
+                img {
+                    max-width: 150px;
+                    border-radius: 10px;
+                }
+            }
+
+            .progress_area {
+                width: 100%;
+                max-width: 150px;
+                margin: 10px 0 20px;
+                background-color: $grey;
+                border-radius: 10px;
+
+                .line{
+                    height: 4px;
+                    background: $main_color;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    .dialogue_area {
+        width: 90%;
+        margin: 0 auto 40px;
+        padding: 0px;
+
+        .dialogue_block_area{
+            overflow-y: scroll;
+            max-height: 50vh;
+            padding: 30px;
+            border: 1px solid $main_color;
+            border-radius: 5px;
+
+            .dialogue_block {
+                display: flex;
+                align-items: center;
+                padding: 70px 0 0;
+                position: relative;
+    
+                .dialogue_avatar {
+                    width: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    img{
+                        border-radius: 50%;
+                    }
+    
+                    .avatar_text{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $main_color;
+                        color: $white;
+                        width: 100%;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+    
+                    .dialogue_avatar_name{
+                        font-size: 11px;
+                        margin: 8px auto 0;
+                        color: $main_color;
+                        background-color: transparent;
+                        height: auto;
+                        border-radius: 0;
+                    }
+                }
+    
+                .dialog_box {
+                    display: flex;
+                    align-items: center;
+                    padding: 14px 10px;
+                    border-radius: 5px;
+                    position: relative;
+                    max-width: 60%;
+                    position: relative;
+                    width: auto;
+                    max-width: calc(100% - 55px);
+                    background-color: $white;
+    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        z-index: 1;
+                        top: 50%;
+                    }
+    
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                    }
+    
+                    .dialog_box_text {
+                        width: 100%;
+                        color: $main_color;
+                    }
+                }
+    
+                &.dialogue_left {
+                    .dialogue_avatar {
+                        margin: 0 15px 0 0;
+
+                        .avatar_text{
+                            background-color: $white;
+                            color: $brown;
+                        }
+                    }
+    
+                    .dialog_box {
+    
+                        .dialog_box_text {
+                            label {
+                                ruby {
+                                    &.wrong {
+                                        rt {
+                                            color: $main_color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &::before {
+                            border-width: 8px 0px 8px 8px;
+                            left: 0;
+                            transform: translate(-100%, -50%);
+                            border-right: 8px solid white;
+                            border-bottom: 8px solid transparent;
+                            border-left: 8px solid transparent;
+                            border-top: 8px solid transparent;
+                        }
+    
+                        &::after {
+                            border-width: 10px 0px 10px 10px;
+                            left: 0;
+                            transform: translate(-100%, -50%);
+                            border-right: 10px solid white;
+                            border-bottom: 10px solid transparent;
+                            border-left: 10px solid transparent;
+                            border-top: 10px solid transparent;
+                        }
+                    }
+                }
+    
+                &.dialogue_right {
+                    justify-content: flex-end;
+    
+                    .dialogue_avatar {
+                        margin: 0 0 0 15px;
+                        order: 2;
+                    }
+    
+                    .dialog_box {
+                        order: 1;
+                        background-color: $main_color;
+    
+                        .dialog_box_text{
+                            p{
+                                color: $white;
+                            }
+                        }
+    
+                        &::before {
+                            border-width: 8px 8px 8px 0px;
+                            right: 0;
+                            transform: translate(100%, -50%);
+                            border-right: 8px solid transparent;
+                            border-bottom: 8px solid transparent;
+                            border-left: 8px solid $main_color;
+                            border-top: 8px solid transparent;
+                        }
+    
+                        &::after {
+                            border-width: 10px 10px 10px 0px;
+                            right: 0;
+                            transform: translate(100%, -50%);
+                            border-right: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                            border-left: 10px solid $main_color;
+                            border-top: 10px solid transparent;
+                        }
+                    }
+                }
+    
+                &.dialogue_ai {
+                    .dialog_box {
+                        width: auto;
+                    }
+                }
+    
+                &:nth-child(1) {
+                    padding: 0;
+                }
+            }
+        }
+        
+        .dialogue_message{
+            padding: 30px 0 0;
+
+            .dialogue_textarea{
+                width: 100%;
+                border: none;
+                font-size: 17px;
+                color: $brown;
+                line-height: 1.8;
+                padding: 20px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+                resize: none;
+
+                &:focus-visible{
+                    outline: 1px solid $main_color;
+                }
+            }
+
+            .dialogue_btn{
+                display: block;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid $main_color;
+                margin: 0 0 0 auto;
+                color: $main_color;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $main_color;
+                    color: $white;
+                }
+            }
+        }
     }
 }
 
