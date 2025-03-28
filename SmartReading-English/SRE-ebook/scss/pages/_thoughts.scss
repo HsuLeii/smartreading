@@ -1,34 +1,34 @@
 // 電子書區域開始
 .book-page-one {
-    .course_area{
+    .course_area {
         width: 90%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0 0;
-    margin: 0 auto 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0 0;
+        margin: 0 auto 20px;
 
-    .course_name{
-        h4{
-            font-size: 25px;
-            color: $main_color;
+        .course_name {
+            h4 {
+                font-size: 25px;
+                color: $main_color;
+            }
         }
-    }
 
-    .course_img_area{
-        .course_img{
-            img {
-                max-width: 150px;
-                border-radius: 10px;
+        .course_img_area {
+            .course_img {
+                img {
+                    max-width: 150px;
+                    border-radius: 10px;
+                }
             }
         }
     }
-}
 
-    .test_area_content_img_area{
+    .test_area_content_img_area {
         width: 90%;
         margin: 0 auto;
 
-        .test_area_content_img_area_content{
+        .test_area_content_img_area_content {
             .test_area_content_img {
                 img {
                     max-width: 150px;
@@ -43,7 +43,7 @@
                 background-color: $grey;
                 border-radius: 10px;
 
-                .line{
+                .line {
                     height: 4px;
                     background: $main_color;
                     border-radius: 10px;
@@ -57,7 +57,7 @@
         margin: 0 auto 40px;
         padding: 0px;
 
-        .dialogue_block_area{
+        .dialogue_block_area {
             overflow-y: scroll;
             max-height: 50vh;
             padding: 30px;
@@ -67,20 +67,21 @@
             .dialogue_block {
                 display: flex;
                 align-items: center;
-                padding: 70px 0 0;
+                flex-wrap: wrap;
+                padding: 70px 0 40px;
                 position: relative;
-    
+
                 .dialogue_avatar {
                     width: 40px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    
-                    img{
+
+                    img {
                         border-radius: 50%;
                     }
-    
-                    .avatar_text{
+
+                    .avatar_text {
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -90,8 +91,8 @@
                         height: 40px;
                         border-radius: 50%;
                     }
-    
-                    .dialogue_avatar_name{
+
+                    .dialogue_avatar_name {
                         font-size: 11px;
                         margin: 8px auto 0;
                         color: $main_color;
@@ -100,7 +101,7 @@
                         border-radius: 0;
                     }
                 }
-    
+
                 .dialog_box {
                     display: flex;
                     align-items: center;
@@ -110,40 +111,47 @@
                     max-width: 60%;
                     position: relative;
                     width: auto;
-                    max-width: calc(100% - 55px);
+                    max-width: calc(60% - 70px);
                     background-color: $white;
-    
+
                     &::before {
                         content: "";
                         position: absolute;
                         z-index: 1;
                         top: 50%;
                     }
-    
+
                     &::after {
                         content: "";
                         position: absolute;
                         top: 50%;
                     }
-    
+
                     .dialog_box_text {
                         width: 100%;
                         color: $main_color;
                     }
                 }
-    
+
+                .dialog_time {
+                    position: absolute;
+                    bottom: 0;
+                    width: auto;
+                }
+
                 &.dialogue_left {
                     .dialogue_avatar {
                         margin: 0 15px 0 0;
 
-                        .avatar_text{
+                        .avatar_text {
                             background-color: $white;
                             color: $brown;
                         }
                     }
-    
+
                     .dialog_box {
-    
+                        margin: 0 15px 0 0;
+
                         .dialog_box_text {
                             label {
                                 ruby {
@@ -155,7 +163,7 @@
                                 }
                             }
                         }
-    
+
                         &::before {
                             border-width: 8px 0px 8px 8px;
                             left: 0;
@@ -165,7 +173,7 @@
                             border-left: 8px solid transparent;
                             border-top: 8px solid transparent;
                         }
-    
+
                         &::after {
                             border-width: 10px 0px 10px 10px;
                             left: 0;
@@ -177,25 +185,26 @@
                         }
                     }
                 }
-    
+
                 &.dialogue_right {
                     justify-content: flex-end;
-    
+
                     .dialogue_avatar {
                         margin: 0 0 0 15px;
                         order: 2;
                     }
-    
+
                     .dialog_box {
+                        margin: 0 0 0 15px;
                         order: 1;
                         background-color: $main_color;
-    
-                        .dialog_box_text{
-                            p{
+
+                        .dialog_box_text {
+                            p {
                                 color: $white;
                             }
                         }
-    
+
                         &::before {
                             border-width: 8px 8px 8px 0px;
                             right: 0;
@@ -205,7 +214,7 @@
                             border-left: 8px solid $main_color;
                             border-top: 8px solid transparent;
                         }
-    
+
                         &::after {
                             border-width: 10px 10px 10px 0px;
                             right: 0;
@@ -217,23 +226,23 @@
                         }
                     }
                 }
-    
+
                 &.dialogue_ai {
                     .dialog_box {
                         width: auto;
                     }
                 }
-    
+
                 &:nth-child(1) {
-                    padding: 0;
+                    padding: 0 0 40px;
                 }
             }
         }
-        
-        .dialogue_message{
+
+        .dialogue_message {
             padding: 30px 0 0;
 
-            .dialogue_textarea{
+            .dialogue_textarea {
                 width: 100%;
                 border: none;
                 font-size: 17px;
@@ -244,12 +253,12 @@
                 border-radius: 5px;
                 resize: none;
 
-                &:focus-visible{
+                &:focus-visible {
                     outline: 1px solid $main_color;
                 }
             }
 
-            .dialogue_btn{
+            .dialogue_btn {
                 display: block;
                 padding: 10px;
                 border-radius: 5px;
@@ -258,7 +267,7 @@
                 color: $main_color;
                 cursor: pointer;
 
-                &:hover{
+                &:hover {
                     background-color: $main_color;
                     color: $white;
                 }
@@ -270,378 +279,29 @@
 // 電子書區域結束
 
 @media (max-width: 1024px) {
-
-    // 電子書區域開始
-    .book-page {
-
-        // 電子書內容區域開始
-        .book-page-img {
-
-            .book-page-bg {
-
-                &.two-right-book-page-bg {
-                    max-width: 90%;
-                }
-            }
-
-            // 文字版型開始
-            .text {
-
-                &.two-right-text {
-                    max-width: 100%;
-                    max-height: calc(50vh - 240px);
-                    // 20240503修改
-                    max-height: calc(50vh - 280px);
-                }
-            }
-
-            // 文字版型結束
-        }
-
-        // 電子書內容區域結束
-
-        &.two-right-book-page {
-            .book-page-img {
-                flex-direction: column;
-                justify-content: center;
-                max-height: calc(100vh - 200px);
-                // 20240503修改
-                max-height: calc(100vh - 240px);
-
-                img {
-                    max-height: calc((100vh - 200px) / 2) !important;
-                    // 20240503修改
-                    max-height: calc((100vh - 240px) / 2) !important;
-                }
-            }
-        }
-    }
-
-    // 電子書區域結束
-
-        // 下方控制區開始
-    
-        .button-area {
-    
-            .button-menu {
-                ul {
-    
-                    li {
-                        margin-left: 15px;
-    
-                        .background-icon {
-                            width: 25px;
-                            height: 25px;
-                        }
+    .book-page-one {
+        .dialogue_area {
+            .dialogue_block_area {
+                .dialogue_block {
+                    .dialog_box {
+                        max-width: calc(80% - 70px);
                     }
                 }
             }
         }
-    
-        // 下方控制區結束
+    }
 }
 
 @media (max-width: 768px) {
-
-    // 電子書區域開始
-    .book-page {
-
-        // 電子書內容區域開始
-        .book-page-img {
-
-            .book-page-bg {
-                width: auto;
-                height: auto;
-                max-width: 90%;
-                max-height: calc(100vh - 240px);
-                // 20240503修改
-                max-height: calc(100vh - 280px);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                img {
-                    max-width: 100%;
-                }
-
-                &.two-right-book-page-bg {
-                    width: auto;
-                    height: auto;
-                    max-width: 65%;
-                }
-
-                &.half-book-page-img {
-                    flex-direction: column;
-                    justify-content: center;
-
-                    .book-page-bg {
-                        max-height: calc((90vh - 200px) / 2);
-                        // 20240503修改
-                        max-height: calc((90vh - 240px) / 2);
-                        height: auto;
-
-                        img {
-                            max-height: calc((90vh - 200px) / 2);
-                            // 20240503修改
-                            max-height: calc((90vh - 240px) / 2);
-                            height: auto;
-                        }
-                    }
-
-                    &.big-half-book-img {
-                        height: auto;
-
-                        .book-page-bg {
-                            max-height: calc((100vh - 250px) / 4 * 2.8);
-                            // 20240503修改
-                            max-height: calc((100vh - 290px) / 4 * 2.8);
-
-                            img {
-                                max-height: calc((100vh - 250px) / 4 * 2.8);
-                                // 20240503修改
-                                max-height: calc((100vh - 290px) / 4 * 2.8);
-                            }
-                        }
-
-                        .half-text {
-                            max-height: calc((100vh - 250px) / 4 * 1.2);
-                            // 20240503修改
-                            max-height: calc((100vh - 290px) / 4 * 1.2);
-                        }
-                    }
-
-
-                }
-            }
-
-            &.template-book-page-img {
-                .text {
-                    max-height: none;
-                    margin-top: 0px;
-                }
-            }
-        }
-
-        // 電子書內容區域結束
-
-        // 顯示詞彙開始
-        .word-area {
-            width: calc(100% - 20px);
-            height: 0px;
-            margin-top: 0px;
-            padding: 20px 15px;
-            right: auto;
-            top: auto;
-            bottom: -100%;
-            overflow: scroll;
-
-            .book-circle {
-                display: none;
-
-                ul {
-                    flex-direction: column;
-                    height: 100%;
-
-                    li {
-                        width: 10px;
-                        height: 10px;
-                    }
-                }
-            }
-
-            .word-title {
-                font-size: 20px;
-            }
-
-            .word {
-                height: calc(100% - 40px);
-                overflow: initial;
-
-                p {
-                    padding-bottom: 10px;
-                    margin: 10px 0px;
-                }
-            }
-
-            .arrow {
-                width: 20px;
-                height: 20px;
-                right: 10px;
-                left: auto;
-                bottom: 10px;
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-            }
-
-            &.open {
-                width: calc(100% - 70px);
-                height: 100px;
-                left: 10px;
-                top: auto;
-                bottom: 150px;
-            }
-        }
-
-        // 顯示詞彙結束
-
-        // 詞彙未顯示開始
-        &.noMove {
-            .book-page-img {
-
-                // 文字版型開始
-                .text {
-
-                    &.two-right-text {
-                        max-width: 90%;
-                    }
-                }
-
-                // 文字版型結束
-            }
-        }
-
-        // 詞彙未顯示結束
-
-        // 顯示詞彙電子書移動開始
-        &.move {
-
-            .book-page-img {
-                height: auto;
-                max-width: 90%;
-                max-height: calc(100vh - 250px);
-                // 20240503修改
-                max-height: calc(100vh - 290px);
-                right: auto;
-                top: auto;
-                bottom: 260px;
-                transform: translate(0px, 0%);
-
-                .half-book-page-img {
-                    max-width: none;
-                    justify-content: center;
-
-                    .book-page-bg {
-                        max-width: 90%;
-                    }
-                }
-
-                img {
-                    transform: translate(0px, 0px);
-                }
-
-                .text {
-                    max-width: 90%;
-
-                    &.two-right-text {
-                        max-width: 65%;
-                    }
-                }
-            }
-
-            &~.play-area {
-                .progress {
-                    display: none;
-                }
-            }
-        }
-
-        // 顯示詞彙電子書移動結束
-
-    }
-
-    // 電子書區域結束
-
-    // 下方控制區開始
-    .play-area {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        width: 100%;
-
-        .progress {
-            position: static;
-            left: 0px;
-            bottom: 0px;
-            transform: translateX(0%);
-            -webkit-transform: translateX(0%);
-            -ms-transform: translateX(0%);
-
-            .number-page {
-                font-size: 13px;
-            }
-        }
-
-        .play {
-            position: static;
-            bottom: 0px;
-            left: 0px;
-            transform: translateX(0%);
-            -webkit-transform: translateX(0%);
-            -ms-transform: translateX(0%);
-            margin: 8px auto 14px;
-            height: 35px;
-
-            button {
-                margin-left: 10px;
-            }
-        }
-    }
-
-    .button-area {
-        display: block;
-        padding: 10px 5%;
-        z-index: 4;
-
-        .sound {
-            width: auto;
-            flex-direction: column;
-            position: absolute;
-            right: 20px;
-            bottom: 55px;
-            display: none;
-
-            .sound-img {
-                order: 2;
-                margin-top: 10px;
-                margin-right: 0px;
-                width: 20px;
-                height: 20px;
-            }
-
-            .sound-drag-line {
-                width: 4px;
-                height: 75px;
-                flex-direction: column;
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-
-                .sound-draggable-button {
-                    margin-left: -8px;
-                    top: -10px;
-                }
-            }
-        }
-
-        .button-menu {
-            ul {
-                justify-content: space-around;
-
-                li {
-                    margin-left: 0;
-
-                    .background-icon {
-                        width: 20px;
-                        height: 20px;
+    .book-page-one {
+        .dialogue_area {
+            .dialogue_block_area {
+                .dialogue_block {
+                    .dialog_box {
+                        max-width: calc(100% - 70px);
                     }
                 }
             }
         }
     }
-
-    // 下方控制區結束
 }

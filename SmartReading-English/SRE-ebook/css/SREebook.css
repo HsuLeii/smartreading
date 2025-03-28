@@ -2046,7 +2046,8 @@ header .book-title {
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block {
   display: flex;
   align-items: center;
-  padding: 70px 0 0;
+  flex-wrap: wrap;
+  padding: 70px 0 40px;
   position: relative;
 }
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar {
@@ -2085,7 +2086,7 @@ header .book-title {
   max-width: 60%;
   position: relative;
   width: auto;
-  max-width: calc(100% - 55px);
+  max-width: calc(60% - 70px);
   background-color: #fff;
 }
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::before {
@@ -2103,12 +2104,20 @@ header .book-title {
   width: 100%;
   color: #ec6c00;
 }
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_time {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+}
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar {
   margin: 0 15px 0 0;
 }
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar .avatar_text {
   background-color: #fff;
   color: #5B3716;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box {
+  margin: 0 15px 0 0;
 }
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box .dialog_box_text label ruby.wrong rt {
   color: #ec6c00;
@@ -2139,6 +2148,7 @@ header .book-title {
   order: 2;
 }
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box {
+  margin: 0 0 0 15px;
   order: 1;
   background-color: #ec6c00;
 }
@@ -2167,7 +2177,7 @@ header .book-title {
   width: auto;
 }
 .book-page-one .dialogue_area .dialogue_block_area .dialogue_block:nth-child(1) {
-  padding: 0;
+  padding: 0 0 40px;
 }
 .book-page-one .dialogue_area .dialogue_message {
   padding: 30px 0 0;
@@ -2201,238 +2211,12 @@ header .book-title {
 }
 
 @media (max-width: 1024px) {
-  .book-page .book-page-img .book-page-bg.two-right-book-page-bg {
-    max-width: 90%;
-  }
-  .book-page .book-page-img .text.two-right-text {
-    max-width: 100%;
-    max-height: calc(50vh - 240px);
-    max-height: calc(50vh - 280px);
-  }
-  .book-page.two-right-book-page .book-page-img {
-    flex-direction: column;
-    justify-content: center;
-    max-height: calc(100vh - 200px);
-    max-height: calc(100vh - 240px);
-  }
-  .book-page.two-right-book-page .book-page-img img {
-    max-height: calc((100vh - 200px) / 2) !important;
-    max-height: calc((100vh - 240px) / 2) !important;
-  }
-  .button-area .button-menu ul li {
-    margin-left: 15px;
-  }
-  .button-area .button-menu ul li .background-icon {
-    width: 25px;
-    height: 25px;
+  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
+    max-width: calc(80% - 70px);
   }
 }
 @media (max-width: 768px) {
-  .book-page .book-page-img .book-page-bg {
-    width: auto;
-    height: auto;
-    max-width: 90%;
-    max-height: calc(100vh - 240px);
-    max-height: calc(100vh - 280px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .book-page .book-page-img .book-page-bg img {
-    max-width: 100%;
-  }
-  .book-page .book-page-img .book-page-bg.two-right-book-page-bg {
-    width: auto;
-    height: auto;
-    max-width: 65%;
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img .book-page-bg {
-    max-height: calc((90vh - 200px) / 2);
-    max-height: calc((90vh - 240px) / 2);
-    height: auto;
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img .book-page-bg img {
-    max-height: calc((90vh - 200px) / 2);
-    max-height: calc((90vh - 240px) / 2);
-    height: auto;
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img.big-half-book-img {
-    height: auto;
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img.big-half-book-img .book-page-bg {
-    max-height: calc((100vh - 250px) / 4 * 2.8);
-    max-height: calc((100vh - 290px) / 4 * 2.8);
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img.big-half-book-img .book-page-bg img {
-    max-height: calc((100vh - 250px) / 4 * 2.8);
-    max-height: calc((100vh - 290px) / 4 * 2.8);
-  }
-  .book-page .book-page-img .book-page-bg.half-book-page-img.big-half-book-img .half-text {
-    max-height: calc((100vh - 250px) / 4 * 1.2);
-    max-height: calc((100vh - 290px) / 4 * 1.2);
-  }
-  .book-page .book-page-img.template-book-page-img .text {
-    max-height: none;
-    margin-top: 0px;
-  }
-  .book-page .word-area {
-    width: calc(100% - 20px);
-    height: 0px;
-    margin-top: 0px;
-    padding: 20px 15px;
-    right: auto;
-    top: auto;
-    bottom: -100%;
-    overflow: scroll;
-  }
-  .book-page .word-area .book-circle {
-    display: none;
-  }
-  .book-page .word-area .book-circle ul {
-    flex-direction: column;
-    height: 100%;
-  }
-  .book-page .word-area .book-circle ul li {
-    width: 10px;
-    height: 10px;
-  }
-  .book-page .word-area .word-title {
-    font-size: 20px;
-  }
-  .book-page .word-area .word {
-    height: calc(100% - 40px);
-    overflow: initial;
-  }
-  .book-page .word-area .word p {
-    padding-bottom: 10px;
-    margin: 10px 0px;
-  }
-  .book-page .word-area .arrow {
-    width: 20px;
-    height: 20px;
-    right: 10px;
-    left: auto;
-    bottom: 10px;
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-  }
-  .book-page .word-area.open {
-    width: calc(100% - 70px);
-    height: 100px;
-    left: 10px;
-    top: auto;
-    bottom: 150px;
-  }
-  .book-page.noMove .book-page-img .text.two-right-text {
-    max-width: 90%;
-  }
-  .book-page.move .book-page-img {
-    height: auto;
-    max-width: 90%;
-    max-height: calc(100vh - 250px);
-    max-height: calc(100vh - 290px);
-    right: auto;
-    top: auto;
-    bottom: 260px;
-    transform: translate(0px, 0%);
-  }
-  .book-page.move .book-page-img .half-book-page-img {
-    max-width: none;
-    justify-content: center;
-  }
-  .book-page.move .book-page-img .half-book-page-img .book-page-bg {
-    max-width: 90%;
-  }
-  .book-page.move .book-page-img img {
-    transform: translate(0px, 0px);
-  }
-  .book-page.move .book-page-img .text {
-    max-width: 90%;
-  }
-  .book-page.move .book-page-img .text.two-right-text {
-    max-width: 65%;
-  }
-  .book-page.move ~ .play-area .progress {
-    display: none;
-  }
-  .play-area {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    width: 100%;
-  }
-  .play-area .progress {
-    position: static;
-    left: 0px;
-    bottom: 0px;
-    transform: translateX(0%);
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-  }
-  .play-area .progress .number-page {
-    font-size: 13px;
-  }
-  .play-area .play {
-    position: static;
-    bottom: 0px;
-    left: 0px;
-    transform: translateX(0%);
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    margin: 8px auto 14px;
-    height: 35px;
-  }
-  .play-area .play button {
-    margin-left: 10px;
-  }
-  .button-area {
-    display: block;
-    padding: 10px 5%;
-    z-index: 4;
-  }
-  .button-area .sound {
-    width: auto;
-    flex-direction: column;
-    position: absolute;
-    right: 20px;
-    bottom: 55px;
-    display: none;
-  }
-  .button-area .sound .sound-img {
-    order: 2;
-    margin-top: 10px;
-    margin-right: 0px;
-    width: 20px;
-    height: 20px;
-  }
-  .button-area .sound .sound-drag-line {
-    width: 4px;
-    height: 75px;
-    flex-direction: column;
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-  }
-  .button-area .sound .sound-drag-line .sound-draggable-button {
-    margin-left: -8px;
-    top: -10px;
-  }
-  .button-area .button-menu ul {
-    justify-content: space-around;
-  }
-  .button-area .button-menu ul li {
-    margin-left: 0;
-  }
-  .button-area .button-menu ul li .background-icon {
-    width: 20px;
-    height: 20px;
+  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
+    max-width: calc(100% - 70px);
   }
 }/*# sourceMappingURL=SREebook.css.map */
