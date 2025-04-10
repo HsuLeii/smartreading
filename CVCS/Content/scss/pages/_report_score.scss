@@ -3,54 +3,28 @@
     margin: 0 auto;
 
     .page_content {
-        .report_header {
-            position: relative;
-
-            .frog_head_text {
-                position: absolute;
-                bottom: 3%;
-                left: 50%;
-                transform: translate(-50%, 0px);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-
-                .frog_head_title {
-                    h5 {
-                        font-weight: 700;
-                        color: darken($main_color, 20%);
-                    }
-                }
-
-                .frog_head_date {
-                    p {
-                        font-size: 10px;
-                        font-weight: 500;
-                        color: darken($main_color, 20%);
-                    }
-                }
-            }
-        }
 
         .report_content_area {
-            background-color: $frog_green;
+            background-color: $main_color;
             position: relative;
 
-            &::before {
-                content: "";
-                position: absolute;
-                left: 5%;
-                width: 90%;
-                height: 100%;
-                background-color: $body_bg;
-                padding: 0 5%;
-            }
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     left: 50%;
+            //     transform: translate(-50%, 0px);
+            //     width: 95%;
+            //     height: 100%;
+            //     background-color: $cat_content;
+            // }
 
             .report_content {
-                padding: 0 calc(5% + 25px);
                 position: relative;
                 z-index: 1;
+                margin: 0 auto;
+                padding: 0 20px;
+                width: 95%;
+                background-color: $cat_content;
 
                 .paper_data {
                     .table_data {
@@ -66,6 +40,12 @@
                                     margin: 10px 10px 0 0;
                                     word-break: break-word;
                                     color: $main_color_grey;
+
+                                    &.table_data_date{
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                    }
                                 }
                             }
                         }
@@ -75,204 +55,111 @@
                 // 成绩 start
                 .paper_score {
                     position: relative;
-                    margin: 0 auto;
-                    padding: 40px 0;
+                    margin: 40px auto 50px;
+                    width: 100%;
+                    padding: 15px 0;
 
-                    .paper_score_img {
+                    .cat_hand{
                         width: 100%;
-                        margin: 0 auto;
+                        height: 100%;
+                        position: absolute;
+                        z-index: 2;
 
-                        .lotus_vein {
-                            width: 90%;
+                        .cat_hand_left,
+                        .cat_hand_right{
                             position: absolute;
-                            left: 50%;
-                            transform: translate(-50%, 0);
+                            top: 25%;
+                            width: calc(15% + 20px);
                         }
 
-                        .frog_hand_right,
-                        .frog_hand_left {
-                            position: absolute;
-                            width: 20%;
-                            z-index: 1;
+                        .cat_hand_left{
+                            left: 0;
+                            transform: translate(-20px, 0);
                         }
-
-                        .frog_hand_right {
-                            right: 0%;
-                            top: 50%;
-                            transform: translate(calc(0% + 25px), -25%);
+                        
+                        .cat_hand_right{
+                            right: 0;
+                            transform: translate(20px, 0);
                         }
+                    }
 
-                        .frog_hand_left {
-                            left: 0%;
-                            top: 40%;
-                            transform: translate(calc(0% - 25px), -50%);
+                    .paper_score_frame{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $main_color;
+                        border: 5px solid $main_color_brown;
+                        border-radius: 50%;
+                        padding: 40px 0;
+                    }
+
+                    .paper_score_bg{
+                        position: absolute;
+                        z-index: -1;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        transform: translate(10px , 10px);
+                        background-color: $main_color;
+                        border: 5px solid $main_color_brown;
+                        border-radius: 50%;
+                        padding: 40px 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        overflow: hidden;
+
+                        .paper_score_bg_border{
+                            width: 100%;
+                            height: 5px;
+                            background-color: $main_color_brown;
+                            transform: translate(0 , 30px);
                         }
                     }
 
                     .paper_score_text {
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 70%;
+                        position: relative;
+                        z-index: 1;
+                        width: calc(100% - 30px);
+                        height: 100%;
+                        padding: 40px 0;
+                        border-radius: 50%;
+                        margin: 0 auto;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        color: $white;
+                        color: $main_color_brown;
+                        background-color: #FFE994;
+                        border: 5px solid $main_color_brown;
 
-                        .paper_score_text_one,
-                        .paper_score_text_two {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 10px 0;
-                            width: 100%;
+                        .paper_score_title{
                             p{
-                                text-align: center;
-                                font-size: 11px;
-                            }
-
-                            span {
-                                font-size: 11px;
-                                font-weight: 600;
-                                color: $yellow;
-                                text-shadow: 0px 0px 5px darken($main_color, 20%);
-                                margin: 0 8px 0 0;
-                                line-height: 1.4;
+                                font-size: 35px;
                             }
                         }
 
-                        .paper_score_text_one {
-                            border-bottom: 1px solid;
-
-                            // span {
-                            //     font-size: 50px;
-                            // }
+                        .paper_score_num{
+                            p{
+                                font-size: 75px;
+                                font-weight: bold;
+                            }
                         }
 
-                        .paper_score_text_two {
-
-                            span {
-                                // font-size: 30px;
-                                margin: 0;
+                        p{
+                            span{
+                                font-size: 30px;
+                                font-weight: bold;
+                                margin: 0 5px;
                             }
                         }
                     }
                 }
 
                 // 成绩 end
-
-                // 量尺 start
-                .paper_bar {
-                    .table_bar {
-                        width: 100%;
-
-                        tbody {
-                            tr {
-                                td {
-                                    display: flex;
-
-                                    .bar_bg {
-                                        position: relative;
-
-                                        .table_frog {
-                                            width: 25px;
-                                            max-width: 60px;
-                                            margin: 0 auto;
-                                            position: absolute;
-                                            top: 50%;
-                                            right: 0;
-                                            transform: translate(calc(100% + 5px), -50%);
-                                        }
-                                    }
-
-                                    &.bar_one {
-                                        span {
-                                            background-color: $first_grade;
-                                            border-right: 1.5px solid darken($first_grade, 10%);
-                                        }
-
-                                        .bar_bg {
-                                            width: calc((100% - 97px - 25px - 5px) / 6 * 1);
-                                            background-color: $first_grade;
-                                        }
-                                    }
-
-                                    &.bar_two {
-                                        span {
-                                            background-color: $second_grade;
-                                            border-right: 1.5px solid darken($second_grade, 10%);
-                                        }
-
-                                        .bar_bg {
-                                            width: calc((100% - 97px - 25px - 5px) / 6 * 2);
-                                            background-color: $second_grade;
-                                        }
-                                    }
-
-                                    &.bar_three {
-                                        span {
-                                            background-color: $third_grade;
-                                            border-right: 1.5px solid darken($third_grade, 10%);
-                                        }
-
-                                        .bar_bg {
-                                            width: calc((100% - 97px - 25px - 5px) / 6 * 3);
-                                            background-color: $third_grade;
-                                        }
-                                    }
-
-                                    &.bar_four {
-                                        span {
-                                            background-color: $fourth_grade;
-                                            border-right: 1.5px solid darken($fourth_grade, 10%);
-                                        }
-
-                                        .bar_bg {
-                                            width: calc((100% - 97px - 25px - 5px) / 6 * 4);
-                                            background-color: $fourth_grade;
-                                        }
-                                    }
-
-                                    &.bar_five {
-                                        span {
-                                            background-color: $fifth_grade;
-                                            border-right: 1.5px solid darken($fifth_grade, 10%);
-                                        }
-
-                                        .bar_bg {
-                                            width: calc((100% - 97px - 25px - 5px) / 6 * 5);
-                                            background-color: $fifth_grade;
-                                        }
-                                    }
-
-                                    &.bar_six {
-                                        span {
-                                            background-color: $sixth_grade;
-                                            border-right: 1.5px solid darken($sixth_grade, 10%);
-                                        }
-
-                                        .bar_bg {
-                                            width: calc((100% - 97px - 25px - 5px) / 6 * 6);
-                                            background-color: $sixth_grade;
-                                        }
-                                    }
-
-                                    span {
-                                        color: $main_color_grey;
-                                        padding: 5px 0;
-                                        width: 97px;
-                                        text-align: center;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                // 量尺 end
 
                 // 诊断 start
                 .paper_diagnosis {
@@ -385,7 +272,6 @@
                                                     position: relative;
                                                     border-radius: 0;
                                                     background-image: none;
-                                                    background-color: $frog_green;
                                                     display: flex;
                                                     align-items: center;
 
@@ -748,13 +634,7 @@
             }
 
             &.first_page {
-                &::before {
-                    border-radius: 50px 50px 0 0;
-                }
-
-                .report_content {
-                    border-radius: 50px 50px 0 0;
-                }
+                padding: 0 0 10px;
             }
 
             &.last_page {
@@ -778,69 +658,6 @@
                 .report_content {
 
                     // 成绩 end
-
-                    // 量尺 start
-                    .paper_bar {
-                        .table_bar {
-
-                            tbody {
-                                tr {
-                                    td {
-
-                                        &.bar_one {
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 1);
-                                            }
-                                        }
-
-                                        &.bar_two {
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 2);
-                                            }
-                                        }
-
-                                        &.bar_three {
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 3);
-                                            }
-                                        }
-
-                                        &.bar_four {
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 4);
-                                            }
-                                        }
-
-                                        &.bar_five {
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 5);
-                                            }
-                                        }
-
-                                        &.bar_six {
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 6);
-                                            }
-                                        }
-
-                                        &.bar_seven {
-                                            span {
-                                                background-color: $seventh_grade;
-                                                border-right: 1.5px solid darken($seventh_grade, 10%);
-                                            }
-
-                                            .bar_bg {
-                                                width: calc((100% - 97px - 25px - 5px) / 7 * 7);
-                                                background-color: $seventh_grade;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // 量尺 end
 
                     // 推荐 start
                     .paper_recommend {
@@ -913,17 +730,6 @@
     .page {
     
         .page_content {
-            .report_header {
-    
-                .frog_head_text {
-    
-                    .frog_head_date {
-                        p {
-                            font-size: 14px;
-                        }
-                    }
-                }
-            }
     
             .report_content_area {
     
@@ -1055,75 +861,6 @@
     
                     .report_content {
     
-                        // 量尺 start
-                        .paper_bar {
-                            .table_bar {
-    
-                                tbody {
-                                    tr {
-                                        td {
-    
-                                            &.bar_one {
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 1);
-                                                }
-                                            }
-    
-                                            &.bar_two {
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 2);
-                                                }
-                                            }
-    
-                                            &.bar_three {
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 3);
-                                                }
-                                            }
-    
-                                            &.bar_four {
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 4);
-                                                }
-                                            }
-    
-                                            &.bar_five {
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 5);
-                                                }
-                                            }
-    
-                                            &.bar_six {
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 6);
-                                                }
-                                            }
-    
-                                            &.bar_seven {
-                                                span {
-                                                    background-color: $seventh_grade;
-                                                    border-right: 1.5px solid darken($seventh_grade, 10%);
-                                                }
-    
-                                                .bar_bg {
-                                                    width: calc((100% - 97px - 25px - 5px) / 7 * 7);
-                                                    background-color: $seventh_grade;
-                                                }
-                                            }
-
-                                            &.bar_CEFR{
-                                                span{
-                                                    width: auto;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-    
-                        // 量尺 end
-    
                         // 推荐 start
                         .paper_recommend {
     
@@ -1181,15 +918,6 @@
 @media screen and (min-width: 500px) {
     .page {
         .page_content {
-            .report_header {
-                .frog_head_text {
-                    .frog_head_date {
-                        p {
-                            font-size: 16px;
-                        }
-                    }
-                }
-            }
 
             .report_content_area {
 
@@ -1233,23 +961,6 @@
 @media screen and (min-width: 576px) {
     .page {
         .page_content {
-            .report_header {
-
-                .frog_head_text {
-
-                    .frog_head_title {
-                        h5 {
-                            font-size: 23px;
-                        }
-                    }
-
-                    .frog_head_date {
-                        p {
-                            font-size: 21px;
-                        }
-                    }
-                }
-            }
 
             .report_content_area {
 
@@ -1258,14 +969,6 @@
                     // 成绩 start
                     .paper_score {
                         padding: 40px 0 80px;
-
-                        .paper_score_img {
-                            width: 90%;
-
-                            .lotus_vein {
-                                width: 90%;
-                            }
-                        }
 
                         .paper_score_text {
 
@@ -1279,146 +982,6 @@
                     }
 
                     // 成绩 end
-
-                    // 量尺 start
-                    .paper_bar {
-                        .table_bar {
-                            tbody {
-                                tr {
-                                    display: flex;
-                                    align-items: flex-end;
-                                    position: relative;
-
-                                    td {
-                                        position: relative;
-                                        width: calc(100% / 6);
-                                        align-items: flex-end;
-                                        justify-content: center;
-                                        flex-direction: column;
-
-                                        .bar_bg {
-                                            order: 1;
-
-                                            .table_frog {
-                                                width: 75%;
-                                                top: 0;
-                                                left: 50%;
-                                                right: auto;
-                                                transform: translate(-50%, calc(-100% - 10px));
-                                            }
-                                        }
-
-                                        &.bar_one {
-                                            span {
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 6px solid $first_grade;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: 30px;
-                                            }
-                                        }
-
-                                        &.bar_two {
-                                            span {
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 6px solid $second_grade;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 2);
-                                            }
-                                        }
-
-                                        &.bar_three {
-                                            span {
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 6px solid $third_grade;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 3);
-                                            }
-                                        }
-
-                                        &.bar_four {
-                                            span {
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 8px solid $fourth_grade;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 4);
-                                            }
-                                        }
-
-                                        &.bar_five {
-                                            span {
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 6px solid $fifth_grade;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 5);
-                                            }
-                                        }
-
-                                        &.bar_six {
-                                            span {
-                                                border-right: 0;
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 6);
-                                            }
-                                        }
-
-                                        span {
-                                            width: 100%;
-                                            order: 2;
-                                            position: relative;
-                                            border-top: 1.5px solid $white;
-
-                                            &::before {
-                                                content: "";
-                                                position: absolute;
-                                                z-index: 1;
-                                                border-width: 10px 0px 10px 10px;
-                                                top: 50%;
-                                                right: 0;
-                                                transform: translate(calc(100% - 0px), -50%);
-                                                border-bottom: 19px solid transparent;
-                                                border-top: 19px solid transparent;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // 量尺 end
 
                     // 诊断 start
                     .paper_diagnosis {
@@ -1528,84 +1091,6 @@
                 .report_content_area {
 
                     .report_content {
-
-                        // 量尺 start
-                        .paper_bar {
-                            .table_bar {
-
-                                tbody {
-                                    tr {
-                                        td {
-
-                                            &.bar_one {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: 30px;
-                                                }
-                                            }
-
-                                            &.bar_two {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 2);
-                                                }
-                                            }
-
-                                            &.bar_three {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 3);
-                                                }
-                                            }
-
-                                            &.bar_four {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 4);
-                                                }
-                                            }
-
-                                            &.bar_five {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 5);
-                                                }
-                                            }
-
-                                            &.bar_six {
-                                                span {
-
-                                                    &::before {
-                                                        border-left: 6px solid $sixth_grade;
-                                                    }
-                                                }
-
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 6);
-                                                }
-                                            }
-
-                                            &.bar_seven {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 7);
-                                                }
-                                            }
-
-                                            &.bar_CEFR{
-                                                position: absolute;
-                                                bottom: 0;
-                                                right: 0;
-                                                transform: translate(0, 100%);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        // 量尺 end
                     }
 
                 }
@@ -1644,23 +1129,6 @@
 @media screen and (min-width: 768px) {
     .page {
         .page_content {
-            .report_header {
-
-                .frog_head_text {
-
-                    .frog_head_title {
-                        h5 {
-                            font-size: 28px;
-                        }
-                    }
-
-                    .frog_head_date {
-                        p {
-                            font-size: 26px;
-                        }
-                    }
-                }
-            }
 
             .report_content_area {
                 .report_content {
@@ -1687,68 +1155,6 @@
                     }
 
                     // 成绩 end
-
-                    // 量尺 start
-                    .paper_bar {
-                        .table_bar {
-                            tbody {
-                                tr {
-
-                                    td {
-                                        &.bar_one {
-                                            span {
-                                                &::before {
-                                                    border-left: 10px solid $first_grade;
-                                                }
-                                            }
-                                        }
-
-                                        &.bar_two {
-                                            span {
-                                                &::before {
-                                                    border-left: 10px solid $second_grade;
-                                                }
-                                            }
-                                        }
-
-                                        &.bar_three {
-                                            span {
-                                                &::before {
-                                                    border-left: 10px solid $third_grade;
-                                                }
-                                            }
-                                        }
-
-                                        &.bar_four {
-                                            span {
-                                                &::before {
-                                                    border-left: 10px solid $fourth_grade;
-                                                }
-                                            }
-                                        }
-
-                                        &.bar_five {
-                                            span {
-                                                &::before {
-                                                    border-left: 10px solid $fifth_grade;
-                                                }
-                                            }
-                                        }
-
-                                        span {
-
-                                            &::before {
-                                                border-bottom: 22.5px solid transparent;
-                                                border-top: 22.5px solid transparent;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // 量尺 end
 
                     // 诊断 start
                     .paper_diagnosis {
@@ -1802,28 +1208,6 @@
                 .report_content_area {
 
                     .report_content {
-
-                        // 量尺 start
-                    .paper_bar {
-                        .table_bar {
-                            tbody {
-                                tr {
-
-                                    td {
-                                        &.bar_six {
-                                            span {
-                                                &::before {
-                                                    border-left: 10px solid $sixth_grade;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // 量尺 end
                     }
 
                 }
@@ -1832,925 +1216,9 @@
     }
 }
 
-// @media screen and (min-width: 1024px) {
-//     //print
-//     header {
-//         display: none; //print
-//     }
-
-//     .page {
-//         /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
-//         /* page-break-after: always;  碰到此元素會直接換頁 */
-//         page-break-inside: avoid;
-//         position: relative;
-//         max-width: 1024px;
-//         height: 1448px;
-//         width: 100%;
-//         margin: 0 auto;
-//         overflow: hidden;
-//         background-color: $body_bg;
-
-//         .page_content {
-//             .report_header {
-//                 position: relative;
-
-//                 .frog_head_text {
-//                     position: absolute;
-//                     bottom: 3%;
-//                     left: 50%;
-//                     transform: translate(-50%, 0px);
-//                     display: flex;
-//                     justify-content: center;
-//                     align-items: center;
-//                     flex-direction: column;
-
-//                     .frog_head_title {
-//                         h5 {
-//                             font-size: 28px;
-//                             font-weight: 700;
-//                             color: darken($main_color, 20%);
-//                         }
-//                     }
-
-//                     .frog_head_date {
-//                         p {
-//                             font-size: 26px;
-//                             font-weight: 500;
-//                             color: darken($main_color, 20%);
-//                         }
-//                     }
-//                 }
-//             }
-
-//             .report_content_area {
-//                 background-color: $frog_green;
-//                 position: relative;
-//                 min-height: 1448px;
-
-//                 &::before {
-//                     content: "";
-//                     position: absolute;
-//                     left: 5%;
-//                     width: 90%;
-//                     height: 100%;
-//                     background-color: $body_bg;
-//                     padding: 0 5%;
-//                 }
-
-//                 .report_content {
-//                     padding: 0 calc(5% + 25px);
-//                     position: relative;
-//                     z-index: 1;
-
-//                     .paper_data {
-//                         .table_data {
-//                             width: 100%;
-
-//                             tbody {
-//                                 tr {
-//                                     display: flex;
-//                                     flex-wrap: wrap;
-//                                     justify-content: center;
-
-//                                     td {
-//                                         margin: 10px 10px 0 0;
-//                                         word-break: break-word;
-//                                         color: $main_color_grey;
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-
-//                     // 成绩 start
-//                     .paper_score {
-//                         position: relative;
-//                         margin: 0 auto;
-//                         padding: 40px 0 80px;
-
-//                         .paper_score_img {
-//                             width: 575px;
-//                             margin: 0 auto;
-
-//                             .lotus_vein {
-//                                 width: 80%;
-//                                 position: absolute;
-//                                 left: 50%;
-//                                 transform: translate(-50%, 0);
-//                             }
-
-//                             .frog_hand_right,
-//                             .frog_hand_left {
-//                                 position: absolute;
-//                                 width: 25%;
-//                                 z-index: 1;
-//                             }
-
-//                             .frog_hand_right {
-//                                 right: 0%;
-//                                 top: 50%;
-//                                 transform: translate(calc(0% + 25px), -25%);
-//                             }
-
-//                             .frog_hand_left {
-//                                 left: 0%;
-//                                 top: 40%;
-//                                 transform: translate(calc(0% - 25px), -50%);
-//                             }
-//                         }
-
-//                         .paper_score_text {
-//                             position: absolute;
-//                             left: 50%;
-//                             top: 50%;
-//                             transform: translate(-50%, -50%);
-//                             width: 50%;
-//                             display: flex;
-//                             flex-direction: column;
-//                             justify-content: center;
-//                             align-items: center;
-//                             color: $white;
-
-//                             .paper_score_text_one,
-//                             .paper_score_text_two {
-//                                 display: flex;
-//                                 flex-direction: column;
-//                                 align-items: center;
-//                                 justify-content: center;
-//                                 padding: 10px 0;
-//                                 width: 100%;
-
-//                                 p {
-//                                     font-size: 23px;
-//                                 }
-
-//                                 span {
-//                                     font-weight: 600;
-//                                     color: $yellow;
-//                                     text-shadow: 0px 0px 5px darken($main_color, 20%);
-//                                     margin: 0 8px 0 0;
-//                                     line-height: 1.4;
-//                                 }
-//                             }
-
-//                             .paper_score_text_one {
-//                                 border-bottom: 1px solid;
-
-//                                 span {
-//                                     font-size: 75px;
-//                                 }
-//                             }
-
-//                             .paper_score_text_two {
-
-//                                 span {
-//                                     font-size: 35px;
-//                                 }
-//                             }
-//                         }
-//                     }
-
-//                     // 成绩 end
-
-//                     // 量尺 start
-//                     .paper_bar {
-//                         .table_bar {
-//                             width: 100%;
-
-//                             tbody {
-//                                 tr {
-//                                     display: flex;
-//                                     align-items: flex-end;
-
-//                                     td {
-//                                         display: flex;
-//                                         position: relative;
-//                                         width: calc(100% / 6);
-//                                         align-items: flex-end;
-//                                         justify-content: center;
-//                                         flex-direction: column;
-
-//                                         .bar_bg {
-//                                             position: relative;
-//                                             order: 1;
-
-//                                             .table_frog {
-//                                                 width: 75%;
-//                                                 max-width: 60px;
-//                                                 margin: 0 auto;
-//                                                 position: absolute;
-//                                                 top: 0;
-//                                                 left: 50%;
-//                                                 right: auto;
-//                                                 transform: translate(-50%, calc(-100% - 10px));
-//                                             }
-//                                         }
-
-//                                         &.bar_one {
-//                                             span {
-//                                                 background-color: $first_grade;
-//                                                 border-right: 0;
-
-//                                                 &::before {
-//                                                     border-left: 0;
-//                                                 }
-//                                             }
-
-//                                             .bar_bg {
-//                                                 width: 100%;
-//                                                 height: 30px;
-//                                                 background-color: $first_grade;
-//                                             }
-//                                         }
-
-//                                         &.bar_two {
-//                                             span {
-//                                                 background-color: $second_grade;
-//                                                 border-right: 0;
-
-//                                                 &::before {
-//                                                     border-left: 0;
-//                                                 }
-//                                             }
-
-//                                             .bar_bg {
-//                                                 width: 100%;
-//                                                 height: calc(30px * 2);
-//                                                 background-color: $second_grade;
-//                                             }
-//                                         }
-
-//                                         &.bar_three {
-//                                             span {
-//                                                 background-color: $third_grade;
-//                                                 border-right: 0;
-
-//                                                 &::before {
-//                                                     border-left: 0;
-//                                                 }
-//                                             }
-
-//                                             .bar_bg {
-//                                                 width: 100%;
-//                                                 height: calc(30px * 3);
-//                                                 background-color: $third_grade;
-//                                             }
-//                                         }
-
-//                                         &.bar_four {
-//                                             span {
-//                                                 background-color: $fourth_grade;
-//                                                 border-right: 0;
-
-//                                                 &::before {
-//                                                     border-left: 0;
-//                                                 }
-//                                             }
-
-//                                             .bar_bg {
-//                                                 width: 100%;
-//                                                 height: calc(30px * 4);
-//                                                 background-color: $fourth_grade;
-//                                             }
-//                                         }
-
-//                                         &.bar_five {
-//                                             span {
-//                                                 background-color: $fifth_grade;
-//                                                 border-right: 0;
-
-//                                                 &::before {
-//                                                     border-left: 0;
-//                                                 }
-//                                             }
-
-//                                             .bar_bg {
-//                                                 width: 100%;
-//                                                 height: calc(30px * 5);
-//                                                 background-color: $fifth_grade;
-//                                             }
-//                                         }
-
-//                                         &.bar_six {
-//                                             span {
-//                                                 background-color: $sixth_grade;
-//                                                 border-right: 0;
-//                                             }
-
-//                                             .bar_bg {
-//                                                 width: 100%;
-//                                                 height: calc(30px * 6);
-//                                                 background-color: $sixth_grade;
-//                                             }
-//                                         }
-
-//                                         span {
-//                                             color: $main_color_grey;
-//                                             padding: 5px 0;
-//                                             width: 100%;
-//                                             order: 2;
-//                                             position: relative;
-//                                             border-top: 0;
-//                                             text-align: center;
-
-//                                             &::before {
-//                                                 content: "";
-//                                                 position: absolute;
-//                                                 z-index: 1;
-//                                                 border-width: 10px 0px 10px 10px;
-//                                                 top: 50%;
-//                                                 right: 0;
-//                                                 transform: translate(calc(100% - 0px), -50%);
-//                                                 border-bottom: 22.5px solid transparent;
-//                                                 border-top: 22.5px solid transparent;
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-
-//                     // 量尺 end
-
-//                     // 诊断 start
-//                     .paper_diagnosis {
-//                         margin: 0 auto;
-//                         padding: 15px 0 0;
-
-//                         .paper_percentage_area {
-//                             margin: 15px auto;
-
-//                             .percentage_mark {
-//                                 width: calc(100% - 97px - 2% - 20%);
-//                                 margin: 20px 0 20px calc(97px + 2%);
-//                                 display: flex;
-//                                 justify-content: space-between;
-//                                 position: relative;
-
-//                                 span {
-//                                     position: absolute;
-//                                     color: darken($main_color, 15%);
-//                                     transform: translate(-50%, 0);
-
-//                                     &.mark_one {
-//                                         position: relative;
-//                                     }
-
-//                                     &.mark_two {
-//                                         left: 25%;
-//                                         display: block;
-//                                     }
-
-//                                     &.mark_three {
-//                                         left: 50%;
-//                                         display: block;
-//                                     }
-
-//                                     &.mark_four {
-//                                         left: 75%;
-//                                         display: block;
-//                                     }
-
-//                                     &.mark_five {
-//                                         left: 100%;
-//                                     }
-//                                 }
-//                             }
-
-//                             .percentage_grade_area {
-//                                 position: relative;
-
-//                                 .percentage_mark_line {
-//                                     position: absolute;
-//                                     height: 100%;
-//                                     width: calc(100% - 97px - 2% - 50px);
-//                                     margin: 0 0 0 calc(97px + 2%);
-
-//                                     span {
-//                                         position: absolute;
-//                                         height: 100%;
-//                                         border-right: 1.5px solid rgba($main_color, 0.5);
-//                                         transform: translate(-50%, 0);
-
-//                                         &.line_one {
-//                                             left: 0%;
-//                                         }
-
-//                                         &.line_two {
-//                                             left: 25%;
-//                                             display: block;
-//                                         }
-
-//                                         &.line_three {
-//                                             left: 50%;
-//                                             display: block;
-//                                         }
-
-//                                         &.line_four {
-//                                             left: 75%;
-//                                             display: block;
-//                                         }
-
-//                                         &.line_five {
-//                                             left: 100%;
-//                                         }
-//                                     }
-
-//                                 }
-
-//                                 .percentage_grade_item {
-
-//                                     .percentage_progress_bar {
-//                                         width: calc(100% - 97px - 2% - 50px);
-//                                         display: flex;
-
-//                                         .progress_bar_body {
-//                                             display: flex;
-//                                             width: 100%;
-
-//                                             .progress_area {
-//                                                 width: 100%;
-
-//                                                 .progress {
-//                                                     width: 100%;
-//                                                     height: auto;
-//                                                     background-color: transparent;
-//                                                     border-radius: 0;
-//                                                     border: 0;
-//                                                     overflow: initial;
-
-//                                                     .progress_bar {
-//                                                         position: relative;
-//                                                         border-radius: 0;
-//                                                         background-image: none;
-//                                                         background-color: $frog_green;
-//                                                         display: flex;
-//                                                         align-items: center;
-
-//                                                         .progress_bar_bg {
-//                                                             background-color: $body_bg;
-//                                                             width: 100%;
-//                                                             height: 25px;
-//                                                             border-radius: 50px;
-//                                                             overflow: hidden;
-
-//                                                             .progress_bar_bg_one {
-//                                                                 display: none;
-//                                                             }
-//                                                         }
-//                                                     }
-
-//                                                     .progress_foot,
-//                                                     .progress_head {
-//                                                         width: 20px;
-//                                                         line-height: 1;
-
-//                                                         img {
-//                                                             height: 100%;
-//                                                         }
-//                                                     }
-
-//                                                 }
-//                                             }
-//                                         }
-
-//                                     }
-
-//                                     .percentage_progress_value {
-//                                         width: 50px;
-//                                         display: flex;
-//                                         justify-content: flex-end;
-
-//                                         p {
-//                                             color: darken($main_color, 15%);
-//                                         }
-//                                     }
-//                                 }
-//                             }
-
-//                         }
-
-//                     }
-
-//                     // 诊断 end
-
-//                     // 推荐 start
-//                     .paper_recommend {
-//                         margin: 0 auto;
-//                         padding: 15px 0 0;
-
-//                         .table_recommend {
-//                             display: block;
-
-//                             .table_recommend_thead,
-//                             .table_recommend_tbody {
-//                                 display: block;
-//                                 width: 100%;
-//                             }
-
-//                             .table_recommend_tbody {
-//                                 .percentage_grade_item {
-//                                     align-items: flex-start;
-//                                     margin: 15px auto; //print
-
-//                                     .table_recommend_words {
-//                                         width: calc(100% - 97px - 2%);
-//                                         padding: 0;
-//                                         border-bottom: 0;
-
-//                                         .table_recommend_words_item {
-//                                             height: 46px;
-//                                             overflow: hidden;
-//                                             margin: 0 auto 10px;
-
-//                                             &.open {
-//                                                 height: auto !important;
-//                                                 overflow: visible;
-//                                             }
-
-//                                             span {
-//                                                 mark {
-//                                                     padding: 5px;
-//                                                     margin: 0 5px 10px;
-//                                                     display: inline-block;
-//                                                     width: calc(100% / 10 - 10px);
-//                                                     text-align: center;
-//                                                 }
-//                                             }
-//                                         }
-
-//                                         .more_btn {
-//                                             display: none !important; //print
-//                                         }
-//                                     }
-
-//                                     &.first_grade {
-//                                         .table_recommend_words {
-//                                             .table_recommend_words_item {
-//                                                 span {
-//                                                     mark {
-//                                                         background-color: lighten($first_grade, 30%);
-//                                                         border: 1px solid $first_grade;
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-
-//                                     &.second_grade {
-//                                         .table_recommend_words {
-//                                             .table_recommend_words_item {
-//                                                 span {
-//                                                     mark {
-//                                                         background-color: lighten($second_grade, 30%);
-//                                                         border: 1px solid $second_grade;
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-
-//                                     &.third_grade {
-//                                         .table_recommend_words {
-//                                             .table_recommend_words_item {
-//                                                 span {
-//                                                     mark {
-//                                                         background-color: lighten($third_grade, 30%);
-//                                                         border: 1px solid $third_grade;
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-
-//                                     &.fourth_grade {
-//                                         .table_recommend_words {
-//                                             .table_recommend_words_item {
-//                                                 span {
-//                                                     mark {
-//                                                         background-color: lighten($fourth_grade, 30%);
-//                                                         border: 1px solid $fourth_grade;
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-
-//                                     &.fifth_grade {
-//                                         .table_recommend_words {
-//                                             .table_recommend_words_item {
-//                                                 span {
-//                                                     mark {
-//                                                         background-color: lighten($fifth_grade, 30%);
-//                                                         border: 1px solid $fifth_grade;
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-
-//                                     &.sixth_grade {
-//                                         .table_recommend_words {
-//                                             .table_recommend_words_item {
-//                                                 span {
-//                                                     mark {
-//                                                         background-color: lighten($sixth_grade, 30%);
-//                                                         border: 1px solid $sixth_grade;
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-
-//                     // 推荐 end
-
-//                     // report_score通用 start
-//                     .paper_section_title {
-//                         h5 {
-//                             margin: 0 auto 10px;
-//                             text-align: center;
-//                             color: darken($main_color, 15%);
-//                         }
-
-//                         p {
-//                             color: $main_color_grey;
-//                         }
-
-//                         .paper_section_text{
-//                             display: flex;
-//                             justify-content: center;
-//                         }
-//                     }
-
-//                     .paper_phase_title {
-//                         display: flex;
-//                         margin: 30px auto 0;
-
-//                         .paper_phase_left {
-//                             width: 97px;
-//                             margin: 0 2% 0 0;
-//                         }
-
-//                         .paper_phase_right {
-//                             width: calc(100% - 97px - 2%);
-//                         }
-
-//                         .paper_phase_left,
-//                     .paper_phase_right{
-//                         display: flex;
-//                         justify-content: center;
-//                         align-items: center;
-//                         background-color: $main_color;
-//                         border-radius: 5px;
-//                         padding: 5px;
-//                     }
-
-//                     p {
-//                         color: $white;
-//                         font-size: 16px;
-//                     }
-//                     }
-
-//                     .percentage_grade_item {
-//                         display: flex;
-//                         align-items: center;
-//                         position: relative;
-//                         margin: 15px auto; //print
-//                         z-index: 1;
-
-//                         &.first_grade {
-//                             margin: 0 auto;
-
-//                             .percentage_grade_name {
-//                                 background-color: $first_grade;
-//                             }
-//                         }
-
-//                         &.second_grade {
-//                             .percentage_grade_name {
-//                                 background-color: $second_grade;
-//                             }
-//                         }
-
-//                         &.third_grade {
-//                             .percentage_grade_name {
-//                                 background-color: $third_grade;
-//                             }
-//                         }
-
-//                         &.fourth_grade {
-//                             .percentage_grade_name {
-//                                 background-color: $fourth_grade;
-//                             }
-//                         }
-
-//                         &.fifth_grade {
-//                             .percentage_grade_name {
-//                                 background-color: $fifth_grade;
-//                             }
-//                         }
-
-//                         &.sixth_grade {
-//                             .percentage_grade_name {
-//                                 background-color: $sixth_grade;
-//                             }
-//                         }
-
-//                         .percentage_grade_name {
-//                             display: flex;
-//                             justify-content: center;
-//                             width: 97px;
-//                             margin: 0 2% 0 0;
-//                             border-radius: 5px;
-
-//                             p {
-//                                 color: $main_color_grey;
-//                                 display: inline-block;
-//                                 padding: 5px 10px;
-//                                 border-radius: 5px;
-//                             }
-//                         }
-//                     }
-
-//                     // report_score通用 end
-//                 }
-
-//                 &.first_page {
-//                     &::before {
-//                         border-radius: 50px 50px 0 0;
-//                     }
-
-//                     .report_content {
-//                         border-radius: 50px 50px 0 0;
-//                     }
-//                 }
-
-//                 &.last_page {
-//                     padding: 0 0 60px;
-
-//                     &::before {
-//                         border-radius: 0 0 50px 50px;
-//                         height: calc(100% - 30px);
-//                     }
-
-//                     .report_content {
-//                         border-radius: 0 0 50px 50px;
-//                     }
-//                 }
-//             }
-
-//             &.page_content_L2 {
-//                 .report_content_area {
-
-//                     .report_content {
-
-//                         // 量尺 start
-//                         .paper_bar {
-//                             .table_bar {
-
-//                                 tbody {
-//                                     tr {
-//                                         td {
-
-//                                             &.bar_one {
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: 30px;
-//                                                 }
-//                                             }
-
-//                                             &.bar_two {
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: calc(30px * 2);
-//                                                 }
-//                                             }
-
-//                                             &.bar_three {
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: calc(30px * 3);
-//                                                 }
-//                                             }
-
-//                                             &.bar_four {
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: calc(30px * 4);
-//                                                 }
-//                                             }
-
-//                                             &.bar_five {
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: calc(30px * 5);
-//                                                 }
-//                                             }
-
-//                                             &.bar_six {
-//                                                 span {
-
-//                                                     &::before {
-//                                                         border-left: 0;
-//                                                     }
-//                                                 }
-
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: calc(30px * 6);
-//                                                 }
-//                                             }
-
-//                                             &.bar_seven {
-//                                                 .bar_bg {
-//                                                     width: 100%;
-//                                                     height: calc(30px * 7);
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-
-//                         // 量尺 end
-
-//                         // 推荐 start
-//                         .paper_recommend {
-
-//                             .table_recommend {
-//                                 .table_recommend_tbody {
-//                                     .percentage_grade_item {
-//                                         margin: 10px auto;
-
-//                                         &.seventh_grade {
-//                                             .table_recommend_words {
-//                                                 .table_recommend_words_item {
-//                                                     span {
-//                                                         mark {
-//                                                             background-color: lighten($seventh_grade, 30%);
-//                                                             border: 1px solid $seventh_grade;
-//                                                         }
-//                                                     }
-//                                                 }
-
-//                                                 .more_btn {
-//                                                     background-color: $seventh_grade;
-
-//                                                     &:hover {
-//                                                         background-color: darken($seventh_grade, 5%);
-//                                                     }
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-
-//                         // 推荐 end
-
-//                         // report_score通用 start
-//                         .percentage_grade_item {
-//                             display: flex;
-//                             align-items: center;
-//                             position: relative;
-//                             margin: 10px auto; //print
-//                             z-index: 1;
-
-//                             &.seventh_grade {
-//                                 .percentage_grade_name {
-//                                     background-color: $seventh_grade;
-//                                 }
-//                             }
-//                         }
-
-//                         // report_score通用 end
-//                     }
-
-//                 }
-//             }
-//         }
-
-
-//         .paper_copyright {
-//             .paper_copyright_word {
-//                 display: flex;
-//                 justify-content: center;
-
-//                 p {
-//                     font-size: 14px;
-//                     color: $main_color_grey;
-//                 }
-//             }
-//         }
-//     }
-// }
+@media screen and (min-width: 1024px) {
+    //print
+}
 
 @page {
     /*size: portrait;  直向 */
@@ -2783,39 +1251,8 @@
         background-color: $body_bg;
 
         .page_content {
-            .report_header {
-                position: relative;
-
-                .frog_head_text {
-                    position: absolute;
-                    bottom: 3%;
-                    left: 50%;
-                    transform: translate(-50%, 0px);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-
-                    .frog_head_title {
-                        h5 {
-                            font-size: 28px;
-                            font-weight: 700;
-                            color: darken($main_color, 20%);
-                        }
-                    }
-
-                    .frog_head_date {
-                        p {
-                            font-size: 26px;
-                            font-weight: 500;
-                            color: darken($main_color, 20%);
-                        }
-                    }
-                }
-            }
 
             .report_content_area {
-                background-color: $frog_green;
                 position: relative;
                 min-height: 1448px;
 
@@ -2860,37 +1297,6 @@
                         margin: 0 auto;
                         padding: 40px 0 80px;
 
-                        .paper_score_img {
-                            width: 575px;
-                            margin: 0 auto;
-
-                            .lotus_vein {
-                                width: 80%;
-                                position: absolute;
-                                left: 50%;
-                                transform: translate(-50%, 0);
-                            }
-
-                            .frog_hand_right,
-                            .frog_hand_left {
-                                position: absolute;
-                                width: 25%;
-                                z-index: 1;
-                            }
-
-                            .frog_hand_right {
-                                right: 0%;
-                                top: 50%;
-                                transform: translate(calc(0% + 25px), -25%);
-                            }
-
-                            .frog_hand_left {
-                                left: 0%;
-                                top: 40%;
-                                transform: translate(calc(0% - 25px), -50%);
-                            }
-                        }
-
                         .paper_score_text {
                             position: absolute;
                             left: 50%;
@@ -2918,7 +1324,6 @@
 
                                 span {
                                     font-weight: 600;
-                                    color: $yellow;
                                     text-shadow: 0px 0px 5px darken($main_color, 20%);
                                     margin: 0 8px 0 0;
                                     line-height: 1.4;
@@ -2943,168 +1348,6 @@
                     }
 
                     // 成绩 end
-
-                    // 量尺 start
-                    .paper_bar {
-                        .table_bar {
-                            width: 100%;
-
-                            tbody {
-                                tr {
-                                    display: flex;
-                                    align-items: flex-end;
-                                    position: relative;
-
-                                    td {
-                                        display: flex;
-                                        position: relative;
-                                        width: calc(100% / 6);
-                                        align-items: flex-end;
-                                        justify-content: center;
-                                        flex-direction: column;
-
-                                        .bar_bg {
-                                            position: relative;
-                                            order: 1;
-
-                                            .table_frog {
-                                                width: 75%;
-                                                max-width: 60px;
-                                                margin: 0 auto;
-                                                position: absolute;
-                                                top: 0;
-                                                left: 50%;
-                                                right: auto;
-                                                transform: translate(-50%, calc(-100% - 10px));
-                                            }
-                                        }
-
-                                        &.bar_one {
-                                            span {
-                                                background-color: $first_grade;
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 0;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: 30px;
-                                                background-color: $first_grade;
-                                            }
-                                        }
-
-                                        &.bar_two {
-                                            span {
-                                                background-color: $second_grade;
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 0;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 2);
-                                                background-color: $second_grade;
-                                            }
-                                        }
-
-                                        &.bar_three {
-                                            span {
-                                                background-color: $third_grade;
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 0;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 3);
-                                                background-color: $third_grade;
-                                            }
-                                        }
-
-                                        &.bar_four {
-                                            span {
-                                                background-color: $fourth_grade;
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 0;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 4);
-                                                background-color: $fourth_grade;
-                                            }
-                                        }
-
-                                        &.bar_five {
-                                            span {
-                                                background-color: $fifth_grade;
-                                                border-right: 0;
-
-                                                &::before {
-                                                    border-left: 0;
-                                                }
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 5);
-                                                background-color: $fifth_grade;
-                                            }
-                                        }
-
-                                        &.bar_six {
-                                            span {
-                                                background-color: $sixth_grade;
-                                                border-right: 0;
-                                            }
-
-                                            .bar_bg {
-                                                width: 100%;
-                                                height: calc(30px * 6);
-                                                background-color: $sixth_grade;
-                                            }
-                                        }
-
-                                        span {
-                                            color: $main_color_grey;
-                                            padding: 5px 0;
-                                            width: 100%;
-                                            order: 2;
-                                            position: relative;
-                                            border-top: 0;
-                                            text-align: center;
-
-                                            &::before {
-                                                content: "";
-                                                position: absolute;
-                                                z-index: 1;
-                                                border-width: 10px 0px 10px 10px;
-                                                top: 50%;
-                                                right: 0;
-                                                transform: translate(calc(100% - 0px), -50%);
-                                                border-bottom: 22.5px solid transparent;
-                                                border-top: 22.5px solid transparent;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // 量尺 end
 
                     // 诊断 start
                     .paper_diagnosis {
@@ -3217,7 +1460,6 @@
                                                         position: relative;
                                                         border-radius: 0;
                                                         background-image: none;
-                                                        background-color: $frog_green;
                                                         display: flex;
                                                         align-items: center;
 
@@ -3541,88 +1783,6 @@
                 .report_content_area {
 
                     .report_content {
-
-                        // 量尺 start
-                        .paper_bar {
-                            .table_bar {
-
-                                tbody {
-                                    tr {
-                                        td {
-
-                                            &.bar_one {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: 30px;
-                                                }
-                                            }
-
-                                            &.bar_two {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 2);
-                                                }
-                                            }
-
-                                            &.bar_three {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 3);
-                                                }
-                                            }
-
-                                            &.bar_four {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 4);
-                                                }
-                                            }
-
-                                            &.bar_five {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 5);
-                                                }
-                                            }
-
-                                            &.bar_six {
-                                                span {
-
-                                                    &::before {
-                                                        border-left: 0;
-                                                    }
-                                                }
-
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 6);
-                                                }
-                                            }
-
-                                            &.bar_seven {
-                                                .bar_bg {
-                                                    width: 100%;
-                                                    height: calc(30px * 7);
-                                                }
-                                            }
-
-                                            &.bar_CEFR{
-                                                position: absolute;
-                                                bottom: 0;
-                                                right: 0;
-                                                transform: translate(0, 100%);
-
-                                                span{
-                                                    width: auto;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        // 量尺 end
 
                         // 推荐 start
                         .paper_recommend {
