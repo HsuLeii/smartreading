@@ -1,5 +1,14 @@
 // 電子書區域開始
 .book-page-one {
+    .course_area{
+        .course_name{
+            width: calc(100% - 160px);
+            h4{
+                word-break: break-all;
+            }
+        }
+    }
+    
     .answer_area{
         width: 90%;
         display: flex;
@@ -8,73 +17,144 @@
         padding: 30px 0 0;
         margin: 0 auto 30px;
 
-    }
-    .topic_area {
-        width: 35%;
-        max-width: 350px;
-
-        .topic_name {
-            margin: 20px 0;
-            h4 {
-                font-size: 25px;
-                color: $main_color;
+        .topic_area {
+            width: 35%;
+            max-width: 350px;
+    
+            .topic_name {
+                margin: 20px 0;
+                h4 {
+                    color: $main_color;
+                }
+            }
+    
+            .topic_img_area {
+                .topic_img {
+                    img {
+                        
+                        border-radius: 10px;
+                        border: 1px solid $main_color;
+                    }
+                }
             }
         }
+    
+        .answer_content_area{
+            width: 60%;
+            .topic_name {
+                margin: 0 0 20px;
+                h4 {
+                    color: $main_color;
+                    margin: 0 0 10px;
+                }
+            }
 
-        .topic_img_area {
-            .topic_img {
-                img {
+            .usermessage_area {
+                .usermessage {
+        
+                    .usermessage_textarea {
+                        width: 100%;
+                        border: none;
+                        font-size: 17px;
+                        color: $brown;
+                        line-height: 1.8;
+                        padding: 20px;
+                        margin-bottom: 15px;
+                        border-radius: 5px;
+                        resize: none;
+        
+                        &:focus-visible {
+                            outline: 1px solid $main_color;
+                        }
+                    }
+        
+                    .usermessage_btn {
+                        display: block;
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: 1px solid $main_color;
+                        margin: 0 0 0 auto;
+                        color: $main_color;
+                        cursor: pointer;
+        
+                        &:hover {
+                            background-color: $main_color;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .feedback_area{
+                display: none;
+                .user_answer {
+                    margin: 0 0 20px;
+                    h4 {
+                        color: $brown;
+                    }
+                }
+
+                .feedback_star_content{
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .feedback_fraction{
+                        position: relative;
+                        width: 100%;
+
+                        .feedback_star_tittle{
+                            margin: 0 0 10px;
+                            width: 100%;
+                            h5 {
+                                color: $brown;
+                            }
+                        }
+    
+                        .feedback_star_area{
+                            margin: 0 0 20px;
+                            i{
+                                color: $main_color;
+                            }
+                        }
+
+                        .feedback_star_bookman{
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            transform: translate(0 , calc(20px * 1.5 + 10px));
+                            max-width: 175px;
+                            line-height: 1;
+
+                            img{
+                                display: block;
+                            }
+                        }
+                    }
                     
-                    border-radius: 10px;
-                    border: 1px solid $main_color;
+
+                    .feedback_star_text{
+                        width: 100%;
+                        margin: 0 0 10px;
+                        
+                        h5 {
+                            margin: 0 0 10px;
+                            color: $brown;
+                        }
+
+                        p{
+                            padding: 20px;
+                            border-radius: 5px;
+                            border: 1px solid $main_color;
+                            background-color: $white;
+                        }
+                    }
                 }
             }
         }
-    }
-
-    .usermessage_area {
-        width: 60%;
-        padding: 0px;
-
-        .topic_name {
-            margin: 0 0 20px;
-            h4 {
-                font-size: 25px;
-                color: $main_color;
-            }
-        }
-
-        .usermessage {
-
-            .usermessage_textarea {
+        
+        &.answer_write{
+            .answer_content_area{
                 width: 100%;
-                border: none;
-                font-size: 17px;
-                color: $brown;
-                line-height: 1.8;
-                padding: 20px;
-                margin-bottom: 15px;
-                border-radius: 5px;
-                resize: none;
-
-                &:focus-visible {
-                    outline: 1px solid $main_color;
-                }
-            }
-
-            .usermessage_btn {
-                display: block;
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid $main_color;
-                margin: 0 0 0 auto;
-                color: $main_color;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: $main_color;
-                    color: $white;
-                }
             }
         }
     }
@@ -82,13 +162,17 @@
 
 // 電子書區域結束
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px){
     .book-page-one {
-        .dialogue_area {
-            .dialogue_block_area {
-                .dialogue_block {
-                    .dialog_box {
-                        max-width: calc(80% - 70px);
+        .answer_area{
+            .answer_content_area{
+                .feedback_area{
+                    .feedback_star_content{
+                        .feedback_fraction{
+                            .feedback_star_bookman{
+                                transform: translate(0 , calc(18px * 1.5 + 10px));
+                            }
+                        }
                     }
                 }
             }
@@ -96,16 +180,68 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .book-page-one {
-        .dialogue_area {
-            .dialogue_block_area {
-                .dialogue_block {
-                    .dialog_box {
-                        max-width: calc(100% - 70px);
+        .answer_area{
+            flex-direction: column;
+    
+            .topic_area {
+                margin: 0 0 20px;
+                max-width: 250px;
+            }
+
+            .answer_content_area{
+                width: 100%;
+
+                .feedback_area{
+                    .feedback_star_content{
+                        .feedback_fraction{
+                            .feedback_star_bookman{
+                                transform: translate(0 , calc(16px * 1.5 + 10px));
+                                max-width: 150px;
+                            }
+                        }
                     }
                 }
             }
         }
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .book-page-one {
+        .course_area{
+            .course_name{
+                width: calc(100% - 110px);
+            }
+
+            .course_img_area{
+                .course_img{
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .book-page-one {
+        .answer_area{
+
+            .answer_content_area{
+
+                .feedback_area{
+                    .feedback_star_content{
+                        .feedback_fraction{
+                            .feedback_star_bookman{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }

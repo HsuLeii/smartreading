@@ -74,6 +74,12 @@ h4 {
   font-weight: bold;
 }
 
+h5 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
 p {
   font-size: 17px;
   color: #5B3716;
@@ -214,11 +220,17 @@ input[type=checkbox]:checked ~ label:after {
 
 @media (max-width: 1024px) {
   h4 {
+    font-size: 20px;
+  }
+  h5 {
     font-size: 18px;
   }
 }
 @media (max-width: 768px) {
   h4 {
+    font-size: 18px;
+  }
+  h5 {
     font-size: 16px;
   }
   p {
@@ -230,6 +242,9 @@ input[type=checkbox]:checked ~ label:after {
 }
 @media (max-width: 499px) {
   h4 {
+    font-size: 15px;
+  }
+  h5 {
     font-size: 15px;
   }
   [aria-label]:after {
@@ -2220,6 +2235,12 @@ header .book-title {
     max-width: calc(100% - 70px);
   }
 }
+.book-page-one .course_area .course_name {
+  width: calc(100% - 160px);
+}
+.book-page-one .course_area .course_name h4 {
+  word-break: break-all;
+}
 .book-page-one .answer_area {
   width: 90%;
   display: flex;
@@ -2228,33 +2249,31 @@ header .book-title {
   padding: 30px 0 0;
   margin: 0 auto 30px;
 }
-.book-page-one .topic_area {
+.book-page-one .answer_area .topic_area {
   width: 35%;
   max-width: 350px;
 }
-.book-page-one .topic_area .topic_name {
+.book-page-one .answer_area .topic_area .topic_name {
   margin: 20px 0;
 }
-.book-page-one .topic_area .topic_name h4 {
-  font-size: 25px;
+.book-page-one .answer_area .topic_area .topic_name h4 {
   color: #ec6c00;
 }
-.book-page-one .topic_area .topic_img_area .topic_img img {
+.book-page-one .answer_area .topic_area .topic_img_area .topic_img img {
   border-radius: 10px;
   border: 1px solid #ec6c00;
 }
-.book-page-one .usermessage_area {
+.book-page-one .answer_area .answer_content_area {
   width: 60%;
-  padding: 0px;
 }
-.book-page-one .usermessage_area .topic_name {
+.book-page-one .answer_area .answer_content_area .topic_name {
   margin: 0 0 20px;
 }
-.book-page-one .usermessage_area .topic_name h4 {
-  font-size: 25px;
+.book-page-one .answer_area .answer_content_area .topic_name h4 {
   color: #ec6c00;
+  margin: 0 0 10px;
 }
-.book-page-one .usermessage_area .usermessage .usermessage_textarea {
+.book-page-one .answer_area .answer_content_area .usermessage_area .usermessage .usermessage_textarea {
   width: 100%;
   border: none;
   font-size: 17px;
@@ -2265,10 +2284,10 @@ header .book-title {
   border-radius: 5px;
   resize: none;
 }
-.book-page-one .usermessage_area .usermessage .usermessage_textarea:focus-visible {
+.book-page-one .answer_area .answer_content_area .usermessage_area .usermessage .usermessage_textarea:focus-visible {
   outline: 1px solid #ec6c00;
 }
-.book-page-one .usermessage_area .usermessage .usermessage_btn {
+.book-page-one .answer_area .answer_content_area .usermessage_area .usermessage .usermessage_btn {
   display: block;
   padding: 10px;
   border-radius: 5px;
@@ -2277,18 +2296,100 @@ header .book-title {
   color: #ec6c00;
   cursor: pointer;
 }
-.book-page-one .usermessage_area .usermessage .usermessage_btn:hover {
+.book-page-one .answer_area .answer_content_area .usermessage_area .usermessage .usermessage_btn:hover {
   background-color: #ec6c00;
   color: #fff;
 }
+.book-page-one .answer_area .answer_content_area .feedback_area {
+  display: none;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .user_answer {
+  margin: 0 0 20px;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .user_answer h4 {
+  color: #5B3716;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction {
+  position: relative;
+  width: 100%;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle {
+  margin: 0 0 10px;
+  width: 100%;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle h5 {
+  color: #5B3716;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area {
+  margin: 0 0 20px;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area i {
+  color: #ec6c00;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(0, 40px);
+  max-width: 175px;
+  line-height: 1;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman img {
+  display: block;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_star_text {
+  width: 100%;
+  margin: 0 0 10px;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_star_text h5 {
+  margin: 0 0 10px;
+  color: #5B3716;
+}
+.book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_star_text p {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ec6c00;
+  background-color: #fff;
+}
+.book-page-one .answer_area.answer_write .answer_content_area {
+  width: 100%;
+}
 
 @media (max-width: 1024px) {
-  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-    max-width: calc(80% - 70px);
+  .book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    transform: translate(0, 37px);
+  }
+}
+@media (max-width: 992px) {
+  .book-page-one .answer_area {
+    flex-direction: column;
+  }
+  .book-page-one .answer_area .topic_area {
+    margin: 0 0 20px;
+    max-width: 250px;
+  }
+  .book-page-one .answer_area .answer_content_area {
+    width: 100%;
+  }
+  .book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    transform: translate(0, 34px);
+    max-width: 150px;
   }
 }
 @media (max-width: 768px) {
-  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-    max-width: calc(100% - 70px);
+  .book-page-one .course_area .course_name {
+    width: calc(100% - 110px);
+  }
+  .book-page-one .course_area .course_img_area .course_img {
+    max-width: 100px;
+  }
+}
+@media (max-width: 500px) {
+  .book-page-one .answer_area .answer_content_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    display: none;
   }
 }/*# sourceMappingURL=SREebook.css.map */
