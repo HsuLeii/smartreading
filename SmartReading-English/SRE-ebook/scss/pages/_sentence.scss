@@ -102,6 +102,7 @@
                     width: 60%;
 
                     .topic_name {
+                        width: calc(100% - 180px);
                         margin: 0 0 20px;
 
                         h4 {
@@ -151,6 +152,7 @@
                         display: none;
 
                         .user_answer {
+                            width: calc(100% - 180px);
                             margin: 0 0 20px;
 
                             h4 {
@@ -166,6 +168,11 @@
                                 position: relative;
                                 width: 100%;
 
+                                .feedback_star_tittle,
+                                    .feedback_star_area{
+                                        width: calc(100% - 180px);
+                                    }
+
                                 .feedback_star_tittle {
                                     margin: 0 0 10px;
                                     width: 100%;
@@ -179,7 +186,7 @@
                                     margin: 0 0 20px;
 
                                     i {
-                                        color: $main_color;
+                                        color: $results_comments_good;
                                     }
                                 }
 
@@ -233,13 +240,35 @@
         &.answer_chatbot {
             .answer_content_area {
                 .answer_content_frame {
+                    position: relative;
                     padding: 0;
+                    .chatbot_bg{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+
+                        img{
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-color: $white;
+                            opacity: 0.5;
+                        }
+                    }
                     .user_area {
                         width: 100%;
+                        position: relative;
+                        z-index: 1;
 
                         .dialogue_area {
-                            padding: 40px 30px;
-                            width: 95%;
+                            padding: 40px calc(30px + 2.5%);
+                            width: 100%;
                             margin: 0 auto;
                             // border: 1px solid $main_color;
                             // background-color: $white;
@@ -285,6 +314,10 @@
                                     background-color: $dialog_box_bg;
                                     border: 1px solid $dialog_box_border;
 
+                                    .dialog_box_text{
+                                        margin: 0 20px 0 0;
+                                    }
+                                    
                                     .dialog_box_icon {
                                         width: 45px;
                                         height: 45px;
@@ -562,8 +595,6 @@
                         }
                     }
                 }
-
-
             }
         }
 
@@ -622,9 +653,26 @@
                     }
 
                     .user_area {
+                        .topic_name {
+                            width: calc(100% - 155px);
+                            margin: 0 0 20px;
+    
+                            h4 {
+                                color: $main_color;
+                                margin: 0 0 10px;
+                            }
+                        }
+
                         .feedback_area {
+                            .user_answer{
+                                width: calc(100% - 155px);
+                            }
                             .feedback_star_content {
                                 .feedback_fraction {
+                                    .feedback_star_tittle,
+                                    .feedback_star_area{
+                                        width: calc(100% - 155px);
+                                    }
                                     .feedback_star_bookman {
                                         transform: translate(0, calc(16px * 1.5 + 10px));
                                         max-width: 150px;
@@ -664,6 +712,27 @@
 
                     .user_area{
                         width: 100%;
+                        
+                        .topic_name {
+                            width: 100%;
+                        }
+
+                        .feedback_area {
+                            .user_answer{
+                                width: calc(100% - 105px);
+                            }
+                            .feedback_star_content {
+                                .feedback_fraction {
+                                    .feedback_star_tittle,
+                                    .feedback_star_area{
+                                        width: calc(100% - 105px);
+                                    }
+                                    .feedback_star_bookman {
+                                        max-width: 100px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
