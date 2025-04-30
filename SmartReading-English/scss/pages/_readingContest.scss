@@ -100,14 +100,18 @@
                             }
     
                             .item_details{
+                                margin: 0 0 20px;
+
                                 .item_details_tittle{
                                     color: $main_color;
                                     font-weight: bold;
                                     text-indent: 2em;
+                                    font-size: 20px;
                                 }
     
                                 .item_details_content{
                                     display: flex;
+                                    flex-wrap: wrap;
 
                                     .indent_two{
                                         text-indent: 2em;
@@ -131,6 +135,59 @@
                                         }
                                         &.indent_two{
                                             text-indent: 2em;
+                                        }
+                                    }
+
+                                    .item_details_content_table{
+                                        width: 100%;
+                                        margin: 10px auto;
+
+                                        &.table_responsive{
+                                            overflow-x: scroll;
+                                        }
+
+                                        &.indent_three{
+                                            margin: calc(15px * 1.7) 0 calc(15px * 1.7) 3em;
+                                        }
+
+                                        table, th, td {
+                                            border-collapse: collapse;
+                                            border: 0px;
+                                          }
+
+                                        .table{
+                                            width: 100%;
+                                            min-width: 620px;
+
+
+                                            td{
+                                                text-align: center;
+                                                padding: 10px 5px;
+                                            }
+
+                                            thead{
+                                                background-color: $brown;
+                                                
+                                                td{
+                                                    color: $white;
+                                                    border: 1px solid $white;
+                                                }
+                                            }
+
+                                            tbody{
+                                                tr{
+                                                    border-top: 1px solid $brown;
+                                                    td{
+                                                        &:nth-last-child(1){
+                                                            border-right: 0;
+                                                        }
+                                                    }
+                                                }
+                                                td{
+                                                    border-right: 1px solid $brown;
+                                                    background-color: $white;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -213,6 +270,20 @@
                         }
                     }
                 }
+
+                .contest_regulations_content{
+                    .contest_regulations_content_item{
+                        .regulations_content_text{
+                            .regulations_content_text_item{
+                                .item_details{
+                                    .item_details_tittle{
+                                        font-size: 17px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -256,6 +327,11 @@
                         .regulations_content_text{
                             .regulations_content_text_item{
                                 flex-direction: column;
+                                .item_details{
+                                    .item_details_tittle{
+                                        font-size: 15px;
+                                    }
+                                }
                             }
                         }
                     }
