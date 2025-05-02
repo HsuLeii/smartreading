@@ -1,10 +1,15 @@
 .book-page-one {
     .course_area {
-        width: 80%;
+        width: 100%;
+        padding: 15px 10%;
+        background-color: #f4c720;
+        margin: 0;
+
         .course_name {
             width: calc(100% - 160px);
-
+            
             h4 {
+                color: $brown;
                 word-break: break-all;
             }
         }
@@ -12,16 +17,16 @@
 
     .answer_area {
         position: relative;
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: center;
-        padding: 30px 0 0;
-        margin: 0 auto 90px;
+        padding: 30px 5% 90px;
+        margin: 0 auto;
+        background-color: lighten(#f4c720, 35%);
 
         .answer_content_area {
             position: relative;
             width: 90%;
-            border: 1px solid $main_color;
             background-color: $light_main_color;
 
             &::before {
@@ -34,7 +39,7 @@
                 height: 40px;
                 border: 1px solid $main_color;
                 background-color: $main_color;
-                z-index: -1;
+                z-index: 1;
             }
 
             &::after {
@@ -47,10 +52,11 @@
                 height: 100%;
                 border: 1px solid $main_color;
                 background-color: $light_main_color;
-                z-index: -2;
             }
 
             .answer_content_head {
+                position: relative;
+                z-index: 2;
                 width: 100%;
                 background-color: $main_color;
                 display: flex;
@@ -116,9 +122,13 @@
             }
 
             .answer_content_frame {
+                position: relative;
+                z-index: 1;
                 padding: 30px;
                 display: flex;
                 justify-content: space-around;
+                border: 1px solid $main_color;
+                background-color: $light_main_color;
 
                 .topic_area {
                     width: 35%;
@@ -640,6 +650,17 @@
                     }
                 }
             }
+
+            // &::after{
+            //     content: "";
+            //     position: fixed;
+            //     z-index: -3;
+            //     bottom: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 40vh;
+            //     background-color: #f4c720;
+            // }
         }
 
         .chatbot_bookman{
@@ -678,7 +699,7 @@
 @media (max-width: 992px) {
     .book-page-one {
         .course_area{
-            width: 90%;
+            padding: 15px 5%;
         }
         .answer_area {
             flex-direction: column;
