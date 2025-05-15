@@ -1,45 +1,206 @@
-// swiper改寫開始
 .modal {
-    .modal-dialog{
+    padding: 60px 0;
+    .modal-dialog {
         max-width: 800px;
         width: 80%;
+        margin: 0 auto;
+        pointer-events: auto;
 
-        .modal_content{
-        width: 100%;
-        background-color: $white;
-        border-radius: 5px;
+        .modal_content {
+            position: relative;
+            width: 100%;
+            border-radius: 5px;
+            background-color: $body_bg;
 
-        .modal_content_close{
-            .modal_close{
-                i{
-                    font-size: 20px;
+            .modal_content_close {
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: translate(50%, -50%);
+
+                .modal_close {
+
+                    p {
+                        line-height: 1;
+
+                        i {
+                            position: relative;
+                            font-size: 20px;
+                            color: $brown;
+
+                            &::before {
+                                position: relative;
+                                z-index: 1;
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: -1;
+                                width: 80%;
+                                height: 80%;
+                                background-color: $white;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+
+                &:hover{
+                    .modal_close{
+                        p{
+                            i{
+                                color: $main_color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modal_news_date {
+                display: inline-block;
+                padding: 3px 20px;
+                border-radius: 50px;
+                background-color: $main_color;
+                transform: translate(-25px, -50%);
+
+                p {
+                    color: $white;
+                }
+            }
+
+            .modal_content_header {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                padding: 0 20px 10px;
+                border-bottom: 1px solid $brown;
+                
+                .modal_content_tittle {
+                    width: 100%;
+                    order: 2;
+                    h4 {
+                        color: $brown;
+                    }
+                }
+
+                .modal_news_category{
+                    display: flex;
+                    justify-content: flex-end;
+                    order: 1;
+                    margin: 0 0 10px;
+                    p{
+                        display: inline-block;
+                        background-color: $brown;
+                        color: $white;
+                        padding: 3px 20px;
+                        border-radius: 50px;
+                    }
+                }
+            }
+
+            .modal_content_body {
+                padding: 10px 20px;
+                background-color: $white;
+                border-radius: 0 0 5px 5px;
+
+                span{
+                color: $main_color;
+            }
+
+            a{
+                color: $brown;
+                background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                transition: background-size var(--transition-duration) var(--transition-timing-function);
+                border-bottom: 1px solid $brown;
+                padding: 0 5px 3px;
+                word-break: break-all;
+
+                &:hover{
+                    color: $main_color;
+                    background-position: 100% 100%;
+                    background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
+                    border-bottom: 1px solid transparent;
+                }
+            }
+
+                .SREname{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 20px 0;
                 }
             }
         }
     }
-    }
-    
 }
-// swiper改寫結束
 
 @media screen and (min-width: 768px) {
-    // swiper改寫開始
-.swiper_activities_area {
+.modal {
+    padding: 80px 0;
+    .modal-dialog {
+        .modal_content {
+            .modal_content_close {
+                .modal_close {
+                    p {
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
 
-    .swiper_activities {
-            width: calc(100% - 70px);
+            .modal_content_header {
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                padding: 0 30px 20px;
 
-        .swiper-wrapper {
-        }
+                .modal_content_tittle{
+                    width: auto;
+                    order: 1;
+                }
 
-        .swiper_btn_next,
-        .swiper_btn_prev{
+                .modal_news_category{
+                    order: 2;
+                    margin: 0;
+                    width: 35%;
+                }
+            }
 
-            &::after {
-                font-size: 25px;
+            .modal_content_body {
+                padding: 20px 30px;
             }
         }
     }
 }
-// swiper改寫結束
+}
+
+@media screen and (min-width: 1200px) {
+.modal {
+    .modal-dialog {
+        max-width: 1200px;
+        .modal_content {
+            .modal_content_close {
+                .modal_close {
+                    p {
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+
+            .modal_content_header {
+                padding: 0 30px 20px;
+            }
+
+            .modal_content_body {
+                padding: 20px 30px;
+            }
+        }
+    }
+}
 }
