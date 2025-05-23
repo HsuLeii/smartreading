@@ -4,8 +4,8 @@ body {
 
             .main_content_item {
                 &.category_content {
-                        order: 2;
-                        margin: 0 auto 40px;
+                    order: 2;
+                    margin: 0 auto 40px;
 
                     .category_content_menu {
                         width: 100%;
@@ -40,24 +40,25 @@ body {
                                     li {
                                         margin: 5px 0;
                                         width: 45%;
-                                        background-position: 0% 100%;
-                                        background: linear-gradient(transparent, transparent) 100% calc(100% + 1px) / 0% 1px no-repeat;
-                                        transition: background-size var(--transition-duration) var(--transition-timing-function);
-                                        border-bottom: 1px solid transparent;
+
 
                                         a {
                                             padding: 5px;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: space-between;
+                                            display: inline-block;
+                                            background-position: 0% 100%;
+                                            background: linear-gradient(transparent, transparent) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                                            transition: background-size var(--transition-duration) var(--transition-timing-function);
+                                            border-bottom: 1px solid transparent;
                                         }
 
                                         &:hover {
-                                            background-position: 100% 100%;
-                                            background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
-                                            border-bottom: 1px solid transparent;
+
 
                                             a {
+                                                background-position: 100% 100%;
+                                                background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
+                                                border-bottom: 1px solid transparent;
+
                                                 span {
                                                     color: $main_color;
                                                     font-weight: bold;
@@ -76,65 +77,68 @@ body {
                         }
                     }
 
-                    .category_content_item{
-                            position: relative;
+                    .category_content_item {
+                        width: 100%;
+
+                        .category_content_item_project {
+                            // position: absolute;
+                            // top: 0;
+                            // left: 0;
+                            // transform: translate(-1px , -100%);
+                            display: inline-block;
+                            width: auto;
+                            background-color: $brown;
+                            padding: 8px 15px;
+                            border-radius: 5px 5px 0 0;
+
+                            .category_content_item_project_text {
+                                h4 {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                        .category_content_item_project_information {
                             width: 100%;
                             padding: 20px;
                             background-color: $white;
                             border-radius: 0 5px 5px 5px;
                             border: 1px solid $brown;
 
-                            .category_content_item_project{
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                transform: translate(-1px , -100%);
-                                background-color: $brown;
-                                padding: 8px 15px;
-                                border-radius: 5px 5px 0 0;
-                                
-                                .category_content_item_project_text{
-                                    p{
-                                        color: $white;
+                            .project_information_text {
+                                .project_information_text_list {
+                                    display: flex;
+                                    margin: 10px auto;
+
+                                    p {
+                                        a {
+                                            display: inline-block;
+                                            margin: 0px 0 5px;
+                                            color: $brown;
+                                            background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                                            transition: background-size var(--transition-duration) var(--transition-timing-function);
+                                            border-bottom: 1px solid $brown;
+                                            padding: 0 3px 1px;
+                                            word-break: break-all;
+
+                                            &:hover {
+                                                color: $main_color;
+                                                background-position: 100% 100%;
+                                                background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
+                                                border-bottom: 1px solid transparent;
+                                            }
+                                        }
                                     }
                                 }
+
                             }
+
+                        }
                     }
 
                 }
             }
         }
-    }
-
-    body,
-    div,
-    dl,
-    dt,
-    dd,
-    ul,
-    ol,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    pre,
-    code,
-    form,
-    fieldset,
-    legend,
-    input,
-    textarea,
-    p,
-    a,
-    span,
-    blockquote,
-    th,
-    td,
-    figure {
-        color: $black;
     }
 }
 
