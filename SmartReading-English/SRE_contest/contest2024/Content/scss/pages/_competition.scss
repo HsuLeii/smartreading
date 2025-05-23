@@ -41,7 +41,6 @@ body {
                                         margin: 5px 0;
                                         width: 45%;
 
-
                                         a {
                                             padding: 5px;
                                             display: inline-block;
@@ -49,10 +48,15 @@ body {
                                             background: linear-gradient(transparent, transparent) 100% calc(100% + 1px) / 0% 1px no-repeat;
                                             transition: background-size var(--transition-duration) var(--transition-timing-function);
                                             border-bottom: 1px solid transparent;
+
+                                            &.active{
+                                                span {
+                                                    color: $main_color;
+                                                }
+                                            }
                                         }
 
                                         &:hover {
-
 
                                             a {
                                                 background-position: 100% 100%;
@@ -79,12 +83,10 @@ body {
 
                     .category_content_item {
                         width: 100%;
+                        margin: 0 auto;
+                        padding: 20px 0 40px;
 
                         .category_content_item_project {
-                            // position: absolute;
-                            // top: 0;
-                            // left: 0;
-                            // transform: translate(-1px , -100%);
                             display: inline-block;
                             width: auto;
                             background-color: $brown;
@@ -92,7 +94,7 @@ body {
                             border-radius: 5px 5px 0 0;
 
                             .category_content_item_project_text {
-                                h4 {
+                                h5 {
                                     color: $white;
                                 }
                             }
@@ -147,57 +149,55 @@ body {
         .main {
             .main_content {
                 .main_content_item {
-                    margin: 100px auto;
-                    align-items: center;
-                    justify-content: space-between;
+                    &.category_content{
+                        align-items: flex-start;
 
-                    .main_content_tittle {
-                        margin: 0 0 30px;
-                    }
+                        .category_content_menu{
+                            position: sticky;
+                            top: 40px;
+                            width: 30%;
+                            margin: 40px 0;
+                            
 
-                    .main_content_item_link {
-                        order: 2;
-                        width: auto;
-                        padding: 10px 50px;
-                        margin: 0 0 30px;
+                            .category_content_nav {
 
-                        .main_content_item_link_icon {
+                            .category_content_nav_inner {
+                                .category_content_nav_inner_list {
 
-                            i {
-                                font-size: 25px;
+                                    li {
+                                        width: 100%;
+                                    }
+                                }
                             }
+
+                        }
+                        }
+
+                        .category_content_item{
+                            width: 65%;
+                            margin: 0 0 0px auto;
+                            padding: 40px 0;
                         }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    .main_content_item_content {
-                        order: 3;
+@media screen and (min-width: 1200px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content{
 
-                        &.news_content {
-                            .news_content_item {
-                                padding: 25px 10px;
+                        .category_content_menu{
+                            width: 25%;
+                        }
 
-                                .news_date {
-                                    margin: 0 40px 0 0;
-                                }
-
-                                .news_text {
-                                    width: calc(100% - 86.05px - 75.89px);
-
-                                    .news_category {
-                                        margin: 0 0 15px;
-                                    }
-                                }
-
-                                .news_arrow {
-                                    margin: 0 0 0 40px;
-
-                                    p {
-                                        i {
-                                            font-size: 25px;
-                                        }
-                                    }
-                                }
-                            }
+                        .category_content_item{
+                            width: 70%;
                         }
                     }
                 }
