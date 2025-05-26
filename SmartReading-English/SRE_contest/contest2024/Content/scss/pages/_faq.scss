@@ -1,0 +1,187 @@
+body {
+    .main {
+        .main_content {
+
+            .main_content_item {
+                &.category_content {
+                    .category_content_item {
+                        .category_content_item_project_question {
+
+                            .item_project_question_area {
+                                width: 100%;
+                                background-color: $white;
+                                border-radius: 5px;
+                                border: 1px solid $brown;
+                                margin: 0 0 20px;
+                                cursor: pointer;
+
+                                &.open {
+                                    border: 1px solid $main_color;
+
+                                    .faq_question {
+                                        h5,i {
+                                            color: $main_color;
+                                        }
+                                    }
+                                }
+
+                                .faq_question {
+                                    position: relative;
+                                    display: flex;
+                                    width: calc(100% - 20px);
+                                    padding: 20px;
+
+                                    &:hover {
+                                        h5,i {
+                                            color: $main_color;
+                                        }
+                                    }
+
+                                    i{
+                                        position: absolute;
+                                        right: 0px;
+                                        top: 50%;
+                                        transform: translate(0, -50%);
+                                    }
+                                }
+
+                                .faq_answer {
+                                    display: flex;
+                                    border-top: 1px solid;
+                                    padding: 20px;
+
+                                    p {
+                                        a {
+                                            margin: 0 0 5px;
+                                            color: $brown;
+                                            background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                                            transition: background-size var(--transition-duration) var(--transition-timing-function);
+                                            border-bottom: 1px solid $brown;
+                                            padding: 0 3px 1px;
+                                            word-break: break-all;
+
+                                            &:hover {
+                                                color: $main_color;
+                                                background-position: 100% 100%;
+                                                background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
+                                                border-bottom: 1px solid transparent;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content {
+                        .category_content_menu {
+
+                            .category_content_nav {
+
+                                .category_content_nav_inner {
+                                    .category_content_nav_inner_list {
+                                        justify-content: flex-start;
+
+                                        li {
+                                            width: 30%;
+                                            margin: 5px 3.33333% 5px 0;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content {
+                        align-items: flex-start;
+
+                        .category_content_menu {
+                            position: sticky;
+                            top: 20px;
+                            width: 30%;
+                            margin: 40px 0;
+
+                            .category_content_nav {
+
+                                .category_content_nav_inner {
+                                    .category_content_nav_inner_list {
+
+                                        li {
+                                            width: 100%;
+
+                                            a {
+                                                width: 100%;
+                                                display: flex;
+                                                justify-content: space-between;
+
+                                                .menu_icon {
+                                                    i {
+                                                        transform: rotate(0deg);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .category_content_item {
+                            width: 65%;
+                            margin: 0 0 0px auto;
+                            padding: 40px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content {
+
+                        .category_content_menu {
+                            width: 25%;
+                            top: 20px;
+                            margin: 40px 0;
+                        }
+
+                        .category_content_item {
+                            width: 70%;
+                            padding: 40px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

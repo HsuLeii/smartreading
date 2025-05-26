@@ -32,7 +32,7 @@
       <div class="main_content_item news">
         <div class="main_content_tittle">
           <h3>
-            參賽專區 COMPETITION AREA
+            參賽專區
           </h3>
         </div>
 
@@ -349,56 +349,47 @@
     var scrollTimeout = setInterval(scrollTimer, 1000);
 
     function scrollTimer() {
-      
-    var category_one_top = document.querySelector("#category_one").offsetTop;
-    var category_one_h = $("#category_one").height();
 
-    var category_two_top = document.querySelector("#category_two").offsetTop;
-    var category_two_h = $("#category_two").height();
+      var category_one_top = document.querySelector("#category_one").offsetTop;
+      var category_one_h = $("#category_one").height();
 
-    var category_three_top = document.querySelector("#category_three").offsetTop;
-    var category_three_h = $("#category_three").height();
+      var category_two_top = document.querySelector("#category_two").offsetTop;
+      var category_two_h = $("#category_two").height();
 
-    var category_four_top = document.querySelector("#category_four").offsetTop;
-    var category_four_h = $("#category_four").height();
+      var category_three_top = document.querySelector("#category_three").offsetTop;
+      var category_three_h = $("#category_three").height();
 
-    var category_five_top = document.querySelector("#category_five").offsetTop;
-    var category_five_h = $("#category_five").height();
+      var category_four_top = document.querySelector("#category_four").offsetTop;
+      var category_four_h = $("#category_four").height();
 
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > category_one_top & $(this).scrollTop() < category_one_top + category_one_h ) {
-        $(".scrollTo").removeClass("active");
-        $(".category_one").addClass("active");
-      } else if ($(this).scrollTop() > category_two_top & $(this).scrollTop() < category_two_top + category_two_h) {
-        $(".scrollTo").removeClass("active");
-        $(".category_two").addClass("active");
-      } else if ($(this).scrollTop() > category_three_top & $(this).scrollTop() < category_three_top + category_three_h) {
-        $(".scrollTo").removeClass("active");
-        $(".category_three").addClass("active");
-      } else if ($(this).scrollTop() > category_four_top & $(this).scrollTop() < category_four_top + category_four_h) {
-        $(".scrollTo").removeClass("active");
-        $(".category_four").addClass("active");
-      } else if ($(this).scrollTop() > category_five_top & $(this).scrollTop() + 80 < category_five_top + category_five_h) {
-        $(".scrollTo").removeClass("active");
-        $(".category_five").addClass("active");
-      } else {
-        $(".scrollTo").removeClass("active");
-      }
-    });
+      var category_five_top = document.querySelector("#category_five").offsetTop;
+      var category_five_h = $("#category_five").height();
 
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > category_one_top & $(this).scrollTop() < category_one_top + category_one_h) {
+          $(".scrollTo").removeClass("active");
+          $(".category_one").addClass("active");
+        } else if ($(this).scrollTop() > category_two_top & $(this).scrollTop() < category_two_top +
+          category_two_h) {
+          $(".scrollTo").removeClass("active");
+          $(".category_two").addClass("active");
+        } else if ($(this).scrollTop() > category_three_top & $(this).scrollTop() < category_three_top +
+          category_three_h) {
+          $(".scrollTo").removeClass("active");
+          $(".category_three").addClass("active");
+        } else if ($(this).scrollTop() > category_four_top & $(this).scrollTop() < category_four_top +
+          category_four_h) {
+          $(".scrollTo").removeClass("active");
+          $(".category_four").addClass("active");
+        } else if ($(this).scrollTop() > category_five_top & $(this).scrollTop() + 80 < category_five_top +
+          category_five_h) {
+          $(".scrollTo").removeClass("active");
+          $(".category_five").addClass("active");
+        } else {
+          $(".scrollTo").removeClass("active");
+        }
+      });
     }
-
-
-  </script>
-
-    <script>
-    $(".scrollTo").click(function () {
-      $(this).addClass("active");
-      $("html, body").animate({
-        scrollTop: $($(this).attr("href")).offset().top + 20
-      }, 500);
-      return false;
-    });
   </script>
 </body>
 
