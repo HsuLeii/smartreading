@@ -133,6 +133,44 @@ body {
                                                             }
                                                         }
                                                     }
+
+                                                    .rewards_chart_second_row_center {
+                                                        position: relative;
+                                                        width: 30%;
+                                                        display: flex;
+                                                        justify-content: center;
+
+                                                        .rewards_chart_second_row_straight,
+                                                        .rewards_chart_second_row_horizontal {
+                                                            background-color: $brown;
+                                                            border-radius: 5px;
+                                                        }
+
+                                                        .rewards_chart_second_row_straight {
+                                                            width: 5px;
+                                                            height: 80%;
+                                                        }
+
+                                                        .rewards_chart_second_row_horizontal {
+                                                            position: absolute;
+                                                            left: 0;
+                                                            top: calc(80% - 2.5px);
+                                                            width: calc(50% + 2.5px);
+                                                            height: 5px;
+                                                        }
+
+                                                        .rewards_chart_row_item_arrow_icon {
+                                                            position: absolute;
+                                                            top: calc(80% + 1.5px);
+                                                            left: 0;
+                                                            transform: translate(0px, -50%);
+
+                                                            i {
+                                                                color: $brown;
+                                                                font-size: 25px;
+                                                            }
+                                                        }
+                                                    }
                                                 }
 
                                                 &.rewards_chart_third_row {
@@ -212,10 +250,6 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) {}
-
-@media screen and (min-width: 992px) {}
-
 @media screen and (min-width: 768px) {
     body {
         .main {
@@ -242,29 +276,31 @@ body {
 
                                                     .rewards_chart_row_item {
                                                         width: 60%;
+                                                        padding: 20px 0;
+
+                                                        &.rewards_chart_row_item_arrow {
+                                                            padding: 0;
+                                                        }
                                                     }
 
                                                     &.rewards_chart_first_row {
 
                                                         .rewards_chart_row_item_arrow {
                                                             position: absolute;
-                                                            height: 100%;
+                                                            height: 25%;
 
                                                             &.rewards_chart_row_item_arrow_left {
-                                                                height: 50%;
                                                                 top: 0;
                                                                 transform: translate(0px, -100%);
                                                             }
 
                                                             &.rewards_chart_row_item_arrow_right {
-                                                                height: 50%;
                                                                 top: 100%;
 
                                                                 .rewards_chart_row_item_arrow_icon {
-                                                                    top: calc(50% - 3px);
-                                                                    bottom: auto;
-                                                                    left: 100%;
-                                                                    transform: translate(-50%, -50%) rotate(-90deg);
+                                                                    bottom: 100%;
+                                                                    left: calc(50% - 1px);
+                                                                    transform: translate(-50%, 50%) rotate(180deg);
                                                                 }
 
                                                                 &::before {
@@ -281,52 +317,218 @@ body {
 
                                                     &.rewards_chart_second_row {
                                                         width: 50%;
-                                                        justify-content: space-between;
                                                         flex-direction: column;
 
                                                         .rewards_chart_second_row_left {
                                                             order: 1;
+
+                                                            .rewards_chart_row_item {
+                                                                &.rewards_chart_row_item_arrow {
+                                                                    transform: rotate(-90deg);
+                                                                }
+                                                            }
                                                         }
 
                                                         .rewards_chart_second_row_right {
-                                                            order: 2;
+                                                            order: 3;
+
+                                                            .rewards_chart_row_item {
+                                                                &.rewards_chart_row_item_arrow {
+                                                                    transform: rotate(90deg);
+                                                                }
+                                                            }
                                                         }
 
                                                         .rewards_chart_second_row_right,
                                                         .rewards_chart_second_row_left {
                                                             width: 100%;
                                                             flex-direction: row;
+                                                        }
+
+                                                        .rewards_chart_second_row_center {
+                                                            order: 2;
+                                                            width: 85%;
+                                                            justify-content: flex-end;
+
+                                                            .rewards_chart_second_row_straight {
+                                                                height: 25px;
+                                                            }
+
+                                                            .rewards_chart_second_row_horizontal {
+                                                                top: 0;
+                                                                width: 100%;
+                                                            }
+
+                                                            .rewards_chart_row_item_arrow_icon {
+                                                                top: 100%;
+                                                                left: calc(100% - 1px);
+                                                                transform: translate(-50%, -50%) rotate(-90deg);
+                                                            }
+                                                        }
+                                                    }
+
+                                                    &.rewards_chart_third_row {
+
+                                                        .rewards_chart_row_item_arrow {
+                                                            position: absolute;
+                                                            height: 25%;
+
+                                                            &.rewards_chart_row_item_arrow_left {
+                                                                top: 0;
+                                                                transform: translate(0px, -100%);
+
+                                                                .rewards_chart_row_item_arrow_icon {
+                                                                    top: 100%;
+                                                                    transform: translate(-50%, -50%) rotate(180deg);
+                                                                }
+
+                                                                &::before {
+                                                                    right: 50%;
+                                                                }
+
+                                                                &::after {
+                                                                    top: calc(50% - 0px);
+                                                                }
+                                                            }
+
+                                                            &.rewards_chart_row_item_arrow_right {
+                                                                top: 100%;
+
+                                                                .rewards_chart_row_item_arrow_icon {
+                                                                    top: calc(50% - 1px);
+                                                                    transform: translate(-50%, -50%);
+                                                                }
+
+                                                                &::before {
+                                                                    top: calc(50% - 5px);
+                                                                    transform: translate(0, 0);
+                                                                }
+
+                                                                &::after {
+                                                                    top: 0;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        .main {
+            .main_content {
+
+                .main_content_item {
+                    &.category_content {
+
+                        .category_content_item {
+
+                            .category_content_item_project_information {
+
+                                .project_information_text {
+                                    .project_information_text_list {
+                                        .project_information_content {
+                                            .rewards_chart {
+                                                display: block;
+
+                                                .rewards_chart_row {
+                                                    justify-content: space-between;
+                                                    width: auto;
+
+                                                    .rewards_chart_row_item {
+                                                        width: 30%;
+                                                        padding: 0;
+                                                    }
+
+                                                    &.rewards_chart_first_row {
+
+                                                        .rewards_chart_row_item_arrow {
+                                                            position: relative;
+                                                            height: auto;
+
+                                                            &.rewards_chart_row_item_arrow_left {
+                                                                transform: translate(0px, 0%);
+                                                            }
+
+                                                            &.rewards_chart_row_item_arrow_right {
+                                                                top: auto;
+
+                                                                .rewards_chart_row_item_arrow_icon {
+                                                                    bottom: 0;
+                                                                    left: 50%;
+                                                                    transform: translate(-50%, 50%);
+                                                                }
+
+                                                                &::before {
+                                                                    left: 0%;
+                                                                    top: 50%;
+                                                                }
+
+                                                                &::after {
+                                                                    top: auto;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    &.rewards_chart_second_row {
+                                                        width: 100%;
+                                                        flex-direction: row;
+
+                                                        .rewards_chart_second_row_left {
+                                                            order: 3;
 
                                                             .rewards_chart_row_item {
-                                                                width: 100%;
-
-                                                                .rewards_chart_row_img {
-                                                                    width: 100%;
-                                                                }
-
                                                                 &.rewards_chart_row_item_arrow {
-                                                                    position: relative;
-                                                                    height: 50px;
-                                                                    margin: 20px auto;
-
-                                                                    .rewards_chart_row_item_line {
-                                                                        width: 5px;
-                                                                        height: 100%;
-                                                                        background-color: $brown;
-                                                                    }
-
-                                                                    .rewards_chart_row_item_arrow_icon {
-                                                                        position: absolute;
-                                                                        bottom: 0;
-                                                                        left: calc(50% + 1px);
-                                                                        transform: translate(-50%, 50%);
-
-                                                                        i {
-                                                                            color: $brown;
-                                                                            font-size: 25px;
-                                                                        }
-                                                                    }
+                                                                    transform: rotate(0deg);
                                                                 }
+                                                            }
+                                                        }
+
+                                                        .rewards_chart_second_row_right {
+                                                            order: 1;
+
+                                                            .rewards_chart_row_item {
+                                                                &.rewards_chart_row_item_arrow {
+                                                                    transform: rotate(0deg);
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .rewards_chart_second_row_right,
+                                                        .rewards_chart_second_row_left {
+                                                            width: 30%;
+                                                            flex-direction: column;
+                                                        }
+
+                                                        .rewards_chart_second_row_center {
+                                                            width: 30%;
+                                                            justify-content: center;
+
+                                                            .rewards_chart_second_row_straight {
+                                                                height: 80%;
+                                                            }
+
+                                                            .rewards_chart_second_row_horizontal {
+                                                                top: calc(80% - 2.5px);
+                                                                width: calc(50% + 2.5px);
+                                                            }
+
+                                                            .rewards_chart_row_item_arrow_icon {
+                                                                top: calc(80% + 1.5px);
+                                                                left: 0;
+                                                                transform: translate(0px, -50%);
                                                             }
                                                         }
                                                     }
@@ -335,73 +537,191 @@ body {
 
                                                         .rewards_chart_row_item_arrow {
                                                             position: relative;
-
-                                                            .rewards_chart_row_item_arrow_icon {
-                                                                position: absolute;
-
-                                                                i {
-                                                                    color: $brown;
-                                                                    font-size: 25px;
-                                                                }
-                                                            }
-
-                                                            &::before {
-                                                                content: "";
-                                                                position: absolute;
-                                                                top: 50%;
-                                                                width: 50%;
-                                                                height: 5px;
-                                                                background-color: $brown;
-                                                                border-radius: 5px;
-                                                                transform: translate(0, -50%);
-                                                            }
-
-                                                            &::after {
-                                                                content: "";
-                                                                position: absolute;
-                                                                top: 0;
-                                                                width: 5px;
-                                                                height: 50%;
-                                                                background-color: $brown;
-                                                                border-radius: 5px;
-                                                            }
+                                                            height: auto;
 
                                                             &.rewards_chart_row_item_arrow_left {
+                                                                top: auto;
+                                                                transform: translate(0px, 0%);
+
                                                                 .rewards_chart_row_item_arrow_icon {
                                                                     top: 0;
-                                                                    left: calc(50% + 1px);
                                                                     transform: translate(-50%, -50%);
                                                                 }
 
                                                                 &::before {
-                                                                    right: 0;
+                                                                    right: 0%;
+                                                                }
+
+                                                                &::after {
+                                                                    top: 0;
                                                                 }
                                                             }
 
                                                             &.rewards_chart_row_item_arrow_right {
-                                                                .rewards_chart_row_item_arrow_icon {
-                                                                    top: calc(50% + 1px);
-                                                                    left: 0%;
-                                                                    transform: translate(0%, -50%);
-                                                                }
-
-                                                                &::before {
-                                                                    left: 0;
-                                                                }
+                                                                top: auto;
                                                             }
                                                         }
                                                     }
                                                 }
-
                                             }
                                         }
                                     }
-
                                 }
-
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
 
+@media screen and (min-width: 1200px) {
+    body {
+        .main {
+            .main_content {
+
+                .main_content_item {
+                    &.category_content {
+
+                        .category_content_item {
+
+                            .category_content_item_project_information {
+
+                                .project_information_text {
+                                    .project_information_text_list {
+                                        .project_information_content {
+                                            .rewards_chart {
+                                                display: flex;
+
+                                                .rewards_chart_row {
+                                                    justify-content: center;
+                                                    width: 25%;
+
+                                                    .rewards_chart_row_item {
+                                                        width: 60%;
+                                                        padding: 20px 0;
+                                                    }
+
+                                                    &.rewards_chart_first_row {
+
+                                                        .rewards_chart_row_item_arrow {
+                                                            position: absolute;
+                                                            height: 25%;
+
+                                                            &.rewards_chart_row_item_arrow_left {
+                                                                transform: translate(0px, -100%);
+                                                            }
+
+                                                            &.rewards_chart_row_item_arrow_right {
+                                                                top: 100%;
+
+                                                                .rewards_chart_row_item_arrow_icon {
+                                                                    bottom: 100%;
+                                                                    left: calc(50% - 1px);
+                                                                    transform: translate(-50%, 50%) rotate(180deg);
+                                                                }
+
+                                                                &::before {
+                                                                    left: 50%;
+                                                                    top: calc(50% - 5px);
+                                                                }
+
+                                                                &::after {
+                                                                    top: 0;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    &.rewards_chart_second_row {
+                                                        width: 50%;
+                                                        flex-direction: column;
+
+                                                        .rewards_chart_second_row_left {
+                                                            order: 1;
+
+                                                            .rewards_chart_row_item {
+                                                                &.rewards_chart_row_item_arrow {
+                                                                    transform: rotate(-90deg);
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .rewards_chart_second_row_right {
+                                                            order: 3;
+
+                                                            .rewards_chart_row_item {
+                                                                &.rewards_chart_row_item_arrow {
+                                                                    transform: rotate(90deg);
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .rewards_chart_second_row_right,
+                                                        .rewards_chart_second_row_left {
+                                                            width: 100%;
+                                                            flex-direction: row;
+                                                        }
+
+                                                        .rewards_chart_second_row_center {
+                                                            order: 2;
+                                                            width: 85%;
+                                                            justify-content: flex-end;
+
+                                                            .rewards_chart_second_row_straight {
+                                                                height: 25px;
+                                                            }
+
+                                                            .rewards_chart_second_row_horizontal {
+                                                                top: 0;
+                                                                width: 100%;
+                                                            }
+
+                                                            .rewards_chart_row_item_arrow_icon {
+                                                                top: 100%;
+                                                                left: calc(100% - 1px);
+                                                                transform: translate(-50%, -50%) rotate(-90deg);
+                                                            }
+                                                        }
+                                                    }
+
+                                                    &.rewards_chart_third_row {
+
+                                                        .rewards_chart_row_item_arrow {
+                                                            position: absolute;
+                                                            height: 25%;
+
+                                                            &.rewards_chart_row_item_arrow_left {
+                                                                top: 0;
+                                                                transform: translate(0px, -100%);
+
+                                                                .rewards_chart_row_item_arrow_icon {
+                                                                    top: 100%;
+                                                                    transform: translate(-50%, -50%) rotate(180deg);
+                                                                }
+
+                                                                &::before {
+                                                                    right: 50%;
+                                                                }
+
+                                                                &::after {
+                                                                    top: calc(50% - 0px);
+                                                                }
+                                                            }
+
+                                                            &.rewards_chart_row_item_arrow_right {
+                                                                top: 100%;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
