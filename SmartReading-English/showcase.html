@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SRE(SmartReading-English)是提供臺灣等英語學習者閱讀英語讀本的學習平臺。SRE透過閱讀能力檢測對學習者進行英語閱讀能力評估後，再運用AI技術將學習者的英語閱讀程度和文本難度進行適性配對，並推薦適合學習者閱讀能力的英語讀本，增加學習者對英語閱讀的樂趣。當學習者閱讀文本後，可透過讀後測驗，了解自己對文本的理解程度。" />
+  <title>SmartReading-English</title>
+  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+
+  <!-- this page widgets CSS -->
+  <!-- modal -->
+  <link rel="stylesheet" href="css/jquery.modal.min.css" />
+
+  <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web.min.css">
+
+  <!-- my core CSS -->
+  <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
+</head>
+
+<body>
+  <header class="header">
+  </header>
+  <!-- <div class="slide">
+    <img src="image/photo/slide/slide_booklist_1.png" alt="">
+  </div> -->
+  <div class="main showcase">
+    <div class="tittle">
+      <h1>Reading Showcase</h1>
+    </div>
+
+    <div class="showcase_area">
+      <div class="showcase_search_area">
+        <div class="book_search_area">
+          <label class="book_search_label" for="searchbook1">書籍搜尋：</label>
+          <input name="ctl00$Content_body$searchbook1" type="text" id="searchbook1" class="book_search_input">
+          <input type="button" name="ctl00$Content_body$Bun_search" value="搜尋" id="Bun_search"
+            class="book_search_input_btn">
+        </div>
+
+        <div class="creator_search_area">
+          <label class="creator_search_label" for="searchcreator1">創作者搜尋：</label>
+          <div class="creator_search_input_btn">
+
+            <button type="button" id="searchcreator1" class="form-control">
+              <p id="searchBtn_text">全部</p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <ul>
+              <li class="dropdown_item_li dropdown_item_li_one active">全部</li>
+              <li class="dropdown_item_li dropdown_item_li_two">自己</li>
+              <li class="dropdown_item_li dropdown_item_li_three">其他人</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="showcase_area_item">
+        <div class="search_type_area">
+          <p>
+            作品型式搜尋：
+          </p>
+
+          <div class="search_type_menu">
+            <button type="button" class="search_type_menu_item search_type_menu_item_text active">
+              <p>
+                文字
+              </p>
+            </button>
+
+            <button type="button" class="search_type_menu_item search_type_menu_item_sound active">
+              <p>
+                錄音
+              </p>
+            </button>
+
+            <button type="button" class="search_type_menu_item search_type_menu_item_paint active">
+              <p>
+                繪畫
+              </p>
+            </button>
+
+            <button type="button" class="search_type_menu_item search_type_menu_item_multimedia active">
+              <p>
+                多媒體
+              </p>
+            </button>
+
+          </div>
+        </div>
+        <div class="item_showcase showcase_text">
+          <div class="item_showcase_content">
+            <div class="item_showcase_top">
+              <div class="showcase_type">
+                <p>
+                  文字
+                </p>
+              </div>
+              <div class="showcase_classification">
+                <p>
+                  老師
+                </p>
+              </div>
+              <div class="showcase_name">
+                <p>
+                  蔡羽涵
+                </p>
+              </div>
+              <div class="showcase_class">
+                <p>
+                  (公文數學 7A班)
+                </p>
+              </div>
+            </div>
+            <div class="item_showcase_bottom">
+              <div class="book_name">
+                <h4>
+                  Courage
+                </h4>
+              </div>
+
+              <div class="book_level">
+                <p>
+                  Level 5
+                </p>
+              </div>
+
+              <div class="book_value">
+                <p>
+                  SRE：442
+                </p>
+              </div>
+
+              <div class="book_time">
+                <p>
+                  完成時間：2025-06-05 11:03:01
+                </p>
+              </div>
+
+              <div class="book_toolbar">
+                <div class="book_toolbar_left">
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>1</p>
+                    </div>
+                  </div>
+
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>2</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="book_toolbar_right">
+                  <div class="book_toolbar_right_link">
+                    <a href=""><i class="fa-solid fa-eye"></i> 檢視</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item_showcase showcase_sound">
+          <div class="item_showcase_content">
+            <div class="item_showcase_top">
+              <div class="showcase_type">
+                <p>
+                  錄音
+                </p>
+              </div>
+              <div class="showcase_classification">
+                <p>
+                  老師
+                </p>
+              </div>
+              <div class="showcase_name">
+                <p>
+                  蔡羽涵
+                </p>
+              </div>
+              <div class="showcase_class">
+                <p>
+                  (公文數學 7A班)
+                </p>
+              </div>
+            </div>
+            <div class="item_showcase_bottom">
+              <div class="book_name">
+                <h4>
+                  Courage
+                </h4>
+              </div>
+
+              <div class="book_level">
+                <p>
+                  Level 5
+                </p>
+              </div>
+
+              <div class="book_value">
+                <p>
+                  SRE：442
+                </p>
+              </div>
+
+              <div class="book_time">
+                <p>
+                  完成時間：2025-06-05 11:03:01
+                </p>
+              </div>
+
+              <div class="book_toolbar">
+                <div class="book_toolbar_left">
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>1</p>
+                    </div>
+                  </div>
+
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>2</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="book_toolbar_right">
+                  <div class="book_toolbar_right_link">
+                    <a href=""><i class="fa-solid fa-eye"></i> 檢視</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item_showcase showcase_paint">
+          <div class="item_showcase_content">
+            <div class="item_showcase_top">
+              <div class="showcase_type">
+                <p>
+                  繪畫
+                </p>
+              </div>
+              <div class="showcase_classification">
+                <p>
+                  老師
+                </p>
+              </div>
+              <div class="showcase_name">
+                <p>
+                  蔡羽涵
+                </p>
+              </div>
+              <div class="showcase_class">
+                <p>
+                  (公文數學 7A班)
+                </p>
+              </div>
+            </div>
+            <div class="item_showcase_bottom">
+              <div class="book_name">
+                <h4>
+                  Courage
+                </h4>
+              </div>
+
+              <div class="book_level">
+                <p>
+                  Level 5
+                </p>
+              </div>
+
+              <div class="book_value">
+                <p>
+                  SRE：442
+                </p>
+              </div>
+
+              <div class="book_time">
+                <p>
+                  完成時間：2025-06-05 11:03:01
+                </p>
+              </div>
+
+              <div class="book_toolbar">
+                <div class="book_toolbar_left">
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>1</p>
+                    </div>
+                  </div>
+
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>2</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="book_toolbar_right">
+                  <div class="book_toolbar_right_link">
+                    <a href=""><i class="fa-solid fa-eye"></i> 檢視</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item_showcase showcase_multimedia">
+          <div class="item_showcase_content">
+            <div class="item_showcase_top">
+              <div class="showcase_type">
+                <p>
+                  多媒體
+                </p>
+              </div>
+              <div class="showcase_classification">
+                <p>
+                  老師
+                </p>
+              </div>
+              <div class="showcase_name">
+                <p>
+                  蔡羽涵
+                </p>
+              </div>
+              <div class="showcase_class">
+                <p>
+                  (公文數學 7A班)
+                </p>
+              </div>
+            </div>
+            <div class="item_showcase_bottom">
+              <div class="book_name">
+                <h4>
+                  Courage
+                </h4>
+              </div>
+
+              <div class="book_level">
+                <p>
+                  Level 5
+                </p>
+              </div>
+
+              <div class="book_value">
+                <p>
+                  SRE：442
+                </p>
+              </div>
+
+              <div class="book_time">
+                <p>
+                  完成時間：2025-06-05 11:03:01
+                </p>
+              </div>
+
+              <div class="book_toolbar">
+                <div class="book_toolbar_left">
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>1</p>
+                    </div>
+                  </div>
+
+                  <div class="book_toolbar_left_icon_area">
+                    <div class="book_toolbar_left_icon">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div class="book_toolbar_left_num">
+                      <p>2</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="book_toolbar_right">
+                  <div class="book_toolbar_right_link">
+                    <a href=""><i class="fa-solid fa-eye"></i> 檢視</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <footer>
+  </footer>
+  <script src="js/jquery-3.6.1.min.js"></script>
+
+
+  <!-- this page widgets JS -->
+  <!-- modal -->
+  <script src="js/jquery.modal.min.js"></script>
+
+  <script src="js/fontawesome-free-6.1.1.min.js"></script>
+  <script src="js/all.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      $('header').load('../header_login.html', function () {});
+      $('footer').load('footer.html', function () {});
+    });
+  </script>
+
+  <script>
+    var scrollToHeight = $(".book_area_menu").height();
+    $(".scrollTo").click(function () {
+      $("html, body").animate({
+        scrollTop: $($(this).attr("href")).offset().top - scrollToHeight
+      }, 500);
+      return false;
+    });
+  </script>
+
+  <!-- 創作者搜尋功能 -->
+  <script>
+    $(".creator_search_input_btn button").click(function () {
+      $(this).toggleClass("open");
+    });
+
+    var dropdown_item_one = $(".dropdown_item_li_one").text();
+    var dropdown_item_two = $(".dropdown_item_li_two").text();
+    var dropdown_item_three = $(".dropdown_item_li_three").text();
+
+    $(".dropdown_item_li").click(function () {
+      $(".creator_search_input_btn button").toggleClass("open");
+    });
+
+    $(".dropdown_item_li_one").click(function () {
+      document.getElementById('searchBtn_text').innerHTML = dropdown_item_one;
+      $(".dropdown_item_li").removeClass("active");
+      $(this).addClass("active");
+      searchtype = 1;
+    });
+
+    $(".dropdown_item_li_two").click(function () {
+      document.getElementById('searchBtn_text').innerHTML = dropdown_item_two;
+      $(".dropdown_item_li").removeClass("active");
+      $(this).addClass("active");
+      searchtype = 2;
+    });
+
+    $(".dropdown_item_li_three").click(function () {
+      document.getElementById('searchBtn_text').innerHTML = dropdown_item_three;
+      $(".dropdown_item_li").removeClass("active");
+      $(this).addClass("active");
+      searchtype = 3;
+    });
+  </script>
+
+  <!-- 作品型式搜尋功能 -->
+  <script>
+    $(".search_type_menu_item").click(function () {
+      $(this).toggleClass("active")
+      
+      if ($(".search_type_menu_item_text").hasClass("active")) {
+            $(".showcase_text").show();
+        } else {
+            $(".showcase_text").hide();
+        }
+
+        if ($(".search_type_menu_item_sound").hasClass("active")) {
+            $(".showcase_sound").show();
+        } else {
+            $(".showcase_sound").hide();
+        }
+
+        if ($(".search_type_menu_item_paint").hasClass("active")) {
+            $(".showcase_paint").show();
+        } else {
+            $(".showcase_paint").hide();
+        }
+
+        if ($(".search_type_menu_item_multimedia").hasClass("active")) {
+            $(".showcase_multimedia").show();
+        } else {
+            $(".showcase_multimedia").hide();
+        }
+    })
+  </script>
+
+</body>
+
+</html>

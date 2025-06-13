@@ -380,7 +380,7 @@ input[type=checkbox]:checked ~ label:after {
   transform: scale(1);
 }
 .blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item.ebook_modal_close {
-  background-color: grey;
+  background-color: #808080;
 }
 .blocker .ebook_medal_modal .navigator_area {
   position: absolute;
@@ -666,7 +666,7 @@ input[type=checkbox]:checked ~ label:after {
   text-align: center;
 }
 .blocker .recording_modal .recording_modal_content .recording_modal_button_area .recording_modal_button .recording_modal_button_item.recording_modal_close {
-  background-color: grey;
+  background-color: #808080;
 }
 .blocker .recording_modal .close-modal {
   display: none !important;
@@ -1241,6 +1241,8 @@ header .book-title {
   padding: 60px 15px 15px;
   margin-top: 12.5vh;
   border-radius: 8px;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
   transition: 0.3s ease all;
   background-position: 50% 50%;
   background-size: 20px 20px;
@@ -1456,6 +1458,8 @@ header .book-title {
   position: absolute;
   z-index: 3;
   bottom: 0px;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
 .button-area .sound {
@@ -1499,7 +1503,7 @@ header .book-title {
   margin-left: 0px;
 }
 .button-area .sound .sound-drag-line .sound-line.grey {
-  background: grey;
+  background: #808080;
 }
 .button-area .sound .sound-drag-line .sound-draggable-button {
   width: 10px;
@@ -1514,7 +1518,7 @@ header .book-title {
   position: absolute;
 }
 .button-area .sound .sound-drag-line .sound-draggable-button.grey {
-  border: 1px solid grey;
+  border: 1px solid #808080;
 }
 .button-area .button-menu ul {
   display: flex;
@@ -1706,7 +1710,7 @@ header .book-title {
   text-indent: -9999px;
   width: 40px;
   height: 25px;
-  background: grey;
+  background: #808080;
   display: block;
   border-radius: 100px;
   position: relative;
@@ -2038,7 +2042,7 @@ header .book-title {
   width: 100%;
   max-width: 150px;
   margin: 10px 0 20px;
-  background-color: grey;
+  background-color: #808080;
   border-radius: 10px;
 }
 .book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area .line {
@@ -2236,39 +2240,31 @@ header .book-title {
   }
 }
 .book-page-one .course_area {
-  width: 80%;
+  width: 100%;
+  padding: 15px 10%;
+  background-color: #f4c720;
+  margin: 0;
 }
 .book-page-one .course_area .course_name {
   width: calc(100% - 160px);
 }
 .book-page-one .course_area .course_name h4 {
+  color: #5B3716;
   word-break: break-all;
 }
 .book-page-one .answer_area {
   position: relative;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 30px 0 0;
-  margin: 0 auto 90px;
+  padding: 30px 5% 90px;
+  margin: 0 auto;
+  background-color: #fcf2ca;
 }
 .book-page-one .answer_area .answer_content_area {
   position: relative;
   width: 90%;
-  border: 1px solid #ec6c00;
   background-color: #fdf0df;
-}
-.book-page-one .answer_area .answer_content_area::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-25px, 25px);
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ec6c00;
-  background-color: #ec6c00;
-  z-index: -1;
 }
 .book-page-one .answer_area .answer_content_area::after {
   content: "";
@@ -2280,17 +2276,66 @@ header .book-title {
   height: 100%;
   border: 1px solid #ec6c00;
   background-color: #fdf0df;
-  z-index: -2;
+  border-radius: 30px;
+}
+.book-page-one .answer_area .answer_content_area .head_label {
+  position: absolute;
+  background-color: #5B3716;
+  top: 0px;
+  right: 50px;
+  z-index: 2;
+  width: 90px;
+  padding: 20px 0 0;
+}
+.book-page-one .answer_area .answer_content_area .head_label span {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+.book-page-one .answer_area .answer_content_area .head_label p {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+.book-page-one .answer_area .answer_content_area .head_label::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 45px solid #5B3716;
+  border-left: 45px solid #5B3716;
+  border-top: 5px solid #5B3716;
+  border-bottom: 15px solid transparent;
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  transform: translate(0%, 100%);
 }
 .book-page-one .answer_area .answer_content_area .answer_content_head {
+  position: relative;
+  z-index: 1;
   width: 100%;
   background-color: #ec6c00;
   display: flex;
   align-items: center;
+  border-radius: 30px 30px 0 0;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_head::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-25px, 25px);
+  width: 100%;
+  height: 100%;
+  background-color: #ec6c00;
+  z-index: -1;
+  border-radius: 30px 30px 0 0;
 }
 .book-page-one .answer_area .answer_content_area .answer_content_head .head_dot {
   display: flex;
-  margin: 0 0 0 15px;
+  margin: 0 0 0 30px;
 }
 .book-page-one .answer_area .answer_content_area .answer_content_head .head_dot .dot_item {
   width: 15px;
@@ -2300,49 +2345,21 @@ header .book-title {
   margin: 0 3px;
 }
 .book-page-one .answer_area .answer_content_area .answer_content_head .head_text {
-  padding: 15px 25px;
+  padding: 15px;
 }
 .book-page-one .answer_area .answer_content_area .answer_content_head .head_text h4 {
   color: #fff;
 }
-.book-page-one .answer_area .answer_content_area .answer_content_head .head_label {
-  position: absolute;
-  background-color: #5B3716;
-  top: 0px;
-  right: 50px;
-  z-index: 2;
-  width: 90px;
-  padding: 20px 0 0;
-}
-.book-page-one .answer_area .answer_content_area .answer_content_head .head_label span {
-  font-size: 20px;
-  display: block;
-  text-align: center;
-  color: #fff;
-}
-.book-page-one .answer_area .answer_content_area .answer_content_head .head_label p {
-  font-size: 35px;
-  font-weight: bold;
-  text-align: center;
-  color: #fff;
-}
-.book-page-one .answer_area .answer_content_area .answer_content_head .head_label::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-right: 45px solid #5B3716;
-  border-left: 45px solid #5B3716;
-  border-top: 5px solid #5B3716;
-  border-bottom: 15px solid transparent;
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  transform: translate(0%, 100%);
-}
 .book-page-one .answer_area .answer_content_area .answer_content_frame {
+  position: relative;
+  z-index: 1;
   padding: 30px;
   display: flex;
   justify-content: space-around;
+  border: 1px solid #ec6c00;
+  background-color: #fdf0df;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
 }
 .book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area {
   width: 35%;
@@ -2377,7 +2394,7 @@ header .book-title {
   line-height: 1.8;
   padding: 20px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 30px;
   resize: none;
   outline: 1px solid #5B3716;
 }
@@ -2464,24 +2481,6 @@ header .book-title {
   position: relative;
   padding: 0;
 }
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .chatbot_bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .chatbot_bg img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .chatbot_bg::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  opacity: 0.6;
-}
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area {
   width: 100%;
   position: relative;
@@ -2497,13 +2496,14 @@ header .book-title {
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
   padding: 70px 0 0;
   position: relative;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar {
   width: 55px;
+  line-height: 0;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar img {
   border-radius: 50%;
@@ -2523,7 +2523,6 @@ header .book-title {
   align-items: center;
   flex-wrap: wrap;
   padding: 20px 15px;
-  border-radius: 5px;
   position: relative;
   width: auto;
   max-width: calc(80% - 70px);
@@ -2608,23 +2607,8 @@ header .book-title {
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_left .dialogue_avatar {
   margin: 0 15px 0 0;
 }
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_left .dialog_box::before {
-  border-width: 8px 0px 8px 8px;
-  left: 0;
-  transform: translate(-100%, -50%);
-  border-right: 8px solid #fff;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid transparent;
-  border-top: 8px solid transparent;
-}
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_left .dialog_box::after {
-  border-width: 10px 0px 10px 10px;
-  left: 0;
-  transform: translate(-100%, -50%);
-  border-right: 10px solid #ec6c00;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-top: 10px solid transparent;
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_left .dialog_box {
+  border-radius: 50px 50px 50px 0;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right {
   justify-content: flex-end;
@@ -2635,28 +2619,11 @@ header .book-title {
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box {
   order: 1;
+  border-radius: 50px 50px 0 50px;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box .dialog_box_icon {
   order: 3;
   right: 0px;
-}
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box::before {
-  border-width: 8px 8px 8px 0px;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #fff;
-  border-top: 8px solid transparent;
-}
-.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box::after {
-  border-width: 10px 10px 10px 0px;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #ec6c00;
-  border-top: 10px solid transparent;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box .sound_bar {
   order: 2;
@@ -2706,6 +2673,11 @@ header .book-title {
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon:hover {
   transform: scale(1);
   background-color: #EB615C;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon:disabled {
+  transform: scale(1);
+  background-color: #808080;
+  cursor: auto;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area.recording_area {
   display: flex;
@@ -2773,7 +2745,7 @@ header .book-title {
 }
 @media (max-width: 992px) {
   .book-page-one .course_area {
-    width: 90%;
+    padding: 15px 5%;
   }
   .book-page-one .answer_area {
     flex-direction: column;
@@ -2782,6 +2754,9 @@ header .book-title {
     width: 100%;
   }
   .book-page-one .answer_area .answer_content_area::before, .book-page-one .answer_area .answer_content_area::after {
+    display: none;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_head::before {
     display: none;
   }
   .book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area {
