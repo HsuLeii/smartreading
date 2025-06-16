@@ -9,7 +9,6 @@
                 justify-content: flex-end;
                 margin: 0 0 30px;
 
-
                 .book_search_area {
                     display: flex;
                     align-items: center;
@@ -113,10 +112,11 @@
                 display: flex;
                 justify-content: flex-start;
                 flex-wrap: wrap;
+                margin: 0 auto 40px;
 
                 .search_type_area{
                     width: 100%;
-                    margin: 0 auto 40px;
+                    margin: 0 calc(3.33333% / 2) 40px;
 
                     .search_type_menu{
                         margin: 10px 0 0;
@@ -149,7 +149,7 @@
                     transform: scale(0.95);
                     background-color: $white;
                     width: 30%;
-                    margin: 40px calc(3.33333% / 2) 0;
+                    margin: 40px calc(3.33333% / 2) 0px;
 
                     &:hover {
                         transform: scale(0.98);
@@ -222,8 +222,9 @@
 
                             .book_toolbar {
                                 display: flex;
-                                justify-content: space-between;
                                 margin: 30px auto 0;
+                                flex-direction: column;
+
 
                                 .book_toolbar_left {
                                     display: flex;
@@ -244,12 +245,19 @@
                                 }
 
                                 .book_toolbar_right {
+                                    margin: 30px auto 0;
                                     .book_toolbar_right_link {
+                                        width: 100%;
                                         a {
+                                            display: block;
                                             color: $main_color;
                                             border: 1px solid $main_color;
                                             border-radius: 10px;
                                             padding: 5px 10px;
+
+                                            i{
+                                                margin: 0 5px 0 0;
+                                            }
 
                                             &:hover {
                                                 color: $white;
@@ -272,20 +280,72 @@
 
 @media screen and (max-width: 1024px) {
     .main {
-        &.grade {}
+        &.showcase {
+            .showcase_area{
+                .showcase_search_area{
+                    flex-direction: column;
+                    align-items: flex-end;
+                    
+                    .book_search_area{
+                        margin: 0 0 15px;
+                    }
+
+                    .creator_search_area{
+                        margin: 0;
+                    }
+                }
+
+                .showcase_area_item{
+                    .search_type_area{
+                        margin: 0 calc(5% / 2) 40px;
+                    }
+
+                    .item_showcase{
+                        width: 45%;
+                        margin: 40px calc(5% / 2) 0;
+
+                        .item_showcase_content{
+                            .item_showcase_bottom{
+                                .book_toolbar{
+                                    flex-direction: column;
+
+                                    .book_toolbar_right{
+                                        margin: 30px 0 0;
+
+                                        .book_toolbar_right_link{
+                                            a{
+                                                width: 100%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
     .main {
-        &.grade {
-            width: 80%;
+        &.showcase {
+            .showcase_area{
+                .showcase_area_item{
+                    .item_showcase{
+                        width: 100%;
+                        margin: 40px auto 0;
+                    }
+                }
+            }
         }
     }
 }
 
 @media screen and (max-width: 499px) {
-    .main {
-        &.grade {}
-    }
 }
