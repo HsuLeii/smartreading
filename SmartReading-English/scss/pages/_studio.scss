@@ -17,6 +17,7 @@
                 }
 
                 .studio_content_item {
+                    position: relative;
                     margin: 30px auto 60px;
 
                     .writing_type_area {
@@ -109,17 +110,17 @@
                             }
                         }
 
-                        .studio_creation_input{
-                                width: 100%;
-    border: 1px solid $brown;
-    padding: 5px 10px;
-    outline: 0;
-    border-radius: 10px;
+                        .studio_creation_input {
+                            width: 100%;
+                            border: 1px solid $brown;
+                            padding: 5px 10px;
+                            outline: 0;
+                            border-radius: 10px;
 
-    &:focus{
-            border: 1px solid $main_color;
-    color: $main_color;
-    }
+                            &:focus {
+                                border: 1px solid $main_color;
+                                color: $main_color;
+                            }
                         }
 
                         .studio_text_submit {
@@ -158,12 +159,92 @@
                                 transform: translate(-50%, -50%);
                                 width: 80%;
 
+                                .upload_paint {
+                                    .upload_paint_area {
+                                        .upload_paint_area_answer {
+                                            canvas {
+                                                height: 100%;
+                                                z-index: 1;
+                                                background-color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+
                                 .svg_icon {
                                     margin: 0 auto 20px;
                                     text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
 
                                     p {
                                         font-size: 80px;
+                                    }
+                                }
+
+                                .sound_bar_area {
+                                    width: 60px;
+                                    height: 60px;
+                                    display: flex;
+                                    align-items: center;
+                                    margin: 40px;
+
+                                    &.show {
+                                        display: flex;
+                                    }
+
+                                    &.play_animation {
+                                        .bar {
+                                            animation: sound 0ms -800ms linear infinite alternate;
+                                        }
+                                    }
+
+                                    .bar {
+                                        background-color: $brown;
+                                        height: 0px;
+                                        width: 3px;
+                                        margin: 0px 1px;
+
+                                        &:nth-child(1) {
+                                            animation-duration: 474ms;
+                                        }
+
+                                        &:nth-child(2) {
+                                            animation-duration: 433ms;
+                                        }
+
+                                        &:nth-child(3) {
+                                            animation-duration: 407ms;
+                                        }
+
+                                        &:nth-child(4) {
+                                            animation-duration: 458ms;
+                                        }
+
+                                        &:nth-child(5) {
+                                            animation-duration: 400ms;
+                                        }
+
+                                        &:nth-child(6) {
+                                            animation-duration: 427ms;
+                                        }
+
+                                        &:nth-child(7) {
+                                            animation-duration: 441ms;
+                                        }
+
+                                        &:nth-child(8) {
+                                            animation-duration: 419ms;
+                                        }
+
+                                        &:nth-child(9) {
+                                            animation-duration: 487ms;
+                                        }
+
+                                        &:nth-child(10) {
+                                            animation-duration: 442ms;
+                                        }
                                     }
                                 }
 
@@ -175,16 +256,56 @@
                         }
                     }
 
-                    .studio_text_submit {
-                        display: block;
-                        margin: 15px 0 15px auto;
+                    .studio_content_item_btn {
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-wrap: wrap;
+
+                        .studio_function_btn {
+                            color: $main_color;
+                            font-weight: bold;
+
+                            .studio_btn_icon {
+                                margin: 0 15px 0 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                i {
+                                    color: $main_color;
+                                    font-size: 25px;
+                                }
+                            }
+
+                            .studio_btn_text {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            &:hover {
+                                color: $white;
+
+                                p,
+                                i {
+                                    color: $white;
+                                }
+                            }
+
+                        }
+
+                        .studio_function_btn,
+                        .studio_text_submit {
+                            display: flex;
+                            align-items: center;
+                            margin: 15px 0 15px 20px;
                             border: 1px solid $main_color;
                             border-radius: 10px;
                             padding: 5px 10px;
                             cursor: pointer;
                             background-color: $white;
 
-                            p{
+                            p {
                                 color: $main_color;
                                 font-weight: bold;
                             }
@@ -192,21 +313,275 @@
                             &:hover {
                                 background-color: $main_color;
 
-                                p{
+                                p {
                                     color: $white;
                                 }
                             }
+
+                            &:disabled {
+                                background-color: $grey;
+                                color: $white;
+                                border: 1px solid $grey;
+                                cursor: auto;
+
+                                p,
+                                i {
+                                    color: $white;
+                                }
+
+                                &:hover {
+                                    background-color: $grey;
+                                }
+                            }
                         }
+                    }
+
+
                 }
             }
 
 
 
         }
+
+
     }
 }
 
-@media screen and (max-width: 1200px) {}
+@keyframes sound {
+    0% {
+        opacity: .55;
+        height: 3px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 60px;
+    }
+}
+
+.jquery-modal {
+    .modal {
+        &.studio_palette_modal {
+            height: auto;
+            opacity: 1;
+        }
+    }
+}
+
+.modal {
+
+    &.studio_palette_modal {
+        padding: 0;
+        max-width: none;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        box-shadow: none;
+        background-color: transparent;
+
+        .modal_content {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            margin: 40px auto;
+            box-shadow: 0 0 10px $black;
+
+            .modal-header {
+                .modal-title {
+                    width: 100%;
+                    color: $white;
+                    padding: 10px 20px;
+                    background-color: $main_color;
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+
+            .modal-body {
+                .draw-panel {
+                    background-color: $white;
+                    display: flex;
+                    padding: 10px;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        display: table;
+                    }
+
+                    &::after {
+                        clear: both;
+                    }
+
+                    .draw-panel-left {
+                        width: 80px;
+
+                        .draw-panel-left-item {
+                            margin: 15px auto;
+
+                            .draw-panel-left-item-text {
+                                p {
+                                    border-bottom: 1px solid $brown;
+                                    padding: 5px;
+                                    margin: 5px auto;
+                                    text-align: center;
+                                }
+                            }
+
+                            .draw-panel-left-item-btn {
+                                display: flex;
+                                justify-content: center;
+                                flex-wrap: wrap;
+
+                                .draw-panel-btn {
+                                    width: 25px;
+                                    height: 25px;
+                                    text-align: center;
+                                    padding: 3px;
+                                    border-radius: 5px;
+                                    margin: 3px 5px;
+
+                                    &:disabled {
+                                        background-color: $grey;
+                                        opacity: 0.5;
+
+                                        &.btn-draw-tool {
+                                            i {
+                                                color: $white;
+                                            }
+
+                                            &:focus,
+                                            &:active,
+                                            &.focus,
+                                            &.active {
+                                                background-color: $grey;
+                                                border: 1px solid transparent;
+                                            }
+                                        }
+                                    }
+
+                                    &.btn-draw-tool {
+                                        i {
+                                            color: $brown;
+                                        }
+                                    }
+
+                                    &.btn-draw-size {
+                                        width: 100%;
+
+                                        .draw-size {
+                                            display: block;
+                                            background-color: $black;
+                                            border-radius: 5px;
+                                        }
+                                    }
+
+                                    &.btn-draw-color {
+                                        .draw-color {
+                                            display: block;
+                                            height: 100%;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                        }
+                                    }
+
+                                    &:focus,
+                                    &:active,
+                                    &.focus,
+                                    &.active {
+                                        background-color: lighten($brown, 45%);
+                                        border: 1px solid $brown;
+                                    }
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+                    .draw-panel-right {
+                        width: calc(100% - 90px);
+                        min-height: 545px;
+                        border: 1px solid $brown;
+                        background-color: $white;
+                        margin: 0 0 0 10px;
+                    }
+                }
+            }
+
+            .modal-footer {
+                display: flex;
+                justify-content: flex-end;
+                background-color: $white;
+                border-radius: 0 0 5px 5px;
+                padding: 0 10px;
+
+                .draw-panel-footer-btn {
+                    display: block;
+                    margin: 15px 0 15px 15px;
+                    border: 1px solid $main_color;
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    background-color: $white;
+
+                    p {
+                        color: $main_color;
+                        font-weight: bold;
+                    }
+
+                    &:hover {
+                        background-color: $main_color;
+
+                        p {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .close-modal {
+                display: block;
+            }
+        }
+
+        .close-modal {
+            display: none;
+        }
+    }
+
+    canvas {
+        position: relative;
+        z-index: 1;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .modal {
+
+        &.studio_palette_modal {
+
+            .modal_content {
+
+                .modal-body {
+                    .draw-panel {
+
+                        .draw-panel-left {
+                            width: 160px;
+                        }
+
+                        .draw-panel-right {
+                            width: calc(100% - 170px);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .main {
@@ -264,49 +639,20 @@
 
 @media screen and (max-width: 768px) {
     .main {
-        &.showcase {
-            .showcase_area {
-                .showcase_area_item {
-                    .item_showcase {
-                        width: 100%;
-                        margin: 40px auto 0;
-                    }
-                }
-            }
-        }
-    }
+    &.studio {
+        .studio_area {
+            .studio_content_area {
+                .studio_content_item {
 
-    .modal {
-        &.showcase_modal {
-            .modal_content {
-                .modal_body {
-                    .item_showcase_portfolio {
-                        .item_showcase_portfolio_item {
-                            .portfolio_content {
-                                &.item_showcase_portfolio_sound {
-                                    .player_area {
-                                        flex-direction: column;
-
-                                        .play_area {
-                                            margin: 0 0 20px 0;
-                                        }
-
-                                        .sound_area {
-                                            position: relative;
-                                            top: auto;
-                                            right: auto;
-                                        }
-
-                                        /* input range 播放樣式 */
-                                        input[name="playRange"] {
-                                            margin: 15px 0 0;
-                                            width: 100%;
-                                        }
+                    .studio_content_item_frame {
+                        .studio_content_item_frame_content {
+                            .studio_content_item_frame_content_illustrate {
+                                .svg_icon {
+                                    p {
+                                        font-size: 60px;
                                     }
-
                                 }
                             }
-
                         }
                     }
                 }
@@ -314,5 +660,128 @@
         }
     }
 }
+    .modal {
 
-@media screen and (max-width: 499px) {}
+        &.studio_palette_modal {
+
+            .modal_content {
+
+                .modal-body {
+                    .draw-panel {
+                        flex-direction: column;
+
+
+
+                        .draw-panel-left {
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+
+                            .draw-panel-left-item {
+                                margin: 8px auto;
+
+                                &.draw-panel-left-item-tool {
+                                    width: 80px;
+                                }
+
+                                &.draw-panel-left-item-size {
+                                    width: calc(100% - 100px);
+                                }
+
+                                &.draw-panel-left-item-color {
+                                    width: 100%;
+                                }
+
+                                .draw-panel-left-item-btn {
+                                    justify-content: flex-start;
+
+                                    .draw-panel-btn.btn-draw-size {
+                                        width: calc(50% - 10px);
+                                    }
+                                }
+                            }
+                        }
+
+                        .draw-panel-right {
+                            width: 100%;
+                            margin: 0 auto;
+                            min-height: 300px;
+
+                            canvas {
+                                height: 100% !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .main {
+        &.studio {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .main {
+        &.studio {
+
+            .studio_area {
+                .studio_content_area {
+
+                    .studio_content_item {
+
+                        .studio_content_item_btn {
+
+                            .studio_function_btn {
+                                flex-direction: column;
+                                justify-content: center;
+
+                                .studio_btn_icon {
+                                    margin: 5px auto;
+
+                                    i {
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+
+                            .studio_function_btn,
+                            .studio_text_submit {
+                                margin: 15px 0 0px 10px;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .modal {
+
+        &.studio_palette_modal {
+
+            .modal_content {
+
+                .modal-body {
+                    .draw-panel {
+                        .draw-panel-right {
+                            min-height: 150px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

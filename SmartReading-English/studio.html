@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web.min.css">
 
-    <link rel="stylesheet" href="https://smartreading.net/v3/Content/css/DRAWPANEL/draw-panel.css">
+    <!-- <link rel="stylesheet" href="https://smartreading.net/v3/Content/css/DRAWPANEL/draw-panel.css"> -->
 
     <!-- my core CSS -->
     <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
@@ -68,7 +68,6 @@
                     </div>
                 </div>
 
-
                 <div class="studio_content_area_item">
                     <div class="studio_content_title">
                         <h4>
@@ -81,10 +80,40 @@
                             <div class="studio_content_item_frame_content">
                                 <div class="studio_content_item_frame_content_illustrate">
                                     <div class="svg_icon">
-                                        <p>
-                                            <i class="fa-solid fa-microphone-lines"></i>
-                                        </p>
+                                            <div class="sound_bar_area">
+                                                <!-- 播放時class加上"play_animation" -->
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                            </div>
+
+                                            <p>
+                                                <i class="fa-solid fa-microphone-lines"></i>
+                                            </p>
+
+                                            <div class="sound_bar_area">
+                                                <!-- 播放時class加上"play_animation" -->
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                                <div class="bar"></div>
+                                            </div>
                                     </div>
+
+
                                     <p>
                                         將你的創作化為聲音記錄下來吧！
                                     </p>
@@ -92,26 +121,28 @@
                             </div>
                         </div>
 
-
-                        <div class="studio_content_item">
-                            <div class="studio_content_item_frame">
-                                <div class="studio_content_item_frame_content">
-                                    <div class="studio_content_item_frame_content_illustrate">
-                                        <div class="svg_icon">
-                                            <p>
-                                                <i class="fa-solid fa-palette"></i>
-                                            </p>
-                                        </div>
-                                        <p>
-                                            將你的創作化為圖畫記錄下來吧！
-                                        </p>
-
-                                        <a href="#div_palette" rel="modal:open" class="item_showcase showcase_text" style="display: none;">
-                                            開始繪畫
-                                        </a>
-                                    </div>
+                        <div class="studio_content_item_btn">
+                            <button id="Btn_record" atwork="0" class="studio_function_btn record_area_item">
+                                <div class="studio_btn_icon">
+                                    <i class="fa-solid fa-microphone-lines"></i>
                                 </div>
-                            </div>
+
+                                <div class="studio_btn_text">
+                                    <p id="recordText">錄製聲音</p>
+                                    <p id="recordTextEnglish">Voice recording</p>
+                                </div>
+                            </button>
+
+                            <button id="Btn_playRec" disabled="disabled" class="studio_function_btn play_area_item">
+                                <div class="studio_btn_icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+
+                                <div class="studio_btn_text">
+                                    <p id="playText">播放錄音</p>
+                                    <p id="playTextEnglish">Play recording</p>
+                                </div>
+                            </button>
 
                             <button class="studio_text_submit" type="submit">
                                 <p>
@@ -119,139 +150,279 @@
                                 </p>
                             </button>
                         </div>
+
                     </div>
 
-                    <div class="studio_content_area_item">
-                        <div class="studio_content_title">
-                            <h4>
-                                線上創作廊 Online Creation Hub
-                            </h4>
+                    <div class="studio_content_item">
+                        <div class="studio_content_item_frame">
+                            <div class="studio_content_item_frame_content">
+                                <div class="studio_content_item_frame_content_illustrate paint">
+
+                                    <div class="upload_paint">
+                                        <div class="upload_paint_area">
+                                            <div id="div_review" class="upload_paint_area_answer"
+                                                style="display: none;">
+                                                <canvas id="canvas_view" width="350" height="200"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="svg_icon">
+                                        <p>
+                                            <i class="fa-solid fa-palette"></i>
+                                        </p>
+                                    </div>
+                                    <p>
+                                        將你的創作化為圖畫記錄下來吧！
+                                    </p>
+
+
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="studio_content_item">
-                            <div class="input_group">
-                                <input type="text" id="CreationInput" class="studio_creation_input"
-                                    placeholder="輸入創作連結 https://" aria-label="輸入創作連結 https://">
+                        <div class="studio_content_item_btn">
+                            <a href="#div_palette" rel="modal:open" onclick="OpenPalette()" class="studio_function_btn">
+                                <div class="studio_btn_icon">
+                                    <i class="fa-solid fa-paintbrush"></i>
+                                </div>
+                                <div class="studio_btn_text">
+                                    <p class="studio_btn_text_play_tw">開始繪畫</p>
+                                    <p class="studio_btn_text_play_en">painting</p>
+                                </div>
+                            </a>
+
+                            <button class="studio_text_submit" type="submit">
+                                <p>
+                                    送出
+                                </p>
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="studio_content_area_item">
+                    <div class="studio_content_title">
+                        <h4>
+                            線上創作廊 Online Creation Hub
+                        </h4>
+                    </div>
+
+                    <div class="studio_content_item">
+                        <div class="input_group">
+                            <input type="text" id="CreationInput" class="studio_creation_input"
+                                placeholder="輸入創作連結 https://" aria-label="輸入創作連結 https://">
+                            <div class="studio_content_item_btn">
                                 <button class="studio_text_submit" type="button">
                                     <p>
                                         送出
                                     </p>
                                 </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
+    <div class="modal studio_modal studio_palette_modal" id="div_palette" style="display: block;">
+        <div class="modal_content">
+            <div class="modal-header">
+                <h4 id="h4_title" class="modal-title">繪圖面板</h4>
+            </div>
+            <div class="modal-body">
+                <div class="draw-panel">
+                    <div class="draw-panel-left">
+                        <div class="draw-panel-left-item draw-panel-left-item-tool">
+                            <div class="draw-panel-left-item-text">
+                                <p id="h5_1">工具</p>
+                            </div>
+                            <div class="draw-panel-left-item-btn">
+                                <button id="drawMode_1" class="draw-panel-btn btn-draw-tool active" type="button"
+                                    onclick="drawMode(1)">
+                                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                                </button>
 
-    <div class="modal showcase_modal" id="div_palette" style="display: none;">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Close()"><span
-                    aria-hidden="true">×</span></button>
-            <h4 id="h4_title" class="modal-title">繪製面版&nbsp;<small>快將你的感動或觀察。化為圖畫記錄下來吧！</small></h4>
-            <input id="hidden_order" type="hidden">
-        </div>
-        <div class="modal-body">
-            <div class="draw-panel">
-                <div class="draw-panel-left">
-                    <h5 id="h5_1">工具</h5>
-                    <button id="drawMode_1" class="btn btn-default btn-xs btn-draw-tool active" type="button"
-                        onclick="drawMode(1)"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
-                    <button id="drawMode_0" class="btn btn-default btn-xs btn-draw-tool" type="button"
-                        onclick="drawMode(0)"><i class="fa fa-eraser fa-lg" aria-hidden="true"></i></button>
-                    <button id="btn_undo" class="btn btn-default btn-xs btn-draw-tool" type="button" disabled="disabled"
-                        onclick="undo()"><i class="fa fa-reply" aria-hidden="true"></i></button>
-                    <button id="btn_redo" class="btn btn-default btn-xs btn-draw-tool" type="button" disabled="disabled"
-                        onclick="redo()"><i class="fa fa-share" aria-hidden="true"></i></button>
-                    <h5 id="h5_2">大小</h5>
-                    <button id="size_0" class="btn btn-block btn-draw-size" type="button" onclick="drawSize(2,0)"><span
-                            class="draw-size" style="height:2px;"></span></button>
-                    <button id="size_1" class="btn btn-block btn-draw-size" type="button" onclick="drawSize(5,1)"><span
-                            class="draw-size" style="height:5px;"></span></button>
-                    <button id="size_2" class="btn btn-block btn-draw-size" type="button" onclick="drawSize(7,2)"><span
-                            class="draw-size" style="height:7px;"></span></button>
-                    <button id="size_3" class="btn btn-block btn-draw-size active" type="button"
-                        onclick="drawSize(9,3)"><span class="draw-size" style="height:9px;"></span></button>
-                    <h5 id="h5_3">色彩</h5>
-                    <button id="color_0" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#000',0)"><span class="draw-color"
-                            style="background-color: #000;"></span></button>
-                    <button id="color_1" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#FFF',1)"><span class="draw-color"
-                            style="background-color: #FFF;"></span></button>
-                    <button id="color_2" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#666',2)"><span class="draw-color"
-                            style="background-color: #666;"></span></button>
-                    <button id="color_3" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#CCC',3)"><span class="draw-color"
-                            style="background-color: #CCC;"></span></button>
-                    <button id="color_4" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#900',4)"><span class="draw-color"
-                            style="background-color: #900;"></span></button>
-                    <button id="color_5" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#C90',5)"><span class="draw-color"
-                            style="background-color: #C90;"></span></button>
-                    <button id="color_6" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#F00',6)"><span class="draw-color"
-                            style="background-color: #F00;"></span></button>
-                    <button id="color_7" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#FCC',7)"><span class="draw-color"
-                            style="background-color: #FCC;"></span></button>
-                    <button id="color_8" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#F63',8)"><span class="draw-color"
-                            style="background-color: #F63;"></span></button>
-                    <button id="color_9" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#FC0',9)"><span class="draw-color"
-                            style="background-color: #FC0;"></span></button>
-                    <button id="color_10" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#FF0',10)"><span class="draw-color"
-                            style="background-color: #FF0;"></span></button>
-                    <button id="color_11" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#FFC',11)"><span class="draw-color"
-                            style="background-color: #FFC;"></span></button>
-                    <button id="color_12" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#393',12)"><span class="draw-color"
-                            style="background-color: #393;"></span></button>
-                    <button id="color_13" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#CF3',13)"><span class="draw-color"
-                            style="background-color: #CF3;"></span></button>
-                    <button id="color_14" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#09F',14)"><span class="draw-color"
-                            style="background-color: #09F;"></span></button>
-                    <button id="color_15" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#9CF',15)"><span class="draw-color"
-                            style="background-color: #9CF;"></span></button>
-                    <button id="color_16" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#33C',16)"><span class="draw-color"
-                            style="background-color: #33C;"></span></button>
-                    <button id="color_17" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#69C',17)"><span class="draw-color"
-                            style="background-color: #69C;"></span></button>
-                    <button id="color_18" class="btn btn-default btn-xs btn-draw-color" type="button"
-                        onclick="drawColor('#939',18)"><span class="draw-color"
-                            style="background-color: #939;"></span></button>
-                    <button id="color_19" class="btn btn-default btn-xs btn-draw-color active" type="button"
-                        onclick="drawColor('#CCF',19)"><span class="draw-color"
-                            style="background-color: #CCF;"></span></button>
-                </div>
-                <div id="div_draw" class="draw-panel-right">
-                    <!--  隨意畫-->
-                    <canvas id="myCanvas" width="415" height="280" style="display:block">
-                    </canvas>
-                    <!-- 隨意畫-->
+                                <button id="drawMode_0" class="draw-panel-btn btn-draw-tool" type="button"
+                                    onclick="drawMode(0)">
+                                    <i class="fa fa-eraser fa-lg" aria-hidden="true"></i>
+                                </button>
+
+                                <button id="btn_undo" class="draw-panel-btn btn-draw-tool" type="button"
+                                    disabled="disabled" onclick="undo()">
+                                    <i class="fa fa-reply" aria-hidden="true"></i>
+                                </button>
+
+                                <button id="btn_redo" class="draw-panel-btn btn-draw-tool" type="button"
+                                    disabled="disabled" onclick="redo()">
+                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="draw-panel-left-item draw-panel-left-item-size">
+                            <div class="draw-panel-left-item-text">
+                                <p id="h5_2">筆畫</p>
+                            </div>
+                            <div class="draw-panel-left-item-btn">
+                                <button id="size_0" class="draw-panel-btn btn-draw-size" type="button"
+                                    onclick="drawSize(2,0)">
+                                    <span class="draw-size" style="height:2px;"></span>
+                                </button>
+
+                                <button id="size_1" class="draw-panel-btn btn-draw-size" type="button"
+                                    onclick="drawSize(5,1)">
+                                    <span class="draw-size" style="height:5px;"></span>
+                                </button>
+
+                                <button id="size_2" class="draw-panel-btn btn-draw-size" type="button"
+                                    onclick="drawSize(7,2)">
+                                    <span class="draw-size" style="height:7px;"></span>
+                                </button>
+
+                                <button id="size_3" class="draw-panel-btn btn-draw-size active" type="button"
+                                    onclick="drawSize(9,3)">
+                                    <span class="draw-size" style="height:9px;"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="draw-panel-left-item draw-panel-left-item-color">
+                            <div class="draw-panel-left-item-text">
+                                <p id="h5_3">顏色</p>
+                            </div>
+                            <div class="draw-panel-left-item-btn">
+                                <button id="color_0" class="draw-panel-btn btn-draw-color active" type="button"
+                                    onclick="drawColor('#000',0)">
+                                    <span class="draw-color" style="background-color: #000;"></span>
+                                </button>
+
+                                <button id="color_1" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#FFF',1)">
+                                    <span class="draw-color" style="background-color: #FFF;"></span>
+                                </button>
+
+                                <button id="color_2" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#666',2)">
+                                    <span class="draw-color" style="background-color: #666;"></span>
+                                </button>
+
+                                <button id="color_3" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#CCC',3)">
+                                    <span class="draw-color" style="background-color: #CCC;"></span>
+                                </button>
+
+                                <button id="color_4" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#900',4)">
+                                    <span class="draw-color" style="background-color: #900;"></span>
+                                </button>
+
+                                <button id="color_5" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#C90',5)">
+                                    <span class="draw-color" style="background-color: #C90;"></span>
+                                </button>
+
+                                <button id="color_6" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#F00',6)">
+                                    <span class="draw-color" style="background-color: #F00;"></span>
+                                </button>
+
+                                <button id="color_7" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#FCC',7)">
+                                    <span class="draw-color" style="background-color: #FCC;"></span>
+                                </button>
+
+                                <button id="color_8" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#F63',8)">
+                                    <span class="draw-color" style="background-color: #F63;"></span>
+                                </button>
+
+                                <button id="color_9" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#FC0',9)">
+                                    <span class="draw-color" style="background-color: #FC0;"></span>
+                                </button>
+
+                                <button id="color_10" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#FF0',10)">
+                                    <span class="draw-color" style="background-color: #FF0;"></span>
+                                </button>
+
+                                <button id="color_11" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#FFC',11)">
+                                    <span class="draw-color" style="background-color: #FFC;"></span>
+                                </button>
+
+                                <button id="color_12" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#393',12)">
+                                    <span class="draw-color" style="background-color: #393;"></span>
+                                </button>
+
+                                <button id="color_13" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#CF3',13)">
+                                    <span class="draw-color" style="background-color: #CF3;"></span>
+                                </button>
+
+                                <button id="color_14" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#09F',14)">
+                                    <span class="draw-color" style="background-color: #09F;"></span>
+                                </button>
+
+                                <button id="color_15" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#9CF',15)">
+                                    <span class="draw-color" style="background-color: #9CF;"></span>
+                                </button>
+
+                                <button id="color_16" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#33C',16)">
+                                    <span class="draw-color" style="background-color: #33C;"></span>
+                                </button>
+
+                                <button id="color_17" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#69C',17)">
+                                    <span class="draw-color" style="background-color: #69C;"></span>
+                                </button>
+
+                                <button id="color_18" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#939',18)">
+                                    <span class="draw-color" style="background-color: #939;"></span>
+                                </button>
+
+                                <button id="color_19" class="draw-panel-btn btn-draw-color" type="button"
+                                    onclick="drawColor('#CCF',19)">
+                                    <span class="draw-color" style="background-color: #CCF;"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div_draw" class="draw-panel-right">
+                        <!--  隨意畫-->
+                        <canvas id="myCanvas" width="415" height="280" style="display:block">
+                        </canvas>
+                        <!-- 隨意畫-->
+                    </div>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button id="btn_clean" class="draw-panel-footer-btn" onclick="clenCanvas()">
+                    <p>
+                        清空
+                    </p>
+                </button>
+                <button id="btn_complete" type="button" class="draw-panel-footer-btn" onclick="saveDraw()">
+                    <p>
+                        完成
+                    </p>
+                </button>
+            </div>
+
+            <a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
         </div>
-        <div class="modal-footer">
-            <button id="btn_clean" type="button" class="btn btn-default" onclick="clenCanvas()">清空</button>
-            <button id="btn_close" type="button" class="btn btn-default" onclick="Close()">關閉</button>
-            <button id="btn_complete" type="button" class="btn btn-info" onclick="saveDraw()">完成</button>
-        </div>
+
     </div>
 
     <footer>
@@ -264,10 +435,6 @@
 
     <script src="js/fontawesome-free-6.1.1.min.js"></script>
     <script src="js/all.js"></script>
-
-
-        <!-- iframe高度-->
-    <script src="https://smartreading.net/v3/Content/js/jquery.autoheight.js"></script>
 
 
     <script>
@@ -323,11 +490,90 @@
         });
     </script>
 
+<!-- 錄音功能 -->
+    <script>
+        //點選錄製聲音跟播放顯示聲音動態
+    $(".record_area_item").click(function () {
+        $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.studio_btn_icon').children('i').hasClass("fa-microphone-lines")) { //原本是播放
+            $(this).children('.studio_btn_icon').children('i').addClass("fa-stop");
+            $(this).children('.studio_btn_icon').children('i').removeClass("fa-microphone-lines");
+            $(".listen_sentence_btn").attr("disabled", true);
+            $(".play_area_item").attr("disabled", true);
+            $(this).addClass("active");
+        } else { //原本是停止
+            $(this).children('.studio_btn_icon').children('i').addClass("fa-microphone-lines");
+            $(this).children('.studio_btn_icon').children('i').removeClass("fa-stop");
+            $(".listen_sentence_btn").attr("disabled", false);
+            $(".play_area_item").attr("disabled", false);
+            $(this).removeClass("active");
+        }
+
+        var recordText = document.getElementById("recordText");
+        if (recordText.innerHTML === "停止錄製") {
+            recordText.innerHTML = "錄製聲音";
+        } else {
+            recordText.innerHTML = "停止錄製";
+        }
+
+        var recordTextEnglish = document.getElementById("recordTextEnglish");
+        if (recordTextEnglish.innerHTML === "Stop recording") {
+            recordTextEnglish.innerHTML = "Voice recording";
+        } else {
+            recordTextEnglish.innerHTML = "Stop recording";
+        }
+    });
+
+    //點選播放跟播放顯示聲音動態
+    $(".play_area_item").click(function () {
+        $(".sound_bar_area").toggleClass("play_animation");
+        if ($(this).children('.studio_btn_icon').children('i').hasClass("fa-play")) { //原本是播放
+            $(this).children('.studio_btn_icon').children('i').addClass("fa-stop");
+            $(this).children('.studio_btn_icon').children('i').removeClass("fa-play");
+            $(".record_area_item").attr("disabled", true);
+            $(".listen_sentence_btn").attr("disabled", true);
+            $(this).addClass("active");
+        } else { //原本是停止
+            $(this).children('.studio_btn_icon').children('i').addClass("fa-play");
+            $(this).children('.studio_btn_icon').children('i').removeClass("fa-stop");
+            $(".record_area_item").attr("disabled", false);
+            $(".listen_sentence_btn").attr("disabled", false);
+            $(this).removeClass("active");
+        }
+
+        var playText = document.getElementById("playText");
+        if (playText.innerHTML === "停止錄音") {
+            playText.innerHTML = "播放錄音";
+        } else {
+            playText.innerHTML = "停止錄音";
+        }
+
+        var playTextEnglish = document.getElementById("playTextEnglish");
+        if (playTextEnglish.innerHTML === "Stop recording") {
+            playTextEnglish.innerHTML = "Play recording";
+        } else {
+            playTextEnglish.innerHTML = "Stop recording";
+        }
+    });
+
+    
+    </script>
+
     <!--塗鴉-->
+
+    <!-- 測試用 -->
+    <script>
+        $(document).ready(function () {
+            paintHandler();
+            recordStep();
+        });
+    </script>
+    <!-- 測試用 -->
+
     <script>
         var isPen = 1; //是否塗鴉模式：1(是)、0(否，橡皮擦)
         var size = 9; //塗鴉尺寸：預設9px
-        var color = "#CCF"; //塗鴉顏色：預設#CCF
+        var color = "#000"; //塗鴉顏色：預設#CCF
         var draw_index; //紀錄繪圖的題序索引，以便繪圖上傳預覽使用。
 
         //打開繪圖面板
@@ -418,10 +664,10 @@
 
             //回到前一畫面，並預覽繪圖
             $("#div_review").show();
-            $("main").fadeIn();
-            $("#div_palette").fadeOut();
+            $(".jquery-modal").fadeOut();
+            $("body").css("overflow", "");
 
-            window.scrollTo(0, $('.myStudy-block.paint').offset().top); // 畫面移至繪圖題的位置
+            window.scrollTo(0, $('.studio_content_item_frame_content_illustrate.paint').offset().top); // 畫面移至繪圖題的位置
         }
 
         var sigCanvas;
@@ -616,7 +862,7 @@
         function resetCanvas() {
             var imageData = step_arr[step_index];
 
-            var w0 = imageData.width;//視窗調整前的畫布寬度
+            var w0 = imageData.width; //視窗調整前的畫布寬度
             var w1 = $("#div_draw").width(); //視窗調整後的畫布寬度
             var h0 = imageData.height; //視窗調整前的畫布高度
             var h1 = $("#div_draw").height(); //視窗調整後的畫布高度
@@ -669,20 +915,6 @@
                 $("#btn_undo").attr("disabled", true);
                 $("#btn_redo").attr("disabled", true);
             }
-        }
-
-        //關閉離開
-        function Close() {
-            //var toDo = confirm("關閉前，請確認是否存檔。\n確定要離開繪圖面版嗎？");
-            //if (toDo) {
-            //    $("#masterContainer").show();
-            //    $("#div_palette").hide();
-            //}
-
-            $("main").fadeIn();
-            $("#div_palette").fadeOut();
-
-            window.scrollTo(0, $('.myStudy-block.paint').offset().top); // 畫面移至繪圖題的位置
         }
     </script>
 
