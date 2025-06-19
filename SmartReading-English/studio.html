@@ -13,9 +13,10 @@
     <!-- this page widgets CSS -->
     <!-- modal -->
     <link rel="stylesheet" href="css/jquery.modal.min.css" />
-    <link rel="stylesheet" href="css/boo">
 
     <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web.min.css">
+
+    <link rel="stylesheet" href="https://smartreading.net/v3/Content/css/DRAWPANEL/draw-panel.css">
 
     <!-- my core CSS -->
     <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
@@ -60,7 +61,8 @@
                         </div>
 
                         <div class="input_group">
-                            <textarea id="textInput" class="studio_text_textarea" placeholder="輸入內容"></textarea>
+                            <textarea id="textInput" class="studio_text_textarea"
+                                placeholder="將你的創作化為文字記錄下來吧！"></textarea>
                             <input type="submit" id="textSubmit" class="studio_text_submit" value="送出">
                         </div>
                     </div>
@@ -80,87 +82,192 @@
                                 <div class="studio_content_item_frame_content_illustrate">
                                     <div class="svg_icon">
                                         <p>
-                                            <i class="fa-solid fa-palette"></i>
+                                            <i class="fa-solid fa-microphone-lines"></i>
                                         </p>
                                     </div>
                                     <p>
-                                        快將你的創作化為聲音記錄下來吧！
+                                        將你的創作化為聲音記錄下來吧！
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="studio_text_submit" type="submit">
-                            <p>
-                                送出
-                            </p>
-                        </button>
+
+                        <div class="studio_content_item">
+                            <div class="studio_content_item_frame">
+                                <div class="studio_content_item_frame_content">
+                                    <div class="studio_content_item_frame_content_illustrate">
+                                        <div class="svg_icon">
+                                            <p>
+                                                <i class="fa-solid fa-palette"></i>
+                                            </p>
+                                        </div>
+                                        <p>
+                                            將你的創作化為圖畫記錄下來吧！
+                                        </p>
+
+                                        <!-- <a href="#div_palette" rel="modal:open" class="item_showcase showcase_text">
+                                            開始繪畫
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="studio_text_submit" type="submit">
+                                <p>
+                                    送出
+                                </p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="studio_content_area_item">
+                        <div class="studio_content_title">
+                            <h4>
+                                線上創作廊 Online Creation Hub
+                            </h4>
+                        </div>
+
+                        <div class="studio_content_item">
+                            <div class="input_group">
+                                <input type="text" id="CreationInput" class="studio_creation_input"
+                                    placeholder="輸入創作連結 https://" aria-label="輸入創作連結 https://">
+                                <button class="studio_text_submit" type="button">
+                                    <p>
+                                        送出
+                                    </p>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <div class="showcase_area_item">
-                <div class="search_type_area">
-                    <p>
-                        作品型式搜尋：
-                    </p>
-
-                    <div class="search_type_menu">
-                        <button type="button" class="search_type_menu_item search_type_menu_item_text active">
-                            <p>
-                                寫作
-                            </p>
-                        </button>
-
-                        <button type="button" class="search_type_menu_item search_type_menu_item_sound active">
-                            <p>
-                                錄音
-                            </p>
-                        </button>
-
-                        <button type="button" class="search_type_menu_item search_type_menu_item_paint active">
-                            <p>
-                                繪畫
-                            </p>
-                        </button>
-
-                        <button type="button" class="search_type_menu_item search_type_menu_item_multimedia active">
-                            <p>
-                                多媒體
-                            </p>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="page" id="div_page">
-                <span class="pagination">
-                    <a id="Btn_first" class="pagenumber firstnn" onclick="toFirstPage()">第一頁</a>
-                    <a id="Btn_pre" class="pagenumber prenn" onclick="toPrePage()">上一頁</a>
-                    <div id="div_pageNO" style="display:inline-block"><span class="active">1</span><a class="pagenumber"
-                            onclick="toTargetPage(1)">2</a><a class="pagenumber" onclick="toTargetPage(2)">3</a></div>
-
-                    <a id="Btn_next" class="pagenumber nextnn" onclick="toNextPage()">下一頁</a>
-                    <a id="Btn_last" class="pagenumber lastnn" onclick="toLastPage()">最後頁</a>
-                </span>
             </div>
 
         </div>
 
     </div>
 
+
+    <div class="modal showcase_modal" id="div_palette" style="display: none;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Close()"><span
+                    aria-hidden="true">×</span></button>
+            <h4 id="h4_title" class="modal-title">繪製面版&nbsp;<small>快將你的感動或觀察。化為圖畫記錄下來吧！</small></h4>
+            <input id="hidden_order" type="hidden">
+        </div>
+        <div class="modal-body">
+            <div class="draw-panel">
+                <div class="draw-panel-left">
+                    <h5 id="h5_1">工具</h5>
+                    <button id="drawMode_1" class="btn btn-default btn-xs btn-draw-tool active" type="button"
+                        onclick="drawMode(1)"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
+                    <button id="drawMode_0" class="btn btn-default btn-xs btn-draw-tool" type="button"
+                        onclick="drawMode(0)"><i class="fa fa-eraser fa-lg" aria-hidden="true"></i></button>
+                    <button id="btn_undo" class="btn btn-default btn-xs btn-draw-tool" type="button" disabled="disabled"
+                        onclick="undo()"><i class="fa fa-reply" aria-hidden="true"></i></button>
+                    <button id="btn_redo" class="btn btn-default btn-xs btn-draw-tool" type="button" disabled="disabled"
+                        onclick="redo()"><i class="fa fa-share" aria-hidden="true"></i></button>
+                    <h5 id="h5_2">大小</h5>
+                    <button id="size_0" class="btn btn-block btn-draw-size" type="button" onclick="drawSize(2,0)"><span
+                            class="draw-size" style="height:2px;"></span></button>
+                    <button id="size_1" class="btn btn-block btn-draw-size" type="button" onclick="drawSize(5,1)"><span
+                            class="draw-size" style="height:5px;"></span></button>
+                    <button id="size_2" class="btn btn-block btn-draw-size" type="button" onclick="drawSize(7,2)"><span
+                            class="draw-size" style="height:7px;"></span></button>
+                    <button id="size_3" class="btn btn-block btn-draw-size active" type="button"
+                        onclick="drawSize(9,3)"><span class="draw-size" style="height:9px;"></span></button>
+                    <h5 id="h5_3">色彩</h5>
+                    <button id="color_0" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#000',0)"><span class="draw-color"
+                            style="background-color: #000;"></span></button>
+                    <button id="color_1" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#FFF',1)"><span class="draw-color"
+                            style="background-color: #FFF;"></span></button>
+                    <button id="color_2" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#666',2)"><span class="draw-color"
+                            style="background-color: #666;"></span></button>
+                    <button id="color_3" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#CCC',3)"><span class="draw-color"
+                            style="background-color: #CCC;"></span></button>
+                    <button id="color_4" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#900',4)"><span class="draw-color"
+                            style="background-color: #900;"></span></button>
+                    <button id="color_5" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#C90',5)"><span class="draw-color"
+                            style="background-color: #C90;"></span></button>
+                    <button id="color_6" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#F00',6)"><span class="draw-color"
+                            style="background-color: #F00;"></span></button>
+                    <button id="color_7" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#FCC',7)"><span class="draw-color"
+                            style="background-color: #FCC;"></span></button>
+                    <button id="color_8" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#F63',8)"><span class="draw-color"
+                            style="background-color: #F63;"></span></button>
+                    <button id="color_9" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#FC0',9)"><span class="draw-color"
+                            style="background-color: #FC0;"></span></button>
+                    <button id="color_10" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#FF0',10)"><span class="draw-color"
+                            style="background-color: #FF0;"></span></button>
+                    <button id="color_11" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#FFC',11)"><span class="draw-color"
+                            style="background-color: #FFC;"></span></button>
+                    <button id="color_12" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#393',12)"><span class="draw-color"
+                            style="background-color: #393;"></span></button>
+                    <button id="color_13" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#CF3',13)"><span class="draw-color"
+                            style="background-color: #CF3;"></span></button>
+                    <button id="color_14" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#09F',14)"><span class="draw-color"
+                            style="background-color: #09F;"></span></button>
+                    <button id="color_15" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#9CF',15)"><span class="draw-color"
+                            style="background-color: #9CF;"></span></button>
+                    <button id="color_16" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#33C',16)"><span class="draw-color"
+                            style="background-color: #33C;"></span></button>
+                    <button id="color_17" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#69C',17)"><span class="draw-color"
+                            style="background-color: #69C;"></span></button>
+                    <button id="color_18" class="btn btn-default btn-xs btn-draw-color" type="button"
+                        onclick="drawColor('#939',18)"><span class="draw-color"
+                            style="background-color: #939;"></span></button>
+                    <button id="color_19" class="btn btn-default btn-xs btn-draw-color active" type="button"
+                        onclick="drawColor('#CCF',19)"><span class="draw-color"
+                            style="background-color: #CCF;"></span></button>
+                </div>
+                <div id="div_draw" class="draw-panel-right">
+                    <!--  隨意畫-->
+                    <canvas id="myCanvas" width="415" height="280" style="display:block">
+                    </canvas>
+                    <!-- 隨意畫-->
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="btn_clean" type="button" class="btn btn-default" onclick="clenCanvas()">清空</button>
+            <button id="btn_close" type="button" class="btn btn-default" onclick="Close()">關閉</button>
+            <button id="btn_complete" type="button" class="btn btn-info" onclick="saveDraw()">完成</button>
+        </div>
+    </div>
+
     <footer>
     </footer>
-    <!-- player range JS -->
-    <script src="js/range.js"></script>
 
     <script src="js/jquery-3.6.1.min.js"></script>
 
+    <!-- modal -->
+    <script src="js/jquery.modal.min.js"></script>
+
     <script src="js/fontawesome-free-6.1.1.min.js"></script>
     <script src="js/all.js"></script>
+
+
+        <!-- iframe高度-->
+    <script src="https://smartreading.net/v3/Content/js/jquery.autoheight.js"></script>
 
 
     <script>
@@ -214,6 +321,369 @@
             $(this).addClass("active");
             searchtype = 3;
         });
+    </script>
+
+    <!--塗鴉-->
+    <script>
+        var isPen = 1; //是否塗鴉模式：1(是)、0(否，橡皮擦)
+        var size = 9; //塗鴉尺寸：預設9px
+        var color = "#CCF"; //塗鴉顏色：預設#CCF
+        var draw_index; //紀錄繪圖的題序索引，以便繪圖上傳預覽使用。
+
+        //打開繪圖面板
+        function OpenPalette() {
+            // $("main").fadeOut();
+            // $("#div_palette").fadeIn();
+            //重設畫布
+            resetCanvas();
+        }
+
+        //塗鴉模式(工具)
+        function drawMode(_isPen) {
+            isPen = _isPen
+            //console.log("塗鴉模式：" + isPen);
+
+            //拿掉按鈕外框
+            for (var i = 0; i <= 1; i++) {
+                $("#drawMode_" + i).removeClass("active");
+            }
+            //所選工具，其按鈕加上外框
+            $("#drawMode_" + _isPen).addClass("active");
+
+        }
+
+        //塗鴉尺寸
+        function drawSize(_size, _index) {
+            size = _size;
+            //console.log("塗鴉尺寸：" + size);
+
+            //拿掉按鈕外框
+            for (var i = 0; i < 4; i++) {
+                $("#size_" + i).removeClass("active");
+            }
+            //所選顏色，其按鈕加上外框
+            $("#size_" + _index).addClass("active");
+        }
+
+        //塗鴉顏色
+        function drawColor(_color, _index) {
+            color = _color;
+            //console.log("塗鴉顏色：" + color);
+
+            //拿掉按鈕外框
+            for (var i = 0; i < 20; i++) {
+                $("#color_" + i).removeClass("active");
+            }
+            //所選顏色，其按鈕加上外框
+            $("#color_" + _index).addClass("active");
+        }
+
+        //塗鴉存檔
+        function saveDraw() {
+            hasPaint = true; //標記為有畫圖，或有上傳圖片
+
+            var imageData = step_arr[step_index];
+
+            var viewCanvas = document.getElementById("canvas_view");
+            var viewContext = canvas_view.getContext("2d");
+
+            var scale = 1;
+            //若圖片寬度超過，按比率縮小
+            if ($(sigCanvas).width() <= viewCanvas.width) {
+
+                if ($(sigCanvas).width() / viewCanvas.width > $(sigCanvas).height() / viewCanvas.height) {
+                    scale = $(sigCanvas).width() / viewCanvas.width;
+                    viewCanvas.width = $(sigCanvas).width();
+                    viewCanvas.height = $(sigCanvas).height() * scale;
+                } else {
+                    scale = $(sigCanvas).height() / viewCanvas.height;
+                    viewCanvas.width = $(sigCanvas).width() * scale;
+                    viewCanvas.height = $(sigCanvas).height();
+                }
+
+            } else {
+                if (viewCanvas.width / $(sigCanvas).width() > viewCanvas.height / $(sigCanvas).height()) {
+                    scale = viewCanvas.width / $(sigCanvas).width(); //縮小比率
+                    viewCanvas.height = $(sigCanvas).height() * scale;
+                } else {
+                    scale = viewCanvas.height / $(sigCanvas).height(); //縮小比率
+                    viewCanvas.width = $(sigCanvas).width() * scale;
+                }
+            }
+
+            var newCanvas = $("<canvas>").attr("width", imageData.width).attr("height", imageData.height)[0];
+            newCanvas.getContext("2d").putImageData(imageData, 0, 0);
+            viewContext.scale(scale, scale);
+            viewContext.drawImage(newCanvas, 0, 0);
+
+            //回到前一畫面，並預覽繪圖
+            $("#div_review").show();
+            $("main").fadeIn();
+            $("#div_palette").fadeOut();
+
+            window.scrollTo(0, $('.myStudy-block.paint').offset().top); // 畫面移至繪圖題的位置
+        }
+
+        var sigCanvas;
+        var context;
+        var step_arr = []; //紀錄畫作軌跡
+        var step_index;
+
+        //塗鴉
+        function paintHandler() {
+            // get references to the canvas element as well as the 2D drawing context
+            sigCanvas = document.getElementById("myCanvas");
+            sigCanvas.width = $("#div_draw").width(); //重新設定畫布寬度
+            sigCanvas.height = $("#div_draw").height(); //重新設定畫布高度
+
+            context = sigCanvas.getContext("2d");
+            context.fillStyle = "white"; //整個canvas塗上白色背景避免PNG的透明底色效果
+            context.fillRect(0, 0, $(sigCanvas).width(), $(sigCanvas).height());
+
+            // This will be defined on a TOUCH device such as iPad or Android, etc.
+            var is_touch_device = 'ontouchstart' in document.documentElement;
+            if (is_touch_device) {
+                sigCanvas.addEventListener('touchstart', function (e) {
+                    //isDrawing = true;
+                    this.ctx = this.getContext("2d");
+                    this.touch = e.targetTouches[0];
+                    this.ctx.strokeStyle = (isPen == 1) ? color : '#FFF';
+                    this.ctx.lineWidth = size;
+
+                    var o = this;
+                    this.offsetX = this.offsetLeft;
+                    this.offsetY = this.offsetTop;
+
+                    while (o.offsetParent) {
+                        o = o.offsetParent;
+                        this.offsetX += o.offsetLeft;
+                        this.offsetY += o.offsetTop;
+                    }
+                    //觸控點
+                    var touchX = this.touch.pageX - this.offsetX;
+                    var touchY = this.touch.pageY - this.offsetY;
+
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(touchX, touchY);
+
+                    e.preventDefault();
+                }, false);
+
+                sigCanvas.addEventListener('touchmove', function (e) {
+                    this.touch = e.targetTouches[0];
+                    //if (isDrawing) {
+                    //觸控點
+                    var touchX = this.touch.pageX - this.offsetX;
+                    var touchY = this.touch.pageY - this.offsetY;
+
+                    this.ctx.lineTo(touchX, touchY);
+
+                    this.ctx.stroke();
+                    //}
+                    e.preventDefault();
+                }, false);
+
+                sigCanvas.addEventListener('touchend', function (e) {
+                    //isDrawing = false;
+                    e.preventDefault();
+
+                    //紀錄畫作軌跡
+                    recordStep();
+                }, false);
+            } else {
+                //PC
+                // start drawing when the mousedown event fires, and attach handlers to
+                // draw a line to wherever the mouse moves to
+                $("#myCanvas").mousedown(function (mouseEvent) {
+                    var position = getPosition(mouseEvent, sigCanvas);
+                    context.moveTo(position.X, position.Y);
+                    context.beginPath();
+
+                    // attach event handlers
+                    $(this).mousemove(function (mouseEvent) {
+
+                        //$(this).css("cursor", "url('Himages/C/imgs/2Ans_A2.png') 5 55,auto");//滑鼠樣式：鉛筆
+
+                    }).mousemove(function (mouseEvent) {
+
+                        drawLine(mouseEvent, sigCanvas, context);
+
+                    }).mouseup(function (mouseEvent) {
+
+                        finishDrawing(mouseEvent, sigCanvas, context);
+
+                    }).mouseout(function (mouseEvent) {
+
+                        $(this).css("cursor", "default");
+                        finishDrawing(mouseEvent, sigCanvas, context);
+
+                    });
+                });
+            }
+        }
+
+        // draws a line to the x and y coordinates of the mouse event inside
+        // the specified element using the specified context
+        function drawLine(mouseEvent, sigCanvas, context) {
+            var position = getPosition(mouseEvent, sigCanvas);
+            context.strokeStyle = (isPen == 1) ? color : '#FFF';
+            context.lineWidth = size;
+            context.lineTo(position.X, position.Y);
+            context.stroke();
+        }
+
+        // draws a line from the last coordiantes in the path to the finishing
+        // coordinates and unbind any event handlers which need to be preceded
+        // by the mouse down event
+        function finishDrawing(mouseEvent, sigCanvas, context) {
+            // draw the line to the finishing coordinates            
+            drawLine(mouseEvent, sigCanvas, context);
+            context.closePath();
+
+            // unbind any events which could draw
+            $(sigCanvas).unbind("mousemove")
+                .unbind("mouseup")
+                .unbind("mouseout");
+
+            //紀錄畫作軌跡
+            recordStep();
+        }
+
+        // works out the X, Y position of the click inside the canvas from the X, Y position on the page
+        function getPosition(mouseEvent, sigCanvas) {
+            var x, y;
+
+            if (mouseEvent.offsetX != undefined && mouseEvent.offsetY != undefined) {
+                x = mouseEvent.offsetX;
+                y = mouseEvent.offsetY;
+            }
+            return {
+                X: x,
+                Y: y
+            };
+        }
+
+        //紀錄畫作軌跡
+        function recordStep() {
+            if (step_index != null) {
+                //在有回到上一步下一步的情況時，畫了新的一筆軌跡後，要把其他某step_index後的軌跡刪除
+                //redo按鈕不可按
+                step_arr.splice(step_index + 1);
+                $("#btn_redo").attr("disabled", "disabled");
+            }
+
+            //記錄新軌跡
+            var imageData = context.getImageData(0, 0, sigCanvas.width, sigCanvas.height);
+            step_arr.push(imageData);
+
+            //記錄目前的step_index
+            step_index = (step_index == null) ? 0 : step_index + 1;
+            //console.log(step_index);
+
+            //undo按鈕可按，讓使用個可回上一步
+            if (step_index > 0) $("#btn_undo").attr("disabled", false);
+        }
+
+        //回上一步
+        function undo() {
+            step_index--;
+            //回到最原始畫面時，undo按鈕不可按
+            if (step_index == 0) $("#btn_undo").attr("disabled", true);
+            //redo按鈕可按
+            $("#btn_redo").attr("disabled", false);
+
+            //重設畫步
+            resetCanvas();
+        }
+
+        //下一步
+        function redo() {
+            step_index++;
+            //盡頭了，則redo按鈕不可按
+            if (step_index + 1 == step_arr.length) $("#btn_redo").attr("disabled", true);
+            //undo按鈕可按
+            $("#btn_undo").attr("disabled", false);
+
+            //重設畫步
+            resetCanvas();
+        }
+
+        //取得縮放比例
+        var scaleW = 1;
+        var scaleH = 1;
+
+        //重設畫布
+        function resetCanvas() {
+            var imageData = step_arr[step_index];
+
+            var w0 = imageData.width;//視窗調整前的畫布寬度
+            var w1 = $("#div_draw").width(); //視窗調整後的畫布寬度
+            var h0 = imageData.height; //視窗調整前的畫布高度
+            var h1 = $("#div_draw").height(); //視窗調整後的畫布高度
+            //取得縮放比例
+            scaleW = w1 / w0;
+            scaleH = h1 / h0;
+
+            //隨著視窗尺寸調整，重新設定畫布的尺寸
+            //PS.已經畫好的圖會消失
+            sigCanvas.width = $("#div_draw").width(); //重新設定畫布寬度
+            sigCanvas.height = $("#div_draw").height(); //重新設定畫布高度
+
+            //將原圖的imageData塞到新的畫布中 在塞回調整尺寸後的原畫布裡
+            //避免畫布因縮放比例 導致後來畫畫位置跑掉
+            //根據新畫布寬度，與高度 裁取符合的imageData
+            var newCanvas = $("<canvas>").attr("width", imageData.width * scaleW).attr("height", imageData.height *
+                scaleH)[0];
+            newCanvas.getContext("2d").putImageData(imageData, 0, 0);
+            context.drawImage(newCanvas, 0, 0);
+        }
+
+        //undo、redo
+        //https://blog.csdn.net/robin_star_/article/details/83657188
+
+        //清空畫布
+        function clenCanvas() {
+            var msg = "確定要清空畫面嗎？";
+            ////語系轉換
+            //switch (window.localStorage.getItem('Lang')) {
+            //    case "en-US":
+            //        //英文
+            //        msg = "Are you sure you want to clear the screen?";
+            //        break;
+            //    case "zh-CN":
+            //        //簡體
+            //        msg = "确定要清空画面吗？";
+            //        break;
+            //}
+
+            var toDo = confirm(msg);
+            if (toDo) {
+                //畫布回到初始畫面
+                step_index = 0;
+                //清除多餘軌跡
+                step_arr = step_arr.slice(0, 1);
+
+                //重設畫步
+                resetCanvas();
+
+                $("#btn_undo").attr("disabled", true);
+                $("#btn_redo").attr("disabled", true);
+            }
+        }
+
+        //關閉離開
+        function Close() {
+            //var toDo = confirm("關閉前，請確認是否存檔。\n確定要離開繪圖面版嗎？");
+            //if (toDo) {
+            //    $("#masterContainer").show();
+            //    $("#div_palette").hide();
+            //}
+
+            $("main").fadeIn();
+            $("#div_palette").fadeOut();
+
+            window.scrollTo(0, $('.myStudy-block.paint').offset().top); // 畫面移至繪圖題的位置
+        }
     </script>
 
 </body>
