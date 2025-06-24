@@ -570,16 +570,17 @@
     </script>
     <!-- 測試用 -->
 
+     <!--塗鴉-->
     <script>
-        var isPen = 1; //是否塗鴉模式：1(是)、0(否，橡皮擦)
-        var size = 9; //塗鴉尺寸：預設9px
-        var color = "#000"; //塗鴉顏色：預設#CCF
-        var draw_index; //紀錄繪圖的題序索引，以便繪圖上傳預覽使用。
-
+        var isPen = 1;  //是否塗鴉模式：1(是)、0(否，橡皮擦)
+        var size = 9;       //塗鴉尺寸：預設9px
+        var color = "#CCF"; //塗鴉顏色：預設#CCF
+        var draw_index;     //紀錄繪圖的題序索引，以便繪圖上傳預覽使用。
+        
         //打開繪圖面板
         function OpenPalette() {
-            // $("main").fadeOut();
-            // $("#div_palette").fadeIn();
+            $("main").fadeOut();
+            $("#div_palette").fadeIn();
             //重設畫布
             resetCanvas();
         }
@@ -626,17 +627,17 @@
 
         //塗鴉存檔
         function saveDraw() {
-            hasPaint = true; //標記為有畫圖，或有上傳圖片
+            hasPaint = true;//標記為有畫圖，或有上傳圖片
 
             var imageData = step_arr[step_index];
 
             var viewCanvas = document.getElementById("canvas_view");
             var viewContext = canvas_view.getContext("2d");
-
+            
             var scale = 1;
             //若圖片寬度超過，按比率縮小
             if ($(sigCanvas).width() <= viewCanvas.width) {
-
+                
                 if ($(sigCanvas).width() / viewCanvas.width > $(sigCanvas).height() / viewCanvas.height) {
                     scale = $(sigCanvas).width() / viewCanvas.width;
                     viewCanvas.width = $(sigCanvas).width();
@@ -646,7 +647,7 @@
                     viewCanvas.width = $(sigCanvas).width() * scale;
                     viewCanvas.height = $(sigCanvas).height();
                 }
-
+                    
             } else {
                 if (viewCanvas.width / $(sigCanvas).width() > viewCanvas.height / $(sigCanvas).height()) {
                     scale = viewCanvas.width / $(sigCanvas).width(); //縮小比率
@@ -657,30 +658,30 @@
                 }
             }
 
-            var newCanvas = $("<canvas>").attr("width", imageData.width).attr("height", imageData.height)[0];
+            var newCanvas = $("<canvas>").attr("width", imageData.width ).attr("height", imageData.height )[0];
             newCanvas.getContext("2d").putImageData(imageData, 0, 0);
             viewContext.scale(scale, scale);
             viewContext.drawImage(newCanvas, 0, 0);
 
             //回到前一畫面，並預覽繪圖
             $("#div_review").show();
-            $(".jquery-modal").fadeOut();
-            $("body").css("overflow", "");
+            $("main").fadeIn();
+            $("#div_palette").fadeOut();
 
-            window.scrollTo(0, $('.studio_content_item_frame_content_illustrate.paint').offset().top); // 畫面移至繪圖題的位置
+            window.scrollTo(0, $('.myStudy-block.paint').offset().top);  // 畫面移至繪圖題的位置
         }
 
         var sigCanvas;
         var context;
-        var step_arr = []; //紀錄畫作軌跡
+        var step_arr = [];//紀錄畫作軌跡
         var step_index;
 
         //塗鴉
         function paintHandler() {
             // get references to the canvas element as well as the 2D drawing context
             sigCanvas = document.getElementById("myCanvas");
-            sigCanvas.width = $("#div_draw").width(); //重新設定畫布寬度
-            sigCanvas.height = $("#div_draw").height(); //重新設定畫布高度
+            sigCanvas.width = $("#div_draw").width();//重新設定畫布寬度
+            sigCanvas.height = $("#div_draw").height();//重新設定畫布高度
 
             context = sigCanvas.getContext("2d");
             context.fillStyle = "white"; //整個canvas塗上白色背景避免PNG的透明底色效果
@@ -736,7 +737,8 @@
                     //紀錄畫作軌跡
                     recordStep();
                 }, false);
-            } else {
+            }
+            else {
                 //PC
                 // start drawing when the mousedown event fires, and attach handlers to
                 // draw a line to wherever the mouse moves to
@@ -788,8 +790,8 @@
 
             // unbind any events which could draw
             $(sigCanvas).unbind("mousemove")
-                .unbind("mouseup")
-                .unbind("mouseout");
+           .unbind("mouseup")
+           .unbind("mouseout");
 
             //紀錄畫作軌跡
             recordStep();
@@ -803,10 +805,7 @@
                 x = mouseEvent.offsetX;
                 y = mouseEvent.offsetY;
             }
-            return {
-                X: x,
-                Y: y
-            };
+            return { X: x, Y: y };
         }
 
         //紀錄畫作軌跡
@@ -862,24 +861,23 @@
         function resetCanvas() {
             var imageData = step_arr[step_index];
 
-            var w0 = imageData.width; //視窗調整前的畫布寬度
-            var w1 = $("#div_draw").width(); //視窗調整後的畫布寬度
-            var h0 = imageData.height; //視窗調整前的畫布高度
-            var h1 = $("#div_draw").height(); //視窗調整後的畫布高度
+            var w0 = imageData.width;//視窗調整前的畫布寬度
+            var w1 = $("#div_draw").width();//視窗調整後的畫布寬度
+            var h0 = imageData.height;//視窗調整前的畫布高度
+            var h1 = $("#div_draw").height();//視窗調整後的畫布高度
             //取得縮放比例
             scaleW = w1 / w0;
             scaleH = h1 / h0;
 
             //隨著視窗尺寸調整，重新設定畫布的尺寸
             //PS.已經畫好的圖會消失
-            sigCanvas.width = $("#div_draw").width(); //重新設定畫布寬度
-            sigCanvas.height = $("#div_draw").height(); //重新設定畫布高度
+            sigCanvas.width = $("#div_draw").width();//重新設定畫布寬度
+            sigCanvas.height = $("#div_draw").height();//重新設定畫布高度
 
             //將原圖的imageData塞到新的畫布中 在塞回調整尺寸後的原畫布裡
             //避免畫布因縮放比例 導致後來畫畫位置跑掉
             //根據新畫布寬度，與高度 裁取符合的imageData
-            var newCanvas = $("<canvas>").attr("width", imageData.width * scaleW).attr("height", imageData.height *
-                scaleH)[0];
+            var newCanvas = $("<canvas>").attr("width", imageData.width * scaleW).attr("height", imageData.height * scaleH)[0];
             newCanvas.getContext("2d").putImageData(imageData, 0, 0);
             context.drawImage(newCanvas, 0, 0);
         }
@@ -916,7 +914,22 @@
                 $("#btn_redo").attr("disabled", true);
             }
         }
+
+        //關閉離開
+        function Close() {
+            //var toDo = confirm("關閉前，請確認是否存檔。\n確定要離開繪圖面版嗎？");
+            //if (toDo) {
+            //    $("#masterContainer").show();
+            //    $("#div_palette").hide();
+            //}
+
+            $("main").fadeIn();
+            $("#div_palette").fadeOut();
+
+            window.scrollTo(0, $('.myStudy-block.paint').offset().top);  // 畫面移至繪圖題的位置
+        }
     </script>
+
 
 </body>
 
