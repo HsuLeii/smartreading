@@ -28,7 +28,27 @@
   </div> -->
     <div class="main studio">
         <div class="tittle">
-            <h1>創作室 Studio</h1>
+            <h1>創作室</h1>
+        </div>
+
+        <div class="studio_link_area">
+            <div class="studio_link_area_item">
+                <a href="studio_writing.html">
+                    寫作室
+                </a>
+            </div>
+
+            <div class="studio_link_area_item">
+                <a href="studio_sound.html">
+                    聲畫室
+                </a>
+            </div>
+
+            <div class="studio_link_area_item">
+                <a href="studio_hub.html">
+                    線上創作廊
+                </a>
+            </div>
         </div>
 
         <div class="studio_area">
@@ -37,11 +57,32 @@
                 <div class="studio_content_area_item">
                     <div class="studio_content_title">
                         <h4>
-                            聲畫室 Sound & Sketch Room
+                            聲畫室
                         </h4>
                     </div>
 
                     <div class="studio_content_item">
+                        <div class="share_type_area">
+                            <label class="share_type_label" for="shareobject">分享對象：</label>
+                            <div class="share_type_input_btn">
+
+                                <button type="button" id="shareobject" class="form-control">
+                                    <p id="shareBtn_text">全班</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+
+                                <ul>
+                                    <li class="dropdown_item_li share_dropdown_item_li share_dropdown_item_li_one">自己
+                                    </li>
+                                    <li
+                                        class="dropdown_item_li share_dropdown_item_li share_dropdown_item_li_two active">
+                                        全班</li>
+                                    <li class="dropdown_item_li share_dropdown_item_li share_dropdown_item_li_three">全校
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="studio_content_item_frame">
                             <div class="studio_content_item_frame_content">
                                 <div class="studio_content_item_frame_content_illustrate">
@@ -120,6 +161,27 @@
                     </div>
 
                     <div class="studio_content_item">
+                        <div class="share_type_area_1">
+                            <label class="share_type_label" for="shareobject_1">分享對象：</label>
+                            <div class="share_type_input_btn_1">
+
+                                <button type="button" id="shareobject_1" class="form-control">
+                                    <p id="shareBtn_text_1">全班</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+
+                                <ul>
+                                    <li class="dropdown_item_li share_dropdown_item_li_1 share_dropdown_item_li_one_1">自己
+                                    </li>
+                                    <li
+                                        class="dropdown_item_li share_dropdown_item_li_1 share_dropdown_item_li_two_1 active">
+                                        全班</li>
+                                    <li class="dropdown_item_li share_dropdown_item_li_1 share_dropdown_item_li_three_1">全校
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="studio_content_item_frame">
                             <div id="paintHeight" class="studio_content_item_frame_content">
                                 <div id="paintWidth" class="studio_content_item_frame_content_illustrate paint">
@@ -360,7 +422,7 @@
                     </p>
                 </button>
                 <a href="#close-modal" rel="modal:close" class="draw-panel-footer-btn" onclick="saveDraw()">
-                        完成
+                    完成
                 </a>
             </div>
         </div>
@@ -393,6 +455,71 @@
                 scrollTop: $($(this).attr("href")).offset().top - scrollToHeight
             }, 500);
             return false;
+        });
+    </script>
+
+    <!-- 分享對象功能 -->
+    <script>
+        $(".share_type_input_btn button").click(function () {
+            $(this).toggleClass("open");
+        });
+
+        var share_dropdown_item_one = $(".share_dropdown_item_li_one").text();
+        var share_dropdown_item_two = $(".share_dropdown_item_li_two").text();
+        var share_dropdown_item_three = $(".share_dropdown_item_li_three").text();
+
+        $(".share_dropdown_item_li").click(function () {
+            $(".share_type_input_btn button").toggleClass("open");
+        });
+
+        $(".share_dropdown_item_li_one").click(function () {
+            document.getElementById('shareBtn_text').innerHTML = share_dropdown_item_one;
+            $(".share_dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".share_dropdown_item_li_two").click(function () {
+            document.getElementById('shareBtn_text').innerHTML = share_dropdown_item_two;
+            $(".share_dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".share_dropdown_item_li_three").click(function () {
+            document.getElementById('shareBtn_text').innerHTML = share_dropdown_item_three;
+            $(".share_dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+
+    <script>
+        $(".share_type_input_btn_1 button").click(function () {
+            $(this).toggleClass("open");
+        });
+
+        var share_dropdown_item_one_1 = $(".share_dropdown_item_li_one_1").text();
+        var share_dropdown_item_two_1 = $(".share_dropdown_item_li_two_1").text();
+        var share_dropdown_item_three_1 = $(".share_dropdown_item_li_three_1").text();
+
+        $(".share_dropdown_item_li_1").click(function () {
+            $(".share_type_input_btn_1 button").toggleClass("open");
+        });
+
+        $(".share_dropdown_item_li_one_1").click(function () {
+            document.getElementById('shareBtn_text_1').innerHTML = share_dropdown_item_one_1;
+            $(".share_dropdown_item_li_1").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".share_dropdown_item_li_two_1").click(function () {
+            document.getElementById('shareBtn_text_1').innerHTML = share_dropdown_item_two_1;
+            $(".share_dropdown_item_li_1").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".share_dropdown_item_li_three_1").click(function () {
+            document.getElementById('shareBtn_text_1').innerHTML = share_dropdown_item_three_1;
+            $(".share_dropdown_item_li_1").removeClass("active");
+            $(this).addClass("active");
         });
     </script>
 
@@ -541,18 +668,18 @@
 
             var paintH = document.getElementById("paintHeight");
             var paintW = document.getElementById("paintWidth");
-            var paintHeight = $("#div_draw").height() + "px";
+            var paintHeight = $("#div_draw").height() + 40 + "px";
             var paintWidth = $("#div_draw").width() + "px";
 
             paintH.style.height = paintHeight;
             paintW.style.width = paintWidth;
 
             var canvasImgURL = sigCanvas.toDataURL("image/png");
-            
+
             var canvasImg = document.getElementById("canvasImg");
             canvasImg.src = canvasImgURL;
 
-            
+
 
             // var scale = 1;
             //若圖片寬度超過，按比率縮小
@@ -601,7 +728,7 @@
             sigCanvas = document.getElementById("myCanvas");
             sigCanvas.width = $("#div_draw").width(); //重新設定畫布寬度
             sigCanvas.height = $("#div_draw").height(); //重新設定畫布高度
-            
+
             context = sigCanvas.getContext("2d");
             context.fillStyle = "white"; //整個canvas塗上白色背景避免PNG的透明底色效果
             // context.fillRect(0, 0, $(sigCanvas).width(), $(sigCanvas).height());
@@ -825,7 +952,7 @@
             //        break;
             //}
 
-            
+
 
             var toDo = confirm(msg);
             if (toDo) {

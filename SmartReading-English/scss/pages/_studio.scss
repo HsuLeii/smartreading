@@ -3,6 +3,30 @@
         width: 80%;
         max-width: 1200px;
 
+        .studio_link_area{
+            display: flex;
+            align-items: center;
+            margin: 0 0 10px 0;
+
+            .studio_link_area_item{
+                padding: 5px 10px;
+                border: 1px solid $brown;
+                border-radius: 10px;
+                margin: 5px 10px 5px 0;
+
+                a{
+                    color: $brown;
+                }
+
+                &:hover{
+                    background-color: $brown;
+                    a{
+                        color: $white;
+                    }
+                }
+            }
+        }
+
         .studio_area {
             .studio_content_area {
                 .studio_content_title {
@@ -24,6 +48,82 @@
                         display: flex;
                         align-items: center;
 
+                        .writing_type_input_btn {
+                            position: relative;
+                            margin: 0 0 0 10px;
+
+                            .form-control {
+                                display: flex;
+                                align-items: center;
+                                padding: 5px 10px;
+                                border: 1px solid $brown;
+                                background-color: $white;
+                                min-width: 200px;
+                                color: $brown;
+
+                                i {
+                                    margin: 0 0 0 auto;
+                                    transition: 0.3s;
+                                }
+
+                                &.open {
+                                    border: 1px solid $main_color;
+                                    box-shadow: 5px 5px 10px 3px rgba(92, 138, 57, 0.1450980392);
+
+                                    i {
+                                        transform: rotate(180deg);
+                                    }
+
+                                    &~ul {
+                                        visibility: visible;
+                                    }
+                                }
+                            }
+
+                            ul {
+                                position: absolute;
+                                left: 50%;
+                                z-index: 2;
+                                transform: translate(-50%, 10px);
+                                width: auto;
+                                min-width: 200px;
+                                visibility: hidden;
+                                border-radius: 10px;
+                                border: 1px solid $brown;
+                                background-color: $white;
+                                overflow: hidden;
+                                cursor: pointer;
+
+                                .dropdown_item_li {
+                                    padding: 5px 10px;
+                                    color: $brown;
+
+                                    &.active,
+                                    &:hover {
+                                        background-color: $brown;
+                                        color: $white;
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+
+                    .share_type_area,
+                    .share_type_area_1{
+                        justify-content: flex-end;
+                    }
+
+                    .share_type_area,
+                    .share_type_area_1,
+                    .writing_type_area {
+                        display: flex;
+                        align-items: center;
+                        margin: 0 0 20px 0;
+
+                        .share_type_input_btn,
+                        .share_type_input_btn_1,
                         .writing_type_input_btn {
                             position: relative;
                             margin: 0 0 0 10px;
@@ -135,6 +235,32 @@
                             &:hover {
                                 color: $white;
                                 background-color: $main_color;
+                            }
+                        }
+                    }
+
+                    .feedback_area{
+                        display: none;
+                        .feedback_tittle{
+                            font-weight: bold;
+                            margin: 0 0 15px 0;
+                        }
+
+                        .feedback_text{
+                            background-color: $white;
+                            padding: 17px;
+                            color: $brown;
+                            border: 1px solid $brown;
+                            border-radius: 10px;
+
+                            .feedback_text_error{
+                                color: $red;
+
+                                &.strikethrough{
+                                    color: $brown;
+                                    text-decoration: line-through;
+                                    text-decoration-color: $red;
+                                }
                             }
                         }
                     }
@@ -358,16 +484,17 @@
                                 }
                             }
                         }
-                    }
 
+                        .studio_text_submit{
+                            flex-direction: column;
+                            justify-content: center;
+                        }
+                    }
 
                 }
             }
 
-
-
         }
-
 
     }
 }
@@ -621,50 +748,14 @@
 
 @media screen and (max-width: 1024px) {
     .main {
-        &.showcase {
-            .showcase_area {
-                .showcase_search_area {
-                    flex-direction: column;
-                    align-items: flex-end;
-
-                    .book_search_area {
-                        margin: 0 0 15px;
-                    }
-
-                    .creator_search_area {
-                        margin: 0;
-                    }
-                }
-
-                .showcase_area_item {
-                    .search_type_area {
-                        margin: 0 calc(5% / 2) 40px;
-                    }
-
-                    .item_showcase {
-                        width: 45%;
-                        margin: 40px calc(5% / 2) 0;
-
-                        .item_showcase_content {
-                            .item_showcase_bottom {
-                                .book_toolbar {
-                                    flex-direction: column;
-
-                                    .book_toolbar_right {
-                                        margin: 30px 0 0;
-
-                                        .book_toolbar_right_link {
-                                            a {
-                                                width: 100%;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                            }
-                                        }
-
-                                    }
-                                }
-                            }
+        &.studio{
+            .studio_area {
+                .studio_content_area{
+                    .studio_content_item{
+                        .input_group{
+                            .studio_text_textarea {
+                            font-size: 15px;
+                        }
                         }
                     }
                 }

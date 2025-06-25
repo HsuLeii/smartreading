@@ -26,7 +26,27 @@
   </div> -->
     <div class="main studio">
         <div class="tittle">
-            <h1>創作室 Studio</h1>
+            <h1>創作室</h1>
+        </div>
+
+        <div class="studio_link_area">
+            <div class="studio_link_area_item">
+                <a href="studio_writing.html">
+                    寫作室
+                </a>
+            </div>
+
+            <div class="studio_link_area_item">
+                <a href="studio_sound.html">
+                    聲畫室
+                </a>
+            </div>
+
+            <div class="studio_link_area_item">
+                <a href="studio_hub.html">
+                    線上創作廊
+                </a>
+            </div>
         </div>
 
         <div class="studio_area">
@@ -34,18 +54,42 @@
                 <div class="studio_content_area_item">
                     <div class="studio_content_title">
                         <h4>
-                            線上創作廊 Online Creation Hub
+                            線上創作廊
                         </h4>
                     </div>
 
                     <div class="studio_content_item">
+                        <div class="share_type_area">
+                            <label class="share_type_label" for="shareobject">分享對象：</label>
+                            <div class="share_type_input_btn">
+
+                                <button type="button" id="shareobject" class="form-control">
+                                    <p id="shareBtn_text">全班</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+
+                                <ul>
+                                    <li class="dropdown_item_li share_dropdown_item_li share_dropdown_item_li_one">自己
+                                    </li>
+                                    <li
+                                        class="dropdown_item_li share_dropdown_item_li share_dropdown_item_li_two active">
+                                        全班</li>
+                                    <li class="dropdown_item_li share_dropdown_item_li share_dropdown_item_li_three">全校
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="input_group">
                             <input type="text" id="CreationInput" class="studio_creation_input"
                                 placeholder="輸入創作連結 https://" aria-label="輸入創作連結 https://">
                             <div class="studio_content_item_btn">
                                 <button class="studio_text_submit" type="button">
                                     <p>
-                                        送出
+                                        上傳作品連結
+                                    </p>
+                                    <p>
+                                        Upload Your Work Link
                                     </p>
                                 </button>
                             </div>
@@ -80,6 +124,39 @@
                 scrollTop: $($(this).attr("href")).offset().top - scrollToHeight
             }, 500);
             return false;
+        });
+    </script>
+
+        <!-- 分享對象功能 -->
+    <script>
+        $(".share_type_input_btn button").click(function () {
+            $(this).toggleClass("open");
+        });
+
+        var share_dropdown_item_one = $(".share_dropdown_item_li_one").text();
+        var share_dropdown_item_two = $(".share_dropdown_item_li_two").text();
+        var share_dropdown_item_three = $(".share_dropdown_item_li_three").text();
+
+        $(".share_dropdown_item_li").click(function () {
+            $(".share_type_input_btn button").toggleClass("open");
+        });
+
+        $(".share_dropdown_item_li_one").click(function () {
+            document.getElementById('shareBtn_text').innerHTML = share_dropdown_item_one;
+            $(".share_dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".share_dropdown_item_li_two").click(function () {
+            document.getElementById('shareBtn_text').innerHTML = share_dropdown_item_two;
+            $(".share_dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".share_dropdown_item_li_three").click(function () {
+            document.getElementById('shareBtn_text').innerHTML = share_dropdown_item_three;
+            $(".share_dropdown_item_li").removeClass("active");
+            $(this).addClass("active");
         });
     </script>
 
