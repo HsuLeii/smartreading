@@ -1,501 +1,591 @@
 .main {
     &.studio {
-        width: 80%;
-        max-width: 1200px;
+        width: 100%;
+        margin: 60px auto 0;
 
-        .studio_link_area{
-            display: flex;
-            align-items: center;
-            margin: 0 0 10px 0;
-
-            .studio_link_area_item{
-                padding: 5px 10px;
-                border: 1px solid $brown;
-                border-radius: 10px;
-                margin: 5px 10px 5px 0;
-
-                a{
-                    color: $brown;
-                }
-
-                &:hover{
-                    background-color: $brown;
-                    a{
-                        color: $white;
-                    }
-                }
-            }
+        .tittle {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .studio_area {
-            .studio_content_area {
-                .studio_content_title {
-                    width: 100%;
-                    padding: 20px 0;
-                    margin: 0 auto 20px;
-                    border-bottom: 1px solid $brown;
+        .course_area {
+            width: 100%;
+            padding: 15px 10%;
+            background-color: #f4c720;
+            margin: 0 auto;
+
+            &.course_area_text {
+                background-color: lighten($studio_text, 40%);
+
+                .course_area_content {
+                    .course_name {
+                        h4 {
+                            color: $studio_text;
+                        }
+                    }
+                }
+
+                &~.studio_item_content_area_bg {
+                    background-color: lighten($studio_text, 50%);
+                }
+            }
+
+            &.course_area_sound {
+                background-color: lighten($studio_sound, 40%);
+
+                .course_area_content {
+                    .course_name {
+                        h4 {
+                            color: $studio_sound;
+                        }
+                    }
+                }
+
+                &~.studio_item_content_area_bg {
+                    background-color: lighten($studio_sound, 65%);
+                }
+            }
+
+            &.course_area_multimedia {
+                background-color: lighten($studio_multimedia, 40%);
+
+                .course_area_content {
+                    .course_name {
+                        h4 {
+                            color: $studio_multimedia;
+                        }
+                    }
+                }
+
+                &~.studio_item_content_area_bg {
+                    background-color: lighten($studio_multimedia, 60%);
+                }
+            }
+
+            .course_area_content {
+                max-width: 1200px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+
+                .course_name {
+                    width: calc(100% - 160px);
 
                     h4 {
                         color: $brown;
+                        word-break: break-all;
                     }
                 }
 
-                .studio_content_item {
-                    position: relative;
-                    margin: 30px auto 60px;
-
-                    .writing_type_area {
-                        display: flex;
-                        align-items: center;
-
-                        .writing_type_input_btn {
-                            position: relative;
-                            margin: 0 0 0 10px;
-
-                            .form-control {
-                                display: flex;
-                                align-items: center;
-                                padding: 5px 10px;
-                                border: 1px solid $brown;
-                                background-color: $white;
-                                min-width: 200px;
-                                color: $brown;
-
-                                i {
-                                    margin: 0 0 0 auto;
-                                    transition: 0.3s;
-                                }
-
-                                &.open {
-                                    border: 1px solid $main_color;
-                                    box-shadow: 5px 5px 10px 3px rgba(92, 138, 57, 0.1450980392);
-
-                                    i {
-                                        transform: rotate(180deg);
-                                    }
-
-                                    &~ul {
-                                        visibility: visible;
-                                    }
-                                }
-                            }
-
-                            ul {
-                                position: absolute;
-                                left: 50%;
-                                z-index: 2;
-                                transform: translate(-50%, 10px);
-                                width: auto;
-                                min-width: 200px;
-                                visibility: hidden;
-                                border-radius: 10px;
-                                border: 1px solid $brown;
-                                background-color: $white;
-                                overflow: hidden;
-                                cursor: pointer;
-
-                                .dropdown_item_li {
-                                    padding: 5px 10px;
-                                    color: $brown;
-
-                                    &.active,
-                                    &:hover {
-                                        background-color: $brown;
-                                        color: $white;
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-
-                    .share_type_area,
-                    .share_type_area_1{
-                        justify-content: flex-end;
-                    }
-
-                    .share_type_area,
-                    .share_type_area_1,
-                    .writing_type_area {
-                        display: flex;
-                        align-items: center;
-                        margin: 0 0 20px 0;
-
-                        .share_type_input_btn,
-                        .share_type_input_btn_1,
-                        .writing_type_input_btn {
-                            position: relative;
-                            margin: 0 0 0 10px;
-
-                            .form-control {
-                                display: flex;
-                                align-items: center;
-                                padding: 5px 10px;
-                                border: 1px solid $brown;
-                                background-color: $white;
-                                min-width: 200px;
-                                color: $brown;
-
-                                i {
-                                    margin: 0 0 0 auto;
-                                    transition: 0.3s;
-                                }
-
-                                &.open {
-                                    border: 1px solid $main_color;
-                                    box-shadow: 5px 5px 10px 3px rgba(92, 138, 57, 0.1450980392);
-
-                                    i {
-                                        transform: rotate(180deg);
-                                    }
-
-                                    &~ul {
-                                        visibility: visible;
-                                    }
-                                }
-                            }
-
-                            ul {
-                                position: absolute;
-                                left: 50%;
-                                z-index: 2;
-                                transform: translate(-50%, 10px);
-                                width: auto;
-                                min-width: 200px;
-                                visibility: hidden;
-                                border-radius: 10px;
-                                border: 1px solid $brown;
-                                background-color: $white;
-                                overflow: hidden;
-                                cursor: pointer;
-
-                                .dropdown_item_li {
-                                    padding: 5px 10px;
-                                    color: $brown;
-
-                                    &.active,
-                                    &:hover {
-                                        background-color: $brown;
-                                        color: $white;
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-
-                    .input_group {
-                        width: 100%;
-                        margin: 20px 0;
-                        display: flex;
-                        justify-content: flex-end;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-
-                        .studio_text_textarea {
-                            width: 100%;
-                            height: 150px;
-                            padding: 10px;
-                            color: $brown;
-                            font-size: 20px;
-                            border: 1px solid $brown;
+                .course_img_area {
+                    .course_img {
+                        img {
+                            max-width: 150px;
                             border-radius: 10px;
-
-                            &:focus {
-                                background: lighten($brown, 60%) !important;
-                                border-color: $brown;
-                                outline: none;
-                            }
-                        }
-
-                        .studio_creation_input {
-                            width: 100%;
-                            border: 1px solid $brown;
-                            padding: 5px 10px;
-                            outline: 0;
-                            border-radius: 10px;
-
-                            &:focus {
-                                border: 1px solid $main_color;
-                                color: $main_color;
-                            }
-                        }
-
-                        .studio_text_submit {
-                            margin: 15px 0;
-                            color: $main_color;
-                            border: 1px solid $main_color;
-                            border-radius: 10px;
-                            padding: 5px 10px;
-                            cursor: pointer;
-                            background-color: $white;
-
-                            &:hover {
-                                color: $white;
-                                background-color: $main_color;
-                            }
                         }
                     }
+                }
+            }
+        }
 
-                    .feedback_area{
-                        display: none;
-                        .feedback_tittle{
-                            font-weight: bold;
-                            margin: 0 0 15px 0;
-                        }
+        .studio_item_content_area_bg {
+            padding: 40px 0 80px;
 
-                        .feedback_text{
-                            background-color: $white;
-                            padding: 17px;
-                            color: $brown;
-                            border: 1px solid $brown;
-                            border-radius: 10px;
+            .studio_item_content_area {
+                width: 80%;
+                max-width: 1200px;
+                margin: 0 auto;
 
-                            .feedback_text_error{
-                                color: $red;
+                .studio_link_area {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 0 10px 0;
 
-                                &.strikethrough{
-                                    color: $brown;
-                                    text-decoration: line-through;
-                                    text-decoration-color: $red;
-                                }
-                            }
-                        }
-                    }
-
-                    .studio_content_item_frame {
+                    .studio_link_area_item {
                         border: 1px solid $brown;
                         border-radius: 10px;
-                        min-height: 300px;
-                        overflow: hidden;
-                        background-color: $white;
+                        margin: 5px 10px 5px 0;
 
-                        .studio_content_item_frame_content {
+                        a {
+                            display: block;
+                            padding: 5px 10px;
+                            color: $brown;
+                        }
+
+                        &.active,
+                        &:hover {
+                            background-color: $brown;
+
+                            a {
+                                color: $white;
+                            }
+                        }
+
+                        &.studio_link_area_item_text {
+                            border: 1px solid $studio_text;
+
+                            a {
+                                color: $studio_text;
+                            }
+
+                            &.active,
+                            &:hover {
+                                background-color: $studio_text;
+
+                                a {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                        &.studio_link_area_item_sound {
+                            border: 1px solid $studio_sound;
+
+                            a {
+                                color: $studio_sound;
+                            }
+
+
+                            &.active,
+                            &:hover {
+                                background-color: $studio_sound;
+
+                                a {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                        &.studio_link_area_item_multimedia {
+                            border: 1px solid $studio_multimedia;
+
+                            a {
+                                color: $studio_multimedia;
+                            }
+
+
+                            &.active,
+                            &:hover {
+                                background-color: $studio_multimedia;
+
+                                a {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .studio_area {
+                    .studio_content_area {
+                        .studio_content_title {
                             width: 100%;
-                            min-height: 300px;
+                            padding: 20px 0;
+                            margin: 0 auto 20px;
+                            border-bottom: 1px solid $brown;
+
+                            h4 {
+                                color: $brown;
+                            }
+                        }
+
+                        .studio_content_item {
                             position: relative;
-                            overflow: auto;
+                            margin: 30px auto 60px;
 
-                            .studio_content_item_frame_content_illustrate {
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                width: 80%;
+                            .share_type_area,
+                            .share_type_area_1 {
+                                justify-content: flex-end;
+                            }
 
-                                .upload_paint_area_answer{
-                                    line-height: 0;
+                            .share_type_area,
+                            .share_type_area_1,
+                            .writing_type_area,
+                            .creation_type_area {
+                                display: flex;
+                                align-items: center;
+                                margin: 0 0 20px 0;
 
-                                    img{
-                                        line-height: 1;
-                                        width: auto;
-                                    }
-                                    &.open{
-                                        display: block;
-                                        &~.svg_icon{
-                                            display: none;
-
-                                            &~p{
-                                            display: none;
-                                        }
-                                        }
-                                    }
-                                }
-
-                                .canvasImg{
+                                .share_type_input_btn,
+                                .share_type_input_btn_1,
+                                .writing_type_input_btn,
+                                .creation_type_input_btn {
                                     position: relative;
-                                    z-index: 1;
-                                }
+                                    margin: 0 0 0 10px;
 
-                                .upload_paint {
-                                    .upload_paint_area {
-                                        .upload_paint_area_answer {
-                                            canvas {
-                                                height: 100%;
-                                                z-index: 1;
-                                                background-color: $white;
+                                    .form-control {
+                                        display: flex;
+                                        align-items: center;
+                                        padding: 5px 10px;
+                                        border: 1px solid $brown;
+                                        background-color: $white;
+                                        min-width: 200px;
+                                        color: $brown;
+
+                                        i {
+                                            margin: 0 0 0 auto;
+                                            transition: 0.3s;
+                                        }
+
+                                        &.open {
+                                            border: 1px solid $main_color;
+                                            box-shadow: 5px 5px 10px 3px rgba(92, 138, 57, 0.1450980392);
+
+                                            i {
+                                                transform: rotate(180deg);
+                                            }
+
+                                            &~ul {
+                                                visibility: visible;
                                             }
                                         }
                                     }
+
+                                    ul {
+                                        position: absolute;
+                                        left: 50%;
+                                        z-index: 2;
+                                        transform: translate(-50%, 10px);
+                                        width: auto;
+                                        min-width: 200px;
+                                        visibility: hidden;
+                                        border-radius: 10px;
+                                        border: 1px solid $brown;
+                                        background-color: $white;
+                                        overflow: hidden;
+                                        cursor: pointer;
+
+                                        .dropdown_item_li {
+                                            padding: 5px 10px;
+                                            color: $brown;
+
+                                            &.active,
+                                            &:hover {
+                                                background-color: $brown;
+                                                color: $white;
+                                            }
+                                        }
+
+                                    }
                                 }
 
-                                .svg_icon {
-                                    margin: 0 auto 20px;
-                                    text-align: center;
+                            }
+
+                            .input_group {
+                                width: 100%;
+                                margin: 20px 0;
+                                display: flex;
+                                justify-content: flex-end;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+
+                                .studio_text_textarea {
+                                    width: 100%;
+                                    height: 150px;
+                                    padding: 10px;
+                                    color: $brown;
+                                    font-size: 20px;
+                                    border: 1px solid $brown;
+                                    border-radius: 10px;
+
+                                    &:focus {
+                                        background: lighten($brown, 60%) !important;
+                                        border-color: $brown;
+                                        outline: none;
+                                    }
+                                }
+
+                                .studio_creation_input {
+                                    width: 100%;
+                                    border: 1px solid $brown;
+                                    padding: 5px 10px;
+                                    outline: 0;
+                                    border-radius: 10px;
+
+                                    &:focus {
+                                        border: 1px solid $main_color;
+                                        color: $main_color;
+                                    }
+                                }
+
+                                .studio_text_submit {
+                                    margin: 15px 0;
+                                    color: $main_color;
+                                    border: 1px solid $main_color;
+                                    border-radius: 10px;
+                                    padding: 5px 10px;
+                                    cursor: pointer;
+                                    background-color: $white;
+
+                                    &:hover {
+                                        color: $white;
+                                        background-color: $main_color;
+                                    }
+                                }
+                            }
+
+                            .feedback_area {
+                                display: none;
+
+                                .feedback_tittle {
+                                    font-weight: bold;
+                                    margin: 0 0 15px 0;
+                                }
+
+                                .feedback_text {
+                                    background-color: $white;
+                                    padding: 17px;
+                                    color: $brown;
+                                    border: 1px solid $brown;
+                                    border-radius: 10px;
+
+                                    .feedback_text_error {
+                                        color: $red;
+
+                                        &.strikethrough {
+                                            color: $brown;
+                                            text-decoration: line-through;
+                                            text-decoration-color: $red;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .studio_content_item_frame {
+                                border: 1px solid $brown;
+                                border-radius: 10px;
+                                min-height: 300px;
+                                overflow: hidden;
+                                background-color: $white;
+
+                                .studio_content_item_frame_content {
+                                    width: 100%;
+                                    min-height: 300px;
+                                    position: relative;
+                                    overflow: auto;
+
+                                    .studio_content_item_frame_content_illustrate {
+                                        position: absolute;
+                                        left: 50%;
+                                        top: 50%;
+                                        transform: translate(-50%, -50%);
+                                        width: 80%;
+
+                                        .upload_paint_area_answer {
+                                            line-height: 0;
+
+                                            img {
+                                                line-height: 1;
+                                                width: auto;
+                                            }
+
+                                            &.open {
+                                                display: block;
+
+                                                &~.svg_icon {
+                                                    display: none;
+
+                                                    &~p {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .canvasImg {
+                                            position: relative;
+                                            z-index: 1;
+                                        }
+
+                                        .upload_paint {
+                                            .upload_paint_area {
+                                                .upload_paint_area_answer {
+                                                    canvas {
+                                                        height: 100%;
+                                                        z-index: 1;
+                                                        background-color: $white;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .svg_icon {
+                                            margin: 0 auto 20px;
+                                            text-align: center;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            p {
+                                                font-size: 80px;
+                                            }
+                                        }
+
+                                        .sound_bar_area {
+                                            width: 60px;
+                                            height: 60px;
+                                            display: flex;
+                                            align-items: center;
+                                            margin: 40px;
+
+                                            &.show {
+                                                display: flex;
+                                            }
+
+                                            &.play_animation {
+                                                .bar {
+                                                    animation: sound 0ms -800ms linear infinite alternate;
+                                                }
+                                            }
+
+                                            .bar {
+                                                background-color: $brown;
+                                                height: 0px;
+                                                width: 3px;
+                                                margin: 0px 1px;
+
+                                                &:nth-child(1) {
+                                                    animation-duration: 474ms;
+                                                }
+
+                                                &:nth-child(2) {
+                                                    animation-duration: 433ms;
+                                                }
+
+                                                &:nth-child(3) {
+                                                    animation-duration: 407ms;
+                                                }
+
+                                                &:nth-child(4) {
+                                                    animation-duration: 458ms;
+                                                }
+
+                                                &:nth-child(5) {
+                                                    animation-duration: 400ms;
+                                                }
+
+                                                &:nth-child(6) {
+                                                    animation-duration: 427ms;
+                                                }
+
+                                                &:nth-child(7) {
+                                                    animation-duration: 441ms;
+                                                }
+
+                                                &:nth-child(8) {
+                                                    animation-duration: 419ms;
+                                                }
+
+                                                &:nth-child(9) {
+                                                    animation-duration: 487ms;
+                                                }
+
+                                                &:nth-child(10) {
+                                                    animation-duration: 442ms;
+                                                }
+                                            }
+                                        }
+
+                                        p {
+                                            color: $brown;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .studio_content_item_btn {
+                                display: flex;
+                                justify-content: flex-end;
+                                flex-wrap: wrap;
+
+                                .studio_function_btn {
+                                    color: $main_color;
+                                    font-weight: bold;
+
+                                    .studio_btn_icon {
+                                        margin: 0 15px 0 0;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        i {
+                                            color: $main_color;
+                                            font-size: 25px;
+                                        }
+                                    }
+
+                                    .studio_btn_text {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                    }
+
+                                    &:hover {
+                                        color: $white;
+
+                                        p,
+                                        i {
+                                            color: $white;
+                                        }
+                                    }
+
+                                }
+
+                                .studio_function_btn,
+                                .studio_text_submit {
                                     display: flex;
-                                    justify-content: center;
                                     align-items: center;
+                                    margin: 15px 0 15px 20px;
+                                    border: 1px solid $main_color;
+                                    border-radius: 10px;
+                                    padding: 5px 10px;
+                                    cursor: pointer;
+                                    background-color: $white;
 
                                     p {
-                                        font-size: 80px;
-                                    }
-                                }
-
-                                .sound_bar_area {
-                                    width: 60px;
-                                    height: 60px;
-                                    display: flex;
-                                    align-items: center;
-                                    margin: 40px;
-
-                                    &.show {
-                                        display: flex;
+                                        color: $main_color;
+                                        font-weight: bold;
                                     }
 
-                                    &.play_animation {
-                                        .bar {
-                                            animation: sound 0ms -800ms linear infinite alternate;
+                                    &:hover {
+                                        background-color: $main_color;
+
+                                        p {
+                                            color: $white;
                                         }
                                     }
 
-                                    .bar {
-                                        background-color: $brown;
-                                        height: 0px;
-                                        width: 3px;
-                                        margin: 0px 1px;
+                                    &:disabled {
+                                        background-color: $grey;
+                                        color: $white;
+                                        border: 1px solid $grey;
+                                        cursor: auto;
 
-                                        &:nth-child(1) {
-                                            animation-duration: 474ms;
+                                        p,
+                                        i {
+                                            color: $white;
                                         }
 
-                                        &:nth-child(2) {
-                                            animation-duration: 433ms;
-                                        }
-
-                                        &:nth-child(3) {
-                                            animation-duration: 407ms;
-                                        }
-
-                                        &:nth-child(4) {
-                                            animation-duration: 458ms;
-                                        }
-
-                                        &:nth-child(5) {
-                                            animation-duration: 400ms;
-                                        }
-
-                                        &:nth-child(6) {
-                                            animation-duration: 427ms;
-                                        }
-
-                                        &:nth-child(7) {
-                                            animation-duration: 441ms;
-                                        }
-
-                                        &:nth-child(8) {
-                                            animation-duration: 419ms;
-                                        }
-
-                                        &:nth-child(9) {
-                                            animation-duration: 487ms;
-                                        }
-
-                                        &:nth-child(10) {
-                                            animation-duration: 442ms;
+                                        &:hover {
+                                            background-color: $grey;
                                         }
                                     }
                                 }
 
-                                p {
-                                    color: $brown;
-                                    text-align: center;
-                                }
-                            }
-                        }
-                    }
-
-                    .studio_content_item_btn {
-                        display: flex;
-                        justify-content: flex-end;
-                        flex-wrap: wrap;
-
-                        .studio_function_btn {
-                            color: $main_color;
-                            font-weight: bold;
-
-                            .studio_btn_icon {
-                                margin: 0 15px 0 0;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                i {
-                                    color: $main_color;
-                                    font-size: 25px;
+                                .studio_text_submit {
+                                    flex-direction: column;
+                                    justify-content: center;
                                 }
                             }
 
-                            .studio_btn_text {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                            }
-
-                            &:hover {
-                                color: $white;
-
-                                p,
-                                i {
-                                    color: $white;
-                                }
-                            }
-
-                        }
-
-                        .studio_function_btn,
-                        .studio_text_submit {
-                            display: flex;
-                            align-items: center;
-                            margin: 15px 0 15px 20px;
-                            border: 1px solid $main_color;
-                            border-radius: 10px;
-                            padding: 5px 10px;
-                            cursor: pointer;
-                            background-color: $white;
-
-                            p {
-                                color: $main_color;
-                                font-weight: bold;
-                            }
-
-                            &:hover {
-                                background-color: $main_color;
-
-                                p {
-                                    color: $white;
-                                }
-                            }
-
-                            &:disabled {
-                                background-color: $grey;
-                                color: $white;
-                                border: 1px solid $grey;
-                                cursor: auto;
-
-                                p,
-                                i {
-                                    color: $white;
-                                }
-
-                                &:hover {
-                                    background-color: $grey;
-                                }
-                            }
-                        }
-
-                        .studio_text_submit{
-                            flex-direction: column;
-                            justify-content: center;
                         }
                     }
 
                 }
             }
-
         }
-
     }
 }
 
@@ -523,6 +613,9 @@
 .modal {
 
     &.studio_palette_modal {
+        position: absolute;
+        left: 0;
+        top: 0;
         padding: 0;
         max-width: none;
         width: 100%;
@@ -748,35 +841,46 @@
 
 @media screen and (max-width: 1024px) {
     .main {
-        &.studio{
-            .studio_area {
-                .studio_content_area{
-                    .studio_content_item{
-                        .input_group{
-                            .studio_text_textarea {
-                            font-size: 15px;
-                        }
+        &.studio {
+            .studio_item_content_area_bg {
+                .studio_item_content_area {
+                    .studio_area {
+                        .studio_content_area {
+                            .studio_content_item {
+                                .input_group {
+                                    .studio_text_textarea {
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
+
+
         }
     }
 }
 
 @media screen and (max-width: 768px) {
     .main {
-    &.studio {
-        .studio_area {
-            .studio_content_area {
-                .studio_content_item {
+        &.studio {
+            .studio_item_content_area_bg {
+                .studio_item_content_area {
+                    .studio_area {
+                        .studio_content_area {
+                            .studio_content_item {
 
-                    .studio_content_item_frame {
-                        .studio_content_item_frame_content {
-                            .studio_content_item_frame_content_illustrate {
-                                .svg_icon {
-                                    p {
-                                        font-size: 60px;
+                                .studio_content_item_frame {
+                                    .studio_content_item_frame_content {
+                                        .studio_content_item_frame_content_illustrate {
+                                            .svg_icon {
+                                                p {
+                                                    font-size: 60px;
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -786,7 +890,7 @@
             }
         }
     }
-}
+
     .modal {
 
         &.studio_palette_modal {
@@ -850,7 +954,21 @@
 @media screen and (max-width: 576px) {
     .main {
         &.studio {
-            width: 90%;
+            .tittle {
+                width: 90%;
+            }
+
+            .course_area {
+                padding: 15px 5%;
+            }
+
+            .studio_item_content_area_bg {
+                .studio_item_content_area {
+                    width: 90%;
+                }
+            }
+
+
         }
     }
 }
@@ -858,39 +976,38 @@
 @media screen and (max-width: 499px) {
     .main {
         &.studio {
+            .studio_item_content_area_bg {
+                .studio_item_content_area {
+                    .studio_area {
+                        .studio_content_area {
 
-            .studio_area {
-                .studio_content_area {
+                            .studio_content_item {
 
-                    .studio_content_item {
+                                .studio_content_item_btn {
 
-                        .studio_content_item_btn {
+                                    .studio_function_btn {
+                                        flex-direction: column;
+                                        justify-content: center;
 
-                            .studio_function_btn {
-                                flex-direction: column;
-                                justify-content: center;
+                                        .studio_btn_icon {
+                                            margin: 5px auto;
 
-                                .studio_btn_icon {
-                                    margin: 5px auto;
+                                            i {
+                                                font-size: 15px;
+                                            }
+                                        }
+                                    }
 
-                                    i {
-                                        font-size: 15px;
+                                    .studio_function_btn,
+                                    .studio_text_submit {
+                                        margin: 15px 0 0px 10px;
                                     }
                                 }
                             }
-
-                            .studio_function_btn,
-                            .studio_text_submit {
-                                margin: 15px 0 0px 10px;
-                            }
                         }
-
-
                     }
                 }
             }
-
-
         }
     }
 
