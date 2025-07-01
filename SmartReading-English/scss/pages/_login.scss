@@ -1,4 +1,4 @@
-.main{
+.main {
     &.login {
         background-image: url(../image/photo/slide/slide_login.png);
         background-position: left center;
@@ -7,7 +7,41 @@
         padding-top: 130px;
         padding-bottom: 130px;
         position: relative;
-    
+
+        &.kumon {
+            background-color: #7dcdf4;
+            background-image: none;
+
+            .login_logo_area {
+                width: calc(80% - 550px);
+                margin: 0 0 0 5%;
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+
+                .login_logo_area_content {
+                    max-width: 400px;
+                    margin: 0 auto;
+
+                    .logo_area_content_img {
+                        margin: 15px auto;
+                        display: flex;
+                        align-items: flex-end;
+
+                        .logo_area_content_text {
+                            margin: 0 15px 0 0;
+                            color: $black;
+                            font-size: 30px;
+                        }
+
+                        .SRE_logo_img {
+                            width: calc(100% - 36.16px);
+                        }
+                    }
+                }
+            }
+        }
+
         .login_text {
             width: calc(85% - 550px);
             max-width: 550px;
@@ -16,7 +50,7 @@
             // top: 45px;
             bottom: 130px;
         }
-    
+
         .login_area {
             display: flex;
             flex-direction: column;
@@ -26,19 +60,19 @@
             box-shadow: 0 0 10px $grey;
             width: 550px;
             margin-left: calc(95% - 550px);
-    
+
             .account_area {
-    
+
                 .account_secret_area {
                     display: flex;
                     align-items: center;
                     margin-bottom: 25px;
-    
+
                     label {
                         font-size: 17px;
                         width: 110px;
                     }
-    
+
                     input {
                         color: $brown;
                         background-color: $white;
@@ -48,7 +82,7 @@
                         border-radius: 10px;
                         width: calc(100% - 110px);
                     }
-    
+
                     select:focus,
                     input[type="text"]:focus,
                     input[type="password"]:focus {
@@ -59,7 +93,7 @@
                         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                     }
                 }
-    
+
                 .login_button {
                     width: 100%;
                     font-size: 17px;
@@ -70,23 +104,23 @@
                     border-radius: 10px;
                     background-color: $white;
                     cursor: pointer;
-    
+
                     &:hover {
                         background-color: $main_color;
                         color: $white;
                     }
                 }
             }
-    
+
             .forget_password {
                 display: flex;
                 justify-content: space-between;
-    
+
                 .remember_me {
                     display: flex;
                     position: relative;
                     cursor: pointer;
-    
+
                     .checkmark {
                         position: relative;
                         top: 0.5em;
@@ -94,7 +128,7 @@
                         width: 1em;
                         border: 1px solid $main_color;
                         transform: translate(0px, -0.2em);
-    
+
                         &:after {
                             content: "";
                             position: absolute;
@@ -109,49 +143,49 @@
                             z-index: 1;
                         }
                     }
-    
+
                     input {
                         position: absolute;
                         opacity: 0;
                         height: 0;
                         width: 0;
                         cursor: pointer;
-    
+
                         &:checked~.checkmark {
                             background-color: $main_color;
-    
+
                         }
-    
+
                         &:hover~.checkmark:after,
                         &:checked~.checkmark:after {
                             display: block;
                         }
                     }
-    
+
                     p {
                         margin-left: 5px;
                     }
-    
+
                 }
-    
+
                 a {
                     color: $brown;
-    
+
                     &:hover {
                         color: $main_color;
                     }
                 }
             }
-    
+
             .signup {
                 margin-top: 25px;
                 padding-top: 15px;
                 border-top: 1px solid $brown;
-    
+
                 p {
                     text-align: center;
                 }
-    
+
                 .signup_button {
                     width: 100%;
                     font-size: 17px;
@@ -162,7 +196,7 @@
                     border-radius: 10px;
                     background-color: $white;
                     cursor: pointer;
-    
+
                     &:hover {
                         background-color: $main_color;
                         border: 1px solid $main_color;
@@ -174,15 +208,15 @@
     }
 }
 
-@media screen and (max-width: 1200px){
-    .main{
+@media screen and (max-width: 1200px) {
+    .main {
         &.login {
             padding-top: 100px;
             padding-bottom: 100px;
-    
+
             .login_text {
                 width: calc(550px * 0.8);
-                margin-left: calc(95% - 550px * 0.9);
+                margin: 0 0 0 calc(95% - 550px * 0.9);
                 bottom: auto;
                 top: calc(130px / 2);
                 transform: translate(0%, -50%);
@@ -191,64 +225,107 @@
     }
 }
 
-@media screen and (max-width: 1024px){
-    .main{
+@media screen and (max-width: 1024px) {
+    .main {
         &.login {
+
+            &.kumon {
+                .login_logo_area {
+                    width: calc(80% - 450px);
+                }
+            }
 
             .login_text {
                 width: calc(450px * 0.8);
                 margin-left: calc(95% - 450px * 0.9);
             }
-    
+
             .login_area {
-    
                 width: 450px;
                 margin-left: calc(95% - 450px);
-    
+
                 .account_area {
-    
                     .account_secret_area {
                         flex-direction: column;
                         align-items: flex-start;
                         margin-bottom: 20px;
-    
+
                         label {
                             font-size: 15px;
                             width: 100%;
                             margin-bottom: 5px;
                         }
-    
+
                         input {
                             font-size: 15px;
                             width: 100%;
                         }
                     }
-    
+
                     .login_button {
                         font-size: 15px;
                     }
                 }
-    
+
                 .signup {
                     margin-top: 25px;
                     padding-top: 15px;
-    
+
                     .signup_button {
                         font-size: 15px;
                     }
                 }
             }
-    
+
         }
     }
 }
 
-@media screen and (max-width: 768px){
-    .main{
+@media screen and (max-width: 992px) {
+    .main {
+        &.login {
+            &.kumon {
+                .login_logo_area {
+                    position: relative;
+                    top: auto;
+                    transform: translate(0px, 0px);
+                    width: 60%;
+                    margin: 0 auto 20px;
+
+                    .login_logo_area_content {
+                        display: flex;
+                        align-items: center;
+                        max-width: 450px;
+
+                        .logo_area_content_img {
+                            margin: 0 10px;
+
+                            .logo_area_content_text {
+                                font-size: 18px;
+                            }
+
+                            .SRE_logo_img {
+                            width: calc(100% - 22.89px);
+                        }
+                        }
+                    }
+                }
+
+                .login_area {
+                    width: 70%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
         &.login {
             padding-top: 70px;
             padding-bottom: 70px;
-    
+
             .login_text {
                 width: 60%;
                 margin-left: 0px;
@@ -258,15 +335,15 @@
                 top: auto;
                 transform: translate(0px, 0px);
             }
-            .login_area{
+
+            .login_area {
                 width: 70%;
-                margin-left: 0px;
                 margin: 0 auto;
-    
-                .forget_password{
+
+                .forget_password {
                     flex-direction: column;
-    
-                    a{
+
+                    a {
                         margin: 10px 0px 0px;
                     }
                 }
@@ -275,38 +352,49 @@
     }
 }
 
-@media screen and (max-width: 499px){
-    .main{
+@media screen and (max-width: 499px) {
+    .main {
         &.login {
+            &.kumon {
+                .login_logo_area{
+                    width: 80%;
+                }
+
+                .login_area {
+                    width: 90%;
+                }
+            }
 
             .login_area {
                 width: 90%;
+
                 .account_area {
                     .account_secret_area {
                         label {
                             font-size: 13px;
                         }
+
                         input {
                             font-size: 13px;
                         }
                     }
-    
+
                     .login_button {
                         font-size: 13px;
                     }
                 }
-    
+
                 .signup {
                     margin-top: 15px;
                     padding-top: 10px;
-    
+
                     .signup_button {
                         font-size: 13px;
                         margin-top: 10px;
                     }
                 }
             }
-    
+
         }
     }
 }
