@@ -4869,8 +4869,18 @@ h-word {
   background-color: #7dcdf4;
   background-image: none;
 }
+.main.login.kumon::before {
+  content: "";
+  position: absolute;
+  width: calc(15% + 550px);
+  height: 100%;
+  background-color: #fff;
+  right: 0;
+  top: 0;
+  border-radius: 60% 0 0 0;
+}
 .main.login.kumon .login_logo_area {
-  width: calc(80% - 550px);
+  width: calc(75% - 550px);
   margin: 0 0 0 5%;
   position: absolute;
   top: 50%;
@@ -4893,10 +4903,16 @@ h-word {
 .main.login.kumon .login_logo_area .login_logo_area_content .logo_area_content_img .SRE_logo_img {
   width: calc(100% - 36.16px);
 }
+.main.login.kumon .login_area {
+  position: relative;
+  box-shadow: none;
+  z-index: 1;
+  background-color: transparent;
+}
 .main.login .login_text {
   width: calc(85% - 550px);
   max-width: 550px;
-  margin-left: 10%;
+  margin: 0 0 0 10%;
   position: absolute;
   bottom: 130px;
 }
@@ -4908,7 +4924,7 @@ h-word {
   border-radius: 10px;
   box-shadow: 0 0 10px grey;
   width: 550px;
-  margin-left: calc(95% - 550px);
+  margin: 0 0 0 calc(95% - 550px);
 }
 .main.login .login_area .account_area .account_secret_area {
   display: flex;
@@ -5043,16 +5059,19 @@ h-word {
   }
 }
 @media screen and (max-width: 1024px) {
+  .main.login.kumon::before {
+    width: calc(15% + 450px);
+  }
   .main.login.kumon .login_logo_area {
-    width: calc(80% - 450px);
+    width: calc(75% - 450px);
   }
   .main.login .login_text {
     width: 360px;
-    margin-left: calc(95% - 405px);
+    margin: 0 0 0 calc(95% - 405px);
   }
   .main.login .login_area {
     width: 450px;
-    margin-left: calc(95% - 450px);
+    margin: 0 0 0 calc(95% - 450px);
   }
   .main.login .login_area .account_area .account_secret_area {
     flex-direction: column;
@@ -5080,12 +5099,15 @@ h-word {
   }
 }
 @media screen and (max-width: 992px) {
+  .main.login.kumon::before {
+    display: none;
+  }
   .main.login.kumon .login_logo_area {
     position: relative;
     top: auto;
     transform: translate(0px, 0px);
     width: 60%;
-    margin: 0 auto 20px;
+    margin: 0 auto 50px;
   }
   .main.login.kumon .login_logo_area .login_logo_area_content {
     display: flex;
@@ -5105,6 +5127,20 @@ h-word {
     width: 70%;
     margin: 0 auto;
   }
+  .main.login.kumon .login_area::before {
+    content: "";
+    position: absolute;
+    width: calc(130% + 100px);
+    height: calc(100% + 100px);
+    background-color: #fff;
+    right: calc(-15% - 50px);
+    top: 0;
+    border-radius: 30% 30% 0 0;
+    z-index: -1;
+  }
+  .main.login.kumon .login_area .account_area {
+    margin: 50px 0 0;
+  }
 }
 @media screen and (max-width: 768px) {
   .main.login {
@@ -5113,7 +5149,6 @@ h-word {
   }
   .main.login .login_text {
     width: 60%;
-    margin-left: 0px;
     margin: 0 auto 20px;
     max-width: none;
     position: relative;
@@ -5134,9 +5169,15 @@ h-word {
 @media screen and (max-width: 499px) {
   .main.login.kumon .login_logo_area {
     width: 80%;
+    margin: 0 auto 30px;
   }
   .main.login.kumon .login_area {
     width: 90%;
+  }
+  .main.login.kumon .login_area::before {
+    width: calc(110% + 4px);
+    height: calc(100% + 70px);
+    right: calc(-5% - 2px);
   }
   .main.login .login_area {
     width: 90%;

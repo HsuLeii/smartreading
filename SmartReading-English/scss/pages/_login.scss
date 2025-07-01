@@ -12,8 +12,19 @@
             background-color: #7dcdf4;
             background-image: none;
 
+            &::before {
+                content: "";
+                position: absolute;
+                width: calc(15% + 550px);
+                height: 100%;
+                background-color: $white;
+                right: 0;
+                top: 0;
+                border-radius: 60% 0 0 0;
+            }
+
             .login_logo_area {
-                width: calc(80% - 550px);
+                width: calc(75% - 550px);
                 margin: 0 0 0 5%;
                 position: absolute;
                 top: 50%;
@@ -40,12 +51,19 @@
                     }
                 }
             }
+
+            .login_area {
+                position: relative;
+                box-shadow: none;
+                z-index: 1;
+                background-color: $transparent;
+            }
         }
 
         .login_text {
             width: calc(85% - 550px);
             max-width: 550px;
-            margin-left: 10%;
+            margin: 0 0 0 10%;
             position: absolute;
             // top: 45px;
             bottom: 130px;
@@ -59,7 +77,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px $grey;
             width: 550px;
-            margin-left: calc(95% - 550px);
+            margin: 0 0 0 calc(95% - 550px);
 
             .account_area {
 
@@ -230,19 +248,24 @@
         &.login {
 
             &.kumon {
+
+                &::before {
+                    width: calc(15% + 450px);
+                }
+
                 .login_logo_area {
-                    width: calc(80% - 450px);
+                    width: calc(75% - 450px);
                 }
             }
 
             .login_text {
                 width: calc(450px * 0.8);
-                margin-left: calc(95% - 450px * 0.9);
+                margin: 0 0 0 calc(95% - 450px * 0.9);
             }
 
             .login_area {
                 width: 450px;
-                margin-left: calc(95% - 450px);
+                margin: 0 0 0 calc(95% - 450px);
 
                 .account_area {
                     .account_secret_area {
@@ -285,12 +308,17 @@
     .main {
         &.login {
             &.kumon {
+
+                &::before {
+                    display: none;
+                }
+
                 .login_logo_area {
                     position: relative;
                     top: auto;
                     transform: translate(0px, 0px);
                     width: 60%;
-                    margin: 0 auto 20px;
+                    margin: 0 auto 50px;
 
                     .login_logo_area_content {
                         display: flex;
@@ -305,8 +333,8 @@
                             }
 
                             .SRE_logo_img {
-                            width: calc(100% - 22.89px);
-                        }
+                                width: calc(100% - 22.89px);
+                            }
                         }
                     }
                 }
@@ -314,6 +342,22 @@
                 .login_area {
                     width: 70%;
                     margin: 0 auto;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: calc(130% + 100px);
+                        height: calc(100% + 100px);
+                        background-color: $white;
+                        right: calc(-15% - 50px);
+                        top: 0;
+                        border-radius: 30% 30% 0 0;
+                        z-index: -1;
+                    }
+
+                    .account_area {
+                        margin: 50px 0 0;
+                    }
                 }
             }
         }
@@ -328,7 +372,6 @@
 
             .login_text {
                 width: 60%;
-                margin-left: 0px;
                 margin: 0 auto 20px;
                 max-width: none;
                 position: relative;
@@ -356,12 +399,19 @@
     .main {
         &.login {
             &.kumon {
-                .login_logo_area{
+                .login_logo_area {
                     width: 80%;
+                    margin: 0 auto 30px;
                 }
 
                 .login_area {
                     width: 90%;
+
+                    &::before {
+                        width: calc(110% + 4px);
+                        height: calc(100% + 70px);
+                        right: calc(-5% - 2px);
+                    }
                 }
             }
 
