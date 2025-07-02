@@ -310,7 +310,7 @@
             &.kumon {
 
                 &::before {
-                    display: none;
+                    width: auto;
                 }
 
                 .login_logo_area {
@@ -340,18 +340,19 @@
                 }
 
                 .login_area {
-                    width: 70%;
+                    width: 100%;
                     margin: 0 auto;
+                    padding: 50px 15% 0;
 
                     &::before {
                         content: "";
                         position: absolute;
-                        width: calc(130% + 100px);
+                        width: 100%;
                         height: calc(100% + 100px);
                         background-color: $white;
-                        right: calc(-15% - 50px);
+                        right: 0;
                         top: 0;
-                        border-radius: 30% 30% 0 0;
+                        border-radius: 20% 20% 0 0;
                         z-index: -1;
                     }
 
@@ -370,6 +371,14 @@
             padding-top: 70px;
             padding-bottom: 70px;
 
+            &.kumon {
+                .login_area {
+                    &::before {
+                        height: calc(100% + 70px);
+                    }
+                }
+            }
+
             .login_text {
                 width: 60%;
                 margin: 0 auto 20px;
@@ -380,8 +389,10 @@
             }
 
             .login_area {
-                width: 70%;
+                width: 90%;
                 margin: 0 auto;
+                padding: 50px 10%;
+                margin: 0 5%;
 
                 .forget_password {
                     flex-direction: column;
@@ -403,20 +414,10 @@
                     width: 80%;
                     margin: 0 auto 30px;
                 }
-
-                .login_area {
-                    width: 90%;
-
-                    &::before {
-                        width: calc(110% + 4px);
-                        height: calc(100% + 70px);
-                        right: calc(-5% - 2px);
-                    }
-                }
             }
 
             .login_area {
-                width: 90%;
+                width: 100%;
 
                 .account_area {
                     .account_secret_area {
