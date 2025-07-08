@@ -53,6 +53,29 @@
                                     <h4 class="personal_course_title">A+ Earned in Post-reading Challenges</h4>
                                     <h3>2</h3>
                                 </div>
+
+                                <div class="personal_course_items studio_work_number_area">
+                                    <h4 class="personal_course_title">創作室作品數</h4>
+                                    <div class="studio_text_number">
+                                        <h4 class="personal_course_title">Writing</h4>
+                                    <h3>2</h3>
+                                    </div>
+
+                                    <div class="studio_text_number">
+                                        <h4 class="personal_course_title">Audio</h4>
+                                    <h3>2</h3>
+                                    </div>
+
+                                    <div class="studio_text_number">
+                                        <h4 class="personal_course_title">Drawing</h4>
+                                    <h3>2</h3>
+                                    </div>
+
+                                    <div class="studio_text_number">
+                                        <h4 class="personal_course_title">Multimedia</h4>
+                                    <h3>2</h3>
+                                    </div>
+                                </div>
                             </div>
                             <div class="wave_line wave_line_left">
                                 <div class="wave_line_internal"></div>
@@ -93,6 +116,38 @@
                                 <div class="wave_line_internal"></div>
                             </div>
                         </div>
+
+                        <div class="folder_report_items_right">
+                            <div class="dcecPage_chart">
+                                <h3>Reading for English Achievement and Progress Record</h3>
+                                <div class="data_page_scroll">
+                                    <div class="dcecPage_chart_control">
+
+                                        <div class="chartjs_size_monitor">
+                                            <div class="chartjs_size_monitor_expand">
+                                                <div class=""></div>
+                                            </div>
+                                            <div class="chartjs_size_monitor_shrink">
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+
+                                        <canvas id="chart4" height="300" width="1070"
+                                            class="chartjs_render_monitor"></canvas>
+
+                                        <div class="chart_overall_x"></div>
+                                        <div class="chart_overall_y">Total Score</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wave_line wave_line_left">
+                                <div class="wave_line_internal"></div>
+                            </div>
+                            <div class="wave_line wave_line_right">
+                                <div class="wave_line_internal"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="folder_report_items folder_report_pie">
@@ -111,7 +166,6 @@
                                         </div>
                                         <canvas id="chart2" height="300" width="300"
                                             class="chartjs_render_monitor"></canvas>
-
                                     </div>
                                 </div>
                             </div>
@@ -398,6 +452,73 @@
                         100; //fontSize: 6% of canvas height
                 },
 
+            }]
+        });
+    
+    
+        var ctx4 = document.getElementById("chart4");
+        var chart4 = new Chart(ctx4, {
+            type: "line",
+            data: {
+                labels: ["六月", "七月", "八月", "九月",],
+                datasets: [{
+                    label: "閱讀數",
+                    backgroundColor: [
+                        "transparent"
+                    ],
+                    borderColor: "#ff6464",
+                    pointBackgroundColor: "#ff6464",
+                    borderWidth: "1",
+                    data: [65, 40, 80, 81],
+
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: false,
+                            labelString: "閱讀數",
+                            fontSize: 16,
+                            fontColor: "#4B4B4B",
+                        },
+                        ticks: {
+                            min: 0,
+                            max: 80,
+                            stepSize: 20,
+                            fontColor: "#4B4B4B",
+                            beginAtZero: true,
+                        },
+                    }],
+                    xAxes: [{
+                        barPercentage: 0.4,
+                        scaleLabel: {
+                            display: false,
+                            labelString: "分級程度",
+                            fontSize: 16,
+                            fontColor: "#4B4B4B",
+                        },
+                        ticks: {
+                            fontColor: "#4B4B4B",
+                            beginAtZero: false,
+                            beginAtZero: true,
+                        }
+                    }],
+                },
+                chartArea: {
+                    backgroundColor: "#F7F7F7"
+                }
+            },
+            plugins: [{
+                beforeDraw: function (c) {
+                    var chartHeight = c.chart.width;
+                    c.scales["y-axis-0"].options.ticks.fontSize = chartHeight * 6 /
+                        100; //fontSize: 6% of canvas height
+                }
             }]
         });
     </script>
