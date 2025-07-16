@@ -1,0 +1,255 @@
+body {
+    .main {
+        .main_content {
+
+            .main_content_item {
+                &.category_content {
+                    order: 2;
+                    margin: 0 auto 40px;
+
+                    .category_content_menu {
+                        width: 100%;
+                        padding: 30px 20px;
+                        margin: 0 auto 30px;
+                        background-color: $white;
+                        border: 1px solid $brown;
+                        border-radius: 5px;
+
+                        .category_content_tittle {
+                            width: 100%;
+                            padding: 0 0 10px;
+                            display: flex;
+                            justify-content: center;
+                            border-bottom: 1px solid $brown;
+
+                            p {
+                                @extend %bold;
+                            }
+                        }
+
+                        .category_content_nav {
+                            width: 100%;
+                            padding: 10px 0 0;
+
+                            .category_content_nav_inner {
+                                .category_content_nav_inner_list {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-wrap: wrap;
+
+                                    li {
+                                        margin: 5px 0;
+                                        width: 45%;
+
+                                        a {
+                                            padding: 5px;
+                                            display: inline-block;
+                                            background-position: 0% 100%;
+                                            background: linear-gradient(transparent, transparent) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                                            transition: background-size var(--transition-duration) var(--transition-timing-function);
+                                            border-bottom: 1px solid transparent;
+
+                                            .menu_icon{
+                                                i{
+                                                    transform: rotate(90deg);
+                                                }
+                                            }
+
+                                            &.active{
+                                                span {
+                                                    color: $main_color;
+                                                }
+                                            }
+                                        }
+
+                                        &:hover {
+
+                                            a {
+                                                background-position: 100% 100%;
+                                                background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
+                                                border-bottom: 1px solid transparent;
+
+                                                span {
+                                                    color: $main_color;
+                                                    font-weight: bold;
+                                                }
+
+                                                .menu_icon {
+                                                    color: $main_color;
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    .category_content_item {
+                        width: 100%;
+                        margin: 0 auto;
+                        padding: 40px 0;
+
+                        .category_content_item_project {
+                            width: 100%;
+                            background-color: $brown;
+                            padding: 15px 20px;
+                            margin: 0 0 20px;
+                            border-radius: 5px;
+
+                            .category_content_item_project_text {
+                                h5 {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                        .category_content_item_project_information {
+                            width: 100%;
+                            padding: 20px;
+                            background-color: $white;
+                            border-radius: 5px;
+                            border: 1px solid $brown;
+
+                            .project_information_text {
+                                .project_information_text_list {
+                                    display: flex;
+                                    margin: 10px auto;
+
+                                    p {
+                                        a {
+                                            margin: 0 0 5px;
+                                            color: $brown;
+                                            background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                                            transition: background-size var(--transition-duration) var(--transition-timing-function);
+                                            border-bottom: 1px solid $brown;
+                                            padding: 0 3px 1px;
+                                            word-break: break-all;
+
+                                            &:hover {
+                                                color: $main_color;
+                                                background-position: 100% 100%;
+                                                background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
+                                                border-bottom: 1px solid transparent;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content{
+                        .category_content_menu{
+
+                            .category_content_nav {
+
+                            .category_content_nav_inner {
+                                .category_content_nav_inner_list {
+                                    justify-content: flex-start;
+
+                                    li {
+                                        width: 30%;
+                                        margin: 5px 3.33333% 5px 0;
+                                    }
+                                }
+                            }
+
+                        }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content{
+                        align-items: flex-start;
+
+                        .category_content_menu{
+                            position: sticky;
+                            top: 40px;
+                            width: 30%;
+                            margin: 40px 0;
+
+                            .category_content_nav {
+
+                            .category_content_nav_inner {
+                                .category_content_nav_inner_list {
+
+                                    li {
+                                        width: 100%;
+
+                                        a{
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: space-between;
+
+                                            .menu_icon{
+                                                i{
+                                                    transform: rotate(0deg);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        }
+
+                        .category_content_item{
+                            width: 65%;
+                            margin: 0 0 0px auto;
+                            padding: 40px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        .main {
+            .main_content {
+                .main_content_item {
+                    &.category_content{
+
+                        .category_content_menu{
+                            width: 25%;
+                            margin: 40px 0;
+                        }
+
+                        .category_content_item{
+                            width: 70%;
+                            padding: 40px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

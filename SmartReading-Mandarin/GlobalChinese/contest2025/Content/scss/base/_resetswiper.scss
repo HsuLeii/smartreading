@@ -1,0 +1,90 @@
+// swiper改寫開始
+.main_content_item_content {
+    position: relative;
+
+    .swiper {
+        position: initial;
+        width: calc(100% - 60px);
+
+        .swiper-wrapper {
+            margin: 0 auto 20px;
+        }
+
+        .swiper_btn_next,
+        .swiper_btn_prev {
+            cursor: pointer;
+            position: absolute;
+            top: var(--swiper-navigation-top-offset, 50%);
+            z-index: 10;
+            margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+            color: $black;
+
+            &::after {
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: $main_color;
+            }
+        }
+
+        .swiper_btn_next {
+            right: 0px;
+
+            &::after {
+                content: "\f138";
+            }
+        }
+
+        .swiper_btn_prev {
+            left: 0px;
+
+            &::after {
+                content: "\f137";
+            }
+        }
+
+        .swiper_pagination {
+            position: relative;
+            left: 50%;
+            bottom: 0px;
+
+            .swiper-pagination-bullet {
+                background: $black;
+                width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 40px));
+                height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 5px));
+                border-radius: 50px;
+            }
+        }
+
+        .swiper-button-disabled {
+            opacity: .35;
+            cursor: auto;
+            pointer-events: none;
+        }
+    }
+}
+
+// swiper改寫結束
+
+@media screen and (min-width: 768px) {
+
+    // swiper改寫開始
+    .main_content_item_content {
+        .swiper {
+            width: calc(100% - 70px);
+
+            .swiper_btn_next,
+            .swiper_btn_prev {
+
+                &::after {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    // swiper改寫結束
+}
