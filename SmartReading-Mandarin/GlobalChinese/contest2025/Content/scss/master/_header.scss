@@ -14,7 +14,7 @@ header {
         padding: 20px 0 20px 5%;
         background-color: $footer_bg;
 
-        a{
+        a {
             width: 100%;
         }
     }
@@ -65,10 +65,27 @@ header {
             .menu_pagination {
 
                 li {
-                    background-position: 0% 100%;
-                    background: linear-gradient($black, $black) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                    position: relative;
                     transition: background-size var(--transition-duration) var(--transition-timing-function);
-                    border-bottom: 1px solid $black;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        border-bottom: 1px solid $black;
+                    }
+
+                    &::after {
+                        content: "";
+                        border-top: 1px solid $main_color;
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        transform: scaleX(0);
+                        transform-origin: 100% 0;
+                        transition: transform var(--transition-duration) var(--transition-easing);
+                    }
 
                     a {
                         padding: 20px;
@@ -77,13 +94,13 @@ header {
                         align-items: center;
                         justify-content: space-between;
 
-                        &.nowPage{
-                            span{
+                        &.nowPage {
+                            span {
                                 color: $main_color;
                             }
                         }
-                        
-                        span{
+
+                        span {
                             color: $black;
                         }
 
@@ -98,9 +115,10 @@ header {
                     }
 
                     &:hover {
-                        background-position: 100% 100%;
-                        background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
-                        border-bottom: 1px solid transparent;
+                        &::after {
+                            transform: scaleX(1);
+                            transform-origin: 0 0;
+                        }
 
                         a {
                             span {
