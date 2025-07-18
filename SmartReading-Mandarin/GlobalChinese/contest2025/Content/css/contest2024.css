@@ -612,9 +612,6 @@ header nav .menu .menu_pagination li a .menu_icon {
   font-size: 20px;
   transition: var(--transition-duration) var(--transition-timing-function);
 }
-header nav .menu .menu_pagination li:nth-last-child(1) {
-  border-bottom: 1px solid transparent;
-}
 header nav .menu .menu_pagination li:hover::after {
   transform: scaleX(1);
   transform-origin: 0 0;
@@ -710,6 +707,9 @@ header.open nav::after {
   header nav .menu .menu_pagination li {
     background: linear-gradient(#262626, #262626) 100% calc(100% + 1px)/0% 0px no-repeat;
     border-bottom: 1px solid transparent;
+  }
+  header nav .menu .menu_pagination li::before {
+    display: none;
   }
   header nav .menu .menu_pagination li a .menu_icon {
     display: none;
@@ -1147,45 +1147,51 @@ body figure {
     margin: 0 auto 40px;
   }
 }
+body .main .main_content .main_content_item {
+  width: 100%;
+}
 body .main .main_content .main_content_item.category_content {
   order: 2;
   margin: 0 auto 40px;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu {
   width: 100%;
-  padding: 30px 20px;
   margin: 0 auto 30px;
-  background-color: #fff;
-  border: 1px solid #5B3716;
-  border-radius: 5px;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_tittle {
   width: 100%;
   padding: 0 0 10px;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid #5B3716;
+  border-bottom: 1px solid #262626;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav {
   width: 100%;
-  padding: 10px 0 0;
-}
-body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li {
+  position: relative;
+  width: 100%;
   margin: 5px 0;
-  width: 45%;
+}
+body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid #262626;
+}
+body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li::after {
+  content: "";
+  border-top: 1px solid #00a7e5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition: transform var(--transition-duration) var(--transition-easing);
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li a {
-  padding: 5px;
-  display: inline-block;
-  background-position: 0% 100%;
-  background: linear-gradient(transparent, transparent) 100% calc(100% + 1px)/0% 1px no-repeat;
-  transition: background-size var(--transition-duration) var(--transition-timing-function);
-  border-bottom: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li a .menu_icon i {
   transform: rotate(90deg);
@@ -1193,10 +1199,9 @@ body .main .main_content .main_content_item.category_content .category_content_m
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li a.active span {
   color: #00a7e5;
 }
-body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li:hover a {
-  background-position: 100% 100%;
-  background: linear-gradient(#00a7e5, #00a7e5) 0% calc(100% + 1px)/100% 1px no-repeat;
-  border-bottom: 1px solid transparent;
+body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li:hover::after {
+  transform: scaleX(1);
+  transform-origin: 0 0;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li:hover a span {
   color: #00a7e5;
@@ -1212,7 +1217,7 @@ body .main .main_content .main_content_item.category_content .category_content_i
 }
 body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project {
   width: 100%;
-  background-color: #5B3716;
+  background-color: #00a7e5;
   padding: 15px 20px;
   margin: 0 0 20px;
   border-radius: 5px;
@@ -1225,26 +1230,140 @@ body .main .main_content .main_content_item.category_content .category_content_i
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
-  border: 1px solid #5B3716;
+  border: 1px solid #262626;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_tittle h5 {
+  color: #00a7e5;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text {
+  margin: 0 auto 40px;
 }
 body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list {
   display: flex;
+  flex-wrap: wrap;
   margin: 10px auto;
 }
 body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a {
+  position: relative;
   margin: 0 0 5px;
-  color: #5B3716;
-  background: linear-gradient(#5B3716, #5B3716) 100% calc(100% + 1px)/0% 1px no-repeat;
-  transition: background-size var(--transition-duration) var(--transition-timing-function);
-  border-bottom: 1px solid #5B3716;
+  color: #00a7e5;
   padding: 0 3px 1px;
   word-break: break-all;
 }
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a::after {
+  content: "";
+  border-top: 1px solid #00a7e5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition: transform var(--transition-duration) var(--transition-easing);
+}
 body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a:hover {
+  font-weight: bold;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a:hover::after {
+  transform: scaleX(1);
+  transform-origin: 0 0;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p span.annotation {
+  color: red;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 5px;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table {
+  width: 100%;
+  text-align: center;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table.table_responsive {
+  overflow-x: scroll;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table {
+  width: 100%;
+  min-width: 790px;
+  margin: 0 auto;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-bottom-width: 0px;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table * {
+  border-bottom-color: transparent;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table tr {
+  border-color: transparent;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table thead {
+  border-style: none;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table thead tr {
+  background-color: #7fdcff;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table tbody tr:nth-child(even) {
+  background-color: #e5f8ff;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table tbody tr td {
+  width: 33%;
+  padding: 10px;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table tbody tr td:nth-child(1) {
+  width: 25%;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table tbody tr td:nth-child(2) {
+  width: 50%;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .results_table .table tbody tr td:nth-child(3) {
+  width: 25%;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule {
+  width: 100%;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 0 40px 0;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item:nth-last-child(1) .project_information_schedule_marker::before {
+  height: 100%;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
+  width: calc(100% - 20px);
+  margin: 0 0 0 20px;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content .project_information_schedule_content_inner .project_information_schedule_content_inner_text h5 {
   color: #00a7e5;
-  background-position: 100% 100%;
-  background: linear-gradient(#00a7e5, #00a7e5) 0% calc(100% + 1px)/100% 1px no-repeat;
-  border-bottom: 1px solid transparent;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 0 0 10px;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 3px;
+  height: calc(100% + 40px);
+  background-color: #00a7e5;
+}
+body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00a7e5;
 }
 
 @media screen and (min-width: 768px) {
