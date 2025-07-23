@@ -256,67 +256,63 @@
                       <label class="input-group-label" for="TeacherName2">
                         教師姓名
                       </label>
-                      <input type="text" id="TeacherName2" class="form-control" value=""
-                        placeholder="教師姓名">
+                      <input type="text" id="TeacherName2" class="form-control" value="" placeholder="教師姓名">
                     </div>
 
                     <div class="input_area">
                       <label class="input-group-label" for="SchoolName">
                         學校名稱
                       </label>
-                      <input type="text" id="SchoolName" class="form-control" value=""
-                        placeholder="學校名稱">
+                      <input type="text" id="SchoolName" class="form-control" value="" placeholder="學校名稱">
                     </div>
 
                     <div class="input_area">
                       <label class="input-group-label" for="SchoolCountry">
                         學校所屬國家/行政區
                       </label>
-                      <input type="text" id="SchoolCountry" class="form-control" value=""
-                        placeholder="學校所屬國家/行政區">
+                      <input type="text" id="SchoolCountry" class="form-control" value="" placeholder="學校所屬國家/行政區">
                     </div>
 
                     <div class="input_area">
                       <label class="input-group-label" for="SchoolPhone">
                         學校電話
                       </label>
-                      <input type="text" id="SchoolPhone" class="form-control" value=""
-                        placeholder="學校電話">
+                      <input type="text" id="SchoolPhone" class="form-control" value="" placeholder="學校電話">
                     </div>
 
                     <div class="input_area">
                       <label class="input-group-label" for="TeacherPhone">
                         教師手機
                       </label>
-                      <input type="text" id="TeacherPhone" class="form-control" value=""
-                        placeholder="教師手機">
+                      <input type="text" id="TeacherPhone" class="form-control" value="" placeholder="教師手機">
                     </div>
 
                     <div class="input_area">
                       <label class="input-group-label" for="TeacherEmail2">
                         教師E-mail
                       </label>
-                      <input type="text" id="TeacherEmail2" class="form-control" value=""
-                        placeholder="教師E-mail">
+                      <input type="text" id="TeacherEmail2" class="form-control" value="" placeholder="教師E-mail">
                     </div>
 
                     <div class="input_area">
                       <div class="input-group input-group-myfile">
-                                <label class="input-group-label" for="inputGroupMemberCID">批次上傳</label>
-                                
-                                <label for=""></label>
-                                <input readonly="" accept=".xlsx" class="form-control" placeholder="請上傳...">
-                                <div class="btn-file" tabindex="500">
-                                    <label class="input-group-text" for="inputGroupMemberCID">瀏覽...</label>
-                                    <input accept=".xlsx" type="file" id="inputGroupMemberCID" name="file-studentsAccount" class="fileUpload-file">
-                                </div>
+                        <label class="input-group-label" for="inputGroupDocument">批次上傳</label>
+                        <input readonly="" id="inputGroupDocumentShow" accept=".xlsx" class="form-control"
+                          placeholder="請上傳...">
+                        <div class="btn-file" tabindex="500">
+                          <label class="input-group-text" for="inputGroupDocument">瀏覽...</label>
+                          <input accept=".xlsx" type="file" id="inputGroupDocument" class="fileUpload-file"
+                            onchange="DocumentFile();">
+                        </div>
 
-                                <p>
-                                  請先下載<a href="Content/document/competition/第六屆科普閱讀力大賽_學校團報Sample.xlsx">範例模板</a>格式，並在填寫完畢後上傳，詳情請見<a href="Content/document/competition/科普閱讀力大賽 EXCEL上傳說明.pdf" target="_blank">批次上傳說明</a>。
-                                </p>
+                        <p>
+                          請先下載<a
+                            href="Content/document/competition/第六屆科普閱讀力大賽_學校團報Sample.xlsx">範例模板</a>格式，並在填寫完畢後上傳，詳情請見<a
+                            href="Content/document/competition/科普閱讀力大賽 EXCEL上傳說明.pdf" target="_blank">批次上傳說明</a>。
+                        </p>
                       </div>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -876,6 +872,14 @@
         }
       });
     });
+
+    //測試圖片上傳效果
+    var file = document.getElementById("inputGroupDocument");
+    var showFileName = document.getElementById("inputGroupDocumentShow");
+
+    function DocumentFile() {
+      showFileName.value = file.value;
+    }
   </script>
 
   <script>
