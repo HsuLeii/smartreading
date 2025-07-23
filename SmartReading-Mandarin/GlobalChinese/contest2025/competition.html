@@ -89,10 +89,14 @@
             </div>
 
             <div class="category_content_item_project_information">
-              <div class="project_information_tittle">
+              <div class="project_information_tittle signup_tittle">
                 <h5>
                   個人報名
                 </h5>
+
+                <span class="menu_icon">
+                  <i class="fa-solid fa-circle-chevron-down"></i>
+                </span>
               </div>
 
               <div class="project_information_text">
@@ -239,14 +243,25 @@
                       </label>
                       <input type="text" id="TeacherEmail" class="form-control" value="" placeholder="你的華語老師聯絡 Email">
                     </div>
+
+                    <div class="signup_button_area">
+                      <button type="submit" class="main_content_item_link Sign up button" id="sendSignUp">
+                        <p>送出報名</p>
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
 
-              <div class="project_information_tittle">
+              <div class="project_information_tittle signup_tittle">
                 <h5>
                   團體報名
                 </h5>
+
+                <span class="menu_icon">
+                  <i class="fa-solid fa-circle-chevron-down"></i>
+                </span>
               </div>
 
               <div class="project_information_text">
@@ -313,6 +328,12 @@
                       </div>
                     </div>
 
+                    <div class="signup_button_area">
+                      <button type="submit" class="main_content_item_link Sign up button" id="sendSignUp">
+                        <p>送出報名</p>
+                      </button>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -774,6 +795,13 @@
   </script>
 
   <script>
+    //個人報名/團體報名
+    $(".signup_tittle").click(function () {
+      $(this).siblings(".signup_tittle").removeClass("opened");
+      $(this).toggleClass("opened");
+      $(this).siblings(".signup_tittle").next(".project_information_text").hide();
+      $(this).next(".project_information_text").toggle();
+    });
     // 國籍Country
     var Country_one = $(".Country-dropdown-one").text();
     var Country_two = $(".Country-dropdown-two").text();
@@ -873,7 +901,7 @@
       });
     });
 
-    //測試圖片上傳效果
+    //測試檔案上傳效果
     var file = document.getElementById("inputGroupDocument");
     var showFileName = document.getElementById("inputGroupDocumentShow");
 
