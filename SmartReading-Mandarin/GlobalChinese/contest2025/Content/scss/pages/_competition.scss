@@ -124,11 +124,27 @@ body {
                             border: 1px solid $black;
 
                             .project_information_tittle {
+                                .project_information_tittle_img {
+                                    margin: 0 0 20px;
+
+                                    img {
+                                        max-width: 350px;
+                                        padding: 10px 15px;
+                                        border: 1px solid $black;
+                                    }
+
+                                    &:hover {
+                                        img {
+                                            border: 1px solid $main_color;
+                                        }
+                                    }
+                                }
+
                                 h5 {
                                     color: $main_color;
                                 }
 
-                                &.signup_tittle{
+                                &.signup_tittle {
                                     position: relative;
                                     display: flex;
                                     justify-content: space-between;
@@ -137,52 +153,57 @@ body {
                                     padding: 15px 0;
                                     cursor: pointer;
 
-                                    h5,i{
+                                    h5,
+                                    i {
                                         color: $black;
                                     }
 
-                                    &~.project_information_text{
+                                    &~.project_information_text {
                                         display: none;
                                     }
 
                                     &::before {
-                                            content: "";
-                                            position: absolute;
-                                            bottom: 0;
-                                            width: 100%;
-                                            border-bottom: 1px solid $black;
+                                        content: "";
+                                        position: absolute;
+                                        bottom: 0;
+                                        width: 100%;
+                                        border-bottom: 1px solid $black;
+                                    }
+
+                                    &::after {
+                                        content: "";
+                                        border-top: 1px solid $main_color;
+                                        position: absolute;
+                                        bottom: 0;
+                                        width: 100%;
+                                        transform: scaleX(0);
+                                        transform-origin: 100% 0;
+                                        transition: transform var(--transition-duration) var(--transition-easing);
+                                    }
+
+                                    &:hover {
+
+                                        h5,
+                                        i {
+                                            color: $main_color;
                                         }
 
                                         &::after {
-                                            content: "";
-                                            border-top: 1px solid $main_color;
-                                            position: absolute;
-                                            bottom: 0;
-                                            width: 100%;
-                                            transform: scaleX(0);
-                                            transform-origin: 100% 0;
-                                            transition: transform var(--transition-duration) var(--transition-easing);
+                                            transform: scaleX(1);
+                                            transform-origin: 0 0;
+                                        }
+                                    }
+
+                                    &.opened {
+
+                                        h5,
+                                        i {
+                                            color: $main_color;
                                         }
 
-                                        &:hover {
-                                            h5,i{
-                                        color: $main_color;
-                                    }
-
-                                            &::after {
-                                                transform: scaleX(1);
-                                                transform-origin: 0 0;
-                                            }
+                                        i {
+                                            transform: rotate(180deg);
                                         }
-
-                                    &.opened{
-                                        h5,i{
-                                        color: $main_color;
-                                    }
-
-                                    i{
-                                        transform: rotate(180deg);
-                                    }
                                     }
                                 }
                             }
@@ -190,9 +211,9 @@ body {
                             .project_information_text {
                                 margin: 0 auto 40px;
 
-                                &.signup_text{
-                                    .project_information_text_list{
-                                        .project_information_text_list_content{
+                                &.signup_text {
+                                    .project_information_text_list {
+                                        .project_information_text_list_content {
                                             flex-wrap: wrap;
                                         }
                                     }
@@ -212,13 +233,13 @@ body {
                                             word-break: break-all;
                                             display: inline-block;
 
-                                            &::before{
-                                                    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-bottom: 1px solid $black;
+                                            &::before {
+                                                content: "";
+                                                position: absolute;
+                                                bottom: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                border-bottom: 1px solid $black;
 
                                             }
 
@@ -411,8 +432,8 @@ body {
                                                     width: 40%;
                                                     margin: 0 auto 10px !important;
 
-                                                    &:hover{
-                                                        .input-group-text{
+                                                    &:hover {
+                                                        .input-group-text {
                                                             color: $main-color;
                                                             border: 1px solid $main-color;
                                                         }
@@ -445,21 +466,21 @@ body {
                                                     }
                                                 }
                                             }
-                                            
+
                                         }
 
-                                        .signup_button_area{
+                                        .signup_button_area {
                                             width: 100%;
                                             margin: 20px auto 0;
                                             display: flex;
                                             flex-wrap: wrap;
                                             justify-content: center;
 
-                                            .main_content_item_link{
+                                            .main_content_item_link {
                                                 margin: 0 auto;
 
-                                                &:hover{
-                                                    p{
+                                                &:hover {
+                                                    p {
                                                         color: $white;
                                                     }
                                                 }
@@ -526,6 +547,10 @@ body {
                                                     }
                                                 }
                                             }
+                                        }
+
+                                        .main_color {
+                                            color: $main_color;
                                         }
                                     }
 
@@ -702,12 +727,12 @@ body {
                                         .project_information_text_list_content {
                                             .input_area {
                                                 .input-group {
-                                                .btn-file {
-                                                    .input-group-text {
-                                                        font-size: 15px;
+                                                    .btn-file {
+                                                        .input-group-text {
+                                                            font-size: 15px;
+                                                        }
                                                     }
                                                 }
-                                            }
                                             }
                                         }
 
@@ -747,7 +772,7 @@ body {
 
                                 .category_content_nav_inner {
                                     .category_content_nav_inner_list {
-                                        
+
                                         li {
                                             width: 100%;
 
@@ -781,16 +806,18 @@ body {
                                         .project_information_text_list_content {
                                             .input_area {
                                                 .input-group {
-                                                    .form-control{
+                                                    .form-control {
                                                         width: calc(100% - 160px);
                                                     }
-                                                .btn-file {
-                                                    width: 160px;
-                                                    .input-group-text {
-                                                        font-size: 17px;
+
+                                                    .btn-file {
+                                                        width: 160px;
+
+                                                        .input-group-text {
+                                                            font-size: 17px;
+                                                        }
                                                     }
                                                 }
-                                            }
                                             }
                                         }
 
@@ -841,12 +868,12 @@ body {
                                         .project_information_text_list_content {
                                             .input_area {
                                                 .input-group {
-                                                .btn-file {
-                                                    .input-group-text {
-                                                        font-size: 19px;
+                                                    .btn-file {
+                                                        .input-group-text {
+                                                            font-size: 19px;
+                                                        }
                                                     }
                                                 }
-                                            }
                                             }
                                         }
 
@@ -895,12 +922,12 @@ body {
                                         .project_information_text_list_content {
                                             .input_area {
                                                 .input-group {
-                                                .btn-file {
-                                                    .input-group-text {
-                                                        font-size: 20px;
+                                                    .btn-file {
+                                                        .input-group-text {
+                                                            font-size: 20px;
+                                                        }
                                                     }
                                                 }
-                                            }
                                             }
                                         }
 

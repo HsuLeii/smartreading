@@ -40,23 +40,75 @@
                     </span>
                 </a>
             </li>
-            <li>
-                <a href="faq.html" class="faq">
+            <li class="li_dropdown products_dropdown">
+                <a href="#" class="li_dropdown_text">
                     <span>
-                        問答專區
+                        相關產品
                     </span>
                     <span class="menu_icon">
                         <i class="fa-solid fa-circle-chevron-right"></i>
                     </span>
                 </a>
-            </li>
-            <li>
-                <a href="booklist.html">
-                    <span>
-                        SRE系列產品
+                <ul class="dropdown_content">
+                    <li>
+                        <a href="https://empowerchinese.net/v2/index.aspx" target="_blank">
+                            
+                            <span>
+                        EMPOWER
                     </span>
                     <span class="menu_icon">
                         <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://smartwriting.org/" target="_blank">
+                            <span>
+                        SmartWriting
+                    </span>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="https://smartpinyin.net/SmartPinyinDesign/Pages/index.html"
+                            target="_blank">
+                            <span>
+                        SmartPinyin
+                    </span>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                            </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="li_dropdown language_dropdown">
+                <a href="#" class="li_dropdown_text">
+                    <span>
+                        語言
+                    </span>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                </a>
+                <ul class="dropdown_content">
+                    <li>
+                        <a href="#">繁體中文</a>
+                    </li>
+                    <li>
+                        <a href="#">簡體中文</a>
+                    </li>
+                    <li>
+                        <a href="#">English</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="li_login">
+                <a href="https://mandarin.smartreading.net/login.aspx" target="_blank">
+                    <span>
+                        登入
                     </span>
                 </a>
             </li>
@@ -66,8 +118,22 @@
 
 <script>
     $("#toggle").click(function () {
-    //   $(".toggle").toggleClass("open");
-      $("header").toggleClass("open");
-      $("body").toggleClass("fixed");
+        //   $(".toggle").toggleClass("open");
+        $("header").toggleClass("open");
+        $("body").toggleClass("fixed");
     });
-  </script>
+
+    $(".language_dropdown").click(function () {
+        $(this).toggleClass("open");
+        $(this).children(".dropdown_content").toggleClass("open");
+        $(".products_dropdown").removeClass("open");
+        $(".products_dropdown").children(".dropdown_content").removeClass("open");
+    });
+
+    $(".products_dropdown").click(function () {
+        $(this).toggleClass("open");
+        $(this).children(".dropdown_content").toggleClass("open");
+        $(".language_dropdown").removeClass("open");
+        $(".language_dropdown").children(".dropdown_content").removeClass("open");
+    });
+</script>
