@@ -50,13 +50,67 @@
                     </span>
                 </a>
             </li>
-            <li>
-                <a href="booklist.html">
+            <li class="li_dropdown products_dropdown">
+                <a href="#" class="li_dropdown_text">
                     <span>
                         SRE系列產品
                     </span>
                     <span class="menu_icon">
                         <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                </a>
+                <ul class="dropdown_content">
+                    <li>
+                        <a href="https://www.dcectest.net/" target="_blank">
+                            
+                            <span>
+                        DCEC
+                    </span>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://school.smartphonics.net/Home/LoginIndex" target="_blank">
+                            <span>
+                        SmartPhonics
+                    </span>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                            </a>
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li class="li_dropdown language_dropdown">
+                <a href="#" class="li_dropdown_text">
+                    <span>
+                        語言
+                    </span>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </span>
+                </a>
+                <ul class="dropdown_content">
+                    <li>
+                        <a href="#">繁體中文</a>
+                    </li>
+                    <li>
+                        <a href="#">簡體中文</a>
+                    </li>
+                    <li>
+                        <a href="#">English</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="li_login">
+                <a href="https://srenglish.net/" target="_blank">
+                    <span>
+                        登入
                     </span>
                 </a>
             </li>
@@ -69,5 +123,19 @@
     //   $(".toggle").toggleClass("open");
       $("header").toggleClass("open");
       $("body").toggleClass("fixed");
+    });
+
+    $(".language_dropdown").click(function () {
+        $(this).toggleClass("open");
+        $(this).children(".dropdown_content").toggleClass("open");
+        $(".products_dropdown").removeClass("open");
+        $(".products_dropdown").children(".dropdown_content").removeClass("open");
+    });
+
+    $(".products_dropdown").click(function () {
+        $(this).toggleClass("open");
+        $(this).children(".dropdown_content").toggleClass("open");
+        $(".language_dropdown").removeClass("open");
+        $(".language_dropdown").children(".dropdown_content").removeClass("open");
     });
   </script>

@@ -4,14 +4,15 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: $footer_bg;
+    z-index: 3;
+    border-bottom: 1px solid $main_color;
 
     .header_logo {
         display: flex;
         align-items: center;
-        width: calc(90% - 70px);
-        max-width: 450px;
+        width: 260px;
         z-index: 1;
-        padding: 20px 0 20px 5%;
+        padding: 30px 0 30px 5%;
         background-color: $footer_bg;
 
         a{
@@ -60,15 +61,63 @@ header {
         .menu {
             display: none;
             padding: 0 5% 40px;
-            overflow-y: scroll;
 
             .menu_pagination {
 
                 li {
-                    background-position: 0% 100%;
-                    background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 1px no-repeat;
+                    position: relative;
                     transition: background-size var(--transition-duration) var(--transition-timing-function);
-                    border-bottom: 1px solid $brown;
+
+                    &.li_login{
+                        margin: 40px auto;
+                            
+                            a{
+                                display: inline-flex;
+                                width: auto;
+                                padding: 10px 40px;
+                                background-color: $main_color;
+                                border-radius: 50px;
+
+                                span{
+                                    color: $white;
+                                }
+                            }
+
+                            &::before,
+                            &::after{
+                                display: none;
+                            }
+
+                            &:hover{
+                                
+                                a{
+                                    background-color: $black;
+
+                                    span{
+                                        color: $white;
+                                    }
+                                }
+                            }
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        border-bottom: 1px solid $brown;
+                    }
+
+                    &::after {
+                        content: "";
+                        border-top: 1px solid $main_color;
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        transform: scaleX(0);
+                        transform-origin: 100% 0;
+                        transition: transform var(--transition-duration) var(--transition-easing);
+                    }
 
                     a {
                         padding: 20px;
@@ -93,26 +142,74 @@ header {
                         }
                     }
 
-                    &:nth-last-child(1) {
-                        border-bottom: 1px solid transparent;
-                    }
-
                     &:hover {
-                        background-position: 100% 100%;
-                        background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
-                        border-bottom: 1px solid transparent;
+                        &::after {
+                            transform: scaleX(1);
+                            transform-origin: 0 0;
+                        }
 
                         a {
                             span {
                                 color: $main_color;
-                                font-weight: bold;
                             }
 
                             .menu_icon {
                                 color: $main_color;
                             }
                         }
+                    }
 
+                    &.li_dropdown {
+                        &.open {
+                            .li_dropdown_text {
+                                span{
+                                    color: $main_color;
+
+                                    &.menu_icon{
+                                        transform: rotate(-90deg);
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover{
+                            .dropdown_content{
+                                li{
+                                    a{
+                                        span{
+                                            color: $brown;
+                                        }
+                                    }
+
+                                    &:hover{
+                                        a{
+                                        span{
+                                            color: $main_color;
+                                        }
+                                    }
+                                    }
+                                }
+                            }
+                        }
+
+                        .dropdown_content {
+                            width: 100%;
+                            display: none;
+                            left: 50%;
+                            z-index: 1;
+                            background-color: $footer_bg;
+                            padding: 0 35px 40px;
+
+                            li {
+                                a {
+                                    word-break: keep-all;
+                                }
+                            }
+
+                            &.open {
+                                display: block;
+                            }
+                        }
                     }
                 }
             }
@@ -120,6 +217,7 @@ header {
     }
 
     &.open {
+        height: 100vh;
         .toggle {
             .menu_trigger {
                 span {
@@ -138,6 +236,8 @@ header {
 
         nav {
             transform: translate(0%, 0%);
+            height: calc(100vh - 99.78px);
+            overflow-y: scroll;
 
             .menu {
                 display: block;
@@ -158,8 +258,17 @@ header {
 }
 
 :root {
+    --transition-easing: ease;
     --transition-duration: .3s;
     --transition-timing-function: cubic-bezier(.3, 1, .3, 1);
+}
+
+@media screen and (min-width: 576px) {
+    header{
+        .header_logo{
+            width: 350px;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -181,14 +290,14 @@ header {
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     header {
         align-items: center;
         padding: 15px 2.5%;
 
         .header_logo {
-            width: 30%;
-            max-width: none;
+            width: 23%;
+            max-width: 300px;
             padding: 20px 0;
         }
 
@@ -217,7 +326,7 @@ header {
         }
 
         nav {
-            width: 65%;
+            width: 77%;
             display: block;
             transform: translate(0, 0);
 
@@ -226,19 +335,35 @@ header {
                 justify-content: flex-end;
                 padding: 0;
                 height: auto;
-                overflow: auto;
+                overflow: initial;
 
                 .menu_pagination {
                     display: flex;
                     justify-content: flex-end;
+                    align-items: center;
 
                     li {
-                        background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 0px no-repeat;
-                        border-bottom: 1px solid transparent;
+                        &.li_login{
+                            margin: 0px auto;
+                        }
+
+                        &::before {
+                            display: none;
+                        }
 
                         a {
                             .menu_icon {
                                 display: none;
+                            }
+                        }
+
+                        &.li_dropdown{
+                            .dropdown_content{
+                                position: absolute;
+                                width: auto;
+                                transform: translate(-50% , -1px);
+                                padding: 15px 20px;
+                                border-radius: 0 0 10px 10px;
                             }
                         }
                     }
@@ -247,7 +372,16 @@ header {
         }
 
         &.open {
+            height: auto;
+
             nav {
+                height: auto;
+                overflow-y: initial;
+
+                .menu {
+                display: flex;
+            }
+
                 &::after {
                     display: none;
                 }
