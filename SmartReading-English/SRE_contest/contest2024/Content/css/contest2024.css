@@ -1145,7 +1145,11 @@ body figure {
     font-size: 25px;
   }
 }
+body .main .main_content .main_content_item .main_content_tittle {
+  width: 100%;
+}
 body .main .main_content .main_content_item.category_content {
+  width: 100%;
   order: 2;
   margin: 0 auto 40px;
 }
@@ -1256,19 +1260,38 @@ body .main .main_content .main_content_item.category_content .category_content_i
   margin: 10px auto;
 }
 body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a {
-  margin: 0 0 5px;
-  color: #5B3716;
-  background: linear-gradient(#5B3716, #5B3716) 100% calc(100% + 1px)/0% 1px no-repeat;
-  transition: background-size var(--transition-duration) var(--transition-timing-function);
-  border-bottom: 1px solid #5B3716;
+  position: relative;
+  display: inline-block;
+  margin: 5px 0 5px;
+  color: #ff6464;
   padding: 0 3px 1px;
   word-break: break-all;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a:hover {
-  color: #ff6464;
-  background-position: 100% 100%;
-  background: linear-gradient(#ff6464, #ff6464) 0% calc(100% + 1px)/100% 1px no-repeat;
-  border-bottom: 1px solid transparent;
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a i {
+  margin: 0 0 0 10px;
+}
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  border-bottom: 1px solid #5B3716;
+}
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 100% 0px;
+  border-top: 1px solid #ff6464;
+  transition: transform var(--transition-duration) var(--transition-easing);
+}
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a:hover::after {
+  transform: scaleX(1);
+  transform-origin: 0px 0px;
 }
 body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p span.annotation {
   color: #ff6464;
@@ -1332,6 +1355,7 @@ body .main .main_content .main_content_item.category_content .category_content_i
 body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .list_content_flex {
   display: flex;
   flex-direction: column;
+  margin: 0 auto 10px;
 }
 body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .list_content_flex span:nth-child(1) {
   color: #5B3716;
@@ -1998,6 +2022,7 @@ body .main .main_content .main_content_item.category_content .category_content_i
   }
   body .main .main_content .main_content_item.category_content .category_content_item .category_content_item_project_information .project_information_img .project_information_img_item {
     width: 47.5%;
+    margin: 40px auto;
   }
 }
 @media screen and (min-width: 992px) {
