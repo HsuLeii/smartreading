@@ -105,18 +105,7 @@
                       <label class="input-group-label" for="Country">
                         國籍
                       </label>
-                      <button type="button" id="Country" class="form-control" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <p id="dropdown_text">國籍</p>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li class="dropdown-item Country-dropdown-li Country-dropdown-one" href="#">
-                          國籍1 Country
-                        </li>
-                        <li class="dropdown-item Country-dropdown-li Country-dropdown-two" href="#">
-                          國籍2 Country
-                        </li>
-                      </ul>
+                      <input type="text" id="Country" class="form-control" value="國籍" placeholder="國籍" readonly>
                     </div>
 
                     <div class="input_area">
@@ -284,7 +273,18 @@
                       <label class="input-group-label" for="SchoolCountry">
                         學校所屬國家/行政區
                       </label>
-                      <input type="text" id="SchoolCountry" class="form-control" value="" placeholder="學校所屬國家/行政區">
+                      <button type="button" id="SchoolCountry" class="form-control" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <p id="dropdown_text">學校所屬國家/行政區</p>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item Country-dropdown-li Country-dropdown-one" href="#">
+                          學校所屬國家/行政區1
+                        </li>
+                        <li class="dropdown-item Country-dropdown-li Country-dropdown-two" href="#">
+                          學校所屬國家/行政區2
+                        </li>
+                      </ul>
                     </div>
 
                     <div class="input_area">
@@ -834,16 +834,17 @@
       $(this).siblings(".signup_tittle").next(".project_information_text").hide();
       $(this).next(".project_information_text").toggle();
     });
+    
     // 國籍Country
     var Country_one = $(".Country-dropdown-one").text();
     var Country_two = $(".Country-dropdown-two").text();
     $(".Country-dropdown-one").click(function () {
-      document.querySelector("#Country > #dropdown_text").innerHTML = Country_one;
+      document.querySelector("#SchoolCountry > #dropdown_text").innerHTML = Country_one;
       $(".Country-dropdown-li").removeClass("check");
       $(this).addClass("check");
     });
     $(".Country-dropdown-two").click(function () {
-      document.querySelector("#Country > #dropdown_text").innerHTML = Country_two;
+      document.querySelector("#SchoolCountry > #dropdown_text").innerHTML = Country_two;
       $(".Country-dropdown-li").removeClass("check");
       $(this).addClass("check");
     });
@@ -940,6 +941,7 @@
     function DocumentFile() {
       showFileName.value = file.value;
     }
+    
   </script>
 
   <!-- 側欄選單功能 -->
