@@ -69,8 +69,11 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.3.0/dist/chartjs-plugin-datalabels.js"></script>
 
   <script src="Content/js/chart.min.js"></script>
+
+  <script src="Content/js/jquery-3.6.1.min.js"></script>
   <script>
 
 
@@ -87,32 +90,101 @@
     var myChart = new Chart(ctx1, {
       type: 'radar',
   data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Red", "Blue", "Yellow", "Green", "Green"],
     datasets: [{
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [100, 80, 30, 50,60],
       borderWidth: 1
-    }]
+    }],
+    datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 90, 81],
+    fill: true,
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    borderColor: 'rgb(255, 99, 132)',
+    pointBackgroundColor: 'rgb(255, 99, 132)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(255, 99, 132)'
+  }]
   },
   options: {
-    plugins: {
-            legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    font: {
-                        size: 40
-                    }
-                }
-            }
-        },
-    scales: {
-        r: {
-        pointLabels: {
-          color: 'red'
-        }
-      }
-    }
-  }
+				plugins: {
+					datalabels: {
+						color: function(context) {
+							return context.hovered ? "rgba(255, 99, 132, 1)" : "#000";
+						},
+						font:{
+							size: 40,
+						},
+						// to push the inline label out to the extremity of the graph we need to fake it
+						// by initially setting the anchor and alignment to 'end'
+						// align: 'end',
+						// anchor: 'end',
+						// then taking the data value, (between 0 and 100), finding the remainder from 100
+						// and using this as an inline label, but offset by the correct amount
+						offset: function(context) {
+							// using the height of the canvas as a base
+							// our segment lines are a little short of half the height (look at the top vertical line)
+							// so there's a magic number here of height/2.5 as the pixel range for one segment bar
+							// so if 100% = this length, our offset is the remaining % (100 - value) of the segment length
+							var offset = (context.chart.height / 2.5) * ((100 - context.dataset.data[context.dataIndex])*0.01);
+							return offset;
+						},
+						
+					}
+				},
+			// NOTE!!! as there is only one scale on radar
+			// plot, the user 'scales' key is instead 'scale'
+			// scale options here: http://www.chartjs.org/docs/latest/axes/radial/linear.html#linear-radial-axis
+			scale: {
+				// the diagonal segment lines
+				
+				// the labels at the tip of each data point (we're disabling the default ones)
+				// and adding our own hacky ones so we can attach click events
+				pointLabels: {
+					display: true,
+					fontColor: "#000",
+					fontSize: 40,
+					callback: function(label){
+						return label;
+					},
+				},
+				// the segment lines
+				ticks: {
+					display: false,		// toggle this on hover!
+					fontColor: "red",
+					fontSize: 14,
+					backdropPaddingX: 0,
+					backdropPaddingY: 0,
+					beginAtZero: true,
+					min:			0,
+					max:			100,
+					//maxTicksLimit: 5,
+					stepSize: 20,
+					//suggestedMax: 100,
+					//suggestedMin: 0,
+					showLabelBackdrop: false,
+				},
+			},
+			elements: {
+				line: {
+					tension: 0,
+					borderWidth: 1
+				}
+			},
+			maintainAspectRatio: false,
+			// because we're using hacky labels we have to 
+			// pad the canvas area a bit to make sure text doesn't run off the edge
+			// layout: {
+			// 	padding: {
+			// 		left: 30,
+			// 		right: 30,
+			// 		top: 30,
+			// 		bottom: 30
+			// 	}
+			// }
+    },
 
         });
 
