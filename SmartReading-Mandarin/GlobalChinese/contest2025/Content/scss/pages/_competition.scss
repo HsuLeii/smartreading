@@ -296,9 +296,17 @@ body {
                                             }
 
                                             .input-group-label {
+                                                position: relative;
                                                 padding: 10px 0;
                                                 color: $black;
                                                 width: 100%;
+
+                                                &.labelRequired{
+                                                    &::after{
+                                                            content: "*";
+    color: red;
+                                                    }
+                                                }
                                             }
 
                                             .form-control {
@@ -312,6 +320,16 @@ body {
                                                 width: 100%;
                                                 position: relative;
                                                 background-color: $white !important;
+
+                                                &.error{
+                                                    border: 1px solid red;
+
+                                                    &~.btn-file{
+                                                        .input-group-text{
+                                                            border: 1px solid red;
+                                                        }
+                                                    }
+                                                }
 
                                                 &:focus {
                                                     border-color: transparent;
