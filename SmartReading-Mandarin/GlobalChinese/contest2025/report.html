@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartReading-Mandarin 2025-2026 Global Chinese Reading Contest" />
+  <title>SmartReading-Mandarin Global Chinese Reading Contest</title>
+  <link rel="shortcut icon" type="image/x-icon" href="Content/image/favicon.ico">
+
+  <link rel="stylesheet" type="text/css" href="Content/css/contest2024.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="report_header">
+
+    </div>
+    <div class="report_integral">
+
+    </div>
+    <div class="report_chart">
+      <div class="data_page_scroll">
+<div class="chart_control">
+        <canvas id="school-wide-average" style="width: 300px; height: 300px;"></canvas>
+      </div>
+      </div>
+      
+    </div>
+    <div class="material">
+      <div class="material-text">
+        <div class="school">
+          <p><span>測驗學校：</span><span>國立彰化師範大學</span></p>
+        </div>
+        <div class="date">
+          <p><span>測驗時程：</span><span>108.09.01 ~ 109.01.31</span></p>
+        </div>
+        <div class="people">
+          <p><span>測驗人數：</span><span>247人</span></p>
+        </div>
+        <div class="filter">
+          <p><span>篩選條件：</span><span>112-1實習生T3、113-1實習生T2、個人帳號申請、113-1實習生T2、個人帳號申請、113-1實習生T2、個人帳號申請、113-1實習生T2、個人帳號申請、112-1實習生T3、113-1實習生T2、個人帳號申請、113-1實習生T2、個人帳號申請、113-1實習生T2、個人帳號申請、113-1實習生T2、個人帳號申請</span></p>
+        </div>
+      </div>
+      <div class="threepeople shadow">
+        <p>在全校圖表之後，有全國數據及圖表敘述提供參考</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-title">
+        <div class="number-mark">
+        </div>
+        <div class="first-text bluebg">
+          <p class="white bold">測驗各項度綜合結果</p>
+        </div>
+      </div>
+      <div class="main">
+        <div class="data-page-scroll">
+          <div class="chart-control">
+            <canvas id="school-wide-average" style="width: 300px; height: 125px;"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="bottom-text mediumbg">
+      <p>國立臺灣師範大學心測中心 版權所有‧翻印必究</p>
+    </div>
+  </div>
+
+
+  <script src="Content/js/chart.min.js"></script>
+  <script>
+
+
+    // Chart.Tooltip.positioners.center = function (elements) {
+    //   const { x, y, base } = elements[0]._model;
+    //   const height = base - y;
+    //   return { x, y: y + (height / 2) };
+    // };
+
+    // 全校平均得分pg1
+    var ctx1 = document.getElementById('school-wide-average').getContext('2d');
+
+
+    var myChart = new Chart(ctx1, {
+      type: 'radar',
+  data: {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 40
+                    }
+                }
+            }
+        },
+    scales: {
+        r: {
+        pointLabels: {
+          color: 'red'
+        }
+      }
+    }
+  }
+
+        });
+
+</script>
+
+</body>
+
+</html>
