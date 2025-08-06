@@ -1,5 +1,36 @@
 body {
     .main {
+        .swiper{
+            .swiper-wrapper{
+                .swiper-slide{
+                    position: relative;
+
+                    .swiper-slide_content{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        .swiper-slide_content_text,
+                        .swiper-slide_content_bookman{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+
+                        .swiper-slide_content_earth{
+                            position: absolute;
+                            right: -0.9375%;
+                            bottom: -21.853%;
+                            width: 41.788%;
+                            animation: earthRotate 30s infinite;
+                            animation-timing-function: linear;
+                        }
+                    }
+                }
+            }
+        }
         .main_content {
             width: 80%;
             max-width: 1200px;
@@ -351,6 +382,14 @@ body {
     figure {
         color: $black;
     }
+}
+
+@keyframes earthRotate {
+  0%   {rotate: 0deg;}
+  25%  {rotate: 90deg;}
+  50%  {rotate: 180deg;}
+  75%  {rotate: 270deg;}
+  100% {rotate: 360deg;}
 }
 
 @media screen and (min-width: 768px) {
