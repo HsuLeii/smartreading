@@ -24,7 +24,29 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="Content/image/slide/ASTRA-X-SRE_E.jpg" alt="">
+          <div class="slide_bg">
+          <img src="Content/image/slide/slide_bg.png" alt="">
+          </div>
+          
+          <div class="slide_airplane">
+
+            <svg viewBox="0 0 1920 718" id="svg">
+
+	<path id="path" d="M2016.8,215.3C1786,61,1485.3,25.3,1202.7,119.8C962.8,200,884.9,327,666.9,372.4 c-188.4,39.2-445.2,9.9-786.5-225.3"/>
+
+		
+</svg>
+
+<div class="slide_airplane_img">
+<img src="Content/image/slide/airplane.png" alt="" id="rect">
+</div>
+
+            <img src="Content/image/slide/airplane.png" alt="">
+          </div>
+
+          <div class="slide_text">
+          <img src="Content/image/slide/slide_text.png" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -472,6 +494,9 @@
   <!-- swiper -->
   <script src="Content/js/swiper-bundle.min.js"></script>
 
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
+
   <script>
     $(document).ready(function () {
       $("header").load("header.html", function () {
@@ -539,6 +564,23 @@
         }
       }
     });
+  </script>
+
+  <script>
+    gsap.registerPlugin(MotionPathPlugin);
+
+gsap.to("#rect", {
+  duration: 5, 
+  repeat: -1,
+  ease: "power1.inOut",
+  yoyo:false,
+  motionPath:{
+    path: "#path",
+    align: "#path",
+    autoRotate: true,
+    alignOrigin: [0.5, 0.5]
+  }
+});
   </script>
 </body>
 
