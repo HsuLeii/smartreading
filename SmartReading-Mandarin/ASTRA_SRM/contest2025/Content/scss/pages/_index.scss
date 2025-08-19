@@ -5,26 +5,27 @@ body {
                 .swiper-slide{
                     position: relative;
 
-                    .slide_airplane{
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-
-                        width: 100%;
-
-                        svg{
-                            fill:transparent;
-                        }
-
-                        .slide_airplane_img{
-                            width: 13%;
-                        }
-                    }
-
-                    .slide_text{
+                    .swiper-slide_content{
                         position: absolute;
                         left: 0;
                         top: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        .swiper-slide_content_bookman{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+
+                        .swiper-slide_content_earth{
+                            position: absolute;
+                            right: -0.9375%;
+                            bottom: -21.853%;
+                            width: 41.788%;
+                            animation: earthRotate 30s infinite;
+                            animation-timing-function: linear;
+                        }
                     }
                 }
             }
@@ -42,10 +43,6 @@ body {
                 .main_content_tittle {
                     margin: 0 0 20px;
                     order: 1;
-
-                    h3 {
-                        color: $brown;
-                    }
                 }
 
                 .main_content_item_link {
@@ -56,7 +53,7 @@ body {
                     order: 3;
                     width: 100%;
                     padding: 15px 20px;
-                    border: 1px solid $brown;
+                    border: 1px solid $black;
                     border-radius: 50px;
                     margin: 30px auto;
                     background: linear-gradient($main_color, $main_color) 100% 100% / 0% 100% no-repeat;
@@ -84,7 +81,7 @@ body {
                         margin: 0 20px 0 0;
 
                         p {
-                            color: $brown;
+                            color: $black;
                         }
                     }
 
@@ -94,7 +91,7 @@ body {
                         line-height: 1;
 
                         i {
-                            color: $brown;
+                            color: $black;
                             font-size: 20px;
                         }
                     }
@@ -106,49 +103,61 @@ body {
 
                     &.news_content {
                         .news_content_item {
+                            position: relative;
                             display: flex;
                             align-items: center;
                             padding: 20px 10px;
-                            background: linear-gradient($main_color, $main_color) 100% 100% / 0% 100% no-repeat;
                             transition: background-size var(--transition-duration) var(--transition-timing-function);
-                            border-bottom: 1px solid $brown;
-                            
-                            &.link{
-&:hover {
-                                background: linear-gradient($main_color, $main_color) 0% 100% / 100% 100% no-repeat;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                bottom: 0;
+                                width: 100%;
+                                border-bottom: 1px solid $black;
+                            }
+
+                            &::after {
+                                content: "";
+                                border-top: 1px solid $main_color;
+                                position: absolute;
+                                bottom: 0;
+                                width: 100%;
+                                transform: scaleX(0);
+                                transform-origin: 100% 0;
+                                transition: transform var(--transition-duration) var(--transition-easing);
+                            }
+
+                            &:hover {
+
+                                &::after {
+                                    transform: scaleX(1);
+                                    transform-origin: 0 0;
+                                }
 
                                 .news_date {
-                                    .news_date_year {
-                                        h4 {
-                                            color: $white;
-                                        }
-                                    }
-
-                                    .news_date_day {
-                                        p {
-                                            color: $white;
-                                        }
+                                    p {
+                                        color: $main_color;
                                     }
                                 }
 
                                 .news_text {
-                                width: calc(100% - 66.05px - 51.5px);
+                                    width: calc(100% - 86.58px);
 
-                                .news_tittle {
-                                    p {
-                                        color: $white;
+                                    .news_tittle {
+                                        p {
+                                            color: $main_color;
+                                        }
                                     }
                                 }
-                            }
 
                                 .news_arrow {
                                     p {
                                         i {
-                                            color: $white;
+                                            color: $main_color;
                                         }
                                     }
                                 }
-                            }
                             }
 
                             &:nth-last-child(1) {
@@ -177,14 +186,17 @@ body {
                             }
 
                             .news_text {
-                                width: calc(100% - 66.05px - 51.5px);
+                                padding: 0 20px 0 0;
+                            }
+
+                            .news_text {
 
                                 .news_category {
                                     display: inline-block;
                                     margin: 0 0 10px;
 
                                     p {
-                                        background-color: $brown;
+                                        background-color: $black;
                                         color: $white;
                                         padding: 3px 20px;
                                         border-radius: 50px;
@@ -192,24 +204,24 @@ body {
                                 }
 
                                 .news_tittle {
-                                    // p {
-                                    //     overflow: hidden;
-                                    //     display: -webkit-box;
-                                    //     text-overflow: ellipsis;
-                                    //     -webkit-line-clamp: 1;
-                                    //     /*!autoprefixer:off*/
-                                    //     -webkit-box-orient: vertical;
-                                    //     /*!autoprefixer:on*/
-                                    // }
+                                    p {
+                                        overflow: hidden;
+                                        display: -webkit-box;
+                                        text-overflow: ellipsis;
+                                        -webkit-line-clamp: 1;
+                                        /*!autoprefixer:off*/
+                                        -webkit-box-orient: vertical;
+                                        /*!autoprefixer:on*/
+                                    }
                                 }
                             }
 
                             .news_arrow {
-                                margin: 0 0 0 20px;
+                                margin: 0 0 0 auto;
 
                                 p {
                                     i {
-                                        color: $brown;
+                                        color: $black;
                                         font-size: 20px;
                                     }
                                 }
@@ -217,15 +229,61 @@ body {
                         }
                     }
 
-                    &.swiper_activities_area {
-                        .swiper {
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    border-radius: 5px;
+                    &.feature_content {
+                        .feature_content_item {
+                            position: relative;
+                            width: 80%;
+                            margin: 20px auto;
 
-                                    .swiper_text{
-                                        margin: 10px auto 0;
-                                    }
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                z-index: -1;
+                                font-size: 85px;
+                                font-weight: bold;
+                                right: -30px;
+                                bottom: 80px;
+                                color: transparent;
+                                -webkit-text-stroke: 2px $main_color;
+                            }
+
+                            &:nth-child(1) {
+                                &::before {
+                                    content: "01";
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                &::before {
+                                    content: "02";
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                &::before {
+                                    content: "03";
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                &::before {
+                                    content: "04";
+                                }
+                            }
+
+                            .feature_content_item_img {
+                                width: 60%;
+                                margin: 0 auto 20px;
+                            }
+
+                            .feature_content_item_text {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                h4 {
+                                    color: $main_color;
+                                    margin: 0 auto 20px;
                                 }
                             }
                         }
@@ -238,18 +296,7 @@ body {
                                     background-color: $white;
                                     border-radius: 5px;
                                     width: 80%;
-                                    border: 1.5px solid transparent;
-
-                                    &:hover{
-                                        border: 1.5px solid $main_color;
-
-                                        .book_content {
-
-                                        h4 {
-                                            color: $main_color;
-                                        }
-                                    }
-                                    }
+                                    border: 1px solid transparent;
 
                                     img {
                                         border-radius: 5px;
@@ -275,8 +322,7 @@ body {
                                         padding: 15px 0px;
 
                                         h4 {
-                                            font-size: 22px;
-                                            color: $brown;
+                                            color: $black;
                                             margin: 0 0 8px;
                                             overflow: hidden;
                                             display: -webkit-box;
@@ -285,6 +331,15 @@ body {
                                             /*!autoprefixer:off*/
                                             -webkit-box-orient: vertical;
                                             /*!autoprefixer:on*/
+                                        }
+                                    }
+
+                                    &:hover{
+                                        border: 1px solid $main_color;
+                                        .book_content{
+                                            h5{
+                                                color: $main_color;
+                                            }
                                         }
                                     }
                                 }
@@ -328,6 +383,14 @@ body {
     }
 }
 
+@keyframes earthRotate {
+  0%   {rotate: 0deg;}
+  25%  {rotate: 90deg;}
+  50%  {rotate: 180deg;}
+  75%  {rotate: 270deg;}
+  100% {rotate: 360deg;}
+}
+
 @media screen and (min-width: 768px) {
     body {
         .main {
@@ -361,13 +424,15 @@ body {
                         &.news_content {
                             .news_content_item {
                                 padding: 25px 10px;
-                                .news_date{
+
+                                .news_date {
                                     margin: 0 40px 0 0;
                                 }
+
                                 .news_text {
                                     width: calc(100% - 86.05px - 75.89px);
 
-                                    .news_category{
+                                    .news_category {
                                         margin: 0 0 15px;
                                     }
                                 }
@@ -381,6 +446,26 @@ body {
                                         }
                                     }
                                 }
+                            }
+                        }
+
+                        &.feature_content {
+                            display: flex;
+                            flex-wrap: wrap;
+
+                            .feature_content_item {
+                                width: 45%;
+                                margin: 40px auto;
+
+                                &::before {
+                                    font-size: 100px;
+                                    bottom: 80%;
+                                }
+
+                                .feature_content_item_img {
+                                    margin: 0 auto 40px;
+                                }
+
                             }
                         }
                     }

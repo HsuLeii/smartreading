@@ -27,7 +27,7 @@
                         i {
                             position: relative;
                             font-size: 20px;
-                            color: $brown;
+                            color: $black;
 
                             &::before {
                                 position: relative;
@@ -79,14 +79,14 @@
                 align-items: flex-start;
                 flex-wrap: wrap;
                 padding: 0 20px 10px;
-                border-bottom: 1px solid $brown;
+                border-bottom: 1px solid $black;
 
                 .modal_content_tittle {
                     width: 100%;
                     order: 2;
 
                     h4 {
-                        color: $brown;
+                        color: $black;
                     }
                 }
 
@@ -98,7 +98,7 @@
 
                     p {
                         display: inline-block;
-                        background-color: $brown;
+                        background-color: $black;
                         color: $white;
                         padding: 3px 20px;
                         border-radius: 50px;
@@ -116,20 +116,41 @@
                 }
 
                 a {
+                    position: relative;
                     display: inline-block;
                     margin: 0px 0 5px;
-                    color: $brown;
-                    background: linear-gradient($brown, $brown) 100% calc(100% + 1px) / 0% 1px no-repeat;
-                    transition: background-size var(--transition-duration) var(--transition-timing-function);
-                    border-bottom: 1px solid $brown;
+                    color: $main_color;
                     padding: 0 3px 1px;
                     word-break: break-all;
 
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        border-bottom: 1px solid $black;
+
+                    }
+
+                    &::after {
+                        content: "";
+                        border-top: 1px solid $main_color;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        transform: scaleX(0);
+                        transform-origin: 100% 0;
+                        transition: transform var(--transition-duration) var(--transition-easing);
+                    }
+
                     &:hover {
-                        color: $main_color;
-                        background-position: 100% 100%;
-                        background: linear-gradient($main_color, $main_color) 0% calc(100% + 1px) / 100% 1px no-repeat;
-                        border-bottom: 1px solid transparent;
+
+                        &::after {
+                            transform: scaleX(1);
+                            transform-origin: 0 0;
+                        }
                     }
                 }
 

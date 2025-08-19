@@ -1,6 +1,6 @@
 <div class="header_logo">
     <a href="">
-        <img src="Content/image/logo/ASTRAxSRE_logo.svg" alt="">
+        <img src="Content/image/logo/logo.svg" alt="">
     </a>
 </div>
 <div id="toggle" class="toggle">
@@ -121,13 +121,22 @@
 
 <script>
     $("#toggle").click(function () {
-    //   $(".toggle").toggleClass("open");
-      $("header").toggleClass("open");
-      $("body").toggleClass("fixed");
+        //   $(".toggle").toggleClass("open");
+        $("header").toggleClass("open");
+        $("body").toggleClass("fixed");
     });
 
-$(".language_dropdown").click(function () {
+    $(".language_dropdown").click(function () {
         $(this).toggleClass("open");
         $(this).children(".dropdown_content").toggleClass("open");
+        $(".products_dropdown").removeClass("open");
+        $(".products_dropdown").children(".dropdown_content").removeClass("open");
     });
-  </script>
+
+    $(".products_dropdown").click(function () {
+        $(this).toggleClass("open");
+        $(this).children(".dropdown_content").toggleClass("open");
+        $(".language_dropdown").removeClass("open");
+        $(".language_dropdown").children(".dropdown_content").removeClass("open");
+    });
+</script>
