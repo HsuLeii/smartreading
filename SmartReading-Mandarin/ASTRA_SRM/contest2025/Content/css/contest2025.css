@@ -541,9 +541,9 @@ header {
 header .header_logo {
   display: flex;
   align-items: center;
-  width: 230px;
+  width: 260px;
   z-index: 1;
-  padding: 20px 0 20px 5%;
+  padding: 20px 0 30px 5%;
   background-color: #F2F2F2;
 }
 header .header_logo a {
@@ -722,15 +722,20 @@ header.open nav::after {
   --transition-timing-function: cubic-bezier(.3, 1, .3, 1);
 }
 
+@media screen and (min-width: 576px) {
+  header .header_logo {
+    width: 350px;
+  }
+}
 @media screen and (min-width: 768px) {
   header nav .menu .menu_pagination li a .menu_icon {
     font-size: 25px;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   header {
     align-items: center;
-    padding: 0 2.5%;
+    padding: 15px 25px;
   }
   header .header_logo {
     width: 23%;
@@ -773,8 +778,17 @@ header.open nav::after {
     justify-content: flex-end;
     align-items: center;
   }
+  header nav .menu .menu_pagination li.li_login {
+    margin: 0 auto 0 10px;
+  }
+  header nav .menu .menu_pagination li.li_login a {
+    padding: 10px 25px;
+  }
   header nav .menu .menu_pagination li::before {
     display: none;
+  }
+  header nav .menu .menu_pagination li a {
+    padding: 15px 10px;
   }
   header nav .menu .menu_pagination li a .menu_icon {
     display: none;
@@ -798,6 +812,11 @@ header.open nav::after {
   }
   header.open nav::after {
     display: none;
+  }
+}
+@media screen and (min-width: 1600px) {
+  header .header_logo {
+    max-width: 350px;
   }
 }
 footer {
@@ -927,25 +946,22 @@ footer .footer_copyright p {
 body .main .swiper .swiper-wrapper .swiper-slide {
   position: relative;
 }
-body .main .swiper .swiper-wrapper .swiper-slide .swiper-slide_content {
+body .main .swiper .swiper-wrapper .swiper-slide .slide_airplane {
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   width: 100%;
-  height: 100%;
 }
-body .main .swiper .swiper-wrapper .swiper-slide .swiper-slide_content .swiper-slide_content_bookman {
+body .main .swiper .swiper-wrapper .swiper-slide .slide_airplane svg {
+  fill: transparent;
+}
+body .main .swiper .swiper-wrapper .swiper-slide .slide_airplane .slide_airplane_img {
+  width: 13%;
+}
+body .main .swiper .swiper-wrapper .swiper-slide .slide_text {
   position: absolute;
   left: 0;
   top: 0;
-}
-body .main .swiper .swiper-wrapper .swiper-slide .swiper-slide_content .swiper-slide_content_earth {
-  position: absolute;
-  right: -0.9375%;
-  bottom: -21.853%;
-  width: 41.788%;
-  animation: earthRotate 30s infinite;
-  animation-timing-function: linear;
 }
 body .main .main_content {
   width: 80%;
@@ -1596,11 +1612,14 @@ body .main .main_content .main_content_item.category_content.category_faq .categ
 body .main .main_content .main_content_item.category_content.category_faq .category_content_item .category_content_item_project_question .item_project_question_area.open .faq_question i {
   color: #00a7e5;
 }
+body .main .main_content .main_content_item.category_content.category_faq .category_content_item .category_content_item_project_question .item_project_question_area.open .faq_question i {
+  transform: translate(0, -50%) rotate(90deg);
+}
 body .main .main_content .main_content_item.category_content.category_faq .category_content_item .category_content_item_project_question .item_project_question_area .faq_question {
   position: relative;
   display: flex;
   width: calc(100% - 20px);
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
 }
 body .main .main_content .main_content_item.category_content.category_faq .category_content_item .category_content_item_project_question .item_project_question_area .faq_question:hover h5,
 body .main .main_content .main_content_item.category_content.category_faq .category_content_item .category_content_item_project_question .item_project_question_area .faq_question:hover i {
@@ -1611,8 +1630,10 @@ body .main .main_content .main_content_item.category_content.category_faq .categ
   right: 0px;
   top: 50%;
   transform: translate(0, -50%);
+  transition: var(--transition-duration) var(--transition-easing);
 }
 body .main .main_content .main_content_item.category_content.category_faq .category_content_item .category_content_item_project_question .item_project_question_area .faq_answer {
+  display: flex;
   border-top: 1px solid;
   padding: 20px;
   cursor: auto;
