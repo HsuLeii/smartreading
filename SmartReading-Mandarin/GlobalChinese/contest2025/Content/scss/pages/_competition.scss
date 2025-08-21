@@ -299,6 +299,80 @@ body {
                                                 display: none;
                                             }
 
+                                            &.consent_input_item{
+                                                position: relative;
+                                                margin: 40px auto 20px;
+
+                                                .consent_input_checkbox{
+                                                        position: absolute;
+                                                        opacity: 0;
+
+                                                        &+label {
+                            color: $black;
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+                            cursor: pointer;
+                            padding: 0;
+                            margin: 20px 0;
+
+                            &:before {
+                                content: '';
+                                margin-right: 10px;
+                                display: inline-block;
+                                vertical-align: text-top;
+                                width: 25px;
+                                height: 25px;
+                                background: $white;
+                                border: 1px solid $black;
+                            }
+    
+                            .consent_input_text {
+                                width: calc(100% - 20px - 10px);
+                            }
+                                                        }
+
+                                                        &:hover {
+                            &+label {
+                                
+                                                    
+
+                                .consent_input_text{
+                                    color: $main_color;
+                                }
+    
+                                &:before {
+                                    border: 1px solid $main_color;
+                                }
+                            }
+                        }
+
+                        &:checked {
+                            &+label {
+                                .consent_input_text{
+                                    color: $main_color;
+                                }
+    
+                                &:before {
+                                    border: 1px solid $main_color;
+                                    background-color: $main_color;
+                                }
+    
+                                &:after {
+                                    font-family: "Font Awesome 5 Free";
+                                    content: '\f00c';
+                                    position: absolute;
+                                    color: $white;
+                                    width: 25px;
+                                    font-size: 15px;
+                                    text-align: center;
+                                    font-weight: 900;
+                                }
+                            }
+                        }
+                                                }
+                                            }
+
                                             .input-group-label {
                                                 position: relative;
                                                 padding: 10px 0;
@@ -522,6 +596,16 @@ body {
                                                     p {
                                                         color: $white;
                                                     }
+                                                }
+
+                                                &:disabled{
+                                                    &:hover {
+                                                        background: grey;
+                                                }
+
+                                                p{
+                                                    color: $white;
+                                                }
                                                 }
                                             }
                                         }
