@@ -590,28 +590,6 @@ header nav .menu .menu_pagination li {
   position: relative;
   transition: background-size var(--transition-duration) var(--transition-timing-function);
 }
-header nav .menu .menu_pagination li.li_login {
-  margin: 40px auto;
-}
-header nav .menu .menu_pagination li.li_login a {
-  display: inline-flex;
-  width: auto;
-  padding: 10px 40px;
-  background-color: #00a7e5;
-  border-radius: 50px;
-}
-header nav .menu .menu_pagination li.li_login a span {
-  color: #fff;
-}
-header nav .menu .menu_pagination li.li_login::before, header nav .menu .menu_pagination li.li_login::after {
-  display: none;
-}
-header nav .menu .menu_pagination li.li_login:hover a {
-  background-color: #262626;
-}
-header nav .menu .menu_pagination li.li_login:hover a span {
-  color: #fff;
-}
 header nav .menu .menu_pagination li::before {
   content: "";
   position: absolute;
@@ -685,6 +663,73 @@ header nav .menu .menu_pagination li.li_dropdown .dropdown_content li.active a s
 header nav .menu .menu_pagination li.li_dropdown .dropdown_content.open {
   display: block;
 }
+header nav .menu .menu_pagination li.li_login {
+  margin: 40px auto;
+}
+header nav .menu .menu_pagination li.li_login a {
+  display: inline-flex;
+  width: auto;
+  padding: 10px 40px;
+  background-color: #00a7e5;
+  border-radius: 50px;
+}
+header nav .menu .menu_pagination li.li_login a span {
+  color: #fff;
+}
+header nav .menu .menu_pagination li.li_login::before, header nav .menu .menu_pagination li.li_login::after {
+  display: none;
+}
+header nav .menu .menu_pagination li.li_login:hover a {
+  background-color: #262626;
+}
+header nav .menu .menu_pagination li.li_login:hover a span {
+  color: #fff;
+}
+header nav .menu .menu_pagination li.li_language {
+  margin: 40px auto;
+}
+header nav .menu .menu_pagination li.li_language .li_dropdown_text {
+  display: inline-flex;
+  padding: 10px 40px;
+  background-color: #262626;
+  border-radius: 50px;
+}
+header nav .menu .menu_pagination li.li_language .li_dropdown_text span {
+  color: #fff;
+}
+header nav .menu .menu_pagination li.li_language .dropdown_content li a {
+  background-color: transparent;
+}
+header nav .menu .menu_pagination li.li_language::before, header nav .menu .menu_pagination li.li_language::after {
+  display: none;
+}
+header nav .menu .menu_pagination li.li_language:hover a {
+  background-color: #00a7e5;
+}
+header nav .menu .menu_pagination li.li_language:hover a span {
+  color: #fff;
+}
+header nav .menu .menu_pagination li.li_language.open a {
+  background-color: #00a7e5;
+}
+header nav .menu .menu_pagination li.li_language.open a span {
+  color: #fff;
+}
+header nav .menu .menu_pagination li.li_language.open .li_dropdown_text {
+  background-color: #00a7e5;
+}
+header nav .menu .menu_pagination li.li_language.open .li_dropdown_text span {
+  color: #fff;
+}
+header nav .menu .menu_pagination li.li_language.open .li_dropdown_text span.menu_icon {
+  transform: rotate(-90deg);
+}
+header nav .menu .menu_pagination li.li_language.open .dropdown_content li a span {
+  color: #262626;
+}
+header nav .menu .menu_pagination li.li_language.open .dropdown_content li.active a span {
+  color: #00a7e5;
+}
 header.open {
   height: 100vh;
 }
@@ -734,12 +779,13 @@ header.open nav::after {
 }
 @media screen and (min-width: 1200px) {
   header {
+    flex-direction: column;
     align-items: center;
     padding: 15px 25px;
   }
   header .header_logo {
-    width: 23%;
-    max-width: 300px;
+    width: 30%;
+    max-width: 350px;
     padding: 20px 0;
   }
   header .toggle {
@@ -778,12 +824,6 @@ header.open nav::after {
     justify-content: flex-end;
     align-items: center;
   }
-  header nav .menu .menu_pagination li.li_login {
-    margin: 0 auto 0 10px;
-  }
-  header nav .menu .menu_pagination li.li_login a {
-    padding: 10px 25px;
-  }
   header nav .menu .menu_pagination li::before {
     display: none;
   }
@@ -799,6 +839,55 @@ header.open nav::after {
     transform: translate(-50%, -1px);
     padding: 15px 20px;
     border-radius: 0 0 10px 10px;
+  }
+  header nav .menu .menu_pagination li.li_login {
+    margin: 0 auto 0 10px;
+  }
+  header nav .menu .menu_pagination li.li_login a {
+    padding: 10px 25px;
+  }
+  header nav .menu .menu_pagination li.li_language {
+    margin: 0 auto 0 10px;
+  }
+  header nav .menu .menu_pagination li.li_language .li_dropdown_text {
+    padding: 10px 25px;
+  }
+  header nav .menu .menu_pagination li.li_language .li_dropdown_text .menu_icon {
+    display: flex;
+    margin: 0 0 0 10px;
+  }
+  header nav .menu .menu_pagination li.li_language .dropdown_content li a {
+    background-color: transparent;
+  }
+  header nav .menu .menu_pagination li.li_language::before, header nav .menu .menu_pagination li.li_language::after {
+    display: none;
+  }
+  header nav .menu .menu_pagination li.li_language:hover a {
+    background-color: #00a7e5;
+  }
+  header nav .menu .menu_pagination li.li_language:hover a span {
+    color: #fff;
+  }
+  header nav .menu .menu_pagination li.li_language.open a {
+    background-color: #00a7e5;
+  }
+  header nav .menu .menu_pagination li.li_language.open a span {
+    color: #fff;
+  }
+  header nav .menu .menu_pagination li.li_language.open .li_dropdown_text {
+    background-color: #00a7e5;
+  }
+  header nav .menu .menu_pagination li.li_language.open .li_dropdown_text span {
+    color: #fff;
+  }
+  header nav .menu .menu_pagination li.li_language.open .li_dropdown_text span.menu_icon {
+    transform: rotate(-90deg);
+  }
+  header nav .menu .menu_pagination li.li_language.open .dropdown_content li a span {
+    color: #262626;
+  }
+  header nav .menu .menu_pagination li.li_language.open .dropdown_content li.active a span {
+    color: #00a7e5;
   }
   header.open {
     height: auto;
@@ -1334,7 +1423,7 @@ body .main .main_content .main_content_item.category_content .category_content_m
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li a {
   position: relative;
-  padding: 5px;
+  padding: 5px 0;
   display: inline-block;
 }
 body .main .main_content .main_content_item.category_content .category_content_menu .category_content_nav .category_content_nav_inner .category_content_nav_inner_list li a::before {
@@ -1399,12 +1488,14 @@ body .main .main_content .main_content_item.category_content .category_content_i
 body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_tittle h5 {
   color: #00a7e5;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px auto;
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item {
+  margin: 0 auto 20px;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list {
+  display: flex;
+  margin: 8px auto;
+}
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list p a {
   position: relative;
   display: inline-block;
   margin: 5px 0 5px;
@@ -1412,10 +1503,10 @@ body .main .main_content .main_content_item.category_content .category_content_i
   padding: 0 3px 1px;
   word-break: break-all;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a i {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list p a i {
   margin: 0 0 0 10px;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a::before {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list p a::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1423,7 +1514,7 @@ body .main .main_content .main_content_item.category_content .category_content_i
   width: 100%;
   border-bottom: 1px solid #262626;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a::after {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list p a::after {
   content: "";
   border-top: 1px solid #00a7e5;
   position: absolute;
@@ -1434,17 +1525,17 @@ body .main .main_content .main_content_item.category_content .category_content_i
   transform-origin: 100% 0;
   transition: transform var(--transition-duration) var(--transition-easing);
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p a:hover::after {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list p a:hover::after {
   transform: scaleX(1);
   transform-origin: 0 0;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list p span.annotation {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list p span.annotation {
   color: #00a7e5;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule {
   width: 100%;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item {
   width: 100%;
   display: flex;
   align-items: center;
@@ -1452,17 +1543,17 @@ body .main .main_content .main_content_item.category_content .category_content_i
   position: relative;
   margin: 0 0 40px 0;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item:nth-last-child(1) .project_information_schedule_marker::before {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item:nth-last-child(1) .project_information_schedule_marker::before {
   height: 0;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
   width: 100%;
   margin: 0 0 0 48px;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content .project_information_schedule_content_inner .project_information_schedule_content_inner_text h5 {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content .project_information_schedule_content_inner .project_information_schedule_content_inner_text h5 {
   color: #262626;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
   position: absolute;
   left: 16.5px;
   display: flex;
@@ -1471,7 +1562,7 @@ body .main .main_content .main_content_item.category_content .category_content_i
   width: 3px;
   height: 100%;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
   position: absolute;
   left: 50%;
   top: 0;
@@ -1485,7 +1576,7 @@ body .main .main_content .main_content_item.category_content .category_content_i
   align-items: center;
   justify-content: center;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker::before {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker::before {
   content: "";
   position: absolute;
   top: 10px;
@@ -1493,20 +1584,23 @@ body .main .main_content .main_content_item.category_content .category_content_i
   height: calc(100% + 40px);
   background-color: #262626;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_text_list_content {
   width: 100%;
   margin: 0px auto 5px;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .list_content_flex {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_text_list_content .list_content_flex {
   display: flex;
   flex-direction: column;
   margin: 0 auto 10px;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .list_content_flex span:nth-child(1) {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_text_list_content .list_content_flex span:nth-child(1) {
   color: #00a7e5;
 }
-body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_text_list_content .list_content_num {
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_text_list_content .list_content_num {
   display: flex;
+}
+body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .main_color {
+  color: #00a7e5;
 }
 
 @media screen and (min-width: 768px) {
@@ -1517,13 +1611,13 @@ body .main .main_content .main_content_item.category_content .category_content_i
     width: 30%;
     margin: 5px 3.33333% 5px 0;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
     margin: 0 0 0 49.5px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
     left: 17.25px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
     width: 34.5px;
   }
 }
@@ -1555,13 +1649,13 @@ body .main .main_content .main_content_item.category_content .category_content_i
     width: 65%;
     margin: 0 0 0px auto;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
     margin: 0 0 0 52.5px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
     left: 18.75px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
     width: 37.5px;
   }
 }
@@ -1573,24 +1667,24 @@ body .main .main_content .main_content_item.category_content .category_content_i
   body .main .main_content .main_content_item.category_content .category_content_item_area {
     width: 70%;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
     margin: 0 0 0 55.5px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
     left: 20.25px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
     width: 40.5px;
   }
 }
 @media screen and (min-width: 1400px) {
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_content {
     margin: 0 0 0 57px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker {
     left: 21px;
   }
-  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
+  body .main .main_content .main_content_item.category_content .category_content_item_area .category_content_item .category_content_item_project_information .project_information_text .project_information_text_item .project_information_text_list .project_information_schedule .project_information_schedule_item .project_information_schedule_marker h5 {
     width: 42px;
   }
 }

@@ -49,11 +49,9 @@ body {
                                         margin: 5px 0;
                                         width: 45%;
 
-
-
                                         a {
                                             position: relative;
-                                            padding: 5px;
+                                            padding: 5px 0;
                                             display: inline-block;
 
                                             &::before {
@@ -151,149 +149,159 @@ body {
                                 }
 
                                 .project_information_text {
-                                    .project_information_text_list {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                        margin: 10px auto;
+                                    // margin: 0 auto 60px;
 
-                                        p {
-                                            a {
-                                                position: relative;
-                                                display: inline-block;
-                                                margin: 5px 0 5px;
-                                                color: $main_color;
-                                                padding: 0 3px 1px;
-                                                word-break: break-all;
+                                    .project_information_text_item {
+                                        margin: 0 auto 20px;
 
-                                                i {
-                                                    margin: 0 0 0 10px;
-                                                }
+                                        .project_information_text_list {
+                                            display: flex;
+                                            margin: 8px auto;
 
-                                                &::before {
-                                                    content: "";
-                                                    position: absolute;
-                                                    bottom: 0;
-                                                    left: 0;
-                                                    width: 100%;
-                                                    border-bottom: 1px solid $black;
-                                                }
-
-                                                &::after {
-                                                    content: "";
-                                                    border-top: 1px solid $main_color;
-                                                    position: absolute;
-                                                    bottom: 0;
-                                                    left: 0;
-                                                    width: 100%;
-                                                    transform: scaleX(0);
-                                                    transform-origin: 100% 0;
-                                                    transition: transform var(--transition-duration) var(--transition-easing);
-                                                }
-
-                                                &:hover {
-                                                    &::after {
-                                                        transform: scaleX(1);
-                                                        transform-origin: 0 0;
-                                                    }
-                                                }
-                                            }
-
-                                            span {
-                                                &.annotation {
+                                            p {
+                                                a {
+                                                    position: relative;
+                                                    display: inline-block;
+                                                    margin: 5px 0 5px;
                                                     color: $main_color;
-                                                }
-                                            }
-                                        }
+                                                    padding: 0 3px 1px;
+                                                    word-break: break-all;
 
-                                        .project_information_schedule {
-                                            width: 100%;
-
-                                            .project_information_schedule_item {
-                                                width: 100%;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                position: relative;
-                                                margin: 0 0 40px 0;
-
-                                                &:nth-last-child(1) {
-                                                    .project_information_schedule_marker {
-                                                        &::before {
-                                                            height: 0;
-                                                        }
-                                                    }
-                                                }
-
-                                                .project_information_schedule_content {
-                                                    width: 100%;
-                                                    margin: 0 0 0 calc(18px * 1.5 + 6px + 15px);
-
-                                                    .project_information_schedule_content_inner {
-                                                        .project_information_schedule_content_inner_text {
-                                                            h5 {
-                                                                color: $black;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-
-                                                .project_information_schedule_marker {
-                                                    position: absolute;
-                                                    left: calc((18px * 1.5 + 6px) / 2);
-                                                    display: flex;
-                                                    align-items: center;
-                                                    justify-content: center;
-                                                    width: 3px;
-                                                    height: 100%;
-
-                                                    h5 {
-                                                        position: absolute;
-                                                        left: 50%;
-                                                        top: 0;
-                                                        transform: translate(-50%, 0%);
-                                                        background-color: $white;
-                                                        border: 3px solid $black;
-                                                        border-radius: 50%;
-                                                        width: calc(18px * 1.5 + 6px);
-                                                        color: $black;
-                                                        display: flex;
-                                                        align-items: center;
-                                                        justify-content: center;
+                                                    i {
+                                                        margin: 0 0 0 10px;
                                                     }
 
                                                     &::before {
                                                         content: "";
                                                         position: absolute;
-                                                        top: 10px;
+                                                        bottom: 0;
+                                                        left: 0;
                                                         width: 100%;
-                                                        height: calc(100% + 40px);
-                                                        background-color: $black;
+                                                        border-bottom: 1px solid $black;
+                                                    }
+
+                                                    &::after {
+                                                        content: "";
+                                                        border-top: 1px solid $main_color;
+                                                        position: absolute;
+                                                        bottom: 0;
+                                                        left: 0;
+                                                        width: 100%;
+                                                        transform: scaleX(0);
+                                                        transform-origin: 100% 0;
+                                                        transition: transform var(--transition-duration) var(--transition-easing);
+                                                    }
+
+                                                    &:hover {
+                                                        &::after {
+                                                            transform: scaleX(1);
+                                                            transform-origin: 0 0;
+                                                        }
                                                     }
                                                 }
-                                            }
-                                        }
-
-                                        .project_information_text_list_content {
-                                            width: 100%;
-                                            margin: 0px auto 5px;
-
-                                            .list_content_flex {
-                                                display: flex;
-                                                flex-direction: column;
-                                                margin: 0 auto 10px;
 
                                                 span {
-                                                    &:nth-child(1) {
+                                                    &.annotation {
                                                         color: $main_color;
                                                     }
                                                 }
                                             }
 
-                                            .list_content_num {
-                                                display: flex;
+                                            .project_information_schedule {
+                                                width: 100%;
+
+                                                .project_information_schedule_item {
+                                                    width: 100%;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    position: relative;
+                                                    margin: 0 0 40px 0;
+
+                                                    &:nth-last-child(1) {
+                                                        .project_information_schedule_marker {
+                                                            &::before {
+                                                                height: 0;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .project_information_schedule_content {
+                                                        width: 100%;
+                                                        margin: 0 0 0 calc(18px * 1.5 + 6px + 15px);
+
+                                                        .project_information_schedule_content_inner {
+                                                            .project_information_schedule_content_inner_text {
+                                                                h5 {
+                                                                    color: $black;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .project_information_schedule_marker {
+                                                        position: absolute;
+                                                        left: calc((18px * 1.5 + 6px) / 2);
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        width: 3px;
+                                                        height: 100%;
+
+                                                        h5 {
+                                                            position: absolute;
+                                                            left: 50%;
+                                                            top: 0;
+                                                            transform: translate(-50%, 0%);
+                                                            background-color: $white;
+                                                            border: 3px solid $black;
+                                                            border-radius: 50%;
+                                                            width: calc(18px * 1.5 + 6px);
+                                                            color: $black;
+                                                            display: flex;
+                                                            align-items: center;
+                                                            justify-content: center;
+                                                        }
+
+                                                        &::before {
+                                                            content: "";
+                                                            position: absolute;
+                                                            top: 10px;
+                                                            width: 100%;
+                                                            height: calc(100% + 40px);
+                                                            background-color: $black;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .project_information_text_list_content {
+                                                width: 100%;
+                                                margin: 0px auto 5px;
+
+                                                .list_content_flex {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    margin: 0 auto 10px;
+
+                                                    span {
+                                                        &:nth-child(1) {
+                                                            color: $main_color;
+                                                        }
+                                                    }
+                                                }
+
+                                                .list_content_num {
+                                                    display: flex;
+                                                }
+                                            }
+
+                                            .main_color {
+                                                color: $main_color;
                                             }
                                         }
                                     }
+
 
                                 }
 
@@ -337,23 +345,26 @@ body {
                             .category_content_item {
                                 .category_content_item_project_information {
                                     .project_information_text {
-                                        .project_information_text_list {
-                                            .project_information_schedule {
-                                                .project_information_schedule_item {
-                                                    .project_information_schedule_content {
-                                                        margin: 0 0 0 calc(19px * 1.5 + 6px + 15px);
-                                                    }
+                                        .project_information_text_item {
+                                            .project_information_text_list {
+                                                .project_information_schedule {
+                                                    .project_information_schedule_item {
+                                                        .project_information_schedule_content {
+                                                            margin: 0 0 0 calc(19px * 1.5 + 6px + 15px);
+                                                        }
 
-                                                    .project_information_schedule_marker {
-                                                        left: calc((19px * 1.5 + 6px) / 2);
+                                                        .project_information_schedule_marker {
+                                                            left: calc((19px * 1.5 + 6px) / 2);
 
-                                                        h5 {
-                                                            width: calc(19px * 1.5 + 6px);
+                                                            h5 {
+                                                                width: calc(19px * 1.5 + 6px);
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
+
                                     }
                                 }
                             }
@@ -419,23 +430,26 @@ body {
 
                                 .category_content_item_project_information {
                                     .project_information_text {
-                                        .project_information_text_list {
-                                            .project_information_schedule {
-                                                .project_information_schedule_item {
-                                                    .project_information_schedule_content {
-                                                        margin: 0 0 0 calc(21px * 1.5 + 6px + 15px);
-                                                    }
+                                        .project_information_text_item {
+                                            .project_information_text_list {
+                                                .project_information_schedule {
+                                                    .project_information_schedule_item {
+                                                        .project_information_schedule_content {
+                                                            margin: 0 0 0 calc(21px * 1.5 + 6px + 15px);
+                                                        }
 
-                                                    .project_information_schedule_marker {
-                                                        left: calc((21px * 1.5 + 6px) / 2);
+                                                        .project_information_schedule_marker {
+                                                            left: calc((21px * 1.5 + 6px) / 2);
 
-                                                        h5 {
-                                                            width: calc(21px * 1.5 + 6px);
+                                                            h5 {
+                                                                width: calc(21px * 1.5 + 6px);
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
+
                                     }
                                 }
                             }
@@ -467,23 +481,26 @@ body {
 
                                 .category_content_item_project_information {
                                     .project_information_text {
-                                        .project_information_text_list {
-                                            .project_information_schedule {
-                                                .project_information_schedule_item {
-                                                    .project_information_schedule_content {
-                                                        margin: 0 0 0 calc(23px * 1.5 + 6px + 15px);
-                                                    }
+                                        .project_information_text_item {
+                                            .project_information_text_list {
+                                                .project_information_schedule {
+                                                    .project_information_schedule_item {
+                                                        .project_information_schedule_content {
+                                                            margin: 0 0 0 calc(23px * 1.5 + 6px + 15px);
+                                                        }
 
-                                                    .project_information_schedule_marker {
-                                                        left: calc((23px * 1.5 + 6px) / 2);
+                                                        .project_information_schedule_marker {
+                                                            left: calc((23px * 1.5 + 6px) / 2);
 
-                                                        h5 {
-                                                            width: calc(23px * 1.5 + 6px);
+                                                            h5 {
+                                                                width: calc(23px * 1.5 + 6px);
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
+
                                     }
                                 }
                             }
@@ -508,23 +525,26 @@ body {
 
                                 .category_content_item_project_information {
                                     .project_information_text {
-                                        .project_information_text_list {
-                                            .project_information_schedule {
-                                                .project_information_schedule_item {
-                                                    .project_information_schedule_content {
-                                                        margin: 0 0 0 calc(24px * 1.5 + 6px + 15px);
-                                                    }
+                                        .project_information_text_item {
+                                            .project_information_text_list {
+                                                .project_information_schedule {
+                                                    .project_information_schedule_item {
+                                                        .project_information_schedule_content {
+                                                            margin: 0 0 0 calc(24px * 1.5 + 6px + 15px);
+                                                        }
 
-                                                    .project_information_schedule_marker {
-                                                        left: calc((24px * 1.5 + 6px) / 2);
+                                                        .project_information_schedule_marker {
+                                                            left: calc((24px * 1.5 + 6px) / 2);
 
-                                                        h5 {
-                                                            width: calc(24px * 1.5 + 6px);
+                                                            h5 {
+                                                                width: calc(24px * 1.5 + 6px);
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
+
                                     }
                                 }
                             }

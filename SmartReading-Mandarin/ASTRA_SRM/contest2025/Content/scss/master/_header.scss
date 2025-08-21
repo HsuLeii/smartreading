@@ -68,37 +68,7 @@ header {
                     position: relative;
                     transition: background-size var(--transition-duration) var(--transition-timing-function);
 
-                    &.li_login{
-                        margin: 40px auto;
-                            
-                            a{
-                                display: inline-flex;
-                                width: auto;
-                                padding: 10px 40px;
-                                background-color: $main_color;
-                                border-radius: 50px;
-
-                                span{
-                                    color: $white;
-                                }
-                            }
-
-                            &::before,
-                            &::after{
-                                display: none;
-                            }
-
-                            &:hover{
-                                
-                                a{
-                                    background-color: $black;
-
-                                    span{
-                                        color: $white;
-                                    }
-                                }
-                            }
-                    }
+                    
 
                     &::before {
                         content: "";
@@ -219,6 +189,114 @@ header {
                             }
                         }
                     }
+
+                    &.li_login{
+                        margin: 40px auto;
+                            
+                            a{
+                                display: inline-flex;
+                                width: auto;
+                                padding: 10px 40px;
+                                background-color: $main_color;
+                                border-radius: 50px;
+
+                                span{
+                                    color: $white;
+                                }
+                            }
+
+                            &::before,
+                            &::after{
+                                display: none;
+                            }
+
+                            &:hover{
+                                
+                                a{
+                                    background-color: $black;
+
+                                    span{
+                                        color: $white;
+                                    }
+                                }
+                            }
+                    }
+
+                    &.li_language{
+                        margin: 40px auto;
+                            
+                            .li_dropdown_text{
+                                display: inline-flex;
+                                padding: 10px 40px;
+                                background-color: $black;
+                                border-radius: 50px;
+
+                                span{
+                                    color: $white;
+                                }
+                            }
+
+                            .dropdown_content{
+                                li{
+                                    a{
+                                        background-color: transparent;
+                                    }
+                                }
+                            }
+
+                            &::before,
+                            &::after{
+                                display: none;
+                            }
+
+                            &:hover{
+                                a{
+                                    background-color: $main_color;
+
+                                    span{
+                                        color: $white;
+                                    }
+                                }
+                            }
+
+                            &.open {
+                                a{
+                                    background-color: $main_color;
+
+                                    span{
+                                        color: $white;
+                                    }
+                                }
+                            .li_dropdown_text {
+                                background-color: $main_color;
+                                span{
+                                    color: $white;
+
+                                    &.menu_icon{
+                                        transform: rotate(-90deg);
+                                    }
+                                }
+                            }
+
+                            .dropdown_content {
+                                li{
+                                    a{
+                                        span{
+                                            color: $black;
+                                        }
+                                    }
+
+                                    &.active{
+                                        a{
+                                            span{
+                                                color: $main_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -300,12 +378,13 @@ header {
 
 @media screen and (min-width: 1200px) {
     header {
+        flex-direction: column;
         align-items: center;
         padding: 15px 25px;
 
         .header_logo {
-            width: 23%;
-            max-width: 300px;
+            width: 30%;
+            max-width: 350px;
             padding: 20px 0;
         }
 
@@ -351,13 +430,6 @@ header {
                     align-items: center;
 
                     li {
-                        &.li_login{
-                            margin: 0 auto 0 10px;
-                            a{
-                                padding: 10px 25px;
-                            }
-                        }
-
                         &::before {
                             display: none;
                         }
@@ -378,6 +450,87 @@ header {
                                 border-radius: 0 0 10px 10px;
                             }
                         }
+
+                        &.li_login{
+                            margin: 0 auto 0 10px;
+                            a{
+                                padding: 10px 25px;
+                            }
+                        }
+
+                        &.li_language{
+                            margin: 0 auto 0 10px;
+                            
+                            .li_dropdown_text{
+                                padding: 10px 25px;
+
+                                .menu_icon {
+                                display: flex;
+                                margin: 0 0 0 10px;
+                            }
+                            }
+
+                            .dropdown_content{
+                                li{
+                                    a{
+                                        background-color: transparent;
+                                    }
+                                }
+                            }
+
+                            &::before,
+                            &::after{
+                                display: none;
+                            }
+
+                            &:hover{
+                                a{
+                                    background-color: $main_color;
+
+                                    span{
+                                        color: $white;
+                                    }
+                                }
+                            }
+
+                            &.open {
+                                a{
+                                    background-color: $main_color;
+
+                                    span{
+                                        color: $white;
+                                    }
+                                }
+                            .li_dropdown_text {
+                                background-color: $main_color;
+                                span{
+                                    color: $white;
+
+                                    &.menu_icon{
+                                        transform: rotate(-90deg);
+                                    }
+                                }
+                            }
+
+                            .dropdown_content {
+                                li{
+                                    a{
+                                        span{
+                                            color: $black;
+                                        }
+                                    }
+
+                                    &.active{
+                                        a{
+                                            span{
+                                                color: $main_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     }
                 }
             }
