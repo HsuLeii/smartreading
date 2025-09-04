@@ -1,27 +1,27 @@
 body {
     .main {
-        .swiper{
-            .swiper-wrapper{
-                .swiper-slide{
+        .swiper {
+            .swiper-wrapper {
+                .swiper-slide {
                     position: relative;
 
-                    .slide_airplane{
+                    .slide_airplane {
                         position: absolute;
                         right: 0;
                         top: 0;
 
                         width: 100%;
 
-                        svg{
-                            fill:transparent;
+                        svg {
+                            fill: transparent;
                         }
 
-                        .slide_airplane_img{
+                        .slide_airplane_img {
                             width: 13%;
                         }
                     }
 
-                    .slide_text{
+                    .slide_text {
                         position: absolute;
                         left: 0;
                         top: 0;
@@ -29,6 +29,7 @@ body {
                 }
             }
         }
+
         .main_content {
             width: 80%;
             max-width: 1200px;
@@ -112,43 +113,43 @@ body {
                             background: linear-gradient($main_color, $main_color) 100% 100% / 0% 100% no-repeat;
                             transition: background-size var(--transition-duration) var(--transition-timing-function);
                             border-bottom: 1px solid $brown;
-                            
-                            &.link{
-&:hover {
-                                background: linear-gradient($main_color, $main_color) 0% 100% / 100% 100% no-repeat;
 
-                                .news_date {
-                                    .news_date_year {
-                                        h4 {
-                                            color: $white;
+                            &.link {
+                                &:hover {
+                                    background: linear-gradient($main_color, $main_color) 0% 100% / 100% 100% no-repeat;
+
+                                    .news_date {
+                                        .news_date_year {
+                                            h4 {
+                                                color: $white;
+                                            }
+                                        }
+
+                                        .news_date_day {
+                                            p {
+                                                color: $white;
+                                            }
                                         }
                                     }
 
-                                    .news_date_day {
+                                    .news_text {
+                                        width: calc(100% - 66.05px - 51.5px);
+
+                                        .news_tittle {
+                                            p {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    .news_arrow {
                                         p {
-                                            color: $white;
+                                            i {
+                                                color: $white;
+                                            }
                                         }
                                     }
                                 }
-
-                                .news_text {
-                                width: calc(100% - 66.05px - 51.5px);
-
-                                .news_tittle {
-                                    p {
-                                        color: $white;
-                                    }
-                                }
-                            }
-
-                                .news_arrow {
-                                    p {
-                                        i {
-                                            color: $white;
-                                        }
-                                    }
-                                }
-                            }
                             }
 
                             &:nth-last-child(1) {
@@ -225,21 +226,34 @@ body {
                             &::before {
                                 content: "";
                                 position: absolute;
-                                z-index: 1;
-                                font-size: 40px;
+                                z-index: 2;
+                                font-size: 35px;
                                 line-height: 1;
                                 font-weight: bold;
                                 right: -5px;
-                                top: 25px;
+                                top: 20px;
                                 transform: translate(30%, -100%);
-                                color: transparent;
-                                -webkit-text-stroke: 1.5px $white;
+                                color: $white;
                                 width: 70px;
                                 height: 70px;
-                                background-color: $main_color;
+                                border: 1.5px solid $main_color;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
+                                border-radius: 50% 50% 50% 0;
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                z-index: 1;
+                                right: -5px;
+                                top: 20px;
+                                transform: translate(30%, -100%);
+                                width: 70px;
+                                height: 70px;
+                                border: 5px solid $white;
+                                background-color: $main_color;
                                 border-radius: 50% 50% 50% 0;
                             }
 
@@ -270,12 +284,12 @@ body {
                             .feature_content_item_img {
                                 width: 100%;
                                 margin: 0 auto;
-                                padding: 30px 10px 10px;
+                                padding: 10px 10px 30px;
                                 background-color: $white;
                                 border: 1.5px solid $main_color;
-                                border-radius: 10px 10px 0 0;
+                                border-radius: 0 0 10px 10px;
 
-                                img{
+                                img {
                                     border-radius: 10px;
                                 }
                             }
@@ -284,11 +298,11 @@ body {
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
-                                padding: 10px;
+                                padding: 30px 10px 10px;
                                 border: 1.5px solid $main_color;
-                                border-top: 0px;
-                                border-radius: 0 0 10px 10px;
-                                transform: translate(0 , -1.5px);
+                                border-bottom: 0px;
+                                border-radius: 10px 10px 0 0;
+                                transform: translate(0, 1.5px);
                                 background-color: $white;
 
                                 h4 {
@@ -305,7 +319,7 @@ body {
                                 .swiper-slide {
                                     border-radius: 5px;
 
-                                    .swiper_text{
+                                    .swiper_text {
                                         margin: 10px auto 0;
                                     }
                                 }
@@ -322,15 +336,15 @@ body {
                                     width: 80%;
                                     border: 1.5px solid transparent;
 
-                                    &:hover{
+                                    &:hover {
                                         border: 1.5px solid $main_color;
 
                                         .book_content {
 
-                                        h4 {
-                                            color: $main_color;
+                                            h4 {
+                                                color: $main_color;
+                                            }
                                         }
-                                    }
                                     }
 
                                     img {
@@ -412,24 +426,29 @@ body {
 
 @media screen and (min-width: 500px) {
     body {
-    .main {
-        .main_content {
-            .main_content_item {
-                .main_content_item_content {
-                    &.feature_content {
-                        .feature_content_item {
-                            &::before {
-                                font-size: 55px;
-                                width: 85px;
-                                height: 85px;
+        .main {
+            .main_content {
+                .main_content_item {
+                    .main_content_item_content {
+                        &.feature_content {
+                            .feature_content_item {
+                                &::before {
+                                    font-size: 45px;
+                                    width: 85px;
+                                    height: 85px;
+                                }
+
+                                &::after {
+                                    width: 85px;
+                                    height: 85px;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-        }
-        }
+    }
 
 }
 
@@ -466,13 +485,15 @@ body {
                         &.news_content {
                             .news_content_item {
                                 padding: 25px 10px;
-                                .news_date{
+
+                                .news_date {
                                     margin: 0 40px 0 0;
                                 }
+
                                 .news_text {
                                     width: calc(100% - 86.05px - 75.89px);
 
-                                    .news_category{
+                                    .news_category {
                                         margin: 0 0 15px;
                                     }
                                 }
@@ -491,27 +512,22 @@ body {
 
                         &.feature_content {
                             display: flex;
-                                flex-wrap: wrap;
-                            .feature_content_item{
+                            flex-wrap: wrap;
+
+                            .feature_content_item {
                                 width: 45%;
                                 margin: 60px auto 60px;
 
-                            //     &::before {
-                            //     font-size: 80px;
-                            //     -webkit-text-stroke: 2px $main_color;
-                            //     top: -5px;
-                            // }
+                                .feature_content_item_img {
+                                    border: 2px solid $main_color;
+                                }
 
-                            .feature_content_item_img{
-                                border: 2px solid $main_color;
-                            }
-
-                            .feature_content_item_text {
-                                border: 2px solid $main_color;
-                                border-top: 0;
-                                transform: translate(0 , -2px);
-                                padding: 20px 10px;
-                            }
+                                .feature_content_item_text {
+                                    border: 2px solid $main_color;
+                                    border-bottom: 0;
+                                    transform: translate(0, 2px);
+                                    padding: 30px 10px 20px;
+                                }
                             }
                         }
                     }
@@ -521,17 +537,28 @@ body {
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
     body {
         .main {
             .main_content {
                 .main_content_item {
                     .main_content_item_content {
                         &.feature_content {
-                            .feature_content_item{
-                            .feature_content_item_img{
-                                // padding: 10px;
-                            }
+                            .feature_content_item {
+                                &::before {
+                                    font-size: 55px;
+                                    width: 95px;
+                                    height: 95px;
+                                }
+
+                                &::after {
+                                    width: 95px;
+                                    height: 95px;
+                                }
+
+                                .feature_content_item_img {
+                                    // padding: 10px;
+                                }
                             }
                         }
                     }
