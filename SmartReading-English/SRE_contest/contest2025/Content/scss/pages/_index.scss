@@ -217,6 +217,89 @@ body {
                         }
                     }
 
+                    &.feature_content {
+                        .feature_content_item {
+                            position: relative;
+                            margin: 20px auto 80px;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                z-index: 1;
+                                font-size: 40px;
+                                line-height: 1;
+                                font-weight: bold;
+                                right: -5px;
+                                top: 25px;
+                                transform: translate(30%, -100%);
+                                color: transparent;
+                                -webkit-text-stroke: 1.5px $white;
+
+                                width: 70px;
+                                height: 70px;
+                                background-color: $main_color;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 50% 50% 50% 0;
+                            }
+
+                            &:nth-child(1) {
+                                &::before {
+                                    content: "01";
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                &::before {
+                                    content: "02";
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                &::before {
+                                    content: "03";
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                &::before {
+                                    content: "04";
+                                }
+                            }
+
+                            .feature_content_item_img {
+                                width: 100%;
+                                margin: 0 auto;
+                                padding: 30px 10px 10px;
+                                background-color: $white;
+                                border: 1.5px solid $main_color;
+                                border-radius: 10px 10px 0 0;
+
+                                img{
+                                    border-radius: 10px;
+                                }
+                            }
+
+                            .feature_content_item_text {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                padding: 10px;
+                                border: 1.5px solid $main_color;
+                                border-top: 0px;
+                                border-radius: 0 0 10px 10px;
+                                transform: translate(0 , -1.5px);
+                                background-color: $white;
+
+                                h4 {
+                                    color: $main_color;
+                                    margin: 0 auto 10px;
+                                }
+                            }
+                        }
+                    }
+
                     &.swiper_activities_area {
                         .swiper {
                             .swiper-wrapper {
@@ -328,6 +411,10 @@ body {
     }
 }
 
+@media screen and (min-width: 500px) {
+
+}
+
 @media screen and (min-width: 768px) {
     body {
         .main {
@@ -383,6 +470,25 @@ body {
                                 }
                             }
                         }
+
+                        &.feature_content {
+                            display: flex;
+                                flex-wrap: wrap;
+                            .feature_content_item{
+                                width: 45%;
+                                margin: 60px auto 60px;
+
+                                &::before {
+                                font-size: 80px;
+                                -webkit-text-stroke: 2px $main_color;
+                                top: -5px;
+                            }
+
+                            .feature_content_item_img{
+                                border: 2px solid $main_color;
+                            }
+                            }
+                        }
                     }
                 }
             }
@@ -396,7 +502,13 @@ body {
             .main_content {
                 .main_content_item {
                     .main_content_item_content {
-                        // margin: 40px 0 0;
+                        &.feature_content {
+                            .feature_content_item{
+                            .feature_content_item_img{
+                                padding: 10px;
+                            }
+                            }
+                        }
                     }
                 }
             }
