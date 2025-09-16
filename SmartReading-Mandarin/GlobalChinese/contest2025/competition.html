@@ -88,9 +88,13 @@
             </nav>
           </div>
 
-          <!-- 必填內容在input-group-label加上labelRequired -->
+          
+
+          <div class="category_content_item_area">
+
+            <!-- 必填內容在input-group-label加上labelRequired -->
           <!-- 送出未填寫內容在form-control加上error -->
-          <div id="category_one" class="category_content_item">
+            <div id="category_one" class="category_content_item">
             <div class="category_content_item_project">
               <div class="category_content_item_project_text">
                 <h5>個人報名</h5>
@@ -1087,6 +1091,9 @@
               </div>
             </div>
           </div>
+
+          </div>
+          
         </div>
       </div>
     </div>
@@ -1120,6 +1127,12 @@
 
   <script>
     //個人報名/團體報名
+    $(".signup_tittle").click(function () {
+      $(this).siblings(".signup_tittle").removeClass("opened");
+      $(this).toggleClass("opened");
+      $(this).siblings(".signup_tittle").next(".project_information_text").hide();
+      $(this).next(".project_information_text").toggle();
+    });
 
     // 國籍Country
     var Country_one = $(".Country-dropdown-one").text();
