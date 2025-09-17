@@ -300,6 +300,7 @@ header {
 
 @media screen and (min-width: 1200px) {
     header {
+        flex-direction: column;
         align-items: center;
         padding: 15px 25px;
 
@@ -334,13 +335,13 @@ header {
         }
 
         nav {
-            width: 77%;
+            width: 100%;
             display: block;
             transform: translate(0, 0);
 
             .menu {
                 display: flex;
-                justify-content: flex-end;
+                justify-content: center;
                 padding: 0;
                 height: auto;
                 overflow: initial;
@@ -351,21 +352,19 @@ header {
                     align-items: center;
 
                     li {
-                        &.li_login{
-                            margin: 0 auto 0 10px;
-                            a{
-                                padding: 10px 25px;
-                            }
-                        }
-
+                        
                         &::before {
                             display: none;
                         }
 
                         a {
-                            padding: 15px 10px;
+                            padding: 15px 5px;
                             .menu_icon {
                                 display: none;
+                            }
+
+                            span{
+                                font-size: 17px;
                             }
                         }
 
@@ -373,9 +372,17 @@ header {
                             .dropdown_content{
                                 position: absolute;
                                 width: auto;
+                                min-width: 170px;
                                 transform: translate(-50% , -1px);
                                 padding: 15px 20px;
                                 border-radius: 0 0 10px 10px;
+                            }
+                        }
+
+                        &.li_login{
+                            margin: 0 auto 0 10px;
+                            a{
+                                padding: 10px 15px;
                             }
                         }
                     }
@@ -402,10 +409,59 @@ header {
     }
 }
 
+@media screen and (min-width: 1400px) {
+    header {
+
+        nav {
+
+            .menu {
+
+                .menu_pagination {
+
+                    li {
+
+                        a {
+                            padding: 15px 10px;
+
+                            // span{
+                            //     font-size: 20px;
+                            // }
+                        }
+
+                        &.li_login{
+                            a{
+                                padding: 10px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 1600px) {
     header {
         .header_logo {
             max-width: 350px;
+        }
+
+        nav {
+
+            .menu {
+
+                .menu_pagination {
+
+                    li {
+
+                        a {
+                            span{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
