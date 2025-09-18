@@ -89,10 +89,6 @@ input[type=file]::file-selector-button {
   display: none;
 }
 
-img {
-  width: 100%;
-}
-
 button {
   padding: 0;
   border-width: 0px;
@@ -119,97 +115,28 @@ body {
   box-sizing: border-box;
 }
 
-.modal.reading_task_modal {
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
-  right: auto;
-  top: auto;
-  padding: 0 !important;
-}
-.modal.reading_task_modal .modal-dialog {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 720px;
-  padding: 0 25px 45px;
-}
-.modal.reading_task_modal .modal-dialog.modal-dialog-centered {
-  display: flex;
-  align-items: center;
-  margin: 120px auto 80px;
-  padding: 0 5px 45px;
-}
-.modal.reading_task_modal .modal-dialog .modal-content {
-  width: 100%;
-  border: 8px solid #b99b62;
-  border-radius: 50px;
-  background-color: #fef9cb;
-  box-shadow: none;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-header {
-  position: relative;
-  top: 0;
-  z-index: 1;
-  transform: translate(0%, -50%);
-  padding: 0;
-  border: 0px;
-  background-color: transparent;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-header .modal-header-cloud {
-  width: 200px;
-  margin: 0 auto;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-header .reading_task_close {
-  position: absolute;
-  top: 50%;
-  transform: translate(15px, 15px);
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body {
-  background-color: transparent;
-  padding: 0 8px;
-  transform: translate(0px, -30px);
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid {
-  padding: 0;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto 35px;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #32406f;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text p {
-  font-size: 20px;
-  color: #32406f;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value {
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 50px;
-  padding: 45px 10px;
-}
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p {
+.progress_icon_area {
   display: flex;
   justify-content: center;
-  color: #32406f;
-  font-size: 12px;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 5;
+  right: 8px;
+  bottom: 8px;
+  cursor: pointer;
 }
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span {
-  font-size: 12px;
+.progress_icon_area .progress_icon {
+  width: 100px;
 }
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p .value_green {
-  color: #3a8b25;
+.progress_icon_area .progress_icon_text p {
+  color: #ff4df5;
 }
-.modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p .value_red {
-  color: #ff5d5d;
-}
+
 .modal.readingProgress_modal {
+  width: 100%;
+}
+.modal.readingProgress_modal img {
   width: 100%;
 }
 .modal.readingProgress_modal .modal-dialog {
@@ -218,75 +145,250 @@ body {
   margin: 40px auto;
 }
 .modal.readingProgress_modal .modal-dialog .modal-content {
-  background-color: #304ac6;
-  padding: 50px 20px;
+  position: relative;
+  background-color: #98d6f6;
+  padding: 50px 0px 15%;
+  border: 0px;
+  border-radius: 0;
+  box-shadow: none;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header {
+.modal.readingProgress_modal .modal-dialog .modal-content .reading_progress_close {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .reading_progress_close span {
+  color: #005b98;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: normal;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header {
   padding: 0;
   border-bottom: 0;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame {
-  position: relative;
-  width: 93.75%;
   margin: 0 auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides {
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame {
+  position: relative;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides {
   display: flex;
   width: 100%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-frame-left,
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-frame-right {
-  width: 8.54%;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-frame-left img,
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-frame-right img {
-  height: 100%;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content {
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content {
   position: relative;
-  background-color: rgba(0, 19, 68, 0.5019607843);
-  width: 82.92%;
+  width: 100%;
   margin: 0 auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle {
-  width: 100%;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle img {
-  width: 100%;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area {
-  width: 80%;
-  margin: 0 auto;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text {
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle {
+  width: 71%;
+  margin: 0 auto 15px;
   display: flex;
   justify-content: center;
-  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle img {
+  width: 100%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area {
+  width: 95%;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #005b98;
   margin: 10px auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text.modal-header-date {
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text.modal-header-date {
   margin: 20px auto 30px;
+  font-weight: bold;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text .tittle {
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text .tittle {
   word-break: keep-all;
+  width: 100%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-frame-right {
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-frame-right {
   position: absolute;
   right: -8.54%;
   width: 8.54%;
   top: 7%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .decorate-area .decorate-area-item.decorate-area-item-one {
-  width: 3.55%;
-  position: absolute;
-  left: -2.5%;
-  top: 20%;
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area {
+  background-color: #021650;
+  background-color: rgba(2, 22, 80, 0.57);
+  box-shadow: 10px 10px 5px rgba(16, 234, 255, 0.52);
+  border-radius: 30px;
+  padding: 45px 5%;
+  width: 92%;
+  margin: 15px auto 40px;
+  position: relative;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-header .modal-header-frame .decorate-area .decorate-area-item.decorate-area-item-two {
-  width: 3.55%;
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content {
+  display: flex;
+  justify-content: center;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle h4,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle p,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content h4,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content p {
+  color: #0deaff;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle p,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content p {
+  text-align: justify;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle {
+  margin: 10px auto 35px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area {
+  margin: 30px auto 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 15px 25px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item {
+  display: flex;
+  align-items: center;
+  width: 33%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img {
+  width: calc(100% - 30px);
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img .robot_img_item_color {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img {
+  width: 30px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img .arrow_img_item_color {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .robot_img_item_img .robot_img_item_color {
+  display: block;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .robot_img_item_img .robot_img_item_grey {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .arrow_img_item_img .arrow_img_item_color {
+  display: block;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .arrow_img_item_img .arrow_img_item_grey {
+  display: none;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_text p,
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_num p {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
+  width: 40%;
+  height: 12px;
+  background-color: #821fb5;
+  border-radius: 6px;
+  margin: 0 16px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area .progress_bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: #ff4df5;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: relative;
+  background: linear-gradient(180deg, #324bc8 0%, #003591 47%, #1c2292 100%);
+  padding: 40px 4%;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+  position: relative;
+  z-index: 2;
+  background-color: #021650;
+  border-radius: 30px;
+  padding: 40px 25px 30px;
+  margin: 0 auto 40px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-last-child(1) {
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item::before {
+  content: "";
   position: absolute;
-  right: -2.5%;
-  top: 70%;
+  z-index: 1;
+  left: 10px;
+  top: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 1px solid #0deaff;
+  border-radius: 30px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle,
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle h5 {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content p {
+  color: #0deaff;
+  text-align: justify;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area {
+  width: 80%;
+  height: 12px;
+  background-color: #821fb5;
+  border-radius: 6px;
+  margin: 0 16px;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area .progress_bar {
+  height: 100%;
+  border-radius: 6px;
+  background-color: #ff4df5;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .small_task_progress_num p {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link {
+  position: relative;
+  z-index: 1;
+  background-color: #0deaff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 20px auto 0;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link a {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #021650;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link:hover a {
+  color: white;
+}
+.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-bg {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
 .modal-backdrop {
@@ -297,26 +399,6 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 499px) {
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-header .modal-header-cloud {
-    width: 270px;
-  }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body {
-    padding: 0 5%;
-  }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 {
-    font-size: 30px;
-  }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text p {
-    font-size: 20px;
-  }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p {
-    font-size: 18px;
-  }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span {
-    font-size: 18px;
-  }
-}
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 32px;
@@ -347,17 +429,30 @@ body {
   label {
     font-size: 15px;
   }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text h3 {
-    font-size: 48px;
+  .modal.readingProgress_modal .modal-dialog .modal-content {
+    padding: 50px 0 8%;
   }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_text p {
-    font-size: 29px;
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2 {
+    font-size: 40px;
   }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p {
-    font-size: 29px;
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2.modal-header-tittle-border {
+    /* 	等同於：-webkit-text-fill-color: transparent; */
+    -webkit-text-stroke: 4px #005b98;
   }
-  .modal.reading_task_modal .modal-dialog .modal-content .modal-body .reading_task_body .container-fluid .reading_task_body_content .reading_task_value p span {
-    font-size: 29px;
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle {
+    margin: 20px auto 35px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
+    width: 55%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+    width: 47.5%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-child(even) {
+    margin: 0 0 40px 2.5%;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-child(odd) {
+    margin: 0 2.5% 40px 0;
   }
 }
 @media screen and (min-width: 992px) {
@@ -390,6 +485,61 @@ body {
   label {
     font-size: 17px;
   }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle {
+    margin: 0 auto 30px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2 {
+    font-size: 50px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2.modal-header-tittle-border {
+    /* 	等同於：-webkit-text-fill-color: transparent; */
+    -webkit-text-stroke: 5px #005b98;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img {
+    width: calc(100% - 50px);
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img {
+    width: 50px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_text p,
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_num p {
+    color: white;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
+    width: 40%;
+    height: 12px;
+    background-color: #821fb5;
+    border-radius: 6px;
+    margin: 0 16px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area .progress_bar {
+    height: 100%;
+    border-radius: 6px;
+    background-color: #ff4df5;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_icon_area .task_area_icon_two {
+    right: 2.5%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2 {
+    font-size: 55px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text {
+    flex-wrap: nowrap;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-text-area .modal-header-text .tittle {
+    width: auto;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+    width: 30%;
+    margin: 0 1.5% 40px 1.5% !important;
+  }
 }
 @media screen and (min-width: 1200px) {
   p,
@@ -408,6 +558,9 @@ body {
   input,
   label {
     font-size: 19px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2 {
+    font-size: 65px;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -439,5 +592,8 @@ body {
   input,
   label {
     font-size: 20px;
+  }
+  .modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-frame .modal-header-frame-bothSides .modal-header-content .modal-header-tittle h2 {
+    font-size: 75px;
   }
 }/*# sourceMappingURL=SR-readingProgress-modal.css.map */

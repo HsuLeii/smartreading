@@ -73,7 +73,7 @@ a {
     text-decoration: none;
     line-height: 1.7;
 
-    &:hover{
+    &:hover {
         text-decoration: none;
     }
 }
@@ -88,9 +88,9 @@ input[type=file]::file-selector-button {
     display: none;
 }
 
-img {
-    width: 100%;
-}
+// img {
+//     width: 100%;
+// }
 
 button {
     padding: 0;
@@ -119,274 +119,425 @@ body {
     box-sizing: border-box;
 }
 
+.progress_icon_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 5;
+    right: 8px;
+    bottom: 8px;
+    cursor: pointer;
 
-.modal {
-    &.reading_task_modal {
-        overflow-x: hidden;
-        overflow-y: auto;
-        width: 100%;
-        height: 100%;
-        right: auto;
-        top: auto;
-        padding: 0 !important;
-
-        .modal-dialog {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 720px;
-            padding: 0 25px 45px;
-
-            &.modal-dialog-centered {
-                display: flex;
-                align-items: center;
-                margin: 120px auto 80px;
-                padding: 0 5px 45px;
-            }
-
-            .modal-content {
-                width: 100%;
-                border: 8px solid #b99b62;
-                border-radius: 50px;
-                background-color: #fef9cb;
-                box-shadow: none;
-
-                .modal-header {
-                    position: relative;
-                    top: 0;
-                    z-index: 1;
-                    transform: translate(0%, -50%);
-                    padding: 0;
-                    border: 0px;
-                    background-color: transparent;
-
-                    .modal-header-cloud {
-                        width: 200px;
-                        margin: 0 auto;
-                    }
-
-                    .reading_task_close {
-                        position: absolute;
-                        top: 50%;
-                        transform: translate(15px, 15px);
-                    }
-                }
-
-                .modal-body {
-                    background-color: transparent;
-                    padding: 0 8px;
-                    transform: translate(0px, -30px);
-
-
-                    .reading_task_body {
-                        .container-fluid {
-                            padding: 0;
-
-                            .reading_task_body_content {
-                                .reading_task_text {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: center;
-                                    margin: 0 auto 35px;
-
-                                    h3 {
-                                        font-size: 30px;
-                                        font-weight: bold;
-                                        color: #32406f;
-                                    }
-
-                                    p {
-                                        font-size: 20px;
-                                        color: #32406f;
-                                    }
-                                }
-
-                                .reading_task_value {
-                                    margin: 0 auto;
-                                    background-color: $white;
-                                    border-radius: 50px;
-                                    padding: 45px 10px;
-
-                                    p {
-                                        display: flex;
-                                        justify-content: center;
-                                        color: #32406f;
-                                        font-size: 12px;
-
-                                        span {
-                                            font-size: 12px;
-                                        }
-
-                                        .value_green {
-                                            color: #3a8b25;
-                                        }
-
-                                        .value_red {
-                                            color: #ff5d5d;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
+    .progress_icon {
+        width: 100px;
     }
 
-    &.readingProgress_modal{
+    .progress_icon_text {
+        p {
+            color: #ff4df5;
+        }
+    }
+}
+
+
+.modal {
+    &.readingProgress_modal {
         width: 100%;
-        .modal-dialog{
+
+        img {
+            width: 100%;
+        }
+
+        .modal-dialog {
             width: 80%;
             max-width: 1200px;
             margin: 40px auto;
-            .modal-content{
-                background-color: #304ac6;
-                padding: 50px 20px;
 
-                .modal-header{
+            .modal-content {
+                position: relative;
+                background-color: #98d6f6;
+                padding: 50px 0px 15%;
+                border: 0px;
+                border-radius: 0;
+                box-shadow: none;
+
+                .reading_progress_close {
+                    position: absolute;
+                    left: 15px;
+                    top: 15px;
+
+                    span {
+                        color: #005b98;
+                        font-size: 60px;
+                        line-height: 1;
+                        letter-spacing: normal;
+                    }
+                }
+
+                .modal-content-header {
                     padding: 0;
                     border-bottom: 0;
+                    margin: 0 auto;
 
-                    .modal-header-frame{
+                    .modal-content-header-frame {
                         position: relative;
-                        width: 93.75%;
                         margin: 0 auto;
 
-                        .modal-header-frame-bothSides{
+                        .modal-header-frame-bothSides {
                             display: flex;
                             width: 100%;
 
-                            .modal-header-frame-left,
-                            .modal-header-frame-right{
-                                width: 8.54%;
-
-                                img{
-                                    height: 100%;
-                                }
-                            }
-
-                            .modal-header-content{
+                            .modal-header-content {
                                 position: relative;
-                                background-color: #00134480;
-                                width: 82.92%;
+                                width: 100%;
                                 margin: 0 auto;
-                                
-                                .modal-header-tittle{
-                                    width: 100%;
-            
-                                    img{
+
+                                .modal-header-tittle {
+                                    width: 71%;
+                                    margin: 0 auto 15px;
+                                    display: flex;
+                                    justify-content: center;
+
+                                    img {
                                         width: 100%;
                                     }
+
+                                    // h2 {
+                                    //     font-size: 25px;
+                                    //     font-family: "Noto Sans SC", "Noto Sans TC";
+                                    //     font-weight: 900;
+                                    //     text-align: center;
+                                    //     width: 100%;
+                                    //     line-height: 1.5;
+
+                                    //     &.modal-header-tittle-main {
+                                    //         /* 	等同於：-webkit-text-fill-color: transparent; */
+                                    //         // -webkit-text-stroke: 2px #1e286b;
+                                    //         position: relative;
+                                    //         z-index: 3;
+                                    //         color: #fff100;
+                                    //     }
+
+                                    //     &.modal-header-tittle-border {
+                                    //         position: absolute;
+                                    //         left: 50%;
+                                    //         top: 0;
+                                    //         transform: translate(-50%, 0);
+                                    //         z-index: 2;
+                                    //         /* background-clip 要在背景的後面 */
+                                    //         -webkit-background-clip: text;
+                                    //         color: transparent;
+                                    //         /* 	等同於：-webkit-text-fill-color: transparent; */
+                                    //         -webkit-text-stroke: 3px #005b98;
+                                    //     }
+
+                                    //     &.modal-header-tittle-bg {
+                                    //         color: #005b98;
+                                    //         position: absolute;
+                                    //         top: 0;
+                                    //         left: 50%;
+                                    //         transform: translate(-50%, 0%);
+                                    //         -webkit-text-stroke: 20px #fff;
+
+                                    //         &.modal-header-tittle-bg-blue {
+                                    //             -webkit-text-stroke: 25px #005b98;
+                                    //         }
+                                    //     }
+
+                                    //     &.modal-header-tittle-blue {
+                                    //         color: #005b98;
+                                    //         position: absolute;
+                                    //         top: 0;
+                                    //         left: 50%;
+                                    //         transform: translate(calc(-50% + 5px), 5px);
+                                    //         z-index: 1;
+                                    //         -webkit-text-stroke: 3px #005b98;
+                                    //     }
+                                    // }
                                 }
-                                
-                                .modal-header-text-area{
-                                    width: 80%;
+
+                                .modal-header-text-area {
+                                    width: 95%;
                                     margin: 0 auto;
-                                    
-        
-                                    .modal-header-text{
+
+                                    .modal-header-text {
                                         display: flex;
                                         justify-content: center;
-                                        color: $white;
+                                        flex-wrap: wrap;
+                                        color: #005b98;
                                         margin: 10px auto;
-            
-                                        &.modal-header-date{
+
+                                        &.modal-header-date {
                                             margin: 20px auto 30px;
+                                            font-weight: bold;
                                         }
-            
-                                        .tittle{
+
+                                        .tittle {
                                             word-break: keep-all;
+                                            width: 100%;
                                         }
                                     }
                                 }
-        
-                                .modal-header-frame-right{
+
+                                .modal-header-frame-right {
                                     position: absolute;
                                     right: -8.54%;
                                     width: 8.54%;
                                     top: 7%;
                                 }
-        
+
                             }
                         }
 
-                        .decorate-area{
-                            .decorate-area-item{
-                                &.decorate-area-item-one{
-                                    width: 3.55%;
-                                    position: absolute;
-                                    left: -2.5%;
-                                    top: 20%;
+                        
+                    }
+                }
+
+                .task_area {
+                    background-color: #021650;
+                    background-color: rgba(2,22,80,.57);
+                    box-shadow:  10px 10px 5px rgba(16,234,255,.52);
+                    border-radius: 30px;
+                    padding: 45px 5%;
+                    width: 92%;
+                    margin: 15px auto 40px;
+                    position: relative;
+
+                    .task_area_text {
+
+                        .task_area_tittle,
+                        .task_area_content {
+                            display: flex;
+                            justify-content: center;
+
+                            h4,
+                            p {
+                                color: #0deaff;
+                            }
+
+                            p {
+                                text-align: justify;
+                            }
+                        }
+
+                        .task_area_tittle {
+                            margin: 10px auto 35px;
+                        }
+                    }
+
+                    .robot_progress_area {
+                        margin: 30px auto 0;
+
+                        .robot_img_area {
+                            display: flex;
+                            justify-content: center;
+                            margin: 0 0 15px 25px;
+
+                            .robot_img_item {
+                                display: flex;
+                                align-items: center;
+                                width: 33%;
+
+                                .robot_img_item_img {
+                                    width: calc(100% - 30px);
+
+                                    .robot_img_item_color {
+                                        display: none;
+                                    }
                                 }
-                                &.decorate-area-item-two{
-                                    width: 3.55%;
-                                    position: absolute;
-                                    right: -2.5%;
-                                    top: 70%;
+
+                                .arrow_img_item_img {
+                                    width: 30px;
+
+                                    .arrow_img_item_color {
+                                        display: none;
+                                    }
+                                }
+
+                                &.get {
+                                    .robot_img_item_img {
+                                        .robot_img_item_color {
+                                            display: block;
+                                        }
+
+                                        .robot_img_item_grey {
+                                            display: none;
+                                        }
+                                    }
+
+                                    .arrow_img_item_img {
+                                        .arrow_img_item_color {
+                                            display: block;
+                                        }
+
+                                        .arrow_img_item_grey {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .robot_progress {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .robot_progress_text,
+                            .robot_progress_num {
+                                p {
+                                    color: $white;
+                                }
+                            }
+
+                            .progress_area {
+                                width: 40%;
+                                height: 12px;
+                                background-color: #821fb5;
+                                border-radius: 6px;
+                                margin: 0 16px;
+
+                                .progress_bar {
+                                    height: 100%;
+                                    border-radius: 6px;
+                                    background-color: #ff4df5;
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            
+                .small_task_area {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    position: relative;
+                    background: linear-gradient(180deg,
+                            #324bc8 0%,
+                            #003591 47%,
+                            #1c2292 100%);
+                    padding: 40px 4%;
+
+                    .small_task_item {
+                        position: relative;
+                        z-index: 2;
+                        background-color: #021650;
+                        border-radius: 30px;
+                        padding: 40px 25px 30px;
+                        margin: 0 auto 40px;
+
+                        &:nth-last-child(1) {
+                            margin: 0 auto;
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            z-index: 1;
+                            left: 10px;
+                            top: 10px;
+                            width: calc(100% - 20px);
+                            height: calc(100% - 20px);
+                            border: 1px solid #0deaff;
+                            border-radius: 30px;
+                        }
+
+                        .small_task_text {
+
+                            .small_task_tittle,
+                            .small_task_content {
+                                display: flex;
+                                justify-content: center;
+                                margin: 0 auto 25px;
+                            }
+
+                            .small_task_tittle {
+
+                                h5 {
+                                    color: $white;
+                                }
+                            }
+
+                            .small_task_content {
+                                p {
+                                    color: #0deaff;
+                                    text-align: justify;
+                                }
+                            }
+                        }
+
+                        .small_task_progress {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 0 auto;
+
+                            .progress_area {
+                                width: 80%;
+                                height: 12px;
+                                background-color: #821fb5;
+                                border-radius: 6px;
+                                margin: 0 16px;
+
+                                .progress_bar {
+                                    height: 100%;
+                                    border-radius: 6px;
+                                    background-color: #ff4df5;
+                                }
+                            }
+
+                            .small_task_progress_num {
+                                p {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                        .small_task_link {
+                            position: relative;
+                            z-index: 1;
+                            background-color: #0deaff;
+                            border-radius: 10px;
+                            padding: 10px 15px;
+                            margin: 20px auto 0;
+
+                            a {
+                                display: flex;
+                                justify-content: center;
+                                font-size: 18px;
+                                font-weight: bold;
+                                color: #021650;
+                            }
+
+                            &:hover {
+                                a {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .modal-content-bg {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
         }
     }
 }
 
 .modal-backdrop {
     opacity: 0.5;
+
     &.hide {
         position: relative;
         display: none;
-    }
-}
-
-@media screen and (min-width: 499px) {
-    .modal {
-        &.reading_task_modal {
-            .modal-dialog {
-                .modal-content {
-                    .modal-header {
-                        .modal-header-cloud {
-                            width: 270px;
-                        }
-                    }
-
-                    .modal-body {
-                        padding: 0 5%;
-                        .reading_task_body {
-                            .container-fluid {
-                                .reading_task_body_content {
-                                    .reading_task_text {
-                                        h3 {
-                                            font-size: 30px;
-                                        }
-
-                                        p {
-                                            font-size: 20px;
-                                        }
-                                    }
-
-                                    .reading_task_value {
-                                        p {
-                                            font-size: 18px;
-
-                                            span {
-                                                font-size: 18px;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -403,7 +554,7 @@ body {
         font-size: 21px;
     }
 
-    h5{
+    h5 {
         font-size: 19px;
     }
 
@@ -430,45 +581,77 @@ body {
 
 
     .modal {
-        &.reading_task_modal {
+        &.readingProgress_modal {
             .modal-dialog {
                 .modal-content {
+                    padding: 50px 0 8%;
 
-                    .modal-body {
-                        .reading_task_body {
-                            .container-fluid {
-                                .reading_task_body_content {
-                                    .reading_task_text {
-                                        h3 {
-                                            font-size: 48px;
-                                        }
+                    .modal-content-header {
+                        .modal-content-header-frame {
+                            .modal-header-frame-bothSides {
+                                .modal-header-content {
+                                    .modal-header-tittle {
+                                        h2 {
+                                            font-size: 40px;
 
-                                        p {
-                                            font-size: 29px;
-                                        }
-                                    }
-
-                                    .reading_task_value {
-                                        p {
-                                            font-size: 29px;
-
-                                            span {
-                                                font-size: 29px;
+                                            &.modal-header-tittle-border {
+                                                /* 	等同於：-webkit-text-fill-color: transparent; */
+                                                -webkit-text-stroke: 4px #005b98;
                                             }
+
+                                            // &.modal-header-tittle-pink{
+                                            //     transform: translate(calc(-50% + 4px) , 4px);
+                                            // }
+
+                                            // &.modal-header-tittle-blue{
+                                            //     transform: translate(calc(-50% - 4px) , -4px);
+                                            // }
                                         }
                                     }
                                 }
                             }
+                        }
+                    }
 
+                    .task_area {
+                        .task_area_text {
+
+                            .task_area_tittle {
+                                margin: 20px auto 35px;
+                            }
+                        }
+
+                        .robot_progress_area {
+                            .robot_progress {
+                                .progress_area {
+                                    width: 55%;
+                                }
+                            }
+                        }
+                    }
+
+                    .small_task_area {
+
+                        .small_task_item {
+                            width: 47.5%;
+
+                            &:nth-child(even) {
+                                margin: 0 0 40px 2.5%;
+                            }
+
+                            &:nth-child(odd) {
+                                margin: 0 2.5% 40px 0;
+                            }
                         }
                     }
                 }
+
             }
         }
     }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
     h1 {
         font-size: 35px;
     }
@@ -481,7 +664,7 @@ body {
         font-size: 23px;
     }
 
-    h5{
+    h5 {
         font-size: 21px;
     }
 
@@ -505,9 +688,139 @@ body {
     label {
         font-size: 17px;
     }
+
+    .modal {
+        &.readingProgress_modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-content-header {
+                        .modal-content-header-frame {
+                            .modal-header-frame-bothSides {
+                                .modal-header-content {
+                                    .modal-header-tittle {
+                                        margin: 0 auto 30px;
+
+                                        h2 {
+                                            font-size: 50px;
+
+                                            &.modal-header-tittle-border {
+                                                /* 	等同於：-webkit-text-fill-color: transparent; */
+                                                -webkit-text-stroke: 5px #005b98;
+                                            }
+
+                                            // &.modal-header-tittle-pink{
+                                            //     transform: translate(calc(-50% + 5px) , 5px);
+                                            // }
+
+                                            // &.modal-header-tittle-blue{
+                                            //     transform: translate(calc(-50% - 5px) , -5px);
+                                            // }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .task_area {
+                        .robot_progress_area {
+                            .robot_img_area {
+                                .robot_img_item {
+                                    .robot_img_item_img {
+                                        width: calc(100% - 50px);
+                                    }
+
+                                    .arrow_img_item_img {
+                                        width: 50px;
+                                    }
+                                }
+                            }
+
+                            .robot_progress {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .robot_progress_text,
+                                .robot_progress_num {
+                                    p {
+                                        color: $white;
+                                    }
+                                }
+
+                                .progress_area {
+                                    width: 40%;
+                                    height: 12px;
+                                    background-color: #821fb5;
+                                    border-radius: 6px;
+                                    margin: 0 16px;
+
+                                    .progress_bar {
+                                        height: 100%;
+                                        border-radius: 6px;
+                                        background-color: #ff4df5;
+                                    }
+                                }
+                            }
+                        }
+
+                        .task_area_icon_area {
+                            .task_area_icon_two {
+                                right: 2.5%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1024px) {
+    .modal {
+        &.readingProgress_modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-content-header {
+                        .modal-content-header-frame {
+                            .modal-header-frame-bothSides {
+                                .modal-header-content {
+                                    .modal-header-tittle {
+                                        h2 {
+                                            font-size: 55px;
+                                        }
+                                    }
+
+                                    .modal-header-text-area {
+                                        .modal-header-text {
+                                            flex-wrap: nowrap;
+
+                                            .tittle {
+                                                width: auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .small_task_area {
+
+
+                        .small_task_item {
+                            width: 30%;
+                            margin: 0 1.5% 40px 1.5% !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
     p,
     svg {
         font-size: 19px;
@@ -528,6 +841,28 @@ body {
     label {
         font-size: 19px;
     }
+
+    .modal {
+        &.readingProgress_modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-content-header {
+                        .modal-content-header-frame {
+                            .modal-header-frame-bothSides {
+                                .modal-header-content {
+                                    .modal-header-tittle {
+                                        h2 {
+                                            font-size: 65px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -543,7 +878,7 @@ body {
         font-size: 27px;
     }
 
-    h5{
+    h5 {
         font-size: 24px;
     }
 
@@ -566,5 +901,27 @@ body {
     input,
     label {
         font-size: 20px;
+    }
+
+    .modal {
+        &.readingProgress_modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-content-header {
+                        .modal-content-header-frame {
+                            .modal-header-frame-bothSides {
+                                .modal-header-content {
+                                    .modal-header-tittle {
+                                        h2 {
+                                            font-size: 75px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
