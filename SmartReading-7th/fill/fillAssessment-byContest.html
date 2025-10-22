@@ -1,0 +1,1173 @@
+﻿<!-- <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="fillAssessment-byContest.aspx.cs" Inherits="SmartReading.v3.RP.fillAssessment_byContest" %> -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SmartReading X 科普閱讀力大賽">
+    <meta name="author" content="SmartReading X 科普閱讀力大賽">
+    <title>SmartReading X 科普閱讀力大賽</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico">
+    <!-- font-awesome core CSS -->
+    <link rel="stylesheet" type="text/css" href="../Content/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Content/css/bootstrap-lg.min.css">
+    <link rel="stylesheet" type="text/css" href="../Content/css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/fontawesome-free-5.15.3-web/css/all.css">
+
+    <!-- this page widgets CSS -->
+
+    <!-- SR core CSS -->
+    <link rel="stylesheet" type="text/css" href="../Content/css/promote-styles.css">
+
+    <style>
+        /**/
+        .modal-contestTip .modal-content::before,
+        .modal-contestTip .modal-content::after {
+            content: "";
+            display: block;
+            background-color: #FFF;
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: 6px;
+            box-shadow: 0 3px 9px rgba(0,0,0,.5);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            transform-origin: left bottom;
+        }
+
+        .modal-contestTip .modal-content::before {
+            z-index: -1;
+            transform: rotate(1deg);
+        }
+
+        .modal-contestTip .modal-content::after {
+            z-index: -2;
+            transform: rotate(2deg);
+        }
+
+        .contestTip {
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: auto 100%;
+            cursor: pointer;
+            transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -webkit-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contestTip {
+                border-bottom: 1px dashed #ccc;
+            }
+        }
+
+        .contestTip:hover {
+            background-size: auto 115%;
+            transition: all 1s ease-in;
+            -moz-transition: all 1s ease-in;
+            -webkit-transition: all 1s ease-in;
+            -o-transition: all 1s ease-in;
+        }
+
+        .contestTip.tip1 {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip1_m_bg.png);
+        }
+
+        .contestTip.tip2 {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip2_m_bg.png);
+        }
+
+        .contestTip.tip3 {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip3_m_bg.png);
+        }
+
+        .contestTipTilte {
+            text-align: center;
+            font-weight: bold;
+            font-size: 120%;
+            text-shadow: 1px 1px rgba(255,255,255,.5);
+        }
+
+            .contestTipTilte.title1 {
+                color: #e3007f;
+            }
+
+            .contestTipTilte.title2 {
+                color: #f99d23;
+            }
+
+            .contestTipTilte.title3 {
+                color: #a22324;
+            }
+
+        h2 {
+            text-align: center;
+            color: #183d7d;
+        }
+
+            h2 > mark {
+                display: inline-block;
+                margin: 0 auto;
+                background-color: #183d7d;
+                color: #FFF;
+                border-radius: 20px 20px 0 0;
+                padding: 8px 30px;
+                text-shadow: 1px 1px rgba(0,0,0,.5);
+            }
+
+            h2 > small {
+                display: block;
+                line-height: 1.2;
+                border-top: 3px solid #183d7d;
+                padding-top: 12px;
+            }
+
+            h2 > .fa-magic-right {
+                -moz-transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+            }
+
+        .modal-contestTip .tip-block {
+            border: 2px solid;
+            border-radius: 10px;
+            padding: 55px 45px 55px 45px;
+            margin: 45px 28px 30px 28px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .modal-contestTip .tip-block {
+                padding: 55px 5vw 55px 5vw;
+            }
+        }
+
+        #modal-contestTip1 .tip-block {
+            border-color: #e3007f;
+        }
+
+        #modal-contestTip2 .tip-block {
+            border-color: #fbb03b;
+        }
+
+        #modal-contestTip3 .tip-block {
+            border-color: #a22324;
+        }
+
+        .modal-contestTip h4 {
+            background-color: #FFF;
+            display: inline-block;
+            font-size: 1.2em;
+            background-repeat: no-repeat;
+            height: 90px;
+            line-height: 95px;
+            position: absolute;
+            padding: 5px;
+        }
+
+            .modal-contestTip h4.h4-header {
+                top: 0px;
+                left: 10px;
+                background-size: auto 90%;
+                background-position: left center;
+                padding-left: 75px;
+            }
+
+            .modal-contestTip h4.h4-footer {
+                bottom: 0px;
+                right: 10px;
+                background-size: auto 90%;
+                background-position: right center;
+                padding-right: 75px;
+            }
+
+        #modal-contestTip1 h4 {
+            color: #e3007f;
+        }
+
+        #modal-contestTip2 h4 {
+            color: #f99d23;
+        }
+
+        #modal-contestTip3 h4 {
+            color: #a22324;
+        }
+
+        #modal-contestTip1 h4.h4-header {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip1_m_header.png);
+        }
+
+        #modal-contestTip1 h4.h4-footer {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip1_m_footer.png);
+        }
+
+        #modal-contestTip2 h4.h4-header {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip2_m_header.png);
+        }
+
+        #modal-contestTip2 h4.h4-footer {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip2_m_footer.png);
+        }
+
+        #modal-contestTip3 h4.h4-header {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip3_m_header.png);
+        }
+
+        #modal-contestTip3 h4.h4-footer {
+            background-image: url(../Content/images/fillAssessment-bySystem-contest/tip3_m_footer.png);
+        }
+        /**/
+        .btn-stars-score {
+            font-size: 5em;
+            line-height: 1em;
+            margin-top: 10px;
+        }
+
+        .btn-stars-group {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .btn-stars-group {
+                text-align: center;
+            }
+        }
+
+        .btn-stars-group > .btn {
+            background-color: transparent;
+            padding: 0px 2px;
+            color: #777;
+        }
+
+            .btn-stars-group > .btn:hover,
+            .btn-stars-group > .btn.hover,
+            .btn-stars-group > .btn.light {
+                color: #FC3;
+            }
+
+            .btn-stars-group > .btn.focus,
+            .btn-stars-group > .btn:focus {
+                outline-color: transparent;
+            }
+
+            .btn-stars-group > .btn.active,
+            .btn-stars-group > .btn:active {
+                box-shadow: none;
+            }
+
+        .assessment-score {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- fillAssessment-header START/... -->
+        <div class="fillAssessment-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+                        <div class="fillAssessment-title">
+                            <div class="row">
+                                <div class="col-xs-4 col-md-3">
+                                    <div class="fillAssessment-title__img">
+                                        <img src="../Content/images/fillAssessment/fillAssessment-bySystem-img.png" class="img-responsive center-block">
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-md-9">
+                                    <div class="fillAssessment-title__text">
+                                        <h1>閱讀力大賽 摘要題
+                                            <label class="pull-right" id="demo-score">
+                                                <span id="span_degree" class=""></span>
+                                                <!--<span class="userScore passed bySystem">A+</span>-->
+                                            </label>
+                                            <small>你已閱讀完此書，請填寫下方測驗。</small>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">
+                        <div class="fillAssessment-book">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="fillAssessment-book__front">
+                                        <img src="../../RP/BookContent/BookFront/72114.jpg" class="img-responsive center-block">
+                                    </div>
+                                </div>
+                                <div class="col-xs-8">
+                                    <div class="fillAssessment-book__intro">
+                                        <h2>
+                                            <label><%--第一條魚--%></label>
+                                        </h2>
+                                        <p>
+                                            圖書難度：SR
+                                            <label><%--187--%></label>
+                                        </p>
+                                        <p>
+                                            分類：
+                                            <label><%--成長/生命教育--%></label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .../fillAssessment-header END -->
+
+        <div class="reading_impressions_area">
+            
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3>
+                            閱讀印象
+                        </h3>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>
+                            <small>
+                                1.你為什麼想看這本書？
+                            </small>
+                        </h2>
+                        <textarea id="UserSummary" style="font-size: 18px;" class="form-control" rows="3" style="height: 250px;" placeholder="(※30字以內，請務必寫實際的理由，比如說 ：「這本書讓我學到哪些知識」、「這本書的哪個段落的劇情太精采了」。)" onkeyup="CalCount_Onkeyup()"></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>
+                            <small>
+                                2.我會推薦這本書給誰？為什麼？
+                            </small>
+                        </h2>
+                        <textarea id="UserSummary" style="font-size: 18px;" class="form-control" rows="3" style="height: 250px;" placeholder="(※30字以內，可以填寫家人或朋友，或是歷史人物，並說明理由。)" onkeyup="CalCount_Onkeyup()"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 提示區 START/... -->
+        <div class="section-tip">
+            <div class="container">
+                <h3 class="text-center">不知道怎麼寫摘要嗎？請點選下列的魔術師，幫你找到最適合你的提示。</h3>
+                <hr style="border-top: 1px solid #999;">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="contestTipTilte title1">
+                            故事類文本
+                        </div>
+                        <a type="button" class="contestTip tip1" data-toggle="modal" data-target="#modal-contestTip1">
+                            <img src="../Content/images/fillAssessment-bySystem-contest/tip1_m.png" class="img-responsive center-block"></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="contestTipTilte title2">
+                            說明類文本
+                        </div>
+                        <a type="button" class="contestTip tip2" data-toggle="modal" data-target="#modal-contestTip2">
+                            <img src="../Content/images/fillAssessment-bySystem-contest/tip2_m.png" class="img-responsive center-block"></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="contestTipTilte title3">
+                            議論類文本
+                        </div>
+                        <a type="button" class="contestTip tip3" data-toggle="modal" data-target="#modal-contestTip3">
+                            <img src="../Content/images/fillAssessment-bySystem-contest/tip3_m.png" class="img-responsive center-block"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal#modal-contestTip1 start -->
+        <div class="modal fade modal-contestTip" id="modal-contestTip1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="tip-block">
+                            <h4 class="h4-header"><strong>故事類文本</strong></h4>
+                            <p><strong>當你讀完故事類文本，你可以試著這樣做：</strong></p>
+                            <br>
+                            <p>1.找出文章的主要背景（如：人時地物等）</p>
+                            <p>2.找出文章發展的過程（如：開始／原因、經過、結果等）</p>
+                            <p>3.找出文章中的關鍵訊息或轉折（如：人物、事件或道具等）</p>
+                            <p>4.將上述資訊，串連成一段語意完整的文字。</p>
+                            <br>
+                            <p>如果能再用流暢的句子、優美的語詞，表達完整的故事，就更棒了。</p>
+                            <br>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                            </div>
+                            <h4 class="h4-footer"><strong>故事類文本</strong></h4>
+                        </div>
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal#modal-contestTip1 end -->
+        <!-- Modal#modal-contestTip2 start -->
+        <div class="modal fade modal-contestTip" id="modal-contestTip2" tabindex="-1" role="dialog" aria-labelledby="modal-contestTip2">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="tip-block">
+                            <h4 class="h4-header"><strong>說明類文本</strong></h4>
+                            <p><strong>當你讀完說明類文本，你可以試著這樣做：</strong></p>
+                            <br>
+                            <p>1. 整合文本訊息，整理文本主要表達的意涵（如：標題、圖表資訊等）</p>
+                            <p>2. 作者為什麼想寫這篇文章或這本書?（如：作者觀點）。</p>
+                            <p>3. 將上述資訊，串連成一段語意完整的文字。</p>
+                            <br>
+                            <p>如果能再用流暢的句子、優美的語詞，表達完整的摘要內容，就更棒了。</p>
+                            <br>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                            </div>
+                            <h4 class="h4-footer"><strong>說明類文本</strong></h4>
+                        </div>
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal#modal-contestTip2 end -->
+        <!-- Modal#modal-contestTip3 start -->
+        <div class="modal fade modal-contestTip" id="modal-contestTip3" tabindex="-1" role="dialog" aria-labelledby="modal-contestTip3">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="tip-block">
+                            <h4 class="h4-header"><strong>議論類文本</strong></h4>
+                            <p><strong>當你讀完議論類文本，你可以試著這樣做：</strong></p>
+                            <br>
+                            <p>1. 寫出作者運用什麼樣的寫作手法（方式），呈現文本的內容。（如：論點、論證、論據）</p>
+                            <p>2. 作者為什麼想寫這篇文章或這本書?（作者觀點）</p>
+                            <p>3. 將上述資訊，串連成一段語意完整的文字。</p>
+                            <br>
+                            <p>如果能再用流暢的句子、優美的語詞，表達完整的摘要內容，就更棒了。</p>
+                            <br>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                            </div>
+                            <h4 class="h4-footer"><strong>議論類文本</strong></h4>
+                        </div>
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal#modal-contestTip3 end -->
+        <!-- .../提示區 END -->
+
+        <!-- 摘要、評分 START/... -->
+        <div class="section-summary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>
+                            <i class="fa fa-magic fa-magic-left" aria-hidden="true"></i>&nbsp;<mark>摘要</mark>&nbsp;<i class="fa fa-magic fa-magic-right" aria-hidden="true"></i>
+                            <small>這本書的主要內容是什麼呢？請試著將書籍的重點、大意寫下來。記得字數需要滿250字以上，才能順利送出喔！</small>
+                        </h2>
+                        <textarea id="UserSummary" style="font-size: 24px;" class="form-control wordsCount" rows="3" style="height: 250px;" placeholder="請寫在這......" onkeyup="CalCount_Onkeyup()"></textarea>
+                        <div class="small text-muted">
+                            字數限制：<b><span id="txt_wordsCount" class="text-danger wordsValue">0</span>/600</b> 字
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>
+                            <i class="fa fa-magic fa-magic-left" aria-hidden="true"></i>&nbsp;<mark>評分</mark>&nbsp;<i class="fa fa-magic fa-magic-right" aria-hidden="true"></i>
+                            <small>我是書評家（書籍推薦指數)：請問這本書在心目中能夠得到幾顆星?選完才能按送出喔！ </small>
+                        </h2>
+                        <div id="div_likeScore" class="btn-stars-score text-center">?</div>
+                        <div class="btn-stars-group text-center">
+                            <button type="button" class="btn btn_like" title="我非常不喜歡這本書。"><i class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我不太喜歡這本書。"><i class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我覺得這本書還不錯。"><i class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我很喜歡這本書，很好！"><i class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我非常喜歡這本書，超棒！"><i class="fa fa-star fa-4x"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .../摘要、評分 END -->
+
+        <!-- fillAssessment-footer START/... -->
+        <div class="fillAssessment-footer">
+            <div class="container">
+                <div class="fillAssessment-btns text-center">
+                    <button id="btn_back" class="btn btn-lg btn-default" type="button" onclick="goBack()">回閱讀計畫</button>
+                    <button id="btn_save" class="btn btn-lg btn-default-main" type="submit" onclick="Save()">暫存</button>
+                    <button id="btn_sent" class="btn btn-lg btn-main" type="submit" onclick="Sent()">送出</button>
+                    <button id="btn_rewrite" class="btn btn-lg btn-main" type="button" style="display: none;" onclick="Rewrite()">重寫</button>
+                </div>
+            </div>
+        </div>
+        <!-- .../fillAssessment-footer END -->
+    </main>
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script src="../Script/jquery.min.js"></script>
+    <script src="../Script/bootstrap-lg.min.js"></script>
+    <script src="../Script/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="../Script/urlParameter/myParameter.js"></script>
+
+    <!--大賽相關-->
+    <script src="../Script/contest/contest.js"></script>
+
+    <script>
+        //星星評分
+        $(function () {
+            $(".btn-stars-group .btn").hover(function () {
+                $(this).addClass("hover")
+                    .prevAll().addClass("hover");
+            }, function () {
+                $(this).parent().find(".btn").removeClass("hover");
+            });
+
+            $(".btn-stars-group .btn").click(function () {
+                $_countIndex = $(".btn-stars-group .btn").index(this);//算位置
+                $_countCss = $_countIndex + 1;//css位置
+
+                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").addClass("light").html('<i class="fa fa-star fa-4x"></i>');
+                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").prevAll().addClass("light").html('<i class="fa fa-star fa-4x"></i>');
+                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").nextAll().removeClass("light").html('<i class="fa fa-star-o fa-4x"></i>');
+
+                $(".btn-stars-score").html($_countCss);
+            });
+        });
+    </script>
+
+    <script>
+        var strDomain = window.location.hostname.substring(window.location.hostname.lastIndexOf(".", window.location.hostname.lastIndexOf(".") - 1) + 1);
+
+        //書籍編號
+        var bookID = (urlPara["bookID"] == null) ? 0 : urlPara["bookID"];
+        var contestSN = -1;
+
+        //摘要最少字數
+        var minCount = 250;
+
+        //有分數的狀態
+        var onlyRead = (urlPara["onlyRead"] == null) ? false : urlPara["onlyRead"];
+        var degree = (urlPara["degree"] == null) ? "" : urlPara["degree"];  //分數
+        var tag = (urlPara["tag"] == null) ? "" : urlPara["tag"];           //分數樣式
+
+        //計時器
+        var timer;
+
+        $(document).ready(function () {
+
+            // 禁止右鍵菜單
+            //document.oncontextmenu = function () { return false; };
+            // 禁止文本選擇
+            //document.onselectstart = function () { return false; };
+            // 禁止複製
+            //document.oncopy = function () { return false; };
+            // 禁止剪切
+            //document.oncut = function () { return false; };
+            // 禁止粘貼
+            //document.onpaste = function () { return false; };
+
+            if (bookID != "0") init();
+        });
+
+        function init() {
+            console.log("bookID", bookID);
+
+            window.parent.ShowLoadingImage();
+
+            GetUserInfo();
+        }
+
+        //取得相關資訊
+        function GetUserInfo() {
+
+            $.ajax({
+                type: "POST",
+                url: "fillAssessment-byContest.aspx/GetUserInfo",
+                data: JSON.stringify({
+                    bookID: bookID
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    window.parent.getOut(data["myID"]);
+
+                    if (data["canTest"]) {
+                        contestSN = data["contestSN"];
+                        minCount = parseInt(data["minCount"]);
+                    } else {
+                        //不可測驗，回閱讀計畫
+                        window.parent.HideLoadingImage();
+                        window.parent.CloseModal();
+                    }
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[GetUserInfo]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                LoadBook();
+                LoadRecord();
+            });
+        }
+
+        function LoadBook() {
+            $.ajax({
+                type: "POST",
+                url: "fillAssessment-byContest.aspx/LoadBook",
+                data: JSON.stringify({
+                    bookID: bookID
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(response.d);
+                    window.parent.getOut(data["myID"]);
+
+                    var book = data["book"];
+                    $('.fillAssessment-book__front img').attr("src", book["cover"]);
+                    $('.fillAssessment-book__intro h2 label').html(book["name"]);
+                    $('.fillAssessment-book__intro').find('p').first().find('label').html(book["SR"]);
+                    $('.fillAssessment-book__intro').find('p').next().find('label').html(book["category"]);
+
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadBook]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+
+            });
+        }
+
+        //撈作答紀錄
+        function LoadRecord() {
+            $.ajax({
+                type: "POST",
+                url: "fillAssessment-byContest.aspx/LoadRecord",
+                data: JSON.stringify({
+                    bookID: bookID,
+                    degree: degree
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(response.d);
+                    window.parent.getOut(data["myID"]);
+
+                    $("#UserSummary").val(data["summary"]);//摘要
+                    $("#txt_wordsCount").html(CalWordsCount(data["summary"]));//計算字數
+
+                    //對書籍的喜歡程度
+                    if (data["likeScore"] != "") {
+                        $("#div_lokeScore").html(data["likeScore"]);
+
+                        //根據喜歡程度，塗滿相對應的星星數
+                        $_countCss = parseInt(data["likeScore"]);//css位置
+
+                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").addClass("light").html('<i class="fa fa-star fa-4x"></i>');
+                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").prevAll().addClass("light").html('<i class="fa fa-star fa-4x"></i>');
+                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").nextAll().removeClass("light").html('<i class="fa fa-star-o fa-4x"></i>');
+
+                        $(".btn-stars-score").html($_countCss);
+
+                    }
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadRecord]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                window.parent.HideLoadingImage(); //隱藏進度
+
+                SetButton(onlyRead);
+            });
+        }
+
+        //重寫
+        function Rewrite() {
+            $.ajax({
+                type: "POST",
+                url: "fillAssessment-byContest.aspx/LoadLastRecord",
+                data: JSON.stringify({
+                    bookID: bookID,
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(response.d);
+                    window.parent.getOut(data["myID"]);
+
+                    $("#UserSummary").val(data["summary"]);//摘要
+                    $("#txt_wordsCount").html(CalWordsCount(data["summary"]));//計算字數
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadRecord]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                window.parent.HideLoadingImage(); //隱藏進度
+
+                SetButton(false);
+            });
+        }
+
+        //計算摘要字數
+        function CalCount_Onkeyup() {
+            $("#txt_wordsCount").html(CalWordsCount($("#UserSummary").val()));
+        }
+
+        //計算字數
+        function CalWordsCount(content) {
+            var record = content.replace(/ /gi, "").replace(/\n/gi, ""); //空白：不計算。斷行：不計算
+            record = record.replace(/(\w|\r|\s|　)/g, ''); //濾除大小寫英文及數字,分行符號及空白
+            record = record.replace(/(\`|\~|\@|\#|\$|\^|\&|\*|\=|\'|\|\<|\>|\/|『|@|#|￥|…|\&|\*|——|\||'|、)/g, '');//濾掉特殊符號
+            record = record.replace(/(\,|\.|\;|\?|\!|，|。|？|；|！|\[|\]|\{|\}|\(|\)|（|）|{|}|【|】|「|」|：|\:)/g, ''); //濾掉標點符號
+
+            return record.length;
+        }
+
+        //設定計時器_設定自動暫存(每2分鐘)
+        function SetTimer() {
+            timer = setInterval("ContentSave(true)", 120000);
+        }
+
+        //設定按鈕
+        function SetButton(_onlyRead) {
+            if (_onlyRead) {
+                $('#UserSummary').attr('disabled', true);
+                $('.btn-stars-group button').attr('disabled', true);
+                $('#demo-score').html('<span class="userScore ' + tag + '">' + degree + '</span>');
+                $('.fillAssessment-footer button').each(function () {
+                    if ($(this).attr("id") == "btn_back") $(this).hide();
+                    if ($(this).attr("id") == "btn_save") $(this).hide();
+                    if ($(this).attr("id") == "btn_sent") $(this).hide();
+                    if ($(this).attr("id") == "btn_rewrite") $(this).show();
+                });
+
+            } else {
+                $('#UserSummary').attr('disabled', false);
+                $('.btn-stars-group button').attr('disabled', false);
+                $('#demo-score').html('<span id="span_degree" class=""></span>');
+                $('.fillAssessment-footer .btn').each(function () {
+                    if ($(this).attr("id") == "btn_back") $(this).show();
+                    if ($(this).attr("id") == "btn_save") $(this).show();
+                    if ($(this).attr("id") == "btn_sent") $(this).show();
+                    if ($(this).attr("id") == "btn_rewrite") $(this).hide();
+                });
+
+                SetTimer();
+
+            }
+        }
+
+        //回閱讀計畫
+        function goBack() {
+            clearInterval(timer);
+
+            window.parent.CloseModal();
+        }
+
+        //暫存
+        function Save() {
+            //載入loading畫面
+            window.parent.ShowLoadingImage();
+
+            ContentSave(false);
+        }
+
+        // 摘要暫存
+        // 參數：isAuto(true：系統每隔10分鐘自動偷存、false：學生自己點選暫存按鈕)
+        function ContentSave(isAuto) {
+            $.ajax({
+                type: "POST",
+                url: "fillAssessment-byContest.aspx/ContentSave",
+                data: JSON.stringify({
+                    bookID: bookID,
+                    summary: $("#UserSummary").val(),
+                    likeScore: $("#div_likeScore").html()
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(response.d);
+
+                    if (!isAuto) alert(data["msg"]);
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[ContentSave]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                if (!isAuto) window.parent.HideLoadingImage(); //隱藏進度
+            });
+        }
+    </script>
+
+    <!--作答送出-->
+    <script>
+        //送出
+        function Sent() {
+            window.parent.ShowLoadingImage();
+
+            //判斷是否填寫書籍的喜歡程度
+            if ($("#div_likeScore").html() == "?") {
+                alert("請選填本書在你心目中的星數。");
+                window.parent.HideLoadingImage();
+                return;
+            }
+
+            // 取得摘要字串
+            var SummaryText = $.trim($("#UserSummary").val());      //摘要
+            var wordCount = parseInt($("#txt_wordsCount").html()); //字數
+
+            // 檢查摘要是否空白
+            if (wordCount == 0) {
+                alert('摘要不可為空白');
+                window.parent.HideLoadingImage();
+
+                return;
+            }
+
+            // 檢查最小字數
+            // for normal
+            if (wordCount < 50) {
+                alert('字數需超過50個字，請再多補充摘要內容！');
+
+                window.parent.HideLoadingImage();
+                return;
+            }
+            else {
+                if (wordCount < minCount) {
+                    if (confirm('最少字數限制：' + minCount + '，低於最少字數可能造成評分結果較不準確，確定送出？') == false) {
+                        // 關閉lodaing畫面
+                        window.parent.HideLoadingImage();
+
+                        return;
+                    }
+                }
+            }
+
+            // 取得每一分句
+            var Sentences = SentencesSaperator($('#UserSummary').val());
+
+            // 句子過長檢查
+            var SentenceOverLong = CheckSentencesLength(Sentences, 50);
+            if (SentenceOverLong) {
+                // 關閉lodaing畫面
+                window.parent.HideLoadingImage();
+                alert('您的句子長度超過系統預設的限制，請您試著將句子簡化。' + '(有很多句子是重複的，請您再檢查是否有需要刪掉的句子。) :' + SentenceOverLong.substring(0, 25) + '...)');
+
+                return;
+            }
+
+            // 句子有無出現三次
+            if (CheckSentencesReplica_Rule1(Sentences, 3).indexOf('failed') != -1) {
+                // 關閉lodaing畫面
+                window.parent.HideLoadingImage();
+                alert('有很多句子是重複的，請您再檢查是否有需要刪掉的句子。');
+
+                return false;
+            }
+
+            // 檢查句子組合有無出現二次
+            if (CheckSentencesReplica_Rule2(Sentences, 2).indexOf('failed') != -1) {
+                // 關閉lodaing畫面
+                window.parent.HideLoadingImage();
+                alert('有很多句子是重複的，請您再檢查是否有需要刪掉的句子。');
+
+                return false;
+            }
+
+            //大賽提示說明
+            var contestNotice = confirm('提醒您，填寫之摘要評量及評論若涉及抄襲、一稿多投或使用AI資源等行為，該作品不納入競賽總成績與排名敘獎。');
+
+            if (contestNotice) {
+                // 先將結果送出暫存
+                ContentSave(true);
+
+                // 載入loading畫面
+                window.parent.ShowLoadingImage();
+
+                // 送出計算分數並儲存
+                SummaryCompute(Sentences);
+            } else {
+                window.parent.HideLoadingImage();
+                return false;
+            }
+        }
+
+        // 使用者摘要心得送出處理(一般系統使用)
+        function SummaryCompute(SUMMARY_SENTENCES) {
+            $.ajax({
+                url: "../../RP/ashx/SummaryCompute.ashx",
+                data: {
+                    sourceDomain: strDomain,
+                    bookid: bookID,
+                    SummaryCentences: JSON.stringify(SUMMARY_SENTENCES),
+                    UserSummary: $('#UserSummary').val(),
+                    UserComment: "",//大賽不要心得
+                    AfterSummaryFlag: "0",
+                    contest_sn: contestSN,
+                    IS_COPY: "0"
+                },
+                type: "POST",
+                success: function (ReturnData) {
+                    if (ReturnData) {
+                        if (ReturnData === 'log_in_error') {
+                            alert('登入失敗!請重新登入!');
+                            ////語系轉換
+                            //switch (window.localStorage.getItem('Lang')) {
+                            //    case "en-US":
+                            //        //英文
+                            //        alert('Login failed! Please log in again!');
+                            //        break;
+                            //    case "zh-CN":
+                            //        //簡體
+                            //        alert('登入失败!请重新登入!');
+                            //        break;
+                            //    default:
+                            //        alert('登入失敗!請重新登入!');
+                            //        break;
+                            //}
+                            window.location.href = window.location.hostname;
+
+                        } else if (ReturnData === 'score_error') {
+                            alert('Score Error!');
+                            //回到上一頁
+                            goBack();
+                        } else if (ReturnData === 'summary_bookid_error') {
+                            alert('Summary or Book id Error!');
+                            //回到上一頁
+                            goBack();
+                        } else if (ReturnData === 'original_context_found') {
+                            var TAG = ReturnData;
+
+                            //alert("請您試著用自己的話整理文章的重點摘要，盡量不要和原文內容完全一樣。"); return;
+                            //Marked By 坤龍@2019/1/19：久真要求大賽模式下要直接給B，然後TAG紀錄 『CONTEST_V3_SIMILAR_CONTENT』
+
+                            SummaryComputeFailForContest(Sentences, 0, TAG);
+
+                        } else if (ReturnData.split(',')[0] === 'Wrong_Topic_found') {
+                            var TAG = ReturnData;
+
+                            //alert("您填寫的摘要跟書籍內容的關係較小，請您再檢查是否漏掉了重要的內容。"); return;
+                            //Marked By 坤龍@2019/1/19：久真要求大賽模式下要直接給B，然後TAG紀錄 『CONTEST_V3_WRONG_TOPIC』
+                            // 載入loading畫面
+
+                            var Sentences = SentencesSaperator($('#UserSummary').val()); //聖傑增加20190327，傳入摘要文本，與判斷COPY的TAG
+                            window.parent.ShowLoadingImage();
+                            var iscopy = 0;
+                            if (ReturnData.split(',')[1] === 'iscopy') iscopy = 1;
+
+                            alert("您的書籍摘要內容還有改善的空間，建議參考魔術師的提示，修改後再送出，或是換一本書再次挑戰喔！加油！");
+
+                            SummaryComputeFailForContest(Sentences, 1, TAG);
+
+                        } else if (ReturnData.split(',')[0] === 'summary_copy' || ReturnData.split(',')[0] === 'summary_copydb') {
+                            window.parent.ShowLoadingImage();
+
+                            var TAG = ReturnData.split(',')[0];
+
+                            var Sentences = SentencesSaperator($('#UserSummary').val()); //聖傑增加20190327，傳入摘要文本，與判斷COPY的TAG
+
+                            var iscopy = 0;
+                            if (ReturnData.split(',')[1] === 'iscopy') iscopy = 1;
+
+                            if (iscopy == 1) {
+                                var msg = "系統發現你的摘要內容跟他人很相似。\n請嘗試使用自己的文字表達，盡量不要任意使用他人的內容複製貼上。";
+                                alert(msg);
+                            }
+
+                            SummaryComputeFailForContest(Sentences, iscopy, TAG);
+                        }
+                        else {
+                            console.log("ReturnData", ReturnData);
+                            //取得分數，並顯示等第
+                            var SCORE_DATA = ReturnData.split(':');
+                            $("#span_degree").text(SCORE_DATA[0]);
+                            $("#span_degree").addClass("userScore " + SCORE_DATA[1]);
+                            $("#span_degree").show();
+
+                            //不可更動作答
+                            $('#UserSummary').prop('readonly', true).prop("disabled", true);
+                            $('.btn-stars-group button').attr('disabled', true);
+                            $("#btn_save").hide();
+                            $("#btn_sent").hide();
+
+                            //大賽徽章紀錄
+                            checkBadgeRecord(bookID, "add", "evaluation");
+
+                            //閱讀計畫資料重整
+                            window.parent.AfterScore();
+                        }
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    //主機回傳例外:
+                    alert('SummaryCompute.ashx[' + errorThrown + '] ');
+                    document.write(jqXHR.responseText);
+                }
+            }).then(function () {
+                window.parent.HideLoadingImage(); //隱藏進度                
+                window.scrollTo(0, 0);  // 畫面移至最上頭
+            });;
+        }
+
+        // 坤龍新增@2019/1/19：大賽模式下摘要有問題要直接給B
+        function SummaryComputeFailForContest(SUMMARY_SENTENCES, iscopy, TAG) {
+            $.ajax({
+                url: "../../RP/ashx/SummaryCompute.ashx",
+                data: {
+                    sourceDomain: strDomain,
+                    bookid: bookID,
+                    SummaryCentences: JSON.stringify(SUMMARY_SENTENCES),
+                    UserSummary: $('#UserSummary').val(),
+                    UserComment: "",
+                    AfterSummaryFlag: '1',
+                    contest_sn: contestSN,
+                    IS_COPY: iscopy,
+                    SummaryTAG: TAG
+                },
+                type: "POST",
+                success: function (ReturnData) {
+                    if (ReturnData) {
+                        //取得分數，並顯示等第
+                        if (ReturnData.indexOf('iscopy') > -1) {
+                            $("#span_degree").text('B');
+                            $("#span_degree").addClass("userScore failed bySystem");
+                        } else {
+                            var SCORE_DATA = ReturnData.split(':');
+                            $("#span_degree").text(SCORE_DATA[0]);
+                            $("#span_degree").addClass("userScore " + SCORE_DATA[1]);
+                        }
+
+                        $("#span_degree").show();
+
+                        //不可更動作答
+                        $('#UserSummary').prop('readonly', true).prop("disabled", true);
+                        $('.btn-stars-group button').attr('disabled', true);
+                        $("#btn_save").hide();
+                        $("#btn_sent").hide();
+
+                        //大賽徽章紀錄
+                        checkBadgeRecord(bookID, "add", "evaluation");
+
+                        //閱讀計畫資料重整
+                        window.parent.AfterScore();
+
+                    } else {
+                        alert('未知的錯誤!');
+
+                        goBack();
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    //主機回傳例外:
+                    alert('SummaryCompute.ashx[' + errorThrown + '] ');
+                    document.write(jqXHR.responseText);
+                }
+            }).then(function () {
+                window.parent.HideLoadingImage();
+            });
+        }
+
+        // 句子檢查是否含有中文字元
+        //將內容(1)去除大小寫英文及數字,分行符號及空白 (2)去除特殊符號 (3)把標點符號換成句號，再將句子依照句號分割各小段句子
+        function SentencesSaperator(text) {
+            var Sentences = [];
+            if (text) {
+				text = text.replace(/(\r|\n)/g, '。'); //將分行符號轉換成句號
+                text = text.replace(/(\w|\r|\s|　)/g, ''); //濾除大小寫英文及數字,分行符號及空白
+                text = text.replace(/(\`|\~|\@|\#|\$|\^|\&|\*|\=|\'|\|\<|\>|\/|『|@|#|￥|…|\&|\*|——|\||'|、)/g, '');//濾掉特殊符號
+                text = text.replace(/(\,|\.|\;|\?|\!|，|？|；|！|\[|\]|\{|\}|\(|\)|（|）|{|}|【|】|「|」|：|\:)/g, '。'); //將標點符號轉換成句號
+                //2019.1.23 語箴輸入的摘要包含不可辨識的字元所以無法轉換成句點切開
+                Sentences = text.split('。');
+                Sentences = Sentences.filter(function (n) {
+                    if (n != undefined || n != '' || n != null) {
+                        return n
+                    }
+                }); //濾掉空白元素
+            }
+            return Sentences;
+        }
+
+        // 句子檢查長度
+        function CheckSentencesLength(Sentences, limitation) {
+            for (var key in Sentences) {
+                if (Sentences[key].length >= limitation) {
+                    return Sentences[key]; //查到過長的句子
+                }
+            }
+            return '';
+        }
+
+        // 檢查第一句句子有沒有被重複n次
+        function CheckSentencesReplica_Rule1(Sentences, ReplicaLimitation) {
+            if (Sentences.length >= ReplicaLimitation) //全部有n句以上
+            {
+                var counter = 0;
+                for (var key in Sentences) //key=0開始, 表示自己本身也算一次
+                {
+                    if (Sentences[key] === Sentences[0]) {
+                        counter++;
+                    }
+                    if (counter >= ReplicaLimitation) {
+                        return 'failed';
+                    }
+                }
+            }
+            return 'passed';
+        }
+
+        // 第1,2,3句組合有沒有被重複n次
+        function CheckSentencesReplica_Rule2(Sentences, ReplicaLimitation) {
+            if (Sentences.length >= (ReplicaLimitation * 3)) //全部有nx3句以上
+            {
+                var counter = 0;
+                for (var key in Sentences) {
+                    if (Sentences[key] === Sentences[0]) { //第一句相同
+                        var key2 = parseInt(key) + 1; //第二句
+                        var key3 = parseInt(key) + 2; //第三句
+                        if (key3 < Sentences.length && Sentences[key2] === Sentences[1] && Sentences[key3] === Sentences[2]) {
+                            counter++; //若第二第三句也相同, 則counter+1
+                        }
+                    }
+                    if (counter >= ReplicaLimitation) {
+                        return 'failed';
+                    }
+                }
+            }
+            return 'passed';
+        }
+    </script>
+</body>
+</html>
