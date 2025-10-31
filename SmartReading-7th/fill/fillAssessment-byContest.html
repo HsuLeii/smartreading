@@ -377,30 +377,37 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h2>
-                            <small>
-                                3.讀完這本書，你的心情是？
-                            </small>
-                        </h2>
+                    <div class="col-sm-12">
+                        <div class="fillAssessment-section">
+                            <h2>
+                                <small>
+                                    3.讀完這本書，你的心情是？
+                                </small>
+                            </h2>
+                            <div class="fillAssessment-section__body">
+                                <div class="questionType choice">
+                                    <div class="questionType__area">
+                                        <div class="SRradioRound-green">
+                                            <input id="feeling1" type="radio" value="0" name="feeling">
+                                            <label for="feeling1">開心 <i class="fas fa-smile-beam"></i></label>
+                                        </div>
 
-                        <div class="input_area">
-                            <label class="radio-inline">
-                                <input id="feeling1" type="radio" value="0" name="feeling">
-                                開心 <i class="fas fa-smile-beam"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input id="feeling2" type="radio" value="1" name="feeling">
-                                好奇 <i class="fas fa-flushed"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input id="feeling3" type="radio" value="2" name="feeling">
-                                驚訝 <i class="fas fa-surprise"></i>
-                            </label>
+                                        <div class="SRradioRound-green">
+                                            <input id="feeling2" type="radio" value="1" name="feeling">
+                                            <label for="feeling2">好奇 <i class="fas fa-flushed"></i></label>
+                                        </div>
+
+                                        <div class="SRradioRound-green">
+                                            <input id="feeling3" type="radio" value="2" name="feeling">
+                                            <label for="feeling3">驚訝 <i class="fas fa-surprise"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <br/>
+                <br />
             </div>
         </div>
 
@@ -817,7 +824,7 @@
             var record = content.replace(/ /gi, "").replace(/\n/gi, ""); //空白：不計算。斷行：不計算
             record = record.replace(/(\w|\r|\s|　)/g, ''); //濾除大小寫英文及數字,分行符號及空白
             record = record.replace(/(\`|\~|\@|\#|\$|\^|\&|\*|\=|\'|\|\<|\>|\/|『|@|#|￥|…|\&|\*|——|\||'|、)/g,
-            ''); //濾掉特殊符號
+                ''); //濾掉特殊符號
             record = record.replace(/(\,|\.|\;|\?|\!|，|。|？|；|！|\[|\]|\{|\}|\(|\)|（|）|{|}|【|】|「|」|：|\:)/g, ''); //濾掉標點符號
 
             return record.length;
@@ -1051,7 +1058,7 @@
                             // 載入loading畫面
 
                             var Sentences = SentencesSaperator($('#UserSummary')
-                        .val()); //聖傑增加20190327，傳入摘要文本，與判斷COPY的TAG
+                                .val()); //聖傑增加20190327，傳入摘要文本，與判斷COPY的TAG
                             window.parent.ShowLoadingImage();
                             var iscopy = 0;
                             if (ReturnData.split(',')[1] === 'iscopy') iscopy = 1;
@@ -1061,13 +1068,13 @@
                             SummaryComputeFailForContest(Sentences, 1, TAG);
 
                         } else if (ReturnData.split(',')[0] === 'summary_copy' || ReturnData.split(',')[
-                            0] === 'summary_copydb') {
+                                0] === 'summary_copydb') {
                             window.parent.ShowLoadingImage();
 
                             var TAG = ReturnData.split(',')[0];
 
                             var Sentences = SentencesSaperator($('#UserSummary')
-                        .val()); //聖傑增加20190327，傳入摘要文本，與判斷COPY的TAG
+                                .val()); //聖傑增加20190327，傳入摘要文本，與判斷COPY的TAG
 
                             var iscopy = 0;
                             if (ReturnData.split(',')[1] === 'iscopy') iscopy = 1;
@@ -1177,9 +1184,9 @@
                 text = text.replace(/(\r|\n)/g, '。'); //將分行符號轉換成句號
                 text = text.replace(/(\w|\r|\s|　)/g, ''); //濾除大小寫英文及數字,分行符號及空白
                 text = text.replace(/(\`|\~|\@|\#|\$|\^|\&|\*|\=|\'|\|\<|\>|\/|『|@|#|￥|…|\&|\*|——|\||'|、)/g,
-                ''); //濾掉特殊符號
+                    ''); //濾掉特殊符號
                 text = text.replace(/(\,|\.|\;|\?|\!|，|？|；|！|\[|\]|\{|\}|\(|\)|（|）|{|}|【|】|「|」|：|\:)/g,
-                '。'); //將標點符號轉換成句號
+                    '。'); //將標點符號轉換成句號
                 //2019.1.23 語箴輸入的摘要包含不可辨識的字元所以無法轉換成句點切開
                 Sentences = text.split('。');
                 Sentences = Sentences.filter(function (n) {

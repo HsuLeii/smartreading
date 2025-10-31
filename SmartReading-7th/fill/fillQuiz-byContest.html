@@ -377,34 +377,41 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h2>
-                            <small>
-                                3.讀完這本書，你的心情是？
-                            </small>
-                        </h2>
+                    <div class="col-sm-12">
+                        <div class="fillAssessment-section">
+                            <h2>
+                                <small>
+                                    3.讀完這本書，你的心情是？
+                                </small>
+                            </h2>
+                            <div class="fillAssessment-section__body">
+                                <div class="questionType choice">
+                                    <div class="questionType__area">
+                                        <div class="SRradioRound-green">
+                                            <input id="feeling1" type="radio" value="0" name="feeling">
+                                            <label for="feeling1">開心 <i class="fas fa-smile-beam"></i></label>
+                                        </div>
 
-                        <div class="input_area">
-                            <label class="radio-inline">
-                                <input id="feeling1" type="radio" value="0" name="feeling">
-                                開心 <i class="fas fa-smile-beam"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input id="feeling2" type="radio" value="1" name="feeling">
-                                好奇 <i class="fas fa-flushed"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input id="feeling3" type="radio" value="2" name="feeling">
-                                驚訝 <i class="fas fa-surprise"></i>
-                            </label>
+                                        <div class="SRradioRound-green">
+                                            <input id="feeling2" type="radio" value="1" name="feeling">
+                                            <label for="feeling2">好奇 <i class="fas fa-flushed"></i></label>
+                                        </div>
+
+                                        <div class="SRradioRound-green">
+                                            <input id="feeling3" type="radio" value="2" name="feeling">
+                                            <label for="feeling3">驚訝 <i class="fas fa-surprise"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <br/>
+                <br />
             </div>
         </div>
 
-                <!-- fillAssessment-body START/... -->
+        <!-- fillAssessment-body START/... -->
         <div class="fillAssessment-body">
             <div id="div_list" class="container">
                 <!-- 區塊版型 START -->
@@ -446,15 +453,21 @@
                         <h2>
                             <i class="fa fa-magic fa-magic-left" aria-hidden="true"></i>&nbsp;
                             <mark>評分</mark>
-                            &nbsp;<i class="fa fa-magic fa-magic-right" aria-hidden="true"></i> <small>我是書評家（書籍推薦指數)：請問這本書在心目中能夠得到幾顆星?選完才能按送出喔！ </small>
+                            &nbsp;<i class="fa fa-magic fa-magic-right" aria-hidden="true"></i>
+                            <small>我是書評家（書籍推薦指數)：請問這本書在心目中能夠得到幾顆星?選完才能按送出喔！ </small>
                         </h2>
                         <div id="div_likeScore" class="btn-stars-score text-center">?</div>
                         <div class="btn-stars-group text-center">
-                            <button type="button" class="btn btn_like" title="我非常不喜歡這本書。"><i class="fa fa-star fa-4x"></i></button>
-                            <button type="button" class="btn btn_like" title="我不太喜歡這本書。"><i class="fa fa-star fa-4x"></i></button>
-                            <button type="button" class="btn btn_like" title="我覺得這本書還不錯。"><i class="fa fa-star fa-4x"></i></button>
-                            <button type="button" class="btn btn_like" title="我很喜歡這本書，很好！"><i class="fa fa-star fa-4x"></i></button>
-                            <button type="button" class="btn btn_like" title="我非常喜歡這本書，超棒！"><i class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我非常不喜歡這本書。"><i
+                                    class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我不太喜歡這本書。"><i
+                                    class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我覺得這本書還不錯。"><i
+                                    class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我很喜歡這本書，很好！"><i
+                                    class="fa fa-star fa-4x"></i></button>
+                            <button type="button" class="btn btn_like" title="我非常喜歡這本書，超棒！"><i
+                                    class="fa fa-star fa-4x"></i></button>
                         </div>
                     </div>
                 </div>
@@ -499,35 +512,40 @@
             });
 
             $(".btn-stars-group .btn").click(function () {
-                $_countIndex = $(".btn-stars-group .btn").index(this);//算位置
-                $_countCss = $_countIndex + 1;//css位置
+                $_countIndex = $(".btn-stars-group .btn").index(this); //算位置
+                $_countCss = $_countIndex + 1; //css位置
 
-                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").addClass("light").html('<i class="fa fa-star fa-4x"></i>');
-                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").prevAll().addClass("light").html('<i class="fa fa-star fa-4x"></i>');
-                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").nextAll().removeClass("light").html('<i class="fa fa-star-o fa-4x"></i>');
+                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").addClass("light").html(
+                    '<i class="fa fa-star fa-4x"></i>');
+                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").prevAll().addClass("light")
+                    .html('<i class="fa fa-star fa-4x"></i>');
+                $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").nextAll().removeClass("light")
+                    .html('<i class="fa fa-star-o fa-4x"></i>');
 
                 $(".btn-stars-score").html($_countCss);
             });
         });
     </script>
-    
+
     <script>
         //書籍編號
         var bookID = (urlPara["bookID"] == null) ? 0 : urlPara["bookID"];
-        var version = "0";  //題目版本
-        var count = 0;      //總題數
-        var ques_arr = [];  //題目
+        var version = "0"; //題目版本
+        var count = 0; //總題數
+        var ques_arr = []; //題目
 
         //有分數的狀態
-        var onlyRead = (urlPara["onlyRead"] == null) ? false : urlPara["onlyRead"]; 
-        var degree = (urlPara["degree"] == null) ? "" : urlPara["degree"];  //分數
-        var tag = (urlPara["tag"] == null) ? "" : urlPara["tag"];           //分數樣式
+        var onlyRead = (urlPara["onlyRead"] == null) ? false : urlPara["onlyRead"];
+        var degree = (urlPara["degree"] == null) ? "" : urlPara["degree"]; //分數
+        var tag = (urlPara["tag"] == null) ? "" : urlPara["tag"]; //分數樣式
 
         $(document).ready(function () {
 
             // 禁止右鍵菜單
-            document.oncontextmenu = function () { return false; };
-            
+            document.oncontextmenu = function () {
+                return false;
+            };
+
             if (bookID != "0") Init();
         });
 
@@ -567,7 +585,7 @@
 
                 //撈紀錄
                 LoadRecord();
-                });
+            });
         }
 
         function LoadBook() {
@@ -593,8 +611,8 @@
                     console.log("[Init]：" + jqXHR.responseText);
                 }
             }).then(function () {
-                
-                });
+
+            });
         }
 
         function LoadQues() {
@@ -626,18 +644,24 @@
                             var content = JSON.parse(ques["content"]);
 
                             //選擇題 
-                            var obj = '<div class="row"><div class="col-sm-12"><div class="fillAssessment-section"><h3 class="fillAssessment-section__header">學生填寫評量</h3>';
-                            obj += '<div class="fillAssessment-section__body"><div class="questionType choice">';
+                            var obj =
+                                '<div class="row"><div class="col-sm-12"><div class="fillAssessment-section"><h3 class="fillAssessment-section__header">學生填寫評量</h3>';
+                            obj +=
+                                '<div class="fillAssessment-section__body"><div class="questionType choice">';
                             //題目
-                            obj += '<label class="questionType__stem">' + ques["number"] + '、' + content["topic"] + '</label>';
+                            obj += '<label class="questionType__stem">' + ques["number"] + '、' + content[
+                                "topic"] + '</label>';
                             obj += '<div class="questionType__area">';
                             //選項
                             for (var index in content) {
                                 if (index != "topic") {
-                                    obj += '<div class="SRradioRound-green"><input type="radio" name="ques_' + ques["number"] + '" value="' + index + '" /><label>' + content[index] + '</label></div>';
+                                    obj +=
+                                        '<div class="SRradioRound-green"><input type="radio" name="ques_' +
+                                        ques["number"] + '" value="' + index + '" /><label>' + content[
+                                            index] + '</label></div>';
                                 }
                             }
-                            obj += '</div></div></div></div></div></div>'; 
+                            obj += '</div></div></div></div></div></div>';
                             $("#div_list").append(obj);
                         }
                     }
@@ -649,12 +673,13 @@
                 window.parent.HideLoadingImage(); //隱藏進度
 
                 //學生填寫評量/教師評量批閱 標題 RWD隱藏
-                $('.fillAssessment-body>.container>.row:not(:first-child) .fillAssessment-section>.fillAssessment-section__header').addClass('hidden-xs hidden-sm hidden-md hidden-lg');
+                $('.fillAssessment-body>.container>.row:not(:first-child) .fillAssessment-section>.fillAssessment-section__header')
+                    .addClass('hidden-xs hidden-sm hidden-md hidden-lg');
 
                 //選擇題作答設定
-                $('.SRradioRound-green').on('click',  function() {
+                $('.SRradioRound-green').on('click', function () {
                     $(this).find('input').prop("checked", true);
-                }); 
+                });
             });
         }
 
@@ -671,17 +696,20 @@
                 success: function (response) {
                     var data = jQuery.parseJSON(decodeURIComponent(response.d));
                     window.parent.getOut(data["myID"]);
-                    
+
                     //對書籍的喜歡程度
                     if (data["likeScore"] != "") {
                         $("#div_lokeScore").html(data["likeScore"]);
 
                         //根據喜歡程度，塗滿相對應的星星數
-                        $_countCss = parseInt(data["likeScore"]);//css位置
+                        $_countCss = parseInt(data["likeScore"]); //css位置
 
-                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").addClass("light").html('<i class="fa fa-star fa-4x"></i>');
-                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").prevAll().addClass("light").html('<i class="fa fa-star fa-4x"></i>');
-                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").nextAll().removeClass("light").html('<i class="fa fa-star-o fa-4x"></i>');
+                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").addClass("light").html(
+                            '<i class="fa fa-star fa-4x"></i>');
+                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").prevAll().addClass("light")
+                            .html('<i class="fa fa-star fa-4x"></i>');
+                        $(".btn-stars-group .btn:nth-child(" + $_countCss + ")").nextAll().removeClass(
+                            "light").html('<i class="fa fa-star-o fa-4x"></i>');
 
                         $(".btn-stars-score").html($_countCss);
 
@@ -710,13 +738,13 @@
             //檢查是否有題目尚未完成
             var tmp_count = 0;
             var score = 0;
-            for (var i = 1; i <= count; i++) {                
+            for (var i = 1; i <= count; i++) {
                 ans_arr[i] = $('input[name="ques_' + i + '"]:checked').val();
                 if (!ans_arr[i]) {
                     alert("尚有題目未作答完成喔!");
                     window.parent.HideLoadingImage();
                     return;
-                } 
+                }
             }
 
             //儲存答案
@@ -738,7 +766,7 @@
                 success: function (response) {
                     var data = jQuery.parseJSON(decodeURIComponent(response.d));
                     window.parent.getOut(data["myID"]);
-                    
+
                     //取得分數，並顯示等第
                     $("#span_degree").text(data["degree"]);
                     $("#span_degree").addClass("userScore " + data["tag"]);
@@ -760,15 +788,13 @@
             }).then(function () {
                 window.parent.HideLoadingImage();
                 window.scrollTo(0, 0); // 畫面移至最上頭
-                });
+            });
         }
 
         //回閱讀計畫
         function goBack() {
             window.parent.CloseModal();
         }
-
-        
     </script>
 </body>
 
