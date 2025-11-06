@@ -29,16 +29,204 @@ body {
         text-align: center;
     }
 
-    .report_chart{
-        .data_page_scroll{
-                padding: 10px 20px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px rgba(89, 87, 87, 0.4784313725);
-    background-color: #efefef;
-    .chart_control{
-            min-width: 768px;
+    .report_header {
+        .report_header_information {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 15px 2.5%;
+            background-color: $report_header_bg;
+
+
+            .report_header_information_time,
+            .report_header_information_name,
+            .report_header_information_level {
+                width: calc(95% / 3);
+            }
+
+            .report_header_information_time {
+                p {
+                    color: $report_grey;
+                }
+
+                .report_header_information_time_item {
+                    display: flex;
+                    margin: 0 0 5px 0;
+
+                    .report_header_information_time_item_icon {
+                        width: 36px;
+                        margin: 0 7px 0 0;
+                    }
+                }
+            }
+
+            .report_header_information_name {
+
+                h3,
+                h4 {
+                    color: $report_grey;
+                    text-align: center;
+                }
+            }
+
+            .report_header_information_level {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                h4 {
+                    color: $dark_blue;
+                    text-align: center;
+                    margin: 0 0 5px 0;
+                }
+
+                .report_header_information_level_value {
+                    display: inline-block;
+                    background-color: $dark_blue;
+                    border-radius: 20px;
+                    padding: 16px 50px;
+
+                    h4 {
+                        color: $white;
+                        margin: 0;
+                    }
+                }
+            }
+        }
     }
+
+    .report_content {
+        width: 100%;
+
+        .report_content_tittle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            border-top: 8px solid $tittle_border_grey;
+            border-bottom: 8px solid $tittle_border_grey;
+
+            .report_content_tittle_icon {
+                img {
+                    width: 85px;
+                }
+            }
+
+            .report_content_tittle_text {
+                margin: 0 15px;
+
+                h3 {
+                    color: $report_grey;
+                }
+            }
+        }
+
+        .report_content_table{
+                text-align: center;
+                width: 100%;
+            .table{
+                width: 100%;
+
+                thead{
+                    display: table-caption;
+                    tr{
+                            width: 100%;
+    display: inline-flex;
+    padding: 10px 0;
+
+                        td{
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 12%;
+
+                            img{
+                                width: 25px;
+                                margin: 0 5px 0 0;
+                            }
+
+                            &:nth-child(1){
+                                width: 8%;
+                            }
+
+                            &:nth-child(2){
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+
+                tbody{
+                    background-color: $white;
+                    tr{
+                        td{
+                        width: 12%;
+                        background-color: $tittle_border_grey;
+                        
+                        padding: 10px 2px;
+
+                        &:nth-child(1){
+                                width: 8%;
+                            }
+
+                            &:nth-child(2){
+                                width: 20%;
+                            }
+
+                            &:nth-last-child(1){
+                                font-weight: bolder;
+                            }
+                    }
+
+                    &:nth-last-child(1){
+                        td{
+                            background-color: $white;
+
+                            &:nth-child(3){
+                                color: #00abce;
+                                font-weight: bolder;
+                            }
+
+                            &:nth-child(4){
+                                color: #ee8919;
+                                font-weight: bolder;
+                            }
+
+                            &:nth-child(5){
+                                color: #0078bb;
+                                font-weight: bolder;
+                            }
+
+                            &:nth-child(6){
+                                color: #84b526;
+                                font-weight: bolder;
+                            }
+
+                            &:nth-child(7){
+                                color: #df007c;
+                                font-weight: bolder;
+                            }
+                        }
+                    }
+                    }
+                }
+            }
+        }
+    }
+
+    .report_chart {
+        .data_page_scroll {
+            padding: 10px 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 1px 1px 5px rgba(89, 87, 87, 0.4784313725);
+            background-color: #efefef;
+
+            .chart_control {
+                min-width: 768px;
+            }
         }
     }
 
