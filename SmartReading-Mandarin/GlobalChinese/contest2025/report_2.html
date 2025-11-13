@@ -1,125 +1,211 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Getting Started with Chart JS with www.chartjs3.com</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-      }
-      .chartMenu {
-        width: 100vw;
-        height: 40px;
-        background: #1A1A1A;
-        color: rgba(54, 162, 235, 1);
-      }
-      .chartMenu p {
-        padding: 10px;
-        font-size: 20px;
-      }
-      .chartCard {
-        width: 100vw;
-        height: calc(100vh - 40px);
-        background: rgba(54, 162, 235, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .chartBox {
-        width: 700px;
-        padding: 20px;
-        border-radius: 20px;
-        border: solid 3px rgba(54, 162, 235, 1);
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    
-    <canvas id="ndvi_evi_chart" width="200" height="80"></canvas>
+<body>
+
+  <canvas id="ndvi_evi_chart" width="200" height="80"></canvas>
   <div id="canvas-as-image"></div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
-    
-    <script>
-// Source - https://stackoverflow.com/a
-// Posted by tom, modified by community. See post 'Timeline' for change history
-// Retrieved 2025-11-13, License - CC BY-SA 4.0
-const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-const radarIcons = {
-        id:'radarIcons',
-        beforeDatasetDraw(chart, args, plugins){
-          const { ctx, data, scales: {r} } = chart;
-          
-          console.log(r)
-          const xCenter = r.xCenter;
-          const yCenter = r.yCenter;
-          const drawingArea = r.drawingArea;
-          const angleLines = data.datasets[0].icons.length;
-          const angle = 360 / angleLines;
-          
-          ctx.save();
-          ctx.translate(xCenter, yCenter);
-          
-          const image = new Image();
-          image.src = data.datasets[0].icons[0];
-          ctx.drawImage(image , 0 , 0 , 40, 40);
-          ctx.restore();
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+  <script src="https://hsuleii.github.io/taa/SJTT/Content/js/datalabels@0.7.0.js"></script>
+
+  <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+
+  <script>
+    // Source - https://stackoverflow.com/a
+    // Posted by tom, modified by community. See post 'Timeline' for change history
+    // Retrieved 2025-11-13, License - CC BY-SA 4.0
+    var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+    const radarIcons = {
+      id: 'radarIcons',
+      beforeDatasetDraw(chart, args, plugins) {
+        const { ctx, data, scales: {r} } = chart;
+
+        console.log(r) 
+        const xCenter = r.xCenter;
+        const yCenter = r.yCenter;
+        const drawingArea = r.drawingArea;
+        const angleLines = data.datasets[0].icons.length;
+        const angle = 360 / angleLines;
+
+        function degreesToRadians(degrees){
+          return degrees * (Math.PI / 180);
         }
-      }
 
-new Chart(document.getElementById("ndvi_evi_chart"), {
-  type: 'radar',
-  data: {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    datasets: [{
-        label: 'Weekly Sales',
-        data: [18, 12, 6, 9, 12, 3, 9],
-        backgroundColor: [
-          'rgba(255, 26, 104, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(0, 0, 0, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 26, 104, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(0, 0, 0, 1)'
-        ],
-        borderWidth: 1,
-      icons: [icon, icon, icon, icon, icon, icon, icon],
-      }]
-  },
+        data.datasets[0].icons.forEach((icon , index) => {
+          ctx.save();
+const degrees = angle * index;
+        const radians = degreesToRadians(degrees);
 
-  options: {
-    plugins: {
-      legend: {
-                display:false
-            }
-    },
+        const xCoor = Math.cos(radians)
+        const yCoor = - drawingArea + Math.sin(radians)
+        ctx.translate(xCenter, yCenter);
+        ctx.rotate(radians)
+        const image = new Image();
+        image.src = data.datasets[0].icons[0];
+        ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
+        ctx.restore();
+          })
 
-    scales: {
-    },
+          
 
-    animation: {
-      onComplete: function() {
-        const img = document.getElementById('ndvi_evi_chart').toDataURL('image/png')
-        document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">'
-      }
+        
+
     }
+  }
 
-  },
-});
+    var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
 
-</script>
+    var myChart = new Chart(ctx1, {
+      type: 'radar',
+      data: {
+        labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
+        datasets: [{
+          label: 'Weekly Sales',
+          data: [61, 166, 160, 250, 150],
+          pointRadius: 7,
+          pointBackgroundColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+          pointBorderColor: '#fff',
+          pointHoverRadius: 10,
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+          // icons: [icon, icon, icon, icon, icon, icon, icon],
+        }]
+      },
 
-  </body>
+      options: {
+        // plugins: {
+        //   legend: {
+        //             display:false
+        //         }
+        // },
+
+
+        plugins: {
+          datalabels: {
+            color: '#20221f',
+            // 位置
+            anchor: 'top',
+            // 水平位置
+            align: 'end',
+            // 文字置中
+            textAlign: 'center',
+            backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
+            borderWidth: 1,
+            borderRadius: 5,
+            padding: 5,
+            formatter: function (value, context) {
+              return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
+                .datasets[0].data[context.dataIndex] + '%';
+            },
+            font: function (context) {
+              var width = context.chart.width;
+              var size = Math.round(width / 25);
+              alert(width);
+              return {
+                weight: 'bold',
+                size: size,
+              };
+            }
+          },
+        },
+
+        scales: {},
+
+        animation: {
+          onComplete: function () {
+
+          }
+        }
+
+      },
+      // plugins: [radarIcons]
+    });
+    // new Chart(document.getElementById("ndvi_evi_chart"), {
+    //   type: 'radar',
+    //   data: {
+    //     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    //     datasets: [{
+    //         label: 'Weekly Sales',
+    //         data: [18, 12, 6, 9, 12, 3, 9],
+    //         backgroundColor: [
+    //           'rgba(255, 26, 104, 0.2)',
+    //           'rgba(54, 162, 235, 0.2)',
+    //           'rgba(255, 206, 86, 0.2)',
+    //           'rgba(75, 192, 192, 0.2)',
+    //           'rgba(153, 102, 255, 0.2)',
+    //           'rgba(255, 159, 64, 0.2)',
+    //           'rgba(0, 0, 0, 0.2)'
+    //         ],
+    //         borderColor: [
+    //           'rgba(255, 26, 104, 1)',
+    //           'rgba(54, 162, 235, 1)',
+    //           'rgba(255, 206, 86, 1)',
+    //           'rgba(75, 192, 192, 1)',
+    //           'rgba(153, 102, 255, 1)',
+    //           'rgba(255, 159, 64, 1)',
+    //           'rgba(0, 0, 0, 1)'
+    //         ],
+    //         borderWidth: 1,
+    //       icons: [icon, icon, icon, icon, icon, icon, icon],
+    //       }]
+    //   },
+
+    //   options: {
+    //     // plugins: {
+    //     //   legend: {
+    //     //             display:false
+    //     //         }
+    //     // },
+
+
+    //     plugins: {
+    //   datalabels: {
+    //                         color: '#20221f',
+    //                         // 位置
+    //                         anchor: 'top',
+    //                         // 水平位置
+    //                         align: 'end',
+    //                         // 文字置中
+    //                         textAlign: 'center',
+    //                         backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
+    //                         borderWidth: 1,
+    //                         borderRadius: 5,
+    //                         padding: 5,
+    //                         formatter: function (value, context) {
+    //                             return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
+    //                                 .datasets[0].data[context.dataIndex] + '%';
+    //                         },
+    //                         font: function (context) {
+    //                             var width = context.chart.width;
+    //                             var size = Math.round(width / 25);
+    // alert(width);
+    //                             return {
+    //                                 weight: 'bold',
+    //                                 size: size,
+    //                             };
+    //                         }
+    //                     },
+    //                   },
+
+    //     scales: {
+    //     },
+
+    //     animation: {
+    //       onComplete: function() {
+
+    //       }
+    //     }
+
+    //   },
+    //   // plugins: [radarIcons]
+    // });
+
+    // var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
+    //         document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">'
+  </script>
+
+</body>

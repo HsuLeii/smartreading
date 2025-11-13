@@ -2,39 +2,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Getting Started with Chart JS with www.chartjs3.com</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-      }
-      .chartMenu {
-        width: 100vw;
-        height: 40px;
-        background: #1A1A1A;
-        color: rgba(54, 162, 235, 1);
-      }
-      .chartMenu p {
-        padding: 10px;
-        font-size: 20px;
-      }
-      .chartCard {
-        width: 100vw;
-        height: calc(100vh - 40px);
-        background: rgba(54, 162, 235, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .chartBox {
-        width: 700px;
-        padding: 20px;
-        border-radius: 20px;
-        border: solid 3px rgba(54, 162, 235, 1);
-        background: white;
-      }
-    </style>
   </head>
   <body>
     
@@ -46,6 +13,8 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script> -->
 
     
     <script>
@@ -79,27 +48,43 @@
       }]
     };
       
-      const radarIcons = {
-        id:'radarIcons',
-        beforeDatasetDraw(chart, args, plugins){
-          const { ctx, data, scales: {r} } = chart;
-          
-          console.log(r)
-          const xCenter = r.xCenter;
-          const yCenter = r.yCenter;
-          const drawingArea = r.drawingArea;
-          const angleLines = data.datasets[0].icons.length;
-          const angle = 360 / angleLines;
-          
-          ctx.save();
-          ctx.translate(xCenter, yCenter);
-          
-          const image = new Image();
-          image.src = data.datasets[0].icons[0];
-          ctx.drawImage(image , 0 , 0 , 40, 40);
-          ctx.restore();
+          const radarIcons = {
+      id: 'radarIcons',
+      beforeDatasetDraw(chart, args, plugins) {
+        const { ctx, data, scales: {r} } = chart;
+
+        console.log(r) 
+        const xCenter = r.xCenter;
+        const yCenter = r.yCenter;
+        const drawingArea = r.drawingArea;
+        const angleLines = data.datasets[0].icons.length;
+        const angle = 360 / angleLines;
+
+        function degreesToRadians(degrees){
+          return degrees * (Math.PI / 180);
         }
-      }
+
+        data.datasets[0].icons.forEach((icon , index) => {
+          ctx.save();
+const degrees = angle * index;
+        const radians = degreesToRadians(degrees);
+
+        const xCoor = Math.cos(radians)
+        const yCoor = - drawingArea + Math.sin(radians)
+        ctx.translate(xCenter, yCenter);
+        ctx.rotate(radians)
+        const image = new Image();
+        image.src = data.datasets[0].icons[0];
+        ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
+        ctx.restore();
+          })
+
+          
+
+        
+
+    }
+  }
 
     // config 
     const config = {
@@ -108,7 +93,11 @@
       options: {
         
         scales: {
-
+          r:{
+            pointLabels:{
+              display:false
+            }
+          }
         },
 
         plugins: {

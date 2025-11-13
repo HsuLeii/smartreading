@@ -299,7 +299,7 @@
 
 
 
-  <script src="Content/js/jquery-3.6.1.min.js"></script>
+  <!-- <script src="Content/js/jquery-3.6.1.min.js"></script> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
 
@@ -308,7 +308,7 @@
   
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script> -->
 
-   <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+   <!-- <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script> -->
   
   <script>
     // Chart.Tooltip.positioners.center = function (elements) {
@@ -354,22 +354,9 @@ image.src = 'https://www.chartjs.org/img/chartjs-logo.svg';
         }],
       },
 
-      options: {
-        responsive: true,
-        plugins: {
-          labels: {
-                render: 'image',
-                images: [
-                  { src: 'https://cdn.cybassets.com/s/files/16231/theme/52206/assets/img/1630560592_8c627c0f_navbar_logo.png?1630560592', width: 32, height: 22 },
-                  { src: 'jpan.png', width: 32, height: 22 },
-                  { src: 'usa.png', width: 32, height: 22 }
-                ]
-              }
-        }
-      },
 
-  //     options: {
-  //   //     
+      options: {
+    //     
   //   scale: {
   //         // the diagonal segment lines
   //         // the labels at the tip of each data point (we're disabling the default ones)
@@ -401,36 +388,36 @@ image.src = 'https://www.chartjs.org/img/chartjs-logo.svg';
   //         },
   //       },
       
-  //     plugins: {
-  // datalabels: {
-  //                       // color: '#20221f',
-  //                       // // 位置
-  //                       // anchor: 'top',
-  //                       // // 水平位置
-  //                       // align: 'end',
-  //                       // // 文字置中
-  //                       // textAlign: 'center',
-  //                       // backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
-  //                       // borderWidth: 1,
-  //                       // borderRadius: 5,
-  //                       // padding: 5,
-  //                       // formatter: function (value, context) {
-  //                       //     return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
-  //                       //         .datasets[0].data[context.dataIndex] + '%';
-  //                       // },
-  //                       // font: function (context) {
-  //                       //     var width = context.chart.width;
-  //                       //     var size = Math.round(width / 25);
+      plugins: {
+  datalabels: {
+                        color: '#20221f',
+                        // 位置
+                        anchor: 'top',
+                        // 水平位置
+                        align: 'end',
+                        // 文字置中
+                        textAlign: 'center',
+                        backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
+                        borderWidth: 1,
+                        borderRadius: 5,
+                        padding: 5,
+                        formatter: function (value, context) {
+                            return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
+                                .datasets[0].data[context.dataIndex] + '%';
+                        },
+                        font: function (context) {
+                            var width = context.chart.width;
+                            var size = Math.round(width / 25);
+alert(width);
+                            return {
+                                weight: 'bold',
+                                size: size,
+                            };
+                        }
+                    },
+                  }
 
-  //                       //     return {
-  //                       //         weight: 'bold',
-  //                       //         size: size,
-  //                       //     };
-  //                       // }
-  //                   },
-  //                 }
-
-  //     },
+      },
     });
   </script>
 

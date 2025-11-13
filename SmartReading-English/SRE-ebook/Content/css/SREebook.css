@@ -74,6 +74,12 @@ h4 {
   font-weight: bold;
 }
 
+h5 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
 p {
   font-size: 17px;
   color: #5B3716;
@@ -214,11 +220,17 @@ input[type=checkbox]:checked ~ label:after {
 
 @media (max-width: 1024px) {
   h4 {
+    font-size: 20px;
+  }
+  h5 {
     font-size: 18px;
   }
 }
 @media (max-width: 768px) {
   h4 {
+    font-size: 18px;
+  }
+  h5 {
     font-size: 16px;
   }
   p {
@@ -230,6 +242,9 @@ input[type=checkbox]:checked ~ label:after {
 }
 @media (max-width: 499px) {
   h4 {
+    font-size: 15px;
+  }
+  h5 {
     font-size: 15px;
   }
   [aria-label]:after {
@@ -288,7 +303,7 @@ input[type=checkbox]:checked ~ label:after {
   border-radius: 10px;
   background-color: #EFE8E0;
   padding: 40px 0px;
-  width: 70%;
+  width: 80%;
   max-width: 1200px;
   position: relative;
 }
@@ -298,7 +313,7 @@ input[type=checkbox]:checked ~ label:after {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 70%;
+  width: calc(100% - 250px);
 }
 .blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_title {
   margin: 0px auto 20px;
@@ -351,6 +366,7 @@ input[type=checkbox]:checked ~ label:after {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 20px auto;
 }
 .blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item {
   margin: 5px 10px;
@@ -365,13 +381,22 @@ input[type=checkbox]:checked ~ label:after {
   transform: scale(1);
 }
 .blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item.ebook_modal_close {
-  background-color: grey;
+  background-color: #808080;
+}
+.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item.ebook_modal_button_item_sentence {
+  background-color: #d7ab1b;
+}
+.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item.ebook_modal_button_item_chatbot {
+  background-color: #604193;
+}
+.blocker .ebook_medal_modal .ebook_modal_content .ebook_modal_button_area .ebook_modal_button .ebook_modal_button_item.ebook_modal_button_item_studio {
+  background-color: #31659b;
 }
 .blocker .ebook_medal_modal .navigator_area {
   position: absolute;
   left: 100%;
   bottom: 0;
-  width: 30%;
+  width: 250px;
   transform: translate(-50%, -20%);
   animation: bookman_move 2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
@@ -651,7 +676,7 @@ input[type=checkbox]:checked ~ label:after {
   text-align: center;
 }
 .blocker .recording_modal .recording_modal_content .recording_modal_button_area .recording_modal_button .recording_modal_button_item.recording_modal_close {
-  background-color: grey;
+  background-color: #808080;
 }
 .blocker .recording_modal .close-modal {
   display: none !important;
@@ -1226,6 +1251,8 @@ header .book-title {
   padding: 60px 15px 15px;
   margin-top: 12.5vh;
   border-radius: 8px;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
   transition: 0.3s ease all;
   background-position: 50% 50%;
   background-size: 20px 20px;
@@ -1441,6 +1468,8 @@ header .book-title {
   position: absolute;
   z-index: 3;
   bottom: 0px;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
 .button-area .sound {
@@ -1484,7 +1513,7 @@ header .book-title {
   margin-left: 0px;
 }
 .button-area .sound .sound-drag-line .sound-line.grey {
-  background: grey;
+  background: #808080;
 }
 .button-area .sound .sound-drag-line .sound-draggable-button {
   width: 10px;
@@ -1499,7 +1528,7 @@ header .book-title {
   position: absolute;
 }
 .button-area .sound .sound-drag-line .sound-draggable-button.grey {
-  border: 1px solid grey;
+  border: 1px solid #808080;
 }
 .button-area .button-menu ul {
   display: flex;
@@ -1691,7 +1720,7 @@ header .book-title {
   text-indent: -9999px;
   width: 40px;
   height: 25px;
-  background: grey;
+  background: #808080;
   display: block;
   border-radius: 100px;
   position: relative;
@@ -1996,417 +2025,388 @@ header .book-title {
     height: 20px;
   }
 }
-.book-page-one .course_area {
+.book-page-one .test_area_content_img_area {
   width: 90%;
+  margin: 0 auto;
+}
+.book-page-one .test_area_content_img_area .test_area_content_img_area_content .test_area_content_img img {
+  max-width: 150px;
+  border-radius: 10px;
+}
+.book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area {
+  width: 100%;
+  max-width: 150px;
+  margin: 10px 0 20px;
+  background-color: #808080;
+  border-radius: 10px;
+}
+.book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area .line {
+  height: 4px;
+  background: #ec6c00;
+  border-radius: 10px;
+}
+.book-page-one .dialogue_area {
+  width: 90%;
+  margin: 0 auto 40px;
+  padding: 0px;
+}
+.book-page-one .dialogue_area .dialogue_block_area {
+  overflow-y: scroll;
+  max-height: 50vh;
+  padding: 30px;
+  border: 1px solid #ec6c00;
+  border-radius: 5px;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 70px 0 40px;
+  position: relative;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar img {
+  border-radius: 50%;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar .avatar_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec6c00;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  border-radius: 50%;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar .dialogue_avatar_name {
+  font-size: 11px;
+  margin: 8px auto 0;
+  color: #ec6c00;
+  background-color: transparent;
+  height: auto;
+  border-radius: 0;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
+  display: flex;
+  align-items: center;
+  padding: 14px 10px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 60%;
+  position: relative;
+  width: auto;
+  max-width: calc(60% - 70px);
+  background-color: #fff;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box .dialog_box_text {
+  width: 100%;
+  color: #ec6c00;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_time {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar {
+  margin: 0 15px 0 0;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar .avatar_text {
+  background-color: #fff;
+  color: #5B3716;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box {
+  margin: 0 15px 0 0;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box .dialog_box_text label ruby.wrong rt {
+  color: #ec6c00;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box::before {
+  border-width: 8px 0px 8px 8px;
+  left: 0;
+  transform: translate(-100%, -50%);
+  border-right: 8px solid white;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-top: 8px solid transparent;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box::after {
+  border-width: 10px 0px 10px 10px;
+  left: 0;
+  transform: translate(-100%, -50%);
+  border-right: 10px solid white;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right {
+  justify-content: flex-end;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialogue_avatar {
+  margin: 0 0 0 15px;
+  order: 2;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box {
+  margin: 0 0 0 15px;
+  order: 1;
+  background-color: #ec6c00;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box .dialog_box_text p {
+  color: #fff;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box::before {
+  border-width: 8px 8px 8px 0px;
+  right: 0;
+  transform: translate(100%, -50%);
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #ec6c00;
+  border-top: 8px solid transparent;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box::after {
+  border-width: 10px 10px 10px 0px;
+  right: 0;
+  transform: translate(100%, -50%);
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #ec6c00;
+  border-top: 10px solid transparent;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_ai .dialog_box {
+  width: auto;
+}
+.book-page-one .dialogue_area .dialogue_block_area .dialogue_block:nth-child(1) {
+  padding: 0 0 40px;
+}
+.book-page-one .dialogue_area .dialogue_message {
+  padding: 30px 0 0;
+}
+.book-page-one .dialogue_area .dialogue_message .dialogue_textarea {
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  color: #5B3716;
+  line-height: 1.8;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  resize: none;
+}
+.book-page-one .dialogue_area .dialogue_message .dialogue_textarea:focus-visible {
+  outline: 1px solid #ec6c00;
+}
+.book-page-one .dialogue_area .dialogue_message .dialogue_btn {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ec6c00;
+  margin: 0 0 0 auto;
+  color: #ec6c00;
+  cursor: pointer;
+}
+.book-page-one .dialogue_area .dialogue_message .dialogue_btn:hover {
+  background-color: #ec6c00;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
+    max-width: calc(80% - 70px);
+  }
+}
+@media (max-width: 768px) {
+  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
+    max-width: calc(100% - 70px);
+  }
+}
+.book-page-one .course_area {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0 0;
-  margin: 0 auto 20px;
+  width: 100%;
+  padding: 15px 10%;
+  background-color: #d7ab1b;
+  margin: 0;
+}
+.book-page-one .course_area.course_area_chatbot {
+  background-color: rgb(175.6603773585, 154.4575471698, 210.5424528302);
+}
+.book-page-one .course_area.course_area_chatbot .course_name h4 {
+  color: rgb(61.358490566, 41.5448113208, 93.9551886792);
+}
+.book-page-one .course_area.course_area_sentence {
+  background-color: rgb(242.1694214876, 221.2603305785, 152.8305785124);
+}
+.book-page-one .course_area.course_area_sentence .course_name h4 {
+  color: rgb(147.0351239669, 116.944214876, 18.4648760331);
+}
+.book-page-one .course_area .course_name {
+  width: calc(100% - 160px);
 }
 .book-page-one .course_area .course_name h4 {
-  font-size: 25px;
-  color: #ec6c00;
+  color: #5B3716;
+  word-break: break-all;
 }
 .book-page-one .course_area .course_img_area .course_img img {
   max-width: 150px;
   border-radius: 10px;
 }
-.book-page-one .test_area_content_img_area {
-  width: 90%;
-  margin: 0 auto;
-}
-.book-page-one .test_area_content_img_area .test_area_content_img_area_content .test_area_content_img img {
-  max-width: 150px;
-  border-radius: 10px;
-}
-.book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area {
-  width: 100%;
-  max-width: 150px;
-  margin: 10px 0 20px;
-  background-color: grey;
-  border-radius: 10px;
-}
-.book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area .line {
-  height: 4px;
-  background: #ec6c00;
-  border-radius: 10px;
-}
-.book-page-one .dialogue_area {
-  width: 90%;
-  margin: 0 auto 40px;
-  padding: 0px;
-}
-.book-page-one .dialogue_area .dialogue_block_area {
-  overflow-y: scroll;
-  max-height: 50vh;
-  padding: 30px;
-  border: 1px solid #ec6c00;
-  border-radius: 5px;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 70px 0 40px;
+.book-page-one .answer_area {
   position: relative;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar {
-  width: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar img {
-  border-radius: 50%;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar .avatar_text {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #ec6c00;
-  color: #fff;
-  width: 100%;
-  height: 40px;
-  border-radius: 50%;
+  padding: 50px 5% 90px;
+  margin: 0 auto;
+  background-color: rgb(252.391025641, 241.7179487179, 202.108974359);
+  background-color: rgb(247.8595041322, 236.2231404959, 198.1404958678);
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar .dialogue_avatar_name {
-  font-size: 11px;
-  margin: 8px auto 0;
-  color: #ec6c00;
-  background-color: transparent;
-  height: auto;
-  border-radius: 0;
+.book-page-one .answer_area.answer_write {
+  background-color: rgb(247.8595041322, 236.2231404959, 198.1404958678);
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-  display: flex;
-  align-items: center;
-  padding: 14px 10px;
-  border-radius: 5px;
+.book-page-one .answer_area.answer_chatbot {
+  background-color: rgb(203.5660377358, 189.820754717, 226.179245283);
+}
+.book-page-one .answer_area .answer_content_area {
   position: relative;
-  max-width: 60%;
-  position: relative;
-  width: auto;
-  max-width: calc(60% - 70px);
-  background-color: #fff;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box .dialog_box_text {
-  width: 100%;
-  color: #ec6c00;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_time {
-  position: absolute;
-  bottom: 0;
-  width: auto;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar {
-  margin: 0 15px 0 0;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar .avatar_text {
-  background-color: #fff;
-  color: #5B3716;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box {
-  margin: 0 15px 0 0;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box .dialog_box_text label ruby.wrong rt {
-  color: #ec6c00;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box::before {
-  border-width: 8px 0px 8px 8px;
-  left: 0;
-  transform: translate(-100%, -50%);
-  border-right: 8px solid white;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid transparent;
-  border-top: 8px solid transparent;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box::after {
-  border-width: 10px 0px 10px 10px;
-  left: 0;
-  transform: translate(-100%, -50%);
-  border-right: 10px solid white;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-top: 10px solid transparent;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right {
-  justify-content: flex-end;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialogue_avatar {
-  margin: 0 0 0 15px;
-  order: 2;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box {
-  margin: 0 0 0 15px;
-  order: 1;
-  background-color: #ec6c00;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box .dialog_box_text p {
-  color: #fff;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box::before {
-  border-width: 8px 8px 8px 0px;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #ec6c00;
-  border-top: 8px solid transparent;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box::after {
-  border-width: 10px 10px 10px 0px;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #ec6c00;
-  border-top: 10px solid transparent;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_ai .dialog_box {
-  width: auto;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block:nth-child(1) {
-  padding: 0 0 40px;
-}
-.book-page-one .dialogue_area .dialogue_message {
-  padding: 30px 0 0;
-}
-.book-page-one .dialogue_area .dialogue_message .dialogue_textarea {
-  width: 100%;
-  border: none;
-  font-size: 17px;
-  color: #5B3716;
-  line-height: 1.8;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  resize: none;
-}
-.book-page-one .dialogue_area .dialogue_message .dialogue_textarea:focus-visible {
-  outline: 1px solid #ec6c00;
-}
-.book-page-one .dialogue_area .dialogue_message .dialogue_btn {
-  display: block;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ec6c00;
-  margin: 0 0 0 auto;
-  color: #ec6c00;
-  cursor: pointer;
-}
-.book-page-one .dialogue_area .dialogue_message .dialogue_btn:hover {
-  background-color: #ec6c00;
-  color: #fff;
-}
-
-@media (max-width: 1024px) {
-  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-    max-width: calc(80% - 70px);
-  }
-}
-@media (max-width: 768px) {
-  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-    max-width: calc(100% - 70px);
-  }
-}
-.book-page-one .topic_area {
   width: 90%;
-  display: flex;
-  justify-content: space-between;
+  background-color: #fdf0df;
+}
+.book-page-one .answer_area .answer_content_area::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-25px, 25px);
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ec6c00;
+  background-color: #fdf0df;
+  border-radius: 30px;
+}
+.book-page-one .answer_area .answer_content_area .head_label {
+  position: absolute;
+  background-color: #5B3716;
+  top: 0px;
+  right: 50px;
+  z-index: 2;
+  width: 90px;
   padding: 20px 0 0;
-  margin: 0 auto 20px;
 }
-.book-page-one .topic_area .course_name h4 {
-  font-size: 25px;
-  color: #ec6c00;
-}
-.book-page-one .topic_area .course_img_area .course_img img {
-  max-width: 150px;
-  border-radius: 10px;
-}
-.book-page-one .test_area_content_img_area {
-  width: 90%;
-  margin: 0 auto;
-}
-.book-page-one .test_area_content_img_area .test_area_content_img_area_content .test_area_content_img img {
-  max-width: 150px;
-  border-radius: 10px;
-}
-.book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area {
-  width: 100%;
-  max-width: 150px;
-  margin: 10px 0 20px;
-  background-color: grey;
-  border-radius: 10px;
-}
-.book-page-one .test_area_content_img_area .test_area_content_img_area_content .progress_area .line {
-  height: 4px;
-  background: #ec6c00;
-  border-radius: 10px;
-}
-.book-page-one .dialogue_area {
-  width: 90%;
-  margin: 0 auto 40px;
-  padding: 0px;
-}
-.book-page-one .dialogue_area .dialogue_block_area {
-  overflow-y: scroll;
-  max-height: 50vh;
-  padding: 30px;
-  border: 1px solid #ec6c00;
-  border-radius: 5px;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 70px 0 40px;
-  position: relative;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar {
-  width: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar img {
-  border-radius: 50%;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar .avatar_text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ec6c00;
+.book-page-one .answer_area .answer_content_area .head_label span {
+  font-size: 20px;
+  display: block;
+  text-align: center;
   color: #fff;
-  width: 100%;
-  height: 40px;
-  border-radius: 50%;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialogue_avatar .dialogue_avatar_name {
-  font-size: 11px;
-  margin: 8px auto 0;
-  color: #ec6c00;
-  background-color: transparent;
-  height: auto;
-  border-radius: 0;
+.book-page-one .answer_area .answer_content_area .head_label p {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-  display: flex;
-  align-items: center;
-  padding: 14px 10px;
-  border-radius: 5px;
-  position: relative;
-  max-width: 60%;
-  position: relative;
-  width: auto;
-  max-width: calc(60% - 70px);
-  background-color: #fff;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::before {
+.book-page-one .answer_area .answer_content_area .head_label::before {
   content: "";
+  width: 0;
+  height: 0;
+  border-right: 45px solid #5B3716;
+  border-left: 45px solid #5B3716;
+  border-top: 5px solid #5B3716;
+  border-bottom: 15px solid transparent;
   position: absolute;
-  z-index: 1;
-  top: 50%;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box .dialog_box_text {
-  width: 100%;
-  color: #ec6c00;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_time {
-  position: absolute;
+  z-index: 3;
   bottom: 0;
-  width: auto;
+  transform: translate(0%, 100%);
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar {
-  margin: 0 15px 0 0;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialogue_avatar .avatar_text {
-  background-color: #fff;
-  color: #5B3716;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box {
-  margin: 0 15px 0 0;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box .dialog_box_text label ruby.wrong rt {
-  color: #ec6c00;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box::before {
-  border-width: 8px 0px 8px 8px;
-  left: 0;
-  transform: translate(-100%, -50%);
-  border-right: 8px solid white;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid transparent;
-  border-top: 8px solid transparent;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_left .dialog_box::after {
-  border-width: 10px 0px 10px 10px;
-  left: 0;
-  transform: translate(-100%, -50%);
-  border-right: 10px solid white;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-top: 10px solid transparent;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right {
-  justify-content: flex-end;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialogue_avatar {
-  margin: 0 0 0 15px;
-  order: 2;
-}
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box {
-  margin: 0 0 0 15px;
-  order: 1;
+.book-page-one .answer_area .answer_content_area .answer_content_head {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   background-color: #ec6c00;
+  display: flex;
+  align-items: center;
+  border-radius: 30px 30px 0 0;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box .dialog_box_text p {
+.book-page-one .answer_area .answer_content_area .answer_content_head::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-25px, 25px);
+  width: 100%;
+  height: 100%;
+  background-color: #ec6c00;
+  z-index: -1;
+  border-radius: 30px 30px 0 0;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_head .head_dot {
+  display: flex;
+  margin: 0 0 0 30px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_head .head_dot .dot_item {
+  width: 15px;
+  height: 15px;
+  background-color: #5B3716;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_head .head_text {
+  padding: 15px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_head .head_text h4 {
   color: #fff;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box::before {
-  border-width: 8px 8px 8px 0px;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #ec6c00;
-  border-top: 8px solid transparent;
+.book-page-one .answer_area .answer_content_area .answer_content_frame {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #ec6c00;
+  background-color: #fdf0df;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_right .dialog_box::after {
-  border-width: 10px 10px 10px 0px;
-  right: 0;
-  transform: translate(100%, -50%);
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #ec6c00;
-  border-top: 10px solid transparent;
+.book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area {
+  width: 35%;
+  max-width: 350px;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block.dialogue_ai .dialog_box {
-  width: auto;
+.book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area .topic_name {
+  margin: 20px 0;
 }
-.book-page-one .dialogue_area .dialogue_block_area .dialogue_block:nth-child(1) {
-  padding: 0 0 40px;
+.book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area .topic_name h4 {
+  color: #ec6c00;
 }
-.book-page-one .dialogue_area .dialogue_message {
-  padding: 30px 0 0;
+.book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area .topic_img_area .topic_img img {
+  border-radius: 10px;
+  border: 1px solid #ec6c00;
 }
-.book-page-one .dialogue_area .dialogue_message .dialogue_textarea {
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area {
+  width: 60%;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .topic_name {
+  width: calc(100% - 100px);
+  margin: 0 0 20px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .topic_name h4 {
+  color: #ec6c00;
+  margin: 0 0 10px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .usermessage_area .usermessage .usermessage_textarea {
   width: 100%;
   border: none;
   font-size: 17px;
@@ -2414,13 +2414,14 @@ header .book-title {
   line-height: 1.8;
   padding: 20px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 30px;
   resize: none;
+  outline: 1px solid #5B3716;
 }
-.book-page-one .dialogue_area .dialogue_message .dialogue_textarea:focus-visible {
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .usermessage_area .usermessage .usermessage_textarea:focus-visible {
   outline: 1px solid #ec6c00;
 }
-.book-page-one .dialogue_area .dialogue_message .dialogue_btn {
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .usermessage_area .usermessage .usermessage_btn {
   display: block;
   padding: 10px;
   border-radius: 5px;
@@ -2429,18 +2430,453 @@ header .book-title {
   color: #ec6c00;
   cursor: pointer;
 }
-.book-page-one .dialogue_area .dialogue_message .dialogue_btn:hover {
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .usermessage_area .usermessage .usermessage_btn:hover {
   background-color: #ec6c00;
   color: #fff;
 }
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area {
+  display: none;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .user_answer {
+  width: calc(100% - 180px);
+  margin: 0 0 20px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .user_answer h4 {
+  color: #5B3716;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction {
+  position: relative;
+  width: 100%;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle,
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area {
+  width: calc(100% - 180px);
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle {
+  margin: 0 0 10px;
+  width: 100%;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle h5 {
+  color: #5B3716;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area {
+  margin: 0 0 20px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area i {
+  color: #FFBC42;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(0, 40px);
+  max-width: 175px;
+  line-height: 1;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman img {
+  display: block;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_star_text {
+  width: 100%;
+  margin: 0 0 10px;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_star_text h5 {
+  margin: 0 0 10px;
+  color: #5B3716;
+}
+.book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_star_text p {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ec6c00;
+  background-color: #fff;
+}
+.book-page-one .answer_area.answer_write .answer_content_area .answer_content_frame .user_area {
+  width: 95%;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame {
+  position: relative;
+  padding: 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area {
+  padding: 100px calc(30px + 2.5%);
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow-y: scroll;
+  max-height: 60vh;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 70px 0 0;
+  position: relative;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar {
+  width: 55px;
+  line-height: 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar img {
+  border-radius: 50%;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EB615C;
+  color: #fff;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 15px;
+  position: relative;
+  width: auto;
+  max-width: calc(80% - 70px);
+  background-color: #fff;
+  border: 1px solid #ec6c00;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .dialog_box_text {
+  margin: 0 20px 0 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .dialog_box_icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec6c00;
+  border: 1px solid #ec6c00;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .dialog_box_icon i {
+  font-size: 20px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .dialog_box_icon:hover {
+  background-color: #EB615C;
+  border: 1px solid #EB615C;
+  transform: scale(1.05);
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar {
+  height: 20px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar.play_animation .bar {
+  animation: sound 0ms -800ms linear infinite alternate;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar .bar {
+  background-color: #ec6c00;
+  height: 0px;
+  width: 3px;
+  margin: 0px 2px;
+  border-radius: 50px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar .bar:nth-child(1) {
+  animation-duration: 474ms;
+  height: 10px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar .bar:nth-child(2) {
+  animation-duration: 433ms;
+  height: 15px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar .bar:nth-child(3) {
+  animation-duration: 407ms;
+  height: 20px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .sound_bar .bar:nth-child(4) {
+  animation-duration: 458ms;
+  height: 10px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .dialog_text {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box .dialog_text span {
+  width: 100%;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_left .dialogue_avatar {
+  margin: 0 15px 0 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_left .dialog_box {
+  border-radius: 50px 50px 50px 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right {
+  justify-content: flex-end;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialogue_avatar {
+  margin: 0 0 0 15px;
+  order: 2;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box {
+  order: 1;
+  border-radius: 50px 50px 0 50px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box .dialog_box_icon {
+  order: 3;
+  right: 0px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block.dialogue_right .dialog_box .sound_bar {
+  order: 2;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block:nth-child(1) {
+  padding: 0;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 40px calc(2.5% + 30px);
+  background-color: #fff;
+  border-top: 1px solid #ec6c00;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #ec6c00;
+  transform: scale(0.95);
+  color: #fff;
+  cursor: pointer;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon svg {
+  color: #fff;
+  font-size: 30px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon i {
+  color: #fff;
+  font-size: 30px;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon:hover {
+  transform: scale(1);
+  background-color: #EB615C;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .btn_icon:disabled {
+  transform: scale(1);
+  background-color: #808080;
+  cursor: auto;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area.recording_area {
+  display: flex;
+  flex-direction: column;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area .recording_time {
+  display: none;
+  color: #ec6c00;
+  margin: 10px auto 0;
+  text-align: center;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area {
+  position: absolute;
+  right: calc(2.5% + 30px);
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ec6c00;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_icon {
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #ec6c00;
+  background-color: transparent;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_text {
+  border-radius: 5px;
+  display: flex;
+  padding: 5px 10px;
+  text-align: left;
+  background-color: transparent;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_text p {
+  margin: 0 5px;
+  color: #5B3716;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area:hover {
+  background-color: #ec6c00;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area:hover .btn_finish_icon {
+  color: #fff;
+}
+.book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area:hover .btn_finish_text p {
+  color: #fff;
+}
+.book-page-one .answer_area .chatbot_bookman {
+  position: fixed;
+  width: 15%;
+  max-width: 175px;
+  right: 0%;
+  bottom: 0;
+  z-index: 1;
+}
 
 @media (max-width: 1024px) {
-  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-    max-width: calc(80% - 70px);
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    transform: translate(0, 37px);
+  }
+}
+@media (max-width: 992px) {
+  .book-page-one .course_area {
+    padding: 15px 5%;
+  }
+  .book-page-one .answer_area {
+    flex-direction: column;
+  }
+  .book-page-one .answer_area .answer_content_area {
+    width: 100%;
+  }
+  .book-page-one .answer_area .answer_content_area::before, .book-page-one .answer_area .answer_content_area::after {
+    display: none;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_head::before {
+    display: none;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .topic_area {
+    width: 30%;
+    margin: 0 0 20px;
+    max-width: 250px;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .user_answer {
+    width: calc(100% - 155px);
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle,
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area {
+    width: calc(100% - 155px);
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    transform: translate(0, 34px);
+    max-width: 150px;
+  }
+  .book-page-one .answer_area .chatbot_bookman {
+    display: none;
   }
 }
 @media (max-width: 768px) {
-  .book-page-one .dialogue_area .dialogue_block_area .dialogue_block .dialog_box {
-    max-width: calc(100% - 70px);
+  .book-page-one .course_area .course_name {
+    width: calc(100% - 110px);
+  }
+  .book-page-one .course_area .course_img_area .course_img {
+    max-width: 100px;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_head .head_label {
+    right: 35px;
+    width: 75px;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_head .head_label span {
+    font-size: 15px;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_head .head_label p {
+    font-size: 25px;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_head .head_label::before {
+    border-right: 37.5px solid #5B3716;
+    border-left: 37.5px solid #5B3716;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame {
+    flex-direction: column;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area {
+    width: 100%;
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .topic_name {
+    width: calc(100% - 80px);
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .user_answer {
+    width: calc(100% - 105px);
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_tittle,
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_area {
+    width: calc(100% - 105px);
+  }
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    max-width: 100px;
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area {
+    padding: 75px calc(30px + 2.5%);
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar {
+    width: 40px;
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialogue_avatar p {
+    height: 40px;
+    font-size: 17px;
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .dialogue_area .dialogue_block .dialog_box {
+    max-width: calc(100% - 55px);
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area {
+    padding: 40px calc(2.5% + 10px);
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area {
+    right: calc(2.5% + 10px);
+    padding: 5px 10px;
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_text {
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .book-page-one .answer_area .answer_content_area .answer_content_frame .user_area .feedback_area .feedback_star_content .feedback_fraction .feedback_star_bookman {
+    display: none;
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_icon_area {
+    margin: 0 auto 30px;
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: translate(0, 0);
+  }
+  .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_text {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=SREebook.css.map */
