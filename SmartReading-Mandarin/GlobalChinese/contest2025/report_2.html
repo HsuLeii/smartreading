@@ -19,43 +19,80 @@
     // Posted by tom, modified by community. See post 'Timeline' for change history
     // Retrieved 2025-11-13, License - CC BY-SA 4.0
     var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-    const radarIcons = {
-      id: 'radarIcons',
-      beforeDatasetDraw(chart, args, plugins) {
-        const { ctx, data, scales: {r} } = chart;
+//     var radarIcons = {
+//       id: 'radarIcons',
+//       beforeDatasetDraw(chart, args, plugins) {
+//         const { ctx, data, scales: {r} } = chart;
 
-        console.log(r) 
-        const xCenter = r.xCenter;
-        const yCenter = r.yCenter;
-        const drawingArea = r.drawingArea;
-        const angleLines = data.datasets[0].icons.length;
-        const angle = 360 / angleLines;
+//         console.log(r) 
+//         const xCenter = r.xCenter;
+//         const yCenter = r.yCenter;
+//         const drawingArea = r.drawingArea;
+//         const angleLines = data.datasets[0].icons.length;
+//         const angle = 360 / angleLines;
 
-        function degreesToRadians(degrees){
-          return degrees * (Math.PI / 180);
-        }
+//         function degreesToRadians(degrees){
+//           return degrees * (Math.PI / 180);
+//         }
 
-        data.datasets[0].icons.forEach((icon , index) => {
-          ctx.save();
-const degrees = angle * index;
-        const radians = degreesToRadians(degrees);
+//         data.datasets[0].icons.forEach((icon , index) => {
+//           ctx.save();
+// const degrees = angle * index;
+//         const radians = degreesToRadians(degrees);
 
-        const xCoor = Math.cos(radians)
-        const yCoor = - drawingArea + Math.sin(radians)
-        ctx.translate(xCenter, yCenter);
-        ctx.rotate(radians)
-        const image = new Image();
-        image.src = data.datasets[0].icons[0];
-        ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
-        ctx.restore();
-          })
+//         const xCoor = Math.cos(radians)
+//         const yCoor = - drawingArea + Math.sin(radians)
+//         ctx.translate(xCenter, yCenter);
+//         ctx.rotate(radians)
+//         const image = new Image();
+//         image.src = data.datasets[0].icons[0];
+//         ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
+//         ctx.restore();
+//           })
 
           
 
         
 
+//     }
+//   };
+
+  var radarIcons = {
+    beforeDatasetDraw(chart, args, plugins) {
+    
+      const { ctx, data, scales: {r} } = chart;
+      
+
+      console.log(r) 
+        // const xCenter = r.xCenter;
+        // const yCenter = r.yCenter;
+        // const drawingArea = r.drawingArea;
+    const angleLines = data.datasets[0].icons.length;
+        const angle = 360 / angleLines;
+
+        function degreesToRadians(degrees){
+          return degrees * (Math.PI / 10);
+        }
+
+        data.datasets[0].icons.forEach((icon , index) => {
+          ctx.save();
+          const degrees = angle * index;
+        const radians = degreesToRadians(degrees);
+        const xCoor = Math.cos(radians)
+        // const yCoor = - drawingArea + Math.sin(radians)
+        // ctx.translate(xCenter, yCenter);
+        ctx.rotate(radians)
+        const image = new Image();
+        image.src = data.datasets[0].icons[0];
+        ctx.drawImage(image , 40, 40);
+        ctx.restore();
+          })
+
+        
     }
-  }
+    };
+
+  // Chart.register(radarIcons);
 
     var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
 
@@ -72,18 +109,11 @@ const degrees = angle * index;
           pointHoverRadius: 10,
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
-          // icons: [icon, icon, icon, icon, icon, icon, icon],
+          icons: [icon, icon, icon, icon, icon],
         }]
       },
 
       options: {
-        // plugins: {
-        //   legend: {
-        //             display:false
-        //         }
-        // },
-
-
         plugins: {
           datalabels: {
             color: '#20221f',
@@ -97,6 +127,7 @@ const degrees = angle * index;
             borderWidth: 1,
             borderRadius: 5,
             padding: 5,
+        icons: [icon, icon, icon, icon, icon],
             formatter: function (value, context) {
               return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
                 .datasets[0].data[context.dataIndex] + '%';
@@ -104,25 +135,28 @@ const degrees = angle * index;
             font: function (context) {
               var width = context.chart.width;
               var size = Math.round(width / 25);
-              alert(width);
+              
+              // alert(width)
+              
               return {
                 weight: 'bold',
                 size: size,
               };
-            }
+            },
+
+            
           },
         },
 
         scales: {},
 
         animation: {
-          onComplete: function () {
-
-          }
         }
 
       },
-      // plugins: [radarIcons]
+      plugins: [radarIcons]
+
+      
     });
     // new Chart(document.getElementById("ndvi_evi_chart"), {
     //   type: 'radar',

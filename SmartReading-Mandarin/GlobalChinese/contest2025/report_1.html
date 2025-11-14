@@ -21,30 +21,26 @@
       const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
     // setup 
     const data = {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
       datasets: [{
         label: 'Weekly Sales',
-        data: [18, 12, 6, 9, 12, 3, 9],
+        data: [18, 12, 6, 9, 12],
         backgroundColor: [
           'rgba(255, 26, 104, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(0, 0, 0, 0.2)'
+          'rgba(153, 102, 255, 0.2)'
         ],
         borderColor: [
           'rgba(255, 26, 104, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(0, 0, 0, 1)'
+          'rgba(153, 102, 255, 1)'
         ],
         borderWidth: 1,
-        icons: [icon, icon, icon, icon, icon, icon, icon],
+        icons: [icon, icon, icon, icon, icon],
       }]
     };
       
@@ -54,35 +50,31 @@
         const { ctx, data, scales: {r} } = chart;
 
         console.log(r) 
-        const xCenter = r.xCenter;
-        const yCenter = r.yCenter;
+        // const xCenter = r.xCenter;
+        // const yCenter = r.yCenter;
         const drawingArea = r.drawingArea;
         const angleLines = data.datasets[0].icons.length;
         const angle = 360 / angleLines;
 
         function degreesToRadians(degrees){
-          return degrees * (Math.PI / 180);
+          return degrees * (Math.PI / 10);
         }
 
         data.datasets[0].icons.forEach((icon , index) => {
           ctx.save();
-const degrees = angle * index;
+          const degrees = angle * index;
         const radians = degreesToRadians(degrees);
-
         const xCoor = Math.cos(radians)
         const yCoor = - drawingArea + Math.sin(radians)
-        ctx.translate(xCenter, yCenter);
+        // ctx.translate(xCenter, yCenter);
         ctx.rotate(radians)
         const image = new Image();
         image.src = data.datasets[0].icons[0];
         ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
         ctx.restore();
+
+        alert(xCoor)
           })
-
-          
-
-        
-
     }
   }
 
@@ -107,10 +99,6 @@ const degrees = angle * index;
         },
 
         animation: {
-      onComplete: function() {
-        const img = document.getElementById('myChart').toDataURL('image/png')
-        document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">'
-      }
     },
       },
       plugins: [radarIcons]
