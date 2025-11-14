@@ -66,7 +66,8 @@
       console.log(r) 
         // const xCenter = r.xCenter;
         // const yCenter = r.yCenter;
-        // const drawingArea = r.drawingArea;
+        
+        // const drawingArea = r.chart;
     const angleLines = data.datasets[0].icons.length;
         const angle = 360 / angleLines;
 
@@ -75,7 +76,7 @@
         }
 
         data.datasets[0].icons.forEach((icon , index) => {
-          ctx.save();
+          // ctx.save();
           const degrees = angle * index;
         const radians = degreesToRadians(degrees);
         const xCoor = Math.cos(radians)
@@ -85,14 +86,38 @@
         const image = new Image();
         image.src = data.datasets[0].icons[0];
         ctx.drawImage(image , 500, 200);
-        ctx.restore();
+        // ctx.restore();
           })
 
         
     }
     };
 
-  // Chart.register(radarIcons);
+  const plugin = {
+  id: 'getDistance',
+  afterDraw(chart) {
+    const c = chart.ctx;
+    const rScale = chart.scale;
+    c.save();
+    chart.data.datasets[0].data.forEach(function(item, index) {
+      const point = rScale.getPointPositionForValue(0.5 + index, 100);
+      
+      const image = new Image();
+      const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+        image.src = icon;
+        // ctx.drawImage(image , 500, 200);
+      
+      c.beginPath();
+      c.fillStyle = 'red';
+      c.fillRect(point.x - 0, point.y - 0, 100, 100);
+      c.drawImage(image , point.x - 0, point.y - 0,);
+      c.fill();
+    });
+    c.restore();
+  }
+};
+  
+    // Chart.register(radarIcons);
 
     var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
 
@@ -114,6 +139,7 @@
       },
 
       options: {
+
         plugins: {
           datalabels: {
             color: '#20221f',
@@ -154,8 +180,8 @@
         }
 
       },
-      plugins: [radarIcons]
-
+      plugins: [radarIcons],
+plugins: [plugin],
       
     });
     // new Chart(document.getElementById("ndvi_evi_chart"), {
