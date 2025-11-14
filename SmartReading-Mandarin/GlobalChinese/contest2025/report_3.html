@@ -13,29 +13,29 @@
 
     <script>
         var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-        // const plugin = {
-        //     id: 'getDistance',
-        //     afterDraw(chart) {
-        //         const c = chart.ctx;
-        //         const rScale = chart.scale;
-        //         c.save();
-        //         chart.data.datasets[0].data.forEach(function (item, index) {
-        //             const point = rScale.getPointPositionForValue(0.5 + index, 100);
+        const plugin = {
+            id: 'getDistance',
+            afterDraw(chart) {
+                const c = chart.ctx;
+                const rScale = chart.scale;
+                c.save();
+                chart.data.datasets[0].data.forEach(function (item, index) {
+                    const point = rScale.getPointPositionForValue(0.5 + index, 100);
 
-        //             const image = new Image();
-        //             const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-        //             image.src = icon;
-        //             // ctx.drawImage(image , 500, 200);
+                    const image = new Image();
+                    const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+                    image.src = icon;
+                    // ctx.drawImage(image , 500, 200);
 
-        //             c.beginPath();
-        //             c.fillStyle = 'red';
-        //             c.fillRect(point.x - 0, point.y - 0, 100, 100);
-        //             c.drawImage(image, point.x - 0, point.y - 0, );
-        //             c.fill();
-        //         });
-        //         c.restore();
-        //     }
-        // };
+                    c.beginPath();
+                    c.fillStyle = 'red';
+                    c.fillRect(point.x - 0, point.y - 0, 100, 100);
+                    c.drawImage(image, point.x - 0, point.y - 0, );
+                    c.fill();
+                });
+                c.restore();
+            }
+        };
 
 
         var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
