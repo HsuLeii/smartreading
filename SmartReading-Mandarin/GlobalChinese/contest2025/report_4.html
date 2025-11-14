@@ -1,0 +1,90 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<div id="canvas-as-image"></div>
+
+<body>
+    <canvas id="ndvi_evi_chart" width="200" height="80"></canvas>
+
+    <script src="Content/js/chart2.9.3.min.js"></script>
+
+    <script>
+        // var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+        // const plugin = {
+        //     id: 'getDistance',
+        //     beforeDraw: (chart, args, options) => {
+        //         const c = chart.ctx;
+        //         const rScale = chart.scale;
+        //         c.save();
+        //         chart.data.datasets[0].data.forEach(function (item, index) {
+        //             const point = rScale.getPointPositionForValue(0.5 + index, 100);
+
+        //             const image = new Image();
+        //             const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+        //             image.src = icon;
+        //             // ctx.drawImage(image , 500, 200);
+
+        //             c.beginPath();
+        //             c.fillStyle = 'red';
+        //             c.fillRect(point.x - 0, point.y - 0, 100, 100);
+        //             c.drawImage(image, point.x - 0, point.y - 0, );
+        //             c.fill();
+        //         });
+        //         c.restore();
+        //     }
+        // };
+
+
+        var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
+
+        var myChart = new Chart(ctx1, {
+            type: 'radar',
+            data: {
+                labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
+                datasets: [{
+                    label: 'Weekly Sales',
+                    data: [61, 166, 160, 250, 150],
+                    pointRadius: 7,
+                    pointBackgroundColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+                    pointBorderColor: '#fff',
+                    pointHoverRadius: 10,
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+                }]
+            },
+
+            options: {
+
+                plugins: {
+                    datalabels: {
+                        color: '#20221f',
+                        // 位置
+                        anchor: 'top',
+                        // 水平位置
+                        align: 'end',
+                        // 文字置中
+                        textAlign: 'center',
+                        backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
+                        borderWidth: 1,
+                        borderRadius: 5,
+                        padding: 5,
+                    },
+                    
+                },
+
+                scales: {},
+            },
+            
+plugins: [],
+        });
+        
+    </script>
+
+</body>
+
+<!--  -->
+<!-- var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
+        document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">' -->
