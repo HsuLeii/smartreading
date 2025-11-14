@@ -4,15 +4,21 @@
 </head>
 
 
-<div id="canvas-as-image"></div>
+
 
 <body>
     <canvas id="ndvi_evi_chart" width="200" height="80"></canvas>
 
+        <div id="canvas-as-image"></div>
+
+        
+      <script src="Content/js/jquery-3.6.1.min.js"></script>
     <script src="Content/js/chart2.9.3.min.js"></script>
 
+    
+
     <script>
-        var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+        // var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
 
         var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
 
@@ -48,33 +54,16 @@
                         borderRadius: 5,
                         padding: 5,
                     },
-                    
-                },
 
-                scales: {},
+                },
             },
 
-plugins:[{
-      beforeDraw: (chart, args, options) => {
-                const c = chart.ctx;
-                const rScale = chart.scale;
-                chart.data.datasets[0].data.forEach(function (item, index) {
-                    const point = rScale.getPointPositionForValue(0.5 + index, 250);
-
-                    const image = new Image();
-                    const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-                    image.src = icon;
-                    c.drawImage(image, point.x - 0, point.y - 0, );
-                });
-                c.restore();
-            }
-    }]
         });
-        
+
+
+
+        var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
+        document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">'
     </script>
 
 </body>
-
-<!--  -->
-<!-- var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
-        document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">' -->
