@@ -15,7 +15,7 @@
         var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
         const plugin = {
             id: 'getDistance',
-            afterDraw(chart) {
+            beforeDraw: (chart, args, options) => {
                 const c = chart.ctx;
                 const rScale = chart.scale;
                 c.save();
@@ -73,21 +73,25 @@
                         borderRadius: 5,
                         padding: 5,
                     },
+                    
                 },
 
                 scales: {},
 
-                animation: {}
-
+                plugins: {
+      customCanvasBackgroundColor: {
+        color: 'lightGreen',
+      }
+    }
             },
             
-
+plugins: [plugin],
         });
         
     </script>
 
 </body>
 
-<!-- plugins: [plugin], -->
+<!--  -->
 <!-- var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
         document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">' -->
