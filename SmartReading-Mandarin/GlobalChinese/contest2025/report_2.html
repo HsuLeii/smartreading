@@ -7,95 +7,14 @@
 
   <canvas id="ndvi_evi_chart" width="200" height="80"></canvas>
   <div id="canvas-as-image"></div>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
-  <!-- <script src="https://hsuleii.github.io/taa/SJTT/Content/js/datalabels@0.7.0.js"></script> -->
-
-  <!-- <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script> -->
-
+  <script src="Content/js/chart2.9.3.min.js"></script>
+  
   <script>
     // Source - https://stackoverflow.com/a
     // Posted by tom, modified by community. See post 'Timeline' for change history
     // Retrieved 2025-11-13, License - CC BY-SA 4.0
     var icon = '../Content/image/bookcover/RA1019PCT300.jpg';
-    //     var radarIcons = {
-    //       id: 'radarIcons',
-    //       beforeDatasetDraw(chart, args, plugins) {
-    //         const { ctx, data, scales: {r} } = chart;
-
-    //         console.log(r) 
-    //         const xCenter = r.xCenter;
-    //         const yCenter = r.yCenter;
-    //         const drawingArea = r.drawingArea;
-    //         const angleLines = data.datasets[0].icons.length;
-    //         const angle = 360 / angleLines;
-
-    //         function degreesToRadians(degrees){
-    //           return degrees * (Math.PI / 180);
-    //         }
-
-    //         data.datasets[0].icons.forEach((icon , index) => {
-    //           ctx.save();
-    // const degrees = angle * index;
-    //         const radians = degreesToRadians(degrees);
-
-    //         const xCoor = Math.cos(radians)
-    //         const yCoor = - drawingArea + Math.sin(radians)
-    //         ctx.translate(xCenter, yCenter);
-    //         ctx.rotate(radians)
-    //         const image = new Image();
-    //         image.src = data.datasets[0].icons[0];
-    //         ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
-    //         ctx.restore();
-    //           })
-
-
-
-
-
-    //     }
-    //   };
-
-    // var radarIcons = {
-    //   beforeDatasetDraw(chart, args, plugins) {
-
-    //     const { ctx, data, scales: {r} } = chart;
-
-
-    //     console.log(r) 
-    //       // const xCenter = r.xCenter;
-    //       // const yCenter = r.yCenter;
-
-    //       // const drawingArea = r.chart;
-    //   const angleLines = data.datasets[0].icons.length;
-    //       const angle = 360 / angleLines;
-
-    //       function degreesToRadians(degrees){
-    //         return degrees * (Math.PI / 10);
-    //       }
-
-    //       data.datasets[0].icons.forEach((icon , index) => {
-    //         // ctx.save();
-    //         const degrees = angle * index;
-    //       const radians = degreesToRadians(degrees);
-    //       const xCoor = Math.cos(radians)
-    //       // const yCoor = - drawingArea + Math.sin(radians)
-    //       // ctx.translate(xCenter, yCenter);
-    //       ctx.rotate(radians)
-    //       const image = new Image();
-    //       image.src = data.datasets[0].icons[0];
-    //       ctx.drawImage(image , 500, 200);
-    //       // ctx.restore();
-    //         })
-
-
-    //   }
-    //   };
-
-      
-
-    // Chart.register(radarIcons);
 
     var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
 
@@ -158,108 +77,7 @@
         alert(c);
     }
   }]
-
-
-      
-
     });
-    // new Chart(document.getElementById("ndvi_evi_chart"), {
-    //   type: 'radar',
-    //   data: {
-    //     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    //     datasets: [{
-    //         label: 'Weekly Sales',
-    //         data: [18, 12, 6, 9, 12, 3, 9],
-    //         backgroundColor: [
-    //           'rgba(255, 26, 104, 0.2)',
-    //           'rgba(54, 162, 235, 0.2)',
-    //           'rgba(255, 206, 86, 0.2)',
-    //           'rgba(75, 192, 192, 0.2)',
-    //           'rgba(153, 102, 255, 0.2)',
-    //           'rgba(255, 159, 64, 0.2)',
-    //           'rgba(0, 0, 0, 0.2)'
-    //         ],
-    //         borderColor: [
-    //           'rgba(255, 26, 104, 1)',
-    //           'rgba(54, 162, 235, 1)',
-    //           'rgba(255, 206, 86, 1)',
-    //           'rgba(75, 192, 192, 1)',
-    //           'rgba(153, 102, 255, 1)',
-    //           'rgba(255, 159, 64, 1)',
-    //           'rgba(0, 0, 0, 1)'
-    //         ],
-    //         borderWidth: 1,
-    //       icons: [icon, icon, icon, icon, icon, icon, icon],
-    //       }]
-    //   },
-
-    //   options: {
-    //     // plugins: {
-    //     //   legend: {
-    //     //             display:false
-    //     //         }
-    //     // },
-
-
-    //     plugins: {
-    //   datalabels: {
-    //                         color: '#20221f',
-    //                         // 位置
-    //                         anchor: 'top',
-    //                         // 水平位置
-    //                         align: 'end',
-    //                         // 文字置中
-    //                         textAlign: 'center',
-    //                         backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
-    //                         borderWidth: 1,
-    //                         borderRadius: 5,
-    //                         padding: 5,
-    //                         formatter: function (value, context) {
-    //                             return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
-    //                                 .datasets[0].data[context.dataIndex] + '%';
-    //                         },
-    //                         font: function (context) {
-    //                             var width = context.chart.width;
-    //                             var size = Math.round(width / 25);
-    // alert(width);
-    //                             return {
-    //                                 weight: 'bold',
-    //                                 size: size,
-    //                             };
-    //                         }
-    //                     },
-    //                   },
-
-    //     scales: {
-    //     },
-
-    //     animation: {
-    //       onComplete: function() {
-
-    //       }
-    //     }
-
-    //   },
-    //   // plugins: [radarIcons]
-    // });
-
-    // var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
-    //         document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">'
-  </script>
-
-  <!-- <script>
-    const c = ctx1;
-        const rScale = ctx1.scale;
-        myChart.data.datasets[0].data.forEach(function() {
-          const point = rScale.getPointPositionForValue(0.5 + index, 100);
-
-          const image = new Image();
-          const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-            image.src = icon;
-          c.drawImage(image , point.x - 0, point.y - 0,);
-        });
-
-        alert(c);
-  </script> -->
+    </script>
 
 </body>
