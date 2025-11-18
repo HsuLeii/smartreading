@@ -284,6 +284,10 @@
       </div>
 
     </div>
+
+              <canvas id="ndvi_evi_chart" style="width: 600px; height: 400px;"></canvas>
+
+
     <div class="report_chart">
       <div class="data_page_scroll">
         <div class="chart_control">
@@ -299,18 +303,50 @@
 
 
 
-  <!-- <script src="Content/js/jquery-3.6.1.min.js"></script> -->
+<script src="Content/js/chart2.9.3.min.js"></script>  
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+<script>
+    // Source - https://stackoverflow.com/a
+    // Posted by tom, modified by community. See post 'Timeline' for change history
+    // Retrieved 2025-11-13, License - CC BY-SA 4.0
 
-  <!-- <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script> -->
-<script src="https://hsuleii.github.io/taa/SJTT/Content/js/datalabels@0.7.0.js"></script>
-  
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script> -->
+    var ctx = document.getElementById('ndvi_evi_chart');
 
-   <!-- <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script> -->
-  
-  <script>
+    const myChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
+        datasets: [{
+          label: 'Weekly Sales',
+          data: [61, 166, 160, 250, 150],
+          pointRadius: 7,
+          pointBackgroundColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+          pointBorderColor: '#fff',
+          pointHoverRadius: 10,
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+          // icons: [icon, icon, icon, icon, icon],
+        }]
+      },
+
+    plugins: [{
+    afterDraw: function(chart) {
+      const ctx = chart.ctx;
+        const rScale = chart.scale;
+        chart.data.datasets[0].data.forEach(function(item, index) {
+          const point = rScale.getPointPositionForValue(0.5 + index, 250);
+
+          const image = new Image();
+          const icon = 'Content/image/bookcover/RA1019PCT300.jpg';
+            image.src = icon;
+          ctx.drawImage(image , point.x - 200 , point.y - 200);
+
+        });
+    }
+  }]
+    });
+    </script>
+  <!-- <script>
     // Chart.Tooltip.positioners.center = function (elements) {
     //   const { x, y, base } = elements[0]._model;
     //   const height = base - y;
@@ -419,7 +455,7 @@ alert(width);
 
       },
     });
-  </script>
+  </script> -->
 
 </body>
 
