@@ -14,11 +14,10 @@
     // Source - https://stackoverflow.com/a
     // Posted by tom, modified by community. See post 'Timeline' for change history
     // Retrieved 2025-11-13, License - CC BY-SA 4.0
-    var icon = '../Content/image/bookcover/RA1019PCT300.jpg';
 
-    var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
+    var ctx = document.getElementById('ndvi_evi_chart').getContext('2d');
 
-    var myChart = new Chart(ctx1, {
+    const myChart = new Chart(ctx, {
       type: 'radar',
       data: {
         labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
@@ -31,47 +30,20 @@
           pointHoverRadius: 10,
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
-          icons: [icon, icon, icon, icon, icon],
         }]
       },
 
-      options: {
-
-        plugins: {
-          datalabels: {
-            color: '#20221f',
-            // 位置
-            anchor: 'top',
-            // 水平位置
-            align: 'end',
-            // 文字置中
-            textAlign: 'center',
-            backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
-            borderWidth: 1,
-            borderRadius: 5,
-            padding: 5,
-            icons: [icon, icon, icon, icon, icon],
-          },
-        },
-
-        scales: {},
-
-        animation: {}
-
-      },
-
-    plugins: [{ // Defining an inline per-chart plugin
-    id: 'perChartCustomDraw',
+    plugins: [{
     afterDraw: function(chart) {
-      const c = chart.ctx;
+      const ctx = chart.ctx;
         const rScale = chart.scale;
-        chart.data.datasets[0].data.forEach(function(item, index) {
+        chart.data.datasets[0].data.forEach(function(index) {
           const point = rScale.getPointPositionForValue(0.5 + index, 100);
 
           const image = new Image();
-          const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+          const icon = '../Content/image/bookcover/RA1019PCT300.jpg';
             image.src = icon;
-          c.drawImage(image , point.x - 0, point.y - 0,);
+          ctx.drawImage(image , point.x - 0, point.y - 0,);
         });
     }
   }]
