@@ -18,105 +18,83 @@
     // Source - https://stackoverflow.com/a
     // Posted by tom, modified by community. See post 'Timeline' for change history
     // Retrieved 2025-11-13, License - CC BY-SA 4.0
-    var icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-//     var radarIcons = {
-//       id: 'radarIcons',
-//       beforeDatasetDraw(chart, args, plugins) {
-//         const { ctx, data, scales: {r} } = chart;
+    var icon = '../Content/image/bookcover/RA1019PCT300.jpg';
+    //     var radarIcons = {
+    //       id: 'radarIcons',
+    //       beforeDatasetDraw(chart, args, plugins) {
+    //         const { ctx, data, scales: {r} } = chart;
 
-//         console.log(r) 
-//         const xCenter = r.xCenter;
-//         const yCenter = r.yCenter;
-//         const drawingArea = r.drawingArea;
-//         const angleLines = data.datasets[0].icons.length;
-//         const angle = 360 / angleLines;
+    //         console.log(r) 
+    //         const xCenter = r.xCenter;
+    //         const yCenter = r.yCenter;
+    //         const drawingArea = r.drawingArea;
+    //         const angleLines = data.datasets[0].icons.length;
+    //         const angle = 360 / angleLines;
 
-//         function degreesToRadians(degrees){
-//           return degrees * (Math.PI / 180);
-//         }
+    //         function degreesToRadians(degrees){
+    //           return degrees * (Math.PI / 180);
+    //         }
 
-//         data.datasets[0].icons.forEach((icon , index) => {
-//           ctx.save();
-// const degrees = angle * index;
-//         const radians = degreesToRadians(degrees);
+    //         data.datasets[0].icons.forEach((icon , index) => {
+    //           ctx.save();
+    // const degrees = angle * index;
+    //         const radians = degreesToRadians(degrees);
 
-//         const xCoor = Math.cos(radians)
-//         const yCoor = - drawingArea + Math.sin(radians)
-//         ctx.translate(xCenter, yCenter);
-//         ctx.rotate(radians)
-//         const image = new Image();
-//         image.src = data.datasets[0].icons[0];
-//         ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
-//         ctx.restore();
-//           })
+    //         const xCoor = Math.cos(radians)
+    //         const yCoor = - drawingArea + Math.sin(radians)
+    //         ctx.translate(xCenter, yCenter);
+    //         ctx.rotate(radians)
+    //         const image = new Image();
+    //         image.src = data.datasets[0].icons[0];
+    //         ctx.drawImage(image , xCoor - 20 , yCoor , 40, 40);
+    //         ctx.restore();
+    //           })
 
-          
 
-        
 
-//     }
-//   };
 
-  var radarIcons = {
-    beforeDatasetDraw(chart, args, plugins) {
-    
-      const { ctx, data, scales: {r} } = chart;
+
+    //     }
+    //   };
+
+    // var radarIcons = {
+    //   beforeDatasetDraw(chart, args, plugins) {
+
+    //     const { ctx, data, scales: {r} } = chart;
+
+
+    //     console.log(r) 
+    //       // const xCenter = r.xCenter;
+    //       // const yCenter = r.yCenter;
+
+    //       // const drawingArea = r.chart;
+    //   const angleLines = data.datasets[0].icons.length;
+    //       const angle = 360 / angleLines;
+
+    //       function degreesToRadians(degrees){
+    //         return degrees * (Math.PI / 10);
+    //       }
+
+    //       data.datasets[0].icons.forEach((icon , index) => {
+    //         // ctx.save();
+    //         const degrees = angle * index;
+    //       const radians = degreesToRadians(degrees);
+    //       const xCoor = Math.cos(radians)
+    //       // const yCoor = - drawingArea + Math.sin(radians)
+    //       // ctx.translate(xCenter, yCenter);
+    //       ctx.rotate(radians)
+    //       const image = new Image();
+    //       image.src = data.datasets[0].icons[0];
+    //       ctx.drawImage(image , 500, 200);
+    //       // ctx.restore();
+    //         })
+
+
+    //   }
+    //   };
+
       
 
-      console.log(r) 
-        // const xCenter = r.xCenter;
-        // const yCenter = r.yCenter;
-        
-        // const drawingArea = r.chart;
-    const angleLines = data.datasets[0].icons.length;
-        const angle = 360 / angleLines;
-
-        function degreesToRadians(degrees){
-          return degrees * (Math.PI / 10);
-        }
-
-        data.datasets[0].icons.forEach((icon , index) => {
-          // ctx.save();
-          const degrees = angle * index;
-        const radians = degreesToRadians(degrees);
-        const xCoor = Math.cos(radians)
-        // const yCoor = - drawingArea + Math.sin(radians)
-        // ctx.translate(xCenter, yCenter);
-        ctx.rotate(radians)
-        const image = new Image();
-        image.src = data.datasets[0].icons[0];
-        ctx.drawImage(image , 500, 200);
-        // ctx.restore();
-          })
-
-        
-    }
-    };
-
-  const plugin = {
-  id: 'getDistance',
-  afterDraw(chart) {
-    const c = chart.ctx;
-    const rScale = chart.scale;
-    c.save();
-    chart.data.datasets[0].data.forEach(function(item, index) {
-      const point = rScale.getPointPositionForValue(0.5 + index, 100);
-      
-      const image = new Image();
-      const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
-        image.src = icon;
-        // ctx.drawImage(image , 500, 200);
-      
-      c.beginPath();
-      c.fillStyle = 'red';
-      c.fillRect(point.x - 0, point.y - 0, 100, 100);
-      c.drawImage(image , point.x - 0, point.y - 0,);
-      c.fill();
-    });
-    c.restore();
-  }
-};
-  
     // Chart.register(radarIcons);
 
     var ctx1 = document.getElementById('ndvi_evi_chart').getContext('2d');
@@ -153,36 +131,37 @@
             borderWidth: 1,
             borderRadius: 5,
             padding: 5,
-        icons: [icon, icon, icon, icon, icon],
-            formatter: function (value, context) {
-              return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
-                .datasets[0].data[context.dataIndex] + '%';
-            },
-            font: function (context) {
-              var width = context.chart.width;
-              var size = Math.round(width / 25);
-              
-              // alert(width)
-              
-              return {
-                weight: 'bold',
-                size: size,
-              };
-            },
-
-            
+            icons: [icon, icon, icon, icon, icon],
           },
         },
 
         scales: {},
 
-        animation: {
-        }
+        animation: {}
 
       },
-      plugins: [radarIcons],
-plugins: [plugin],
+
+    plugins: [{ // Defining an inline per-chart plugin
+    id: 'perChartCustomDraw',
+    afterDraw: function(chart) {
+      const c = chart.ctx;
+        const rScale = chart.scale;
+        chart.data.datasets[0].data.forEach(function(item, index) {
+          const point = rScale.getPointPositionForValue(0.5 + index, 100);
+
+          const image = new Image();
+          const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+            image.src = icon;
+          c.drawImage(image , point.x - 0, point.y - 0,);
+        });
+
+        alert(c);
+    }
+  }]
+
+
       
+
     });
     // new Chart(document.getElementById("ndvi_evi_chart"), {
     //   type: 'radar',
@@ -267,5 +246,20 @@ plugins: [plugin],
     // var img = document.getElementById('ndvi_evi_chart').toDataURL('image/png');
     //         document.getElementById('canvas-as-image').innerHTML = '<img src="' + img + '">'
   </script>
+
+  <!-- <script>
+    const c = ctx1;
+        const rScale = ctx1.scale;
+        myChart.data.datasets[0].data.forEach(function() {
+          const point = rScale.getPointPositionForValue(0.5 + index, 100);
+
+          const image = new Image();
+          const icon = 'https://www.chartjs.org/img/chartjs-logo.svg';
+            image.src = icon;
+          c.drawImage(image , point.x - 0, point.y - 0,);
+        });
+
+        alert(c);
+  </script> -->
 
 </body>
