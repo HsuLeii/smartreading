@@ -209,6 +209,8 @@
     </div>
 </div>
 
+<a href="#ebook_assessment" rel="modal:open" style="position: relative; z-index: 5;">學生自評</a>
+<br />
 <a href="#ebook_modal" rel="modal:open" style="position: relative; z-index: 5;">第一次閱讀獎章</a>
 <br />
 <a href="#ebook_modal_two" rel="modal:open" style="position: relative; z-index: 5;">第二次閱讀獎章</a>
@@ -217,7 +219,93 @@
 <br />
 <a href="#previewbadge" rel="modal:open" style="position: relative; z-index: 5;">試閱</a>
 
+<!-- 學生自評開始 -->
+<div id="ebook_assessment" class="modal ebook_medal_modal">
+    <div class="ebook_modal_content">
+        <div class="ebook_modal_title">
+            <h4>
+                你覺得自己看懂這本書的程度有多少？
+            </h4>
+            <h4>
+                How much do you think you understood this book?
+            </h4>
+        </div>
+        <div class="ebook_modal_medal_area">
+            <fieldset class="star_rating_area">
+                <input type="radio" id="star10" name="rating" value="10" disabled="">
+                <label for="star10" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
 
+                <input type="radio" id="star9" name="rating" value="9" disabled="">
+                <label for="star9" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star8" name="rating" value="8" disabled="">
+                <label for="star8" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star7" name="rating" value="7" disabled="">
+                <label for="star7" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star6" name="rating" value="6" disabled="">
+                <label for="star6" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star5" name="rating" value="5" disabled="">
+                <label for="star5" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star5" name="rating" value="5" disabled="">
+                <label for="star5" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star4" name="rating" value="4" disabled="">
+                <label for="star4" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star3" name="rating" value="3" disabled="">
+                <label for="star3" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star2" name="rating" value="2" disabled="">
+                <label for="star2" class="star_rating_item">
+                    <i class="fa-regular fa-star"></i>
+                </label>
+
+                <input type="radio" id="star1" name="rating" value="1" disabled="">
+                <label for="star1" class="star_rating_item get_star">
+                    <i class="fa-solid fa-star"></i>
+                </label>
+            </fieldset>
+        </div>
+        <div class="ebook_modal_button_area">
+            <div class="ebook_modal_button">
+                <a href="#" class="ebook_modal_button_item">
+                    送出<br />
+                    Send
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigator_area navigator_ebookman">
+        <div class="navigator_content">
+            <img src="image/photo/map/ebookman_first.png" alt="" class="ebookman">
+        </div>
+
+    </div>
+</div>
+<!-- 學生自評結束 -->
 
 <!-- 第一次閱讀獎章開始 -->
 <div id="ebook_modal" class="modal ebook_medal_modal">
@@ -298,21 +386,21 @@
                 <div class="book_tool_bar_icon">
                     <i class="fa-regular fa-heart"></i>
                 </div>
-                <p>喜歡<br/>Likes</p>
+                <p>喜歡<br />Likes</p>
             </div>
 
             <div class="book_tool_bar_item">
                 <div class="book_tool_bar_icon">
                     <i class="fa-solid fa-folder-open"></i>
                 </div>
-                <p>收藏<br/>Bookmarks</p>
+                <p>收藏<br />Bookmarks</p>
             </div>
 
             <div class="book_tool_bar_item">
                 <div class="book_tool_bar_icon">
                     <i class="fa-solid fa-comment-dots"></i>
                 </div>
-                <p>留言區<br/>Share Your Thoughts</p>
+                <p>留言區<br />Share Your Thoughts</p>
             </div>
         </div>
 
@@ -430,9 +518,9 @@
     //     }
     // });
 
-    $(".book_tool_bar_item").click(function(){
+    $(".book_tool_bar_item").click(function () {
         $(this).toggleClass("change_icon");
-        if($(this).hasClass("change_icon") && $(".book_tool_bar_icon").children().hasClass("fa-heart")){
+        if ($(this).hasClass("change_icon") && $(".book_tool_bar_icon").children().hasClass("fa-heart")) {
             $(this).find(".fa-heart").attr("class", "fa-solid fa-heart");
         } else {
             $(this).find(".fa-heart").attr("class", "fa-regular fa-heart");
@@ -440,7 +528,34 @@
     });
 
 
-    
+    // 星星
+    $(".star_rating_item").click(function () {
+        if ($(this).prevAll(".star_rating_item").hasClass("get_star")) {
+            $(this).addClass("get_star");
+            $(this).find("i").addClass("fa-solid");
+            $(this).find("i").removeClass("fa-regular");
+            $(this).prevAll(".star_rating_item").removeClass("get_star");
+            $(this)
+                .prevAll(".star_rating_item")
+                .children("i")
+                .removeClass("fa-solid")
+                .addClass("fa-regular");
+        } else if ($(this).hasClass("get_star")) {
+            $(this).removeClass("get_star");
+            $(this).find("i").removeClass("fa-solid");
+            $(this).find("i").addClass("fa-regular");
+        } else {
+            $(this).addClass("get_star");
+            $(this).find("i").removeClass("fa-regular");
+            $(this).find("i").addClass("fa-solid");
+            $(this).nextAll(".star_rating_item").addClass("get_star");
+            $(this)
+                .nextAll(".star_rating_item")
+                .children("i")
+                .addClass("fa-solid")
+                .removeClass("fa-regular");
+        }
+    });
 </script>
 </body>
 
