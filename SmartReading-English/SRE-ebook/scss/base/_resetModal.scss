@@ -42,10 +42,23 @@
                     border: 0px;
 
                     .star_rating_item {
+                        position: relative;
                         color: $grey;
                         float: right;
                         margin: 0 10px 0 0;
                         cursor: pointer;
+
+                        &::before{
+                            content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1.5px solid $grey;
+  position: absolute;
+  left: -17.75px;
+  margin: 3px 0 0 0;
+                        }
 
                         i{
                             font-size: 25px;
@@ -54,29 +67,47 @@
 
                     .get_star {
                         color: $main_color;
+
+                        &::before{
+background: radial-gradient($main_color 0%, $main_color 40%, transparent 50%, transparent);
+border: 1.5px solid $main_color;
+                        }
+                        
                     }
+
+
+input[type=radio]{
+    &~ label{
+            padding: 10px 25px 10px 5px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    }
+
+    
+}
 
                     input {
                         display: none;
 
-                        &:checked {
-                            &~.star_rating_item {
-                                color: $main_color;
-                            }
-                        }
+                        // &:checked {
+                        //     &~.star_rating_item {
+                        //         color: $main_color;
+                        //     }
+                        // }
                     }
 
-                    &:not(:checked) {
-                        .star_rating_item {
-                            &:hover {
-                                color: $main_color;
+                    // &:not(:checked) {
+                    //     .star_rating_item {
+                    //         &:hover {
+                    //             color: $main_color;
 
-                                &~.star_rating_item {
-                                    color: $main_color;
-                                }
-                            }
-                        }
-                    }
+                    //             &~.star_rating_item {
+                    //                 color: $main_color;
+                    //             }
+                    //         }
+                    //     }
+                    // }
                 }
             }
 
