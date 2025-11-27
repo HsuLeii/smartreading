@@ -36,23 +36,34 @@
                     max-width: 350px;
                     animation: jump 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
                 }
+            }
+
+            .ebook_modal_star_rating_area{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                .star_rating_text{
+                    width: 20%;
+
+                    &.star_rating_text_left{
+                        text-align: right;
+                    }
+                }
 
                 .star_rating_area {
                     float: left;
                     border: 0px;
                     display: flex;
+                    justify-content: space-between;
                     flex-wrap: wrap;
-                    width: calc(100% - 17px);
-                    margin: 0 0 0 17px;
+                    width: calc(60% - 17px);
+                    margin: 0 10px 0 27px;
 
                     .star_rating_item {
                         display: flex;
                         position: relative;
                         color: $grey;
-                        float: right;
-                        margin: 0 10px 0 0;
                         cursor: pointer;
-                        width: calc(10% - 10px);
 
                         &::before {
                             content: "";
@@ -118,7 +129,7 @@
 
                     input[type=radio] {
                         &~label {
-                            padding: 10px 25px 10px 5px;
+                            padding: 10px 5px;
                             display: block;
                             position: relative;
                             cursor: pointer;
@@ -700,6 +711,35 @@
     }
 }
 
+@media (max-width: 1400px) {
+    .blocker {
+        .ebook_medal_modal {
+            .ebook_modal_content {
+                .ebook_modal_star_rating_area{
+                    flex-direction: column;
+
+                .star_rating_text{
+                    width: 100%;
+
+                    &.star_rating_text_left{
+                        text-align: left;
+                    }
+
+                    &.star_rating_text_right{
+                        text-align: right;
+                    }
+                }
+
+                .star_rating_area {
+                    width: calc(100% - 17px);
+                    margin: 0 0 0 17px;
+                }
+            }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 1024px) {
     .blocker {
@@ -810,16 +850,12 @@
             .ebook_modal_content {
                 width: 90%;
 
-                .ebook_modal_medal_area {
+                .ebook_modal_star_rating_area{
                     .star_rating_area {
 
                         .star_rating_item {
                             margin: 0 5px 0 0;
                             width: calc(20% - 5px);
-
-                            i {
-                                font-size: 20px;
-                            }
                         }
                     }
                 }
