@@ -285,7 +285,7 @@
 
     </div>
 
-              <canvas id="ndvi_evi_chart" style="width: 600px; height: 400px;"></canvas>
+    <canvas id="ndvi_evi_chart" style="width: 600px; height: 400px;"></canvas>
 
 
     <div class="report_chart">
@@ -303,20 +303,38 @@
 
 
 
-<script src="Content/js/chart2.9.3.min.js"></script>  
+  <script src="Content/js/chart2.9.3.min.js"></script>
 
-<script>
+  <script>
     // Source - https://stackoverflow.com/a
     // Posted by tom, modified by community. See post 'Timeline' for change history
     // Retrieved 2025-11-13, License - CC BY-SA 4.0
 
     var ctx = document.getElementById('ndvi_evi_chart');
 
+    // const icon1 = 'Content/image/report/table_icon_one.svg';
+    // const icon2 = 'Content/image/report/table_icon_two.svg';
+    // const icon3 = 'Content/image/report/table_icon_three.svg';
+    // const icon4 = 'Content/image/report/table_icon_four.svg';
+    // const icon5 = 'Content/image/report/table_icon_five.svg';
+
+    // const imgArray = [];
+    // const imageText = ['RA1019PCT300','RA2002PCT300'];
+
+    //   imageText.forEach(image => {
+    //   const img = new Image(30 , 30);
+      // img.src = 'https://hsuleii.github.io/smartreading/SmartReading-Mandarin/GlobalChinese/contest2025/Content/image/bookcover/${image}.jpg';
+    //   imgArray.push(img)
+    // })
+
+    // console.log(imgArray)
+    
     const myChart = new Chart(ctx, {
       type: 'radar',
       data: {
         labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
         datasets: [{
+          // icons: [icon1, icon2, icon3, icon4, icon5],
           label: 'Weekly Sales',
           data: [61, 166, 160, 250, 150],
           pointRadius: 7,
@@ -325,27 +343,57 @@
           pointHoverRadius: 10,
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
-          // icons: [icon, icon, icon, icon, icon],
+
+          // pointStyle:imgArray
         }]
       },
 
-    plugins: [{
-    afterDraw: function(chart) {
-      const ctx = chart.ctx;
-        const rScale = chart.scale;
-        chart.data.datasets[0].data.forEach(function(item, index) {
-          const point = rScale.getPointPositionForValue(0.5 + index, 250);
+      plugins: [{
+        afterDraw: function (chart) {
+                      // console.log(chart.data.datasets[0].data);
 
-          const image = new Image();
-          const icon = 'Content/image/bookcover/RA1019PCT300.jpg';
-            image.src = icon;
-          ctx.drawImage(image , point.x - 200 , point.y - 200);
+                      
 
-        });
-    }
-  }]
+                      
+
+          const ctx = chart.ctx;
+          const rScale = chart.scale;
+          chart.data.datasets[0].data.forEach(function (item, index) {
+
+            const imgArray = [];
+            const imageText = ['RA1019PCT300','RA2002PCT300'];
+            const point = rScale.getPointPositionForValue(index , 250);
+            // const image = new Image();
+
+const pointPosition = rScale.getPointPositionForValue(index, 50);
+
+console.log(pointPosition);
+            
+
+            var str_year = String(point);
+
+              imageText.forEach(image => {
+      const img = new Image(30 , 30);
+      img.src = `Content/image/bookcover/${image}.jpg`;
+      imgArray.push(img)
+    ctx.drawImage(imgArray[0], point.x - 200, point.y - 200);
+    })
+
+    // console.log(img)
+    // console.log(str_year)
+
+            
+
+            
+            // image1.src = chart.data.datasets[0].icons[1];
+            // ctx.drawImage(image, point.x - 200, point.y - 200);
+            // ctx.drawImage(image1, point.x - 200, point.y - 200);
+
+          });
+        }
+      }]
     });
-    </script>
+  </script>
   <!-- <script>
     // Chart.Tooltip.positioners.center = function (elements) {
     //   const { x, y, base } = elements[0]._model;
