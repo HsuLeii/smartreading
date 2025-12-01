@@ -348,6 +348,17 @@
         }]
       },
 
+      options: {
+        layout: {
+            padding: {
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 80
+            }
+        }
+    },
+
       plugins: [{
         afterDraw: function (chart) {
           const ctx = chart.ctx;
@@ -359,6 +370,8 @@
             const pointPositionThree = rScale.getPointPositionForValue(2, 300);
             const pointPositionFour = rScale.getPointPositionForValue(3, 300);
             const pointPositionFive = rScale.getPointPositionForValue(4, 300);
+
+            console.log(pointPositionOne, pointPositionTwo, pointPositionFive)
 
             const imgOne = new Image();
             const imgTwo = new Image();
@@ -372,11 +385,11 @@
             imgFour.src = chart.data.datasets[0].icons[3];
             imgFive.src = chart.data.datasets[0].icons[4];
 
-            ctx.drawImage(imgOne, pointPositionOne.x - 20, pointPositionOne.y - 20, 40, 40);
-            ctx.drawImage(imgTwo, pointPositionTwo.x - 20, pointPositionTwo.y - 20, 40, 40);
-            ctx.drawImage(imgThree, pointPositionThree.x - 20, pointPositionThree.y - 20, 40, 40);
-            ctx.drawImage(imgFour, pointPositionFour.x - 20, pointPositionFour.y - 20, 40, 40);
-            ctx.drawImage(imgFive, pointPositionFive.x - 20, pointPositionFive.y - 20, 40, 40);
+            ctx.drawImage(imgOne, pointPositionOne.x - (pointPositionOne.x -  pointPositionFive.x) / 2 - 0, (pointPositionFive.y - pointPositionOne.y) / 2 , 40, 40);
+            ctx.drawImage(imgTwo, pointPositionTwo.x - (pointPositionTwo.x - pointPositionOne.x) / 2 - 40, (pointPositionTwo.y - pointPositionOne.y) / 2 , 40, 40);
+            ctx.drawImage(imgThree, pointPositionOne.x + (pointPositionThree.x -  pointPositionFour.x) / 2 + 20, (pointPositionThree.y - pointPositionTwo.y) / 2 + pointPositionTwo.y - 20, 40, 40);
+            ctx.drawImage(imgFour, pointPositionOne.x - 20, pointPositionFour.y - 40, 40, 40);
+            ctx.drawImage(imgFive, pointPositionOne.x - (pointPositionThree.x -  pointPositionFour.x) / 2 - 60, (pointPositionFour.y - pointPositionFive.y) / 2 + pointPositionTwo.y - 20, 40, 40);
 
           });
         }
