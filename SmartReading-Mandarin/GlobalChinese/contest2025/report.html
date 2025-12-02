@@ -283,19 +283,26 @@
         </div>
       </div>
 
-    </div>
+      <div class="report_content_chart">
+      <canvas id="ndvi_evi_chart" style="width: 600px; height: 600px;"></canvas>
 
-    <canvas id="ndvi_evi_chart" style="width: 600px; height: 400px;"></canvas>
+      <div class="chart_canvas_text_area">
+        <div id="chartPointOne" class="chart_point_text chart_point_one">
+          <h4>
+            閱讀恆毅力
+          </h4>
 
-
-    <div class="report_chart">
-      <div class="data_page_scroll">
-        <div class="chart_control">
-          <canvas id="school-wide-average" style="width: 300px; height: 300px;"></canvas>
+          <p>
+            每天登入並閱讀
+          </p>
         </div>
       </div>
+    </div>
 
     </div>
+
+    
+    
     <div class="bottom-text mediumbg">
       <p>國立臺灣師範大學心測中心 版權所有‧翻印必究</p>
     </div>
@@ -349,11 +356,18 @@
       },
 
       options: {
+        tooltips: {
+                    // Disable the on-canvas tooltip
+                    enabled: false,
+                },
+                legend: {
+                    display: false,
+                },
         layout: {
             padding: {
                 left: 0,
                 right: 0,
-                top: 0,
+                top: 40,
                 bottom: 80
             }
         }
@@ -363,7 +377,6 @@
         afterDraw: function (chart) {
           const ctx = chart.ctx;
           const rScale = chart.scale;
-          chart.data.datasets[0].data.forEach(function (item, index) {
 
             const pointPositionOne = rScale.getPointPositionForValue(0, 300);
             const pointPositionTwo = rScale.getPointPositionForValue(1, 300);
@@ -371,7 +384,14 @@
             const pointPositionFour = rScale.getPointPositionForValue(3, 300);
             const pointPositionFive = rScale.getPointPositionForValue(4, 300);
 
-            console.log(pointPositionOne, pointPositionTwo, pointPositionFive)
+
+const h4 = document.getElementById("chartPointOne");
+// div.append(h3);
+// h3.append("Hello! I am an appended h3");
+h4.style.top = (pointPositionFive.y - pointPositionOne.y) / 2 + 'px'; // 50 pixels from the top
+    h4.style.left = pointPositionOne.x - (pointPositionOne.x -  pointPositionFive.x) / 2 + 'px';
+h4.style.position = "absolute";
+
 
             const imgOne = new Image();
             const imgTwo = new Image();
@@ -391,121 +411,13 @@
             ctx.drawImage(imgFour, pointPositionOne.x - 20, pointPositionFour.y - 40, 40, 40);
             ctx.drawImage(imgFive, pointPositionOne.x - (pointPositionThree.x -  pointPositionFour.x) / 2 - 60, (pointPositionFour.y - pointPositionFive.y) / 2 + pointPositionTwo.y - 20, 40, 40);
 
-          });
         }
       }]
     });
+
+
+
   </script>
-  <!-- <script>
-    // Chart.Tooltip.positioners.center = function (elements) {
-    //   const { x, y, base } = elements[0]._model;
-    //   const height = base - y;
-    //   return { x, y: y + (height / 2) };
-    // };
-
-    // 全校平均得分pg1
-    var ctx1 = document.getElementById('school-wide-average').getContext('2d');
-
-    var image = new Image();
-image.src = 'https://www.chartjs.org/img/chartjs-logo.svg';
-
-
-    var myChart = new Chart(ctx1, {
-      type: 'radar',
-      data: {
-        labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
-
-        
-
-        datasets: [{
-          // label: ["ofVotes",],
-  //         labels: {
-  //   render: 'percentage',
-  //   fontColor: ['green', 'white', 'red'],
-  //   precision: 2
-  // },
-          data: [61, 166, 160, 250, 150],
-          borderWidth: 1,
-          anchor: 'center',
-          // 水平位置
-          align: 'center',
-          // 文字置中
-          anchor: 'end',
-          pointRadius: 7,
-          pointBackgroundColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
-          pointBorderColor: '#fff',
-          pointHoverRadius: 10,
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
-        }],
-      },
-
-
-      options: {
-    //     
-  //   scale: {
-  //         // the diagonal segment lines
-  //         // the labels at the tip of each data point (we're disabling the default ones)
-  //         // and adding our own hacky ones so we can attach click events
-  //         pointLabels: {
-  //           display: true,
-  //           fontColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
-  //           fontSize: 20,
-  //           callback: function (label) {
-  //             return label;
-  //           },
-  //         },
-
-  //         // the segment lines
-  //         ticks: {
-  //           display: true, // toggle this on hover!
-  //           fontColor: '#585959',
-  //           fontSize: 14,
-  //           backdropPaddingX: 0,
-  //           backdropPaddingY: 0,
-  //           beginAtZero: true,
-  //           min: 0,
-  //           max: 250,
-  //           //maxTicksLimit: 5,
-  //           stepSize: 50,
-  //           //suggestedMax: 100,
-  //           //suggestedMin: 0,
-  //           // showLabelBackdrop: false,
-  //         },
-  //       },
-      
-      plugins: {
-  datalabels: {
-                        color: '#20221f',
-                        // 位置
-                        anchor: 'top',
-                        // 水平位置
-                        align: 'end',
-                        // 文字置中
-                        textAlign: 'center',
-                        backgroundColor: ['#83caff', '#ffcf3a', '#5dc994', '#fe9795'],
-                        borderWidth: 1,
-                        borderRadius: 5,
-                        padding: 5,
-                        formatter: function (value, context) {
-                            return context.chart.data.labels[context.dataIndex] + '\n' + context.chart.data
-                                .datasets[0].data[context.dataIndex] + '%';
-                        },
-                        font: function (context) {
-                            var width = context.chart.width;
-                            var size = Math.round(width / 25);
-alert(width);
-                            return {
-                                weight: 'bold',
-                                size: size,
-                            };
-                        }
-                    },
-                  }
-
-      },
-    });
-  </script> -->
 
 </body>
 
