@@ -313,8 +313,7 @@
             </h4>
 
             <p>
-              閱讀書籍高於DACC-M測驗等級，<br/>
-              且評量獲得A+
+              閱讀書籍高於DACC-M測驗等級，且評量獲得A+
             </p>
           </div>
 
@@ -353,36 +352,24 @@
 
   <script src="Content/js/chart2.9.3.min.js"></script>
 
-  <script>
-    // Source - https://stackoverflow.com/a
-    // Posted by tom, modified by community. See post 'Timeline' for change history
-    // Retrieved 2025-11-13, License - CC BY-SA 4.0
+  <!-- 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
 
+  <script>
     var ctx = document.getElementById('ndvi_evi_chart');
 
-    const icon1 = 'Content/image/report/table_icon_one.svg';
+    const icon1 = 'Content/image/report/chart_icon_one.svg';
     const icon2 = 'Content/image/report/table_icon_two.svg';
     const icon3 = 'Content/image/report/table_icon_three.svg';
     const icon4 = 'Content/image/report/table_icon_four.svg';
     const icon5 = 'Content/image/report/table_icon_five.svg';
 
-    // const imgArray = [];
-    // const imageText = ['RA1019PCT300','RA2002PCT300'];
-
-    //   imageText.forEach(image => {
-    //   const img = new Image(30 , 30);
-    // img.src = 'https://hsuleii.github.io/smartreading/SmartReading-Mandarin/GlobalChinese/contest2025/Content/image/bookcover/${image}.jpg';
-    //   imgArray.push(img)
-    // })
-
-    // console.log(imgArray)
-
     const myChart = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
+        labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力"],
         datasets: [{
-          label: ["恆毅力", "執行力", "精進力", "博學力", "成長力1"],
+          label: ["恆毅力", "執行力", "精進力", "博學力", "成長力"],
           data: [61, 166, 160, 250, 150],
           pointRadius: 7,
           pointBackgroundColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
@@ -391,27 +378,38 @@
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
           icons: [icon1, icon2, icon3, icon4, icon5],
-
-          // pointStyle:imgArray
         }]
       },
 
       options: {
+
         tooltips: {
-          // Disable the on-canvas tooltip
-          // enabled: false,
+          bodyFontSize: 20,
+          titleFontSize: 20,
+
+          callbacks: {
+            label: function (tooltipItem, context) {
+              return context.labels[tooltipItem.index]
+              
+            },
+
+            labelTextSize: function(tooltipItem, chart) {
+                    return '25px';
+                }
+          }
         },
         legend: {
           display: false,
         },
         layout: {
           padding: {
-            left: 230,
-            right: 230,
-            top: 40,
-            bottom: 40
+            left: 150,
+            right: 150,
+            top: 150,
+            bottom: 150
           }
-        }
+        },
+
       },
 
       plugins: [{
@@ -438,20 +436,20 @@
           imgFive.src = chart.data.datasets[0].icons[4];
 
           //點的位置
-          const chartPointOneX = pointPositionOne.x - (pointPositionOne.x - pointPositionFive.x) / 2;
-          const chartPointOneY = (pointPositionFive.y - pointPositionOne.y) / 2;
+          const chartPointOneX = pointPositionOne.x - (pointPositionOne.x - pointPositionFive.x) / 2 - 25;
+          const chartPointOneY = (pointPositionFive.y - pointPositionOne.y) / 2 + 75;
 
-          const chartPointTwoX = pointPositionTwo.x - (pointPositionTwo.x - pointPositionOne.x) / 2;
-          const chartPointTwoY = (pointPositionTwo.y - pointPositionOne.y) / 2;
+          const chartPointTwoX = pointPositionTwo.x - (pointPositionTwo.x - pointPositionOne.x) / 2 + -25;
+          const chartPointTwoY = (pointPositionTwo.y - pointPositionOne.y) / 2 + 75;
 
-          const chartPointThreeX = pointPositionOne.x + (pointPositionThree.x - pointPositionFour.x) / 2;
+          const chartPointThreeX = pointPositionOne.x + (pointPositionThree.x - pointPositionFour.x) / 2 ;
           const chartPointThreeY = (pointPositionThree.y - pointPositionTwo.y) / 2 + pointPositionTwo.y;
 
           const chartPointFourX = pointPositionOne.x;
           const chartPointFourY = pointPositionFour.y;
 
-          const chartPointFiveX = pointPositionOne.x - (pointPositionThree.x - pointPositionFour.x) / 2;
-          const chartPointFiveY = (pointPositionFour.y - pointPositionFive.y) / 2 + pointPositionFive.y;
+          const chartPointFiveX = pointPositionOne.x - (pointPositionThree.x - pointPositionFour.x) / 2 - 125;
+          const chartPointFiveY = (pointPositionFour.y - pointPositionFive.y) / 2 + pointPositionFive.y - 75;
 
           //文字
           const chartPointOne = document.getElementById("chartPointOne");
@@ -476,11 +474,11 @@
           chartPointFive.style.top = chartPointFiveY + 'px';
           chartPointFive.style.left = chartPointFiveX + 'px';
 
-          ctx.drawImage(imgOne, chartPointOneX - 0, chartPointOneY, 40, 40);
-          ctx.drawImage(imgTwo, chartPointTwoX - 40, chartPointTwoY, 40, 40);
-          ctx.drawImage(imgThree, chartPointThreeX + 20, chartPointThreeY - 20, 40, 40);
-          ctx.drawImage(imgFour, chartPointFourX - 20, chartPointFourY - 40, 40, 40);
-          ctx.drawImage(imgFive, chartPointFiveX - 60, chartPointFiveY - 20, 40, 40);
+          ctx.drawImage(imgOne, chartPointOneX - 0, chartPointOneY, 100, 100);
+          ctx.drawImage(imgTwo, chartPointTwoX - 0, chartPointTwoY, 100, 100);
+          ctx.drawImage(imgThree, chartPointThreeX + 0, chartPointThreeY - 0, 100, 100);
+          ctx.drawImage(imgFour, chartPointFourX - 0, chartPointFourY - 0, 100, 100);
+          ctx.drawImage(imgFive, chartPointFiveX - 0, chartPointFiveY - 0, 100, 100);
 
         }
       }]
