@@ -415,84 +415,84 @@
 
       plugins: [{
         // 畫雷達圖外框線
-        beforeDraw: (chart) => {
-          const ctx = chart.ctx;
-          const rScale = chart.scale;
-          // 最高分
-          const dataArr = chart.data.datasets[0].data;
-          const maxDataArr = Math.max.apply(null, dataArr);
-          // 最高分
-          const pointPositionOne = rScale.getPointPositionForValue(0, maxDataArr + 15);
-          const pointPositionTwo = rScale.getPointPositionForValue(1, maxDataArr + 15);
-          const pointPositionThree = rScale.getPointPositionForValue(2, maxDataArr + 15);
-          const pointPositionFour = rScale.getPointPositionForValue(3, maxDataArr + 15);
-          const pointPositionFive = rScale.getPointPositionForValue(4, maxDataArr + 15);
+  //       beforeDraw: (chart) => {
+  //         const ctx = chart.ctx;
+  //         const rScale = chart.scale;
+  //         // 最高分
+  //         const dataArr = chart.data.datasets[0].data;
+  //         const maxDataArr = Math.max.apply(null, dataArr);
+  //         // 最高分
+  //         const pointPositionOne = rScale.getPointPositionForValue(0, maxDataArr + 15);
+  //         const pointPositionTwo = rScale.getPointPositionForValue(1, maxDataArr + 15);
+  //         const pointPositionThree = rScale.getPointPositionForValue(2, maxDataArr + 15);
+  //         const pointPositionFour = rScale.getPointPositionForValue(3, maxDataArr + 15);
+  //         const pointPositionFive = rScale.getPointPositionForValue(4, maxDataArr + 15);
 
-          // 第一點到第二點橘
-          ctx.beginPath();
-          ctx.moveTo(pointPositionOne.x, pointPositionOne.y);
-          ctx.lineTo(pointPositionTwo.x, pointPositionTwo.y);
-          ctx.strokeStyle = '#ee8919';
-          ctx.lineWidth = 15;
-          ctx.stroke();
+  //         // 第一點到第二點橘
+  //         ctx.beginPath();
+  //         ctx.moveTo(pointPositionOne.x, pointPositionOne.y);
+  //         ctx.lineTo(pointPositionTwo.x, pointPositionTwo.y);
+  //         ctx.strokeStyle = '#ee8919';
+  //         ctx.lineWidth = 15;
+  //         ctx.stroke();
 
-          // ctx.save();
-          // ctx.moveTo(pointPositionOne.x, pointPositionOne.y);
-          // ctx.lineTo(pointPositionTwo.x + 80, pointPositionTwo.y - 80);
-          // ctx.strokeStyle = '#ee8919';
-          // ctx.lineWidth = 15;
-          // ctx.rotate(30 * Math.PI / 180);
-
-
-  //         ctx.fillStyle = 'red';
-  // ctx.fillRect(pointPositionTwo.x, pointPositionTwo.y, 60, 10);
-  // ctx.rotate(108 * Math.PI / 180);
-  // ctx.fill();
+  //         // ctx.save();
+  //         // ctx.moveTo(pointPositionOne.x, pointPositionOne.y);
+  //         // ctx.lineTo(pointPositionTwo.x + 80, pointPositionTwo.y - 80);
+  //         // ctx.strokeStyle = '#ee8919';
+  //         // ctx.lineWidth = 15;
+  //         // ctx.rotate(30 * Math.PI / 180);
 
 
-  // ctx.rotate(60 * Math.PI / 180);
-  // ctx.fillStyle = 'red';
-  // ctx.fillRect(pointPositionOne.x - 20, pointPositionOne.y - 40, 40, 40);
-  // ctx.fill();
+  // //         ctx.fillStyle = 'red';
+  // // ctx.fillRect(pointPositionTwo.x, pointPositionTwo.y, 60, 10);
+  // // ctx.rotate(108 * Math.PI / 180);
+  // // ctx.fill();
 
+
+  // // ctx.rotate(60 * Math.PI / 180);
+  // // ctx.fillStyle = 'red';
+  // // ctx.fillRect(pointPositionOne.x - 20, pointPositionOne.y - 40, 40, 40);
+  // // ctx.fill();
+
+  // //         ctx.restore();
+
+  //         // 第二點到第三點深藍
+  //         ctx.beginPath();
+  //         ctx.moveTo(pointPositionTwo.x, pointPositionTwo.y);
+  //         ctx.lineTo(pointPositionThree.x, pointPositionThree.y);
+  //         ctx.strokeStyle = '#0078bb';
+  //         ctx.lineWidth = 15;
+  //         ctx.stroke();
   //         ctx.restore();
 
-          // 第二點到第三點深藍
-          ctx.beginPath();
-          ctx.moveTo(pointPositionTwo.x, pointPositionTwo.y);
-          ctx.lineTo(pointPositionThree.x, pointPositionThree.y);
-          ctx.strokeStyle = '#0078bb';
-          ctx.lineWidth = 15;
-          ctx.stroke();
-          ctx.restore();
+  //         // 第三點到第四點綠
+  //         ctx.beginPath();
+  //         ctx.moveTo(pointPositionThree.x, pointPositionThree.y);
+  //         ctx.lineTo(pointPositionFour.x, pointPositionFour.y);
+  //         ctx.strokeStyle = '#84b526';
+  //         ctx.lineWidth = 15;
+  //         ctx.stroke();
+  //         ctx.restore();
 
-          // 第三點到第四點綠
-          ctx.beginPath();
-          ctx.moveTo(pointPositionThree.x, pointPositionThree.y);
-          ctx.lineTo(pointPositionFour.x, pointPositionFour.y);
-          ctx.strokeStyle = '#84b526';
-          ctx.lineWidth = 15;
-          ctx.stroke();
-          ctx.restore();
+  //         // 第四點到第五點粉
+  //         ctx.beginPath();
+  //         ctx.moveTo(pointPositionFour.x, pointPositionFour.y);
+  //         ctx.lineTo(pointPositionFive.x + 0, pointPositionFive.y);
+  //         ctx.strokeStyle = '#df007c';
+  //         ctx.lineWidth = 15;
+  //         ctx.stroke();
+  //         ctx.restore();
 
-          // 第四點到第五點粉
-          ctx.beginPath();
-          ctx.moveTo(pointPositionFour.x, pointPositionFour.y);
-          ctx.lineTo(pointPositionFive.x + 0, pointPositionFive.y);
-          ctx.strokeStyle = '#df007c';
-          ctx.lineWidth = 15;
-          ctx.stroke();
-          ctx.restore();
-
-          // 第五點到第一點淺藍
-          ctx.beginPath();
-          ctx.moveTo(pointPositionFive.x + 0, pointPositionFive.y);
-          ctx.lineTo(pointPositionOne.x - 0, pointPositionOne.y + 0);
-          ctx.strokeStyle = '#00abce';
-          ctx.lineWidth = 15;
-          ctx.stroke();
-          ctx.restore();
-        },
+  //         // 第五點到第一點淺藍
+  //         ctx.beginPath();
+  //         ctx.moveTo(pointPositionFive.x + 0, pointPositionFive.y);
+  //         ctx.lineTo(pointPositionOne.x - 0, pointPositionOne.y + 0);
+  //         ctx.strokeStyle = '#00abce';
+  //         ctx.lineWidth = 15;
+  //         ctx.stroke();
+  //         ctx.restore();
+  //       },
 
         // 圖像
         afterDraw: (chart) => {
