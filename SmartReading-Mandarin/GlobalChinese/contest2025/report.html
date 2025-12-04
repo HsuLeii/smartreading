@@ -415,7 +415,7 @@
 
       plugins: [{
         // 畫雷達圖外框線
-        beforeDraw: function(chart) {
+        beforeDraw: function (chart) {
           const ctx = chart.ctx;
           const rScale = chart.scale;
           // 最高分
@@ -436,26 +436,14 @@
           ctx.lineWidth = 15;
           ctx.stroke();
 
-          // ctx.save();
-          // ctx.moveTo(pointPositionOne.x, pointPositionOne.y);
-          // ctx.lineTo(pointPositionTwo.x + 80, pointPositionTwo.y - 80);
-          // ctx.strokeStyle = '#ee8919';
-          // ctx.lineWidth = 15;
-          // ctx.rotate(30 * Math.PI / 180);
-
-
-  //         ctx.fillStyle = 'red';
-  // ctx.fillRect(pointPositionTwo.x, pointPositionTwo.y, 60, 10);
-  // ctx.rotate(108 * Math.PI / 180);
-  // ctx.fill();
-
-
-  // ctx.rotate(60 * Math.PI / 180);
-  // ctx.fillStyle = 'red';
-  // ctx.fillRect(pointPositionOne.x - 20, pointPositionOne.y - 40, 40, 40);
-  // ctx.fill();
-
-  //         ctx.restore();
+          //斜線淺藍
+          ctx.save();
+          ctx.translate(pointPositionOne.x, pointPositionOne.y);
+          ctx.rotate(1 * Math.PI / 180);
+          ctx.translate(-pointPositionOne.x, -pointPositionOne.y);
+          ctx.fillStyle = "#00abce";
+          ctx.fillRect(pointPositionOne.x - 5, pointPositionOne.y - 50, 10, 60);
+          ctx.restore();
 
           // 第二點到第三點深藍
           ctx.beginPath();
@@ -464,6 +452,14 @@
           ctx.strokeStyle = '#0078bb';
           ctx.lineWidth = 15;
           ctx.stroke();
+
+          //斜線橘
+          ctx.save();
+          ctx.translate(pointPositionTwo.x, pointPositionTwo.y);
+          ctx.rotate(65 * Math.PI / 180);
+          ctx.translate(-pointPositionTwo.x, -pointPositionTwo.y);
+          ctx.fillStyle = "#ee8919";
+          ctx.fillRect(pointPositionTwo.x - 5, pointPositionTwo.y - 50, 10, 60);
           ctx.restore();
 
           // 第三點到第四點綠
@@ -473,6 +469,14 @@
           ctx.strokeStyle = '#84b526';
           ctx.lineWidth = 15;
           ctx.stroke();
+
+          //斜線深藍
+          ctx.save();
+          ctx.translate(pointPositionThree.x, pointPositionThree.y);
+          ctx.rotate(150 * Math.PI / 180);
+          ctx.translate(-pointPositionThree.x, -pointPositionThree.y);
+          ctx.fillStyle = "#0078bb";
+          ctx.fillRect(pointPositionThree.x - 5, pointPositionThree.y - 50, 10, 60);
           ctx.restore();
 
           // 第四點到第五點粉
@@ -482,6 +486,14 @@
           ctx.strokeStyle = '#df007c';
           ctx.lineWidth = 15;
           ctx.stroke();
+
+          //斜線綠
+          ctx.save();
+          ctx.translate(pointPositionFour.x, pointPositionFour.y);
+          ctx.rotate(210 * Math.PI / 180);
+          ctx.translate(-pointPositionFour.x, -pointPositionFour.y);
+          ctx.fillStyle = "#84b526";
+          ctx.fillRect(pointPositionFour.x - 5, pointPositionFour.y - 50, 10, 60);
           ctx.restore();
 
           // 第五點到第一點淺藍
@@ -491,11 +503,19 @@
           ctx.strokeStyle = '#00abce';
           ctx.lineWidth = 15;
           ctx.stroke();
+
+          //斜線粉
+          ctx.save();
+          ctx.translate(pointPositionFive.x, pointPositionFive.y);
+          ctx.rotate(285 * Math.PI / 180);
+          ctx.translate(-pointPositionFive.x, -pointPositionFive.y);
+          ctx.fillStyle = "#df007c";
+          ctx.fillRect(pointPositionFive.x - 5, pointPositionFive.y - 50, 10, 60);
           ctx.restore();
         },
 
         // 圖像
-        afterDraw: function(chart) {
+        afterDraw: function (chart) {
           const ctx = chart.ctx;
           const rScale = chart.scale;
           // 最高分
@@ -559,7 +579,7 @@
           chartPointFive.style.top = chartPointFiveY + 'px';
           chartPointFive.style.left = chartPointFiveX + 'px';
 
-          ctx.drawImage(imgOne, chartPointOneX , chartPointOneY - 100, 100, 100);
+          ctx.drawImage(imgOne, chartPointOneX, chartPointOneY - 100, 100, 100);
           ctx.drawImage(imgTwo, chartPointTwoX + 50, chartPointTwoY - 100, 100, 100);
           ctx.drawImage(imgThree, chartPointThreeX + 75, chartPointThreeY - 10, 100, 100);
           ctx.drawImage(imgFour, chartPointFourX, chartPointFourY, 100, 100);
