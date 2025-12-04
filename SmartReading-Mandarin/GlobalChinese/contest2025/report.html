@@ -314,7 +314,12 @@
 
             <p>
               閱讀書籍高於DACC-M測驗等級，且評量獲得A+
+
             </p>
+
+            <!-- <p>
+              級，且評量獲得A+
+            </p> -->
           </div>
 
           <div id="chartPointFour" class="chart_point_text chart_point_four">
@@ -358,11 +363,12 @@
   <script>
     var ctx = document.getElementById('ndvi_evi_chart');
 
+
     const icon1 = 'Content/image/report/chart_icon_one.svg';
-    const icon2 = 'Content/image/report/table_icon_two.svg';
-    const icon3 = 'Content/image/report/table_icon_three.svg';
-    const icon4 = 'Content/image/report/table_icon_four.svg';
-    const icon5 = 'Content/image/report/table_icon_five.svg';
+    const icon2 = 'Content/image/report/chart_icon_two.svg';
+    const icon3 = 'Content/image/report/chart_icon_three.svg';
+    const icon4 = 'Content/image/report/chart_icon_four.svg';
+    const icon5 = 'Content/image/report/chart_icon_five.svg';
 
     const myChart = new Chart(ctx, {
       type: 'radar',
@@ -384,18 +390,14 @@
       options: {
 
         tooltips: {
-          bodyFontSize: 20,
-          titleFontSize: 20,
+          bodyFontSize: 16,
+          titleFontSize: 16,
 
           callbacks: {
             label: function (tooltipItem, context) {
               return context.labels[tooltipItem.index]
-              
             },
 
-            labelTextSize: function(tooltipItem, chart) {
-                    return '25px';
-                }
           }
         },
         legend: {
@@ -413,15 +415,82 @@
       },
 
       plugins: [{
-        afterDraw: function (chart) {
+        // 畫雷達圖外框線
+        beforeDraw: (chart) => {
           const ctx = chart.ctx;
           const rScale = chart.scale;
+          // 最高分
+          const dataArr = chart.data.datasets[0].data;
+          const maxDataArr = Math.max.apply(null, dataArr);
+          // 最高分
+          const pointPositionOne = rScale.getPointPositionForValue(0, maxDataArr + 15);
+          const pointPositionTwo = rScale.getPointPositionForValue(1, maxDataArr + 15);
+          const pointPositionThree = rScale.getPointPositionForValue(2, maxDataArr + 15);
+          const pointPositionFour = rScale.getPointPositionForValue(3, maxDataArr + 15);
+          const pointPositionFive = rScale.getPointPositionForValue(4, maxDataArr + 15);
 
-          const pointPositionOne = rScale.getPointPositionForValue(0, 300);
-          const pointPositionTwo = rScale.getPointPositionForValue(1, 300);
-          const pointPositionThree = rScale.getPointPositionForValue(2, 300);
-          const pointPositionFour = rScale.getPointPositionForValue(3, 300);
-          const pointPositionFive = rScale.getPointPositionForValue(4, 300);
+          // 第一點到第二點橘
+          ctx.beginPath();
+          ctx.moveTo(pointPositionOne.x, pointPositionOne.y);
+          ctx.lineTo(pointPositionTwo.x, pointPositionTwo.y);
+          ctx.moveTo(pointPositionTwo.x, pointPositionTwo.y);
+          ctx.lineTo(pointPositionTwo.x + 20, pointPositionTwo.y - 20);
+          ctx.strokeStyle = '#ee8919';
+          ctx.lineWidth = 15;
+
+          ctx.stroke();
+          ctx.restore();
+
+          // 第二點到第三點深藍
+          ctx.beginPath();
+          ctx.moveTo(pointPositionTwo.x, pointPositionTwo.y);
+          ctx.lineTo(pointPositionThree.x, pointPositionThree.y);
+          ctx.strokeStyle = '#0078bb';
+          ctx.lineWidth = 15;
+          ctx.stroke();
+          ctx.restore();
+
+          // 第三點到第四點綠
+          ctx.beginPath();
+          ctx.moveTo(pointPositionThree.x, pointPositionThree.y);
+          ctx.lineTo(pointPositionFour.x, pointPositionFour.y);
+          ctx.strokeStyle = '#84b526';
+          ctx.lineWidth = 15;
+          ctx.stroke();
+          ctx.restore();
+
+          // 第四點到第五點粉
+          ctx.beginPath();
+          ctx.moveTo(pointPositionFour.x, pointPositionFour.y);
+          ctx.lineTo(pointPositionFive.x + 0, pointPositionFive.y);
+          ctx.strokeStyle = '#df007c';
+          ctx.lineWidth = 15;
+          ctx.stroke();
+          ctx.restore();
+
+          // 第五點到第一點淺藍
+          ctx.beginPath();
+          ctx.moveTo(pointPositionFive.x + 0, pointPositionFive.y);
+          ctx.lineTo(pointPositionOne.x - 0, pointPositionOne.y + 0);
+          ctx.strokeStyle = '#00abce';
+          ctx.lineWidth = 15;
+          ctx.stroke();
+          ctx.restore();
+        },
+
+        // 圖像
+        afterDraw: (chart) => {
+          const ctx = chart.ctx;
+          const rScale = chart.scale;
+          // 最高分
+          const dataArr = chart.data.datasets[0].data;
+          const maxDataArr = Math.max.apply(null, dataArr);
+          // 最高分
+          const pointPositionOne = rScale.getPointPositionForValue(0, maxDataArr + 15);
+          const pointPositionTwo = rScale.getPointPositionForValue(1, maxDataArr + 15);
+          const pointPositionThree = rScale.getPointPositionForValue(2, maxDataArr + 15);
+          const pointPositionFour = rScale.getPointPositionForValue(3, maxDataArr + 15);
+          const pointPositionFive = rScale.getPointPositionForValue(4, maxDataArr + 15);
 
           const imgOne = new Image();
           const imgTwo = new Image();
@@ -436,20 +505,20 @@
           imgFive.src = chart.data.datasets[0].icons[4];
 
           //點的位置
-          const chartPointOneX = pointPositionOne.x - 250;
-          const chartPointOneY = pointPositionOne.y + 100;
+          const chartPointOneX = pointPositionOne.x - 300;
+          const chartPointOneY = pointPositionOne.y + 50;
 
-          const chartPointTwoX = pointPositionTwo.x - (pointPositionTwo.x - pointPositionOne.x) / 2 + -25;
-          const chartPointTwoY = (pointPositionTwo.y - pointPositionOne.y) / 2 + 75;
+          const chartPointTwoX = pointPositionOne.x + 200;
+          const chartPointTwoY = pointPositionOne.y + 50;
 
-          const chartPointThreeX = pointPositionOne.x + (pointPositionThree.x - pointPositionFour.x) / 2 + 25;
-          const chartPointThreeY = (pointPositionThree.y - pointPositionTwo.y) / 2 + pointPositionTwo.y - 75;
+          const chartPointThreeX = pointPositionThree.x + 50;
+          const chartPointThreeY = pointPositionTwo.y + 100;
 
-          const chartPointFourX = pointPositionOne.x;
-          const chartPointFourY = pointPositionFour.y;
+          const chartPointFourX = pointPositionOne.x - 50;
+          const chartPointFourY = pointPositionFour.y + 20;
 
-          const chartPointFiveX = pointPositionOne.x - (pointPositionThree.x - pointPositionFour.x) / 2 - 125;
-          const chartPointFiveY = (pointPositionFour.y - pointPositionFive.y) / 2 + pointPositionFive.y - 75;
+          const chartPointFiveX = pointPositionFour.x - 175;
+          const chartPointFiveY = pointPositionTwo.y + 100;
 
           //文字
           const chartPointOne = document.getElementById("chartPointOne");
@@ -474,12 +543,11 @@
           chartPointFive.style.top = chartPointFiveY + 'px';
           chartPointFive.style.left = chartPointFiveX + 'px';
 
-          ctx.drawImage(imgOne, chartPointOneX - 0, chartPointOneY, 100, 100);
-          ctx.drawImage(imgTwo, chartPointTwoX - 0, chartPointTwoY, 100, 100);
-          ctx.drawImage(imgThree, chartPointThreeX + 0, chartPointThreeY - 0, 100, 100);
-          ctx.drawImage(imgFour, chartPointFourX - 0, chartPointFourY - 0, 100, 100);
-          ctx.drawImage(imgFive, chartPointFiveX - 0, chartPointFiveY - 0, 100, 100);
-
+          ctx.drawImage(imgOne, chartPointOneX , chartPointOneY - 100, 100, 100);
+          ctx.drawImage(imgTwo, chartPointTwoX + 50, chartPointTwoY - 100, 100, 100);
+          ctx.drawImage(imgThree, chartPointThreeX + 75, chartPointThreeY - 10, 100, 100);
+          ctx.drawImage(imgFour, chartPointFourX, chartPointFourY, 100, 100);
+          ctx.drawImage(imgFive, chartPointFiveX - 60, chartPointThreeY - 10, 100, 100);
         }
       }]
     });
