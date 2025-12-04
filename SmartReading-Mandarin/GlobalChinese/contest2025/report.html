@@ -286,7 +286,7 @@
       </div>
 
       <div class="report_content_chart">
-        <canvas id="ndvi_evi_chart" style="width: 600px; height: 600px;"></canvas>
+        <canvas id="report_chart" style="width: 600px; height: 600px;"></canvas>
 
         <div class="chart_canvas_text_area">
           <div id="chartPointOne" class="chart_point_text chart_point_one">
@@ -316,12 +316,7 @@
 
             <p>
               閱讀書籍高於DACC-M測驗等級，且評量獲得A+
-
             </p>
-
-            <!-- <p>
-              級，且評量獲得A+
-            </p> -->
           </div>
 
           <div id="chartPointFour" class="chart_point_text chart_point_four">
@@ -360,7 +355,7 @@
   <script src="Content/js/chart2.9.3.min.js"></script>
 
   <script>
-    var ctx = document.getElementById('ndvi_evi_chart');
+    var ctx = document.getElementById('report_chart');
 
 
     const icon1 = 'Content/image/report/chart_icon_one.svg';
@@ -372,16 +367,16 @@
     const myChart = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: ["恆毅力", "執行力", "精進力", "博學力", "成長力"],
+        labels: ['恆毅力', '執行力', '精進力', '博學力', '成長力'],
         datasets: [{
-          label: ["恆毅力", "執行力", "精進力", "博學力", "成長力"],
+          label: ['恆毅力', '執行力', '精進力', '博學力', '成長力'],
           data: [61, 166, 160, 250, 150],
           pointRadius: 7,
-          pointBackgroundColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+          pointBackgroundColor: ['#00abce', '#ee8919', '#0078bb', '#84b526', '#df007c'],
           pointBorderColor: '#fff',
           pointHoverRadius: 10,
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: ["#00abce", "#ee8919", "#0078bb", "#84b526", "#df007c"],
+          pointHoverBorderColor: ['#00abce', '#ee8919', '#0078bb', '#84b526', '#df007c'],
           icons: [icon1, icon2, icon3, icon4, icon5],
         }]
       },
@@ -441,7 +436,7 @@
           ctx.translate(pointPositionOne.x, pointPositionOne.y);
           ctx.rotate(1 * Math.PI / 180);
           ctx.translate(-pointPositionOne.x, -pointPositionOne.y);
-          ctx.fillStyle = "#00abce";
+          ctx.fillStyle = '#00abce';
           ctx.fillRect(pointPositionOne.x - 5, pointPositionOne.y - 50, 10, 60);
           ctx.restore();
 
@@ -458,7 +453,7 @@
           ctx.translate(pointPositionTwo.x, pointPositionTwo.y);
           ctx.rotate(65 * Math.PI / 180);
           ctx.translate(-pointPositionTwo.x, -pointPositionTwo.y);
-          ctx.fillStyle = "#ee8919";
+          ctx.fillStyle = '#ee8919';
           ctx.fillRect(pointPositionTwo.x - 5, pointPositionTwo.y - 50, 10, 60);
           ctx.restore();
 
@@ -475,7 +470,7 @@
           ctx.translate(pointPositionThree.x, pointPositionThree.y);
           ctx.rotate(150 * Math.PI / 180);
           ctx.translate(-pointPositionThree.x, -pointPositionThree.y);
-          ctx.fillStyle = "#0078bb";
+          ctx.fillStyle = '#0078bb';
           ctx.fillRect(pointPositionThree.x - 5, pointPositionThree.y - 50, 10, 60);
           ctx.restore();
 
@@ -492,7 +487,7 @@
           ctx.translate(pointPositionFour.x, pointPositionFour.y);
           ctx.rotate(210 * Math.PI / 180);
           ctx.translate(-pointPositionFour.x, -pointPositionFour.y);
-          ctx.fillStyle = "#84b526";
+          ctx.fillStyle = '#84b526';
           ctx.fillRect(pointPositionFour.x - 5, pointPositionFour.y - 50, 10, 60);
           ctx.restore();
 
@@ -509,7 +504,7 @@
           ctx.translate(pointPositionFive.x, pointPositionFive.y);
           ctx.rotate(285 * Math.PI / 180);
           ctx.translate(-pointPositionFive.x, -pointPositionFive.y);
-          ctx.fillStyle = "#df007c";
+          ctx.fillStyle = '#df007c';
           ctx.fillRect(pointPositionFive.x - 5, pointPositionFive.y - 50, 10, 60);
           ctx.restore();
         },
@@ -557,11 +552,11 @@
           const chartPointFiveY = pointPositionTwo.y + 100;
 
           //文字
-          const chartPointOne = document.getElementById("chartPointOne");
-          const chartPointTwo = document.getElementById("chartPointTwo");
-          const chartPointThree = document.getElementById("chartPointThree");
-          const chartPointFour = document.getElementById("chartPointFour");
-          const chartPointFive = document.getElementById("chartPointFive");
+          const chartPointOne = document.getElementById('chartPointOne');
+          const chartPointTwo = document.getElementById('chartPointTwo');
+          const chartPointThree = document.getElementById('chartPointThree');
+          const chartPointFour = document.getElementById('chartPointFour');
+          const chartPointFive = document.getElementById('chartPointFive');
 
           //圖+字定位
           chartPointOne.style.top = chartPointOneY + 'px';
