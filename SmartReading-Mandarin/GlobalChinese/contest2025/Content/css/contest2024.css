@@ -2666,7 +2666,6 @@ body {
 .page .report_header .report_header_information .report_header_information_time,
 .page .report_header .report_header_information .report_header_information_name,
 .page .report_header .report_header_information .report_header_information_level {
-  width: 31.6666666667%;
   width: 100%;
 }
 .page .report_header .report_header_information .report_header_information_time p {
@@ -2687,7 +2686,6 @@ body {
 .page .report_header .report_header_information .report_header_information_name h3,
 .page .report_header .report_header_information .report_header_information_name h4 {
   color: #595757;
-  text-align: center;
   text-align: left;
 }
 .page .report_header .report_header_information .report_header_information_level {
@@ -2699,7 +2697,6 @@ body {
 }
 .page .report_header .report_header_information .report_header_information_level h4 {
   color: #004896;
-  text-align: center;
   margin: 0 0 15px 0;
   text-align: left;
 }
@@ -2984,6 +2981,42 @@ body {
   font-size: 12px;
 }
 
+@media screen and (min-width: 768px) {
+  .page h3 {
+    font-size: 27px;
+  }
+  .page h4 {
+    font-size: 21px;
+  }
+  .page p,
+  .page span,
+  .page svg {
+    font-size: 15px;
+  }
+  .page th,
+  .page td {
+    font-size: 15px;
+  }
+  .page .report_header .report_header_information {
+    flex-direction: row;
+  }
+  .page .report_header .report_header_information .report_header_information_time,
+  .page .report_header .report_header_information .report_header_information_name,
+  .page .report_header .report_header_information .report_header_information_level {
+    width: 31.6666666667%;
+  }
+  .page .report_header .report_header_information .report_header_information_name h3,
+  .page .report_header .report_header_information .report_header_information_name h4 {
+    text-align: center;
+  }
+  .page .report_header .report_header_information .report_header_information_level h4 {
+    text-align: center;
+  }
+  .page .report_header .report_header_information .report_header_information_level .report_header_information_level_value {
+    display: flex;
+    justify-content: center;
+  }
+}
 @media screen and (min-width: 1024px) {
   .page {
     /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
@@ -3169,6 +3202,61 @@ body {
   }
   .page .report_content .report_content_chart {
     position: relative;
+    overflow-x: scroll;
+  }
+  .page .report_content .report_content_chart .report_chart {
+    min-width: 900px !important;
+    margin: 0 auto;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 900px;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text {
+    position: absolute;
+    text-align: center;
+    max-width: 200px;
+    width: 200px;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text h4 {
+    font-size: 25px;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text p {
+    font-size: 15px;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_one {
+    transform: translate(-350px, -100px);
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_one h4 {
+    color: #00abce;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_two {
+    transform: translate(150px, -100px);
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_two h4 {
+    color: #ee8919;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_three {
+    transform: translate(100px, 100px);
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_three h4 {
+    color: #0078bb;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_four {
+    transform: translate(-100px, 25px);
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_four h4 {
+    color: #84b526;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_five {
+    transform: translate(-300px, 100px);
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_five h4 {
+    color: #df007c;
   }
   .page .report_content .report_content_analysis {
     padding: 30px 10px;
@@ -3499,41 +3587,58 @@ body {
   }
   .page .report_content .report_content_chart {
     position: relative;
+    overflow-x: scroll;
+  }
+  .page .report_content .report_content_chart .report_chart {
+    min-width: 900px !important;
+    margin: 0 auto;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area {
     width: 100%;
     height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 900px;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text {
     position: absolute;
     text-align: center;
+    max-width: 200px;
+    width: 200px;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text h4 {
+    font-size: 25px;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text p {
     font-size: 15px;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_one {
-    transform: translate(-20%, 0%);
+    transform: translate(-350px, -100px);
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_one h4 {
     color: #00abce;
+  }
+  .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_two {
+    transform: translate(150px, -100px);
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_two h4 {
     color: #ee8919;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_three {
-    transform: translate(0%, 100%);
+    transform: translate(100px, 100px);
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_three h4 {
     color: #0078bb;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_four {
-    transform: translate(-25%, 150%);
+    transform: translate(-100px, 25px);
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_four h4 {
     color: #84b526;
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_five {
-    transform: translate(-55%, calc(100% + 27.2px));
+    transform: translate(-300px, 100px);
   }
   .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_five h4 {
     color: #df007c;

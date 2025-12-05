@@ -68,8 +68,6 @@ body {
             .report_header_information_time,
             .report_header_information_name,
             .report_header_information_level {
-                width: calc(95% / 3);
-
                 width: 100%;
             }
 
@@ -97,8 +95,6 @@ body {
                 h3,
                 h4 {
                     color: $report_grey;
-                    text-align: center;
-
                     text-align: left;
                 }
             }
@@ -113,9 +109,7 @@ body {
 
                 h4 {
                     color: $dark_blue;
-                    text-align: center;
                     margin: 0 0 15px 0;
-
                     text-align: left;
                 }
 
@@ -526,6 +520,59 @@ body {
     }
 }
 
+@media screen and (min-width: 768px){
+    .page {
+        h3 {
+        font-size: 27px;
+    }
+
+    h4 {
+        font-size: 21px;
+    }
+
+    p,
+    span,
+    svg {
+        font-size: 15px;
+    }
+
+    th,
+    td {
+        font-size: 15px;
+    }
+
+    .report_header{
+        .report_header_information{
+            flex-direction: row;
+
+            .report_header_information_time,
+            .report_header_information_name,
+            .report_header_information_level {
+                width: calc(95% / 3);
+            }
+
+            .report_header_information_name{
+                h3,
+                h4 {
+                    text-align: center;
+                }
+            }
+
+            .report_header_information_level{
+                h4{
+                                        text-align: center;
+                }
+                
+                .report_header_information_level_value{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    }
+}
+
 @media screen and (min-width: 1024px){
     .page {
     /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
@@ -765,8 +812,76 @@ body {
 
         .report_content_chart {
             position: relative;
+            overflow-x: scroll;
 
+            .report_chart {
+                min-width: 900px !important;
+                margin: 0 auto;
+            }
 
+            .chart_canvas_text_area {
+                    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 900px;
+
+                .chart_point_text {
+                    position: absolute;
+                    text-align: center;
+
+                    max-width: 200px;
+                    width: 200px;
+
+                    h4{
+                        font-size: 25px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+
+                    &.chart_point_one {
+                        transform: translate(-350px, -100px);
+
+                        h4 {
+                            color: $chart_one_color;
+                        }
+                    }
+
+                    &.chart_point_two {
+                        transform: translate(150px, -100px);
+                        h4 {
+                            color: $chart_two_color;
+                        }
+                    }
+
+                    &.chart_point_three {
+                        transform: translate(100px, 100px);
+
+                        h4 {
+                            color: $chart_three_color;
+                        }
+                    }
+
+                    &.chart_point_four {
+                        transform: translate(-100px, 25px);
+
+                        h4 {
+                            color: $chart_four_color;
+                        }
+                    }
+
+                    &.chart_point_five {
+                        transform: translate(-300px, 100px);
+
+                        h4 {
+                            color: $chart_five_color;
+                        }
+                    }
+                }
+            }
         }
 
         .report_content_analysis {
@@ -1216,66 +1331,78 @@ body {
             }
 
             .report_content_chart {
-                position: relative;
+            position: relative;
+            overflow-x: scroll;
 
-                .report_chart {
-                    // width: 100% !important;
-                }
+            .report_chart {
+                min-width: 900px !important;
+                margin: 0 auto;
+            }
 
-                .chart_canvas_text_area {
+            .chart_canvas_text_area {
                     width: 100%;
-                    height: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 900px;
 
-                    .chart_point_text {
-                        position: absolute;
-                        text-align: center;
+                .chart_point_text {
+                    position: absolute;
+                    text-align: center;
 
-                        p {
-                            font-size: 15px;
+                    max-width: 200px;
+                    width: 200px;
+
+                    h4{
+                        font-size: 25px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+
+                    &.chart_point_one {
+                        transform: translate(-350px, -100px);
+
+                        h4 {
+                            color: $chart_one_color;
                         }
+                    }
 
-                        &.chart_point_one {
-                            transform: translate(-20%, 0%);
-
-                            h4 {
-                                color: $chart_one_color;
-                            }
+                    &.chart_point_two {
+                        transform: translate(150px, -100px);
+                        h4 {
+                            color: $chart_two_color;
                         }
+                    }
 
-                        &.chart_point_two {
+                    &.chart_point_three {
+                        transform: translate(100px, 100px);
 
-                            // transform: translate(0% , 100%);
-                            h4 {
-                                color: $chart_two_color;
-                            }
+                        h4 {
+                            color: $chart_three_color;
                         }
+                    }
 
-                        &.chart_point_three {
-                            transform: translate(0%, 100%);
+                    &.chart_point_four {
+                        transform: translate(-100px, 25px);
 
-                            h4 {
-                                color: $chart_three_color;
-                            }
+                        h4 {
+                            color: $chart_four_color;
                         }
+                    }
 
-                        &.chart_point_four {
-                            transform: translate(-25%, 150%);
+                    &.chart_point_five {
+                        transform: translate(-300px, 100px);
 
-                            h4 {
-                                color: $chart_four_color;
-                            }
-                        }
-
-                        &.chart_point_five {
-                            transform: translate(-55%, calc(100% + 16px * 1.7));
-
-                            h4 {
-                                color: $chart_five_color;
-                            }
+                        h4 {
+                            color: $chart_five_color;
                         }
                     }
                 }
             }
+        }
 
             .report_content_analysis {
                 padding: 30px 10px;
