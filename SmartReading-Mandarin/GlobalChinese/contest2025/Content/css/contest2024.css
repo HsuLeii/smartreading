@@ -2633,24 +2633,24 @@ body {
   text-align: center;
 }
 .page h3 {
-  font-size: 33px;
+  font-size: 26px;
   line-height: 1.7;
   font-weight: bold;
 }
 .page h4 {
-  font-size: 27px;
+  font-size: 20px;
   line-height: 1.5;
   font-weight: bold;
 }
 .page p,
 .page span,
 .page svg {
-  font-size: 22px;
+  font-size: 14px;
   line-height: 1.7;
 }
 .page th,
 .page td {
-  font-size: 22px;
+  font-size: 14px;
   text-decoration: none;
   line-height: 1.7;
 }
@@ -2661,11 +2661,13 @@ body {
   margin: 0 auto;
   padding: 20px 2.5%;
   background-color: #eff7f2;
+  flex-direction: column;
 }
 .page .report_header .report_header_information .report_header_information_time,
 .page .report_header .report_header_information .report_header_information_name,
 .page .report_header .report_header_information .report_header_information_level {
   width: 31.6666666667%;
+  width: 100%;
 }
 .page .report_header .report_header_information .report_header_information_time p {
   color: #595757;
@@ -2677,31 +2679,36 @@ body {
 .page .report_header .report_header_information .report_header_information_time .report_header_information_time_item .report_header_information_time_item_icon {
   width: 36px;
   margin: 0 7px 0 0;
+  width: 30px;
+}
+.page .report_header .report_header_information .report_header_information_name {
+  margin: 0 0 15px 0;
 }
 .page .report_header .report_header_information .report_header_information_name h3,
 .page .report_header .report_header_information .report_header_information_name h4 {
   color: #595757;
   text-align: center;
+  text-align: left;
 }
 .page .report_header .report_header_information .report_header_information_level {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .page .report_header .report_header_information .report_header_information_level h4 {
   color: #004896;
   text-align: center;
   margin: 0 0 15px 0;
+  text-align: left;
 }
-.page .report_header .report_header_information .report_header_information_level .report_header_information_level_value {
+.page .report_header .report_header_information .report_header_information_level .report_header_information_level_value h4 {
   display: inline-block;
   background-color: #004896;
   border-radius: 20px;
   padding: 16px 50px;
-}
-.page .report_header .report_header_information .report_header_information_level .report_header_information_level_value h4 {
   color: #fff;
-  margin: 0;
 }
 .page .report_content {
   width: 100%;
@@ -2717,6 +2724,7 @@ body {
 }
 .page .report_content .report_content_tittle .report_content_tittle_icon img {
   width: 85px;
+  width: 60px;
 }
 .page .report_content .report_content_tittle .report_content_tittle_text {
   margin: 0 15px;
@@ -2728,9 +2736,11 @@ body {
   text-align: center;
   width: 100%;
   padding: 30px 10px;
+  overflow-x: scroll;
 }
 .page .report_content .report_content_table .table {
   width: 100%;
+  min-width: 750px;
 }
 .page .report_content .report_content_table .table thead {
   display: table-caption;
@@ -2798,41 +2808,57 @@ body {
 }
 .page .report_content .report_content_chart {
   position: relative;
+  overflow-x: scroll;
+}
+.page .report_content .report_content_chart .report_chart {
+  min-width: 900px !important;
+  margin: 0 auto;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area {
   width: 100%;
   height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 900px;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text {
   position: absolute;
   text-align: center;
+  max-width: 200px;
+}
+.page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text h4 {
+  font-size: 25px;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text p {
   font-size: 15px;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_one {
-  transform: translate(-20%, 0%);
+  transform: translate(-50px, -70%);
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_one h4 {
   color: #00abce;
+}
+.page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_two {
+  transform: translate(0%, -70%);
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_two h4 {
   color: #ee8919;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_three {
-  transform: translate(0%, 100%);
+  transform: translate(0px, 0%);
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_three h4 {
   color: #0078bb;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_four {
-  transform: translate(-25%, 150%);
+  transform: translate(0px, 0%);
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_four h4 {
   color: #84b526;
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_five {
-  transform: translate(-55%, calc(100% + 27.2px));
+  transform: translate(-100px, 0);
 }
 .page .report_content .report_content_chart .chart_canvas_text_area .chart_point_text.chart_point_five h4 {
   color: #df007c;
@@ -2962,6 +2988,317 @@ body {
   font-size: 16px;
 }
 
+@media screen and (min-width: 1024px) {
+  .page {
+    /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+    /* page-break-after: always;  碰到此元素會直接換頁 */
+    page-break-inside: avoid;
+    position: relative;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .page:after {
+    /* content: counter(page-number); 取用該名字的計數器 */
+    /*counter-increment: page-number 1;  增加計數器數值 */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    text-align: center;
+  }
+  .page h3 {
+    font-size: 33px;
+    line-height: 1.7;
+    font-weight: bold;
+  }
+  .page h4 {
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  .page p,
+  .page span,
+  .page svg {
+    font-size: 22px;
+    line-height: 1.7;
+  }
+  .page th,
+  .page td {
+    font-size: 22px;
+    text-decoration: none;
+    line-height: 1.7;
+  }
+  .page .report_header .report_header_information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 2.5%;
+    background-color: #eff7f2;
+  }
+  .page .report_header .report_header_information .report_header_information_time,
+  .page .report_header .report_header_information .report_header_information_name,
+  .page .report_header .report_header_information .report_header_information_level {
+    width: 31.6666666667%;
+  }
+  .page .report_header .report_header_information .report_header_information_time p {
+    color: #595757;
+  }
+  .page .report_header .report_header_information .report_header_information_time .report_header_information_time_item {
+    display: flex;
+    margin: 0 0 15px 0;
+  }
+  .page .report_header .report_header_information .report_header_information_time .report_header_information_time_item .report_header_information_time_item_icon {
+    width: 36px;
+    margin: 0 7px 0 0;
+  }
+  .page .report_header .report_header_information .report_header_information_name h3,
+  .page .report_header .report_header_information .report_header_information_name h4 {
+    color: #595757;
+    text-align: center;
+  }
+  .page .report_header .report_header_information .report_header_information_level {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .page .report_header .report_header_information .report_header_information_level h4 {
+    color: #004896;
+    text-align: center;
+    margin: 0 0 15px 0;
+  }
+  .page .report_header .report_header_information .report_header_information_level .report_header_information_level_value h4 {
+    display: inline-block;
+    background-color: #004896;
+    border-radius: 20px;
+    padding: 16px 50px;
+    color: #fff;
+  }
+  .page .report_content {
+    width: 100%;
+  }
+  .page .report_content .report_content_tittle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 10px;
+    border-top: 10px solid #efefef;
+    border-bottom: 10px solid #efefef;
+  }
+  .page .report_content .report_content_tittle .report_content_tittle_icon img {
+    width: 85px;
+  }
+  .page .report_content .report_content_tittle .report_content_tittle_text {
+    margin: 0 15px;
+  }
+  .page .report_content .report_content_tittle .report_content_tittle_text h3 {
+    color: #595757;
+  }
+  .page .report_content .report_content_table {
+    text-align: center;
+    width: 100%;
+    padding: 30px 10px;
+  }
+  .page .report_content .report_content_table .table {
+    width: 100%;
+  }
+  .page .report_content .report_content_table .table thead {
+    display: table-caption;
+  }
+  .page .report_content .report_content_table .table thead tr {
+    width: 100%;
+    display: inline-flex;
+    padding: 10px 0;
+  }
+  .page .report_content .report_content_table .table thead tr td {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+  }
+  .page .report_content .report_content_table .table thead tr td img {
+    width: 25px;
+    margin: 0 5px 0 0;
+  }
+  .page .report_content .report_content_table .table thead tr td:nth-child(1) {
+    width: 8%;
+  }
+  .page .report_content .report_content_table .table thead tr td:nth-child(2) {
+    width: 20%;
+  }
+  .page .report_content .report_content_table .table tbody {
+    background-color: #fff;
+  }
+  .page .report_content .report_content_table .table tbody tr td {
+    width: 12%;
+    background-color: #efefef;
+    padding: 10px 2px;
+  }
+  .page .report_content .report_content_table .table tbody tr td:nth-child(1) {
+    width: 8%;
+  }
+  .page .report_content .report_content_table .table tbody tr td:nth-child(2) {
+    width: 20%;
+  }
+  .page .report_content .report_content_table .table tbody tr td:nth-last-child(1) {
+    font-weight: bolder;
+  }
+  .page .report_content .report_content_table .table tbody tr:nth-last-child(1) td {
+    background-color: #fff;
+  }
+  .page .report_content .report_content_table .table tbody tr:nth-last-child(1) td:nth-child(3) {
+    color: #00abce;
+    font-weight: bolder;
+  }
+  .page .report_content .report_content_table .table tbody tr:nth-last-child(1) td:nth-child(4) {
+    color: #ee8919;
+    font-weight: bolder;
+  }
+  .page .report_content .report_content_table .table tbody tr:nth-last-child(1) td:nth-child(5) {
+    color: #0078bb;
+    font-weight: bolder;
+  }
+  .page .report_content .report_content_table .table tbody tr:nth-last-child(1) td:nth-child(6) {
+    color: #84b526;
+    font-weight: bolder;
+  }
+  .page .report_content .report_content_table .table tbody tr:nth-last-child(1) td:nth-child(7) {
+    color: #df007c;
+    font-weight: bolder;
+  }
+  .page .report_content .report_content_chart {
+    position: relative;
+  }
+  .page .report_content .report_content_analysis {
+    padding: 30px 10px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top {
+    display: flex;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right {
+    width: 50%;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item {
+    margin: 15px auto 30px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p {
+    display: flex;
+    justify-content: center;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span {
+    position: relative;
+    z-index: 1;
+    padding: 8px 0px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1), .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1) {
+    display: block;
+    padding: 8px 20px;
+    margin: 0 20px 0 0;
+    color: #fff;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1)::before, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1)::after, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1)::before, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 40px);
+    height: 50%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1)::before, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1)::before {
+    top: 0;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1)::after, .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1)::after {
+    bottom: 0;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1)::before {
+    background: linear-gradient(45deg, #fff 10%, #1ebbe9 10%, #1ebbe9 90%, #fff 10%);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_left .report_content_analysis_top_content_item p span:nth-child(1)::after {
+    background: linear-gradient(135deg, #fff 10%, #1ebbe9 10%, #1ebbe9 90%, #fff 10%);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1)::before {
+    background: linear-gradient(45deg, #fff 10%, #f39800 10%, #f39800 90%, #fff 10%);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_top .report_content_analysis_top_content.report_content_analysis_top_right .report_content_analysis_top_content_item p span:nth-child(1)::after {
+    background: linear-gradient(135deg, #fff 10%, #f39800 10%, #f39800 90%, #fff 10%);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom {
+    display: flex;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right {
+    width: 50%;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_img_area, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_img_area {
+    width: 90%;
+    margin: 30px auto;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_img_area .img_area, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_img_area .img_area {
+    width: 60%;
+    margin: auto;
+    max-width: 130px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_img_area .text_area, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_img_area .text_area {
+    display: flex;
+    justify-content: center;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area {
+    width: 90%;
+    margin: 30px auto 50px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item {
+    display: flex;
+    align-items: center;
+    margin: 30px auto 40px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_left_num, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_left_num {
+    position: relative;
+    z-index: 1;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_left_num h4, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_left_num h4 {
+    background-color: #f39800;
+    border-radius: 50% 50% 0 50%;
+    color: #fff;
+    font-size: 35px;
+    width: 72.5px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 15px 5px rgba(89, 87, 87, 0.6117647059);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_right_text, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_right_text {
+    width: calc(100% + 40px);
+    transform: translate(-20px, 0);
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 15px 20px 15px 40px;
+    box-shadow: 0 0 15px 5px rgba(89, 87, 87, 0.6117647059);
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_right_text .rank_text, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_right_text .rank_text {
+    font-size: 18px;
+  }
+  .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_left .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_right_text p, .page .report_content .report_content_analysis .report_content_analysis_bottom .report_content_analysis_bottom_content.report_content_analysis_top_right .report_content_analysis_bottom_content_item .report_content_analysis_bottom_content_item_text_area .text_area .text_item .text_item_right_text p {
+    font-weight: bold;
+  }
+  .page .report_footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #004896;
+    padding: 5px;
+  }
+  .page .report_footer p {
+    color: #fff;
+    font-size: 16px;
+  }
+}
 @page {
   /*size: portrait;  直向 */
   /*size: landscape;  橫向 */
