@@ -54,7 +54,7 @@ body {
     }
 
     .report_header {
-        .report_header_img{
+        .report_header_img {
             line-height: 1;
         }
 
@@ -89,7 +89,7 @@ body {
                         margin: 0 7px 0 0;
                     }
 
-                    .report_header_information_time_item_text{
+                    .report_header_information_time_item_text {
                         width: calc(100% - 30px);
                     }
                 }
@@ -372,86 +372,206 @@ body {
 
                         .report_content_analysis_top_content_item {
                             margin: 15px auto;
+                            display: flex;
+                            justify-content: center;
 
-                            p {
+                            .report_content_analysis_top_content_item_text {
+                                position: relative;
                                 display: flex;
-                                justify-content: center;
-                                align-items: center;
+                                width: 80%;
+                                margin: 0 10px 0 0;
 
-                                span {
+                                p {
+                                    background-color: $main_color;
+                                    color: $white;
+                                    width: calc(100% - 40px);
+                                    height: 75px;
+                                    padding: 0 15px;
+                                }
+
+                                .report_content_analysis_top_content_item_text_left {
                                     position: relative;
-                                    z-index: 1;
-                                    padding: 8px 0px;
+                                    width: 15px;
+                                    height: 100%;
+                                    left: 0;
+                                    top: 0;
 
-                                    &:nth-child(1) {
-                                        display: block;
-                                        padding: 8px 30px;
-                                        color: $white;
-                                        width: 65%;
-                                        text-align: center;
-
-                                        &::before,
-                                        &::after {
-                                            content: "";
-                                            position: absolute;
-                                            z-index: -1;
-                                            width: calc(100% + 40px);
-                                            height: 50%;
-                                            left: 50%;
-                                            transform: translate(-50%, 0px);
-                                        }
-
-                                        &::before {
-                                            top: 0;
-                                        }
-
-                                        &::after {
-                                            bottom: 0;
-                                        }
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        transform: translate(0%, 0%);
+                                        border-right: 15px solid $main_color;
+                                        border-left: 0px solid transparent;
+                                        border-top: 0px solid transparent;
+                                        border-bottom: 37.5px solid transparent;
                                     }
 
-                                    &:nth-child(2) {
-                                        margin: 0 0 0 30px;
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        transform: translate(0%, 0%);
+                                        border-right: 15px solid $main_color;
+                                        border-left: 0px solid transparent;
+                                        border-top: 37.5px solid transparent;
+                                        border-bottom: 0px solid transparent;
+                                    }
+                                }
+
+                                .report_content_analysis_top_content_item_text_right {
+                                    position: relative;
+                                    width: 25px;
+                                    height: 100%;
+                                    right: 0;
+                                    top: 0;
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        transform: translate(0%, 0%);
+                                        border-left: 25px solid $main_color;
+                                        border-right: 0px solid transparent;
+                                        border-top: 37.5px solid transparent;
+                                        border-bottom: 37.5px solid transparent;
                                     }
                                 }
                             }
+
+                            p {
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            // p {
+                            //     display: flex;
+                            //     justify-content: center;
+                            //     align-items: center;
+
+                            //     span {
+                            //         position: relative;
+                            //         z-index: 1;
+                            //         padding: 8px 0px;
+
+                            //         &:nth-child(1) {
+                            //             display: block;
+                            //             padding: 8px 30px;
+                            //             color: $white;
+                            //             width: 65%;
+                            //             text-align: center;
+
+                            //             &::before,
+                            //             &::after {
+                            //                 content: "";
+                            //                 position: absolute;
+                            //                 z-index: -1;
+                            //                 width: calc(100% + 40px);
+                            //                 height: 50%;
+                            //                 left: 50%;
+                            //                 transform: translate(-50%, 0px);
+                            //             }
+
+                            //             &::before {
+                            //                 top: 0;
+                            //             }
+
+                            //             &::after {
+                            //                 bottom: 0;
+                            //             }
+                            //         }
+
+                            //         &:nth-child(2) {
+                            //             margin: 0 0 0 30px;
+                            //         }
+                            //     }
+                            // }
                         }
 
                     }
 
                     &.report_content_analysis_top_left {
                         .report_content_analysis_top_content_item {
-                            p {
-                                span {
-                                    &:nth-child(1) {
-                                        &::before {
-                                            background: linear-gradient(45deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
-                                        }
 
-                                        &::after {
-                                            background: linear-gradient(135deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
-                                        }
+                            .report_content_analysis_top_content_item_text {
+                                p {
+                                    background-color: #1ebbe9;
+                                }
+
+                                .report_content_analysis_top_content_item_text_left {
+                                    &::before {
+                                        border-right: 15px solid #1ebbe9;
+                                    }
+
+                                    &::after {
+                                        border-right: 15px solid #1ebbe9;
+                                    }
+                                }
+
+                                .report_content_analysis_top_content_item_text_right {
+                                    &::before {
+                                        border-left: 25px solid #1ebbe9;
                                     }
                                 }
                             }
+
+                            // p {
+                            //     span {
+                            //         &:nth-child(1) {
+                            //             &::before {
+                            //                 background: linear-gradient(45deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
+                            //             }
+
+                            //             &::after {
+                            //                 background: linear-gradient(135deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
+                            //             }
+                            //         }
+                            //     }
+                            // }
                         }
                     }
 
                     &.report_content_analysis_top_right {
                         .report_content_analysis_top_content_item {
-                            p {
-                                span {
-                                    &:nth-child(1) {
-                                        &::before {
-                                            background: linear-gradient(45deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
-                                        }
 
-                                        &::after {
-                                            background: linear-gradient(135deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
-                                        }
+                            .report_content_analysis_top_content_item_text {
+                                p {
+                                    background-color: #f39800;
+                                }
+
+                                .report_content_analysis_top_content_item_text_left {
+                                    &::before {
+                                        border-right: 15px solid #f39800;
+                                    }
+
+                                    &::after {
+                                        border-right: 15px solid #f39800;
+                                    }
+                                }
+
+                                .report_content_analysis_top_content_item_text_right {
+                                    &::before {
+                                        border-left: 25px solid #f39800;
                                     }
                                 }
                             }
+
+                            // p {
+                            //     span {
+                            //         &:nth-child(1) {
+                            //             &::before {
+                            //                 background: linear-gradient(45deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
+                            //             }
+
+                            //             &::after {
+                            //                 background: linear-gradient(135deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
+                            //             }
+                            //         }
+                            //     }
+                            // }
                         }
                     }
                 }
@@ -621,10 +741,10 @@ body {
                         &.report_content_analysis_top_right {
                             width: 50%;
 
-                            .report_content_analysis_top_content_item{
+                            .report_content_analysis_top_content_item {
                                 p {
-                                    span{
-                                        &:nth-child(1){
+                                    span {
+                                        &:nth-child(1) {
                                             text-align: center;
                                         }
                                     }
@@ -688,7 +808,7 @@ body {
         }
 
         .report_header {
-            .report_header_img{
+            .report_header_img {
                 line-height: 1;
             }
 
@@ -969,84 +1089,204 @@ body {
 
                             .report_content_analysis_top_content_item {
                                 margin: 15px auto 30px;
+                                display: flex;
+                                justify-content: center;
 
-                                p {
+                                .report_content_analysis_top_content_item_text {
+                                    position: relative;
                                     display: flex;
-                                    justify-content: center;
+                                    width: 80%;
+                                    margin: 0 10px 0 0;
 
-                                    span {
+                                    p {
+                                        background-color: $main_color;
+                                        color: $white;
+                                        width: calc(100% - 40px);
+                                        height: 75px;
+                                        padding: 0 15px;
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_left {
                                         position: relative;
-                                        z-index: 1;
-                                        padding: 8px 0px;
+                                        width: 15px;
+                                        height: 100%;
+                                        left: 0;
+                                        top: 0;
 
-                                        &:nth-child(1) {
-                                            display: block;
-                                            padding: 8px 20px;
-                                            margin: 0;
-                                            color: $white;
-
-                                            &::before,
-                                            &::after {
-                                                content: "";
-                                                position: absolute;
-                                                z-index: -1;
-                                                width: calc(100% + 40px);
-                                                height: 50%;
-                                                left: 50%;
-                                                transform: translate(-50%, 0px);
-                                            }
-
-                                            &::before {
-                                                top: 0;
-                                            }
-
-                                            &::after {
-                                                bottom: 0;
-                                            }
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            transform: translate(0%, 0%);
+                                            border-right: 15px solid $main_color;
+                                            border-left: 0px solid transparent;
+                                            border-top: 0px solid transparent;
+                                            border-bottom: 37.5px solid transparent;
                                         }
 
-                                        &:nth-child(2) {
-                                            margin: 0 0 0 30px;
+                                        &::after {
+                                            content: "";
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: 0;
+                                            transform: translate(0%, 0%);
+                                            border-right: 15px solid $main_color;
+                                            border-left: 0px solid transparent;
+                                            border-top: 37.5px solid transparent;
+                                            border-bottom: 0px solid transparent;
+                                        }
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_right {
+                                        position: relative;
+                                        width: 25px;
+                                        height: 100%;
+                                        right: 0;
+                                        top: 0;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            transform: translate(0%, 0%);
+                                            border-left: 25px solid $main_color;
+                                            border-right: 0px solid transparent;
+                                            border-top: 37.5px solid transparent;
+                                            border-bottom: 37.5px solid transparent;
                                         }
                                     }
                                 }
+
+                                p {
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                // p {
+                                //     display: flex;
+                                //     justify-content: center;
+
+                                //     span {
+                                //         position: relative;
+                                //         z-index: 1;
+                                //         padding: 8px 0px;
+
+                                //         &:nth-child(1) {
+                                //             display: block;
+                                //             padding: 8px 20px;
+                                //             margin: 0;
+                                //             color: $white;
+
+                                //             &::before,
+                                //             &::after {
+                                //                 content: "";
+                                //                 position: absolute;
+                                //                 z-index: -1;
+                                //                 width: calc(100% + 40px);
+                                //                 height: 50%;
+                                //                 left: 50%;
+                                //                 transform: translate(-50%, 0px);
+                                //             }
+
+                                //             &::before {
+                                //                 top: 0;
+                                //             }
+
+                                //             &::after {
+                                //                 bottom: 0;
+                                //             }
+                                //         }
+
+                                //         &:nth-child(2) {
+                                //             margin: 0 0 0 30px;
+                                //         }
+                                //     }
+                                // }
                             }
 
                         }
 
                         &.report_content_analysis_top_left {
                             .report_content_analysis_top_content_item {
-                                p {
-                                    span {
-                                        &:nth-child(1) {
-                                            &::before {
-                                                background: linear-gradient(45deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
-                                            }
 
-                                            &::after {
-                                                background: linear-gradient(135deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
-                                            }
+                                .report_content_analysis_top_content_item_text {
+                                    p {
+                                        background-color: #1ebbe9;
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_left {
+                                        &::before {
+                                            border-right: 15px solid #1ebbe9;
+                                        }
+
+                                        &::after {
+                                            border-right: 15px solid #1ebbe9;
+                                        }
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_right {
+                                        &::before {
+                                            border-left: 25px solid #1ebbe9;
                                         }
                                     }
                                 }
+
+                                // p {
+                                //     span {
+                                //         &:nth-child(1) {
+                                //             &::before {
+                                //                 background: linear-gradient(45deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
+                                //             }
+
+                                //             &::after {
+                                //                 background: linear-gradient(135deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
+                                //             }
+                                //         }
+                                //     }
+                                // }
                             }
                         }
 
                         &.report_content_analysis_top_right {
                             .report_content_analysis_top_content_item {
-                                p {
-                                    span {
-                                        &:nth-child(1) {
-                                            &::before {
-                                                background: linear-gradient(45deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
-                                            }
 
-                                            &::after {
-                                                background: linear-gradient(135deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
-                                            }
+                                .report_content_analysis_top_content_item_text {
+                                    p {
+                                        background-color: #f39800;
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_left {
+                                        &::before {
+                                            border-right: 15px solid #f39800;
+                                        }
+
+                                        &::after {
+                                            border-right: 15px solid #f39800;
+                                        }
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_right {
+                                        &::before {
+                                            border-left: 25px solid #f39800;
                                         }
                                     }
                                 }
+
+                                // p {
+                                //     span {
+                                //         &:nth-child(1) {
+                                //             &::before {
+                                //                 background: linear-gradient(45deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
+                                //             }
+
+                                //             &::after {
+                                //                 background: linear-gradient(135deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
+                                //             }
+                                //         }
+                                //     }
+                                // }
                             }
                         }
                     }
@@ -1215,7 +1455,7 @@ body {
         }
 
         .report_header {
-            .report_header_img{
+            .report_header_img {
                 line-height: 1;
             }
 
@@ -1274,6 +1514,7 @@ body {
                     .report_header_information_level_value {
                         display: flex;
                         justify-content: center;
+
                         h4 {
                             display: inline-block;
                             background-color: $dark_blue;
@@ -1496,86 +1737,206 @@ body {
 
                             .report_content_analysis_top_content_item {
                                 margin: 15px auto 30px;
+                                display: flex;
+                                justify-content: center;
 
-                                p {
+                                .report_content_analysis_top_content_item_text {
+                                    position: relative;
                                     display: flex;
-                                    justify-content: center;
-                                    align-items: center;
+                                    width: 80%;
+                                    margin: 0 10px 0 0;
 
-                                    span {
+                                    p {
+                                        background-color: $main_color;
+                                        color: $white;
+                                        width: calc(100% - 40px);
+                                        height: 75px;
+                                        padding: 0 15px;
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_left {
                                         position: relative;
-                                        z-index: 1;
-                                        padding: 8px 0px;
+                                        width: 15px;
+                                        height: 100%;
+                                        left: 0;
+                                        top: 0;
 
-                                        &:nth-child(1) {
-                                            display: block;
-                                            padding: 8px 20px;
-                                            color: $white;
-                                            width: 65%;
-                                            text-align: center;
-
-                                            &::before,
-                                            &::after {
-                                                content: "";
-                                                position: absolute;
-                                                z-index: -1;
-                                                width: calc(100% + 40px);
-                                                height: 50%;
-                                                left: 50%;
-                                                transform: translate(-50%, 0px);
-                                            }
-
-                                            &::before {
-                                                top: 0;
-                                            }
-
-                                            &::after {
-                                                bottom: 0;
-                                            }
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            transform: translate(0%, 0%);
+                                            border-right: 15px solid $main_color;
+                                            border-left: 0px solid transparent;
+                                            border-top: 0px solid transparent;
+                                            border-bottom: 37.5px solid transparent;
                                         }
 
-                                        &:nth-child(2) {
-                                            margin: 0 0 0 30px;
+                                        &::after {
+                                            content: "";
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: 0;
+                                            transform: translate(0%, 0%);
+                                            border-right: 15px solid $main_color;
+                                            border-left: 0px solid transparent;
+                                            border-top: 37.5px solid transparent;
+                                            border-bottom: 0px solid transparent;
+                                        }
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_right {
+                                        position: relative;
+                                        width: 25px;
+                                        height: 100%;
+                                        right: 0;
+                                        top: 0;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            transform: translate(0%, 0%);
+                                            border-left: 25px solid $main_color;
+                                            border-right: 0px solid transparent;
+                                            border-top: 37.5px solid transparent;
+                                            border-bottom: 37.5px solid transparent;
                                         }
                                     }
                                 }
+
+                                p {
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                // p {
+                                //     display: flex;
+                                //     justify-content: center;
+                                //     align-items: center;
+
+                                //     span {
+                                //         position: relative;
+                                //         z-index: 1;
+                                //         padding: 8px 0px;
+
+                                //         &:nth-child(1) {
+                                //             display: block;
+                                //             padding: 8px 20px;
+                                //             color: $white;
+                                //             width: 65%;
+                                //             text-align: center;
+
+                                //             &::before,
+                                //             &::after {
+                                //                 content: "";
+                                //                 position: absolute;
+                                //                 z-index: -1;
+                                //                 width: calc(100% + 40px);
+                                //                 height: 50%;
+                                //                 left: 50%;
+                                //                 transform: translate(-50%, 0px);
+                                //             }
+
+                                //             &::before {
+                                //                 top: 0;
+                                //             }
+
+                                //             &::after {
+                                //                 bottom: 0;
+                                //             }
+                                //         }
+
+                                //         &:nth-child(2) {
+                                //             margin: 0 0 0 30px;
+                                //         }
+                                //     }
+                                // }
                             }
 
                         }
 
                         &.report_content_analysis_top_left {
                             .report_content_analysis_top_content_item {
-                                p {
-                                    span {
-                                        &:nth-child(1) {
-                                            &::before {
-                                                background: linear-gradient(45deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
-                                            }
 
-                                            &::after {
-                                                background: linear-gradient(135deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
-                                            }
+                                .report_content_analysis_top_content_item_text {
+                                    p {
+                                        background-color: #1ebbe9;
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_left {
+                                        &::before {
+                                            border-right: 15px solid #1ebbe9;
+                                        }
+
+                                        &::after {
+                                            border-right: 15px solid #1ebbe9;
+                                        }
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_right {
+                                        &::before {
+                                            border-left: 25px solid #1ebbe9;
                                         }
                                     }
                                 }
+
+                                // p {
+                                //     span {
+                                //         &:nth-child(1) {
+                                //             &::before {
+                                //                 background: linear-gradient(45deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
+                                //             }
+
+                                //             &::after {
+                                //                 background: linear-gradient(135deg, $white 10%, #1ebbe9 10%, #1ebbe9 90%, $white 10%);
+                                //             }
+                                //         }
+                                //     }
+                                // }
                             }
                         }
 
                         &.report_content_analysis_top_right {
                             .report_content_analysis_top_content_item {
-                                p {
-                                    span {
-                                        &:nth-child(1) {
-                                            &::before {
-                                                background: linear-gradient(45deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
-                                            }
 
-                                            &::after {
-                                                background: linear-gradient(135deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
-                                            }
+                                .report_content_analysis_top_content_item_text {
+                                    p {
+                                        background-color: #f39800;
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_left {
+                                        &::before {
+                                            border-right: 15px solid #f39800;
+                                        }
+
+                                        &::after {
+                                            border-right: 15px solid #f39800;
+                                        }
+                                    }
+
+                                    .report_content_analysis_top_content_item_text_right {
+                                        &::before {
+                                            border-left: 25px solid #f39800;
                                         }
                                     }
                                 }
+
+                                // p {
+                                //     span {
+                                //         &:nth-child(1) {
+                                //             &::before {
+                                //                 background: linear-gradient(45deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
+                                //             }
+
+                                //             &::after {
+                                //                 background: linear-gradient(135deg, $white 10%, #f39800 10%, #f39800 90%, $white 10%);
+                                //             }
+                                //         }
+                                //     }
+                                // }
                             }
                         }
                     }
