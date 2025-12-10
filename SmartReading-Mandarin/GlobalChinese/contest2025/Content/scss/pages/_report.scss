@@ -54,6 +54,10 @@ body {
     }
 
     .report_header {
+        .report_header_img{
+            line-height: 1;
+        }
+
         .report_header_information {
             display: flex;
             align-items: center;
@@ -81,10 +85,12 @@ body {
                     margin: 0 0 15px 0;
 
                     .report_header_information_time_item_icon {
-                        width: 36px;
-                        margin: 0 7px 0 0;
-
                         width: 30px;
+                        margin: 0 7px 0 0;
+                    }
+
+                    .report_header_information_time_item_text{
+                        width: calc(100% - 30px);
                     }
                 }
             }
@@ -119,7 +125,7 @@ body {
                         display: inline-block;
                         background-color: $dark_blue;
                         border-radius: 20px;
-                        padding: 16px 50px;
+                        padding: 15px 50px;
                         color: $white;
                     }
                 }
@@ -175,8 +181,7 @@ body {
 
             .table {
                 width: 100%;
-
-                min-width: 750px;
+                min-width: 985px;
 
                 thead {
                     display: table-caption;
@@ -191,10 +196,13 @@ body {
                             justify-content: center;
                             align-items: center;
                             width: 12%;
+                            font-size: 16px;
+                            display: flex;
+                            flex-direction: column;
 
                             img {
                                 width: 25px;
-                                margin: 0 5px 0 0;
+                                margin: 0 0 5px 0;
                             }
 
                             &:nth-child(1) {
@@ -284,7 +292,6 @@ body {
 
             .report_chart {
                 min-width: 900px !important;
-                margin: 0 auto;
             }
 
             .chart_canvas_text_area {
@@ -298,12 +305,11 @@ body {
                 .chart_point_text {
                     position: absolute;
                     text-align: center;
-
-                    max-width: 200px;
-                    width: 200px;
+                    max-width: 300px;
+                    width: 300px;
 
                     h4 {
-                        font-size: 25px;
+                        font-size: 23px;
                     }
 
                     p {
@@ -311,7 +317,7 @@ body {
                     }
 
                     &.chart_point_one {
-                        transform: translate(-350px, -100px);
+                        transform: translate(-380px, -100px);
 
                         h4 {
                             color: $chart_one_color;
@@ -327,7 +333,7 @@ body {
                     }
 
                     &.chart_point_three {
-                        transform: translate(100px, 100px);
+                        transform: translate(50px, 100px);
 
                         h4 {
                             color: $chart_three_color;
@@ -335,7 +341,7 @@ body {
                     }
 
                     &.chart_point_four {
-                        transform: translate(-100px, 25px);
+                        transform: translate(-50%, 25px);
 
                         h4 {
                             color: $chart_four_color;
@@ -343,7 +349,7 @@ body {
                     }
 
                     &.chart_point_five {
-                        transform: translate(-300px, 100px);
+                        transform: translate(-315px, 100px);
 
                         h4 {
                             color: $chart_five_color;
@@ -370,6 +376,7 @@ body {
                             p {
                                 display: flex;
                                 justify-content: center;
+                                align-items: center;
 
                                 span {
                                     position: relative;
@@ -378,9 +385,11 @@ body {
 
                                     &:nth-child(1) {
                                         display: block;
-                                        padding: 8px 20px;
-                                        margin: 0 20px 0 0;
+                                        padding: 8px 30px;
+                                        margin: 0 30px 0 0;
                                         color: $white;
+                                        width: 65%;
+                                        text-align: center;
 
                                         &::before,
                                         &::after {
@@ -451,8 +460,6 @@ body {
 
                     &.report_content_analysis_top_left,
                     &.report_content_analysis_top_right {
-                        width: 50%;
-
                         width: 100%;
 
                         .report_content_analysis_bottom_content_item {
@@ -610,6 +617,16 @@ body {
                         &.report_content_analysis_top_left,
                         &.report_content_analysis_top_right {
                             width: 50%;
+
+                            .report_content_analysis_top_content_item{
+                                p {
+                                    span{
+                                        &:nth-child(1){
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -642,13 +659,13 @@ body {
         }
 
         h3 {
-            font-size: 33px;
+            font-size: 30px;
             line-height: 1.7;
             font-weight: bold;
         }
 
         h4 {
-            font-size: 27px;
+            font-size: 25px;
             line-height: 1.5;
             font-weight: bold;
         }
@@ -656,18 +673,22 @@ body {
         p,
         span,
         svg {
-            font-size: 22px;
+            font-size: 20px;
             line-height: 1.7;
         }
 
         th,
         td {
-            font-size: 22px;
+            font-size: 20px;
             text-decoration: none;
             line-height: 1.7;
         }
 
         .report_header {
+            .report_header_img{
+                line-height: 1;
+            }
+
             .report_header_information {
                 display: flex;
                 align-items: center;
@@ -693,7 +714,7 @@ body {
                         margin: 0 0 15px 0;
 
                         .report_header_information_time_item_icon {
-                            width: 36px;
+                            width: 30px;
                             margin: 0 7px 0 0;
                         }
                     }
@@ -725,7 +746,7 @@ body {
                             display: inline-block;
                             background-color: $dark_blue;
                             border-radius: 20px;
-                            padding: 16px 50px;
+                            padding: 15px 50px;
                             color: $white;
                         }
                     }
@@ -767,6 +788,7 @@ body {
 
                 .table {
                     width: 100%;
+                    min-width: 985px;
 
                     thead {
                         display: table-caption;
@@ -781,10 +803,12 @@ body {
                                 justify-content: center;
                                 align-items: center;
                                 width: 12%;
+                                display: flex;
+                                flex-direction: column;
 
                                 img {
                                     width: 25px;
-                                    margin: 0 5px 0 0;
+                                    margin: 0 0 5px 0;
                                 }
 
                                 &:nth-child(1) {
@@ -861,7 +885,6 @@ body {
 
                 .report_chart {
                     min-width: 900px !important;
-                    margin: 0 auto;
                 }
 
                 .chart_canvas_text_area {
@@ -875,12 +898,11 @@ body {
                     .chart_point_text {
                         position: absolute;
                         text-align: center;
-
-                        max-width: 200px;
-                        width: 200px;
+                        max-width: 300px;
+                        width: 300px;
 
                         h4 {
-                            font-size: 25px;
+                            font-size: 23px;
                         }
 
                         p {
@@ -888,7 +910,7 @@ body {
                         }
 
                         &.chart_point_one {
-                            transform: translate(-350px, -100px);
+                            transform: translate(-380px, -100px);
 
                             h4 {
                                 color: $chart_one_color;
@@ -904,7 +926,7 @@ body {
                         }
 
                         &.chart_point_three {
-                            transform: translate(100px, 100px);
+                            transform: translate(50px, 100px);
 
                             h4 {
                                 color: $chart_three_color;
@@ -912,7 +934,7 @@ body {
                         }
 
                         &.chart_point_four {
-                            transform: translate(-100px, 25px);
+                            transform: translate(-50%, 25px);
 
                             h4 {
                                 color: $chart_four_color;
@@ -920,7 +942,7 @@ body {
                         }
 
                         &.chart_point_five {
-                            transform: translate(-300px, 100px);
+                            transform: translate(-315px, 100px);
 
                             h4 {
                                 color: $chart_five_color;
@@ -1186,6 +1208,10 @@ body {
         }
 
         .report_header {
+            .report_header_img{
+                line-height: 1;
+            }
+
             .report_header_information {
                 display: flex;
                 align-items: center;
@@ -1212,7 +1238,7 @@ body {
                         margin: 0 0 15px 0;
 
                         .report_header_information_time_item_icon {
-                            width: 36px;
+                            width: 30px;
                             margin: 0 7px 0 0;
                         }
                     }
@@ -1245,7 +1271,7 @@ body {
                             display: inline-block;
                             background-color: $dark_blue;
                             border-radius: 20px;
-                            padding: 16px 50px;
+                            padding: 15px 50px;
                             color: $white;
                         }
                     }
@@ -1287,6 +1313,7 @@ body {
 
                 .table {
                     width: 100%;
+                    min-width: 985px;
 
                     thead {
                         display: table-caption;
@@ -1381,7 +1408,6 @@ body {
 
                 .report_chart {
                     min-width: 900px !important;
-                    margin: 0 auto;
                 }
 
                 .chart_canvas_text_area {
@@ -1395,12 +1421,11 @@ body {
                     .chart_point_text {
                         position: absolute;
                         text-align: center;
-
-                        max-width: 200px;
-                        width: 200px;
+                        max-width: 300px;
+                        width: 300px;
 
                         h4 {
-                            font-size: 25px;
+                            font-size: 23px;
                         }
 
                         p {
@@ -1408,7 +1433,7 @@ body {
                         }
 
                         &.chart_point_one {
-                            transform: translate(-350px, -100px);
+                            transform: translate(-380px, -100px);
 
                             h4 {
                                 color: $chart_one_color;
@@ -1424,7 +1449,7 @@ body {
                         }
 
                         &.chart_point_three {
-                            transform: translate(100px, 100px);
+                            transform: translate(50px, 100px);
 
                             h4 {
                                 color: $chart_three_color;
@@ -1432,7 +1457,7 @@ body {
                         }
 
                         &.chart_point_four {
-                            transform: translate(-100px, 25px);
+                            transform: translate(-50%, 25px);
 
                             h4 {
                                 color: $chart_four_color;
@@ -1440,7 +1465,7 @@ body {
                         }
 
                         &.chart_point_five {
-                            transform: translate(-300px, 100px);
+                            transform: translate(-315px, 100px);
 
                             h4 {
                                 color: $chart_five_color;
