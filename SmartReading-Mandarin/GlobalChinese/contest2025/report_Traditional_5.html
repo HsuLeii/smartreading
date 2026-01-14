@@ -601,7 +601,7 @@
         labels: ['', '', '', '', ''],
         datasets: [{
           label: ['恆毅力', '執行力', '精進力', '博學力', '成長力'],
-          data: [61, 166, 160, 250, 150],
+          data: [61, 166, 160, 180, 150],
           pointRadius: 7,
           pointBackgroundColor: ['#00abce', '#ee8919', '#0078bb', '#84b526', '#df007c'],
           pointBorderColor: '#fff',
@@ -639,6 +639,14 @@
           }
         },
 
+        scale: {
+          ticks: {
+            stepSize: 25,
+            suggestedMin: 0,
+            suggestedMax: 250
+          }
+        }
+
       },
 
       plugins: [{
@@ -648,7 +656,8 @@
           const rScale = chart.scale;
           // 最高分
           const dataArr = chart.data.datasets[0].data;
-          const maxDataArr = Math.max.apply(null, dataArr);
+          // const maxDataArr = Math.max.apply(null, dataArr);
+          const maxDataArr = 250;
           // 最高分
           const pointPositionOne = rScale.getPointPositionForValue(0, maxDataArr + 15);
           const pointPositionTwo = rScale.getPointPositionForValue(1, maxDataArr + 15);
@@ -747,8 +756,9 @@
           const ctx = chart.ctx;
           const rScale = chart.scale;
           // 最高分
-          const dataArr = chart.data.datasets[0].data;
-          const maxDataArr = Math.max.apply(null, dataArr);
+          // const dataArr = chart.data.datasets[0].data;
+          // const maxDataArr = Math.max.apply(null, dataArr);
+          const maxDataArr = 250;
           // 最高分
           const pointPositionOne = rScale.getPointPositionForValue(0, maxDataArr + 15);
           const pointPositionTwo = rScale.getPointPositionForValue(1, maxDataArr + 15);

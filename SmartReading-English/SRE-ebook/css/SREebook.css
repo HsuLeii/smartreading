@@ -1897,6 +1897,28 @@ header .book-title {
   cursor: default !important;
 }
 
+.loading_robot {
+  position: fixed;
+  /* 固定在視窗，滾動不會移動 */
+  top: 50%;
+  /* 垂直居中 */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
+  /* 用 transform 將元素中心對齊 */
+  z-index: 9999;
+  /* 保證顯示在最上層 */
+  background-color: rgba(255, 255, 254, 0.8);
+  /* 半透明背景，視需要調整 */
+  padding: 20px;
+  /* 外圍留白，視需要調整 */
+  border-radius: 10px;
+  /* 圓角效果，視需要調整 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* 陰影效果 */
+  /* 預設隱藏，必要時顯示 */
+}
+
 @media (max-width: 1024px) {
   .book-page .book-page-img .book-page-bg.two-right-book-page-bg {
     max-width: 90%;
@@ -2392,7 +2414,6 @@ header .book-title {
 .book-page-one .answer_area .answer_content_area {
   position: relative;
   width: 90%;
-  background-color: #fdf0df;
 }
 .book-page-one .answer_area .answer_content_area::after {
   content: "";
@@ -2842,20 +2863,21 @@ header .book-title {
   align-items: center;
   border: 1px solid #ec6c00;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   background-color: #fff;
   cursor: pointer;
+  color: #5B3716;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_icon {
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   color: #ec6c00;
   background-color: transparent;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area .btn_finish_text {
   border-radius: 5px;
   display: flex;
-  padding: 5px 10px;
+  padding: 0px 10px;
   text-align: left;
   background-color: transparent;
 }
@@ -2865,6 +2887,7 @@ header .book-title {
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area:hover {
   background-color: #ec6c00;
+  color: #fff;
 }
 .book-page-one .answer_area.answer_chatbot .answer_content_area .answer_content_frame .user_area .toolbar_area .btn_finish_area:hover .btn_finish_icon {
   color: #fff;
