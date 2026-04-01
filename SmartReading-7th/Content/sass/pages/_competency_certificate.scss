@@ -1,0 +1,316 @@
+body {
+    counter-reset: page-number;
+    /* 初始化，名字可自訂，數值為0 */
+    -webkit-print-color-adjust: exact;
+}
+
+.page {
+    /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+    /* page-break-after: always;  碰到此元素會直接換頁 */
+    page-break-inside: avoid;
+    position: relative;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #0f326b;
+    overflow: hidden;
+
+    &:after {
+        /* content: counter(page-number); 取用該名字的計數器 */
+        /*counter-increment: page-number 1;  增加計數器數值 */
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 26px;
+        line-height: 1.7;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+
+    p,
+    span,
+    svg {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    th,
+    td {
+        font-size: 14px;
+        text-decoration: none;
+        line-height: 1.7;
+    }
+
+    .certificate_bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .certificate_content{
+        position: relative;
+        z-index: 1;
+        width: 65%;
+        margin: 126px auto 0;
+
+        .certificate_content_header{
+            width: 100%;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .certificate_content_tittle{
+            margin: 30px auto 50px;
+            h3{
+                font-size: 102px;
+                margin: 0;
+                line-height: 1;
+                text-align: center;
+                color: #1a3267;
+            }
+        }
+        
+        .certificate_content_subtitle{
+            display: flex;
+            align-items: center;
+            margin: 0 auto 35px;
+
+            h4{
+                margin: 0 15px;
+            }
+        }
+
+        .certificate_content_text_content{
+            margin: 0 auto;
+            .certificate_content_name{
+                display: flex;
+                justify-content: center;
+                p{
+                    display: inline-block;
+                    font-size: 63px;
+                    color: #1a3267;
+                    margin: 0;
+
+                    span{
+                        font-size: 35px;
+                        color: $black;
+                    }
+                }
+            }
+
+            p{
+                text-align: center;
+                margin: 0 auto 35px;
+            }
+        }
+
+        .certificate_content_item_area{
+            display: flex;
+            justify-content: center;
+
+            .certificate_content_item{
+                margin: 0 3px;
+                &.certificate_content_item_one{
+                    .certificate_content_item_text{
+                        background-color: #b2769a;
+                    }
+                }
+
+                &.certificate_content_item_two{
+                    .certificate_content_item_text{
+                        background-color: #12b4d1;
+                    }
+                }
+
+                &.certificate_content_item_three{
+                    .certificate_content_item_text{
+                        background-color: #01b2af;
+                    }
+                }
+
+                &.certificate_content_item_four{
+                    .certificate_content_item_text{
+                        background-color: #ee839b;
+                    }
+                }
+
+                &.certificate_content_item_five{
+                    .certificate_content_item_text{
+                        background-color: #fdcf2e;
+                    }
+                }
+
+                &.certificate_content_item_six{
+                    .certificate_content_item_text{
+                        background-color: #75bb29;
+                    }
+                }
+
+                .certificate_content_item_text{
+                    border-radius: 8px;
+                    padding: 5px 8px;
+                    p{
+                        color: $white;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .page {
+        h3 {
+            font-size: 27px;
+        }
+
+        h4 {
+            font-size: 21px;
+        }
+
+        p,
+        span,
+        svg {
+            font-size: 15px;
+        }
+
+        th,
+        td {
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .page {
+        /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+        /* page-break-after: always;  碰到此元素會直接換頁 */
+        page-break-inside: avoid;
+        position: relative;
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #0f326b;
+        overflow: hidden;
+
+        &:after {
+            /* content: counter(page-number); 取用該名字的計數器 */
+            /*counter-increment: page-number 1;  增加計數器數值 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 25px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        p,
+        span,
+        svg {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        th,
+        td {
+            font-size: 20px;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+    }
+}
+
+@page {
+    /*size: portrait;  直向 */
+    /*size: landscape;  橫向 */
+    /*size: A4;  紙張大小 */
+    size: A4 portrait;
+    /* 混合使用 */
+    min-height: 100vh;
+    margin: 0;
+    /* 邊界與內容的距離 */
+}
+
+@media print {
+    body {
+        // background-color: $body_bg;
+        counter-reset: page-number;
+        /* 初始化，名字可自訂，數值為0 */
+        -webkit-print-color-adjust: exact;
+    }
+
+    .page {
+        /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+        /* page-break-after: always;  碰到此元素會直接換頁 */
+        page-break-inside: avoid;
+        position: relative;
+        max-width: 1024px;
+        width: 1024px;
+        height: 1448px;
+        margin: 0 auto;
+        overflow: hidden;
+
+        &:after {
+            /* content: counter(page-number); 取用該名字的計數器 */
+            /*counter-increment: page-number 1;  增加計數器數值 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 33px;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 27px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        p,
+        span,
+        svg {
+            font-size: 22px;
+            line-height: 1.7;
+        }
+
+        th,
+        td {
+            font-size: 22px;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+    }
+}
