@@ -1,0 +1,248 @@
+body{
+    margin: 0;
+}
+main {
+    &.proofInquiry {
+        background-color: $white;
+
+
+        .page-banner {
+            &.proofInquiry {
+                background-image: url(../images/collectionBook/collectionBook_kv_m.png);
+                background-position: 45% center;
+                margin-bottom: 0;
+
+                h1 {
+                    font-size: 1.5em;
+                    font-weight: 400;
+                    line-height: 1em;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    color: #FFF;
+                    text-align: left;
+                }
+
+                p {
+                    font-size: 0.9em;
+                    line-height: 1.875em;
+                    color: #FFF;
+                    text-align: left !important;
+                }
+
+                .container {
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    margin-right: auto;
+                    margin-left: auto;
+
+                    .row {
+                        margin-right: -15px;
+                        margin-left: -15px;
+                    }
+                }
+            }
+        }
+
+        .level_introduction_search {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+
+            .level_introduction_btn_area {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-weight: bold;
+                }
+
+                .level_introduction_btn {
+                    position: relative;
+                    margin: 0 0 0 10px;
+
+                    .form-control {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 0 0 10px;
+                        border: 1px solid #ababab;
+                        background-color: #fff;
+                        min-width: 150px;
+                        border-radius: 0;
+                        height: auto;
+                        overflow: hidden;
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+
+                        i {
+                            padding: 10px;
+                            margin: 0 0 0 auto;
+                            background-color: #f1f1f1;
+                        }
+
+                        &.open {
+                            i {
+                                &::before {
+                                    content: "\f077";
+                                }
+                            }
+
+                            &~ul {
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    ul {
+                        position: absolute;
+                        left: 50%;
+                        z-index: 2;
+                        transform: translate(-50%, 10px);
+                        width: auto;
+                        min-width: 150px;
+                        visibility: hidden;
+                        border: 1px solid #ababab;
+                        background-color: #fff;
+                        overflow: hidden;
+                        cursor: pointer;
+
+                        .dropdown_item_li {
+                            padding: 5px 10px;
+
+                            &.active {
+                                background-color: #446ef6;
+                                color: #fff;
+                            }
+
+                            &:hover {
+                                background-color: #446ef6;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .downloadPDF_area {
+            position: fixed;
+            z-index: 10;
+            right: 5px;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+
+            .download_icon {
+                background-color: #446ef6;
+                padding: 5px;
+                line-height: 0;
+                width: calc(20px * 1.7);
+                border-radius: 50%;
+                text-align: center;
+
+                i {
+                    font-size: 20px;
+                    color: $white;
+                    line-height: 1.7;
+                }
+            }
+
+            p {
+                color: #2e3233;
+                margin: 5px auto;
+            }
+
+            &:hover {
+                p {
+                    color: #446ef6;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        &.proofInquiry {
+            .page-banner {
+                &.collectionBook {
+                    .container {
+                        width: calc(100% - 260px);
+                        max-width: 1200px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        &.proofInquiry {
+            .page-banner {
+                &.proofInquiry {
+                    background-position: center center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        &.proofInquiry {
+
+            .page-banner {
+                &.proofInquiry {
+                    background-image: url(../images/collectionBook/collectionBook_kv.png);
+                    background-position: left center;
+                }
+            }
+
+            .downloadPDF_area {
+                right: 15px;
+
+                .download_icon {
+                    width: calc(30px * 1.7);
+
+                    i {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        &.collectionBook {
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        &.collectionBook {
+            .page-banner {
+                &.collectionBook {
+                    background-image: url(../images/collectionBook/collectionBook_kv.png);
+                    background-position: left center;
+
+                    h1 {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
