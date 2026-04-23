@@ -1,0 +1,702 @@
+body {
+    counter-reset: page-number;
+    /* 初始化，名字可自訂，數值為0 */
+    -webkit-print-color-adjust: exact;
+    margin: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+.page {
+    /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+    /* page-break-after: always;  碰到此元素會直接換頁 */
+    page-break-inside: avoid;
+    position: relative;
+    max-width: 1024px;
+    width: 100%;
+    // min-height: 1448px;
+    margin: 0 auto;
+    background: linear-gradient(#6ebee0 0%, #c5e7fa 50%, #57b3dc 81%);
+    overflow: hidden;
+
+    &:after {
+        /* content: counter(page-number); 取用該名字的計數器 */
+        /*counter-increment: page-number 1;  增加計數器數值 */
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 26px;
+        line-height: 1.7;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+
+    p,
+    span,
+    svg {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    th,
+    td {
+        font-size: 14px;
+        text-decoration: none;
+        line-height: 1.7;
+    }
+
+    .competition_proof_header{
+        .competition_proof_header_logo_area{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            padding: 30px 0 0;
+
+            .competition_proof_header_logo_img{
+                width: 26%;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .date_area{
+                p{
+                    color: #044972;
+                }
+            }
+        }
+
+        .competition_proof_header_tittle_area{
+            width: 82%;
+            margin: 0 auto;
+            .competition_proof_header_tittle_img{
+                img{
+                    width: 100%;
+                }
+            }
+
+            .competition_proof_header_tittle_text{
+h3{
+                    text-shadow: 0px 0px 15px #fff;
+    color: #03558a;
+    font-size: 81px;
+    font-weight: bold;
+            }
+            }
+            
+        }
+    }
+
+    .certificate_header {
+        line-height: 0;
+
+        .certificate_header_bg {
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .date_area {
+            position: absolute;
+            top: 21px;
+            right: 9%;
+
+            p {
+                color: #044972;
+                font-weight: bold;
+                margin: 0;
+            }
+        }
+    }
+
+    .certificate_center {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+
+        .certificate_center_bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .certificate_center_content {
+            width: 82%;
+
+            .certificate_center_content_tittle {
+                padding: 15px 0 30px;
+
+                h3 {
+                    font-size: 50px;
+                    margin: 0;
+                    line-height: 1;
+                    text-align: center;
+                    color: #1a3267;
+                }
+            }
+
+            .certificate_center_content_subtitle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 35px;
+
+                .certificate_center_content_subtitle_border {
+                    width: 30%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                h4 {
+                    margin: 0 15px;
+                }
+            }
+
+            .certificate_center_content_text_content {
+                margin: 0 auto;
+
+                .certificate_center_content_name {
+                    display: flex;
+                    justify-content: center;
+
+                    p {
+                        display: inline-block;
+                        font-size: 30px;
+                        color: #1a3267;
+                        margin: 0;
+                        line-height: 1;
+
+                        span {
+                            font-size: 20px;
+                            color: $black;
+                        }
+                    }
+                }
+
+                p {
+                    text-align: center;
+                    margin: 0 auto 20px;
+                }
+            }
+
+            .certificate_center_content_item_area {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 0 auto 10px;
+
+                .certificate_center_content_item {
+                    margin: 10px 5px;
+                    width: calc(50% - 10px);
+
+                    &.certificate_center_content_item_one {
+                        .certificate_center_content_item_text {
+                            background-color: #b2769a;
+                        }
+                    }
+
+                    &.certificate_center_content_item_two {
+                        .certificate_center_content_item_text {
+                            background-color: #12b4d1;
+                        }
+                    }
+
+                    &.certificate_center_content_item_three {
+                        .certificate_center_content_item_text {
+                            background-color: #01b2af;
+                        }
+                    }
+
+                    &.certificate_center_content_item_four {
+                        .certificate_center_content_item_text {
+                            background-color: #ee839b;
+                        }
+                    }
+
+                    &.certificate_center_content_item_five {
+                        .certificate_center_content_item_text {
+                            background-color: #fdcf2e;
+                        }
+                    }
+
+                    &.certificate_center_content_item_six {
+                        .certificate_center_content_item_text {
+                            background-color: #75bb29;
+                        }
+                    }
+
+                    .certificate_center_content_item_img {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .certificate_center_content_item_text {
+                        border-radius: 8px;
+                        padding: 5px 8px;
+
+                        p {
+                            color: $white;
+                            font-size: 12px;
+                            margin: 0 auto;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .certificate_bottom {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+
+        .certificate_bottom_bg {
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .certificate_bottom_content {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0px);
+            width: 40%;
+            z-index: 1;
+
+            .certificate_bottom_content_text {
+                display: flex;
+                justify-content: center;
+
+                h4 {
+                    font-size: 15px;
+                    display: inline-block;
+                    text-align: center;
+                    margin: 0px auto 10px;
+                    padding: 0 0 10px;
+                    border-bottom: 1.7px solid #dfb380;
+                }
+            }
+
+            .certificate_bottom_content_logo_area {
+                .certificate_bottom_content_logo_item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    margin: 0 auto 6px;
+
+                    .footer_logo_item_text {
+                        width: 30%;
+
+                        p {
+                            margin: 0 auto;
+                            font-size: 10px;
+                        }
+                    }
+
+                    .footer_logo_item_img {
+                        width: 60%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 500px) {
+    
+}
+
+@media screen and (min-width: 550px) {
+    
+}
+
+@media screen and (min-width: 600px) {
+    
+}
+
+@media screen and (min-width: 650px) {
+    
+}
+
+@media screen and (min-width: 700px) {
+    
+}
+
+@media screen and (min-width: 750px) {
+    
+}
+
+
+@media screen and (min-width: 768px) {
+    
+}
+
+@media screen and (min-width: 800px) {
+    
+}
+
+@media screen and (min-width: 850px) {
+    
+}
+
+@media screen and (min-width: 900px) {
+    
+}
+
+@media screen and (min-width: 950px) {
+    
+}
+
+@media screen and (min-width: 1000px) {
+    
+}
+
+@media screen and (min-width: 1024px) {
+    
+}
+
+@page {
+    /*size: portrait;  直向 */
+    /*size: landscape;  橫向 */
+    /*size: A4;  紙張大小 */
+    size: A4 portrait;
+    /* 混合使用 */
+    min-height: 100vh;
+    margin: 0;
+    /* 邊界與內容的距離 */
+}
+
+@media print {
+    body {
+        // background-color: $body_bg;
+        counter-reset: page-number;
+        /* 初始化，名字可自訂，數值為0 */
+        -webkit-print-color-adjust: exact;
+    }
+
+    .page {
+        /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+        /* page-break-after: always;  碰到此元素會直接換頁 */
+        page-break-inside: avoid;
+        position: relative;
+        max-width: 1024px;
+        width: 100%;
+        min-height: 1448px;
+        margin: 0 auto;
+        background-color: #0f326b;
+        overflow: hidden;
+
+        &:after {
+            /* content: counter(page-number); 取用該名字的計數器 */
+            /*counter-increment: page-number 1;  增加計數器數值 */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 25px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        p,
+        span,
+        svg {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        th,
+        td {
+            font-size: 20px;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+
+        .certificate_header {
+            line-height: 0;
+
+            .certificate_header_bg {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .date_area {
+                position: absolute;
+                top: 80px;
+                right: 9%;
+
+                p {
+                    color: #044972;
+                    font-weight: bold;
+                    margin: 0;
+                }
+            }
+        }
+
+        .certificate_center {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+
+            .certificate_center_bg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .certificate_center_content {
+                width: 82%;
+
+                .certificate_center_content_tittle {
+                    padding: 30px 0 50px;
+
+                    h3 {
+                        font-size: 102px;
+                        margin: 0;
+                        line-height: 1;
+                        text-align: center;
+                        color: #1a3267;
+                    }
+
+                }
+
+                .certificate_center_content_subtitle {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 35px;
+
+                    .certificate_center_content_subtitle_border {
+                        width: 35%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    h4 {
+                        margin: 0 15px;
+                    }
+                }
+
+                .certificate_center_content_text_content {
+                    margin: 0 auto;
+
+                    .certificate_center_content_name {
+                        display: flex;
+                        justify-content: center;
+
+                        p {
+                            display: inline-block;
+                            font-size: 63px;
+                            color: #1a3267;
+                            margin: 0;
+                            line-height: 1;
+
+                            span {
+                                font-size: 35px;
+                                color: $black;
+                            }
+                        }
+                    }
+
+                    p {
+                        text-align: center;
+                        margin: 0 auto 35px;
+                        font-size: 24px;
+                    }
+                }
+
+                .certificate_center_content_item_area {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    margin: 0 auto 10px;
+
+                    .certificate_center_content_item {
+                        margin: 0 3px;
+                        width: calc(33% - 6px);
+
+                        &.certificate_center_content_item_one {
+                            .certificate_center_content_item_text {
+                                background-color: #b2769a;
+                            }
+                        }
+
+                        &.certificate_center_content_item_two {
+                            .certificate_center_content_item_text {
+                                background-color: #12b4d1;
+                            }
+                        }
+
+                        &.certificate_center_content_item_three {
+                            .certificate_center_content_item_text {
+                                background-color: #01b2af;
+                            }
+                        }
+
+                        &.certificate_center_content_item_four {
+                            .certificate_center_content_item_text {
+                                background-color: #ee839b;
+                            }
+                        }
+
+                        &.certificate_center_content_item_five {
+                            .certificate_center_content_item_text {
+                                background-color: #fdcf2e;
+                            }
+                        }
+
+                        &.certificate_center_content_item_six {
+                            .certificate_center_content_item_text {
+                                background-color: #75bb29;
+                            }
+                        }
+
+                        .certificate_center_content_item_img {
+                            display: flex;
+                            justify-content: center;
+                        }
+
+                        .certificate_center_content_item_text {
+                            border-radius: 8px;
+                            padding: 5px 8px;
+
+                            p {
+                                color: $white;
+                                font-size: 12px;
+                                margin: 0 auto;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .certificate_bottom {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+
+            .certificate_bottom_bg {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .certificate_bottom_content {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, 0px);
+                width: 40%;
+                z-index: 1;
+
+                .certificate_bottom_content_text {
+                    display: flex;
+                    justify-content: center;
+
+                    h4 {
+                        font-size: 25px;
+                        display: inline-block;
+                        text-align: center;
+                        margin: 35px auto;
+                        padding: 0 0 32px;
+                        border-bottom: 1.7px solid #dfb380;
+                    }
+                }
+
+                .certificate_bottom_content_logo_area {
+
+                    .certificate_bottom_content_logo_item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        margin: 0 auto 15px;
+
+                        .footer_logo_item_text {
+                            width: 21%;
+
+                            p {
+                                margin: 0 auto;
+                                font-size: 20px;
+                            }
+                        }
+
+                        .footer_logo_item_img {
+                            width: 65%;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
