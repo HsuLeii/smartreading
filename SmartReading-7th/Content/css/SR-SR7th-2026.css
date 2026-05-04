@@ -2136,18 +2136,14 @@ body {
   padding: 12px 0 0;
 }
 .page .competition_proof_header .competition_proof_header_logo_area .competition_proof_header_logo_img {
-  width: 20%;
+  width: 35%;
 }
 .page .competition_proof_header .competition_proof_header_logo_area .competition_proof_header_logo_img img {
   width: 100%;
 }
 .page .competition_proof_header .competition_proof_header_logo_area .date_area p {
-  font-size: 18.5px;
   font-weight: bold;
   color: #044972;
-}
-.page .competition_proof_header .competition_proof_header_logo_area .date_area p span {
-  font-size: 18.5px;
 }
 .page .competition_proof_header .competition_proof_header_tittle_area {
   width: 82%;
@@ -2159,13 +2155,13 @@ body {
 .page .competition_proof_header .competition_proof_header_tittle_area .competition_proof_header_tittle_text {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 80%;
   margin: 20px auto;
 }
 .page .competition_proof_header .competition_proof_header_tittle_area .competition_proof_header_tittle_text h3 {
   text-shadow: 0px 0px 15px #fff;
   color: #03558a;
-  font-size: 81px;
+  font-size: 60px;
   font-weight: bold;
   margin: 0 auto;
   line-height: 1;
@@ -2173,6 +2169,7 @@ body {
 .page .competition_proof_center .competition_proof_center_information {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 82%;
   margin: 0 auto 20px;
   padding: 10px 5%;
@@ -2183,7 +2180,7 @@ body {
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left {
   position: relative;
-  width: 40%;
+  width: 100%;
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text {
   position: absolute;
@@ -2212,7 +2209,7 @@ body {
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_name h4,
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_school h4 {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   color: #FFF;
   margin: 0 auto;
@@ -2227,7 +2224,7 @@ body {
   margin: 0 auto;
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right {
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: flex-start;
 }
@@ -2240,7 +2237,6 @@ body {
   margin: 0 15px 0 0;
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_tittle h4 {
-  font-size: 27px;
   font-weight: bolder;
   color: #005b98;
   text-shadow: 0px 0px 15px #fff;
@@ -2249,11 +2245,15 @@ body {
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content {
   position: relative;
+  width: 70%;
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text {
   position: absolute;
   left: 0;
   top: 0;
+}
+.page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_content {
+  width: 100%;
 }
 .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_subject_name {
   transform: translate(0, 0);
@@ -2488,6 +2488,411 @@ body {
   width: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+  .page {
+    /* page-break-inside: avoid; 若順著向下排列時會切開此元素，則直接換頁 */
+    /* page-break-after: always;  碰到此元素會直接換頁 */
+    page-break-inside: avoid;
+    position: relative;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(#6ebee0 0%, #c5e7fa 50%, #57b3dc 81%);
+    overflow: hidden;
+  }
+  .page:after {
+    /* content: counter(page-number); 取用該名字的計數器 */
+    /*counter-increment: page-number 1;  增加計數器數值 */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    text-align: center;
+  }
+  .page h3 {
+    font-size: 26px;
+    line-height: 1.7;
+    font-weight: bold;
+  }
+  .page h4 {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  .page p,
+  .page span,
+  .page svg {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .page th,
+  .page td {
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.7;
+  }
+  .page .competition_proof_header .competition_proof_header_logo_area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 12px 0 0;
+  }
+  .page .competition_proof_header .competition_proof_header_logo_area .competition_proof_header_logo_img {
+    width: 20%;
+  }
+  .page .competition_proof_header .competition_proof_header_logo_area .competition_proof_header_logo_img img {
+    width: 100%;
+  }
+  .page .competition_proof_header .competition_proof_header_logo_area .date_area p {
+    font-size: 18.5px;
+    font-weight: bold;
+    color: #044972;
+  }
+  .page .competition_proof_header .competition_proof_header_logo_area .date_area p span {
+    font-size: 18.5px;
+  }
+  .page .competition_proof_header .competition_proof_header_tittle_area {
+    width: 82%;
+    margin: 0 auto;
+  }
+  .page .competition_proof_header .competition_proof_header_tittle_area .competition_proof_header_tittle_img img {
+    width: 100%;
+  }
+  .page .competition_proof_header .competition_proof_header_tittle_area .competition_proof_header_tittle_text {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 20px auto;
+  }
+  .page .competition_proof_header .competition_proof_header_tittle_area .competition_proof_header_tittle_text h3 {
+    text-shadow: 0px 0px 15px #fff;
+    color: #03558a;
+    font-size: 81px;
+    font-weight: bold;
+    margin: 0 auto;
+    line-height: 1;
+  }
+  .page .competition_proof_center .competition_proof_center_information {
+    display: flex;
+    justify-content: center;
+    width: 82%;
+    margin: 0 auto 20px;
+    padding: 10px 5%;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 20px 5px rgba(13, 244, 255, 0.52);
+    border: 4.8px solid #FFF;
+    border-radius: 17px;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left {
+    position: relative;
+    width: 40%;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text .proof_information_left_name,
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text .proof_information_left_school {
+    transform: translate(0, 0);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text .proof_information_left_name h4,
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text .proof_information_left_school h4 {
+    color: #005b98;
+    text-shadow: 0px 0px 15px #fff;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text .proof_information_left_time {
+    transform: translate(0, 0);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .competition_proof_center_information_left_blue_text .proof_information_left_time p {
+    color: #005b98;
+    text-shadow: 0px 0px 15px #fff;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_name,
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_school {
+    transform: translate(3px, 3px);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_name h4,
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_school h4 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0 auto;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_time {
+    transform: translate(3px, 3px);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_left .proof_information_left_time p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0 auto;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right {
+    width: 60%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_tittle {
+    display: inline-block;
+    padding: 15px;
+    border: 1.7px solid #005b98;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 0 15px 0 0;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_tittle h4 {
+    font-size: 27px;
+    font-weight: bolder;
+    color: #005b98;
+    text-shadow: 0px 0px 15px #fff;
+    margin: 0 auto;
+    line-height: 1.1;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content {
+    position: relative;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_subject_name {
+    transform: translate(0, 0);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_subject_name h4 {
+    color: #005b98;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_progress_bar_area .proof_information_right_progress_bar_text {
+    transform: translate(0, 0);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_progress_bar_area .proof_information_right_progress_bar_text p {
+    color: #005b98;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_rank_area {
+    transform: translate(0, 0);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .competition_proof_center_information_right_blue_text .proof_information_right_rank_area .proof_information_right_rank_text h4 {
+    color: #005b98;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_subject_name {
+    transform: translate(3px, 3px);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_subject_name h4 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 0px 0px 15px #fff;
+    margin: 0 auto;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_subject_name h4 span {
+    font-size: 23px;
+    font-weight: bolder;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area {
+    display: flex;
+    align-items: center;
+    padding: 0 0 11px 0;
+    margin: 0 0 11px 0;
+    border-bottom: 1.2px solid #005b98;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #005b98;
+    border-radius: 5px;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_arrow_area {
+    display: flex;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_arrow_area .progress_bar_arrow_item {
+    position: relative;
+    width: 7px;
+    height: 10px;
+    margin: 0 7px 0 0;
+    background-color: #0deaff;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_arrow_area .progress_bar_arrow_item::before, .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_arrow_area .progress_bar_arrow_item::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 0px solid;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_arrow_area .progress_bar_arrow_item::before {
+    border-left: 7px solid #0deaff;
+    right: -7px;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_arrow_area .progress_bar_arrow_item::after {
+    border-left: 7px solid #005b98;
+    left: 0;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_text {
+    margin: 0 0 0 8px;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar .progress_bar_text p {
+    color: #FFF;
+    font-weight: bold;
+    margin: 0;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar_text {
+    transform: translate(3px, 3px);
+    margin: 0 0 0 4px;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_progress_bar_area .proof_information_right_progress_bar_text p {
+    color: #FFF;
+    font-weight: bold;
+    margin: 0;
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_rank_area {
+    transform: translate(3px, 3px);
+  }
+  .page .competition_proof_center .competition_proof_center_information .competition_proof_center_information_right .proof_information_right_content .proof_information_right_rank_area .proof_information_right_rank_text h4 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 0px 0px 15px #fff;
+    margin: 0 auto;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area {
+    display: flex;
+    justify-content: space-between;
+    width: 91%;
+    margin: 0 auto;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(30% - 24px);
+    padding: 10px 12px 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 20px 5px rgba(13, 244, 255, 0.52);
+    border: 4.8px solid #FFF;
+    border-radius: 20px;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item.score_item_one .competition_proof_center_score_item_text {
+    background-color: #1796b6;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item.score_item_two .competition_proof_center_score_item_text {
+    background-color: #c07fa0;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item.score_item_three .competition_proof_center_score_item_text {
+    background-color: #66aa81;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_img {
+    width: 22%;
+    margin: 0 auto 15px;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_img img {
+    width: 100%;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_tittle h4 {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    color: #005b98;
+    margin: 0 auto 15px;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_num h4 {
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 1;
+    color: #005b98;
+    margin: 0 auto 15px;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_text {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px 8px;
+    box-shadow: 0px 0px 20px 5px rgba(13, 244, 255, 0.52);
+    min-height: 140px;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_text p {
+    color: #FFF;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area .competition_proof_center_score_item_border_img {
+    position: absolute;
+    width: 20%;
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area .competition_proof_center_score_item_border_img.border_img_left_top {
+    left: 0;
+    top: 0;
+    transform: translate(-37%, -37%);
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area .competition_proof_center_score_item_border_img.border_img_right_top {
+    right: 0;
+    top: 0;
+    transform: translate(37%, -37%);
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area .competition_proof_center_score_item_border_img.border_img_left_bottom {
+    left: 0;
+    bottom: 0;
+    transform: translate(-37%, 42%);
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area .competition_proof_center_score_item_border_img.border_img_right_bottom {
+    right: 0;
+    bottom: 0;
+    transform: translate(37%, 42%);
+  }
+  .page .competition_proof_center .competition_proof_center_score_area .competition_proof_center_score_item .competition_proof_center_score_item_border_area .competition_proof_center_score_item_border_img img {
+    width: 100%;
+  }
+  .page .competition_proof_bottom {
+    margin: 8px auto 0;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_img {
+    line-height: 0;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_img img {
+    line-height: 0;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_logo_area {
+    display: flex;
+    justify-content: center;
+    padding: 0 8px;
+    background-color: #fff;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_logo_area .competition_proof_bottom_logo_item {
+    width: 28%;
+    margin: 0 8px;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_logo_area .competition_proof_bottom_logo_item .competition_proof_bottom_logo_item_text p {
+    font-size: 18px;
+    text-align: center;
+    color: #231815;
+    margin: 0 auto;
+    padding: 0 0 8px;
+    border-bottom: 1.2px solid #dcdddd;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_logo_area .competition_proof_bottom_logo_item .competition_proof_bottom_logo_item_img {
+    width: 84%;
+    margin: 0 auto;
+  }
+  .page .competition_proof_bottom .competition_proof_bottom_logo_area .competition_proof_bottom_logo_item .competition_proof_bottom_logo_item_img img {
+    width: 100%;
+  }
+}
 @page {
   /*size: portrait;  直向 */
   /*size: landscape;  橫向 */
