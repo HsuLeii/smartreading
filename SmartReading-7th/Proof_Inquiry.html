@@ -35,12 +35,12 @@
 
         <!-- collectionBook start -->
 
-        <div class="proof_search">
-            <div class="proof_btn_area">
+        <div class="proofInquiry_search">
+            <div class="proofInquiry_btn_area">
                 <p>
                     證明查詢
                 </p>
-                <div class="proof_btn">
+                <div class="proofInquiry_btn">
 
                     <button type="button" class="form-control">
                         <p id="searchBtn_text">參賽證明</p>
@@ -59,7 +59,7 @@
 
             <div class="proofInquiry_area_page">
 
-                <div class="proofInquiry_area_page_item">
+                <div class="proofInquiry_area_page_item competition_proof_page">
                     <div class="page">
         <div class="competition_proof_header">
             <div class="competition_proof_header_logo_area">
@@ -456,7 +456,7 @@
                     </a>
                 </div>
 
-                <div class="proofInquiry_area_page_item">
+                <div style="display: none;" class="proofInquiry_area_page_item competency_certificate_page">
                     <div class="page">
         <div class="certificate_header">
             <div class="certificate_header_bg">
@@ -676,34 +676,32 @@
     <script src="Content/widgets/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1.min.js"></script>
 
 
-    <!-- 學年選擇 -->
+    <!-- 證明查詢 -->
     <script>
-        $(".proof_btn button").click(function () {
+        $(".proofInquiry_btn button").click(function () {
             $(this).toggleClass("open");
         });
 
         var dropdown_item_one = $(".dropdown_item_li_one").text();
         var dropdown_item_two = $(".dropdown_item_li_two").text();
-        var dropdown_item_three = $(".dropdown_item_li_three").text();
 
         $(".dropdown_item_li").click(function () {
-            $(".proof_btn button").toggleClass("open");
+            $(".proofInquiry_btn button").toggleClass("open");
         });
 
         $(".dropdown_item_li_one").click(function () {
             document.getElementById('searchBtn_text').innerHTML = dropdown_item_one;
             $(".dropdown_item_li").removeClass("active");
             $(this).addClass("active");
+            $(".competency_certificate_page").hide();
+            $(".competition_proof_page").show();
         });
         $(".dropdown_item_li_two").click(function () {
             document.getElementById('searchBtn_text').innerHTML = dropdown_item_two;
             $(".dropdown_item_li").removeClass("active");
             $(this).addClass("active");
-        });
-        $(".dropdown_item_li_three").click(function () {
-            document.getElementById('searchBtn_text').innerHTML = dropdown_item_three;
-            $(".dropdown_item_li").removeClass("active");
-            $(this).addClass("active");
+            $(".competition_proof_page").hide();
+            $(".competency_certificate_page").show();
         });
     </script>
 
