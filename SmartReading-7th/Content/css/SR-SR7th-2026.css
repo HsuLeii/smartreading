@@ -1903,8 +1903,8 @@ main.proofInquiry .proofInquiry_search .proofInquiry_btn_area .proofInquiry_btn 
   color: #fff;
 }
 main.proofInquiry .proofInquiry_area {
-  max-width: 1200px;
-  width: 90%;
+  max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
 }
 main.proofInquiry .proofInquiry_area .proofInquiry_area_page .proofInquiry_area_page_item {
@@ -1914,10 +1914,10 @@ main.proofInquiry .proofInquiry_area .proofInquiry_area_page .proofInquiry_area_
   margin: 0 auto 40px;
 }
 main.proofInquiry .downloadPDF_area {
-  position: absolute;
+  position: fixed;
   z-index: 10;
-  right: -10px;
-  top: 0;
+  right: 5px;
+  bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1931,23 +1931,24 @@ main.proofInquiry .downloadPDF_area .download_icon {
   width: 39px;
   border-radius: 50%;
   text-align: center;
+  opacity: 0.5;
 }
 main.proofInquiry .downloadPDF_area .download_icon i {
   font-size: 20px;
   color: white;
   line-height: 1.7;
 }
+main.proofInquiry .downloadPDF_area .download_icon:hover {
+  opacity: 1;
+}
 main.proofInquiry .downloadPDF_area p {
+  font-size: 14px;
   color: #2e3233;
   margin: 5px auto;
+  word-break: keep-all;
 }
 main.proofInquiry .downloadPDF_area:hover p {
   color: #446ef6;
-}
-main.proofInquiry .sticky {
-  position: fixed;
-  top: 5px;
-  right: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -2019,13 +2020,19 @@ main.proofInquiry .sticky {
     background-position: left center;
   }
   main.proofInquiry .downloadPDF_area {
-    right: 15px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: auto;
   }
-  main.proofInquiry .downloadPDF_area .download_icon {
-    width: 56px;
+  main.proofInquiry .sticky {
+    position: fixed;
   }
-  main.proofInquiry .downloadPDF_area .download_icon i {
-    font-size: 30px;
+}
+@media screen and (min-width: 1200px) {
+  main.proofInquiry .downloadPDF_area {
+    right: auto;
+    left: calc(50% + 512px + 5px);
   }
 }
 @media screen and (min-width: 1400px) {

@@ -266,8 +266,8 @@ main {
         }
 
         .proofInquiry_area {
-            max-width: 1200px;
-            width: 90%;
+            max-width: 1024px;
+            width: 100%;
             margin: 0 auto;
 
             .proofInquiry_area_page {
@@ -281,10 +281,10 @@ main {
         }
 
         .downloadPDF_area {
-            position: absolute;
+            position: fixed;
             z-index: 10;
-            right: -10px;
-            top: 0;
+            right: 5px;
+            bottom: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -298,17 +298,24 @@ main {
                 width: calc(20px * 1.7 + 5px);
                 border-radius: 50%;
                 text-align: center;
+                opacity: 0.5;
 
                 i {
                     font-size: 20px;
                     color: $white;
                     line-height: 1.7;
                 }
+
+                &:hover{
+                    opacity: 1;
+                }
             }
 
             p {
+                font-size: 14px;
                 color: #2e3233;
                 margin: 5px auto;
+                word-break: keep-all;
             }
 
             &:hover {
@@ -317,12 +324,6 @@ main {
                 }
             }
         }
-
-        .sticky {
-  position: fixed;
-  top: 5px;
-  right: 5px;
-}
     }
 }
 
@@ -431,18 +432,28 @@ main {
             }
 
             .downloadPDF_area {
-                right: 15px;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+                bottom: auto;
+            }
 
-                .download_icon {
-                    width: calc(30px * 1.7 + 5px);
-
-                    i {
-                        font-size: 30px;
-                    }
-                }
+            .sticky {
+                position: fixed;
             }
         }
 
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        &.proofInquiry {
+            .downloadPDF_area{
+                right: auto;
+                left: calc(50% + 512px + 5px);
+            }
+        }
     }
 }
 
