@@ -1,3 +1,6 @@
+@use "color"as c;
+@use "../base/reset" as r;
+
 .slide {
   margin-bottom: 80px;
 
@@ -10,9 +13,9 @@
 
   h1 {
     font-size: 50px;
-    color: $white;
+    color: c.$white;
     margin-left: 5%;
-    text-shadow: 0.1em 0.1em 0.2em $grey;
+    text-shadow: 0.1em 0.1em 0.2em c.$grey;
   }
 }
 
@@ -58,7 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $white;
+    background-color: c.$white;
     padding: 20px;
     border-radius: 10px;
     @extend %boxShadow_gray;
@@ -68,7 +71,7 @@
       margin-bottom: 5px;
 
       a {
-        color: $main_color;
+        color: c.$main_color;
       }
     }
 
@@ -127,7 +130,7 @@
 //   a {
 //     margin: 10px auto;
 //     &:nth-child(1) {
-//       background: $grey;
+//       background: c.$grey;
 //     }
 //   }
 // }
@@ -138,7 +141,7 @@
 
   .button {
     width: 100%;
-    border-top: 1px solid $white;
+    border-top: 1px solid c.$white;
     text-align: center;
   }
 
@@ -146,7 +149,7 @@
     h3 {
       font-size: 26px;
       text-align: center;
-      border-bottom: 0px solid $white;
+      border-bottom: 0px solid c.$white;
       padding: 0px;
       margin-bottom: 5px;
     }
@@ -174,7 +177,7 @@
     position: relative;
     margin: 0 auto;
     padding: 0% 10%;
-    background: $white;
+    background: c.$white;
     border-radius: 10px 10px 0px 0px;
 
     .readbadge-modal {
@@ -210,7 +213,7 @@
       }
 
       p {
-        color: $white;
+        color: c.$white;
         text-align: center;
       }
     }
@@ -265,11 +268,11 @@
 
     a,
     span {
-      color: $main_color;
+      color: c.$main_color;
       float: left;
       text-decoration: none;
       border-radius: 50%;
-      border: 1px solid $main_color;
+      border: 1px solid c.$main_color;
       margin: 10px 15px;
       width: 35px;
       height: 35px;
@@ -277,8 +280,8 @@
       line-height: 35px;
 
       &.active {
-        background-color: $main_color;
-        color: $white;
+        background-color: c.$main_color;
+        color: c.$white;
         border-radius: 50%;
       }
 
@@ -355,18 +358,18 @@
 
   a {
     font-size: 22px;
-    color: $white;
+    color: c.$white;
     border: 0px;
     border-radius: 8px;
     padding: 10px 18px;
     margin: 0px 5px;
 
     &:nth-child(2) {
-      background: $grey;
+      background: c.$grey;
     }
 
     &:nth-child(1) {
-      background: $main_color;
+      background: c.$main_color;
     }
   }
   
@@ -443,13 +446,13 @@ input[type="radio"]:checked+*::before {
 
       h1 {
         font-size: 50px;
-        color: $white;
+        color: c.$white;
         margin-bottom: 20px;
         text-shadow: none;
       }
 
       p {
-        color: $white;
+        color: c.$white;
         font-weight: bold;
       }
     }
@@ -487,7 +490,7 @@ input[type="radio"]:checked+*::before {
   align-items: center;
   justify-content: center;
   background-color: #eeefef;
-  border: 1px solid $white;
+  border: 1px solid c.$white;
   border-radius: 100%;
   @extend %boxShadow_gray;
   position: relative;
@@ -544,6 +547,45 @@ input[type="radio"]:checked+*::before {
 }
 
 // 登入後通用結束
+
+@media (max-width: 1024px) {
+  .slide{
+    &.slide-bg {
+    padding-top: 200px;
+    padding-bottom: 45px;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+  }
+}
+
+@media (max-width: 768px) {
+  .slide{
+    &.slide-bg {
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+  }
+}
+
+@media (max-width: 499px) {
+  .slide{
+    &.slide-bg {
+    padding-top: 85px;
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+  }
+}
 
 ::-webkit-scrollbar {
   background: transparent;

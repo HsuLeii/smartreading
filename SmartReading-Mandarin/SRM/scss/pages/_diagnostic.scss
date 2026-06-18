@@ -1,3 +1,5 @@
+@use "../base/color"as c;
+
 .diagnostic {
     &.slide {
         background-image: url(../image/photo/slide-diagnostic.jpeg);
@@ -5,28 +7,19 @@
 }
 
 .main {
-
     .diagnostic-content {
         max-width: 1200px;
         margin: 0 auto;
 
-        .dacc-introduce,
-        .dacc-advantage,
-        .dacc-diagnosis {
-            display: flex;
-        }
-
-        .dacc-introduce,
-        .dacc-diagnosis {
-            img {
-                width: 35%;
-            }
-        }
-
         .dacc-introduce {
+            display: flex;
             align-items: center;
             justify-content: space-around;
             margin-bottom: 120px;
+
+            img {
+                width: 35%;
+            }
 
             p {
                 width: 55%;
@@ -34,6 +27,7 @@
         }
 
         .dacc-advantage {
+            display: flex;
             justify-content: space-between;
             margin-bottom: 120px;
 
@@ -44,50 +38,114 @@
                 flex-direction: column;
                 align-items: center;
 
+                h2 {
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+
                 img {
                     width: 55%;
                     margin: 0px auto 40px;
                 }
-
-                h2 {
-                    margin-bottom: 20px;
-                    text-align: center;
-                  }
             }
         }
 
         .dacc-diagnosis {
+            display: flex;
             justify-content: space-between;
             align-items: center;
+
+            img {
+                width: 35%;
+            }
 
             .diagnosis-text {
                 width: 55%;
 
                 h2 {
                     margin-bottom: 20px;
-                  }
+                }
 
-                  button {
+                button {
                     padding: 5px 10px;
-                    border: 1px solid $main_color;
+                    border: 1px solid #00a7e5;
                     margin-top: 10px;
                     border-radius: 10px;
-                    color: $main_color;
+                    color: #00a7e5;
                     margin-right: 20px;
 
-                    a {
-                        color: $main_color;
-                      }
-
-                      &:hover {
-                        background-color: $main_color;
+                    &:hover {
+                        background-color: #00a7e5;
 
                         a {
-                            color: $white;
-                          }
-                      }
-                  }
+                            color: #fff;
+                        }
+                    }
+
+                    a {
+                        color: #00a7e5;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .main {
+        .diagnostic-content {
+            .dacc-introduce {
+                margin-bottom: 40px;
+            }
+
+            .dacc-advantage {
+                flex-direction: column;
+                align-items: center;
+                width: 80%;
+                margin: 0 auto 40px;
+
+                .intelligent,
+                .diagnosis {
+                    width: 100%;
+                    margin: 20px auto;
+
+                    h2 {
+                        margin-bottom: 10px;
+                    }
+
+                    img {
+                        width: 45%;
+                        margin: 0px auto 20px;
+                    }
+                }
+            }
+
+            .dacc-diagnosis {
+                flex-direction: column;
+                width: 80%;
+                margin: 0 auto;
+
+                .diagnosis-text {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    button {
+                        padding: 5px 8px;
+                    }
+                }
+
+                h2 {
+                    margin-bottom: 10px;
+                }
+
+                img {
+                    width: 45%;
+                    margin-bottom: 20px;
+                }
             }
         }
     }
+
 }
