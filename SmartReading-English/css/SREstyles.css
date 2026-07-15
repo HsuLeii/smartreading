@@ -1,8 +1,8 @@
 @charset "UTF-8";
-/*main*/
-/*other*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/*main*/
+/*other*/
 .header nav .menu div li a, body input[type=radio i] ~ label {
   font-weight: bold;
 }
@@ -11,7 +11,7 @@
   transition: all 0.3s ease;
 }
 
-.main.personal .frame_effect .folder .folder_content .membership_card_area, .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item, .main.library .frame_effect .folder .folder_content, .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .redeem_area_explain, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .medal_area_explain, .main .navigator_area .navigator_content .navigator_book_area, .main .navigator_area .navigator_content .navigator_text, .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area .swiper .swiper-wrapper a, .best_book .swiper .swiper-wrapper .swiper-slide, .owl-prev,
+.main.personal .frame_effect .folder .folder_content .membership_card_area, .main.library .frame_effect .folder .folder_content, .main.library .frame_effect .folder .folder_content .folder_item_area .folder_item, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .medal_area_explain, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .redeem_area_explain, .book_area .grade_map_booklist .swiper .swiper-wrapper .booklist_item_area .booklist_item, .main .navigator_area .navigator_content .navigator_text, .main .navigator_area .navigator_content .navigator_book_area, .main.booklist .book_area .booklist_best_book .book_list .book_list_swiper_area .swiper .swiper-wrapper a, .best_book .swiper .swiper-wrapper .swiper-slide, .owl-prev,
 .owl-next, .swiper_ticket_next,
 .swiper_ticket_prev {
   box-shadow: 1px 1px 5px rgba(75, 75, 75, 0.2705882353);
@@ -4072,7 +4072,7 @@ footer .footer_copyright p {
   right: -40px;
 }
 .main.test .answer_area .connect tr td .test_audio_icon:hover {
-  background: rgb(255, 74.5, 74.5);
+  background: #ff3131;
 }
 .main.test .answer_area .connect tr td .test_audio_icon:active {
   background: #ff3131;
@@ -4869,8 +4869,7 @@ h-word {
   background-position: left center;
   background-size: cover;
   margin: 0px auto;
-  padding-top: 130px;
-  padding-bottom: 130px;
+  padding: 130px 0;
   position: relative;
 }
 .main.login.kumon {
@@ -4949,11 +4948,13 @@ h-word {
   background-color: transparent;
 }
 .main.login .login_text {
-  width: calc(85% - 550px);
+  width: 440px;
   max-width: 550px;
-  margin: 0 0 0 10%;
+  margin: 0 auto;
   position: absolute;
-  bottom: 130px;
+  top: 65px;
+  left: 50%;
+  transform: translate(-50%, -20px);
 }
 .main.login .login_area {
   display: flex;
@@ -4961,9 +4962,36 @@ h-word {
   background-color: #fff;
   padding: 50px;
   border-radius: 10px;
-  box-shadow: 0 0 10px grey;
   width: 550px;
   margin: 0 0 0 calc(95% - 550px);
+}
+.main.login .login_area.dual_login {
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main.login .login_area.dual_login::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  width: 1px;
+  height: calc(100% - 50px);
+  background-color: #5B3716;
+}
+.main.login .login_area.dual_login .login_area_content {
+  width: 45%;
+}
+.main.login .login_area.dual_login .login_area_content .login_area_content_tittle {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.main.login .login_area.dual_login .login_area_content .login_area_content_tittle h4 {
+  color: #5B3716;
 }
 .main.login .login_area .account_area .account_secret_area {
   display: flex;
@@ -4995,7 +5023,7 @@ h-word {
 .main.login .login_area .account_area .login_button {
   width: 100%;
   font-size: 17px;
-  margin-bottom: 15px;
+  margin: 0 auto 20px;
   color: #ff6464;
   border: 1px solid #ff6464;
   padding: 10px 0px;
@@ -5007,9 +5035,18 @@ h-word {
   background-color: #ff6464;
   color: #fff;
 }
+.main.login .login_area .account_area .account_link_area {
+  border-top: 1px solid #5B3716;
+}
+.main.login .login_area .account_area .account_link_area .login_button {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  padding: 10px;
+}
 .main.login .login_area .forget_password {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .main.login .login_area .forget_password .remember_me {
   display: flex;
@@ -5060,8 +5097,8 @@ h-word {
   color: #ff6464;
 }
 .main.login .login_area .signup {
-  margin-top: 25px;
-  padding-top: 15px;
+  margin: 25px auto 0;
+  padding: 15px 0 0;
   border-top: 1px solid #5B3716;
 }
 .main.login .login_area .signup p {
@@ -5103,18 +5140,13 @@ h-word {
   .main.login.kumon.kumon_one .login_logo_area .kumon_login_logo .login_logo_img.login_logo_sre {
     width: 80%;
   }
+  .main.login .login_area.dual_login {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 1200px) {
-  .main.login {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-  .main.login .login_text {
-    width: 440px;
-    margin: 0 0 0 calc(95% - 495px);
-    bottom: auto;
-    top: 65px;
-    transform: translate(0%, -50%);
+  .main.login .login_area.dual_login {
+    width: 90%;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -5132,7 +5164,6 @@ h-word {
   }
   .main.login .login_text {
     width: 360px;
-    margin: 0 0 0 calc(95% - 405px);
   }
   .main.login .login_area {
     width: 450px;
@@ -5164,6 +5195,9 @@ h-word {
   }
 }
 @media screen and (max-width: 992px) {
+  .main.login {
+    padding: 80px 0;
+  }
   .main.login.kumon.kumon_one::before {
     display: none;
   }
@@ -5235,6 +5269,39 @@ h-word {
   .main.login.kumon .login_area .account_area {
     margin: 50px 0 0;
   }
+  .main.login .login_text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+    margin: 0 auto 20px;
+  }
+  .main.login .login_area {
+    padding: 50px 20px;
+  }
+  .main.login .login_area.dual_login {
+    flex-direction: column;
+    width: 70%;
+  }
+  .main.login .login_area.dual_login::before {
+    display: none;
+  }
+  .main.login .login_area.dual_login .login_area_content {
+    width: 100%;
+  }
+  .main.login .login_area.dual_login .login_area_content:nth-child(1) {
+    border-bottom: 1px solid #5B3716;
+    padding: 0 0 30px;
+  }
+  .main.login .login_area.dual_login .login_area_content:nth-child(2) {
+    margin: 30px auto 0;
+  }
+  .main.login .login_area .account_area {
+    padding: 0 30px;
+  }
+  .main.login .login_area .signup {
+    padding: 15px 30px 0;
+  }
 }
 @media screen and (max-width: 768px) {
   .main.login {
@@ -5246,23 +5313,19 @@ h-word {
   }
   .main.login .login_text {
     width: 60%;
-    margin: 0 auto 20px;
     max-width: none;
-    position: relative;
-    top: auto;
-    transform: translate(0px, 0px);
   }
   .main.login .login_area {
     width: 90%;
     margin: 0 auto;
-    padding: 50px 10%;
+    padding: 50px 25px;
     margin: 0 5%;
   }
-  .main.login .login_area .forget_password {
-    flex-direction: column;
+  .main.login .login_area.dual_login {
+    width: 80%;
   }
-  .main.login .login_area .forget_password a {
-    margin: 10px 0px 0px;
+  .main.login .login_area .forget_password {
+    justify-content: center;
   }
 }
 @media screen and (max-width: 499px) {
@@ -6034,6 +6097,9 @@ h-word {
   display: flex;
   flex-direction: column;
 }
+.main .navigator_area .navigator_content .navigator_text:hover ~ .mapman {
+  animation: 2s infinite ease;
+}
 .main .navigator_area .navigator_content .navigator_text {
   display: flex;
   justify-content: center;
@@ -6042,9 +6108,6 @@ h-word {
   background-color: #fff;
   padding: 10px 40px 0px 20px;
   border-radius: 10px;
-}
-.main .navigator_area .navigator_content .navigator_text:hover ~ .mapman {
-  animation: 2s infinite ease;
 }
 .main .navigator_area .navigator_content .navigator_text p {
   margin: 0 0 10px;
@@ -6808,11 +6871,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #ffd8d8;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_first_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -6845,11 +6908,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_second_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_second_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_second_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #ffdac2;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_second_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_second_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -6882,11 +6945,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_third_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_third_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_third_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #fef0c4;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_third_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_third_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -6919,11 +6982,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_fourth_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_fourth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_fourth_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #dfebae;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_fourth_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_fourth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -6956,11 +7019,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_fifth_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_fifth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_fifth_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #c7ffe5;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_fifth_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_fifth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -6993,11 +7056,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_sixth_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_sixth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_sixth_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #c8fdff;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_sixth_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_sixth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -7030,11 +7093,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_seventh_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_seventh_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_seventh_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #c7e3ff;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_seventh_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_seventh_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -7067,11 +7130,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eighth_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_eighth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_eighth_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #b6d8fa;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_eighth_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_eighth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -7104,11 +7167,11 @@ h-word {
   background-size: 0.3rem 0.7rem;
   background-repeat: repeat-y;
 }
-.main.grade_map .map_book_area_bg .map_book_area.map_book_area_ninth_grade .ticket_bg .ticket_area .ticket_wrap {
-  /* 波浪線 */
-}
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_ninth_grade .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area.map_book_area_ninth_grade .ticket_bg .ticket_area .ticket_wrap:after {
   background: #afc6f3;
+}
+.main.grade_map .map_book_area_bg .map_book_area.map_book_area_ninth_grade .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area.map_book_area_ninth_grade .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left .wave_line_internal {
   height: 100%;
@@ -7276,7 +7339,6 @@ h-word {
   position: relative;
   display: flex;
   align-items: center;
-  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap:before, .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap:after {
   content: "";
@@ -7314,6 +7376,9 @@ h-word {
 }
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .ticket .ticket_object {
   line-height: 0;
+}
+.main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap {
+  /* 波浪線 */
 }
 .main.grade_map .map_book_area_bg .map_book_area .ticket_bg .ticket_area .ticket_wrap .wave_line.wave_line_left {
   position: absolute;
@@ -11083,9 +11148,6 @@ h-word {
   padding: 30px 50px;
   border-radius: 10px;
 }
-.crop_area .crop_content_area .croppie-container {
-  /******** Range Input ********/
-}
 .crop_area .crop_content_area .croppie-container .cr-boundary {
   width: 80%;
   margin: 0 auto;
@@ -11110,6 +11172,9 @@ h-word {
   z-index: 2;
   cursor: move;
 }
+.crop_area .crop_content_area .croppie-container {
+  /******** Range Input ********/
+}
 .crop_area .crop_content_area .croppie-container .cr-slider-wrap {
   width: 80%;
   display: flex;
@@ -11124,9 +11189,6 @@ h-word {
   width: 100%;
   background-color: transparent;
   cursor: pointer;
-  /* input range 進度條樣式 */
-  /* input range 原點樣式 */
-  /* input range 原點focus */
 }
 .crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:before {
   position: absolute;
@@ -11138,10 +11200,16 @@ h-word {
   top: 50%;
   transform: translate(0, -50%);
 }
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
+  /* input range 進度條樣式 */
+}
 .crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider::-webkit-slider-runnable-track {
   background-color: grey;
   height: 5px;
   border-radius: 10px;
+}
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
+  /* input range 原點樣式 */
 }
 .crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider::-webkit-slider-thumb {
   width: 15px;
@@ -11155,6 +11223,9 @@ h-word {
   transition: 0.5s all ease;
   transform: translate(0%, -50%);
   top: 50%;
+}
+.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
+  /* input range 原點focus */
 }
 .crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:focus {
   outline: none;
@@ -12193,10 +12264,6 @@ h-word {
   background-color: rgb(255, 176.5, 176.5);
   border-radius: 10px;
   margin: 0 auto;
-  /* input range 主體樣式 */
-  /* input range 播放樣式 */
-  /* 播放完畢時，100%進度顯示 */
-  /* input range 聲音樣式 */
 }
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area .play_area {
   width: 100%;
@@ -12239,6 +12306,9 @@ h-word {
   margin: 0 10px 0 0;
   color: #5B3716;
 }
+.modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area {
+  /* input range 主體樣式 */
+}
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[type=range] {
   -webkit-appearance: none;
   width: 100%;
@@ -12246,11 +12316,12 @@ h-word {
   border-radius: 10px;
   cursor: pointer;
   /* input range 原點focus */
-  /* input range 原點樣式 */
-  /* input range 進度條樣式 */
 }
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[type=range]:focus::-webkit-slider-thumb {
   background-color: rgb(49.9292035398, 30.1769911504, 12.0707964602);
+}
+.modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[type=range] {
+  /* input range 原點樣式 */
 }
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[type=range]::-webkit-slider-thumb {
   width: 15px;
@@ -12265,10 +12336,16 @@ h-word {
   transform: translate(0%, -50%);
   top: 50%;
 }
+.modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[type=range] {
+  /* input range 進度條樣式 */
+}
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[type=range]::-webkit-slider-runnable-track {
   background-color: #fff;
   height: 5px;
   border-radius: 10px;
+}
+.modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area {
+  /* input range 播放樣式 */
 }
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[name=playRange] {
   width: calc(100% - 10px - 27px - 135px - 165px);
@@ -12281,6 +12358,9 @@ h-word {
   background-color: #5B3716;
   border-radius: 10px;
 }
+.modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area {
+  /* 播放完畢時，100%進度顯示 */
+}
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[name=playRange0]:before {
   position: absolute;
   content: "";
@@ -12288,6 +12368,9 @@ h-word {
   height: 100%;
   background-color: #5B3716;
   border-radius: 10px;
+}
+.modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area {
+  /* input range 聲音樣式 */
 }
 .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[name=soundRange]:hover ~ .icon_hand_pointer {
   opacity: 0;
@@ -12463,7 +12546,6 @@ h-word {
   }
   .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area {
     flex-direction: column;
-    /* input range 播放樣式 */
   }
   .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area .play_area {
     margin: 0 0 20px 0;
@@ -12472,6 +12554,9 @@ h-word {
     position: relative;
     top: auto;
     right: auto;
+  }
+  .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area {
+    /* input range 播放樣式 */
   }
   .modal.showcase_modal .modal_content .modal_body .item_showcase_portfolio .item_showcase_portfolio_item .portfolio_content.item_showcase_portfolio_sound .player_area input[name=playRange] {
     margin: 15px 0 0;
@@ -12519,7 +12604,7 @@ h-word {
   color: #31659b;
 }
 .main.studio .course_area.course_area_multimedia ~ .studio_item_content_area_bg {
-  background-color: white;
+  background-color: hsl(210.5660377358, 51.9607843137%, 105%);
 }
 .main.studio .course_area .course_area_content {
   max-width: 1200px;

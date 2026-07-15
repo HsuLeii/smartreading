@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../base/color"as c;
+
 .main {
     &.studio {
         width: 100%;
@@ -16,50 +19,50 @@
             margin: 0 auto;
 
             &.course_area_text {
-                background-color: lighten($studio_text, 40%);
+                background-color: color.adjust(c.$studio_text, $lightness: 40%);
 
                 .course_area_content {
                     .course_name {
                         h4 {
-                            color: $studio_text;
+                            color: c.$studio_text;
                         }
                     }
                 }
 
                 &~.studio_item_content_area_bg {
-                    background-color: lighten($studio_text, 50%);
+                    background-color: color.adjust(c.$studio_text, $lightness: 50%);
                 }
             }
 
             &.course_area_sound {
-                background-color: lighten($studio_sound, 40%);
+                background-color: color.adjust(c.$studio_sound, $lightness: 40%);
 
                 .course_area_content {
                     .course_name {
                         h4 {
-                            color: $studio_sound;
+                            color: c.$studio_sound;
                         }
                     }
                 }
 
                 &~.studio_item_content_area_bg {
-                    background-color: lighten($studio_sound, 65%);
+                    background-color: color.adjust(c.$studio_sound, $lightness: 65%);
                 }
             }
 
             &.course_area_multimedia {
-                background-color: lighten($studio_multimedia, 40%);
+                background-color: color.adjust(c.$studio_multimedia, $lightness: 40%);
 
                 .course_area_content {
                     .course_name {
                         h4 {
-                            color: $studio_multimedia;
+                            color: c.$studio_multimedia;
                         }
                     }
                 }
 
                 &~.studio_item_content_area_bg {
-                    background-color: lighten($studio_multimedia, 65%);
+                    background-color: color.adjust(c.$studio_multimedia, $lightness: 65%);
                 }
             }
 
@@ -73,7 +76,7 @@
                     width: calc(100% - 160px);
 
                     h4 {
-                        color: $brown;
+                        color: c.$brown;
                         word-break: break-all;
                     }
                 }
@@ -103,74 +106,74 @@
                     margin: 0 0 10px 0;
 
                     .studio_link_area_item {
-                        border: 1px solid $brown;
+                        border: 1px solid c.$brown;
                         border-radius: 10px;
                         margin: 5px 10px 5px 0;
 
                         a {
                             display: block;
                             padding: 5px 10px;
-                            color: $brown;
+                            color: c.$brown;
                         }
 
                         &.active,
                         &:hover {
-                            background-color: $brown;
+                            background-color: c.$brown;
 
                             a {
-                                color: $white;
+                                color: c.$white;
                             }
                         }
 
                         &.studio_link_area_item_text {
-                            border: 1px solid $studio_text;
+                            border: 1px solid c.$studio_text;
 
                             a {
-                                color: $studio_text;
+                                color: c.$studio_text;
                             }
 
                             &.active,
                             &:hover {
-                                background-color: $studio_text;
+                                background-color: c.$studio_text;
 
                                 a {
-                                    color: $white;
+                                    color: c.$white;
                                 }
                             }
                         }
 
                         &.studio_link_area_item_sound {
-                            border: 1px solid $studio_sound;
+                            border: 1px solid c.$studio_sound;
 
                             a {
-                                color: $studio_sound;
+                                color: c.$studio_sound;
                             }
 
 
                             &.active,
                             &:hover {
-                                background-color: $studio_sound;
+                                background-color: c.$studio_sound;
 
                                 a {
-                                    color: $white;
+                                    color: c.$white;
                                 }
                             }
                         }
 
                         &.studio_link_area_item_multimedia {
-                            border: 1px solid $studio_multimedia;
+                            border: 1px solid c.$studio_multimedia;
 
                             a {
-                                color: $studio_multimedia;
+                                color: c.$studio_multimedia;
                             }
 
 
                             &.active,
                             &:hover {
-                                background-color: $studio_multimedia;
+                                background-color: c.$studio_multimedia;
 
                                 a {
-                                    color: $white;
+                                    color: c.$white;
                                 }
                             }
                         }
@@ -183,10 +186,10 @@
                             width: 100%;
                             padding: 20px 0;
                             margin: 0 auto 20px;
-                            border-bottom: 1px solid $brown;
+                            border-bottom: 1px solid c.$brown;
 
                             h4 {
-                                color: $brown;
+                                color: c.$brown;
                             }
                         }
 
@@ -218,10 +221,10 @@
                                         display: flex;
                                         align-items: center;
                                         padding: 5px 10px;
-                                        border: 1px solid $brown;
-                                        background-color: $white;
+                                        border: 1px solid c.$brown;
+                                        background-color: c.$white;
                                         min-width: 200px;
-                                        color: $brown;
+                                        color: c.$brown;
 
                                         i {
                                             margin: 0 0 0 auto;
@@ -229,7 +232,7 @@
                                         }
 
                                         &.open {
-                                            border: 1px solid $main_color;
+                                            border: 1px solid c.$main_color;
                                             box-shadow: 5px 5px 10px 3px rgba(92, 138, 57, 0.1450980392);
 
                                             i {
@@ -251,19 +254,19 @@
                                         min-width: 200px;
                                         visibility: hidden;
                                         border-radius: 10px;
-                                        border: 1px solid $brown;
-                                        background-color: $white;
+                                        border: 1px solid c.$brown;
+                                        background-color: c.$white;
                                         overflow: hidden;
                                         cursor: pointer;
 
                                         .dropdown_item_li {
                                             padding: 5px 10px;
-                                            color: $brown;
+                                            color: c.$brown;
 
                                             &.active,
                                             &:hover {
-                                                background-color: $brown;
-                                                color: $white;
+                                                background-color: c.$brown;
+                                                color: c.$white;
                                             }
                                         }
 
@@ -284,43 +287,43 @@
                                     width: 100%;
                                     height: 150px;
                                     padding: 10px;
-                                    color: $brown;
+                                    color: c.$brown;
                                     font-size: 20px;
-                                    border: 1px solid $brown;
+                                    border: 1px solid c.$brown;
                                     border-radius: 10px;
 
                                     &:focus {
-                                        background: lighten($brown, 60%) !important;
-                                        border-color: $brown;
+                                        background: color.adjust(c.$brown, $lightness: 60%) !important;
+                                        border-color: c.$brown;
                                         outline: none;
                                     }
                                 }
 
                                 .studio_creation_input {
                                     width: 100%;
-                                    border: 1px solid $brown;
+                                    border: 1px solid c.$brown;
                                     padding: 5px 10px;
                                     outline: 0;
                                     border-radius: 10px;
 
                                     &:focus {
-                                        border: 1px solid $main_color;
-                                        color: $main_color;
+                                        border: 1px solid c.$main_color;
+                                        color: c.$main_color;
                                     }
                                 }
 
                                 .studio_text_submit {
                                     margin: 15px 0;
-                                    color: $main_color;
-                                    border: 1px solid $main_color;
+                                    color: c.$main_color;
+                                    border: 1px solid c.$main_color;
                                     border-radius: 10px;
                                     padding: 5px 10px;
                                     cursor: pointer;
-                                    background-color: $white;
+                                    background-color: c.$white;
 
                                     &:hover {
-                                        color: $white;
-                                        background-color: $main_color;
+                                        color: c.$white;
+                                        background-color: c.$main_color;
                                     }
                                 }
                             }
@@ -334,30 +337,30 @@
                                 }
 
                                 .feedback_text {
-                                    background-color: $white;
+                                    background-color: c.$white;
                                     padding: 17px;
-                                    color: $brown;
-                                    border: 1px solid $brown;
+                                    color: c.$brown;
+                                    border: 1px solid c.$brown;
                                     border-radius: 10px;
 
                                     .feedback_text_error {
-                                        color: $red;
+                                        color: c.$red;
 
                                         &.strikethrough {
-                                            color: $brown;
+                                            color: c.$brown;
                                             text-decoration: line-through;
-                                            text-decoration-color: $red;
+                                            text-decoration-color: c.$red;
                                         }
                                     }
                                 }
                             }
 
                             .studio_content_item_frame {
-                                border: 1px solid $brown;
+                                border: 1px solid c.$brown;
                                 border-radius: 10px;
                                 min-height: 300px;
                                 overflow: hidden;
-                                background-color: $white;
+                                background-color: c.$white;
 
                                 .studio_content_item_frame_content {
                                     width: 100%;
@@ -404,7 +407,7 @@
                                                     canvas {
                                                         height: 100%;
                                                         z-index: 1;
-                                                        background-color: $white;
+                                                        background-color: c.$white;
                                                     }
                                                 }
                                             }
@@ -440,7 +443,7 @@
                                             }
 
                                             .bar {
-                                                background-color: $brown;
+                                                background-color: c.$brown;
                                                 height: 0px;
                                                 width: 3px;
                                                 margin: 0px 1px;
@@ -488,7 +491,7 @@
                                         }
 
                                         p {
-                                            color: $brown;
+                                            color: c.$brown;
                                             text-align: center;
                                         }
                                     }
@@ -501,7 +504,7 @@
                                 flex-wrap: wrap;
 
                                 .studio_function_btn {
-                                    color: $main_color;
+                                    color: c.$main_color;
                                     font-weight: bold;
 
                                     .studio_btn_icon {
@@ -511,7 +514,7 @@
                                         align-items: center;
 
                                         i {
-                                            color: $main_color;
+                                            color: c.$main_color;
                                             font-size: 25px;
                                         }
                                     }
@@ -523,11 +526,11 @@
                                     }
 
                                     &:hover {
-                                        color: $white;
+                                        color: c.$white;
 
                                         p,
                                         i {
-                                            color: $white;
+                                            color: c.$white;
                                         }
                                     }
 
@@ -538,38 +541,38 @@
                                     display: flex;
                                     align-items: center;
                                     margin: 15px 0 15px 20px;
-                                    border: 1px solid $main_color;
+                                    border: 1px solid c.$main_color;
                                     border-radius: 10px;
                                     padding: 5px 10px;
                                     cursor: pointer;
-                                    background-color: $white;
+                                    background-color: c.$white;
 
                                     p {
-                                        color: $main_color;
+                                        color: c.$main_color;
                                         font-weight: bold;
                                     }
 
                                     &:hover {
-                                        background-color: $main_color;
+                                        background-color: c.$main_color;
 
                                         p {
-                                            color: $white;
+                                            color: c.$white;
                                         }
                                     }
 
                                     &:disabled {
-                                        background-color: $grey;
-                                        color: $white;
-                                        border: 1px solid $grey;
+                                        background-color: c.$grey;
+                                        color: c.$white;
+                                        border: 1px solid c.$grey;
                                         cursor: auto;
 
                                         p,
                                         i {
-                                            color: $white;
+                                            color: c.$white;
                                         }
 
                                         &:hover {
-                                            background-color: $grey;
+                                            background-color: c.$grey;
                                         }
                                     }
                                 }
@@ -588,11 +591,11 @@
                 .creative_platform{
                     .creative_platform_link{
                         a{
-                            color: $brown;
+                            color: c.$brown;
                         }
                         &:hover{
                             a{
-                                color: $main_color;
+                                color: c.$main_color;
                             }
                         }
                     }
@@ -643,21 +646,21 @@
 
         .modal_content {
             position: relative;
-            box-shadow: 0 0 10px $black;
+            box-shadow: 0 0 10px c.$black;
 
             .modal-header {
                 .modal-title {
                     width: 100%;
-                    color: $white;
+                    color: c.$white;
                     padding: 10px 20px;
-                    background-color: $main_color;
+                    background-color: c.$main_color;
                     border-radius: 5px 5px 0 0;
                 }
             }
 
             .modal-body {
                 .draw-panel {
-                    background-color: $white;
+                    background-color: c.$white;
                     display: flex;
                     padding: 10px;
 
@@ -679,7 +682,7 @@
 
                             .draw-panel-left-item-text {
                                 p {
-                                    border-bottom: 1px solid $brown;
+                                    border-bottom: 1px solid c.$brown;
                                     padding: 5px;
                                     margin: 5px auto;
                                     text-align: center;
@@ -700,19 +703,19 @@
                                     margin: 3px 5px;
 
                                     &:disabled {
-                                        background-color: $grey;
+                                        background-color: c.$grey;
                                         opacity: 0.5;
 
                                         &.btn-draw-tool {
                                             i {
-                                                color: $white;
+                                                color: c.$white;
                                             }
 
                                             &:focus,
                                             &:active,
                                             &.focus,
                                             &.active {
-                                                background-color: $grey;
+                                                background-color: c.$grey;
                                                 border: 1px solid transparent;
                                             }
                                         }
@@ -720,7 +723,7 @@
 
                                     &.btn-draw-tool {
                                         i {
-                                            color: $brown;
+                                            color: c.$brown;
                                         }
                                     }
 
@@ -729,7 +732,7 @@
 
                                         .draw-size {
                                             display: block;
-                                            background-color: $black;
+                                            background-color: c.$black;
                                             border-radius: 5px;
                                         }
                                     }
@@ -738,7 +741,7 @@
                                         .draw-color {
                                             display: block;
                                             height: 100%;
-                                            border: 1px solid $black;
+                                            border: 1px solid c.$black;
                                             border-radius: 5px;
                                         }
                                     }
@@ -747,8 +750,8 @@
                                     &:active,
                                     &.focus,
                                     &.active {
-                                        background-color: lighten($brown, 45%);
-                                        border: 1px solid $brown;
+                                        background-color: color.adjust(c.$brown, $lightness: 45%);
+                                        border: 1px solid c.$brown;
                                     }
                                 }
                             }
@@ -761,8 +764,8 @@
                     .draw-panel-right {
                         width: calc(100% - 90px);
                         min-height: 545px;
-                        border: 1px solid $brown;
-                        background-color: $white;
+                        border: 1px solid c.$brown;
+                        background-color: c.$white;
                         margin: 0 0 0 10px;
 
                         // #myCanvas{
@@ -776,32 +779,32 @@
             .modal-footer {
                 display: flex;
                 justify-content: flex-end;
-                background-color: $white;
+                background-color: c.$white;
                 border-radius: 0 0 5px 5px;
                 padding: 0 10px;
 
                 .draw-panel-footer-btn {
                     display: block;
                     margin: 15px 0 15px 15px;
-                    border: 1px solid $main_color;
+                    border: 1px solid c.$main_color;
                     border-radius: 10px;
                     padding: 5px 10px;
                     cursor: pointer;
-                    background-color: $white;
-                    color: $main_color;
+                    background-color: c.$white;
+                    color: c.$main_color;
                     font-weight: bold;
 
                     p {
-                        color: $main_color;
+                        color: c.$main_color;
                         font-weight: bold;
                     }
 
                     &:hover {
-                        background-color: $main_color;
-                        color: $white;
+                        background-color: c.$main_color;
+                        color: c.$white;
 
                         p {
-                            color: $white;
+                            color: c.$white;
                         }
                     }
                 }
@@ -821,7 +824,7 @@
         position: relative;
         z-index: 1;
         width: auto;
-        background-color: $white;
+        background-color: c.$white;
         // width: 100%;
         // height: 100%;
     }

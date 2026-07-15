@@ -1,12 +1,16 @@
+@use "sass:color";
+@use "../base/color"as c;
+
 .main {
     &.login {
         background-image: url(../image/photo/slide/slide_login.png);
         background-position: left center;
         background-size: cover;
         margin: 0px auto;
-        padding-top: 130px;
-        padding-bottom: 130px;
+        padding: 130px 0;
         position: relative;
+        // display: flex;
+        // justify-content: center;
 
         &.kumon {
             background-color: #7dcdf4;
@@ -62,7 +66,7 @@
                 position: absolute;
                 width: calc(15% + 550px);
                 height: 100%;
-                background-color: $white;
+                background-color: c.$white;
                 right: 0;
                 top: 0;
                 border-radius: 60% 0 0 0;
@@ -86,7 +90,7 @@
 
                         .logo_area_content_text {
                             margin: 0 15px 0 0;
-                            color: $black;
+                            color: c.$black;
                             font-size: 30px;
                         }
 
@@ -101,28 +105,61 @@
                 position: relative;
                 box-shadow: none;
                 z-index: 1;
-                background-color: $transparent;
+                background-color: c.$transparent;
             }
         }
 
         .login_text {
-            width: calc(85% - 550px);
+            width: calc(550px * 0.8);
             max-width: 550px;
-            margin: 0 0 0 10%;
+            margin: 0 auto;
             position: absolute;
-            // top: 45px;
-            bottom: 130px;
+            top: calc(130px / 2);
+            left: 50%;
+            transform: translate(-50% , -20px);
         }
 
         .login_area {
             display: flex;
             flex-direction: column;
-            background-color: $white;
+            background-color: c.$white;
             padding: 50px;
             border-radius: 10px;
-            box-shadow: 0 0 10px $grey;
             width: 550px;
             margin: 0 0 0 calc(95% - 550px);
+
+            &.dual_login{
+                position: relative;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 70%;
+                max-width: 1200px;
+                margin: 0 auto;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 25px;
+                    width: 1px;
+                    height: calc(100% - 50px);
+                    background-color: c.$brown;
+                }
+
+                .login_area_content{
+                    width: 45%;
+
+                    .login_area_content_tittle{
+                        display: flex;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+
+                        h4{
+                            color: c.$brown;
+                        }
+                    }
+                }
+            }
 
             .account_area {
 
@@ -137,9 +174,9 @@
                     }
 
                     input {
-                        color: $brown;
-                        background-color: $white;
-                        border: 1px solid $brown;
+                        color: c.$brown;
+                        background-color: c.$white;
+                        border: 1px solid c.$brown;
                         padding: 8px;
                         font-size: 17px;
                         border-radius: 10px;
@@ -150,9 +187,9 @@
                     input[type="text"]:focus,
                     input[type="password"]:focus {
                         outline: 0;
-                        border: 1px solid $brown;
-                        color: $brown;
-                        box-shadow: 1px 1px 5px $grey;
+                        border: 1px solid c.$brown;
+                        color: c.$brown;
+                        box-shadow: 1px 1px 5px c.$grey;
                         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                     }
                 }
@@ -160,24 +197,34 @@
                 .login_button {
                     width: 100%;
                     font-size: 17px;
-                    margin-bottom: 15px;
-                    color: $main_color;
-                    border: 1px solid $main_color;
+                    margin: 0 auto 20px;
+                    color: c.$main_color;
+                    border: 1px solid c.$main_color;
                     padding: 10px 0px;
                     border-radius: 10px;
-                    background-color: $white;
+                    background-color: c.$white;
                     cursor: pointer;
 
                     &:hover {
-                        background-color: $main_color;
-                        color: $white;
+                        background-color: c.$main_color;
+                        color: c.$white;
+                    }
+                }
+
+                .account_link_area{
+                    border-top: 1px solid c.$brown;
+                    .login_button{
+                        display: flex;
+                        justify-content: center;
+                        margin: 20px auto 0;
+                        padding: 10px;
                     }
                 }
             }
 
             .forget_password {
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
 
                 .remember_me {
                     display: flex;
@@ -189,7 +236,7 @@
                         top: 0.5em;
                         height: 1em;
                         width: 1em;
-                        border: 1px solid $main_color;
+                        border: 1px solid c.$main_color;
                         transform: translate(0px, -0.2em);
 
                         &:after {
@@ -200,7 +247,7 @@
                             top: 50%;
                             width: 5px;
                             height: 10px;
-                            border: solid $white;
+                            border: solid c.$white;
                             border-width: 0 3px 3px 0;
                             transform: rotate(45deg) translate(-50%, -70%);
                             z-index: 1;
@@ -215,7 +262,7 @@
                         cursor: pointer;
 
                         &:checked~.checkmark {
-                            background-color: $main_color;
+                            background-color: c.$main_color;
 
                         }
 
@@ -232,18 +279,18 @@
                 }
 
                 a {
-                    color: $brown;
+                    color: c.$brown;
 
                     &:hover {
-                        color: $main_color;
+                        color: c.$main_color;
                     }
                 }
             }
 
             .signup {
-                margin-top: 25px;
-                padding-top: 15px;
-                border-top: 1px solid $brown;
+                margin: 25px auto 0;
+                padding: 15px 0 0;
+                border-top: 1px solid c.$brown;
 
                 p {
                     text-align: center;
@@ -253,17 +300,17 @@
                     width: 100%;
                     font-size: 17px;
                     margin-top: 15px;
-                    color: $grey;
-                    border: 1px solid $grey;
+                    color: c.$grey;
+                    border: 1px solid c.$grey;
                     padding: 6px 0px;
                     border-radius: 10px;
-                    background-color: $white;
+                    background-color: c.$white;
                     cursor: pointer;
 
                     &:hover {
-                        background-color: $main_color;
-                        border: 1px solid $main_color;
-                        color: $white;
+                        background-color: c.$main_color;
+                        border: 1px solid c.$main_color;
+                        color: c.$white;
                     }
                 }
             }
@@ -316,6 +363,12 @@
                     }
                 }
             }
+
+            .login_area{
+                &.dual_login{
+                    width: 80%;
+                }
+            }
         }
     }
 }
@@ -323,15 +376,10 @@
 @media screen and (max-width: 1200px) {
     .main {
         &.login {
-            padding-top: 100px;
-            padding-bottom: 100px;
-
-            .login_text {
-                width: calc(550px * 0.8);
-                margin: 0 0 0 calc(95% - 550px * 0.9);
-                bottom: auto;
-                top: calc(130px / 2);
-                transform: translate(0%, -50%);
+            .login_area{
+                &.dual_login{
+                    width: 90%;
+                }
             }
         }
     }
@@ -365,7 +413,6 @@
 
             .login_text {
                 width: calc(450px * 0.8);
-                margin: 0 0 0 calc(95% - 450px * 0.9);
             }
 
             .login_area {
@@ -412,6 +459,7 @@
 @media screen and (max-width: 992px) {
     .main {
         &.login {
+            padding: 80px 0;
             &.kumon {
 
                 &.kumon_one {
@@ -499,7 +547,7 @@
                         position: absolute;
                         width: 100%;
                         height: calc(100% + 100px);
-                        background-color: $white;
+                        background-color: c.$white;
                         right: 0;
                         top: 0;
                         border-radius: 20% 20% 0 0;
@@ -509,6 +557,48 @@
                     .account_area {
                         margin: 50px 0 0;
                     }
+                }
+            }
+
+            .login_text{
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: translate(0 , 0);
+                margin: 0 auto 20px;
+            }
+
+            .login_area{
+                padding: 50px 20px;
+
+                &.dual_login{
+                    flex-direction: column;
+                    width: 70%;
+
+                    &::before{
+                        display: none;
+                    }
+
+                    .login_area_content{
+                        width: 100%;
+
+                        &:nth-child(1){
+                            border-bottom: 1px solid c.$brown;
+                            padding: 0 0 30px;
+                        }
+
+                        &:nth-child(2){
+                            margin: 30px auto 0;
+                        }
+                    }
+                }
+
+                .account_area{
+                    padding: 0 30px;
+                }
+
+                .signup{
+                    padding: 15px 30px 0;
                 }
             }
         }
@@ -531,25 +621,21 @@
 
             .login_text {
                 width: 60%;
-                margin: 0 auto 20px;
                 max-width: none;
-                position: relative;
-                top: auto;
-                transform: translate(0px, 0px);
             }
 
             .login_area {
                 width: 90%;
                 margin: 0 auto;
-                padding: 50px 10%;
+                padding: 50px 25px;
                 margin: 0 5%;
 
-                .forget_password {
-                    flex-direction: column;
+                &.dual_login{
+                    width: 80%;
+                }
 
-                    a {
-                        margin: 10px 0px 0px;
-                    }
+                .forget_password {
+                    justify-content: center;
                 }
             }
         }
