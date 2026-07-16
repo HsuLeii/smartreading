@@ -1,19 +1,39 @@
 @use "sass:color";
 @use "../base/color"as c;
 
-.main {
-    &.register {
-        max-width: 500px;
-        width: 80%;
-        margin: 40px auto 80px;
+@use "../base/reset";
 
-        .register_area {
+.main {
+    &.sign_up {
+        width: 80%;
+        @extend %max1200;
+
+        .sign_up_area {
             .account_area {
+                display: flex;
+                flex-wrap: wrap;
                 
                 .register_item {
+                    position: relative;
                     display: flex;
                     flex-wrap: wrap;
                     margin: 10px auto 35px;
+                    width: 45%;
+
+                    .account{
+                        padding: 3px 85px 3px 8px;
+                    }
+
+                    .get_code_btn{
+                        position: absolute;
+                        right: 5px;
+                        bottom: 12px;
+                        color: c.$brown;
+
+                        &:hover {
+                            color: c.$main_color;
+                        }
+                    }
 
                     label {
                         width: 100%;
@@ -51,6 +71,11 @@
                                 color: c.$white;
                                 cursor: pointer;
                             }
+                        }
+
+                        &::placeholder {
+                            color: color.adjust(c.$brown, $lightness: 35%);
+                            font-weight: normal;
                         }
                     }
 
