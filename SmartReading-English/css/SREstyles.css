@@ -766,6 +766,11 @@ div#toggle span:after {
   text-align: center;
 }
 
+@media screen and (max-width: 1600px) {
+  .header nav .menu div li a {
+    font-size: 15px;
+  }
+}
 @media screen and (max-width: 1400px) {
   .header {
     padding: 15px 2.5%;
@@ -777,7 +782,7 @@ div#toggle span:after {
     height: 50px;
   }
   .header nav .menu div li a {
-    font-size: 15px;
+    padding: 5px;
   }
 }
 @media screen and (max-width: 1300px) {
@@ -11618,14 +11623,39 @@ h-word {
 }
 .main.sign_up .sign_up_area .account_area {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .main.sign_up .sign_up_area .account_area .register_item {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  margin: 10px auto 35px;
+  margin: 10px 0 35px;
   width: 45%;
+}
+.main.sign_up .sign_up_area .account_area .register_item.register_item_confirm {
+  width: 80%;
+  margin: 10px auto 10px;
+}
+.main.sign_up .sign_up_area .account_area .register_item.register_item_confirm a.signup_btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  border: 1px solid #5B3716;
+  padding: 3px 8px;
+  color: #5B3716;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.main.sign_up .sign_up_area .account_area .register_item.register_item_confirm a.signup_btn:hover {
+  border: 1px solid #5B3716;
+  background-color: #5B3716;
+  color: #fff;
+  cursor: pointer;
 }
 .main.sign_up .sign_up_area .account_area .register_item .account {
   padding: 3px 85px 3px 8px;
@@ -11663,8 +11693,10 @@ h-word {
 }
 .main.sign_up .sign_up_area .account_area .register_item input.signup_btn {
   width: 100%;
+  max-width: 500px;
   border-radius: 50px;
   border: 1px solid #5B3716;
+  margin: 0 auto;
 }
 .main.sign_up .sign_up_area .account_area .register_item input.signup_btn:hover {
   border: 1px solid #ff6464;
@@ -11687,513 +11719,36 @@ h-word {
   background-color: rgb(237.2831858407, 208.2920353982, 181.7168141593);
 }
 .main.sign_up .sign_up_area .account_area .register_item select:focus-visible {
-  outline: #EFE8E0 auto 0px;
+  outline: #5B3716 auto 0px !important;
 }
-.main .student_photo {
-  width: 160px;
-  margin: 60px 0px 40px;
-  position: relative;
-}
-.main .student_photo .student_photo_btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translate(100%, 0px);
-  width: 50px;
-  padding: 10px;
-  background-color: #ff6464;
-  border-radius: 50%;
-  line-height: 0;
-}
-.main .student_photo .student_photo_btn:hover {
-  background-color: #ff3131;
-}
-
-.crop_area {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 15;
-  left: 0;
-  top: 0;
+.main.sign_up .sign_up_area .account_area .sign_up_text {
   width: 100%;
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  display: none;
-  overflow-y: scroll;
+  margin: 40px auto 20px;
 }
-.crop_area .crop_content_area {
-  width: 60%;
-  max-width: 600px;
-  background-color: #EFE8E0;
-  padding: 30px 50px;
-  border-radius: 10px;
-}
-.crop_area .crop_content_area .croppie-container .cr-boundary {
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.crop_area .crop_content_area .croppie-container .cr-boundary .cr-image {
-  width: auto;
-  z-index: 1;
-}
-.crop_area .crop_content_area .croppie-container .cr-boundary .cr-viewport {
-  position: absolute;
-  top: 0;
-  border-radius: 50%;
-  border: 3px solid #ff6464;
-  box-shadow: 0 0 0 900px rgba(217, 217, 217, 0.5);
-  z-index: 2;
-  width: 100% !important;
-}
-.crop_area .crop_content_area .croppie-container .cr-boundary .cr-overlay {
-  position: absolute;
-  z-index: 2;
-  cursor: move;
-}
-.crop_area .crop_content_area .croppie-container {
-  /******** Range Input ********/
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap {
-  width: 80%;
-  display: flex;
-  margin: 15px auto;
-  position: relative;
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
-  /* input range 主體樣式 */
-  -webkit-appearance: none;
-  position: relative;
-  border-radius: 10px;
-  width: 100%;
-  background-color: transparent;
-  cursor: pointer;
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:before {
-  position: absolute;
-  content: "";
-  width: var(--playRange);
-  height: 5px;
-  background-color: #ff6464;
-  border-radius: 10px;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
-  /* input range 進度條樣式 */
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider::-webkit-slider-runnable-track {
-  background-color: grey;
-  height: 5px;
-  border-radius: 10px;
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
-  /* input range 原點樣式 */
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider::-webkit-slider-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  border: none;
-  -webkit-appearance: none;
-  background-color: #ff6464;
-  z-index: 1;
-  position: relative;
-  transition: 0.5s all ease;
-  transform: translate(0%, -50%);
-  top: 50%;
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider {
-  /* input range 原點focus */
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:focus {
-  outline: none;
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .cr-slider:focus::-webkit-slider-thumb {
-  background-color: #ff3131;
-}
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap #cr-rotate {
+.main.sign_up .sign_up_area .account_area .sign_up_text .sign_up_text_link {
   color: #5B3716;
-  display: none;
+  text-decoration: underline;
 }
-.crop_area .crop_content_area .croppie-container .cr-slider-wrap .dotRange {
-  background-color: #ff6464;
-  width: 0%;
-  height: 5px;
-  position: absolute;
-  border-radius: 10px;
-  top: 50%;
-  left: 0%;
-  transform: translate(0%, -50%);
-}
-.crop_area .crop_content_area .crop_area_btn {
-  display: flex;
-  justify-content: center;
-  margin: 10px auto 0px;
-}
-.crop_area .crop_content_area .crop_area_btn .crop_btn {
-  margin: 5px 10px;
-  padding: 5px 10px;
-  background-color: #ff6464;
-  color: #fff;
-  border-radius: 10px;
-}
-.crop_area .crop_content_area .crop_area_btn .crop_btn:hover {
-  background-color: #ff3131;
-}
-.crop_area .crop_content_area .crop_area_btn .crop_btn.crop_btn_prev {
-  background-color: grey;
-}
-.crop_area .crop_content_area .crop_area_btn .crop_btn.crop_btn_prev:hover {
-  background-color: rgb(102.5, 102.5, 102.5);
-}
-
-.avatar_modal {
-  max-width: none !important;
-  width: 60%;
-  padding: 0;
-  margin: 75px auto 0;
-}
-.avatar_modal .avatar_modal_top {
-  position: relative;
-  background-color: rgb(255, 176.5, 176.5);
-  min-height: 150px;
-  border-radius: 8px 8px 0px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.avatar_modal .avatar_modal_top .swiper_avatar_img {
-  width: 150px;
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -50%);
-}
-.avatar_modal .avatar_modal_top .avatar_name {
-  margin: 0px auto 15px;
-}
-.avatar_modal .avatar_modal_top .avatar_name h4 {
-  color: #5B3716;
-}
-.avatar_modal .avatar_area {
-  background-image: url(../image/svg/reading_card_bg.svg);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px 5% 60px;
-}
-.avatar_modal .avatar_area .avatar_title {
-  text-align: center;
-  color: #5B3716;
-  margin: 10px auto;
-}
-.avatar_modal .avatar_area .choose_avatar_area {
-  position: relative;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper {
-  width: 80%;
-  max-width: 1200px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget {
-  filter: grayscale(1);
-  opacity: 0.8;
-  cursor: auto;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
-  content: attr(data-des);
-  width: 80%;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  font-size: 15px;
-  transform: translate(-50%, 0px);
-  opacity: 0;
-  z-index: 1;
-  transition: 0.5s;
-  color: #fff;
-  background-color: #5B3716;
-  padding: 5px;
-  border-radius: 10px;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:hover:after {
-  opacity: 1;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .lock_icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .lock_icon i {
-  font-size: 40px;
-  line-height: 0.9;
-  padding: 15px;
-  background: #fff;
-  border-radius: 50%;
-  color: grey;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .swiper_avatar_img {
-  cursor: auto;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget .swiper_avatar_img:hover {
-  border: 2px solid transparent;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img {
-  padding: 10px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  line-height: 0;
-  width: 100%;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img:hover {
-  border: 2px solid #ff6464;
-  border-radius: 50%;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img img {
-  border-radius: 50%;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .swiper_avatar_img.swiper_avatar_text ~ .close_avatar.show {
-  display: none;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .close_avatar {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  background: black;
-  border-radius: 50%;
-  display: none;
-  cursor: pointer;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide .close_avatar.show {
-  display: block;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next,
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
-  border-radius: 50%;
-  border: 1px solid #ff6464;
-  width: 50px !important;
-  height: 50px !important;
-  position: absolute;
-  top: 50%;
-  transform: translate(0px, -50%);
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next:after,
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev:after {
-  font-family: swiper-icons;
-  text-transform: none !important;
-  letter-spacing: 0;
-  text-transform: none;
-  font-variant: initial;
-  line-height: 1;
+.main.sign_up .sign_up_area .account_area .sign_up_text .sign_up_text_link:hover {
   color: #ff6464;
 }
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next {
-  right: 5%;
-  transform: translate(100%, -50%);
+.main.sign_up .sign_up_area .account_area .sign_up_text.prompts_text {
+  margin: 0 auto;
 }
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next:after {
-  content: "next";
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
-  left: 5%;
-  transform: translate(-100%, -50%);
-}
-.avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev:after {
-  content: "prev";
-}
-.avatar_modal .avatar_area .upload_avatar_area {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 10px auto;
-}
-.avatar_modal .avatar_area .upload_avatar_area .upload_avatar {
-  margin: 20px auto 0;
-  text-align: center;
-  border-top: 1px solid #5B3716;
-  width: 100%;
-  padding: 20px 0 0;
-}
-.avatar_modal .avatar_area .upload_avatar_area .upload_avatar .upload_avatar_title {
-  margin: 0 0 20px;
-  color: #5B3716;
-}
-.avatar_modal .avatar_area .upload_avatar_area .upload_avatar .file_upload {
-  cursor: pointer;
-  background-color: #5B3716;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
-  display: inline-block;
-}
-.avatar_modal .avatar_area .upload_avatar_area .upload_avatar .file_upload:hover {
-  background-color: rgb(49.9292035398, 30.1769911504, 12.0707964602);
-}
-.avatar_modal .avatar_area .upload_avatar_area .upload_avatar input[type=file] {
-  display: none;
+.main.sign_up .sign_up_area .account_area .sign_up_text.prompts_text .fa-lightbulb {
+  color: #ffc000;
 }
 
-.swiper_avatar_img {
-  position: relative;
-  line-height: 0;
-  border-radius: 50%;
-}
-.swiper_avatar_img img {
-  border-radius: 50%;
-}
-.swiper_avatar_img.swiper_avatar_text {
-  user-select: none;
-  /* standard syntax */
-  -webkit-user-select: none;
-  /* for Chrome、Safari */
-  -moz-user-select: none;
-  /* for Mozilla、Firefox */
-}
-.swiper_avatar_img.swiper_avatar_text .avatar_text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-}
-.swiper_avatar_img.swiper_avatar_text .avatar_text h4 {
-  font-size: 60px;
-  text-align: center;
-}
-
-@media screen and (max-width: 1024px) {
-  .main.register .register_area .account_area .register_item input {
-    font-size: 18px;
-  }
-  .main.register .register_area .account_area .register_item select {
-    font-size: 18px;
-  }
-  .avatar_modal {
-    width: 80%;
-    margin: 60px auto 0;
-  }
-  .avatar_modal .avatar_modal_top {
-    min-height: 120px;
-  }
-  .avatar_modal .avatar_modal_top .swiper_avatar_img {
-    width: 120px;
-  }
-  .avatar_modal .avatar_modal_top .avatar_name {
-    margin: 0px auto 10px;
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
-    font-size: 13px;
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next,
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
-    width: 40px !important;
-    height: 40px !important;
+@media screen and (max-width: 992px) {
+  .main.sign_up .sign_up_area .account_area .register_item {
+    width: 47.5%;
   }
 }
 @media screen and (max-width: 768px) {
-  .main .student_photo {
-    width: 140px;
-  }
-  .main .student_photo .student_photo_btn {
-    width: 40px;
-    padding: 5px;
-  }
-  .avatar_modal {
-    margin: 50px auto 0;
-  }
-  .avatar_modal .avatar_modal_top {
-    min-height: 100px;
-  }
-  .avatar_modal .avatar_modal_top .swiper_avatar_img {
-    width: 100px;
-  }
-  .avatar_modal .avatar_area {
-    padding: 10px 5% 40px;
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper .swiper-wrapper .swiper-slide.notget:after {
-    font-size: 11px;
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next,
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
-    width: 30px !important;
-    height: 30px !important;
-  }
-}
-@media screen and (max-width: 499px) {
-  .main.register .register_area .account_area .register_item input {
-    font-size: 17px;
-  }
-  .main.register .register_area .account_area .register_item select {
-    font-size: 17px;
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper {
-    width: 70%;
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_next {
-    right: 10%;
-    transform: translate(100%, -50%);
-  }
-  .avatar_modal .avatar_area .choose_avatar_area .avatar_swiper_button_prev {
-    left: 10%;
-    transform: translate(-100%, -50%);
-  }
-  .avatar_modal .avatar_area .upload_avatar_area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px auto;
-  }
-  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar {
-    margin: 20px auto 0;
-    text-align: center;
-    border-top: 1px solid #5B3716;
+  .main.sign_up .sign_up_area .account_area .register_item {
     width: 100%;
-    padding: 20px 0 0;
-  }
-  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar .upload_avatar_title {
-    margin: 0 0 20px;
-    color: #5B3716;
-  }
-  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar .file_upload {
-    cursor: pointer;
-    background-color: #5B3716;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    display: inline-block;
-  }
-  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar .file_upload:hover {
-    background-color: rgb(49.9292035398, 30.1769911504, 12.0707964602);
-  }
-  .avatar_modal .avatar_area .upload_avatar_area .upload_avatar input[type=file] {
-    display: none;
   }
 }
 /*註冊*/

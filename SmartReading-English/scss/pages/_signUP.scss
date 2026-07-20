@@ -11,14 +11,44 @@
         .sign_up_area {
             .account_area {
                 display: flex;
+                justify-content: space-between;
                 flex-wrap: wrap;
                 
                 .register_item {
                     position: relative;
                     display: flex;
                     flex-wrap: wrap;
-                    margin: 10px auto 35px;
+                    margin: 10px 0 35px;
                     width: 45%;
+
+                    &.register_item_confirm{
+                        width: 80%;
+                        margin: 10px auto 10px;
+
+                        a{
+                            &.signup_btn {
+                                display: flex;
+                                justify-content: center;
+                                width: 100%;
+                                max-width: 500px;
+                                font-size: 20px;
+                                font-weight: bold;
+                                border-radius: 50px;
+                                border: 1px solid c.$brown;
+                                padding: 3px 8px;
+                                color: c.$brown;
+                                background-color: c.$white;
+                                margin: 0 auto;
+
+                            &:hover {
+                                border: 1px solid c.$brown;
+                                background-color: c.$brown;
+                                color: c.$white;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
 
                     .account{
                         padding: 3px 85px 3px 8px;
@@ -62,8 +92,10 @@
 
                         &.signup_btn {
                             width: 100%;
+                            max-width: 500px;
                             border-radius: 50px;
                             border: 1px solid c.$brown;
+                            margin: 0 auto;
 
                             &:hover {
                                 border: 1px solid c.$main_color;
@@ -91,678 +123,69 @@
                         }
 
                         &:focus-visible {
-                            outline: c.$body_bg auto 0px;
+                            outline: #5B3716 auto 0px !important;
                         }
                     }
                 }
-            }
-        }
 
-    }
-
-    .student_photo {
-        width: 160px;
-        margin: 60px 0px 40px;
-        position: relative;
-
-        .student_photo_btn {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            transform: translate(100%, 0px);
-            width: 50px;
-            padding: 10px;
-            background-color: c.$main_color;
-            border-radius: 50%;
-            line-height: 0;
-
-            &:hover {
-                background-color: color.adjust(c.$main_color, $lightness: -10%);
-            }
-        }
-    }
-}
-
-.crop_area {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 15;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    overflow-y: scroll;
-
-    .crop_content_area {
-        width: 60%;
-        max-width: 600px;
-        background-color: c.$body_bg;
-        padding: 30px 50px;
-        border-radius: 10px;
-
-        .croppie-container {
-            .cr-boundary {
-                width: 80%;
-                margin: 0 auto;
-                position: relative;
-                overflow: hidden;
-
-                .cr-image {
-                    width: auto;
-                    z-index: 1;
-                }
-
-                .cr-viewport {
-                    position: absolute;
-                    top: 0;
-                    border-radius: 50%;
-                    border: 3px solid c.$main_color;
-                    box-shadow: 0 0 0 900px rgba(217, 217, 217, 0.5);
-                    z-index: 2;
-                    width: 100% !important;
-                }
-
-                .cr-overlay {
-                    position: absolute;
-                    z-index: 2;
-                    cursor: move;
-                }
-            }
-
-            /******** Range Input ********/
-            .cr-slider-wrap {
-                width: 80%;
-                display: flex;
-                margin: 15px auto;
-                position: relative;
-
-                .cr-slider {
-                    /* input range 主體樣式 */
-                    -webkit-appearance: none;
-                    position: relative;
-                    border-radius: 10px;
+                .sign_up_text{
                     width: 100%;
-                    background-color: transparent;
-                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    margin: 40px auto 20px;
+                    
+                    .sign_up_text_link{
+                        color: c.$brown;
+                        text-decoration: underline;
 
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        width: var(--playRange);
-                        height: 5px;
-                        background-color: c.$main_color;
-                        border-radius: 10px;
-                        top: 50%;
-                        transform: translate(0, -50%);
-                    }
-
-                    /* input range 進度條樣式 */
-                    &::-webkit-slider-runnable-track {
-                        background-color: c.$grey;
-                        height: 5px;
-                        border-radius: 10px;
-                    }
-
-                    /* input range 原點樣式 */
-                    &::-webkit-slider-thumb {
-                        width: 15px;
-                        height: 15px;
-                        border-radius: 100%;
-                        border: none;
-                        -webkit-appearance: none;
-                        background-color: c.$main_color;
-                        z-index: 1;
-                        position: relative;
-                        transition: 0.5s all ease;
-                        transform: translate(0%, -50%);
-                        top: 50%;
-
-                    }
-
-                    /* input range 原點focus */
-                    &:focus {
-                        outline: none;
-
-                        &::-webkit-slider-thumb {
-                            background-color: color.adjust(c.$main_color, $lightness: -10%);
-                        }
-                    }
-                }
-
-                #cr-rotate {
-                    color: c.$brown;
-                    display: none;
-                }
-
-                .dotRange {
-                    background-color: c.$main_color;
-                    width: 0%;
-                    height: 5px;
-                    position: absolute;
-                    border-radius: 10px;
-                    top: 50%;
-                    left: 0%;
-                    transform: translate(-0%, -50%);
-                }
-            }
-        }
-
-        .crop_area_btn {
-            display: flex;
-            justify-content: center;
-            margin: 10px auto 0px;
-
-            .crop_btn {
-                margin: 5px 10px;
-                padding: 5px 10px;
-                background-color: c.$main_color;
-                color: c.$white;
-                border-radius: 10px;
-
-                &:hover {
-                    background-color: color.adjust(c.$main_color, $lightness: -10%);
-                }
-
-                &.crop_btn_prev {
-                    background-color: c.$grey;
-
-                    &:hover {
-                        background-color: color.adjust(c.$grey, $lightness: -10%);
-                    }
-                }
-            }
-        }
-    }
-
-}
-
-.avatar_modal {
-    max-width: none !important;
-    width: 60%;
-    padding: 0;
-    margin: 75px auto 0;
-
-    .avatar_modal_top {
-        position: relative;
-        background-color: color.adjust(c.$main_color, $lightness: 15%);
-        min-height: 150px;
-        border-radius: 8px 8px 0px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-
-        .swiper_avatar_img {
-            width: 150px;
-            position: absolute;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            left: 50%;
-            top: 0;
-            transform: translate(-50%, -50%);
-        }
-
-        .avatar_name {
-            margin: 0px auto 15px;
-
-            h4 {
-                color: c.$brown;
-            }
-        }
-    }
-
-    .avatar_area {
-        background-image: url(../image/svg/reading_card_bg.svg);
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        padding: 20px 5% 60px;
-
-        .avatar_title {
-            text-align: center;
-            color: c.$brown;
-            margin: 10px auto;
-        }
-
-        .choose_avatar_area {
-            position: relative;
-
-            .avatar_swiper {
-                width: 80%;
-                max-width: 1200px;
-                height: auto;
-                margin-left: auto;
-                margin-right: auto;
-
-                .swiper-wrapper {
-                    .swiper-slide {
-                        display: flex;
-                        justify-content: center;
-
-                        &.notget {
-                            filter: grayscale(1);
-                            opacity: 0.8;
-                            cursor: auto;
-
-                            &:after {
-                                content: attr(data-des);
-                                width: 80%;
-                                position: absolute;
-                                bottom: 10px;
-                                left: 50%;
-                                font-size: 15px;
-                                transform: translate(-50%, 0px);
-                                opacity: 0;
-                                z-index: 1;
-                                transition: .5s;
-                                color: c.$white;
-                                background-color: c.$brown;
-                                padding: 5px;
-                                border-radius: 10px;
-                            }
-
-                            &:hover {
-                                &:after {
-                                    opacity: 1;
-                                }
-                            }
-
-
-
-
-                            .lock_icon {
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-
-                                i {
-                                    font-size: 40px;
-                                    line-height: 0.9;
-                                    padding: 15px;
-                                    background: c.$white;
-                                    border-radius: 50%;
-                                    color: c.$grey;
-                                }
-                            }
-
-                            .swiper_avatar_img {
-                                cursor: auto;
-
-                                &:hover {
-                                    border: 2px solid c.$transparent;
-                                }
-                            }
-                        }
-
-                        .swiper_avatar_img {
-                            padding: 10px;
-                            border: 2px solid c.$transparent;
-                            cursor: pointer;
-                            line-height: 0;
-                            width: 100%;
-
-                            &:hover {
-                                border: 2px solid c.$main_color;
-                                border-radius: 50%;
-                            }
-
-                            img {
-                                border-radius: 50%;
-                            }
-
-                            &.swiper_avatar_text {
-                                &~.close_avatar {
-                                    &.show {
-                                        display: none;
-                                    }
-                                }
-                            }
-                        }
-
-                        .close_avatar {
-                            width: 30px;
-                            height: 30px;
-                            position: absolute;
-                            right: 0px;
-                            top: 0px;
-                            background: c.$black;
-                            border-radius: 50%;
-                            display: none;
-                            cursor: pointer;
-                            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            background-position: center center;
-
-                            &.show {
-                                display: block;
-                            }
+                        &:hover{
+                            color: c.$main_color;
                         }
                     }
 
-                }
-            }
+                    &.prompts_text{
+                        margin: 0 auto;
 
-            .avatar_swiper_button_next,
-            .avatar_swiper_button_prev {
-                border-radius: 50%;
-                border: 1px solid c.$main_color;
-                width: 50px !important;
-                height: 50px !important;
-                position: absolute;
-                top: 50%;
-                transform: translate(0px, -50%);
-                z-index: 10;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                &:after {
-                    font-family: swiper-icons;
-                    text-transform: none !important;
-                    letter-spacing: 0;
-                    text-transform: none;
-                    font-variant: initial;
-                    line-height: 1;
-                    color: c.$main_color;
-                }
-            }
-
-            .avatar_swiper_button_next {
-                right: 5%;
-                transform: translate(100%, -50%);
-
-                &:after {
-                    content: "next";
-                }
-            }
-
-            .avatar_swiper_button_prev {
-                left: 5%;
-                transform: translate(-100%, -50%);
-
-
-                &:after {
-                    content: "prev";
-                }
-            }
-        }
-
-        .upload_avatar_area {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 10px auto;
-
-            .upload_avatar {
-                margin: 20px auto 0;
-                text-align: center;
-                border-top: 1px solid c.$brown;
-                width: 100%;
-                padding: 20px 0 0;
-
-                .upload_avatar_title {
-                    margin: 0 0 20px;
-                    color: c.$brown;
-                }
-
-                .file_upload {
-                    cursor: pointer;
-                    background-color: c.$brown;
-                    padding: 10px 20px;
-                    border-radius: 10px;
-                    color: c.$white;
-                    display: inline-block;
-
-                    &:hover {
-                        background-color: color.adjust(c.$brown, $lightness: -10%);
+                        .fa-lightbulb{
+                            color: c.$instructions;
+                        }
                     }
                 }
-
-                input[type="file"] {
-                    display: none;
-                }
             }
         }
-    }
 
-
-}
-
-.swiper_avatar_img {
-    position: relative;
-    line-height: 0;
-    border-radius: 50%;
-
-    img {
-        border-radius: 50%;
-    }
-
-    &.swiper_avatar_text {
-        user-select: none;
-        /* standard syntax */
-        -webkit-user-select: none;
-        /* for Chrome、Safari */
-        -moz-user-select: none;
-
-        /* for Mozilla、Firefox */
-        .avatar_text {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            color: c.$white;
-
-
-            h4 {
-                font-size: 60px;
-                text-align: center;
-            }
-        }
     }
 }
 
 @media screen and (max-width: 1200px) {}
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 992px) {
     .main {
-        &.register {
-            .register_area {
+        &.sign_up {
+            .sign_up_area {
                 .account_area {
                     .register_item {
-                        input {
-                            font-size: 18px;
-                        }
-
-                        select {
-                            font-size: 18px;
-                        }
+                        width: 47.5%;
                     }
                 }
             }
         }
-    }
-
-    .avatar_modal {
-        width: 80%;
-        margin: 60px auto 0;
-
-        .avatar_modal_top {
-            min-height: 120px;
-
-            .swiper_avatar_img {
-                width: 120px;
-            }
-
-            .avatar_name {
-                margin: 0px auto 10px;
-            }
-        }
-
-        .avatar_area {
-            .choose_avatar_area {
-                .avatar_swiper {
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            &.notget {
-                                &:after {
-                                    font-size: 13px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .avatar_swiper_button_next,
-                .avatar_swiper_button_prev {
-                    width: 40px !important;
-                    height: 40px !important;
-                }
-            }
-        }
-
     }
 }
 
 @media screen and (max-width: 768px) {
     .main {
-        .student_photo {
-            width: 140px;
-
-            .student_photo_btn {
-                width: 40px;
-                padding: 5px;
-            }
-        }
-    }
-
-    .avatar_modal {
-        margin: 50px auto 0;
-
-        .avatar_modal_top {
-            min-height: 100px;
-            
-            .swiper_avatar_img {
-                width: 100px;
-            }
-        }
-
-        .avatar_area {
-            padding: 10px 5% 40px;
-
-            .choose_avatar_area {
-                .avatar_swiper {
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            &.notget {
-                                &:after {
-                                    font-size: 11px;
-                                }
-                            }
-                        }
+        &.sign_up {
+            .sign_up_area {
+                .account_area {
+                    .register_item {
+                        width: 100%;
                     }
                 }
-
-                .avatar_swiper_button_next,
-                .avatar_swiper_button_prev {
-                    width: 30px !important;
-                    height: 30px !important;
-                }
             }
-
         }
     }
 }
 
 @media screen and (max-width: 499px) {
-    .main {
-        &.register {
-
-            .register_area {
-                .account_area {
-                    .register_item {
-
-                        input {
-                            font-size: 17px;
-                        }
-
-                        select {
-                            font-size: 17px;
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-
-    .avatar_modal {
-
-        .avatar_area {
-
-            .choose_avatar_area {
-
-                .avatar_swiper {
-                    width: 70%;
-                }
-
-                .avatar_swiper_button_next {
-                    right: 10%;
-                    transform: translate(100%, -50%);
-                }
-
-                .avatar_swiper_button_prev {
-                    left: 10%;
-                    transform: translate(-100%, -50%);
-                }
-            }
-
-            .upload_avatar_area {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                margin: 10px auto;
-
-                .upload_avatar {
-                    margin: 20px auto 0;
-                    text-align: center;
-                    border-top: 1px solid c.$brown;
-                    width: 100%;
-                    padding: 20px 0 0;
-
-                    .upload_avatar_title {
-                        margin: 0 0 20px;
-                        color: c.$brown;
-                    }
-
-                    .file_upload {
-                        cursor: pointer;
-                        background-color: c.$brown;
-                        padding: 10px 20px;
-                        border-radius: 10px;
-                        color: c.$white;
-                        display: inline-block;
-
-                        &:hover {
-                            background-color: color.adjust(c.$brown, $lightness: -10%);
-                        }
-                    }
-
-                    input[type="file"] {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-
-    }
 }
