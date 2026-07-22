@@ -13,7 +13,7 @@
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                
+
                 .register_item {
                     position: relative;
                     display: flex;
@@ -21,11 +21,37 @@
                     margin: 10px 0 35px;
                     width: 45%;
 
-                    &.register_item_confirm{
+                    &.register_item_confirm {
                         width: 80%;
                         margin: 10px auto 10px;
 
-                        a{
+                        &.change_password{
+                            margin: 40px auto 10px;
+                        }
+
+                        input{
+                            display: flex;
+                                justify-content: center;
+                                width: 100%;
+                                max-width: 500px;
+                                font-size: 20px;
+                                font-weight: bold;
+                                border-radius: 50px;
+                                border: 1px solid c.$brown;
+                                padding: 3px 8px;
+                                color: c.$brown;
+                                background-color: c.$white;
+                                margin: 0 auto;
+                                cursor: pointer;
+
+                                &:hover {
+                                    border: 1px solid c.$main_color;
+                                    background-color: c.$main_color;
+                                    color: c.$white;
+                                }
+                        }
+
+                        a {
                             &.signup_btn {
                                 display: flex;
                                 justify-content: center;
@@ -40,21 +66,30 @@
                                 background-color: c.$white;
                                 margin: 0 auto;
 
-                            &:hover {
-                                border: 1px solid c.$brown;
-                                background-color: c.$brown;
-                                color: c.$white;
-                                cursor: pointer;
+                                &:hover {
+                                    border: 1px solid c.$main_color;
+                                    background-color: c.$main_color;
+                                    color: c.$white;
+                                }
+
+                                &.login_btn {
+                                    &:hover {
+                                        border: 1px solid c.$brown;
+                                        background-color: c.$brown;
+                                        color: c.$white;
+                                    }
+                                }
+
+
                             }
                         }
                     }
-                }
 
-                    .account{
+                    .account {
                         padding: 3px 85px 3px 8px;
                     }
 
-                    .get_code_btn{
+                    .get_code_btn {
                         position: absolute;
                         right: 5px;
                         bottom: 12px;
@@ -128,25 +163,25 @@
                     }
                 }
 
-                .sign_up_text{
+                .sign_up_text {
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     margin: 40px auto 20px;
-                    
-                    .sign_up_text_link{
+
+                    .sign_up_text_link {
                         color: c.$brown;
                         text-decoration: underline;
 
-                        &:hover{
+                        &:hover {
                             color: c.$main_color;
                         }
                     }
 
-                    &.prompts_text{
+                    &.prompts_text {
                         margin: 0 auto;
 
-                        .fa-lightbulb{
+                        .fa-lightbulb {
                             color: c.$instructions;
                         }
                     }
@@ -157,7 +192,98 @@
     }
 }
 
-@media screen and (max-width: 1200px) {}
+.sign_up_done_modal {
+    max-width: none !important;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    .sign_up_done_area {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .sign_up_done_content {
+            width: 60%;
+            margin: 0 auto;
+            padding: 0 0 60px;
+            background-color: c.$white;
+            border-radius: 8px;
+        }
+
+
+        .sign_up_done_title {
+            text-align: center;
+            margin: 0 auto 60px;
+            padding: 15px 20px;
+            color: c.$white;
+            background-color: c.$brown;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sign_up_done_text {
+            margin: 10px auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            p {
+                a {
+                    color: c.$brown;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: c.$main_color;
+                    }
+                }
+            }
+        }
+
+        .sign_up_done_link {
+            padding: 0 5%;
+            a {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                max-width: 500px;
+                font-size: 20px;
+                font-weight: bold;
+                border-radius: 50px;
+                border: 1px solid c.$brown;
+                padding: 3px 8px;
+                color: c.$brown;
+                background-color: c.$white;
+                margin: 40px auto 0;
+
+                &:hover {
+                    border: 1px solid c.$main_color;
+                    background-color: c.$main_color;
+                    color: c.$white;
+                }
+            }
+        }
+    }
+
+    .close-modal {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .sign_up_done_modal {
+        .sign_up_done_area {
+            .sign_up_done_content {
+                width: 80%;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 992px) {
     .main {
@@ -187,5 +313,4 @@
     }
 }
 
-@media screen and (max-width: 499px) {
-}
+@media screen and (max-width: 499px) {}
