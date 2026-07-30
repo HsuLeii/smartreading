@@ -385,9 +385,24 @@
             </div>
           </div>
 
-          <div class="modal_plan_btn">
-            <a href="login.html">立即購買</a>
+          <div class="consent_input_item">
+            <p class="consent_input_text">
+              銷售協議<br />
+              訂閱/購買/取得訂閱方案前請務必點閱下方銷售協議連結，請於勾選同意後進入購買流程
+            </p>
+            <input type="checkbox" id="agree_consent_input_1" data-target="#btn_1" class="consent_input_checkbox">
+
+            <label for="agree_consent_input_1">
+              <p class="consent_input_text">
+                我已詳閱<a href="#">銷售協議</a>並同意<br>
+              </p>
+            </label>
+
           </div>
+
+          <button id="btn_1" class="modal_plan_btn" disabled="disabled">
+            <a href="login.html">立即購買</a>
+          </button>
         </div>
 
       </div>
@@ -433,9 +448,23 @@
             </div>
           </div>
 
-          <div class="modal_plan_btn">
-            <a href="login.html">立即購買</a>
+          <div class="consent_input_item">
+            <p class="consent_input_text">
+              銷售協議<br />
+              訂閱/購買/取得訂閱方案前請務必點閱下方銷售協議連結，請於勾選同意後進入購買流程
+            </p>
+            <input type="checkbox" id="agree_consent_input_2" data-target="#btn_2" class="consent_input_checkbox">
+
+            <label for="agree_consent_input_2">
+              <p class="consent_input_text">
+                我已詳閱<a href="#">銷售協議</a>並同意<br>
+              </p>
+            </label>
           </div>
+
+          <button id="btn_2" class="modal_plan_btn" disabled="disabled">
+            <a href="login.html">立即購買</a>
+          </button>
         </div>
 
       </div>
@@ -481,9 +510,25 @@
             </div>
           </div>
 
-          <div class="modal_plan_btn">
-            <a href="login.html">立即購買</a>
+          <div class="consent_input_item">
+            <p class="consent_input_text">
+              銷售協議<br />
+              訂閱/購買/取得訂閱方案前請務必點閱下方銷售協議連結，請於勾選同意後進入購買流程
+            </p>
+            <input type="checkbox" value="agree_consent" id="agree_consent_input_3" data-target="#btn_3"
+              class="consent_input_checkbox">
+
+            <label for="agree_consent_input_3">
+              <p class="consent_input_text">
+                我已詳閱<a href="#">銷售協議</a>並同意<br>
+              </p>
+            </label>
+
           </div>
+
+          <button id="btn_3" class="modal_plan_btn" disabled="disabled">
+            <a href="login.html">立即購買</a>
+          </button>
         </div>
 
       </div>
@@ -497,6 +542,7 @@
   <script src="js/all.js"></script>
 
   <!-- this page widgets JS -->
+  <script src="js/fontawesome-free-6.1.1.min.js"></script>
   <!-- modal -->
   <script src="js/jquery.modal.min.js"></script>
 
@@ -504,6 +550,11 @@
     $(document).ready(function () {
       $("header").load("header.html", function () {});
       $("footer").load("footer.html", function () {});
+    });
+
+    $('.consent_input_item input[type="checkbox"]').change(function () {
+      const targetId = $(this).attr('data-target');
+      $(targetId).prop('disabled', !this.checked);
     });
   </script>
 

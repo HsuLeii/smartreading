@@ -370,6 +370,92 @@
                 }
             }
 
+            .consent_input_item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px auto;
+
+                .consent_input_text{
+                    text-align: center;
+                }
+
+                .consent_input_checkbox{
+                    position: absolute;
+                    opacity: 0;
+
+                    &+label {
+                            color: c.$main_color;
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+                            cursor: pointer;
+                            padding: 0;
+                            margin: 20px auto;
+    
+                            &:before {
+                                content: '';
+                                margin-right: 10px;
+                                display: inline-block;
+                                vertical-align: text-top;
+                                width: 20px;
+                                height: 20px;
+                                background: c.$white;
+                                border: 1px solid c.$brown;
+                            }
+    
+                            .consent_input_text {
+                                text-align: left;
+                                width: calc(100% - 20px - 10px);
+
+                                a{
+                                    color: c.$brown;
+                                    text-decoration: underline;
+                                    margin: 0 3px;
+
+                                    &:hover{
+                                        color: c.$main_color;
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            &+label {
+                                color: c.$brown;
+    
+                                &:before {
+                                    border: 1px solid c.$brown;
+                                }
+                            }
+                        }
+    
+                        &:checked {
+                            &+label {
+                                background-color: transparent !important;
+    
+                                &:before {
+                                    border: 1px solid c.$brown;
+                                    background-color: c.$brown;
+                                }
+    
+                                &:after {
+                                    font-family: "Font Awesome 5 Free";
+                                    content: '\f00c';
+                                    position: absolute;
+                                    left: auto !important;
+                                    transform: translateX(0);
+                                    color: c.$white;
+                                    width: 20px;
+                                    font-size: 15px;
+                                    text-align: center;
+                                    font-weight: 900;
+                                }
+                            }
+                        }
+                }
+            }
+
             .modal_plan_btn{
                 display: flex;
                 justify-content: center;
@@ -380,9 +466,17 @@
                 border-radius: 50px;
                 background-color: c.$brown;
 
+                &:disabled{
+                    &:hover{
+                        a{
+                            cursor: auto;
+                        }
+                    }
+                }
+
                 a{
                     width: 100%;
-                    color: #fff;
+                    color: c.$white;
                     text-align: center;
                 }
             }
@@ -400,6 +494,13 @@
                     &:hover{
                         background-color: c.$brown;
                     }
+
+                    &:disabled{
+                        &:hover{
+                            background-color: c.$three_month;
+                            opacity: 0.5;
+                        }
+                    }
                 }
             }
         }
@@ -416,6 +517,13 @@
                     &:hover{
                         background-color: c.$brown;
                     }
+
+                    &:disabled{
+                        &:hover{
+                            background-color: c.$six_month;
+                            opacity: 0.5;
+                        }
+                    }
                 }
             }
         }
@@ -431,6 +539,13 @@
 
                     &:hover{
                         background-color: c.$brown;
+                    }
+
+                    &:disabled{
+                        &:hover{
+                            background-color: c.$twelve_month;
+                            opacity: 0.5;
+                        }
                     }
                 }
             }
