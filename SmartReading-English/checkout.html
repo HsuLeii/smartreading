@@ -11,8 +11,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
 
   <!-- this page widgets CSS -->
-  <!-- modal -->
-  <link rel="stylesheet" href="css/jquery.modal.min.css" />
 
   <!-- my core CSS -->
   <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
@@ -24,93 +22,54 @@
   <div class="slide">
     <img src="image/photo/slide/slide_grade.png" alt="">
   </div>
-  <div class="main plans">
+  <div class="main checkout">
     <div class="tittle">
-      <h1>方案內容</h1>
+      <h1>付款資訊</h1>
     </div>
 
-    <div class="plan_introduce">
-      <div class="plan_content_introduce_tittle">
-        <h3>
-          方案名稱<br/>
-          【含診斷】3個月方案+1次DCEC英語閱讀能力診斷
-        </h3>
-      </div>
+    <div class="checkout_information_area">
+            <div class="checkout_area">
+              <div class="input_item">
+                    <label for="name">姓名</label>
+                    <input type="text" placeholder="請輸入姓名" id="name">
+                </div>
 
-      <div class="plan_content_text">
-        <h4>
-          方案內容
-        </h4>
-        <p>
-          (方案內容為文字後續會提供各方案內容文字檔)
-        </p>
-      </div>
+                <div class="input_item">
+                    <label for="phone">手機</label>
+                    <input type="text" placeholder="請輸入手機" id="phone" autocomplete="tel">
+                </div>
 
-      <div class="plan_content_price_area">
-        <div class="plan_content_price_input">
-          <div class="input-group">
-              <label for="discount_code">優惠碼</label>
-              <input id="discount_code" type="text" placeholder="請輸入優惠碼" value="">
-              <button type="button" class="discount_code_btn">
-                <p>使用</p>
-              </button>
+                <div class="input_item">
+                    <label for="mail">E-mail</label>
+                    <input type="text" placeholder="請輸入E-mail" id="mail">
+                </div>
+
+                <div class="input_item">
+                    <label for="paying">
+                        付款方式
+                    </label>
+                    <input type="text" value="信用卡(一次付清)" id="paying" disabled>
+                </div>
+
+                <div class="input_item">
+                    <label for="receipt">收據資料</label>
+                    <label class="radio-inline">
+                      <input id="receipt1" type="radio" value="0" name="receipt">無須收據
+                    </label>
+                    <label class="radio-inline">
+                      <input id="receipt2" type="radio" value="1" name="receipt">電子掃描影本收據
+                    </label>
+                </div>
+
+                <div class="input_item input_item_confirm">
+                  <button class="pay_btn">
+                    <p>
+                      前往結帳
+                    </p>
+                  </button>
+                </div>
             </div>
         </div>
-
-        <div class="plan_price_item">
-            <p>
-              原價：XXXX 元
-            </p>
-            <p>
-              限定優惠方案：
-            </p>
-            <p>
-              折扣金額：XXX
-            </p>
-            <div class="total_price">
-              <h4>
-                <span>NT$</span> 600
-              </h4>
-            </div>
-          </div>
-      </div>
-
-      <div class="consent_input_item">
-            <p class="consent_input_text">
-              銷售協議<br />
-              訂閱/購買/取得訂閱方案前請務必點閱下方銷售協議連結，請於勾選同意後進入購買流程
-            </p>
-            <input type="checkbox" id="agree_consent_input_1" data-target="#btn_1" class="consent_input_checkbox">
-
-            <label for="agree_consent_input_1">
-              <p class="consent_input_text">
-                我已詳閱<a href="#sales_agreement" rel="modal:open" class="">銷售協議</a>並同意<br>
-              </p>
-            </label>
-
-          </div>
-
-          <button id="btn_1" class="plan_btn" disabled="disabled">
-            <a href="#">立即購買</a>
-          </button>
-    </div>
-
-    <div id="sales_agreement" class="modal sales_agreement_modal">
-      <div class="sales_agreement_modal_area">
-        <div class="sales_agreement_modal_content">
-          <div class="sales_agreement_modal_title">
-            <h4>銷售協議</h4>
-          </div>
-
-          <div class="sales_agreement_modal_text">
-            <p>
-              銷售協議內容
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
 
   </div>
 
@@ -121,18 +80,10 @@
 
   <!-- this page widgets JS -->
   <script src="js/fontawesome-free-6.1.1.min.js"></script>
-  <!-- modal -->
-  <script src="js/jquery.modal.min.js"></script>
-
   <script>
     $(document).ready(function () {
       $("header").load("header.html", function () {});
       $("footer").load("footer.html", function () {});
-    });
-
-    $('.consent_input_item input[type="checkbox"]').change(function () {
-      const targetId = $(this).attr('data-target');
-      $(targetId).prop('disabled', !this.checked);
     });
   </script>
 

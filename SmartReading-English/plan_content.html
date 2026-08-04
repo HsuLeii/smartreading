@@ -91,7 +91,7 @@
           </div>
 
           <button id="btn_1" class="plan_btn" disabled="disabled">
-            <a href="#">立即購買</a>
+            <a href="checkout.html">立即購買</a>
           </button>
     </div>
 
@@ -104,8 +104,13 @@
 
           <div class="sales_agreement_modal_text">
             <p>
+              銷售協議內容<br/>
               銷售協議內容
             </p>
+          </div>
+
+          <div class="sales_agreement_modal_btn">
+            <a href="#close-modal" rel="modal:close" class="button_hover">已詳閱</a>
           </div>
         </div>
 
@@ -131,8 +136,7 @@
     });
 
     $('.consent_input_item input[type="checkbox"]').change(function () {
-      const targetId = $(this).attr('data-target');
-      $(targetId).prop('disabled', !this.checked);
+      $("#btn_1").prop('disabled', !this.checked);
     });
   </script>
 
