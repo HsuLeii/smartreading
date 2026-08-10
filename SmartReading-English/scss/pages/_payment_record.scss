@@ -1,0 +1,277 @@
+@use "sass:color";
+@use "../base/color"as c;
+
+@use "../base/reset";
+
+.main {
+    &.checkout {
+        width: 80%;
+        @extend %max1200;
+
+        .checkout_information_area {
+            .checkout_area {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .input_item {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 10px 0 35px;
+                    width: 45%;
+
+                    &.input_item_confirm {
+                        width: 80%;
+                        margin: 10px auto 10px;
+
+                        &.change_password {
+                            margin: 40px auto 10px;
+                        }
+
+                        input {
+                            display: flex;
+                            justify-content: center;
+                            width: 100%;
+                            max-width: 500px;
+                            font-size: 20px;
+                            font-weight: bold;
+                            border-radius: 50px;
+                            border: 1px solid c.$brown;
+                            padding: 3px 8px;
+                            color: c.$brown;
+                            background-color: c.$white;
+                            margin: 0 auto;
+                            cursor: pointer;
+
+                            &:hover {
+                                border: 1px solid c.$main_color;
+                                background-color: c.$main_color;
+                                color: c.$white;
+                            }
+                        }
+
+                        a {
+                            &.signup_btn {
+                                display: flex;
+                                justify-content: center;
+                                width: 100%;
+                                max-width: 500px;
+                                font-size: 20px;
+                                font-weight: bold;
+                                border-radius: 50px;
+                                padding: 3px 8px;
+                                color: c.$white;
+                                background-color: c.$brown;
+                                margin: 0 auto;
+
+                                &:hover {
+                                    transform: scale(1.05);
+                                }
+
+                                &.login_btn {
+                                    &:hover {
+                                        border: 1px solid c.$brown;
+                                        background-color: c.$brown;
+                                        color: c.$white;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
+                    label {
+                        width: 100%;
+                        margin: 0px auto 10px;
+                        border-left: 3px solid c.$brown;
+                        padding: 0px 0px 0px 10px;
+                    }
+
+                    input {
+                        font-size: 20px;
+                        width: 100%;
+                        background-color: c.$white;
+                        border: 0px solid c.$brown;
+                        border-bottom: 1px solid c.$brown;
+                        padding: 3px 8px;
+
+                        &:focus {
+                            outline: 0;
+                            background-color: color.adjust(c.$brown, $lightness: 60%);
+                        }
+
+                        &:disabled {
+                            background-color: transparent;
+                            border-bottom: 1px solid c.$brown;
+                        }
+
+                        &.signup_btn {
+                            width: 100%;
+                            max-width: 500px;
+                            border-radius: 50px;
+                            margin: 0 auto;
+                        }
+
+                        &::placeholder {
+                            color: color.adjust(c.$brown, $lightness: 35%);
+                            font-weight: normal;
+                        }
+                    }
+
+                    select {
+                        font-size: 20px;
+                        width: 100%;
+                        padding: 3px 8px;
+                        border: 0px solid c.$brown;
+                        border-bottom: 1px solid c.$brown;
+
+                        &:focus {
+                            background-color: color.adjust(c.$brown, $lightness: 60%);
+                        }
+
+                        &:focus-visible {
+                            outline: #5B3716 auto 0px !important;
+                        }
+                    }
+
+                    .radio-inline {
+                        display: flex;
+                        align-items: center;
+                        color: c.$brown;
+                        font-weight: normal;
+                        position: relative;
+                        cursor: pointer;
+                        padding: 10px 15px;
+
+                        &:before {
+                            content: " ";
+                            display: inline-block;
+                            top: 0;
+                            margin: 0 8px 0 0;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            position: relative;
+                            border: 2px solid c.$brown;
+                        }
+
+                        &:has(input:read-only) {
+                            color: c.$brown;
+
+                            &:before {
+                                border: 2px solid c.$brown;
+                            }
+
+                            &:hover {
+                                color: c.$main_color;
+
+                                &:before {
+                                    border: 2px solid c.$main_color;
+                                }
+                            }
+                        }
+
+                        &:has(input) {
+                            width: auto;
+                            border-left: 0px;
+                            margin: 0 10px 10px 0;
+                        }
+
+                        &:has(input:checked) {
+                            color: c.$main_color;
+                            cursor: pointer;
+
+                            &:before {
+                                border: 2px solid c.$main_color;
+                                background: radial-gradient(c.$main_color 0%, c.$main_color 40%, transparent 50%, transparent);
+                            }
+                        }
+
+                        &:hover {
+                            color: c.$main_color;
+                        }
+
+                        input[type="radio"] {
+                            display: none;
+
+                            &:checked {
+                                &+label {
+                                    color: c.$main_color;
+
+                                    &:before {
+                                        border: 2px solid c.$main_color;
+                                        background: radial-gradient(c.$main_color 0%, c.$main_color 40%, transparent 50%, transparent);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .input_item_confirm {
+                    margin: 40px auto 20px;
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+
+                    .pay_btn {
+                        width: 100%;
+                        max-width: 500px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        border-radius: 50px;
+                        padding: 3px 8px;
+                        background-color: c.$brown;
+
+                        p {
+                            color: c.$white;
+                            font-size: 20px;
+                        }
+
+                        &:hover{
+                            transform: scale(1.05);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 992px) {
+    .main {
+        &.checkout {
+            .checkout_information_area{
+                .checkout_area{
+                    .input_item{
+                        width: 47.5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        &.checkout {
+            .checkout_information_area{
+                .checkout_area{
+                    .input_item{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .main {}
+}
