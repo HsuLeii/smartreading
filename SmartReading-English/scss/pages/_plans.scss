@@ -3,34 +3,46 @@
 
 .slide {
     position: relative;
+    line-height: 1;
 
     .slide_plans_content {
         position: absolute;
         left: 40px;
         top: 40px;
-        width: 65%;
-        height: calc(100% - 80px);
-    }
+        width: 68%;
 
-    .slide_plans_text {
-        img {
-            max-width: 425px;
-            margin: 0 0 5px 0;
-        }
+        .slide_plans_text {
+            img {
+                max-width: 425px;
+                margin: 0 0 10px 0;
+            }
 
-        p {
-            font-size: 25px;
+            p {
+                font-size: 25px;
+            }
+
+            h3 {
+                font-size: 45px;
+                margin: 10px 0 0;
+                color: c.$main_color;
+            }
         }
     }
 
     .slide_plans_project {
+        position: absolute;
+        right: 22%;
+        top: 0;
+        height: 100%;
         display: flex;
-        flex-wrap: wrap;
-        margin: 20px 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 40px 0;
 
         .slide_plans_project_item {
-            width: 50%;
-
+            width: auto;
+            margin: 0 0 30px;
 
             .slide_plans_project_item_content {
                 display: flex;
@@ -38,7 +50,6 @@
                 background-color: c.$white;
                 padding: 8px 20px;
                 border-radius: 50px;
-                margin: 8px 25px 8px 0;
 
                 .slide_plans_project_item_icon {
                     width: 40px;
@@ -48,9 +59,25 @@
                         border-radius: 50%;
                     }
                 }
+
+                .slide_plans_project_item_text {
+                    p {
+                        font-size: 15px;
+                    }
+                }
             }
 
+            &:nth-child(2) {
+                transform: translate(-35px, 0);
+            }
 
+            &:nth-child(3) {
+                transform: translate(-180px, 0);
+            }
+
+            &:nth-child(4) {
+                transform: translate(-165px, 0);
+            }
         }
     }
 }
@@ -83,6 +110,32 @@
                     padding: 5px 15px;
                     color: c.$main_color;
                     background-color: c.$body_bg;
+                }
+            }
+
+            .plans_description_area {
+                .plans_description_content {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .plans_description_item {
+                        width: 30%;
+
+                        .plans_description_item_img {
+                            width: 80%;
+                            margin: 20px auto;
+                        }
+
+                        .plans_description_item_text {
+                            display: flex;
+                            justify-content: center;
+                            margin: 20px auto;
+
+                            p {
+                                text-align: center;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -613,16 +666,181 @@
 }
 
 
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1600px) {
+    .slide {
+
+        .slide_plans_content {
+            top: 30px;
+
+            .slide_plans_text {
+                img {
+                    max-width: 350px;
+                }
+
+                h3 {
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .slide_plans_project {
+            justify-content: center;
+            padding: 30px 0;
+
+            .slide_plans_project_item {
+                margin: 8px 0;
+
+                &:nth-child(3) {
+                    transform: translate(-135px, 0);
+                }
+
+                &:nth-child(4) {
+                    transform: translate(-120px, 0);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .slide {
+
+        .slide_plans_content {
+            top: 50%;
+            transform: translate(0px, -50%);
+
+            .slide_plans_text {
+                p {
+                    font-size: 17px;
+                }
+            }
+        }
+
+        .slide_plans_project {
+            padding: 8px 10px;
+
+            .slide_plans_project_item {
+
+                .slide_plans_project_item_content {
+                    .slide_plans_project_item_icon {
+                        width: 25px;
+                        margin: 0 5px 0 0;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .slide {
+
+        .slide_plans_content {
+            left: 20px;
+            height: auto;
+
+            .slide_plans_text {
+
+                img {
+                    margin: 0 0 5px 0;
+                }
+
+                p {
+                    font-size: 15px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                    margin: 5px 0 0;
+                }
+            }
+        }
+
+        .slide_plans_project {
+            right: 20%;
+
+            .slide_plans_project_item {
+                margin: 5px 0;
+
+                &:nth-child(2) {
+                    transform: translate(0, 0);
+                }
+
+                &:nth-child(3),
+                &:nth-child(4) {
+                    transform: translate(-105px, 0);
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .main {
+
+        // &.plans {
+        //     .plans_introduce {
+        //         .plans_item_area {
+        //             .plans_item_content {
+        //                 width: 48%;
+        //             }
+        //         }
+        //     }
+        // }
+
         &.plans {
             .plans_introduce {
-                .plans_item_area {
-                    .plans_item_content {
-                        width: 48%;
+                .plans_description_area {
+                    .plans_description_content {
+                        flex-wrap: wrap;
+
+                        .plans_description_item {
+                            width: 45%;
+                        }
                     }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .slide {
+
+        .slide_plans_content {
+            top: 20px;
+            transform: translate(0px, 0%);
+
+            .slide_plans_text {
+                img {
+                    max-width: 280px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .slide_plans_project {
+            position: relative;
+            right: auto;
+            width: calc(100% - 40px);
+            height: auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 auto;
+
+            .slide_plans_project_item {
+                margin: 5px;
+
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    transform: translate(0, 0);
                 }
             }
         }
@@ -630,6 +848,27 @@
 }
 
 @media screen and (max-width: 768px) {
+    .slide {
+        .slide_plans_content {
+            top: 5px;
+            width: 70%;
+
+            .slide_plans_text {
+                img {
+                    display: none;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+
+                h3 {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
     .main {
         &.plans {
             .plans_introduce {
@@ -637,6 +876,24 @@
 
                     h3 {
                         max-width: 100%;
+                    }
+                }
+
+                .plans_description_area {
+                    .plans_description_content {
+
+                        .plans_description_item {
+                            width: 80%;
+                            margin: 0 auto;
+
+                            .plans_description_item_img {
+                                margin: 10px auto;
+                            }
+
+                            .plans_description_item_text {
+                                margin: 10px auto;
+                            }
+                        }
                     }
                 }
 
@@ -686,5 +943,18 @@
 }
 
 @media screen and (max-width: 499px) {
-    .main {}
+    .main {
+        &.plans {
+            .plans_introduce {
+                .plans_description_area {
+                    .plans_description_content {
+
+                        .plans_description_item {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

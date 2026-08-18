@@ -11845,28 +11845,40 @@ h-word {
 /*註冊*/
 .slide {
   position: relative;
+  line-height: 1;
 }
 .slide .slide_plans_content {
   position: absolute;
   left: 40px;
   top: 40px;
-  width: 65%;
-  height: calc(100% - 80px);
+  width: 68%;
 }
-.slide .slide_plans_text img {
+.slide .slide_plans_content .slide_plans_text img {
   max-width: 425px;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
 }
-.slide .slide_plans_text p {
+.slide .slide_plans_content .slide_plans_text p {
   font-size: 25px;
 }
+.slide .slide_plans_content .slide_plans_text h3 {
+  font-size: 45px;
+  margin: 10px 0 0;
+  color: #ff6464;
+}
 .slide .slide_plans_project {
+  position: absolute;
+  right: 22%;
+  top: 0;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  margin: 20px 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 40px 0;
 }
 .slide .slide_plans_project .slide_plans_project_item {
-  width: 50%;
+  width: auto;
+  margin: 0 0 30px;
 }
 .slide .slide_plans_project .slide_plans_project_item .slide_plans_project_item_content {
   display: flex;
@@ -11874,7 +11886,6 @@ h-word {
   background-color: #fff;
   padding: 8px 20px;
   border-radius: 50px;
-  margin: 8px 25px 8px 0;
 }
 .slide .slide_plans_project .slide_plans_project_item .slide_plans_project_item_content .slide_plans_project_item_icon {
   width: 40px;
@@ -11882,6 +11893,18 @@ h-word {
 }
 .slide .slide_plans_project .slide_plans_project_item .slide_plans_project_item_content .slide_plans_project_item_icon img {
   border-radius: 50%;
+}
+.slide .slide_plans_project .slide_plans_project_item .slide_plans_project_item_content .slide_plans_project_item_text p {
+  font-size: 15px;
+}
+.slide .slide_plans_project .slide_plans_project_item:nth-child(2) {
+  transform: translate(-35px, 0);
+}
+.slide .slide_plans_project .slide_plans_project_item:nth-child(3) {
+  transform: translate(-180px, 0);
+}
+.slide .slide_plans_project .slide_plans_project_item:nth-child(4) {
+  transform: translate(-165px, 0);
 }
 
 .main.plans {
@@ -11909,6 +11932,25 @@ h-word {
   padding: 5px 15px;
   color: #ff6464;
   background-color: #EFE8E0;
+}
+.main.plans .plans_introduce .plans_description_area .plans_description_content {
+  display: flex;
+  justify-content: space-between;
+}
+.main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item {
+  width: 30%;
+}
+.main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item .plans_description_item_img {
+  width: 80%;
+  margin: 20px auto;
+}
+.main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item .plans_description_item_text {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+.main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item .plans_description_item_text p {
+  text-align: center;
 }
 .main.plans .plans_introduce .plans_item_area {
   display: flex;
@@ -12284,14 +12326,135 @@ h-word {
   opacity: 0.5;
 }
 
+@media screen and (max-width: 1600px) {
+  .slide .slide_plans_content {
+    top: 30px;
+  }
+  .slide .slide_plans_content .slide_plans_text img {
+    max-width: 350px;
+  }
+  .slide .slide_plans_content .slide_plans_text h3 {
+    font-size: 35px;
+  }
+  .slide .slide_plans_project {
+    justify-content: center;
+    padding: 30px 0;
+  }
+  .slide .slide_plans_project .slide_plans_project_item {
+    margin: 8px 0;
+  }
+  .slide .slide_plans_project .slide_plans_project_item:nth-child(3) {
+    transform: translate(-135px, 0);
+  }
+  .slide .slide_plans_project .slide_plans_project_item:nth-child(4) {
+    transform: translate(-120px, 0);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .slide .slide_plans_content {
+    top: 50%;
+    transform: translate(0px, -50%);
+  }
+  .slide .slide_plans_content .slide_plans_text p {
+    font-size: 17px;
+  }
+  .slide .slide_plans_project {
+    padding: 8px 10px;
+  }
+  .slide .slide_plans_project .slide_plans_project_item .slide_plans_project_item_content .slide_plans_project_item_icon {
+    width: 25px;
+    margin: 0 5px 0 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .slide .slide_plans_content {
+    left: 20px;
+    height: auto;
+  }
+  .slide .slide_plans_content .slide_plans_text img {
+    margin: 0 0 5px 0;
+  }
+  .slide .slide_plans_content .slide_plans_text p {
+    font-size: 15px;
+  }
+  .slide .slide_plans_content .slide_plans_text h3 {
+    font-size: 24px;
+    margin: 5px 0 0;
+  }
+  .slide .slide_plans_project {
+    right: 20%;
+  }
+  .slide .slide_plans_project .slide_plans_project_item {
+    margin: 5px 0;
+  }
+  .slide .slide_plans_project .slide_plans_project_item:nth-child(2) {
+    transform: translate(0, 0);
+  }
+  .slide .slide_plans_project .slide_plans_project_item:nth-child(3), .slide .slide_plans_project .slide_plans_project_item:nth-child(4) {
+    transform: translate(-105px, 0);
+  }
+}
 @media screen and (max-width: 1024px) {
-  .main.plans .plans_introduce .plans_item_area .plans_item_content {
-    width: 48%;
+  .main.plans .plans_introduce .plans_description_area .plans_description_content {
+    flex-wrap: wrap;
+  }
+  .main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .slide .slide_plans_content {
+    top: 20px;
+    transform: translate(0px, 0%);
+  }
+  .slide .slide_plans_content .slide_plans_text img {
+    max-width: 280px;
+  }
+  .slide .slide_plans_content .slide_plans_text h3 {
+    font-size: 24px;
+  }
+  .slide .slide_plans_project {
+    position: relative;
+    right: auto;
+    width: calc(100% - 40px);
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .slide .slide_plans_project .slide_plans_project_item {
+    margin: 5px;
+  }
+  .slide .slide_plans_project .slide_plans_project_item:nth-child(2), .slide .slide_plans_project .slide_plans_project_item:nth-child(3), .slide .slide_plans_project .slide_plans_project_item:nth-child(4) {
+    transform: translate(0, 0);
   }
 }
 @media screen and (max-width: 768px) {
+  .slide .slide_plans_content {
+    top: 5px;
+    width: 70%;
+  }
+  .slide .slide_plans_content .slide_plans_text img {
+    display: none;
+  }
+  .slide .slide_plans_content .slide_plans_text p {
+    font-size: 13px;
+  }
+  .slide .slide_plans_content .slide_plans_text h3 {
+    font-size: 18px;
+  }
   .main.plans .plans_introduce .plans_introduce_tittle h3 {
     max-width: 100%;
+  }
+  .main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item .plans_description_item_img {
+    margin: 10px auto;
+  }
+  .main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item .plans_description_item_text {
+    margin: 10px auto;
   }
   .main.plans .plans_introduce .plans_item_area .plans_item_content {
     width: 100%;
@@ -12319,6 +12482,11 @@ h-word {
   }
   .plan_content_modal .plan_content_modal_area .plan_content_modal_content .modal_plan_form_group .discount_code_btn {
     width: 100px;
+  }
+}
+@media screen and (max-width: 499px) {
+  .main.plans .plans_introduce .plans_description_area .plans_description_content .plans_description_item {
+    width: 100%;
   }
 }
 /*訂閱方案*/
