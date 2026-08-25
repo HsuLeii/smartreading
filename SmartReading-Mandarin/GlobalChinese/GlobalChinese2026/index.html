@@ -171,7 +171,10 @@
         </div>
 
         <div class="main_content_item_content video_content">
-          <div class="video_content_item">
+
+          <div class="swiper swiper_video">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide video_content_item">
             <div class="video_content_item_iframe">
               <iframe width="315" height="560" src="https://youtube.com/embed/6Kw67ZKugvQ?si=Ys9Gngxu_snSdpOy" title="YouTube short player" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -180,7 +183,7 @@
             </div>
           </div>
 
-          <div class="video_content_item">
+          <div class="swiper-slide video_content_item">
             <div class="video_content_item_iframe">
               <iframe width="315" height="560" src="https://youtube.com/embed/e5oYnLyi5d0?si=CQFsrgtlEItwrq0y" title="YouTube short player" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -189,7 +192,7 @@
             </div>
           </div>
 
-          <div class="video_content_item">
+          <div class="swiper-slide video_content_item">
             <div class="video_content_item_iframe">
               <iframe width="315" height="560" src="https://youtube.com/embed/HKh9V9QwevU?si=TubCvV_Q66Zj0dbF" title="YouTube short player" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -197,7 +200,11 @@
               <h4>學校教師分享篇</h4>
             </div>
           </div>
-
+            </div>
+            <div class="swiper_btn_next swiper_video_next"></div>
+            <div class="swiper_btn_prev swiper_video_prev"></div>
+            <div class="swiper_pagination swiper_video_pagination"></div>
+          </div>
         </div>
       </div>
 
@@ -638,6 +645,28 @@
           slidesPerView: 2,
         },
         992: {
+          slidesPerView: 3,
+        }
+      }
+    });
+
+    var swiper_video = new Swiper(".swiper_video", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper_video_next",
+        prevEl: ".swiper_video_prev",
+      },
+      pagination: {
+        el: ".swiper_video_pagination",
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1200: {
           slidesPerView: 3,
         }
       }
