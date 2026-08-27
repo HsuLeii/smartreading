@@ -15,6 +15,16 @@ body {
                             .category_content_item_project_information{
                                 .project_information_text{
                                     .project_information_text_item{
+
+                                        &.sharing_text_item{
+                                            border-top: 2px solid c.$main_color;
+                                            padding: 40px 0 0;
+
+                                            &:nth-child(1){
+                                                border-top: 0px;
+                                                padding: 0;
+                                            }
+                                        }
                                         .project_information_text_item_logo_area{
                                             .project_information_text_item_logo_area_img{
                                                 width: 80%;
@@ -38,15 +48,20 @@ body {
                                             .project_information_text_item_sharing_area{
                                                 width: calc(100% - 20px);
                                                 position: relative;
-                                                background-color: c.$white;
-                                                border: 2px solid c.$main_color_yellow;
+                                                z-index: 1;
+                                                
                                                 margin: 15px auto 60px;
-                                                padding: 40px 35px;
+
+                                                .project_information_text_item_sharing_text{
+                                                    background-color: c.$white;
+                                                border: 2px solid c.$main_color_yellow;
+                                                    padding: 40px 35px;
                                                 border-radius: 10px;
+                                                }
 
                                                 .project_information_text_item_sharing_bg{
                                                     position: absolute;
-                                                    z-index: -1;
+                                                    z-index: -1000;
                                                     top: 10px;
                                                     left: -10px;
                                                     width: 100%;
@@ -71,7 +86,7 @@ body {
 
                                                     &.project_information_text_item_sharing_icon_left{
                                                         left: 10px;
-                                                        bottom: 0;
+                                                        bottom: 5px;
 
                                                         i{
                                                             color: c.$main_color;
@@ -80,7 +95,7 @@ body {
 
                                                     &.project_information_text_item_sharing_icon_right{
                                                         right: 10px;
-                                                        top: 0;
+                                                        top: 5px;
 
                                                         i{
                                                             color: c.$main_color_yellow;
@@ -128,9 +143,12 @@ body {
                         .category_content_item {
 
                             .category_content_item_project_information{
-                                .project_information_text_item{
-                                        &.sharing{
+                                .project_information_text{
+                                    .project_information_text_item{
+                                        &.sharing_text_item{
                                             display: flex;
+                                            justify-content: space-between;
+                                            align-items: flex-start;
                                             flex-wrap: wrap;
                                         }
                                         .project_information_text_item_logo_area{
@@ -152,9 +170,11 @@ body {
                                         }
 
                                             .project_information_text_item_sharing_area{
-                                                width: calc(55% - 20px);
+                                                width: calc(50% - 20px);
                                             }
                                     }
+                                }
+                                
                             }
                         }
                     }
