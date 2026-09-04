@@ -318,10 +318,16 @@
                     }
 
                     .plans_process_item_area {
-                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        
+                        .plans_process_item_content{
+                            width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        }
 
                         .plans_process_item {
                             min-width: 115px;
@@ -402,6 +408,45 @@
                         .plans_process_text {
                             display: flex;
                             justify-content: center;
+
+                            align-items: center;
+                            margin: 20px auto 0;
+                            padding: 5px 5px 0;
+                            border-radius: 10px;
+                            border: 1.5px solid c.$main_color;
+                            background-color: c.$white;
+
+                            h3{
+                                position: relative;
+                                color: c.$main_color;
+                                line-height: calc(45px * 1.7);
+
+                                span{
+                                    font-weight: bolder;
+                                    color: c.$main_color;
+                                    font-size: 45px;
+                                    line-height: 1;
+                                }
+
+                                &:nth-child(1){
+                                    &::before{
+                                    content: "";
+                                    position: absolute;
+                                    z-index: -1;
+                                    width: 100%;
+                                    height: 25%;
+                                    bottom: 12%;
+                                    border-radius: 10px;
+                                    background-color: #fee6b9;
+                                }
+                                }
+
+                                
+
+                                &:nth-child(2){
+                                    color: c.$brown;
+                                }
+                            }
                         }
                     }
                 }
@@ -1285,8 +1330,15 @@
                 .plans_process_area {
                     .plans_process_content {
                         .plans_process_item_area {
-                            justify-content: flex-start;
                             overflow-x: scroll;
+
+                            .plans_process_item_content{
+                                justify-content: flex-start;
+                            }
+                        }
+
+                        .plans_process_text_area{
+                            width: calc(115px * 7 + 90px);
                         }
                     }
                 }
