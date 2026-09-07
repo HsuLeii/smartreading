@@ -321,16 +321,153 @@
                         display: flex;
                         justify-content: center;
                         flex-wrap: wrap;
-                        
-                        .plans_process_item_content{
+
+                        .plans_process_item_content {
                             width: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                         }
 
                         .plans_process_item {
                             min-width: 115px;
+                        }
+                    }
+
+                    .plans_process_item_area_one {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+
+                        .plans_process_item_one_arrow {
+                            display: none;
+                        }
+
+                        .plans_process_item {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            width: calc((100% - 25px * 6) / 7);
+
+                            .plans_process_item_icon {
+                                width: 60%;
+                                max-width: 100px;
+                                margin: 0 auto;
+                            }
+
+                            .plans_process_item_text {
+                                p {
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        .plans_process_arrow {
+                            width: 25px;
+
+                            i {
+                                font-size: 23px;
+                                color: c.$brown;
+                            }
+                        }
+
+                        .plans_process_text_area {
+                            width: 100%;
+
+                            .plans_process_line_area {
+                                position: relative;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-end;
+                                margin: 20px auto 10px;
+
+                                .plans_process_line_left,
+                                .plans_process_line_right {
+                                    margin: 0px calc((100% - 150px) / 7 * 0.5);
+
+                                    .plans_process_line_arrow {
+                                        i {
+                                            font-size: 23px;
+                                            color: c.$brown;
+                                        }
+                                    }
+                                }
+
+                                .plans_process_line_left {
+                                    transform: translate(-50%, 0);
+                                }
+
+
+                                .plans_process_line_right {
+                                    transform: translate(50%, 0);
+                                }
+
+                                .plans_process_line_center {
+                                    position: absolute;
+                                    left: calc((100% - 150px) / 7 * 0.5);
+                                    width: calc(100% - calc((100% - 150px) / 7));
+                                    transform: translate(0, -2px);
+                                    height: 3px;
+                                    background-color: c.$brown;
+                                }
+                            }
+
+                            .plans_process_text {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-wrap: wrap;
+                                margin: 20px auto 0;
+                                padding: 5px 5px 0;
+                                border-radius: 10px;
+                                border: 1.5px solid c.$main_color;
+                                background-color: c.$white;
+
+                                .plans_process_text_img {
+                                    width: 15%;
+                                    max-width: none;
+                                    margin: 0 15px 0 0;
+                                    padding: 0 15px 0 0;
+                                    border-right: 1px solid c.$main_color;
+
+                                    img{
+                                        max-width: 120px;
+                                    }
+                                }
+
+                                h3 {
+                                    position: relative;
+                                    z-index: 1;
+                                    color: c.$main_color;
+                                    line-height: calc(45px * 1.7);
+
+                                    span {
+                                        font-weight: bolder;
+                                        color: c.$main_color;
+                                        font-size: 45px;
+                                        line-height: 1;
+                                    }
+
+                                    &:nth-child(2) {
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 25%;
+                                            bottom: 22%;
+                                            border-radius: 10px;
+                                            background-color: #fee6b9;
+                                        }
+                                    }
+
+                                    &:nth-child(3) {
+                                        color: c.$brown;
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -408,7 +545,6 @@
                         .plans_process_text {
                             display: flex;
                             justify-content: center;
-
                             align-items: center;
                             margin: 20px auto 0;
                             padding: 5px 5px 0;
@@ -416,34 +552,43 @@
                             border: 1.5px solid c.$main_color;
                             background-color: c.$white;
 
-                            h3{
+                            .plans_process_text_img {
+                                width: 15%;
+                                max-width: 120px;
+                                margin: 0 15px 0 0;
+                                padding: 0 15px 0 0;
+                                border-right: 1px solid c.$main_color;
+                            }
+
+                            h3 {
                                 position: relative;
+                                z-index: 1;
                                 color: c.$main_color;
                                 line-height: calc(45px * 1.7);
 
-                                span{
+                                span {
                                     font-weight: bolder;
                                     color: c.$main_color;
                                     font-size: 45px;
                                     line-height: 1;
                                 }
 
-                                &:nth-child(1){
-                                    &::before{
-                                    content: "";
-                                    position: absolute;
-                                    z-index: -1;
-                                    width: 100%;
-                                    height: 25%;
-                                    bottom: 12%;
-                                    border-radius: 10px;
-                                    background-color: #fee6b9;
-                                }
+                                &:nth-child(2) {
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        z-index: -1;
+                                        width: 100%;
+                                        height: 25%;
+                                        bottom: 22%;
+                                        border-radius: 10px;
+                                        background-color: #fee6b9;
+                                    }
                                 }
 
-                                
 
-                                &:nth-child(2){
+
+                                &:nth-child(3) {
                                     color: c.$brown;
                                 }
                             }
@@ -1178,85 +1323,304 @@
         &.plans {
             .plans_introduce {
                 .plans_process_area {
-                    // .plans_process_content {
-                    //     flex-wrap: wrap;
-                    //     justify-content: flex-end;
+                    .plans_process_content {
+                        flex-wrap: wrap;
+                        justify-content: flex-end;
 
-                    //     .plans_process_item {
-                    //         width: calc((100% - 25px * 3) / 4);
+                        .plans_process_item_area_one {
 
-                    //         &:nth-child(9) {
-                    //             order: 13;
-                    //         }
+                            .plans_process_item {
+                                width: calc((100% - 25px * 3) / 4);
 
-                    //         &:nth-child(11) {
-                    //             order: 11;
-                    //         }
+                                // &:nth-child(9) {
+                                //     order: 13;
+                                // }
 
-                    //         &:nth-child(13) {
-                    //             order: 9;
-                    //         }
+                                // &:nth-child(11) {
+                                //     order: 11;
+                                // }
 
-                    //     }
+                                // &:nth-child(13) {
+                                //     order: 9;
+                                // }
 
-                    //     .plans_process_arrow {
-                    //         &:nth-child(8) {
-                    //             display: flex;
-                    //             justify-content: flex-end;
-                    //             align-items: center;
-                    //             width: 100%;
-                    //             height: 90px;
-                    //             order: 8;
+                            }
 
-                    //             i {
-                    //                 width: calc((100% - 25px * 3) / 4);
-                    //                 text-align: center;
+                            .plans_process_arrow {
+                                &:nth-child(8) {
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 90px;
+                                    order: 8;
 
-                    //                 &::before {
-                    //                     content: "\f309";
-                    //                 }
-                    //             }
-                    //         }
+                                    i {
+                                        width: calc((100% - 25px * 3) / 4);
+                                        text-align: center;
 
-                    //         &:nth-child(10) {
-                    //             order: 12;
+                                        &::before {
+                                            content: "\f309";
+                                        }
+                                    }
+                                }
 
-                    //             i {
-                    //                 transform: rotate(-180deg);
-                    //             }
-                    //         }
+                                &:nth-child(10) {
+                                    order: 10;
+                                }
 
-                    //         &:nth-child(12) {
-                    //             order: 10;
+                                &:nth-child(12) {
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 60px;
+                                    order: 12;
 
-                    //             i {
-                    //                 transform: rotate(-180deg);
-                    //             }
-                    //         }
-                    //     }
+                                    i {
+                                        width: calc((100% - 25px) / 2);
+                                        text-align: center;
 
-                    //     .plans_process_text_area {
-                    //         order: 14;
+                                        &::before {
+                                            content: "\f309";
+                                        }
+                                    }
+                                }
+                            }
 
-                    //         .plans_process_line_area {
+                            .plans_process_text_area {
+                                order: 14;
 
-                    //             .plans_process_line_left,
-                    //             .plans_process_line_right {
-                    //                 margin: 0px calc((100% - 25px * 3) / 4 * 0.5);
-                    //             }
+                                .plans_process_line_area {
 
-                    //             .plans_process_line_center {
-                    //                 left: calc((100% - 25px * 3) / 4 * 0.5);
-                    //                 width: calc(100% - calc((100% - 25px * 3) / 4));
-                    //             }
-                    //         }
-                    //     }
-                    // }
+                                    .plans_process_line_left,
+                                    .plans_process_line_right {
+                                        margin: 0px calc((100% - 25px * 3) / 4 * 0.5);
+                                    }
+
+                                    .plans_process_line_center {
+                                        left: calc((100% - 25px * 3) / 4 * 0.5);
+                                        width: calc(100% - calc((100% - 25px * 3) / 4));
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+
+                    .plans_process_content {
+
+                        .plans_process_item_area_one {
+                            position: relative;
+                            justify-content: flex-end;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 10px;
+                                top: 80px;
+                                width: 3px;
+                                height: calc(100% - 80px);
+                                background-color: c.$brown;
+                            }
+
+                            .plans_process_item_one_arrow {
+                                display: block;
+                                position: absolute;
+                                left: 10px;
+                                top: 80px;
+                                width: calc(20% - 50px);
+                                height: 3px;
+                                background-color: c.$brown;
+
+                                i {
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    transform: translate(10px, calc(-50% + 1.5px));
+                                    font-size: 23px;
+                                    color: c.$brown;
+                                }
+                            }
+
+
+
+                            .plans_process_item {
+                                width: calc((100% - 25px) / 2);
+
+                                &:nth-child(5) {
+                                    order: 7;
+                                }
+
+                                &:nth-child(7) {
+                                    order: 5;
+                                }
+
+                                &:nth-child(9) {
+                                    order: 9;
+                                }
+
+                                &:nth-child(10) {
+                                    order: 10;
+                                }
+
+                                &:nth-child(11) {
+                                    order: 11;
+                                }
+
+                                &:nth-child(12) {
+                                    order: 12;
+                                }
+
+                                &:nth-child(13) {
+                                    order: 13;
+                                }
+
+                            }
+
+                            .plans_process_arrow {
+                                &:nth-child(4) {
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 60px;
+                                    order: 4;
+
+                                    i {
+                                        width: calc((100% - 25px) / 2);
+                                        text-align: center;
+
+                                        &::before {
+                                            content: "\f309";
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(6) {
+                                    order: 6;
+
+                                    i {
+                                        width: auto;
+                                        transform: rotate(-180deg);
+
+                                        &::before {
+                                            content: "\f30b";
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(8) {
+                                    justify-content: flex-start;
+                                    width: 100%;
+                                    height: 60px;
+                                    order: 8;
+
+                                    i {
+                                        width: auto;
+                                        transform: rotate(0deg);
+                                        width: calc((100% - 25px) / 2);
+
+                                        &::before {
+                                            content: "\f309";
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(10) {
+
+                                    i {
+                                        width: calc((100% - 25px) / 2);
+                                    }
+                                }
+
+                                &:nth-child(12) {
+
+                                    i {
+                                        transform: rotate(360deg);
+                                    }
+                                }
+
+                            }
+
+                            .plans_process_text_area {
+                                position: relative;
+                                z-index: 1;
+                                background-color: c.$body_bg;
+                                order: 14;
+
+                                .plans_process_line_area {
+                                    margin: 0 auto 10px;
+                                    justify-content: flex-start;
+
+                                    .plans_process_line_left {
+                                        width: 3px;
+                                        height: 20px;
+                                        background-color: c.$brown;
+                                        margin: 0;
+                                        transform: translate(10px, 0px);
+                                    }
+
+                                    .plans_process_line_right {
+                                        position: relative;
+                                        left: auto;
+                                        margin: 0;
+                                        width: 3px;
+                                        height: 20px;
+                                        background-color: c.$brown;
+                                        transform: translate(10px, 0px);
+                                    }
+
+
+
+                                    .plans_process_line_left,
+                                    .plans_process_line_right {
+                                        .plans_process_line_arrow {
+                                            display: none;
+                                        }
+                                    }
+
+                                    .plans_process_line_center {
+                                        position: relative;
+                                        margin: 0;
+                                        left: auto;
+                                        transform: translate(10px, 0);
+                                        width: calc((50% - 12.5px + 25px + 25% - 6.25px - 10px));
+                                    }
+                                }
+
+                                .plans_process_text {
+                                    width: 100%;
+                                }
+                            }
+
+                        }
+                    }
+
                 }
             }
         }
     }
 
+}
+
+@media screen and (max-width: 1300px) {
+    .main {
+        &.plans {
+            .plans_process_area {
+                .plans_process_content {
+                    .plans_process_text_area {
+                        .plans_process_text {
+                            h3 {
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1332,13 +1696,69 @@
                         .plans_process_item_area {
                             overflow-x: scroll;
 
-                            .plans_process_item_content{
+                            .plans_process_item_content {
                                 justify-content: flex-start;
                             }
                         }
 
-                        .plans_process_text_area{
-                            width: calc(115px * 7 + 90px);
+                        .plans_process_text_area {
+                            // width: calc(115px * 7 + 90px);
+
+                            .plans_process_line_area {
+                                .plans_process_line_left {
+                                    display: flex;
+                                    justify-content: center;
+                                    width: 115px;
+                                    margin: 0;
+                                    transform: translate(0px, 0px);
+                                }
+
+                                .plans_process_line_center {
+                                    width: calc(115px * 6 + 25px * 6);
+                                    left: 57.5px;
+                                }
+
+                                .plans_process_line_right {
+                                    position: absolute;
+                                    left: calc(115px * 6 + 25px * 6);
+                                    display: flex;
+                                    justify-content: center;
+                                    width: 115px;
+                                    margin: 0;
+                                    transform: translate(0px, 0px);
+                                }
+                            }
+
+                            .plans_process_text {
+                                width: calc(115px * 6 + 25px * 6);
+                                margin: 20px 57.5px 10px;
+
+                                .plans_process_text_img {
+                                    width: 15%;
+                                    margin: 0 10px 0 0;
+                                    padding: 0 10px 0 0;
+                                    border-right: 1px solid c.$main_color;
+                                }
+
+                                h3 {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+
+                        .plans_process_item_area_one {
+                            .plans_process_text_area{
+                                .plans_process_text{
+                                    padding: 20px 10px 10px;
+                                    .plans_process_text_img{
+                                        width: 100%;
+                                        border-right: 0px;
+                                        margin: 0 auto 10px;
+                                        display: flex;
+                                        justify-content: center;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -1429,6 +1849,25 @@
     .main {
         &.plans {
             .plans_introduce {
+                .plans_process_area {
+                    .plans_process_content {
+                        .plans_process_item_area_one{
+                            .plans_process_text_area{
+                                .plans_process_text{
+
+                                    h3{
+                                        line-height: 1.7;
+                                        text-align: center;
+
+                                        &:nth-child(3) {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 .plans_experience_area {
                     .plans_experience_content {
                         .swiper_experience {
@@ -1550,6 +1989,19 @@
                 }
 
                 .plans_process_area {
+
+                    .plans_process_content {
+                        .plans_process_img {
+                            .plans_process_img_web {
+                                display: none;
+                            }
+
+                            .plans_process_img_pad {
+                                display: block;
+                            }
+                        }
+                    }
+
                     // .plans_process_content {
                     //     justify-content: flex-start;
 
