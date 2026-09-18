@@ -67,8 +67,17 @@
                     </div>
 
                     <div class="payment_content_item">
+                        <p>
+                            狀態
+                        </p>
+                        <p>
+                            訂閱中
+                        </p>
+                    </div>
+
+                    <div class="payment_content_item">
                         <div class="payment_content_item_link">
-                        <a href="#sales_agreement" rel="modal:open" class="">付款資訊</a>
+                        <a href="#payment" rel="modal:open" class="">付款資訊</a>
                         </div>
                     </div>
                 </div>
@@ -108,8 +117,17 @@
                     </div>
 
                     <div class="payment_content_item">
+                        <p>
+                            狀態
+                        </p>
+                        <p>
+                            已到期
+                        </p>
+                    </div>
+
+                    <div class="payment_content_item">
                         <div class="payment_content_item_link">
-                        <a href="#sales_agreement" rel="modal:open" class="">付款資訊</a>
+                        <a href="#payment" rel="modal:open" class="">付款資訊</a>
                         </div>
                     </div>
                 </div>
@@ -117,23 +135,55 @@
 
         </div>
 
-            <div id="sales_agreement" class="modal sales_agreement_modal">
-      <div class="sales_agreement_modal_area">
-        <div class="sales_agreement_modal_content">
-          <div class="sales_agreement_modal_title">
-            <h4>銷售協議</h4>
+            <div id="payment" class="modal payment_modal">
+      <div class="payment_modal_area">
+        <div class="payment_modal_content">
+          <div class="payment_modal_title">
+            <h4>付款人資料</h4>
           </div>
 
-          <div class="sales_agreement_modal_text">
-            <p>
-              銷售協議內容<br/>
-              銷售協議內容
-            </p>
-          </div>
+          <div class="payment_modal_text">
+            <div class="payment_modal_text_item">
+                    <label for="name">
+                        姓名
+                    </label>
+                    <input name="" type="text" value="姓名姓名" id="name" disabled="">
+                </div>
 
-          <div class="sales_agreement_modal_btn">
-            <a href="#close-modal" rel="modal:close" class="button_hover">已詳閱</a>
-          </div>
+            <div class="payment_modal_text_item">
+                    <label for="phone">
+                        手機
+                    </label>
+                    <input name="" type="text" value="0980000000" id="phone" disabled="">
+                </div>
+
+            <div class="payment_modal_text_item">
+                    <label for="mail">
+                        E-mail
+                    </label>
+                    <input name="" type="text" value="service@srenglish.net" id="mail" disabled="">
+                </div>
+
+            <div class="payment_modal_text_item">
+                    <label for="pay">
+                        付款
+                    </label>
+                    <input name="" type="text" value="" id="pay" disabled="">
+                </div>
+
+            <div class="payment_modal_text_item">
+                    <label for="payment_methods">
+                        付款方式
+                    </label>
+                    <input name="" type="text" value="刷卡" id="payment_methods" disabled="">
+                </div>
+
+            <div class="payment_modal_text_item">
+                    <label for="receipt">
+                        收據資料
+                    </label>
+                    <input name="" type="text" value="收據資料" id="receipt" disabled="">
+                </div>
         </div>
 
       </div>
@@ -162,11 +212,7 @@
         $(".payment_date").click(function () {
             $(this).children("span").toggleClass("up");
             if ($("+div", this).css("display") == "none") {
-                $("div.payment_content").slideUp();
-                $(".payment_item").children(".payment_date").removeClass("open");
                 $("+div", this).slideDown();
-                $(".payment_date").children("span").removeClass("up");
-                $(this).children("span").toggleClass("up");
                 $(this).addClass("open");
             }
             else if ($("+div", this).css("display") !== "none"){
