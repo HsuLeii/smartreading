@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /*main*/
 /*other*/
 .header nav .menu div li a, body input[type=radio i] ~ label {
@@ -575,10 +573,6 @@ label:hover {
     font-size: 18px;
   }
 }
-body {
-  font-family: "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Microsoft JhengHei", "Noto Sans TC", "Microsoft YaHei", "PingFang TC", "PingFang SC", "Heiti TC", "Heiti SC", "LiHei Pro", "STXihei", sans-serif;
-}
-
 div#toggle {
   width: 50px;
   height: 50px;
@@ -13248,6 +13242,14 @@ h-word {
   display: none !important;
 }
 
+@media screen and (max-width: 1200px) {
+  .main.payment .payment_area .payment_item .payment_content {
+    flex-wrap: wrap;
+  }
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(4) {
+    border-right: 0px;
+  }
+}
 @media screen and (max-width: 768px) {
   .main.plans .plan_introduce .plan_content_text {
     margin: 40px auto;
@@ -13518,7 +13520,7 @@ h-word {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30%;
+  width: 27.5%;
   padding: 5px 10px;
   border-right: 1px solid #5B3716;
 }
@@ -13535,12 +13537,47 @@ h-word {
   color: #fff;
   background-color: #ff6464;
 }
-.main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(3) {
+.main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(3), .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(4), .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(5) {
   width: 15%;
 }
-.main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(4) {
-  width: 25%;
+.main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(5) {
   border-right: 0px;
+}
+@media screen and (max-width: 1200px) {
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item {
+    width: 35%;
+  }
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(5) {
+    width: 100%;
+    margin: 30px auto 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(1) {
+    width: 100%;
+    margin: 0 auto 20px;
+    padding: 0 0 20px;
+    border-right: 0px;
+    border-bottom: 1px solid #5B3716;
+  }
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(2) {
+    width: 40%;
+  }
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(3), .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(4) {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(2) {
+    width: 100%;
+    margin: 0 auto 20px;
+    padding: 0 0 20px;
+    border-right: 0px;
+    border-bottom: 1px solid #5B3716;
+  }
+  .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(3), .main.payment .payment_area .payment_item .payment_content .payment_content_item:nth-child(4) {
+    width: 50%;
+  }
 }
 .main.payment .payment_area .payment_item .payment_content h4 {
   margin: 0 10px 0px 0px;
@@ -13589,12 +13626,19 @@ h-word {
   background-color: transparent;
   border-bottom: 1px solid #5B3716;
 }
-
 @media screen and (max-width: 768px) {
-  .main.question .question_area {
-    margin: 20px auto;
+  .payment_modal .payment_modal_area .payment_modal_content .payment_modal_text .payment_modal_text_item {
+    flex-direction: column;
+  }
+  .payment_modal .payment_modal_area .payment_modal_content .payment_modal_text .payment_modal_text_item label {
+    width: 100%;
+    margin: 0 0 5px;
+  }
+  .payment_modal .payment_modal_area .payment_modal_content .payment_modal_text .payment_modal_text_item input {
+    width: 100%;
   }
 }
+
 /*付款紀錄*/
 .main.readingContest {
   width: 80%;

@@ -11,8 +11,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
 
     <!-- this page widgets CSS -->
-       <!-- modal -->
-  <link rel="stylesheet" href="css/jquery.modal.min.css" />
+    <!-- modal -->
+    <link rel="stylesheet" href="css/jquery.modal.min.css" />
 
     <!-- my core CSS -->
     <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
@@ -31,7 +31,7 @@
                 您可於此確認截至目前為止的付款紀錄。
             </p>
         </div>
-        
+
         <div class="payment_area">
             <div class="payment_item">
                 <div class="payment_date">
@@ -77,7 +77,7 @@
 
                     <div class="payment_content_item">
                         <div class="payment_content_item_link">
-                        <a href="#payment" rel="modal:open" class="">付款資訊</a>
+                            <a href="#payment" rel="modal:open" class="">付款資訊</a>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
 
                     <div class="payment_content_item">
                         <div class="payment_content_item_link">
-                        <a href="#payment" rel="modal:open" class="">付款資訊</a>
+                            <a href="#payment" rel="modal:open" class="">付款資訊</a>
                         </div>
                     </div>
                 </div>
@@ -135,92 +135,90 @@
 
         </div>
 
-            <div id="payment" class="modal payment_modal">
-      <div class="payment_modal_area">
-        <div class="payment_modal_content">
-          <div class="payment_modal_title">
-            <h4>付款人資料</h4>
-          </div>
+        <div id="payment" class="modal payment_modal">
+            <div class="payment_modal_area">
+                <div class="payment_modal_content">
+                    <div class="payment_modal_title">
+                        <h4>付款人資料</h4>
+                    </div>
 
-          <div class="payment_modal_text">
-            <div class="payment_modal_text_item">
-                    <label for="name">
-                        姓名
-                    </label>
-                    <input name="" type="text" value="姓名姓名" id="name" disabled="">
-                </div>
+                    <div class="payment_modal_text">
+                        <div class="payment_modal_text_item">
+                            <label for="name">
+                                姓名
+                            </label>
+                            <input name="" type="text" value="姓名姓名" id="name" disabled="">
+                        </div>
 
-            <div class="payment_modal_text_item">
-                    <label for="phone">
-                        手機
-                    </label>
-                    <input name="" type="text" value="0980000000" id="phone" disabled="">
-                </div>
+                        <div class="payment_modal_text_item">
+                            <label for="phone">
+                                手機
+                            </label>
+                            <input name="" type="text" value="0980000000" id="phone" disabled="">
+                        </div>
 
-            <div class="payment_modal_text_item">
-                    <label for="mail">
-                        E-mail
-                    </label>
-                    <input name="" type="text" value="service@srenglish.net" id="mail" disabled="">
-                </div>
+                        <div class="payment_modal_text_item">
+                            <label for="mail">
+                                E-mail
+                            </label>
+                            <input name="" type="text" value="service@srenglish.net" id="mail" disabled="">
+                        </div>
 
-            <div class="payment_modal_text_item">
-                    <label for="pay">
-                        付款
-                    </label>
-                    <input name="" type="text" value="" id="pay" disabled="">
-                </div>
+                        <div class="payment_modal_text_item">
+                            <label for="pay">
+                                付款
+                            </label>
+                            <input name="" type="text" value="" id="pay" disabled="">
+                        </div>
 
-            <div class="payment_modal_text_item">
-                    <label for="payment_methods">
-                        付款方式
-                    </label>
-                    <input name="" type="text" value="刷卡" id="payment_methods" disabled="">
-                </div>
+                        <div class="payment_modal_text_item">
+                            <label for="payment_methods">
+                                付款方式
+                            </label>
+                            <input name="" type="text" value="刷卡" id="payment_methods" disabled="">
+                        </div>
 
-            <div class="payment_modal_text_item">
-                    <label for="receipt">
-                        收據資料
-                    </label>
-                    <input name="" type="text" value="收據資料" id="receipt" disabled="">
+                        <div class="payment_modal_text_item">
+                            <label for="receipt">
+                                收據資料
+                            </label>
+                            <input name="" type="text" value="收據資料" id="receipt" disabled="">
+                        </div>
+                    </div>
+
                 </div>
+            </div>
         </div>
-
-      </div>
     </div>
+        <footer>
+        </footer>
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="js/all3.js"></script>
 
+        <!-- this page widgets JS -->
+        <!-- modal -->
+        <script src="js/jquery.modal.min.js"></script>
 
-    </div>
-    <footer>
-    </footer>
-    <script src="js/jquery-3.6.1.min.js"></script>
-    <script src="js/all3.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("header").load("header.html", function () {});
+                $("footer").load("footer.html", function () {});
+            });
+        </script>
 
-    <!-- this page widgets JS -->
-    <!-- modal -->
-    <script src="js/jquery.modal.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $("header").load("header.html", function () {});
-            $("footer").load("footer.html", function () {});
-        });
-    </script>
-
-    <script>
-        $("div.payment_content").hide();
-        $(".payment_date").click(function () {
-            $(this).children("span").toggleClass("up");
-            if ($("+div", this).css("display") == "none") {
-                $("+div", this).slideDown();
-                $(this).addClass("open");
-            }
-            else if ($("+div", this).css("display") !== "none"){
-                $(this).removeClass("open");
-                $("+div", this).slideUp();
-            }
-        })
-    </script>
+        <script>
+            $("div.payment_content").hide();
+            $(".payment_date").click(function () {
+                $(this).children("span").toggleClass("up");
+                if ($("+div", this).css("display") == "none") {
+                    $("+div", this).slideDown();
+                    $(this).addClass("open");
+                } else if ($("+div", this).css("display") !== "none") {
+                    $(this).removeClass("open");
+                    $("+div", this).slideUp();
+                }
+            })
+        </script>
 
 </body>
 
