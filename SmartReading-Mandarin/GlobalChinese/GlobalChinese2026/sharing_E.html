@@ -15,7 +15,158 @@
 </head>
 
 <body>
-  <header id="header"></header>
+  <header>
+        <div class="header_logo">
+            <a href="">
+                <img src="Content/image/logo/logo.svg" alt="">
+            </a>
+        </div>
+        <div id="toggle" class="toggle">
+            <div class="menu_trigger">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <div class="menu_pagination">
+                    <li>
+                        <a href="index.aspx?lang=en" class="home lang-link">
+                            <span>Home</span>
+                            <span class="menu_icon">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="competition.aspx?lang=en" class="competition lang-link">
+                            <span>Contest Area
+                            </span>
+                            <span class="menu_icon">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="introduction.aspx?lang=en" class="introduction lang-link">
+                            <span>Introduction
+                            </span>
+                            <span class="menu_icon">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sharing.aspx" class="sharing nowPage">
+                            <span>
+                              Participant Sharing
+                            </span>
+                            <span class="menu_icon">
+                              <i class="fa-solid fa-circle-chevron-right"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <li class="li_dropdown products_dropdown">
+                        <a href="#" class="li_dropdown_text">
+                            <span>
+                              Products
+                            </span>
+                            <span class="menu_icon">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown_content">
+                            <li>
+                                <a href="https://empowerchinese.net/v2/index.aspx" target="_blank">
+
+                                    <span>eMPOWER
+                                    </span>
+                                    <span class="menu_icon">
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://mandarin.smartwriting.org/" target="_blank">
+                                    <span>SmartWriting-M
+                                    </span>
+                                    <span class="menu_icon">
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://smartpinyin.net/SmartPinyinDesign/Pages/index.html" target="_blank">
+                                    <span>SmartPinyin
+                                    </span>
+                                    <span class="menu_icon">
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://smartreading.net/v3/index.aspx" target="_blank">
+                                    <span>SmartReading
+                                    </span>
+                                    <span class="menu_icon">
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://smarttalking.net/" target="_blank">
+                                    <span>SmartTalking
+                                    </span>
+                                    <span class="menu_icon">
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="li_dropdown language_dropdown">
+                        <a href="javascript:void(0)" class="li_dropdown_text">
+                            <span>Language
+                            </span>
+                            <span class="menu_icon">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown_content">
+                            <li class="language_dropdown_traditional zh-TW">
+                                <a href="javascript:void(0)" onclick="changeLang(this,'zh-TW')">
+                                    <span>繁體中文
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="language_dropdown_simplified zh-CN">
+                                <a href="javascript:void(0)" onclick="changeLang(this,'zh-CN')">
+                                    <span>简体中文
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="language_dropdown_english en active">
+                                <a class="nav-link" href="javascript:void(0)" onclick="changeLang(this,'en')">
+                                    <span>English
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="li_login">
+                        <a href="https://mandarin.smartreading.net/login.aspx" target="_blank">
+                            <span>Login
+                            </span>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
 
   <div class="main">
     <!-- Swiper -->
@@ -434,9 +585,9 @@
 
   <script>
     $(document).ready(function () {
-      $("header").load("header.html", function () {
-        $(".sharing").addClass("nowPage");
-      });
+      // $("header").load("header.html", function () {
+      //   $(".sharing").addClass("nowPage");
+      // });
       $("footer").load("footer.html", function () {});
     });
   </script>
@@ -444,8 +595,15 @@
   <script>
     $("#toggle").click(function () {
       $(".menu").toggleClass("opened");
-      $(this).toggleClass("open");
+      $("header").toggleClass("open");
       $("body").toggleClass("fixed");
+    });
+
+    $(".products_dropdown").click(function () {
+        $(this).toggleClass("open");
+        $(this).children(".dropdown_content").toggleClass("open");
+        $(".language_dropdown").removeClass("open");
+        $(".language_dropdown").children(".dropdown_content").removeClass("open");
     });
   </script>
 
