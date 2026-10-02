@@ -1,0 +1,2902 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SmartReading 適性閱讀" />
+    <meta name="author" content="SmartReading 適性閱讀" />
+    <title>
+        SmartReading 適性閱讀
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico" />
+    <link rel="stylesheet" type="text/css" href="../Content/css/bootstrap-lg.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/fontawesome-free-5.15.3-web/css/all.css" />
+
+    <!-- this page widgets CSS -->
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/icheck-bootstrap-master/icheck-bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/DataTables/datatables.min.css" />
+    <link href="../Content/widgets/bootstrap-fileinput-master/css/fileinput.min.css" rel="stylesheet" />
+
+    <!-- SR core CSS -->
+    <link rel="stylesheet" type="text/css" href="../Content/css/promote-styles.css?v=20230220" />
+    <link href="../Content/css/engineer-styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form method="post" action="./RecommendedBookList.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="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" />
+        </div>
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+            setTimeout(function () {
+                location.href = 'https://beta.smartreading.net:443/v3/index-student.aspx';
+            }, 86400000);
+            var lang = new Object();
+            lang.RB_RecommendedBookList = "推薦書單";
+            lang.RB_SystemRecommendation = "系統推薦";
+            lang.RB_ClassBookList = "班級書單";
+            lang.RB_EnterBookTitleOrISBN = "請輸入書名或ISBN";
+            lang.RB_All = "全部";
+            lang.RB_DifficultyRangeSelection = "難度範圍選擇";
+            lang.RB_DifficultyRangeSelectionInfo = "如果覺得書太難，可以自由調整「難度範圍選擇」區間喔。";
+            lang.RB_RecommendedDifficultyRange = "推薦難度範圍";
+            lang.RB_BookDifficulty = "圖書難度";
+            lang.RB_PreferredBooksFirst = "優選書優先";
+            lang.RB_EBook = "電子書";
+            lang.RB_Category = "分類";
+            lang.RB_QuestionCategory = "題本類別";
+            lang.RB_AddToReadingPlan = "加入閱讀計畫";
+            lang.RB_SummaryQuestions = "摘要題";
+            lang.RB_MultipleChoiceQuestions = "選擇題";
+            lang.RB_PreviousPage = "上一頁";
+            lang.RB_NextPage = "下一頁";
+            lang.RB_Confirm = "確定";
+            lang.culture = "zh-TW"; //]]>
+        </script>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7E9C4F80" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                value="bIe59z29iL0fGDd+SrUVl80UxqV49iq6Kq8ogixDplxWQCmNpSXn7ykvXt+QeRAxzXWc9zULUgpHJQFcjwxnKufYVHzw+KGiVL6KPUkUSVAEMdaigIIwcUqehenxR05ZWXSi0gO8G14j2tp1MZ3hEs8vCgRxNFGeJD4gSC6OO3HbzT1ZUAkHBbKwABx02rXpLxa9bRw/1z0P3fRmx6g+WaC8gFqUIdVHolQsCZLFjq1Kjg9fT4IVjywDF2fbWGOT+lOXndkGAQlMvOz0pE1FIO36IFU0uoRoLOrxs1wH1zs=" />
+        </div>
+        <header>
+            <nav class='navbar navi-main'>
+                <div class='container-fluid'>
+                    <div class='row'>
+                        <div class='navbar-header-area col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                            <div class='navbar-header'><button type='button' class='navbar-toggle collapsed'
+                                    data-toggle='collapse' data-target='#navbar' aria-expanded='false'
+                                    aria-controls='navbar'> <span class='sr-only'>展開選單</span> <span
+                                        class='icon-bar'></span> <span class='icon-bar'></span> <span
+                                        class='icon-bar'></span> </button><a href='../index-student.aspx'
+                                    class='navbar-brand' style='max-width:400px'><img
+                                        src='../Content/images/logo/sr_logo.svg' alt='SmartReading|科普閱讀力大賽'
+                                        class='img-responsive' style='width: 100%;'></a></div>
+                            <div id='navbar' class='navbar-collapse collapse'>
+                                <ul class='nav navbar-nav'>
+                                    <li class='navTab-index'><a href='../index-student.aspx'>首頁</a></li>
+                                    <li class='navTab-abouut dropdown'> <a href='../#' class='dropdown-toggle'
+                                            data-toggle='dropdown' role='button' aria-haspopup='true'
+                                            aria-expanded='false'>關於SR&nbsp;<span class='caret'></span></a>
+                                        <ul class='dropdown-menu'>
+                                            <li><a href='../about-us.aspx'>關於我們</a></li>
+                                            <li><a href='../about-sys.aspx'>SR系統介紹</a></li>
+                                            <li><a href='../about-dacc.aspx'>中文閱讀能力診斷</a></li>
+                                            <li><a href='../about-leveledBooks.aspx'>圖書難度分級</a></li>
+                                            <li><a href='../about-SR.aspx'>SR值說明</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class='navTab-dacc dropdown'> <a href='../DACC/DACC.aspx'>能力檢測</a> </li>
+                                    <li class='navTab-RecommendedBookList dropdown'> <a
+                                            href='../RP/RecommendedBookList.aspx'>推薦書單</a> </li>
+                                    <li class='navTab-RecommendedArticle dropdown'> <a
+                                            href='../RA/RecommendedArticle2022.aspx'>推薦文章</a> </li>
+                                    <li class='navTab-RPList dropdown'><a href='../RP/RPList.aspx'>閱讀計畫</a> </li>
+                                    <li class='navTab-storytelling dropdown'> <a href='../ST/storytelling.aspx'>說書頻道</a>
+                                    </li>
+                                    <li class='navTab-ContestReport dropdown'> <a
+                                            href='../Contest/reading_contest.aspx'>大賽報表</a> </li>
+                                    <li class='navTab-ContestManual dropdown'> <a
+                                            href='../Contest/contest_manual.aspx'>使用手冊</a> </li>
+                                </ul>
+                                <ul class='nav navbar-nav navbar-right'>
+                                    <li class='dropdown'><a class='navi-main__loginedBtn' data-target='#' href='#'
+                                            data-toggle='dropdown' role='button' aria-haspopup='true'
+                                            aria-expanded='false'>你好，參賽者05！</a>
+                                        <ul class='dropdown-menu navi-main__userMenu'>
+                                            <li><a target='_blank' href='https://forms.gle/GEJ2jaRTHaqvqc4M7'><i
+                                                        class='fas fa-bullhorn'></i>&nbsp;問題回報</a></li>
+                                            <li><a href='../UIlogout.aspx' class='btn navi-main__logoutBtn'>登出</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <main>
+            <!-- recommendedBook-search start -->
+            <div class="recommendedBook-search">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-horizontal">
+                                <div class="form-group recommendedBook-search__book">
+                                    <label class="col-md-5 col-lg-4 control-label">
+                                        <img src="../Content/images/recommendedBook/search-img.png" class="">
+                                        <h2>推薦書單</h2>
+                                    </label>
+                                    <div class="col-md-7 col-lg-7">
+                                        <div class="recommendedBook-search__slogan">
+                                            <img src="../Content/images/recommendedBook/search-slogan.png"
+                                                class="img-responsive">
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="input-group-btn">
+                                                <button type='button'
+                                                    class='btn btn-lg recommendedBook-search__btn-recommend  dropdown-toggle'
+                                                    data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'
+                                                    data-domain='1'>系統推薦&nbsp;<span class='caret'></span> </button>
+                                                <ul
+                                                    class='dropdown-menu recommendedBook-search__dropdown-menu__recommend'>
+                                                    <li><a href='#' data-domain='1'>系統推薦</a></li>
+                                                </ul>
+
+                                            </div>
+                                            <input type="text" class="form-control input-lg" id="searchBook"
+                                                placeholder="請輸入書名或ISBN" value="">
+                                            <div class="input-group-btn">
+
+                                                <button type="button" id="btnSearch"
+                                                    class="btn btn-lg recommendedBook-search__btn-search">查詢</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group recommendedBook-search__sort">
+
+                                    <div class='col-lg-11 col-lg-offset-1'>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-1' value='0' />
+                                            <label for='sort-1'>全部</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-2' value='161' />
+                                            <label for='sort-2'>植物/動物</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-3' value='162' />
+                                            <label for='sort-3'>天文地科</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-4' value='163' />
+                                            <label for='sort-4'>綜合科學</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-5' value='164' />
+                                            <label for='sort-5'>數學</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-6' value='165' />
+                                            <label for='sort-6'>物理/化學</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-7' value='166' />
+                                            <label for='sort-7'>生態/生命科學</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-8' value='167' />
+                                            <label for='sort-8'>應用科學</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-3'>
+                                            <input type='checkbox' id='sort-9' value='168' />
+                                            <label for='sort-9'>醫藥心理</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-4'>
+                                            <input type='checkbox' id='sort-10' value='169' />
+                                            <label for='sort-10'>歷史地理</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-4'>
+                                            <input type='checkbox' id='sort-11' value='170' />
+                                            <label for='sort-11'>財經法律</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-4'>
+                                            <input type='checkbox' id='sort-12' value='171' />
+                                            <label for='sort-12'>AI運算思維</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-4'>
+                                            <input type='checkbox' id='sort-13' value='172' />
+                                            <label for='sort-13'>AI數位應用</label>
+                                        </div>
+                                        <div class='checkbox checkbox-inline icheck-success-white checkbox-num-4'>
+                                            <input type='checkbox' id='sort-14' value='173' />
+                                            <label for='sort-14'>AI數位倫理</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="systemBookRange" class="form-group recommendedBook-search__SRrange">
+                                    <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
+                                        <div class="recommendedBook-search__SRrange-title">
+                                            難度範圍選擇
+                                        </div>
+                                        <div class="SRrange-tip">
+                                            <div class="SRrange-tipContent">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close"><span aria-hidden="true"
+                                                        onclick="javascript: $(this).parents('.SRrange-tip').hide();">&times;</span></button>
+                                                <div>如果覺得書太難，可以自由調整「難度範圍選擇」區間喔。</div>
+                                                <img src="../Content/images/recommendedBook/SRmascot-tip.png" width="63"
+                                                    height="74" alt="pic. SRmascot-tip" />
+                                            </div>
+                                        </div>
+
+                                        <div class="hidden-xs hidden-sm col-md-2 col-lg-2 text-right">
+                                            推薦難度範圍
+                                        </div>
+                                        <div class="col-sm-12 col-md-10 col-lg-10">
+                                            <!-- -->
+                                            <div class="SRrangeBar">
+                                                <div id="SRrangeBar-s-range" class="SRrangeBar-slider s-range">
+                                                </div>
+                                                <div id="SRrangeBar-s-control" class="SRrangeBar-slider s-control"
+                                                    data-popup-enabled="true">
+                                                </div>
+                                            </div>
+                                            <!-- -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- recommendedBook-search end-->
+
+            <!-- recommendedBook-list start -->
+            <div id="systemBookBlock" class="recommendedBook-list">
+                <div class="container">
+                    <div id="book_table_wrapper" class="dataTables_wrapper no-footer">
+                        <div class="leveledBooks-table__header clearfix">
+                            <div class="dt-buttons"> 
+                                <button class="dt-button active asc" tabindex="0"
+                                    aria-controls="book_table" type="button" id="sort_SR"><span>圖書難度&nbsp;<span
+                                            class="glyphicon glyphicon-arrow-up"
+                                            aria-hidden="true"></span></span></button> 
+                                <button class="dt-button dt-button-checkbox" tabindex="0" aria-controls="book_table" 
+                                    type="button" id="sort_good"><span><img
+                                            src="../Content/images/recommendedBook/icon-goodBook.png" width="18"
+                                            height="18">&nbsp;優選書優先&nbsp;<div
+                                            class="checkbox checkbox-inline icheck-success-white"><input type="checkbox"
+                                                id="goodBook"><label for="goodBook"></label></div></span></button>
+                                <button class="dt-button dt-button-checkbox" tabindex="0" aria-controls="book_table"
+                                    type="button" id="sort_ebook"><span><img
+                                            src="../Content/images/recommendedBook/icon-ebook.png" width="18"
+                                            height="18">&nbsp;電子書&nbsp;<div
+                                            class="checkbox checkbox-inline icheck-success-white"><input type="checkbox"
+                                                id="ebook"><label for="ebook"></label></div></span></button>
+                                <button class="dt-button dt-button-checkbox" tabindex="0" aria-controls="book_table"
+                                    type="button" id="sort_AI"><span><img
+                                            src="../Content/images/recommendedBook/icon-robot.svg" width="18"
+                                            height="18">&nbsp;AI對話&nbsp;<div
+                                            class="checkbox checkbox-inline icheck-success-white"><input type="checkbox"
+                                                id="AI"><label for="AI"></label></div></span></button>
+                            </div>
+                            <div class="pull-right">
+                                <div class="dataTables_info" id="book_table_info" role="status" aria-live="polite"><span
+                                        class="footer-hide">共&nbsp;3,820&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                        class="header-hide footer-hide">第</span><strong>&nbsp;1&nbsp;</strong><span
+                                        class="header-hide footer-hide">頁</span><span
+                                        class="footer-hide">&nbsp;/&nbsp;</span><span
+                                        class="header-hide">共</span>&nbsp;255&nbsp;<span class="header-hide">頁</span>
+                                </div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="book_table_paginate"><a
+                                        class="paginate_button previous disabled" aria-controls="book_table"
+                                        data-dt-idx="0" tabindex="-1" id="book_table_previous"><i
+                                            class="fa fa-angle-left"
+                                            aria-hidden="true"></i><span>&nbsp;上一頁</span></a><span><a
+                                            class="paginate_button current" aria-controls="book_table" data-dt-idx="1"
+                                            tabindex="0">1</a><a class="paginate_button " aria-controls="book_table"
+                                            data-dt-idx="2" tabindex="0">2</a><a class="paginate_button "
+                                            aria-controls="book_table" data-dt-idx="3" tabindex="0">3</a><a
+                                            class="paginate_button " aria-controls="book_table" data-dt-idx="4"
+                                            tabindex="0">4</a><a class="paginate_button " aria-controls="book_table"
+                                            data-dt-idx="5" tabindex="0">5</a><span class="ellipsis">…</span><a
+                                            class="paginate_button " aria-controls="book_table" data-dt-idx="6"
+                                            tabindex="0">255</a></span><a class="paginate_button next"
+                                        aria-controls="book_table" data-dt-idx="7" tabindex="0"
+                                        id="book_table_next"><span>下一頁&nbsp;</span><i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="">
+                                <table id="book_table"
+                                    class="table leveledBooks-table recommendedBook-table dataTable no-footer"
+                                    style="width: 100%;" aria-describedby="book_table_info" role="grid">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="book-id sorting_asc" rowspan="1" colspan="1" style="width: 0px;"
+                                                aria-label="ID">ID</th>
+                                            <th class="book-good sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="優選書單">優選書單</th>
+                                            <th class="book-front sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="書封面">書封面</th>
+                                            <th class="book-name sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="書名">書名</th>
+                                            <th class="book-SR sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="圖書難度">圖書難度</th>
+                                            <th class="book-sort sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="分類">分類</th>
+                                            <th class="book-topic sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="題本類別">題本類別</th>
+                                            <th class="book-ebook sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="電子書">電子書</th>
+                                            <th class="book-addRP sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="加入閱讀計畫">加入閱讀計畫</th>
+                                            <th class="book-bookplanet sorting_disabled" rowspan="1" colspan="1"
+                                                style="width: 0px;" aria-label="布可星球">布可星球</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="book-id sorting_1">50f42eef-de1a-4704-ab2c-30e1ebb50ad5</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="50f42eef-de1a-4704-ab2c-30e1ebb50ad5" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/25234 (1).jpg"></a>
+                                            </td>
+                                            <td class=" book-name">我不想說對不起</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 255</td>
+                                            <td class=" book-sort" data-th="分類">醫藥心理</td>
+                                            <td class=" book-topic" data-th="題本類別">選擇題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="50f42eef-de1a-4704-ab2c-30e1ebb50ad5"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">54778820-dd23-47de-aee0-fd54d0cc1e91</td>
+                                            <td class=" book-good"><img
+                                                    src="../Content/images/recommendedBook/goodBook.png" width="66"
+                                                    height="65"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="54778820-dd23-47de-aee0-fd54d0cc1e91" data-ebook="1"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/71889.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">失去動物的森林</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 256</td>
+                                            <td class=" book-sort" data-th="分類">植物/動物</td>
+                                            <td class=" book-topic" data-th="題本類別">選擇題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook.png" width="18"
+                                                    height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="54778820-dd23-47de-aee0-fd54d0cc1e91"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">9a6ee9b1-0181-4412-ae53-432a8b544f8e</td>
+                                            <td class=" book-good"><img
+                                                    src="../Content/images/recommendedBook/goodBook.png" width="66"
+                                                    height="65"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="9a6ee9b1-0181-4412-ae53-432a8b544f8e" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/71900.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">貝拉的生氣天</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 256</td>
+                                            <td class=" book-sort" data-th="分類">醫藥心理</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="9a6ee9b1-0181-4412-ae53-432a8b544f8e"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">c29c6d14-059b-446d-b488-38ba5ffacc6e</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="c29c6d14-059b-446d-b488-38ba5ffacc6e" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/17065.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">身體的奧秘</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 259</td>
+                                            <td class=" book-sort" data-th="分類">生態/生命科學</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="c29c6d14-059b-446d-b488-38ba5ffacc6e"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">43fe874b-c098-41e6-abe6-1e5bc3ae5b83</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="43fe874b-c098-41e6-abe6-1e5bc3ae5b83" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/71842.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">貝貝和好朋友：生日時刻</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 264</td>
+                                            <td class=" book-sort" data-th="分類">數學</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="43fe874b-c098-41e6-abe6-1e5bc3ae5b83"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">cf90428e-1683-4aa5-a651-f74c951769dc</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="cf90428e-1683-4aa5-a651-f74c951769dc" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/12276.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">小翔和地球：希望永遠在一起</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 265</td>
+                                            <td class=" book-sort" data-th="分類">生態/生命科學</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="cf90428e-1683-4aa5-a651-f74c951769dc"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">0a624307-db36-437a-8d97-4232013d6f8d</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="0a624307-db36-437a-8d97-4232013d6f8d" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/67763.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">有氣喘，我也能照樣玩</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 276</td>
+                                            <td class=" book-sort" data-th="分類">醫藥心理</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="0a624307-db36-437a-8d97-4232013d6f8d"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">e762f852-8943-41d3-a3fa-3741d89db6bb</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="e762f852-8943-41d3-a3fa-3741d89db6bb" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/71837.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">最好的擁抱：團結的狐獴家族</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 278</td>
+                                            <td class=" book-sort" data-th="分類">植物/動物</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="e762f852-8943-41d3-a3fa-3741d89db6bb"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">ba4cb06b-c819-48fc-8561-ad914b0512f7</td>
+                                            <td class=" book-good"><img
+                                                    src="../Content/images/recommendedBook/goodBook.png" width="66"
+                                                    height="65"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="ba4cb06b-c819-48fc-8561-ad914b0512f7" data-ebook="1"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/18971.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">弟弟的世界</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 279</td>
+                                            <td class=" book-sort" data-th="分類">醫藥心理</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook.png" width="18"
+                                                    height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="ba4cb06b-c819-48fc-8561-ad914b0512f7"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">44e57f6d-e539-4ea9-96a0-80ada7c33f78</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="44e57f6d-e539-4ea9-96a0-80ada7c33f78" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/72910.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">每個人都會噗</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 283</td>
+                                            <td class=" book-sort" data-th="分類">生態/生命科學</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="44e57f6d-e539-4ea9-96a0-80ada7c33f78"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">4f0c71e9-3c2c-4b3b-b3fe-451dfe1e42f1</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="4f0c71e9-3c2c-4b3b-b3fe-451dfe1e42f1" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/72917.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">誰吃了誰</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 283</td>
+                                            <td class=" book-sort" data-th="分類">生態/生命科學</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="4f0c71e9-3c2c-4b3b-b3fe-451dfe1e42f1"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">ab1f6c7d-fb4a-4753-bc33-914b7c0f5c1f</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="ab1f6c7d-fb4a-4753-bc33-914b7c0f5c1f" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/72909.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">下水道探險記</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 283</td>
+                                            <td class=" book-sort" data-th="分類">應用科學</td>
+                                            <td class=" book-topic" data-th="題本類別">選擇題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="ab1f6c7d-fb4a-4753-bc33-914b7c0f5c1f"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">b554d78f-9b57-48c3-866b-5932effab69f</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="b554d78f-9b57-48c3-866b-5932effab69f" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/72914.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">月球上跳高</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 283</td>
+                                            <td class=" book-sort" data-th="分類">天文地科</td>
+                                            <td class=" book-topic" data-th="題本類別">選擇題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="b554d78f-9b57-48c3-866b-5932effab69f"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">c8865f2e-306f-44df-b83e-8164190d2b0b</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="c8865f2e-306f-44df-b83e-8164190d2b0b" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/72915.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">變大的艾爾</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 283</td>
+                                            <td class=" book-sort" data-th="分類">天文地科</td>
+                                            <td class=" book-topic" data-th="題本類別">選擇題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="c8865f2e-306f-44df-b83e-8164190d2b0b"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="book-id sorting_1">e25220f4-e97e-457f-a96f-848052467103</td>
+                                            <td class=" book-good"></td>
+                                            <td class=" book-front"><a href="#"
+                                                    def="e25220f4-e97e-457f-a96f-848052467103" data-ebook="0"
+                                                    class="hover-effect-dark book_cover"><img
+                                                        src="../RP/BookContent/BookFront/72916.jpg"></a>
+                                            </td>
+                                            <td class=" book-name">最厲害的媽媽</td>
+                                            <td class=" book-SR" data-th="圖書難度">SR 283</td>
+                                            <td class=" book-sort" data-th="分類">生態/生命科學</td>
+                                            <td class=" book-topic" data-th="題本類別">摘要題</td>
+                                            <td class=" book-ebook"><img
+                                                    src="../Content/images/recommendedBook/icon-ebook-gray.png"
+                                                    width="18" height="18">&nbsp;電子書</td>
+                                            <td class=" book-addRP"><button class="btn recommendedBook-table__btn-addRP"
+                                                    def="e25220f4-e97e-457f-a96f-848052467103"
+                                                    type="button">加入閱讀計畫</button></td>
+                                            <td class=" book-bookplanet"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="leveledBooks-table__footer clearfix">
+                            <div class="dataTables_paginate paging_simple_numbers"><a
+                                    class="paginate_button previous disabled" aria-controls="book_table" data-dt-idx="0"
+                                    tabindex="-1"><i class="fa fa-angle-left"
+                                        aria-hidden="true"></i><span>&nbsp;上一頁</span></a><span><a
+                                        class="paginate_button current" aria-controls="book_table" data-dt-idx="1"
+                                        tabindex="0">1</a><a class="paginate_button " aria-controls="book_table"
+                                        data-dt-idx="2" tabindex="0">2</a><a class="paginate_button "
+                                        aria-controls="book_table" data-dt-idx="3" tabindex="0">3</a><a
+                                        class="paginate_button " aria-controls="book_table" data-dt-idx="4"
+                                        tabindex="0">4</a><a class="paginate_button " aria-controls="book_table"
+                                        data-dt-idx="5" tabindex="0">5</a><span class="ellipsis">…</span><a
+                                        class="paginate_button " aria-controls="book_table" data-dt-idx="6"
+                                        tabindex="0">255</a></span><a class="paginate_button next"
+                                    aria-controls="book_table" data-dt-idx="7" tabindex="0"><span>下一頁&nbsp;</span><i
+                                        class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+                            <div class="dataTables_info"><span
+                                    class="footer-hide">共&nbsp;3,820&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                    class="header-hide footer-hide">第</span><strong>&nbsp;1&nbsp;</strong><span
+                                    class="header-hide footer-hide">頁</span><span
+                                    class="footer-hide">&nbsp;/&nbsp;</span><span
+                                    class="header-hide">共</span>&nbsp;255&nbsp;<span class="header-hide">頁</span></div>
+                            <div class="add_dataTables_input">到第&nbsp;<input type="text"
+                                    class="form-control input-lg input-inline paginate_input" id="textGotoPage"
+                                    data-prev="" value="">&nbsp;頁<a class="btn btn-lg paginate_button"
+                                    id="btnGotoPage">確定</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- recommendedBook-list end -->
+
+            <div id="extraBookBlock" class="recommendedBook-list" style="display: none;">
+                <div class="container">
+                    <div class="dataTables_wrapper no-footer">
+                        <div class="leveledBooks-table__header clearfix">
+                            <div class="pull-right">
+                                <div class="dataTables_info" id="book_table_info" role="status" aria-live="polite"><span
+                                        id="extraBookTotalInfo"
+                                        class="footer-hide">共&nbsp;0&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><strong
+                                        id="extraBookNowPageInfo">&nbsp;1&nbsp;</strong><span
+                                        class="footer-hide">&nbsp;/&nbsp;</span><span
+                                        id="extraBookTotalPageInfo">&nbsp;1&nbsp;</span></div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="navPage2">
+                                    <a class="paginate_button previous disabled" id="navPrePage2" data-page=""><i
+                                            class="fa fa-angle-left" aria-hidden="true"></i><span>&nbsp;上一頁</span></a>
+                                    <a class="paginate_button next" id="navNextPage2"
+                                        data-page=""><span>下一頁&nbsp;</span><i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="extra_book_table"
+                            class="table leveledBooks-table recommendedBook-table dataTable no-footer">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>優選書單</th>
+                                    <th>書封面</th>
+                                    <th>書名</th>
+                                    <th>新增者</th>
+                                    <th>圖書難度</th>
+                                    <th>分類</th>
+                                    <th>題本類別</th>
+                                    <th>電子書</th>
+                                    <th>加入閱讀計畫</th>
+                                    <th>布可星球</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+
+                        <!-- pagination star/... -->
+                        <br />
+                        <br />
+                        <div id="navPage" aria-label="Page navigation" class="text-center">
+                            <a id="navFirstPage" class="btn btn-default btn-sm disabled" href="#" role="button"
+                                data-page="">第一頁</a>
+                            <a id="navPrePage" class="btn btn-default btn-sm disabled" href="#" role="button"
+                                data-page="">&laquo;&nbsp;上一頁</a>
+                            <small>第</small>
+                            <input id="navNowPage" type="text" class="form-control input-sm"
+                                style="width: 60px; display: inline; vertical-align: middle;" placeholder="1"
+                                data-min="1" data-max="1">
+                            <small>頁/共<strong id="navTotalPage"></strong>頁</small>
+                            <a id="navNextPage" class="btn btn-default btn-sm" href="#" role="button"
+                                data-page="">下一頁&nbsp;&raquo;</a>
+                            <a id="navLastPage" class="btn btn-default btn-sm" href="#" role="button"
+                                data-page="">最後一頁</a>
+                        </div>
+                        <!-- .../pagination end -->
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <!-- recommendedBook-list end -->
+        </main>
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <footer class="footer">
+            <div class='footer-info footer-info-simple'>
+                <div class='container-fluid'>
+                    <div class='row'>
+                        <div class='col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-0'><img
+                                src='../Content/images/HeaderLogo.png' width='249' height='116'></div>
+                        <div class='col-xs-12 col-sm-6 col-md-5 col-lg-2'>
+                            <div class='footer-info__social'><a class='footer-info__social-youtube hover-effect-dark'
+                                    href='https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ' role='button'
+                                    target='_blank'><i class='fab fa-youtube'></i></a> <a
+                                    class='footer-info__social-facebook hover-effect-dark'
+                                    href='https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883'
+                                    role='button' target='_blank'><i class='fab fa-facebook-f'></i></a></div>
+                        </div>
+                        <div class='col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-8 col-lg-offset-0'>
+                            <div class='footer-info__contact'>
+                                <div class='footer-info__contact-title'>聯繫我們</div>
+                                <div class="footer-info__contact_CLTC"> 國立臺灣師範大學 華語文與科技研究中心 </div>
+                                <div class='footer-info__contact-text row'>
+                                    <div class='col-lg-5'>
+                                        <div class='contact-email'><i
+                                                class='far fa-envelope'></i>service@smartreading.net</div>
+                                    </div>
+                                    <div class='col-lg-7 col-lg-pull-1'>
+                                        <div class='contact-add'><i class='fas fa-map-marker-alt'></i>106台北市和平東路一段162號
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <p> &copy; 國立臺灣師範大學 華語文與科技研究中心 版權所有</p>
+                <p> Copyright &copy; Chinese Language and Technology Center , National Taiwan Normal University. All
+                    rights reserved.</p>
+            </div>
+        </footer>
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <!-- Modal#modal-bookIntro -->
+        <!--Modal #frameModal START/-->
+        <div class="modal fade modal-style1 modal-bookIntro" id="frameModal" tabindex="-1" role="dialog"
+            aria-labelledby="">
+            <div class="modal-dialog modal-lg modal-md-full" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            onclick="CloseModal()"><span aria-hidden="true">&times;</span></button>
+                    </div>
+
+                    <iframe id="examFrame" src="" style="width: 100%; height: 720px; border: 0; margin: 0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!--Modal #frameModal END-->
+
+        <!-- Modal#modal-bookIntro -->
+        <div class="modal fade modal-style1 modal-bookIntro" id="modal-extraBookIntro" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg modal-md-full" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="bookIntro-front">
+                                    <img src="../RP/BookContent/BookFront/49325.jpg"
+                                        class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="bookIntro-name">海底兩萬里 </div>
+                                <div class="bookIntro-isbn">ISBN：9789860340495 </div>
+                                <div class="bookIntro-author">作 者：文/陳仰聖，圖/張致中 </div>
+                                <div class="bookIntro-year">出版年份：2019年 </div>
+                                <div class="bookIntro-sid">分 類：成長/生命教育 </div>
+                                <!--<button class="btn btn-main bookIntro-addRP" type="button">加入閱讀計畫</button>-->
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-6">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-12 col-lg-7">
+                                        <div class="bookIntro-score" style="display: none;">已有 0 人評分 </div>
+                                        <div class="bookIntro-scale" style="display: none;">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-lg-5">
+                                                    <img src="../Content/images/recommendedBook/heart.png" width="21"
+                                                        height="20">喜歡 5.0
+                                                </div>
+                                                <div class="col-xs-6 col-lg-5">
+                                                    <img src="../Content/images/recommendedBook/seed.png" width="21"
+                                                        height="20">收穫 5.0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-12 col-lg-5">
+                                        <div class="bookIntro-publish">出版社： </div>
+                                        <!--<div class="bookIntro-publish-img"> <img src="../Content/images/partner/biz/link.png" class="img-responsive center-block"> 
+                  <!--<img src="../Content/images/recommendedBook/publish-empty.png" class="img-responsive center-block" alt="無出版社圖片">-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal #bookInsert START/... -->
+        <div class="modal fade modal-style1" id="bookInsert" tabindex="-1" role="dialog"
+            aria-labelledby="bookInsertModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header SR-bg-blue">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title text-center h4" id="bookInsertModalLabel">我的未分級書</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-horizontal SR-form-style1">
+                            <div class="form-group">
+                                <label for="inputBookName" class="col-sm-3 control-label"><span
+                                        class="text-red">*</span>書名</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputBookName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputISBN" class="col-sm-3 control-label"><span
+                                        class="text-red">*</span>ISBN</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputISBN">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label"><span class="text-red">*</span>語系</label>
+                                <div class="col-sm-8" style="padding-top: 7px;">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="bookLang" id="" value="1">
+                                        正體
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="bookLang" id="" value="0">
+                                        簡體
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSort" class="col-sm-3 control-label">類別</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="inputSort">
+                                        <option value="0">請選擇...</option>
+                                        <option value="4">成長/生命教育</option>
+                                        <option value="5">現代文學</option>
+                                        <option value="6">懸疑推理/冒險/科幻</option>
+                                        <option value="7">親情/友誼/愛情</option>
+                                        <option value="8">校園生活</option>
+                                        <option value="9">古典/經典文學</option>
+                                        <option value="10">民間/神話</option>
+                                        <option value="11">童話/寓言</option>
+                                        <option value="12">歷史/武俠</option>
+                                        <option value="13">傳記文學</option>
+                                        <option value="14">歷史地理</option>
+                                        <option value="15">人文社會</option>
+                                        <option value="16">科普/自然生態</option>
+                                        <option value="17">藝術</option>
+                                        <option value="18">詩歌韻文</option>
+                                        <option value="19">旅遊文學</option>
+                                        <option value="20">哲學/心理</option>
+                                        <option value="21">其他 </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAuthor" class="col-sm-3 control-label">作者</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputAuthor">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPublish" class="col-sm-3 control-label">出版社</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputPublish">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputYear" class="col-sm-3 control-label">出版年份</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputYear">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputBookCover" class="col-sm-3 control-label">書封上傳</label>
+                                <div class="col-sm-8">
+                                    <input type="file" class="form-control" id="inputBookCover" data-filename="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-main btn-lg" id="ADD_RP">加入閱讀計畫</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .../Modal #bookInsert END -->
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+        <!-- ------- ------- ------- ------- ------- ------- ------- -->
+
+        <!--隱藏資訊-->
+        <input type="hidden" name="DACC_Scale" id="DACC_Scale" value="500" />
+        <input type="hidden" name="NORM_VERSION" id="NORM_VERSION" value="0" />
+        <input type="hidden" name="User_Grade" id="User_Grade" value="5" />
+        <input type="hidden" name="User_DACC_Grade" id="User_DACC_Grade" value="2" />
+        <input type="hidden" name="USER_SCHOOL_ID" id="USER_SCHOOL_ID" value="5470" />
+        <input type="hidden" name="USER_GROUP_SN" id="USER_GROUP_SN" value="67781" />
+        <input type="hidden" name="Auth_RP" id="Auth_RP" value="True" />
+        <input type="hidden" name="Auth_EB" id="Auth_EB" value="False" />
+        <input type="hidden" name="USER_LANG" id="USER_LANG" value="TW" />
+
+
+    </form>
+    <script src="../Script/jquery.min.js"></script>
+    <script src="../Script/bootstrap-lg.min.js"></script>
+    <script src="../Script/ie10-viewport-bug-workaround.js"></script>
+    <!-- widgets js -->
+    <script src="../Content/widgets/DataTables/datatables.min.js"></script>
+    <script src="../../RP/script/Common.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="../Content/widgets/jquery-ui-1.12.1.custom/jquery.ui.touch-punch.min.js"></script>
+    <script src="../Content/widgets/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+    <script src="../Content/widgets/bootstrap-fileinput-master/js/locales/zh-TW.js"></script>
+    <script src="../Content/js/alertConfirmModal.js"></script>
+
+    <!-- iframe高度-->
+    <script src="../Content/js/jquery.autoheight.js"></script>
+    <script src="../Script/login/myID.js"></script>
+    <script src="../Script/Loading.js"></script>
+
+    <script>
+        //Extra Book Global變數
+        //==================================================
+        const pageSize = 15; //書單單頁數量
+        var pageNumber = 1; //初始化當前頁碼
+        var pageSort = "DESC"; //預設排序
+        //==================================================
+
+        function LoadBookInfo(book_id, canEbook) {
+
+            var isFromSystem = 1;
+            if ($('.recommendedBook-search__btn-recommend').data('domain') == "3") {
+                isFromSystem = 0;
+            }
+
+            if ($('#USER_SCHOOL_ID').val() == "7") {
+                isFromSystem = 0;
+            }
+
+            var url = "Book-Intro.aspx?bookID=" + book_id + "&canEbook=false&isFromSystem=" + isFromSystem +
+                "&preview=true";
+
+            if (canEbook == "1") {
+                url = "Book-Intro.aspx?bookID=" + book_id + "&canEbook=true&isFromSystem=" + isFromSystem +
+                    "&preview=true";
+            }
+
+            $("#frameModal iframe").attr("src", url);
+            $('#frameModal').modal({
+                backdrop: 'static',
+                keyboard: true
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // 找到所有 label
+            var labels = document.querySelectorAll("label");
+            labels.forEach(function (label) {
+                if (label.textContent.trim() === "運算思維") {
+                    label.textContent = "AI運算思維";
+                }
+                if (label.textContent.trim() === "數位應用") {
+                    label.textContent = "AI數位應用";
+                }
+                if (label.textContent.trim() === "數位倫理") {
+                    label.textContent = "AI數位倫理";
+                }
+            });
+        });
+    </script>
+
+    <!-- 與iFrame聯繫 -->
+    <script>
+        function CloseModal() {
+            $("#frameModal iframe").attr("src", "");
+            $("#frameModal").modal('hide');
+        }
+    </script>
+
+    <script>
+        // 各年級書籍分數
+        var BOOK_DEGREE = {
+            1: {
+                2: {
+                    'avg': 279,
+                    'min': 168,
+                    'max': 314,
+                    'X1': 38,
+                    'X2': 40
+                },
+                3: {
+                    'avg': 349,
+                    'min': 315,
+                    'max': 375,
+                    'X1': 15,
+                    'X2': 15
+                },
+                4: {
+                    'avg': 401,
+                    'min': 376,
+                    'max': 430,
+                    'X1': 11,
+                    'X2': 12
+                },
+                5: {
+                    'avg': 458,
+                    'min': 431,
+                    'max': 479,
+                    'X1': 9,
+                    'X2': 10
+                },
+                6: {
+                    'avg': 500,
+                    'min': 480,
+                    'max': 515,
+                    'X1': 9,
+                    'X2': 10
+                },
+                7: {
+                    'avg': 531,
+                    'min': 516,
+                    'max': 541,
+                    'X1': 8,
+                    'X2': 10
+                },
+                8: {
+                    'avg': 552,
+                    'min': 542,
+                    'max': 567,
+                    'X1': 5,
+                    'X2': 10
+                },
+                9: {
+                    'avg': 583,
+                    'min': 568,
+                    'max': 610,
+                    'X1': 10,
+                    'X2': 12
+                },
+                10: {
+                    'avg': 638,
+                    'min': 611,
+                    'max': 653,
+                    'X1': 10,
+                    'X2': 12
+                }
+            },
+            2: {
+                2: {
+                    'avg': 320,
+                    'min': 311,
+                    'max': 347,
+                    'X1': 38,
+                    'X2': 40
+                },
+                3: {
+                    'avg': 374,
+                    'min': 348,
+                    'max': 398,
+                    'X1': 15,
+                    'X2': 15
+                },
+                4: {
+                    'avg': 422,
+                    'min': 399,
+                    'max': 449,
+                    'X1': 11,
+                    'X2': 12
+                },
+                5: {
+                    'avg': 477,
+                    'min': 450,
+                    'max': 488,
+                    'X1': 9,
+                    'X2': 10
+                },
+                6: {
+                    'avg': 500,
+                    'min': 489,
+                    'max': 514,
+                    'X1': 9,
+                    'X2': 10
+                },
+                7: {
+                    'avg': 527,
+                    'min': 515,
+                    'max': 537,
+                    'X1': 8,
+                    'X2': 10
+                },
+                8: {
+                    'avg': 546,
+                    'min': 538,
+                    'max': 560,
+                    'X1': 5,
+                    'X2': 10
+                },
+                9: {
+                    'avg': 573,
+                    'min': 561,
+                    'max': 593,
+                    'X1': 10,
+                    'X2': 12
+                },
+                10: {
+                    'avg': 613,
+                    'min': 594,
+                    'max': 638,
+                    'X1': 10,
+                    'X2': 12
+                },
+                11: {
+                    'avg': 663,
+                    'min': 639,
+                    'max': 673,
+                    'X1': 10,
+                    'X2': 12
+                },
+                12: {
+                    'avg': 683,
+                    'min': 674,
+                    'max': 720,
+                    'X1': 10,
+                    'X2': 12
+                },
+                13: {
+                    'avg': 750,
+                    'min': 721,
+                    'max': 1000,
+                    'X1': 10,
+                    'X2': 12
+                } //750,1000值為臨時給的任意值
+            } //X1,X2目前待更新
+        }
+
+        // 學生將推薦書籍加入個人的閱讀書單
+        function JustOnlyForAddInRecommendedPageUse(status_, book_id_, callback, URL) {
+            URL = URL || "ashx/GetBookList_Customize.ashx";
+            //var tsn = getParameterByName('tsn');
+            var tsn = '';
+            $.ajax({
+                url: URL,
+                type: "POST",
+                data: {
+                    status: status_,
+                    book_id: book_id_,
+                    tsn: tsn,
+                    contest_sn: -1
+                },
+                success: function (ReturnData) {
+                    if (ReturnData) {
+                        if (ReturnData != 'failed') alert("已成功加入閱讀計畫清單");
+                        else console.log('推薦書單頁面加入書籍發生錯誤');
+                    }
+
+                    if (callback) {
+                        callback(book_id_);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    //主機回傳例外:
+                    console.log('GetBookList_Customize.ashx[' + errorThrown + '] ');
+                }
+            });
+        }
+
+        // 根據DACC傳過來的年級和C分數來計算出撈書的C分數range
+        function DACC_TO_BOOK_RANGE(Book_Score_Max, Book_Score_Min, User_Grade, User_DACC_Grade, DACC_Scale,
+            NORM_VERSION) {
+            var output = {};
+            output['recommend_max'] = -1;
+            output['recommend_min'] = -1;
+
+            if (!isNaN(User_Grade) && !isNaN(User_DACC_Grade) && !isNaN(DACC_Scale)) {
+
+                // 選書策略 =================================================================================================
+                // User_Grade:學生實際年級; User_DACC_Grade:學生施測後的對應年級; DACC_Scale:使用者C分數
+                var difrenceGrade = User_DACC_Grade - User_Grade;
+
+                // 6年級以上
+                if (User_Grade >= 6) {
+                    if (difrenceGrade >= 3) {
+                        // 優秀
+                        output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][User_DACC_Grade - 1]['min'];
+                        output['recommend_max'] = BOOK_DEGREE[NORM_VERSION][User_DACC_Grade]['max'];
+
+                        //推荐書籍極端值推荐調整
+                        if (output['recommend_max'] > Book_Score_Max) //推荐書籍分數高於最高書籍分數
+                        {
+                            output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][10]['min'];
+                            output['recommend_max'] = Book_Score_Max;
+                        }
+                    } else if (difrenceGrade <= 2 && difrenceGrade >= -1) {
+                        // 中等
+                        output['recommend_min'] = DACC_Scale - 30;
+                        output['recommend_max'] = DACC_Scale + 30;
+
+                        //推荐書籍極端值推荐調整
+                        if (output['recommend_max'] > Book_Score_Max) //推荐書籍分數高於最高書籍分數
+                        {
+                            output['recommend_min'] = Book_Score_Max - BOOK_DEGREE[NORM_VERSION][10]['X2'];
+                            output['recommend_max'] = Book_Score_Max;
+                        }
+                        if (output['recommend_min'] < Book_Score_Min) //推荐書籍分數低於最低書籍分數
+                        {
+                            output['recommend_min'] = Book_Score_Min;
+                            output['recommend_max'] = Book_Score_Min + BOOK_DEGREE[NORM_VERSION][2]['X2'];
+                        }
+                    } else {
+                        // 待加強
+                        output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][User_Grade - 2]['min'];
+                        output['recommend_max'] = BOOK_DEGREE[NORM_VERSION][User_Grade - 1]['max'];
+                    }
+                } else if (User_Grade == -1) {
+                    return output; // 沒有年級值就全開
+                } else // 5年級以下
+                {
+                    if (difrenceGrade >= 2) {
+                        // 優秀
+                        if (User_DACC_Grade == 2) output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][User_DACC_Grade][
+                            'min'
+                        ];
+                        else output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][User_DACC_Grade - 1]['min'];
+                        output['recommend_max'] = BOOK_DEGREE[NORM_VERSION][User_DACC_Grade]['max'];
+
+                        //推荐書籍極端值推荐調整
+                        if (output['recommend_max'] > Book_Score_Max) //推荐書籍分數高於最高書籍分數
+                        {
+                            output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][10]['min'];
+                            output['recommend_max'] = Book_Score_Max;
+                        }
+                    } else if (difrenceGrade >= -1 && difrenceGrade <= 1) {
+                        // 中等
+                        output['recommend_min'] = DACC_Scale - 30;
+                        output['recommend_max'] = DACC_Scale + 30;
+
+                        //推荐書籍極端值推荐調整
+                        if (output['recommend_max'] > Book_Score_Max) //推荐書籍分數高於最高書籍分數
+                        {
+                            output['recommend_min'] = Book_Score_Max - BOOK_DEGREE[NORM_VERSION][10]['X2'];
+                            output['recommend_max'] = Book_Score_Max;
+                        }
+                        if (output['recommend_min'] < Book_Score_Min) //推荐書籍分數低於最低書籍分數
+                        {
+                            output['recommend_min'] = Book_Score_Min;
+                            output['recommend_max'] = Book_Score_Min + BOOK_DEGREE[NORM_VERSION][2]['X2'];
+                        }
+                    } else {
+                        // 待加強
+                        if (User_Grade <= 2) {
+                            output['recommend_min'] = 0;
+                            output['recommend_max'] = BOOK_DEGREE[NORM_VERSION][2]['max'];
+                        } else if (User_Grade == 3) {
+                            output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][2]['min'];
+                            output['recommend_max'] = BOOK_DEGREE[NORM_VERSION][2]['max'];
+                        } else {
+                            output['recommend_min'] = BOOK_DEGREE[NORM_VERSION][User_Grade - 2]['min'];
+                            output['recommend_max'] = BOOK_DEGREE[NORM_VERSION][User_Grade - 1]['max'];
+                        }
+                    }
+                }
+                // 選書策略 =================================================================================================
+            }
+
+            return output;
+        }
+
+        // 取得頁面推薦查詢的參數, for Recommended_List.html use
+        function GatherWebPageInfoToJSON() {
+            var WebPageInfo = {};
+
+            // filter
+            WebPageInfo['BOOK_SCORE_CONVERTED_min'] = recommend_min;
+            WebPageInfo['BOOK_SCORE_CONVERTED_max'] = recommend_max;
+
+            var SearchOption = '';
+            var SearchText = '';
+            WebPageInfo[SearchOption] = '';
+
+            //// 分類搜尋參數 =======================================================================
+            WebPageInfo["CATEGORY_SEARCH_ID"] = '';
+            //// 分類搜尋參數 =======================================================================
+
+            // 是否僅顯示電子書資訊
+            WebPageInfo['ShowEBookOnly'] = false;
+
+            // sorting parameter
+            WebPageInfo['SortColumn'] = "BOOK_SCORE_CONVERTED";
+            WebPageInfo['SortOrder'] = "ASC";
+
+            // 書籍語系(繁or簡)
+            WebPageInfo['BOOK_LANG'] = $("#USER_LANG").val();
+
+
+            // 取得呈現查詢書單型態參數(1:系統,2:指定,3:校內)
+            WebPageInfo['BOOKLIST_SEARCH_DOMAIN_IDX'] = 1;
+
+            // 取得使用者學校代碼
+            WebPageInfo['USER_SCHOOL_ID'] = $('#USER_SCHOOL_ID').val();
+
+            return encodeURI(JSON.stringify(WebPageInfo));
+        }
+
+        var User_Grade = parseInt($('#User_Grade').val());
+        var User_DACC_Grade = parseInt($('#User_DACC_Grade').val());
+        var DACC_Scale = parseInt($('#DACC_Scale').val()); // DACC量尺分數
+        var NORM_VERSION = parseInt($('#NORM_VERSION').val());
+
+        // 根據學生DACC結果算出推薦書籍的C分數range
+        var Range = DACC_TO_BOOK_RANGE(1000, 40, User_Grade, User_DACC_Grade, DACC_Scale, NORM_VERSION);
+        var recommend_max = Range['recommend_max'];
+        var recommend_min = Range['recommend_min'];
+
+        var user_max = recommend_max;
+        var user_min = recommend_min;
+
+        var search_max = user_max;
+        var search_min = user_min;
+
+        //GetBookPage(1);
+
+        //書名簡化顯示修改規則
+        function GetSimpleBookName(BookName) {
+            var str = BookName;
+            var regex = /^【.*】/; // 比對叢書標記規則：書名以【叢書名稱】起始
+            return str.replace(regex, "");
+        }
+    </script>
+
+    <script>
+        var dt;
+        var sort = "ASC";
+        var ShowEBookOnly = false;
+        var SortColumn = "BOOK_SCORE_CONVERTED";
+        var BOOK_NAME = "";
+        var BOOK_ISBN = "";
+        var CATEGORY_SEARCH_ID = "";
+
+        $(document).ready(function () {
+            let host = location.hostname;
+            const bookplanet = ["0ceb1e16-ace5-4300-9579-beae53bcc4a7", "48775167-a7bf-4a6f-a54b-5bc534eb936b",
+                "153ce7aa-2ac8-425f-859b-5f640b663fcb", "0fc06ea3-5df6-4eb7-af36-379fcd2177c3",
+                "21949bb0-94b6-40df-abc6-0958bd253e8f", "225aacd6-1ae8-4252-86c3-4a9414228f36",
+                "7839364c-a1de-4844-a88f-c8166a36e4a0", "812d108e-f474-4eeb-bdf7-7e000298f6d6",
+                "78b6ebd8-b546-42a2-8d16-aefc8503cc88", "aff123fb-380c-4e8b-9a54-38ba8d2bb330",
+                "82733dc5-507f-470a-9f9e-fd87521448ab", "0993c695-d4b9-49a9-a115-8465a871242f",
+                "21dcd0ac-53e9-48e3-a3e7-df9996473758", "6c08a3d5-a556-496c-8115-53d24255617f",
+                "b7d822e1-a6c6-467b-80e8-8c7e4b2eda13", "ab38091e-2334-4e29-a393-fae77cb4d655",
+                "75dddd1d-49b9-448b-a9d2-545a9024e9d4", "1e9f2476-0e25-4641-9551-f7d06eb4199f",
+                "500132f1-24e3-48b9-b91a-4f7ab7c9eb91", "abd59921-99e7-405f-a490-4735688079d7",
+                "af4949b7-7caf-44a7-9994-f9549dcc3a58", "1991e6a0-b90a-4e39-9c16-9bd14b444602",
+                "c95d9e1f-1c58-4f45-a63c-b3f051a463df", "778de58a-2804-457b-a772-2261a1d8baea",
+                "c036e18c-84ef-4f24-8f52-8e38a3dc9a4f", "e87e3fa9-d3db-41ad-88a7-717e52c2b443",
+                "f77b5e0e-4bfc-48c6-9054-63cd59c163b3", "eab8b6cb-1ff1-4c50-b3b0-9fbd75c0ddf1",
+                "d45b3aaf-c7d0-439a-bbc6-795053dbbe90", "f6c4a380-500f-4672-8afc-63a0882be738",
+                "34bee82b-4db9-41c9-8123-29400b69e2fb", "349ffeea-aa17-468c-bf6e-34be920b7e0b",
+                "2875126c-5e99-4eba-9e57-7a77501cba18", "9d8b926f-87f9-4853-8e27-4461cc206743",
+                "76db5963-102e-4a18-9e09-d24141c64e96", "8739bd1e-cdc4-4b01-9fa5-b4f03983784d",
+                "3645fec6-0ee4-4b3b-bfe2-3e165413343a", "77851188-b6a6-48d4-9623-fc67e1a242dc",
+                "776148af-5f4d-44fb-af8c-bd7371f7234c", "a922f18d-66c6-4576-833a-85231dedfa21",
+                "a3163ac8-14e7-4d58-b226-c972ee499458", "429a7ede-f0ec-420c-8db3-ec55b2399046",
+                "b8b02806-df57-4fb6-a21d-d94206edec99", "9448f136-80a7-4304-ac91-1a3fc082922a",
+                "4b29353b-288f-4a2f-9558-366e6e7f8528", "6987a00c-7eb9-4649-ac34-01dd67824675",
+                "d7093601-472a-4f3b-a3cd-2eb75ef7fc7c", "124b6bb6-6ab3-45df-b150-cd9b34e85b6e",
+                "bf381143-96e4-4a20-8cbc-9ec626d4b5e7", "916f59cb-84df-48ef-ae6d-048ca1cf1ddd",
+                "61766170-ac5d-4ca2-8154-c47f46aa21bf", "ebed069f-f04b-43cd-9b00-a25c2bff9fc2",
+                "31f3e1f1-6b8c-42f5-8107-262b1a5d8c6c", "6c56f05c-dc41-44e5-a147-8292bb43255f",
+                "bf013f22-75fe-4701-a13c-a06b9b2653a9", "59fe17ce-30fc-4c77-a968-b81a23c8cfc0",
+                "b1c60708-91d8-4543-885a-d13986ac2e70", "806b7f4c-3ecc-4394-a6d0-603f3b09f1cc",
+                "538b5c0d-b72d-4e63-8824-a4255059c810", "e83c5bc0-074d-46f2-8970-b4e7733844d3",
+                "9ea86575-94cd-407f-96fe-65669e6dc483", "23ad3bfc-874f-4913-9f43-7f3a3a8d40cc",
+                "dfd73d90-3df3-491c-8e47-9c8406691669", "497c5102-a1ce-4269-b976-d516bd12f2f4",
+                "be47cb32-2980-4202-8d73-d73e2f90e66a", "c4e07b70-bcd8-4e99-b0d2-564cb45da7f3",
+                "5979b23d-c0b8-4048-ae4e-8bf51e6dad69", "15b5bc95-f59b-4b3e-afaa-05fa3c463a8f",
+                "56920f9e-a6d3-4180-a4ed-e828ff1c5df7", "ec8f8b95-f471-4fd0-8bbd-c0caac474b23",
+                "dfca34bc-f656-4018-abcc-d936d37072f1", "aa1c5a6b-72d9-492d-96ce-45f410379d71",
+                "f431fc5e-7df9-436d-a3fa-5dc63ac0a0dd", "b2fc7b4d-6341-42c7-aa5f-0114a48d889d",
+                "ce2e5fac-ce27-4212-bce0-d175b3166593", "2a77a7d1-3e60-4e18-8489-6373e2392100",
+                "f37100a2-c641-42cf-869b-1d66351850d4", "16105a9d-3270-44c6-b926-2e625d363a1f",
+                "4ea3a702-55ef-4773-86b3-37bc8fb53877", "b6831757-07ff-4280-bc0c-7fdf2b5581e8",
+                "7e7ad3b2-666b-4a36-8cad-be7022fbba10", "16c23f7b-3d98-42bd-85cb-eb18bc60636c",
+                "4a1b7c57-c7cc-472c-ab0b-1abe425c4217", "61341fc0-a1d4-4081-8893-2b89fd8ec1ef",
+                "64add819-b4c7-4bf5-817c-d9094eb736ad", "30e773fe-fefb-4675-80a8-edd9ff4aab27",
+                "cf17368d-de76-4de7-8ee0-4ce4e0ab03da", "a890b96b-8df5-4de4-b05c-6a44a0417c6c",
+                "7d02505d-5c90-4e4b-bcf0-3fe67b70947a", "224c753e-90af-43fb-83f7-d3bdb9bdeb90",
+                "ac3ce8f3-6e82-4ab4-ae0f-1969cd55835e", "45bb6eca-a896-422c-92b2-63306d718292",
+                "27486d46-6ecf-4219-ab3c-65d27be1d927", "cdb9d5b0-bcb8-4e83-864f-75578871dbf7",
+                "5b3f8ab6-e1b7-47d0-80ef-93d661319ecb", "aae39579-dec7-4cc9-a083-2783682aff10",
+                "fdf5299d-eae6-4ac3-acd6-09b58ab12739", "dc9d7e3e-444e-47a9-bb13-d38b2fd9fc92",
+                "6f2d10b7-a6ac-417c-93cf-744d3f0c6ccb", "a53945e6-80ab-4895-b0f2-d1818c880978",
+                "45988226-a389-4164-91ab-59da3933fab5", "ea64827c-bf2b-4328-b876-82060fe67b06",
+                "921e1629-5298-416e-a5ad-4a77dfc452ba", "884c7f3c-e6aa-4296-8cde-0bb850fcd051",
+                "1d6e4a57-3157-46ca-976a-95af98133c53", "e900c869-a7bc-4a5a-bed6-af1c9d955c76",
+                "0e53fa6b-c506-4d22-855d-cc6049f2da25", "3387aa66-5106-4e23-9bbc-09a18d077108",
+                "eeb90e96-5279-4ad1-9ee2-0ef77756a698", "c5aa06a9-7c6a-46e5-ba6c-54f85f807b91",
+                "1dd25d28-532e-45c9-9779-bcc5d7a1ee49", "e316c8d9-d180-4f1d-89c3-151b8abec645",
+                "40755e7e-23b5-474b-94f1-64865074876e", "c4c1f48d-914e-442f-af2a-c4dee58294a4",
+                "4d117796-5f8c-4f33-bf9e-731bf3a256a2", "08765a0b-cc72-408e-8fbd-ace005e6e513",
+                "478aaf17-1339-4ec1-a380-4e46490ac2bd", "ad25fd74-3f69-44c8-b6a0-4774ae98ee04",
+                "28f2b61f-702f-4395-ae65-8cd4143ae50e", "d6b6f3ac-302f-4a28-acda-af270ed11ed9",
+                "bbcb3670-3946-47cc-82f9-af3e2b0915b9", "e957c6f3-03c1-4552-b1d2-34845aa7d025",
+                "483783cc-cf3f-4992-8efe-14c73ce39925", "b78f61cf-0657-48d5-8dfe-c7f14bc46000",
+                "fadd8b56-3458-48e4-b8c9-646b7bcf0fc5", "ce69495e-a33a-488c-a1e3-11fb6dd090a8",
+                "dede0d4c-27a6-4460-9041-756482c4629b", "7cefcf26-f3ee-468e-8762-56cabf469456",
+                "60a3b388-0581-4fed-af42-a0ec6860d37d", "595b5d06-e911-48a7-9f19-eb0830a6c1c1",
+                "3bd645f3-6766-4e37-aff9-8970870ccea7", "6007efae-fa0c-453d-b2af-f03716345e22",
+                "f6fcd1dc-b90c-4eaf-8724-aeb8e61c16e7", "87a19914-a978-46da-9619-884765465265",
+                "63a390d1-18f6-42a5-9cc2-44f1b543eff2", "70c27395-1c9f-49b4-ae68-a4108587a2e0",
+                "882d50e8-57a2-4509-be24-9df411d5c978", "c682704f-1cd6-48e3-b9dd-cebcc09f9fc3",
+                "cae691b4-dd3d-40e2-932d-9216ecf65671", "18053efb-7301-466f-bf93-36b2cdb4b48c",
+                "6ece0ffd-cb25-42ff-bdc4-faff6c2b3535", "c4e6f37d-7df4-4bc0-82ec-79e61961d2e9",
+                "39620eef-4365-4ba3-b093-7e710f234b10", "37db0559-45af-4a14-90ac-4e4e02571fde",
+                "91ed84a8-b5dd-4ec0-918f-3ccc05960241", "a3011e4d-56ac-4ef6-8e8c-cced47f8e81c",
+                "04a8f9dc-7f19-4afb-80d3-f047651ace4f", "7eacda01-7f4b-4e52-af6d-261a37ce6b8c",
+                "d0bed205-4c88-4045-a6db-569b3d836e09", "4b0382ff-d9c5-40d7-b601-aaca5be87260",
+                "903ba3af-788e-4ce8-9e71-38ead0598fb4", "cb10e47e-c518-4d2e-b8be-aafca299953b",
+                "bf81f1c6-952c-4fed-9fd9-2ce44d5aad7b", "39420e89-9757-46b2-9793-20c851470dde",
+                "f8cc25f5-ef62-4edd-845e-54a4388df547", "ee371d09-a013-4bb2-a9c8-d6226e758d98",
+                "27da5497-de8e-4f0f-9769-c43f8d274e20", "761b99b2-f960-484b-8bad-6f4ae333bcde",
+                "5a34bd99-0e30-4ed0-8069-255649b84a7a", "900692ad-d3e1-441b-b46b-3dc9658a2366",
+                "71978e72-3083-4bc0-979b-db3f2a8d0a08", "eb0b50e3-472d-4f4b-935a-0c094da17357",
+                "46b14ffe-1311-458a-9f80-b298f956b0dc", "fbe8a07a-beac-41ed-9818-a22a49a9abbd",
+                "fa31a1dc-edc6-480f-90ec-0a377cfa57bc", "1cd0618f-c224-45d1-9881-241fdf8d784b",
+                "904d9346-5b66-4cac-856e-4ec5679aa1f1", "2d81d8bc-8416-4bbe-9230-7471573d7f3c",
+                "932acefa-5635-4f87-95f9-49ebf8898451", "322eb982-2cb6-4b6b-b14a-d1f7615ab3d2",
+                "b2c1834f-f34a-4d23-8e9a-f1ce31cad1a7", "10c6013d-8c37-496e-8808-2b86aa5ed722",
+                "77ad5a2b-b675-460e-baad-230b03203758", "4ea25fcf-2e52-4f56-8926-3fe96c737a97",
+                "80efd184-40d1-48e9-b825-05f7075b4bf2", "53bbff2e-d99e-4133-88eb-a18e24ef5c1d",
+                "f4e2239e-a222-4232-aef0-67977a8a414b", "352835e7-2cfb-45f9-a7a4-8dfd963a7a19",
+                "51d03fb7-589c-4451-b655-4b2252d5c9f4", "8a80b631-f350-41b4-83ed-440282f47869",
+                "14410c81-141d-4e45-83ec-bf871464af0b", "4fff2e04-7577-487d-9f6c-1b80e797faf8",
+                "0427a3e8-032c-4080-89b8-98f64cb95661", "fae60257-4840-41a1-8596-c7e467c15b42",
+                "cbf88a58-22da-42e4-894f-0c2009f6cf7c", "2859c7e8-a796-4a98-b8f5-9dc84a724194",
+                "e779082e-ddda-415c-9db0-a9ccbf28aa80", "42e16112-0a0d-4556-9c1a-bdafaa6f2f3c",
+                "589b1c96-1dd6-423e-b789-eea601604f52", "603aee6e-c6e1-4d22-b448-de144809ef85",
+                "5064b9ef-e726-4c4f-9521-c5b57a54f36f", "2fe271d2-08e6-4dd8-a834-b1bae90b6d27",
+                "caf4a302-989b-47eb-8a26-1bed6ce44ec3", "55ac0944-172e-488f-acb6-bf58642417d8",
+                "1281ee2f-d5c6-41ed-a85a-0ce4cd0ed3dd", "9e967256-5e33-4dd9-be34-e4bd3de65e47",
+                "dc81defc-1d96-41ad-aa69-49799755b919", "e8dc7626-1582-49bb-aeff-21ae225c732b",
+                "8911025f-c97e-4226-9f67-91b65143fee4", "1f117b71-9017-47c8-9c61-79107f5cc9c6",
+                "92bb6da9-33fb-44eb-ab27-ecc9bcab97c3", "78fa4681-1ab6-4503-b53d-dd18b3cd7935",
+                "82cf5857-f8b9-4283-bdb4-c32419ba4f69", "19bd23e5-b33f-4f6e-a1d3-60f30fb81479",
+                "98681b61-de79-4ba9-9bd4-27bda6fc169d", "99e2de3c-8710-4988-a75f-2434a78c1497",
+                "b7cfb7dc-ff4e-4158-940f-d03bf5ae3899", "e621d8a6-d792-448c-ac9c-c7e5cdfc5df4",
+                "28e24834-a4dd-4005-b531-38d37e221981", "02b328e5-ebd3-40f9-b6a7-8801750b97ab",
+                "0f13a197-e577-42f8-bf5b-1208db03f422", "92fc1358-9c20-491a-ae4d-c059c1326cac",
+                "9646efa5-6324-45e1-b20c-78b19a75685d", "cf258718-731c-4afe-8d07-d54d15e25fb0",
+                "ae1e04db-0be4-417c-91e1-72bcd7254f90", "269e21d8-54fd-4a8e-ac8a-2830318aca7f",
+                "059d76be-b201-4e90-81c0-f9e1cecbb6d6", "c1ea04f1-3983-4a9d-9009-ec0c08f747f5",
+                "92baab65-96e7-43db-8486-0c5e9865fedd", "a80ce42e-2478-45ba-ada9-7f8d91242bf6",
+                "2c325111-e278-4368-acd8-317f9d493985", "f51791a2-71f1-414f-8821-445dd71541d7",
+                "0d423d4a-6126-429b-94fb-ce94cff8a568", "1d25838b-ae07-4d6d-a5ab-e4a6f208f09a",
+                "ae4b6d4d-20dc-4cae-b0e0-ef8b7fc3fd77", "5d15bfc9-61cb-4b48-825e-db7873b3342f",
+                "5daf541b-c607-4a61-9dc7-abc82aa40427", "378e4a6f-b91b-4c53-bcdc-b7064243e122",
+                "39e1b200-b2fe-4666-abf4-cc264e7a4bc6", "894eed05-f087-48b8-aac9-5a4a66cf6a8c",
+                "a2203ab6-bcf0-4ced-8494-781893ca58e9", "de11f4b5-5129-4fec-8690-48e468b8eaa5",
+                "51bcd1b4-bf08-4ad3-bd5b-d74634202453", "4173fc4c-cf08-43e9-a584-107ba2721e83",
+                "3a0c7aa0-1815-42fc-9724-119daca80bae", "8270bbd0-a275-478c-a321-a39fa6c3fd7c",
+                "731fcd15-c345-4c3b-a9a5-5159ca3e8384", "4db08184-36be-4afd-9364-0baba6ccf0f8",
+                "dce2402c-3efa-4cb6-b38f-252df5b25588", "5cea241f-a2c0-49a6-b90a-784023a83f2f",
+                "5cdf899d-2df4-4171-9eb0-73dd0f9d7098", "f8b4c00c-2935-48c0-a2b7-fded47543393",
+                "51d54229-aeb8-495a-9b31-1946cbb31c38", "5b21347b-9d58-4032-a95b-e7ebca9fbe92",
+                "abe8799e-5308-400b-b968-076fc89d42ef", "cb26a99a-102b-4dfd-8317-0c747cb17a6c",
+                "6107fe17-9dac-4bd0-8c3a-4c36b08222b6", "2195b52d-ac65-4b61-867f-d3b1bc20fb0f",
+                "903ab27c-dea3-49db-a4f7-d710fe1a8a17", "8cff1728-f88b-4231-8cfb-9f7a0cee452b",
+                "dd30ed95-3cd4-48dd-b77e-086adb03039d", "7a9f89ae-8814-4a9e-b5e1-460153ca58ba",
+                "1d3ef1e0-0a46-4300-90cc-f39f9cdf2305", "e81a6714-e6ac-4a67-a003-50bc097c5d8d",
+                "fb8d2ee6-aec1-48dc-ad62-8bf13c399777", "0b4de74b-4a2d-4ceb-82b2-1d0670766840",
+                "5224da4e-a3cc-4fbf-a446-9e75b52c46c1", "8b451401-d362-4d93-b336-8502b9f9f314",
+                "3f92e506-afb4-4779-8dba-7bd72aa93ce1", "f181c8ee-cb1b-4b05-8c39-9daa88e74041",
+                "d5d78583-ef1c-405e-802d-738d1d77fa75", "1a05fc2c-3b68-44a2-917d-9622b7bc7043",
+                "60b92b98-8c02-4b33-83c2-d9c2eba65040", "bad9f3c0-c417-46e4-a149-ea27e5308e5f",
+                "f2d186e4-2d8e-42ef-98d1-c532d1a667e3", "cb12ff30-954e-426f-acc6-01a54ecbdff3",
+                "dc53e668-ecda-4c86-a442-470592dba71f", "d34f0f36-9005-4418-b8c0-37e34bf814d4",
+                "abc98fed-8ac1-49bf-b1f8-744e6449021b", "9769555d-7e39-47a6-aacc-076624544a0c",
+                "56be3828-208e-4a52-914a-afcdcf46af87", "8a4717c9-9313-4038-b02c-259ee1d6d95b",
+                "285a41a9-6eb4-4ed1-ad2c-70aec57e8b83", "cbf393ec-89a3-499c-ae26-9e1b8614e3cc",
+                "52d592dd-b8c7-4c53-8c24-f80c282eda26", "b264ad6a-0ec4-424f-ab80-46c31db4a10f",
+                "4d586818-7359-452a-a774-9f61b9a3c1d7", "6e10c46d-1526-443a-8359-5e09ea86ad24",
+                "5c22138c-b3af-4cd6-b8f2-16a3a4f360b3", "60cba0bb-5f2b-4065-a26e-8706d10b5f20",
+                "d1c44689-a6af-4a08-963a-7c6c4bf967eb", "ade416bd-c1cd-4e76-8a37-bff608663f7e",
+                "0c413ed8-d9bd-4155-a2a3-b41197ad2774", "403d4661-078c-4317-8387-0a1a9bcc98f8",
+                "fea158a5-1c7d-43cd-9f22-06a87d846f64", "4f73d876-be64-44ca-8dbb-2456566ddb24",
+                "a198f938-357f-43e4-a8c3-c539713314dc", "762b8b72-6ad3-42e0-9812-bb174f21696b",
+                "d11f74e7-a643-4333-820f-bb2c9328a6dc", "935dbddf-80f0-492e-aae0-456dde08709f",
+                "90004291-d1ec-4c21-8621-ec0472300b31", "b177a620-ae8a-48a6-bb44-ee71c9f83514",
+                "7fb8d5dd-32c3-47dd-bcad-1ef334b9e06d", "3b2d7079-10fe-46f1-93d6-743afafb2129",
+                "62608953-ccc5-4849-8cfc-b7151d5b6415", "2fbd130c-507b-4700-9b2d-ec211fb59524",
+                "d212901b-ecd8-4769-86c5-24a9f0e78a78", "b6042a9e-03cb-4679-ac77-7c3e61861460",
+                "628dcc04-2a55-466e-9edb-8c4ed33a66da", "3b34d93b-62fe-460d-80a6-fffcc8c75827",
+                "18cc4ba8-da4d-44f6-930e-a6faadf66726", "53d689c3-cd73-47e9-9e22-5399e8410a7b",
+                "4da8f8df-f9a8-4e11-988f-29d7b6a8ef09", "dfbe162c-c102-4015-a893-8a62f2d37e35",
+                "5c8912ec-3054-4e84-b621-972e1464093d", "e25b57fb-ea6c-42a9-8b97-e4ba997e7700",
+                "f928a573-3090-471b-8b1e-633b4ca7a308", "dcca76d4-6bff-486a-bfdf-bc212781536c",
+                "28df3b84-f06c-434a-9560-02c26bd8eda0", "b466f9f3-6788-41da-9420-271ec6f58564",
+                "05f4e41b-9f85-4df2-9765-8d34d5e2043e", "6257af14-b905-4337-9e62-50c979e7b231",
+                "b0b9b5c9-a2e5-4da0-a945-5a9961e4006b", "0e457ebe-d597-48b6-9d69-e0897d268ece",
+                "71916c53-e2c6-4487-b880-759f44214323", "ea684b8e-d68c-4887-bf16-5f2efd7c064e",
+                "12dc8288-5c12-4772-be88-4730c4df210a", "33db3840-8287-4350-8b67-e6f1a2a07f36",
+                "0b395d44-a9ea-48bb-b1fe-d8f12b362d71", "bdee025d-2f95-4739-b934-d84b48cd5f13",
+                "0a29f8d5-cf40-46ef-a563-1d8a4d80d32d", "83ec26dd-2a7e-4098-99a0-b0b64f2abe89",
+                "872fd860-2396-43b7-aa9e-642b96889b6f", "062084e7-08c1-4198-8070-52b9ffee4818",
+                "8a89c726-e0bd-464e-922f-0c6615f8fdda", "99c16b27-119d-4b8d-ba2a-68efea9fea21",
+                "27d16e58-5b32-4a83-b980-75d902861d4e", "c262e7a0-99af-47da-b91e-e1ffd38b73ce",
+                "b92e18b1-5c3d-42d9-8492-06e7761c1bfb", "25e14a88-7863-4bd2-896e-053e658bb55d",
+                "394a494d-a455-447e-9e05-f766bae44224", "b55c0fc9-3b70-44c5-b597-6ff27d2d0a20",
+                "e1bc47f3-bd4c-4ec9-84b7-3c305d4813f1", "4ef2bdd3-c780-4a58-a598-11bf03072d73",
+                "f7ab6f05-60b0-41ca-aa66-4e3b45a16d4c", "0b7a422f-6140-4fbf-a53a-11465b57971e",
+                "523d9c96-ec46-4fef-ba07-14685f537288", "5db18b9d-b900-4485-9020-3eed544963bd",
+                "a184400e-109c-46da-ae68-95cb1ce88c6a", "066ba903-c3fa-43e9-bead-e242240fdcab",
+                "7db6f076-6631-4adf-8df1-7593c1b8495d", "70e0be5b-1864-4a20-8942-08ffd85ed37e",
+                "313e7c62-728f-4f6d-b63b-dddb7a2476b2", "49ae9db7-d7c3-4ee7-9ade-cf1d4497bdd2",
+                "df828c8c-b367-4e23-a5a6-35434163b4ed", "cddffc9e-b29d-4006-ba76-95aa5a5d3c6f",
+                "6677ad55-34e0-4f4b-9132-50df9ac68fc1", "cd125495-4955-4d5b-8f17-ac84ad6a9e8d",
+                "c15cba42-f3df-4f19-b369-37d70f322ded", "3c36ce46-c6c9-4615-ab7b-b638f991a6d4",
+                "d656e622-602b-450a-91f1-0f402734c1bb", "e9802489-0de9-424a-a863-d46368e31099",
+                "bd0a057e-c9cd-4404-9143-0ade4516db27", "a125d492-8eeb-40f8-834e-03bf4a067623",
+                "0af282d4-793b-413a-8475-ae012a759875", "80c2959f-51b1-40d3-9d12-62ab804faa57",
+                "04bbca58-a645-49fb-9403-4f675419369d", "328473ea-e66c-485a-bcc6-d35efe7e304c",
+                "2b42119d-f245-4e67-999f-ee72495b217f", "a450733a-3f0f-4833-a4dd-01592465cef5",
+                "5229120e-df77-4322-9859-53eaa11e1e7a", "c8011b2d-3479-4cea-a630-7e9d98492cc1",
+                "62a42a20-3d05-4bcd-a4da-03e306e6ce24", "c7f7a580-d1bf-48b7-9db4-f624eef5e54a",
+                "0bb4f75c-44b9-44d8-bf0a-a3fbe76e540d", "7aeed99a-cfc7-45c9-b4da-46080dfd46e4",
+                "c0d20dbc-68a9-4171-96cc-38c3fb732a5f", "bcd6000d-a269-4d89-8b3d-5f138876bf94",
+                "6429630e-af46-403e-a6d5-6bb2cf29c89c", "f3eb668b-120b-4cc5-97eb-ad41cff5f350",
+                "637c5946-2c2d-4500-a128-0a161383f08e", "4162dd66-9170-4725-8bb1-96234a6f0743",
+                "cfc76e06-9a11-4cb4-951f-975e850f3fae", "c9684a08-d3f7-4ac5-8bd6-d1c8c237d5b4",
+                "4064505c-84d6-4cef-8d35-ee1d090357e6", "b52232a2-dc1d-4c86-90dd-84afac9023cc",
+                "c04658dc-b8e8-494c-bb09-7bc2dd47ecfd", "18cce326-1237-457f-89e5-4377e240638d",
+                "4a6cd1f3-adf1-44e3-845a-9374fc61aa8f", "23e3797b-9114-4585-812e-e101eca4c451",
+                "edbbac4a-2b6e-45fd-a038-7e61e9820d0b", "5c66ff95-1260-42eb-8ec2-71cd78f54399",
+                "cc265977-a890-4d3e-ae42-191c5c6fee27", "4a12a0ac-0739-4159-a12d-9c481a0c49c6",
+                "e6b2649e-12c9-4988-8017-2426881f9681", "a2d5556a-4987-4d38-a1cb-044a27941a76",
+                "c5ead40b-c9f2-4134-994a-3dc8fc374d44", "f1b5bc1a-52c0-457a-89ac-eecb81761bc5",
+                "0b641d4c-2d76-45a0-a0d1-d09bb5c5e5ac", "141df018-3644-4428-b977-52600ce56837",
+                "02b8da3c-4732-45db-b132-cfcba6eda89d", "b13a1a31-c9f6-4181-bb24-c05e68f4f557",
+                "263020be-65f0-403a-8676-6c11e419a65e", "e6ffa052-b3c9-4543-a5af-c2a1a2e8d3b4",
+                "644a4066-640a-4f22-be8d-8a72154449dd", "807e38f7-e7dc-4df9-878b-07ac7ea7c50c",
+                "ce71e9e8-6984-447b-8667-bb7756e6ba48", "7cd100c9-7cca-4bd3-b4ef-e2d238077534",
+                "c23ea71d-43a9-4726-8f8a-4bf8b85cd8f7", "54e365fa-6485-46b7-a4f0-c0974f77c74f",
+                "a73a37f9-90b3-4279-9042-fcbd4a1c2ac1", "b60e5ba8-865c-4867-b901-36c177ba4bd2",
+                "059f9afd-409c-496f-9c68-1ab56231e42b", "7a0f5f79-21ca-47c0-b0c9-071e3056fcdd",
+                "ef46e394-d42e-4c9a-bc15-0caea0e1fb64", "813e332d-dd1f-4ff5-b0f9-b939399fce45",
+                "e5804529-d2e2-4702-92eb-64bd8eaea998", "d61b89d5-1308-4bd1-a1d7-74c42d3d3480",
+                "0b255540-2673-4aef-9317-1638bfc2693c", "45496758-1a84-4517-b2d0-297539176c1b",
+                "3e43d7f7-2373-49db-81b2-b0aa040f0886", "27af4086-99fa-4dcd-b58a-f35c2d3e8717",
+                "b3eb16a3-886a-4e58-988f-361f07d8695a", "e0496818-a736-4ea3-acc1-3c968d977158",
+                "994b26aa-c54b-4a3e-9192-6d7f0eeb6283", "62d0e49d-d963-4a46-bcdf-9ad12cfd34a1",
+                "36b16d9f-48c2-472b-af48-d6de183390aa", "1aae36d4-a6ca-4f2c-acc7-0cc84cbff685",
+                "116fc5bf-045c-4079-8507-41258a861995", "ba61b06b-34c7-471f-b5e3-4ed00d06791b",
+                "0daad71f-e485-49df-8473-01bef160966b", "43375311-392d-4a13-affe-430223222fb8",
+                "e80d5f71-256e-43e2-bd08-38e9d3390925", "080efc32-96ad-4e37-9645-9e6976cf4014",
+                "73e47c07-5e09-41e6-a695-67b404917004", "13feb7b2-5788-4e3d-ba9c-c7b37c6f9d0c",
+                "01b7e387-f304-4952-86c3-455c165358ac", "685b286b-fb38-46c2-86b2-6f08126ef077",
+                "136219d0-ad6a-4f3a-b823-f14118aa9bb8", "1a6e4d1d-957a-4b36-b91c-4dbc0e562e81",
+                "1161889a-232e-486e-87fe-fe7a3442c871", "81cef660-4698-4d2d-a717-d29ea7a1ed1d",
+                "acb3f751-d649-4340-9107-47a96dc98643", "4b26b04b-f7a0-4677-9fe2-b26555ddb729",
+                "f7ac0220-990a-43fc-92ce-671a205c5d89", "58f4580d-7ff4-47bc-8926-c92b91169ea1",
+                "700eb347-8f65-45b7-a0e7-728f9492cb00", "61ec7044-c8e7-414b-b8eb-d4cd8d25bad9",
+                "c97d1621-5ffd-4d44-a50e-70f547ab5735", "c3489e81-237a-409f-838f-5bf6c9ddc534",
+                "30b2f5ef-d9e5-4e1b-a30b-022a52da954c", "01f8e01b-6237-4375-9d51-fc505b495c97",
+                "50ef2da9-421a-4384-a133-db6cadb1436b", "5601ca9d-f093-4975-a900-f99c7a9a3bea",
+                "b988281c-4aad-4f19-961f-0095c535ed19", "52f31492-2bfc-4761-bc16-6d8fc966a63e",
+                "622522c8-eee4-42ba-976e-1c1402d84e31", "610365fb-db9e-4364-a69d-b5dfd897c5fe",
+                "5340e9a6-e97e-40eb-b0d7-e18001c06a0e", "d11e72d0-037b-4fd4-85b6-fea600f30257",
+                "b9c3dc4d-4566-4e21-8e97-7c322300c454", "b4103e26-1d15-4a70-b29b-33a13578777e",
+                "ca6ea312-279e-44f6-befa-89556705c6c0", "259a3315-f748-42be-b6cc-c186a2aba804",
+                "d2a41b6b-03e4-40da-8240-8ff64594594a", "0d79604f-40e5-42dc-bfb4-782b57289995",
+                "9b5b5dea-a0bb-483e-b928-43c5b9ad026e", "f4c06134-0398-4761-a0b1-66562a8e353d",
+                "a5a1e42c-89aa-4a7c-9c12-1323b8113df5", "9ac3da7d-fbd8-4d73-92f8-f2c4524fd561",
+                "c510b11c-edde-4c66-aaf5-d7fcfd4021a7", "e706ea54-8a81-4fd1-a765-5f5fae462ff6",
+                "aa70cc8d-a8e7-497f-a695-5f1950179263", "c1e46b95-eb95-4310-b2fc-6a513ea995fe",
+                "05c77de2-cc47-45ef-9642-b9dd75f8b481", "bf9d3c47-a014-4e92-a7ec-0e583a8d3ddf",
+                "ef5a4aea-5ebf-4af9-9109-cd7604e72c23", "122c3cfa-6aad-4ff5-8621-e03097064449",
+                "c7cfcb12-ad25-4350-ba2c-44ee5c8b27db", "f3908d35-6486-4960-bf84-5ab0a0046932",
+                "b9dc19e5-9e27-40c3-b08b-3a4e01102096", "732b5901-212f-409d-b9ce-37a69fdf8084",
+                "1cd9ccd4-417b-4f96-b759-461e2f2b8e2b", "fe1ea10b-6d11-4e8b-86e6-26a7d81edd9d",
+                "1bcc5b39-21fc-4c6b-8aed-f98edbaeb718", "c41e61d8-a1d6-49a0-a19a-aa86be532802",
+                "1e44b49e-11af-460a-bd79-39b0e194c250", "e2cfc811-5ca7-4af7-82cf-6413af37ed59",
+                "2cb5c130-56d1-4a7b-81ee-fed07c9b81bd", "be5ccd72-9319-4c0e-a638-6513ed023bf8",
+                "6bbf00d7-e0a5-40bf-8b73-cf69e406a37a", "decadc53-fdf0-44e3-afb7-29a5f648301c",
+                "5eab55c8-cfe9-4c1d-9c75-2888eae7ea2f", "b763bd90-908c-47a0-8404-ca1cde4f64ac",
+                "bba5695c-c86a-4c12-bce0-4f0da404a334", "3db77323-573c-4181-852d-c438019935a7",
+                "9000f871-f342-4202-839b-ce41157f4524", "716d7c6f-82b3-4ac1-aae2-516d2fe9a77d",
+                "be6ce7ce-2149-4aa9-aef7-f2b053bac30c", "20558677-8cfa-4de9-9928-f0357eda7849",
+                "97097c25-b207-4ff3-a780-e753e2ed8351", "6103a638-edcc-4cef-a3b9-1cca812a974d",
+                "c0d54cab-0020-4923-817f-47e6ff387e98", "5e360485-10be-4010-909f-d9380186edd4",
+                "19a9c8f4-8202-49aa-977a-8fe9e41ec967", "1366d180-33d5-46ab-9d5c-0e8c7c47af77",
+                "b748c923-2dbc-4b9e-bce4-f6f411905b2c", "b5610a69-5cef-42b9-a6d1-fb578f83943f",
+                "b8d8f081-b7e5-4c9f-96d3-5e8bf09ec238", "97b15c07-f5d4-4a64-b3ae-056db212a240",
+                "d6324d09-faa8-4cde-8008-c2736bbc0074", "0de31002-6502-434e-916a-2db68965bd57",
+                "f5a4952a-1e08-420f-a028-d944f2c963e2", "b2956683-d7c4-40ad-b0fd-fced41433b14",
+                "76b02468-4a6d-46c7-8320-32e2c678b443", "cbce2f58-685b-4523-b0d5-26479a60125d",
+                "572148cc-2995-456a-a3ca-326303b8c934", "75b8d1f0-ad00-4d2d-8b24-1aaf9b648037",
+                "9657a079-0f62-45f6-b958-47861d7175dc", "c7a1426f-621c-4b86-be9b-4c1404ddc426",
+                "7e1723a0-6e14-4b30-8683-c01cb6012581", "86d2da7b-0af6-4022-ae5f-e7755f9c75ed",
+                "494f85b2-4537-4dd1-a884-6e2b37fefb73", "af540caa-7a36-46e0-802e-ed9e2311ceb0",
+                "a2a7e1fe-4518-4f16-a907-2708d27f7753", "64417406-aff5-4061-adbc-c10b27ce4b68",
+                "7de6ab8a-d8fe-4a5b-b358-a3afc6b2d3ec", "cab97786-1295-4921-ba30-00ec32f188c9",
+                "b43098bc-e462-4d79-81df-e676cb391a32", "f2ea7860-b02a-46c3-920c-7593b5fd5bea",
+                "ec28a301-4c69-4c39-be2a-af17ef75fb13", "5726c2c5-da14-4326-a736-942add3a0d2f",
+                "936bf19d-fbc8-4058-a5f5-4bf46bc983e2", "43b21474-5937-4573-b01d-60b7c07b51bd",
+                "21cd3360-3cac-46e7-b52f-553dbbe40d07", "19c224fc-0388-485a-8208-0d6202ca09be",
+                "88583604-01cb-4814-8104-6e930a902ae8", "7db40fc1-ae8d-47f7-a85a-45ac98b2ee18",
+                "c75db7aa-42d4-4db5-9f78-d0c5f7b2e5d1", "1db6293e-f7db-429b-b33c-b643bf0a47a0",
+                "312cc07f-5d30-45e8-9bad-bb0ec0ad08d2", "375ebf6e-cca4-4c18-a9e3-a433550de4ea",
+                "9957e375-1be1-4ba0-98f9-27ac3aa37aba", "bc3b7d80-5e19-4811-a821-89aef85d3a42",
+                "47bc5d4c-6c84-4ff4-b6b3-4064b20a2fe0", "140caa5e-f939-4db4-8b8b-f8903b8be3d3",
+                "1a5338b4-72ea-446b-b04d-fedd9f1e97bd", "e6e62059-db6a-4354-a137-0bc5984d6ebe",
+                "668a963a-5c12-4363-aa92-4f2473b30266", "2285ef73-fa6a-43a2-bb1c-1d467b72d371",
+                "c9920e50-f997-4c13-91d9-edd8d9164d70", "a81ac1f2-db36-44bf-ade2-cec7b9eb0b4c",
+                "d4a6b4b8-5161-44a3-baf6-7de87c8cdefd", "c5295fb9-75fc-42e2-927a-a9128e4bae85",
+                "589f84dd-1690-4dfd-89c3-e6c2a05b5ec9", "516bbea8-8033-421e-ae91-19970679ded7",
+                "7ca2542c-3545-4fd4-97c3-7a3dd82399e7", "f9acc9ce-45f4-42fd-b7eb-5cc482a4e75d",
+                "97988bfd-b162-419b-bbf4-3dc6c9ae7607", "529825db-52ec-4320-b6d6-801298f3f0f7",
+                "931243fa-e5ad-4ea6-8626-32d26c74f55b", "c82d2ca2-e7c8-448f-abfb-495ff8d62cdf",
+                "8b5f966c-c8c7-42c1-bae1-cb063e6926e6", "a4262b38-81e8-4380-a40e-a7380e83d583",
+                "23ba0088-a7a8-44f5-9c7b-33cf8923dc4e", "eadaf517-08b6-4899-993a-e26abf1e6cda",
+                "6538a036-a899-455a-ad79-4182dcb3aa37", "4d82f530-2b12-4a21-9896-c7200705aa97",
+                "64ebdab6-9ee4-4b0b-8cd5-5adc5cd41b03", "ae8115c4-871b-4e04-ad25-446690d95215",
+                "a12c6864-fc4d-4ca4-8474-c0f0fa8cc7f0", "d741adfc-1a7f-4a42-8438-b194e9dc9174",
+                "631ff57a-201f-47ea-8657-235c89a1c251", "09d90ab3-d502-45d4-81ca-66f1c0b68d52",
+                "b5a41be4-975a-43ed-acee-5b3c571b53f4", "dd4682e4-50c4-4ad5-af41-a1d812b1a0e6",
+                "e1eb2af0-58f2-4434-a7e0-f2a152149ad2", "4523ab55-0408-4db0-91ce-6a583bf9a4d9",
+                "7c483f56-f828-419c-ab84-a1e22f6b1098", "49c22461-68cb-47e0-a265-7f2a1a6771a6",
+                "269d7294-7f92-461c-a997-f492f1f5492b", "a175ebd9-fc3e-409c-96de-b9233c18363a",
+                "2aa3f75e-e950-48d6-b158-32a7dde37ccd", "d1232d44-863b-40f4-9de0-9b6dac4fdb88",
+                "cab611b5-38c3-47a1-beb1-d9891635aa4a", "3b5921f2-27b7-42b1-b7ca-9688744c92d6",
+                "f6615f6d-40e7-4450-9590-f967eefaa0fb", "85efa667-6d1c-4ec0-b0c1-ae7806f60b15",
+                "9cc06d8e-3743-40dc-b896-429b29154bf6", "1fdcb274-dd41-49c1-b7c5-a15eb0bdfd78",
+                "4768ac3d-c8bc-4541-84fe-787f4cc854a1", "f2f3bb09-fa3d-455b-a893-1604eb584eb3",
+                "c29d7f11-ad43-4eb3-9c11-87baca4ac7ff", "d8f4fae9-ae9f-4cc0-b0b4-45681ea2fb0b",
+                "f13c3aeb-b471-425b-ad5e-5455a903267f", "e2a729e9-23c7-4f09-8f41-24859a2ea645",
+                "858d9c04-c0dc-4e6d-a900-4fa8d329208a", "1a86527a-9b06-47ee-bd85-5397531c5148",
+                "ad42abfb-6819-4f5f-97c0-7366530bd155", "65f44dbd-f2c2-481b-a487-46cb667b80ce",
+                "a5114590-7588-4d5a-9286-227f814e96f3", "00311916-8259-4edd-9946-57f27b015aa0",
+                "25d82a83-4893-4f0f-b103-babdd48e7999", "dfbcc83d-ab3b-4f82-88d3-e6b9dbe7ec45",
+                "37de2fa4-3b74-4566-87c9-ec84216db8b3", "e578cf80-720c-41ef-ac2a-c281256b4a67",
+                "e8727e93-99c5-4aad-b7f1-66e7dd58d0ae", "a0e7c309-eb5c-48d0-a1e3-d41bb8b7a9ec",
+                "cfeaba18-29df-47ec-b420-36ff3b0db657", "5cd9d7d7-aca7-4ed7-92ea-7e2514347fc9",
+                "d973d0a3-7379-4170-a8ad-a672276224f3", "49872cf9-5335-4150-a3f5-8ab698b81564",
+                "161c82af-c701-48d4-953d-bde5423b3950", "07f8878b-8278-48d4-8e6d-65962c253e2f",
+                "6b39ad13-acab-4e18-925c-81c8c9dc2881", "bd6b527e-7b16-4388-96fb-3601157e7a6f",
+                "10a9bb18-cabb-454e-bbba-2941e74c16c7", "37fc2842-52b7-429b-ab4c-038270a908e3",
+                "c1a465d0-d021-4b26-9a01-2c831e178852", "a9a152ef-8c26-4098-bbad-6931b59b6b4c",
+                "3ee9f329-6df1-4931-8b5a-a828cde23afc", "51fa1759-c61e-4e28-8046-0d5c8d24241a",
+                "5a272a38-0f77-41a5-838f-5fab27e4a2f5", "957c5152-4a00-4db2-87fb-c2e9c32f1a42",
+                "466b0611-c2ec-4845-a8b2-c097f8c18677", "055e9fb5-c33c-432f-886c-c8823b11e599",
+                "2336be9e-23b4-41e7-8a54-a128738a0495", "1e9a253a-2b6d-40b1-9068-140cf6cfe7f0",
+                "ba9f5441-52c6-4545-b882-6fda1837be6f", "1c3dfb10-e8e2-476a-9c4c-5a33b79a3d87",
+                "747ed544-f9e8-41b0-bfa7-348838b688c0", "81ddf560-c981-40aa-b350-dbf2cf50fa18",
+                "cd31dcdd-b72e-462e-a37b-885e282a0d38", "502ff609-e0a8-4a33-9041-9c2c15f81c3a",
+                "7fcb904a-8a51-418c-9d1d-877276fad749", "6643ee1e-63fa-484a-8b2d-201af241263f",
+                "fd466c2c-5163-45e8-a87e-258f9d2753fd", "7da2f7ab-5690-40b7-a3a4-26091e2b4910",
+                "5e8f89d7-c66b-44e4-ad7d-ed55e57f75db", "0c131fe2-b8ef-4611-909a-3efa8bf5f923",
+                "05616818-dbf5-4585-a1f3-e6dca6d75722", "e7475884-3b3b-4f47-80aa-bee549fd50b3",
+                "f7a790cf-985a-4722-98c9-3e29387d4e95", "8b21adfb-ca11-47de-9b63-2aa3a93b9a9d",
+                "928ea102-92b8-4f44-8f12-f0fce10a7bfe", "25ba9eff-3de7-4086-bfd9-0745dd917225",
+                "92f83034-c65f-4a8a-a1b5-586a90183a55", "e04ae12c-1b2e-47a8-987f-1eaf28be7116",
+                "686fb3f5-e7bb-4e42-b180-ec675480f043", "d1ce1ce4-1f3b-4de5-8d0f-f8a0100efcc0",
+                "d21c2d46-d0e1-46a2-9ced-b6e0faaaa323", "7d4e16ca-4199-4f09-965d-7e51e77aa2dc",
+                "4a698b14-351a-4a92-b70c-bed9f52c3abd", "412d2486-7e81-4778-829e-fac09ca37640",
+                "cb442304-c528-4a26-991b-adf74e2641d9", "b0b455f0-c063-44e7-989b-a32495a3ae71",
+                "ab6d74e8-ba1c-4355-bb6a-68cb8285b920", "8e351ece-7a80-4cc2-b5a0-e0c757572e14",
+                "49921099-e6df-4e5b-9f6c-0ff9224a090b", "5764beae-1b0b-4548-b7c8-e6050f144812",
+                "454ed39c-7bd0-4df6-9ddc-c39926c5f14a", "440a5b0b-430c-49ff-8988-469b0b219d68",
+                "25abac8f-f049-44bd-a911-3715488b9315", "300f6cf0-a7d6-4815-b2e9-97bb34f49880",
+                "e3de95d7-9ce8-46e4-bdac-7295c42f7274", "34fe1191-e90b-419d-b4ae-e1d64060f641",
+                "1e9511e8-715d-4d84-ad54-4fd3da804fbe", "759fc731-e3b6-4bed-913b-8ef7a2c9fa9b",
+                "5617629b-8ff3-4683-9851-966333e52884", "762800f4-6d0c-4c2f-ac90-f78121745fdf",
+                "21710663-fac9-416d-a747-4c72b967b5ed", "781a1b1c-9b6c-46c4-a9c8-712de9e4a3c0",
+                "dd54199d-4a72-4e66-93ef-2e9eebc29540", "1be72be8-ce77-4cff-b02a-8e10dba16ed2",
+                "b95148bb-1f4b-47a6-8c62-d33f2667a5d2", "5db04389-4d3f-4ae0-9639-7466883efdcf",
+                "2f07a0df-0e4e-49e2-8429-c6b9b4955a14", "57de906a-8f68-49f2-b700-7e10c2842b8e",
+                "8206420c-dec1-4cc6-a310-96e387891f14", "ceb7203b-a9a1-4bd3-b289-a5daf6073e1e",
+                "3d8c83df-2872-4313-804d-986335811c63", "c3688490-fd2f-48ff-acbc-61b404052256",
+                "c9e5f6f2-a2ff-4be1-a9de-9e5b81aab102", "97c763ea-e643-40bc-8fb9-a8f031d4bb48",
+                "d2408741-571e-448e-b7a7-fe4e1d06d10f", "5f0e75b7-cc78-4ae5-8cf2-6cc433ca8a72",
+                "7a8a1c21-4fa7-4173-85fb-649eeaba2448", "3b478905-0144-48c5-ba65-4e7a5583e79a",
+                "19fc6900-1d92-4844-8dfd-866ae6480b5f", "c00da264-699a-452e-844c-0a70f87e8e66",
+                "41afedad-b124-4651-a420-998d699c4849", "21434c54-0f2a-46de-a2bb-ae893164b486",
+                "83e75aed-67cd-4f6e-b5a0-6f52e5fac4c4", "d5e928e4-ee41-426e-b4ce-dce04935262f",
+                "bd5c6d2f-7a93-41fd-b689-752f5f8f08d4", "df7ef89b-ff15-4b7b-94a5-2690ee421003",
+                "0c3be34f-b0e6-434b-b5eb-7765242c7178", "af05e4f7-6b12-4c3e-8f8e-d8fdb95ea3a2",
+                "eee7d417-b096-4fd5-9701-7324379141f7", "d0392f56-7a36-4177-ae74-528705933136",
+                "a007be75-ec9b-4b46-bc37-8d49c77b8309", "84dc5b80-b635-4859-b961-32d1ca325374",
+                "ff9d2457-9927-4b47-9ba0-9ac2b6e45edb", "a036f953-e620-4bd9-9f4e-2b9ebc8f4888",
+                "1153c02e-e92c-466a-bb39-ae7c478ae638", "ce3a39d8-d3d6-4a8b-b843-f2322c61e039",
+                "81669855-2926-4b49-ae8f-efac831a39bf", "14c6486d-bae1-4208-a76f-451dc8c92e64",
+                "33956734-3702-4743-b660-77e7524ada36", "6cc68517-5a7a-46f4-879a-614197befd1d",
+                "13aed535-d761-486d-876c-224f7405ece1", "71d7d3f1-92f8-484d-8af6-c1b780e6f4ef",
+                "ccea86f7-67d9-4366-927c-41eb52aafe27", "bb240c68-4c83-4180-9cab-1c34e9c9160d",
+                "2109314a-8c6c-40ba-a031-6124c80a4068", "289197d5-b585-4a9c-8c02-9dd21442c19d",
+                "71004df5-1cbe-4658-b8a7-443d21fe417f", "dbaa2cf0-0718-437b-aa2c-9e798dee2bdd",
+                "0ff2f8c0-c04b-47f0-95be-32e75d119def", "adb6a958-0290-4d06-a3b1-723a4d0026ab",
+                "035c0f65-176a-4da8-96a1-c0ce80115230", "685ca10e-daa6-4ca4-965e-569ef6170986",
+                "300191bd-fe5d-4a55-90ef-2e454ef1137d", "3dd32350-0f48-418e-a569-c712040f0999",
+                "4bda28cc-63be-4cf0-b3ec-4164f29416c8", "d766313d-25be-45a3-ad6a-f514a4fae4cc",
+                "a6c476a5-9477-498f-b74b-e6cb09a68cd8", "71892322-e16a-479b-8a99-acfaf641c7dd",
+                "a077a695-6efd-4aa8-8952-ad99ab7399d0", "ce91ecfd-65ee-40e7-955d-4bb602714df3",
+                "e6dcf0bd-782a-4345-9d3c-2b875e658b7a", "1464a85b-1989-4b5a-8dec-cf4c1931a4dd",
+                "ff499b9f-b16e-4c6f-b346-8c6ce93c427c", "a9dfdbc1-bc4b-4319-b59b-2662e9089064",
+                "3a468cb2-17e7-483d-ad09-af69d1fdee06", "71ae6e0d-39ac-4047-85cc-c8a1662bc754",
+                "8b7679e5-d0c6-42ee-a267-0b10097858ed", "ee061a84-67ba-45c5-8fcf-03a97248a97f",
+                "2e79e01e-e332-4bdc-a86d-15d04ec24987", "e8e0e076-6f71-4e3e-803e-39f5ddac47f4",
+                "7fdff979-5acf-45ec-a867-c0fd12d6d87e", "1bbf73a2-eccc-4216-b65c-32e25c472374",
+                "1a6400ed-7320-4d43-8622-f663ee5a800f", "d01d4c77-35be-4a90-90b2-161063479975",
+                "0e8653ca-513f-4df3-87ae-5c4590e6bc18", "ffa3c00e-ee0c-4312-8284-10d5aba14d30",
+                "8519678e-3db7-46fa-aefd-6cc4fccce843", "cfe49d0c-d6c8-4557-87de-953a3aa6a13f",
+                "4eaf5efd-4518-4b15-94ef-b9e8025bfa16", "6d9ff24e-2189-45e5-92b3-07ea2697b64d",
+                "84a6f59f-f1e7-40b7-af66-74afe0e9c22e", "a6f62152-7bb7-4e6d-b8bc-f9e6c3d010f0",
+                "eb18f499-d5d4-430e-8207-0e1b9af44a60", "dfa223c2-0c68-4dee-a050-846f5971e830",
+                "ef95b85f-cf1c-4ab9-a912-18526d4964f4", "1773e4cd-2925-4ffa-9614-45edd4002358",
+                "fc757f3c-533e-4efa-bd4a-2236d4920b32", "b4a28970-2106-470e-a6cc-953c30508c0b",
+                "b34f9618-f578-4593-8cbd-e71d4d2f3720", "711d7e54-108d-472e-be4e-2717ab3a7921",
+                "8b1a793c-755f-46b3-96a9-a062923998b7", "593d1662-9325-4966-8391-b250367a7051",
+                "6dac21b7-eb76-4a3d-a9e6-6aa5e37e3d2a", "d3c45eb8-bc4f-41ba-9f5b-b3f50b65d28f",
+                "69f7400e-bcb6-4693-9000-9758f27dc517", "8e6dc282-8949-4b5d-b971-8b58316b0390",
+                "513c5552-8128-40bb-8537-e8eb49396c91", "94720fbb-d682-41ed-8269-f8178220fb66",
+                "c9f16f1a-ccc6-4dca-8eab-629088fc0bc8", "06c3ba5c-b821-43e0-9bb0-08b480e8252a",
+                "cbe02847-246d-47fe-aebc-3a90e75998e2", "fe5a77ad-d38e-41e6-876c-ddaa4aa8392e",
+                "ca402827-1f4d-44be-a62c-b202b8a16f91", "31e15e85-0f83-4d60-9700-087828b4d6d3",
+                "3836a3dd-d7ab-4c89-82cd-9356706ffc56", "2798122a-4f99-47b6-ac0c-948be345838a",
+                "4e1d703f-152a-471c-ae73-59f1c06b871d", "266a873e-ae2c-442d-b7fb-bd601e4d775e",
+                "7809eb7c-7a11-4a21-8c16-3be03b89f240", "168b57cc-a25d-44b4-bcbc-9607b05e6937",
+                "3523d8a6-e66c-4f69-a0db-aebaed1a3bc4", "ac945777-c3cb-4cff-92ab-0bbcf771d062",
+                "bf81c240-3b34-4f97-bf32-a2e4f417ecba", "7c8dc577-3406-4b0c-8483-1cbdbf9c9625",
+                "912f4b0e-3f70-4227-b17d-eb5dcf80be68", "ef3a59a4-57ce-4c6b-b544-bbfb352d3012",
+                "a0f5f63c-ce74-4712-aea1-76580205ec84", "1568f381-265a-4eff-9479-68663afa7673",
+                "65625578-2f92-4183-90f4-714fcf24eff7", "467edb98-c204-4177-8d70-c0cce793d595",
+                "7f30c45b-5279-42dd-a520-1820349654f5", "fdc3522b-3c32-4b8c-a8f4-7fb2dfa35aff",
+                "9537b0d2-3cd5-47a9-9f66-287b479719e0", "511cf844-4b78-4980-8f44-b0d0ecec3a85",
+                "f11d81e9-be49-4ebc-b755-7a97a6fb72b7", "b1c2d95e-36da-45d9-87ce-b39293f2f7b7",
+                "54ebe7d5-a964-495b-83cb-2723380816ac", "91e778e1-1623-4a6f-8fb4-91540d2aaa9c",
+                "975ff4ed-0210-4dfb-9886-c4175a3d8a87", "2fac43bc-cbd0-4a06-a5a3-987394520087",
+                "0b483333-0584-4207-9e40-fd6e5e327e4e", "b38370f3-c1b9-4cf9-9d0f-137dbc0f4982",
+                "78b9c0e1-cd53-4fa3-9575-7c6401b868f5", "6249fd6c-f4a7-48dc-b9cd-1dc714cee388",
+                "2c203db4-95d2-4409-9ae6-4428b90b3daf", "a52a38a8-96c0-44e4-a338-371ce369457f",
+                "2d50cabc-40b0-4f06-bd1f-d51309cda2dc", "8445e89b-43e7-48b7-b697-31857db20a8f",
+                "d0ab6bcf-d92c-44dd-bf1e-b13270f5a7d7", "b349724e-364e-4f88-ba84-9ab4f236e97e",
+                "8c0f61ff-b0b9-4787-868d-483b1e1f0b41", "4d30ff89-6950-4c6b-b6fa-155e01da628e",
+                "660085f0-807d-435a-b2ac-a7c9c4ce10be", "50389ea5-81f9-4d90-ad5e-84d3e5d8b13b",
+                "358fed58-6a1d-4941-8e84-71fa8a44a28d", "af59bab9-35d2-42b4-bc5c-7643b100a2b5",
+                "91123430-c248-4b39-b56f-de93dc408bd0", "6fedf572-625a-4796-9bc7-8106433969c8",
+                "fd951ece-38be-4a6b-80ac-30e136c0e26d", "ef41278f-a75f-4aef-8493-1dc635d6bbf0",
+                "fcad8811-963b-4279-9e43-68a07d8d8276", "a85f4ac7-bfcb-476f-849d-8e0849fd07a2",
+                "21611198-6ead-4d26-ade3-4df87edbd31e", "8a5f998c-5d2b-4027-961a-f36e614c67ce",
+                "3f0a22c0-f474-4d7d-b7b9-b7d2e6921166", "e16b8110-45b1-4601-9fd8-e8d8142d83b4",
+                "b77a5467-0d21-4b60-9fc4-6b6e16bc0192", "40a234e0-84fd-44cf-90d8-9f0fb62e8a40",
+                "9328f90b-8853-48ba-b976-93390ace9b16", "d3258e0b-25a8-4d9e-bfc0-6773d7552cfa",
+                "1606ab0d-065d-4456-ba26-9460dca00bab", "1469d447-adb9-47c9-a918-34a030251fae",
+                "80b3054e-44a0-4fad-a183-a482e37b5ddf", "f83c408a-e52e-468a-991d-93d1274f125b",
+                "9e9fd964-6714-4048-826c-eee82cad71ba", "3786826d-8809-41d1-a4d2-034ef9327064",
+                "f56faace-9249-4ab7-b86f-b47586d8855e", "de1ce6af-b7e6-408a-a9a0-e08d58d1e272",
+                "c1e19ff6-d025-4907-9fe6-c0fdef43336f", "1b3866c7-b71e-4140-842d-6443bc12b6ff",
+                "6e4ee133-e1ae-4abe-829e-5f11d0894043", "cd40443f-6689-4128-93f0-5b7a5d033bed",
+                "3346c71b-5135-40c7-9ada-402820e02fac", "eb18f499-d5d4-430e-8207-0e1b9af44a60",
+                "f1d86bda-98ab-4a82-adc3-d2fd38ae7ee3", "0290a58f-8760-4a21-9774-5c07db1d8b1e",
+                "5decb9d7-6075-430a-aaf7-2c3542b43aef", "055f81c6-2a90-482e-8110-75a3078e50ca",
+                "20b29286-2aca-49a5-82fe-e77f753c4c1a", "36e51b9c-c3f1-4138-bd66-26d3c283bdad",
+                "fd943ac8-0f78-4f65-89dc-85302e455690", "90dad823-b345-42fa-894a-408d18bb5060",
+                "2d43dcd2-aea9-4e7b-8f67-8a8c09adb6f3", "63e74df5-4023-451c-8142-f15d78ab2c5e",
+                "39ffa91e-04cf-460b-977c-9b38b3f86257", "41254baf-4430-4911-a38c-7b6e6a819353",
+                "42f7c23b-1d91-40ff-87de-110912a29e49", "610c7fc5-f364-473b-a910-2cce2730385c",
+                "2636122a-b88e-46b2-b72c-b71dce2ee83e", "333ad94c-8665-44d7-8c3d-c1a92b82c7ae",
+                "5fe41ce5-4cca-4a96-9b16-755f4fc5a96f", "6eb8ea7a-d034-4ef5-ad32-613efc5c99e3",
+                "6625438a-d6d1-4225-b5a3-281698bf68bd", "453e0e27-bbc7-4cc1-ab15-a02e56383321",
+                "86d5d439-5193-4c0b-9f33-abf3b29eab68", "b52c4bae-02ac-418b-abab-8eb23f6cfe40",
+                "3d399cac-0881-4ad2-abb4-ae52d9cfd4b7", "7734005e-0ce3-42bb-ba10-c3c4bc8711fd",
+                "6e459260-70ef-4c2d-bf84-e1e2df4bd20a", "8a9f49c3-99eb-49c0-a4d4-1e8ee61d66be",
+                "cc1491d6-66eb-4609-87db-cf758f6d5704", "a1fd9668-ef7e-4834-b5b2-8af04c7c5d74",
+                "570a2f5a-d08e-4b91-be4f-278127ee2b88", "4701e81e-313e-44c4-95e2-e3806837672d",
+                "da962586-efce-449d-8c52-d310bf00114f", "ee79acf9-f911-4236-bc4e-d8483b537f15",
+                "203f12a4-f210-424b-b6e4-8ba27a2319ca", "e62e41c5-67eb-4148-b814-76554c3dbda0",
+                "ed7e2dfd-76c3-43aa-a23e-69f1739cf7f4", "8efe80e5-08ea-4dfd-9eb2-c48cbd3e2bbe",
+                "330ab5bd-7d3c-4cb6-9f59-ed970dce06a9", "1c6c70ac-42a8-46a3-abab-3b930abce505",
+                "b8d9f62e-1f43-4d85-89ef-da5992339040", "e60f875e-2604-4d8a-87aa-245093805628",
+                "4ebc23ae-0d46-4dc7-a458-157be835bb90", "f775c78e-df8b-4465-b3fd-12027f465dad",
+                "6961390e-ccda-46e6-86e2-232a9c213b1f", "272bdf96-4255-4bff-bddf-2c4b430b37ed",
+                "d0d0ca46-5b91-4b75-b541-6370844f0f75", "df02a07e-9621-4bc0-8c67-885c6ec28c1f"
+            ];
+
+            ShowLoadingImage();
+
+            dt = $('#book_table').DataTable({
+                stripeClasses: [],
+                responsive: true,
+                searching: true,
+                pageLength: 15,
+                pagingType: "simple_numbers",
+                serverSide: true,
+                ajax: {
+                    url: "ashx/GetBookPage.ashx",
+                    data: function (d) {
+                        d.BOOK_NAME = BOOK_NAME;
+                        d.BOOK_ISBN = BOOK_ISBN;
+                        d.CATEGORY_SEARCH_ID = CATEGORY_SEARCH_ID;
+                        d.srMin = search_min;
+                        d.srMax = search_max;
+                        d.SortColumn = SortColumn;
+                        d.SortOrder = sort;
+                        d.ShowEBookOnly = ShowEBookOnly;
+                        d.BOOK_LANG = $("#USER_LANG").val();
+                        d.BOOKLIST_SEARCH_DOMAIN_IDX = $('.recommendedBook-search__btn-recommend')
+                            .data('domain');
+                        d.USER_SCHOOL_ID = $('#USER_SCHOOL_ID').val();
+                        d.USER_GROUP_SN = $('#USER_GROUP_SN').val();
+                        d.tsn = '';
+                        d.teacherBorrowFlag = ''; // for hyread online library
+                        d.teacherAcct = ''; // for hyread online library
+                        d.contest_sn = -1;
+                    }
+                },
+                columnDefs: [{
+                        "targets": 0,
+                        orderable: false
+                    },
+                    {
+                        "targets": 1,
+                        orderable: false
+                    },
+                    {
+                        "targets": 2,
+                        orderable: false
+                    },
+                    {
+                        "targets": 3,
+                        orderable: false
+                    },
+                    {
+                        "targets": 4,
+                        orderable: false,
+                        "createdCell": function (td) {
+                            td.setAttribute('data-th', lang.RB_BookDifficulty)
+                        }
+                    }, //圖書難度
+                    {
+                        "targets": 5,
+                        orderable: false,
+                        "createdCell": function (td) {
+                            td.setAttribute('data-th', lang.RB_Category)
+                        }
+                    }, //分類
+                    {
+                        "targets": 6,
+                        orderable: false,
+                        "createdCell": function (td) {
+                            td.setAttribute('data-th', lang.RB_QuestionCategory)
+                        }
+                    }, //題本類別
+                    {
+                        "targets": 7,
+                        orderable: false
+                    },
+                    {
+                        "targets": 8,
+                        orderable: false
+                    },
+                    {
+                        "targets": 9,
+                        orderable: false
+                    }
+                ],
+                columns: [{
+                    "data": "BOOK_ID",
+                    "className": "book-id",
+                    "render": function (data, type, row, meta) {
+                        return data;
+                    }
+                }, {
+                    "data": "BOOK_IS_GOOD",
+                    "className": "book-good",
+                    "render": function (data, type, row, meta) {
+                        if (data) {
+                            return "<img src='../Content/images/recommendedBook/goodBook.png' width='66' height='65'>";
+                        } else {
+                            return "";
+                        }
+                    }
+                }, {
+                    "data": {},
+                    "className": "book-front",
+                    "render": function (data, type, row, meta) {
+                        if (data.BOOK_HYREAD_EBOOK_FLAG || data.BOOK_UDN_EBOOK_FLAG || data
+                            .BOOK_APABI_EBOOK_FLAG || data.BOOK_EBOOK_URL != null) {
+                            return "<a href='#' def='" + data.BOOK_ID +
+                                "' data-ebook='1' class='hover-effect-dark book_cover'><img src='" +
+                                data.IMG_URL + "' ></a>";
+                        } else {
+                            return "<a href='#' def='" + data.BOOK_ID +
+                                "' data-ebook='0' class='hover-effect-dark book_cover'><img src='" +
+                                data.IMG_URL + "' ></a>";
+                        }
+                    }
+                }, {
+                    "data": "BOOK_NAME",
+                    "className": "book-name",
+                    "render": function (data, type, row, meta) {
+                        return GetSimpleBookName(data);
+                    }
+                }, {
+                    "data": "BOOK_SCORE_CONVERTED",
+                    "className": "book-SR",
+                    "render": function (data, type, row, meta) {
+                        return "SR " + data;
+                    }
+                }, {
+                    "data": "SID_NAME",
+                    "className": "book-sort",
+                    "render": function (data, type, row, meta) {
+                        return data;
+                    }
+                }, {
+                    "data": "ASSESSMENT_TYPE",
+                    "className": "book-topic",
+                    "render": function (data, type, row, meta) {
+                        switch (data) {
+                            case "1":
+                                return lang.RB_SummaryQuestions; //摘要題
+                                break;
+
+                            case "2":
+                                return lang.RB_MultipleChoiceQuestions; //選擇題
+                                break;
+
+                            default:
+                                return lang.RB_SummaryQuestions; //摘要題
+                                break;
+                        }
+                    }
+                }, {
+                    "data": {},
+                    "className": "book-ebook",
+                    "render": function (data, type, row, meta) {
+                        if (data.BOOK_HYREAD_EBOOK_FLAG || data.BOOK_UDN_EBOOK_FLAG || data
+                            .BOOK_APABI_EBOOK_FLAG || data.BOOK_EBOOK_URL != null) {
+                            return "<img src='../Content/images/recommendedBook/icon-ebook.png' width='18' height='18'>&nbsp;" +
+                                lang.RB_EBook; //電子書
+                        } else {
+                            return "<img src='../Content/images/recommendedBook/icon-ebook-gray.png' width='18' height='18'>&nbsp;" +
+                                lang.RB_EBook; //電子書
+                        }
+                    }
+                }, {
+                    "data": {},
+                    "className": "book-addRP",
+                    "render": function (data, type, row, meta) {
+                        if ($('#Auth_RP').val() == "True") {
+                            if (data.BOOK_USER_IS_SELECTED) {
+                                return "<button class='btn recommendedBook-table__btn-addRP' def='' style='background-color:#43a047;color:#fff;' disabled='disabled' type='button'>" +
+                                    lang.RB_AddToReadingPlan + "</button>"; //加入閱讀計畫
+                            } else {
+                                return "<button class='btn recommendedBook-table__btn-addRP' def='" +
+                                    data.BOOK_ID + "' type='button'>" + lang
+                                    .RB_AddToReadingPlan + "</button>"; //加入閱讀計畫
+                            }
+                        } else {
+                            return "";
+                        }
+                    }
+                }, {
+                    "data": "BOOK_ID",
+                    "className": "book-bookplanet",
+                    "render": function (data, type, row, meta) {
+                        if (data) {
+                            if (host != "contest.smartreading.net") {
+                                if (bookplanet.indexOf(data) != -1) {
+                                    return "<img src='../Content/images/recommendedBook/borrowLink/bookplanet.png'>";
+                                } else {
+                                    return "";
+                                }
+                            } else {
+                                return "";
+                            }
+                        } else {
+                            return "";
+                        }
+                    }
+                }],
+                dom: '<"leveledBooks-table__header clearfix"B<"pull-right"ip>>' +
+                    'r' +
+                    '<""<""t>>' +
+                    '<"leveledBooks-table__footer clearfix"pi>',
+                buttons: [{
+                        text: lang.RB_BookDifficulty +
+                            '&nbsp;<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>',
+                        attr: {
+                            id: 'sort_SR',
+                            class: 'dt-button asc'
+                        },
+                        action: function () {
+
+                            if ($('#sort_SR').hasClass('asc')) { //原本asc↑，變desc↓
+                                sort = "DESC";
+                                $('#sort_SR').removeClass('active asc desc').addClass(
+                                    'active desc').siblings('.dt-button').removeClass(
+                                    'active asc desc');
+                                $('#sort_SR').find('.glyphicon').removeClass(
+                                    'glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+                            } else { //原本null or desc↓變asc↑
+                                sort = "ASC";
+                                $('#sort_SR').removeClass('active asc desc').addClass(
+                                    'active asc').siblings('.dt-button').removeClass(
+                                    'active asc desc');
+                                $('#sort_SR').find('.glyphicon').removeClass(
+                                    'glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+                            } //if there has "SR 1000", that will need to debug......
+
+                            //關閉優選好書勾選
+                            if ($('#sort_good').find('input[type="checkbox"]').prop(
+                                    "checked")) {
+                                $('#sort_good').find('input[type="checkbox"]').removeAttr(
+                                    'checked');
+                                SortColumn = "BOOK_SCORE_CONVERTED";
+                            }
+
+                            dt.ajax.reload();
+                        }
+                    },
+                    {
+                        text: '<img src="../Content/images/recommendedBook/icon-goodBook.png" width="18" height="18">&nbsp;' +
+                            lang.RB_PreferredBooksFirst +
+                            '&nbsp;<div class="checkbox checkbox-inline icheck-success-white"><input type="checkbox" idgoodBook="" /><label for="goodBook"></label></div>',
+                        attr: {
+                            id: 'sort_good',
+                            class: 'dt-button dt-button-checkbox'
+                        },
+                        action: function () {
+                            if ($('#sort_good').find('input[type="checkbox"]').prop(
+                                    "checked")) {
+                                $('#sort_good').find('input[type="checkbox"]').removeAttr(
+                                    'checked');
+                                SortColumn = "BOOK_SCORE_CONVERTED";
+                            } else {
+                                $('#sort_good').find('input[type="checkbox"]').attr('checked',
+                                    'checked');
+                                SortColumn = "BOOK_IS_GOOD";
+                                $('#sort_SR').removeClass('active');
+                            }
+
+                            dt.ajax.reload();
+                        }
+                    },
+                    {
+                        text: '<img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18">&nbsp;' +
+                            lang.RB_EBook +
+                            '&nbsp;<div class="checkbox checkbox-inline icheck-success-white"><input type="checkbox" id=ebook"" /><label for="ebook"></label></div>',
+                        attr: {
+                            id: 'sort_ebook',
+                            class: 'dt-button dt-button-checkbox'
+                        },
+                        action: function () {
+                            if ($('#sort_ebook').find('input[type="checkbox"]').prop(
+                                    "checked")) {
+                                $('#sort_ebook').find('input[type="checkbox"]').removeAttr(
+                                    'checked');
+                                ShowEBookOnly = false;
+                            } else {
+                                $('#sort_ebook').find('input[type="checkbox"]').attr('checked',
+                                    'checked');
+                                ShowEBookOnly = true;
+                            } //if there has "SR 1000", that will need to debug......
+
+                            dt.ajax.reload();
+                        }
+                    },
+
+                ],
+                language: {
+                    "processing": "處理中...",
+                    "loadingRecords": "載入中...",
+                    "lengthMenu": "顯示 _MENU_ 項結果",
+                    "zeroRecords": "沒有符合的結果",
+                    "info": "<span class='footer-hide'>共&nbsp;_TOTAL_&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;_PAGE_&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;_PAGES_&nbsp;<span class='header-hide'>頁</span>",
+                    "infoEmpty": "<span class='footer-hide'>共&nbsp;0&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;</span><span class='header-hide footer-hide'>第</span><strong>&nbsp;0&nbsp;</strong><span class='header-hide footer-hide'>頁</span><span class='footer-hide'>&nbsp;/&nbsp;</span><span class='header-hide'>共</span>&nbsp;0&nbsp;<span class='header-hide'>頁</span>",
+                    "infoFiltered": "(從 _MAX_ 本書中篩選的結果)",
+                    "infoPostFix": "",
+                    "search": "搜尋：",
+                    "paginate": {
+                        "first": "第一頁",
+                        "previous": "<i class='fa fa-angle-left' aria-hidden='true'></i><span>&nbsp;" +
+                            lang.RB_PreviousPage + "</span>",
+                        "next": "<span>" + lang.RB_NextPage +
+                            "&nbsp;</span><i class='fa fa-angle-right' aria-hidden='true'></i>",
+                        "last": "最後一頁"
+                    },
+                    "aria": {
+                        "sortAscending": ": 升冪排列",
+                        "sortDescending": ": 降冪排列"
+                    }
+                },
+            });
+
+            dt.on('preXhr.dt', function (e, settings, data) {
+                ShowLoadingImage();
+            });
+
+            dt.on('draw', function () {
+                HideLoadingImage();
+
+                $('.leveledBooks-table .recommendedBook-table__btn-addRP').on('click', function () {
+                    if ($(this).attr('def') != "") {
+                        var bid = $(this).attr('def');
+                        ShowLoadingImage();
+                        JustOnlyForAddInRecommendedPageUse('ADD', bid, function (book_id) {
+
+                            $('.recommendedBook-table__btn-addRP').each(function () {
+                                if ($(this).attr('def') == book_id) {
+                                    $(this).css('background-color', '#43a047');
+                                    $(this).css('color', '#fff');
+                                    $(this).attr('disabled', 'disabled');
+                                }
+                            });
+
+                            HideLoadingImage();
+                        });
+                    }
+
+                });
+
+                $('.leveledBooks-table .book_cover').on('click', function () {
+                    LoadBookInfo($(this).attr('def'), $(this).data('ebook'));
+                });
+
+                //具有閱讀計劃權限及未分級書單權限者
+                if ($('#Auth_RP').val() == "True" && $('#Auth_EB').val() == "True") {
+                    var domain = $('.recommendedBook-search__btn-recommend').data('domain');
+                    //在系統推薦及校內書單
+                    if (domain == "1" || domain == "3") {
+                        //若為全部書單搜尋狀態
+                        if ((BOOK_NAME != "" || BOOK_ISBN != "") && CATEGORY_SEARCH_ID == "") {
+                            var rowCount = dt.rows().count();
+                            //若搜尋結果為空，則提示是否加入未分級書單
+                            if (rowCount == 0) {
+                                confirmModal('SmartReading目前沒有這本書，<br>你想把這本書加入閱讀計畫嗎？', '想', '不想');
+
+                                //[想加入]
+                                $('#confirmOk').click(function () {
+
+                                    $('#inputBookName').val(BOOK_NAME);
+                                    $('#inputISBN').val(BOOK_ISBN);
+
+                                    $('#bookInsert').modal('show');
+
+                                    $('#bookInsert').on('hidden.bs.modal', function () {
+                                        $('#inputBookName').val('');
+                                        $('#inputISBN').val('');
+                                        $('input[name=bookLang]:checked').prop(
+                                            'checked', false);
+                                        $('#inputAuthor').val('');
+                                        $('#inputPublish').val('');
+                                        $('#inputYear').val('');
+                                        $('#inputSort').val('0');
+                                        $('#inputBookCover').fileinput('clear');
+                                        $('#inputBookCover').data('filename', '');
+                                    });
+                                });
+
+                                //[不想加入]
+                                $('#confirmCancel').click(function () {
+
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+
+            //到第X頁
+            var inputHTML = '<div class="add_dataTables_input">' +
+                '到第&nbsp;' +
+                '<input type="text" class="form-control input-lg input-inline paginate_input" id="textGotoPage" data-prev="" value="">' +
+                '&nbsp;頁' +
+                '<a class="btn btn-lg paginate_button" id="btnGotoPage">' + lang.RB_Confirm + '</a>' +
+                '</div>';
+            $('.leveledBooks-table__footer').append(inputHTML);
+            $("#btnGotoPage").click(function () {
+                var textGotoPage = $("#textGotoPage").val();
+                var info = $('.leveledBooks-table').DataTable().page.info();
+                if (parseInt(textGotoPage) > 0 && parseInt(textGotoPage) <= info.pages) {
+                    $('.leveledBooks-table').DataTable().page(parseInt(textGotoPage) - 1).draw(false);
+                } else {
+                    alert('請輸入正確頁數。');
+                }
+            });
+
+            //點擊table頁碼滑動至最表格上方
+            $('.leveledBooks-table').on('page.dt', function () {
+                $('html, body').animate({
+                    scrollTop: $(".recommendedBook-search").offset().top - 80
+                }, 500);
+            });
+
+
+
+            //書籍分類事件
+            $('.recommendedBook-search__sort [type="checkbox"]').on('click', function () {
+                if ($(this).val() == "0") {
+                    if ($('#sort-1').prop('checked')) {
+                        $('.recommendedBook-search__sort input[type="checkbox"]').each(function () {
+                            if ($(this).val() != "0") {
+                                if ($(this).prop("checked")) {
+                                    $(this).prop('checked', '');
+                                }
+                            }
+                        });
+                    }
+                } else {
+                    if ($(this).prop("checked")) {
+                        $('#sort-1').prop('checked', '');
+                    }
+                }
+            });
+
+            $('#btnSearch').on('click', function () {
+
+                var domain = $('.recommendedBook-search__btn-recommend').data('domain');
+
+                if (domain == "5") {
+                    getExtraBookList();
+                } else {
+
+                    if (isValidISBN($('#searchBook').val().trim())) {
+                        BOOK_ISBN = $('#searchBook').val().trim();
+                        BOOK_NAME = "";
+                    } else {
+                        BOOK_ISBN = "";
+                        BOOK_NAME = $('#searchBook').val().trim();
+                    }
+
+                    if ($('#searchBook').val().trim() != "") {
+                        search_max = 1000;
+                        search_min = 40;
+                    } else {
+                        search_max = user_max;
+                        search_min = user_min;
+                    }
+
+                    CATEGORY_SEARCH_ID = "";
+                    $('.recommendedBook-search__sort [type="checkbox"]').each(function () {
+                        if ($(this).prop("checked")) {
+                            if ($(this).val() == "0") {
+                                CATEGORY_SEARCH_ID = "";
+                            } else {
+                                CATEGORY_SEARCH_ID += $(this).val() + ",";
+                            }
+                        }
+                    });
+
+                    dt.ajax.reload();
+                }
+
+            });
+
+            //
+            $('.recommendedBook-search__dropdown-menu__recommend a').on('click', function () {
+                var domain = $(this).data('domain');
+                var type_name = $(this).html();
+                $('.recommendedBook-search__btn-recommend').data('domain', domain);
+                $('.recommendedBook-search__btn-recommend').html(type_name +
+                    '&nbsp;<span class="caret"></span>');
+
+                if (domain == "5") {
+
+                    $('#systemBookRange').hide();
+                    $('#systemBookBlock').hide();
+                    $('#extraBookBlock').show();
+
+                    getExtraBookList();
+
+                } else {
+
+                    $('#systemBookRange').show();
+                    $('#systemBookBlock').show();
+                    $('#extraBookBlock').hide();
+
+                    dt.ajax.reload();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('#SRrangeBar-s-range').slider({
+                range: true,
+                min: 40,
+                max: 1000,
+                values: [recommend_min, recommend_max],
+                disabled: true,
+            }).find('.ui-widget-header').append(
+                '<span class="slider-min"></span><span class="slider-max"></span>');;
+            $('.ui-widget-header .slider-min').text('SR ' + $("#SRrangeBar-s-range").slider("values", 0));
+            $('.ui-widget-header .slider-max').text('SR ' + $("#SRrangeBar-s-range").slider("values", 1));
+
+            //$('.ui-widget-header .slider-min').attr('style', 'postion:relative;color:#43a047 !important;')
+            //$('.ui-widget-header .slider-max').attr('style', 'postion:relative;color:#43a047 !important;')
+
+            $('#SRrangeBar-s-control').slider({
+                range: true,
+                min: 40,
+                max: 1000,
+                values: [recommend_min, recommend_max],
+                slide: function (event, ui) {
+                    $('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR ' + ui
+                        .values[0]);
+                    $('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR ' + ui
+                        .values[1]);
+
+                    user_min = ui.values[0];
+                    user_max = ui.values[1];
+                }
+            }).find('.ui-slider-handle').append('<span class="slider-tooltip"></span>');
+            $('.ui-slider-handle:nth-of-type(1)').find('.slider-tooltip').text('SR ' + $(
+                "#SRrangeBar-s-control").slider("values", 0));
+            $('.ui-slider-handle:nth-of-type(2)').find('.slider-tooltip').text('SR ' + $(
+                "#SRrangeBar-s-control").slider("values", 1));
+        });
+    </script>
+
+    <!-- K's js -->
+    <script>
+        $(document).ready(function () {
+            //nowPage
+            $('.navTab-RecommendedBookList').addClass('active');
+
+            $(window).trigger('resize');
+        });
+        $(window).on('load', function () {
+            $(window).trigger('resize');
+        });
+        $(window).on('resize', function () {
+            //modify bootstrap Collapse.js
+            $('.bookIntro-btnBorrow[data-toggle="collapse"]').click(function () {
+                $(this).parents('.modal-bookIntro').find('.bookIntro-btnBorrow').attr("aria-expanded",
+                    "false");
+                $(this).attr("aria-expanded", "true");
+                $($(this).attr('href')).parents('.modal-bookIntro').find('.bookIntro-collapse')
+                    .removeClass('in');
+            });
+        });
+    </script>
+
+    <script>
+        //取得未分級書單
+        function getExtraBookList() {
+            var d = {
+                pageNumber: pageNumber,
+                pageSize: pageSize,
+                pageSort: pageSort,
+                keyword: $('#searchBook').val().trim()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "RecommendedBookList.aspx/GetExtraBookList",
+                data: JSON.stringify(d),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {
+                    ShowLoadingImage();
+                },
+                success: function (response) {
+                    var res = jQuery.parseJSON(response.d);
+                    renderExtraBook(jQuery.parseJSON(res.data), res.pageTotal);
+
+                    $('#extraBookTotalInfo').html(`共&nbsp;` + res.dataTotal +
+                        `&nbsp;本書&nbsp;&nbsp;&nbsp;&nbsp;`);
+                    $('#extraBookNowPageInfo').html(`&nbsp;` + pageNumber + `&nbsp;`);
+                    $('#extraBookTotalPageInfo').html(`&nbsp;` + res.pageTotal + `&nbsp;`);
+                },
+                error: function () {
+                    alert("Connection error!");
+                },
+                complete: function () {
+                    HideLoadingImage();
+                }
+            });
+        }
+
+        //取得未分級書單資訊
+        function getExtraBookIntro(book_id) {
+            var d = {
+                book_id: book_id
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "RecommendedBookList.aspx/GetExtraBookIntro",
+                data: JSON.stringify(d),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {},
+                success: function (response) {
+                    var res = jQuery.parseJSON(response.d);
+                    var intro = jQuery.parseJSON(res.data);
+
+                    //更新modal內容
+
+                    if (intro.coverImg == "") {
+                        intro.coverImg = "SR_Cover.jpg";
+                    }
+                    $('#modal-extraBookIntro .bookIntro-front img').attr("src",
+                        "../../RP/BookContent/ExtraBook/" + intro.coverImg);
+
+                    $('#modal-extraBookIntro .bookIntro-name').html(intro.book_name);
+                    $('#modal-extraBookIntro .bookIntro-isbn').html("ISBN：" + intro.book_isbn);
+                    if (intro.book_author != "") {
+                        $('#modal-extraBookIntro .bookIntro-author').html("作 者：" + intro.book_author);
+                    } else {
+                        $('#modal-extraBookIntro .bookIntro-author').html("");
+                    }
+                    $('#modal-extraBookIntro .bookIntro-year').html("出版年份：" + intro.book_year);
+                    $('#modal-extraBookIntro .bookIntro-sid').html("分 類：" + intro.sid_name);
+                    if (intro.book_publisher != "") {
+                        $('#modal-extraBookIntro .bookIntro-publish').html("出版社：" + intro.book_publisher);
+                    } else {
+                        $('#modal-extraBookIntro .bookIntro-publish').html("");
+                    }
+
+                    $('#modal-extraBookIntro').modal('show');
+                },
+                error: function () {
+                    alert("Connection error!");
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+        //未分級書單加入閱讀計劃
+        function AddExtraBookPlan(book_id) {
+            var d = {
+                book_id: book_id
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "RecommendedBookList.aspx/AddExtraBookPlan",
+                data: JSON.stringify(d),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {
+                    ShowLoadingImage();
+                },
+                success: function (response) {
+                    var res = jQuery.parseJSON(response.d);
+
+                    if (res.status == "SUCCESS") {
+                        $('#extra_book_table .addPlan').each(function () {
+                            if ($(this).data('uid') == res.data) {
+                                $(this).removeClass('addPlan');
+                                $(this).attr('disabled', 'disabled');
+                                $(this).css('background-color', '#43a047');
+                                $(this).css('color', '#fff');
+                            }
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Connection error!");
+                },
+                complete: function () {
+                    HideLoadingImage();
+                }
+            });
+        }
+
+        function AddPrivateExtraBookPlan(book_id) {
+            var d = {
+                book_id: book_id
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "RecommendedBookList.aspx/AddExtraBookPlan",
+                data: JSON.stringify(d),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {
+                    ShowLoadingImage();
+                },
+                success: function (response) {
+                    var res = jQuery.parseJSON(response.d);
+
+                    if (res.status == "SUCCESS") {
+                        //清除搜尋狀態，恢復原始狀態
+                        $('#searchBook').val('');
+                        BOOK_NAME = "";
+                        BOOK_ISBN = "";
+                        dt.ajax.reload();
+
+                        alertModal('已成功加入閱讀計畫清單', '確認');
+                    }
+                },
+                error: function () {
+                    alert("Connection error!");
+                },
+                complete: function () {
+                    HideLoadingImage();
+                }
+            });
+        }
+
+        //顯示未分級書單
+        function renderExtraBook(data, pageTotal) {
+            $('#extra_book_table tbody').empty();
+
+            var tag = ``;
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                tag += `<tr>`;
+                tag += `<td class="book-id">` + data[i].book_id + `</td>`;
+                if (data[i].coverImg == "") {
+                    data[i].coverImg = "SR_Cover.jpg";
+                }
+                //tag += `<td class="book-good"><img src="../../RP/BookContent/ExtraBook/` + data[i].coverImg + `" width="66" height="65"></td>`;
+                tag += `<td class="book-front"><a role="button" class="hover-effect-dark extraBookIntro" data-uid="` +
+                    data[i].book_id + `"><img src="../../RP/BookContent/ExtraBook/` + data[i].coverImg + `"></a></td>`;
+                tag += `<td class="book-name">` + data[i].book_name + `</td>`;
+                tag += `<td class="book-added" data-th="新增者">` + data[i].user_name + `</td>`;
+                tag += `<td class="book-sort" data-th="分類">` + data[i].sid_name + `</td>`;
+                //tag += `<td class="book-topic text-hidden" data-th="題本類別">&nbsp;</td>`;
+                tag +=
+                    `<td class="book-ebook text-hidden"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18">&nbsp;電子書</td>`;
+                if (data[i].plan_status == 1) {
+                    tag +=
+                        `<td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP" data-uid="" style="background-color:#43a047;color:#fff;" disabled="disabled" type="button">加入閱讀計畫</button></td>`;
+                } else {
+                    tag +=
+                        `<td class="book-addRP"><button class="btn recommendedBook-table__btn-addRP addPlan" data-uid="` +
+                        data[i].book_id + `" type="button">加入閱讀計畫</button></td>`;
+                }
+                tag += `<td class="book-bookplanet"></td>`;
+                tag += `</tr>`;
+            }
+
+            $('#extra_book_table tbody').append(tag);
+
+            //顯示未分級書單>檢視書籍資訊
+            $('#extra_book_table .extraBookIntro').on('click', function (event) {
+                var uid = $(this).data('uid');
+
+                getExtraBookIntro(uid);
+
+            });
+
+            //顯示未分級書單>加入閱讀計劃
+            $('#extra_book_table .addPlan').on('click', function (event) {
+                event.preventDefault();
+                var uid = $(this).data('uid');
+
+                AddExtraBookPlan(uid);
+            });
+
+            //===文章列表Navigation狀態設定===
+            $('#navNowPage').val(pageNumber);
+            if (pageTotal == 0) {
+                $('#navTotalPage').html(1);
+            } else {
+                $('#navTotalPage').html(pageTotal);
+            }
+
+            $('#navFirstPage').removeClass('disabled');
+            $('#navPrePage').removeClass('disabled');
+            $('#navNextPage').removeClass('disabled');
+            $('#navLastPage').removeClass('disabled');
+            $('#navPrePage2').removeClass('disabled');
+            $('#navNextPage2').removeClass('disabled');
+
+
+            //設定目標頁碼
+            $('#navFirstPage').data('page', 1);
+            $('#navPrePage').data('page', pageNumber - 1);
+            $('#navNextPage').data('page', pageNumber + 1);
+            $('#navLastPage').data('page', pageTotal);
+            $('#navPrePage2').data('page', pageNumber - 1);
+            $('#navNextPage2').data('page', pageNumber + 1);
+
+            $('#navNowPage').data('min', 1);
+            $('#navNowPage').data('max', pageTotal);
+
+            //設定按鈕狀態
+            if (pageNumber <= 1) {
+                $('#navFirstPage').addClass('disabled');
+                $('#navPrePage').addClass('disabled');
+                $('#navPrePage2').addClass('disabled');
+
+                $('#navFirstPage').data('page', '');
+                $('#navPrePage').data('page', '');
+                $('#navPrePage2').data('page', '');
+            }
+
+            //設定按鈕狀態
+            if (pageNumber >= pageTotal) {
+                $('#navNextPage').addClass('disabled');
+                $('#navLastPage').addClass('disabled');
+                $('#navNextPage2').addClass('disabled');
+
+                $('#navNextPage').data('page', '');
+                $('#navLastPage').data('page', '');
+                $('#navNextPage2').data('page', '');
+            }
+            //===文章列表Navigation狀態設定===
+        }
+
+        //下方 Navigation 事件
+        $('#navPage a').on('click', function (event) {
+            if ($(this).data('page') != "") {
+                pageNumber = parseInt($(this).data('page'));
+                getExtraBookList();
+            }
+        });
+
+        //下方 Navigation 事件
+        $('#navPage input').on('change', function (event) {
+            if ($(this).val() != "") {
+                var p = parseInt($(this).val());
+                var min = parseInt($(this).data('min'));
+                var max = parseInt($(this).data('max'));
+
+                if (p >= min && p <= max) {
+                    pageNumber = p;
+                    getExtraBookList();
+                } else {
+                    $(this).val(pageNumber);
+                }
+            } else {
+                $(this).val(pageNumber);
+            }
+        });
+
+        //向上角 Navigation 事件
+        $('#navPage2 a').on('click', function (event) {
+            if ($(this).data('page') != "") {
+                pageNumber = parseInt($(this).data('page'));
+                getExtraBookList();
+            }
+        });
+
+        // 驗證ISBN格式
+        function isValidISBN(isbn) {
+            if (isValidISBN10(isbn) || isValidISBN13(isbn)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // 驗證ISBN-10格式
+        function isValidISBN10(isbn) {
+            if (typeof isbn !== 'string') {
+                return false;
+            }
+
+            isbn = isbn.replace(/[-\s]/g, ''); // 移除横槓和空格
+            if (isbn.length !== 10) {
+                return false;
+            }
+
+            const regex = /^[0-9]{9}[0-9X]$/;
+            return regex.test(isbn);
+        }
+
+        // 驗證ISBN-13格式
+        function isValidISBN13(isbn) {
+            if (typeof isbn !== 'string') {
+                return false;
+            }
+
+            isbn = isbn.replace(/[-\s]/g, ''); // 移除横槓和空格
+            if (isbn.length !== 13) {
+                return false;
+            }
+
+            const regex = /^[0-9]{13}$/;
+            return regex.test(isbn);
+        }
+
+        $('#inputBookCover').fileinput({
+            language: 'zh-TW',
+            uploadUrl: "../../rp/ashx/UploadExtraBookCover.ashx", //上傳的地址
+            allowedFileExtensions: ['jpg', 'png'], //接收的檔案字尾
+            maxFileSize: 1000, //單位為kb，如果為0表示不限制檔案大小
+            maxFileCount: 1, //表示允許同時上傳的最大檔案個數
+            autoReplace: true, //是否自動替換當前圖片
+            browseOnZoneClick: true, //是否點擊預覽區域時觸發文件選擇
+            dropZoneTitle: '點選或拖曳檔案至此', //拖放區域的標題
+            dropZoneClickTitle: '', //拖放區域的拖曳標題
+            showClose: false, //是否顯示預覽界面的關閉圖標
+            showUpload: false, //是否顯示文件上傳按鈕
+            browseClass: 'btn btn-info', //瀏覽按鈕樣式
+            previewClass: 'file-preview-custom', //預覽容器樣式
+            fileActionSettings: {
+                'showUpload': false,
+                'showRemove': false,
+                'showZoom': true,
+                'indicatorNew': "",
+            },
+            layoutTemplates: {
+                footer: ''
+            },
+            uploadExtraData: function () {
+                return {
+                    filename: $('#inputBookCover').data('filename')
+                };
+            }
+        }).on('filebatchselected', function () {
+            $("#inputBookCover").fileinput("upload"); //broswe then upload
+        }).on('fileuploaded', function (event, data, id, index) {
+            if (data.response.status == "done") {
+                $('#inputBookCover').data('filename', data.response.filename);
+            }
+        }).on('filepreupload', function () {}).on('fileclear', function () {
+            $('#inputBookCover').data('filename', "");
+        });
+
+        //確認新增書籍並加入閱讀計劃
+        $('#ADD_RP').on('click', function () {
+            var d = {
+                book_name: $('#inputBookName').val(),
+                book_isbn: $('#inputISBN').val(),
+                book_tw_cn: parseInt($('input[name=bookLang]:checked').val()),
+                book_author: $('#inputAuthor').val(),
+                book_publisher: $('#inputPublish').val(),
+                book_year: $('#inputYear').val(),
+                sid: parseInt($('#inputSort').val()),
+                coverImg: $('#inputBookCover').data('filename'),
+            };
+
+            if (d.book_name != "" && d.book_isbn != "" && (d.book_tw_cn == 0 || d.book_tw_cn == 1)) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "RecommendedBookList.aspx/AddExtraBook",
+                    data: JSON.stringify(d),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    beforeSend: function () {
+
+                    },
+                    success: function (response) {
+                        var res = jQuery.parseJSON(response.d);
+
+                        if (res.status == "ISBN_EXIST") {
+                            alertModal(
+                                'SmartReading已經有這本書了，請到推薦書單搜尋這本書的 ISBN：<strong class="text-red" id="searchBook_ISBN">' +
+                                res.data + '</strong>，再把這本書加入你的閱讀計畫。', '確認');
+                            $('#alertOk').data('isbn', res.data);
+                            $('#alertOk').on('click', function () {
+                                $('#searchBook').val($('#alertOk').data('isbn'));
+                                $('#inputBookName').val('');
+                                $('#inputISBN').val('');
+                                $('input[name=bookLang]:checked').prop('checked', false);
+                                $('#inputAuthor').val('');
+                                $('#inputPublish').val('');
+                                $('#inputYear').val('');
+                                $('#inputSort').val('0');
+                                $('#inputBookCover').fileinput('clear');
+                                $('#inputBookCover').data('filename', '');
+                            });
+                        } else if (res.status == "SUCCESS") {
+
+                            AddPrivateExtraBookPlan(res.data);
+
+                            $('#inputBookName').val('');
+                            $('#inputISBN').val('');
+                            $('input[name=bookLang]:checked').prop('checked', false);
+                            $('#inputAuthor').val('');
+                            $('#inputPublish').val('');
+                            $('#inputYear').val('');
+                            $('#inputSort').val('0');
+                            $('#inputBookCover').fileinput('clear');
+                            $('#inputBookCover').data('filename', '');
+                        }
+                    },
+                    error: function () {
+                        alert("Connection error!");
+                    },
+                    complete: function () {
+                        $('#bookInsert').modal('hide');
+                    }
+                });
+            } else {
+                alert("請填寫必填欄位。");
+            }
+        })
+    </script>
+    <!-- 使用者使用時間追蹤 -->
+    <script src="../Script/UserBehaviorTracker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 在用戶驗證成功後初始化追蹤
+            UserBehaviorTracker.init({
+                heartbeatInterval: 30000, // 30秒
+                enableMouseTracking: true,
+                enableKeyboardTracking: true,
+                enableScrollTracking: true
+            });
+        });
+    </script>
+</body>
+
+</html>

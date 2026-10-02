@@ -1,0 +1,481 @@
+body {
+    margin: 0;
+}
+
+main {
+    &.proofInquiry {
+        background-color: $white;
+
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        form,
+        fieldset,
+        legend,
+        input,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td,
+        figure {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        h1 {
+            font-size: 25px;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 26px;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        p,
+        td,
+        li,
+        i {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        span,
+        th,
+        td,
+        .form-control {
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+
+        a {
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        input,
+        label {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        input[type=file]::file-selector-button {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        button {
+            padding: 0;
+            border-width: 0px;
+            border-style: none;
+            background-color: transparent;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: $default-gray !important;
+            border: 1px solid $default-gray !important;
+            opacity: 0.5;
+            cursor: auto !important;
+
+            a {
+                color: $white !important;
+                cursor: auto;
+            }
+        }
+
+        .page-banner {
+            &.proofInquiry {
+                background-image: url(../images/proof_Inquiry/collectionBook_kv_m.png);
+                background-position: 45% center;
+                margin-bottom: 0;
+
+                h1 {
+                    font-size: 1.5em;
+                    font-weight: 400;
+                    line-height: 1em;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    color: #FFF;
+                    text-align: left;
+                }
+
+                p {
+                    font-size: 0.9em;
+                    line-height: 1.875em;
+                    color: #FFF;
+                    text-align: left !important;
+                }
+
+                .container {
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    margin-right: auto;
+                    margin-left: auto;
+
+                    .page-banner__text{
+                        color: #FFF;
+                        min-height: 300px;
+                        text-align: center;
+                        display: table;
+                        width: 100%;
+
+                        div{
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+
+                        h1{
+                            font-size: 30px;
+                        }
+                    }
+
+                    .row {
+                        margin-right: -15px;
+                        margin-left: -15px;
+                    }
+                }
+            }
+        }
+
+        .proofInquiry_search {
+            position: relative;
+            z-index: 11;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+
+            .proofInquiry_btn_area {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-weight: bold;
+                }
+
+                .proofInquiry_btn {
+                    position: relative;
+                    margin: 0 0 0 10px;
+
+                    .form-control {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 0 0 10px;
+                        border: 1px solid #ababab;
+                        background-color: #fff;
+                        color: #2e3233;
+                        min-width: 160px;
+                        border-radius: 0;
+                        height: auto;
+                        overflow: hidden;
+                        cursor: pointer;
+
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+
+                        i {
+                            padding: 10px;
+                            margin: 0 0 0 auto;
+                            background-color: #f1f1f1;
+                        }
+
+                        &.open {
+                            i {
+                                &::before {
+                                    content: "\f077";
+                                }
+                            }
+
+                            &~ul {
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    ul {
+                        position: absolute;
+                        left: 50%;
+                        z-index: 2;
+                        transform: translate(-50%, 10px);
+                        width: auto;
+                        min-width: 150px;
+                        visibility: hidden;
+                        border: 1px solid #ababab;
+                        background-color: #fff;
+                        overflow: hidden;
+                        cursor: pointer;
+
+                        .dropdown_item_li {
+                            padding: 5px 10px;
+
+                            &.active {
+                                background-color: #446ef6;
+                                color: #fff;
+                            }
+
+                            &:hover {
+                                background-color: #446ef6;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .proofInquiry_area {
+            max-width: 1024px;
+            width: 100%;
+            margin: 0 auto;
+
+            .proofInquiry_area_page {
+                .proofInquiry_area_page_item {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto 40px;
+                }
+            }
+        }
+
+        .downloadPDF_area {
+            position: fixed;
+            z-index: 10;
+            right: 5px;
+            bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+
+            .download_icon {
+                background-color: #446ef6;
+                padding: 5px;
+                line-height: 0;
+                width: calc(20px * 1.7 + 5px);
+                border-radius: 50%;
+                text-align: center;
+                opacity: 0.5;
+
+                i {
+                    font-size: 20px;
+                    color: $white;
+                    line-height: 1.7;
+                }
+
+                &:hover{
+                    opacity: 1;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: #2e3233;
+                margin: 5px auto;
+                word-break: keep-all;
+            }
+
+            &:hover {
+                p {
+                    color: #446ef6;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        &.proofInquiry {
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 27px;
+            }
+
+            h4 {
+                font-size: 21px;
+            }
+
+            h5 {
+                font-size: 17px;
+            }
+
+            p,
+            td,
+            li {
+                font-size: 15px;
+            }
+
+            span,
+            th,
+            td,
+            .form-control {
+                font-size: 15px;
+            }
+
+            a {
+                font-size: 15px;
+            }
+
+            input,
+            label {
+                font-size: 15px;
+            }
+
+            .page-banner {
+                &.proofInquiry {
+                    .container {
+                        width: calc(100% - 260px);
+                        max-width: 1200px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        &.proofInquiry {
+            .page-banner {
+                &.proofInquiry {
+                    background-position: center center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        &.proofInquiry {
+
+            h3 {
+                font-size: 30px;
+                line-height: 1.7;
+                font-weight: bold;
+            }
+
+            h4 {
+                font-size: 25px;
+                line-height: 1.5;
+                font-weight: bold;
+            }
+
+            p,
+            span,
+            svg {
+                font-size: 20px;
+                line-height: 1.7;
+            }
+
+            th,
+            td {
+                font-size: 20px;
+                text-decoration: none;
+                line-height: 1.7;
+            }
+
+            .page-banner {
+                &.proofInquiry {
+                    background-image: url(../images/proof_Inquiry/collectionBook_kv.png);
+                    background-position: left center;
+                }
+            }
+
+            .downloadPDF_area {
+                position: absolute;
+                top: 15px;
+                bottom: auto;
+                right: auto;
+                left: calc(50% + 512px);
+                transform: translate(calc(-100% - 15px), 0px);
+            }
+
+            .sticky {
+                position: fixed;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        &.proofInquiry {
+            .downloadPDF_area{
+                top: 5px;
+                right: auto;
+                left: calc(50% + 512px + 5px);
+                transform: translate(0, 0);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        &.proofInquiry {
+            .page-banner {
+                &.proofInquiry {
+                    background-image: url(../images/proof_Inquiry/collectionBook_kv.png);
+                    background-position: left center;
+
+                    h1 {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,684 @@
+main {
+  &.readingClub {
+    .join-all {
+      width: 100%;
+
+      .order-wrap {
+        margin: 0 auto;
+
+        .order-body {
+          .readingClub-list {
+            .dataTable_menu_bar {
+              display: flex;
+              flex-wrap: wrap;
+
+              .dataTable_menu_bar_item {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin: 10px 0;
+
+                .menu_text {
+                  margin: 0 15px 10px 0;
+                }
+
+                .dataTable_menu_bar_nav {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  .dataTable_menu_bar_nav_li {
+                    margin: 0 15px 10px 0;
+                    text-align: center;
+
+                    .dataTable_menu_bar_nav_li_btn {
+                      cursor: pointer;
+                      padding: 5px 15px;
+                      border: 1px solid $default-gray;
+                      background-color: $white;
+                      color: $main-color;
+
+                      p {
+                        color: $main-color;
+                      }
+
+                      &:hover {
+                        background-color: $main-color;
+                        color: $white;
+
+                        p {
+                          color: $white;
+                        }
+                      }
+
+                    }
+
+                    .dropdown-menu {
+                      position: absolute !important;
+                      margin: 0;
+                      padding: 0;
+                      min-width: 100%;
+
+                      li {
+                        p {
+                          cursor: pointer;
+                          padding: 10px 15px;
+                          text-align: center;
+
+                          &:hover {
+                            background-color: $main-color;
+                            color: $white;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .dataTables_wrapper {
+
+              .readingClub-list__header {
+                display: flex;
+                flex-direction: column;
+
+                .pull-right {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  margin: 5px 0px;
+
+                  .dataTables_info {
+                    padding-top: 0;
+                  }
+
+                  .paging_simple_numbers {
+                    margin-top: 0;
+                    padding-top: 0;
+
+                    a {
+                      background: $button-bg;
+                      border: 1px solid $button-gray;
+                    }
+
+                    span {
+                      display: none;
+                    }
+                  }
+                }
+              }
+
+              .readingClub-table {
+
+                thead {
+                  display: none;
+                }
+
+                tbody {
+                  tr {
+                    &.club_table_area {
+                      width: 100%;
+                      padding: 0;
+                      flex-direction: row;
+                      flex-wrap: wrap;
+                      background-color: $white;
+
+                      td {
+                        text-align: left;
+                        line-height: 1.7;
+                        padding: 10px;
+                      }
+
+                      .club_id {
+                        display: none;
+                      }
+
+                      .club_table_img {
+                        margin: 0px auto;
+                        padding: 0;
+                        line-height: 0;
+                        max-width: none !important;
+                        width: 100%;
+
+                        .club_table_img_link {
+                          display: block;
+                          margin: 0 auto;
+                          width: 100%;
+                          position: relative;
+
+                          img {
+                            height: 100%;
+                            object-fit: cover;
+                          }
+                          
+                          &:hover{
+                            &::before{
+                              content: "";
+                              position: absolute;
+                              width: 100%;
+                              height: 100%;
+                              background-color: rgba($main-color , 0.35);
+                          }
+                          }
+                        }
+
+                        
+                      }
+
+                      .club_table_tittle,
+                      .club_table_introduce,
+                      .club_table_time,
+                      .club_table_place {
+                        width: 100%;
+                        white-space: inherit;
+                      }
+
+                      .club_table_tittle {
+                        .club_table_tittle_link {
+                          color: $black;
+
+                          h3 {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            /* autoprefixer: off */
+                            -webkit-box-orient: vertical;
+                            /* autoprefixer: on */
+                            box-orient: vertical;
+                            -moz--box-orient: vertical;
+                            -o--box-orient: vertical;
+                            -ms--box-orient: vertical;
+                          }
+
+                          &:hover {
+                            color: $main-color;
+                          }
+                        }
+                      }
+
+                      .club_table_introduce {
+                        border-bottom: 1px dotted;
+
+                        p {
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          display: -webkit-box;
+                          -webkit-line-clamp: 2;
+                          /* autoprefixer: off */
+                          -webkit-box-orient: vertical;
+                          /* autoprefixer: on */
+                          box-orient: vertical;
+                          -moz--box-orient: vertical;
+                          -o--box-orient: vertical;
+                          -ms--box-orient: vertical;
+                        }
+                      }
+
+                      .club_table_price{
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .readingClub-list__footer {
+                .paging_simple_numbers {
+                  .paginate_button {
+                    background: $button-bg;
+                    border: 1px solid $button-gray;
+
+                    &.paginate_button {
+                      &.current {
+                        color: $default-red !important;
+                        background: transparent;
+                        border: 0px solid $button-gray;
+                      }
+                    }
+
+                    &.disabled {
+                      background: $button-disabled-bg;
+                      color: $button-disabled-text !important;
+
+                      i {
+                        color: $button-disabled-text !important;
+                      }
+                    }
+                  }
+                }
+
+                .add_dataTables_input {
+                  margin-top: 5px;
+                  padding-top: 0.755em;
+
+                  .paginate_button {
+                    padding: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal {
+      width: 100%;
+
+      .modal-dialog {
+        width: 90%;
+        max-width: 1200px;
+        margin: 10px auto;
+
+        .modal-header {
+          .navbar {
+            margin-bottom: 0;
+            width: 100%;
+
+            .container-fluid {
+              .navbar-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: calc(100% - 20px);
+
+                .navbar-brand {
+                  max-width: 80px;
+                  height: auto;
+                }
+
+                .navbar-toggle {
+                  margin-left: auto;
+
+                  .icon-bar {
+                    background-color: $default-black;
+                  }
+                }
+              }
+
+              .search_icon {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                padding: 15px;
+                transform: translate(0px, -50%);
+
+                i {
+                  font-size: 30px;
+                }
+              }
+            }
+
+          }
+
+
+        }
+
+        .modal-body {
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+          max-height: calc(100vh - 200px);
+          margin: 10px auto;
+
+          .left_area {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 5px auto;
+
+            .icon_item {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              margin: 0 5px;
+              cursor: auto;
+
+              .icon_img {
+                margin: 0 auto;
+                cursor: pointer;
+
+                .fa-comment,
+                .fa-star,
+                .fa-bookmark {
+                  &.fas {
+                    color: $main-color;
+                  }
+                }
+              }
+
+              p {
+                text-align: center;
+
+                span {
+                  &.active {
+                    color: $main-color;
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+
+          .center_area {
+            margin: 5px auto;
+
+            .top_label {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 10px 0x;
+
+              .top_label_item {
+                background-color: $main-color;
+                padding: 5px 10px;
+                margin: 5px 10px 5px 0;
+
+                p {
+                  color: $white;
+                }
+              }
+            }
+
+            .introduction_area {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              margin: 10px 0x;
+
+              .avatar_area {
+                max-width: 60px;
+                margin: 0 5px 5px 0;
+                border-radius: 50%;
+              }
+
+              .name {
+                margin: 0 5px 5px 0;
+
+                p {
+                  color: $main-color;
+                }
+              }
+
+              .introduction_content {
+                display: flex;
+                flex-wrap: wrap;
+
+                p {
+                  margin: 0 5px 5px 0;
+                  white-space: nowrap;
+                }
+              }
+            }
+
+            .related_label_area,
+            .popular_label_area {
+              background-color: $dataTables-bg;
+              display: flex;
+              flex-wrap: wrap;
+              padding: 5px 10px;
+              margin: 10px 0px;
+
+              .related_label_title {
+                display: flex;
+                padding: 5px;
+
+                p {
+                  margin: 0 5px;
+                }
+              }
+
+              .related_label_item {
+                background-color: $light-gray;
+                margin: 0 5px 5px 0;
+                padding: 5px;
+              }
+            }
+
+            .popular_label_area {
+              background-color: transparent;
+            }
+
+            .middle_img {
+              padding: 10px 20px;
+              background-color: $dataTables-bg;
+              max-width: 400px;
+              margin: 10px auto;
+            }
+
+            .middle_text {
+              margin: 10px 0x;
+
+              p {
+                span {
+                  color: $main-color;
+                }
+              }
+            }
+
+            .middle_article {
+              margin: 10px 0;
+
+              .subtitle {
+                margin: 0 0 5px 0;
+              }
+            }
+          }
+
+          .right_area {
+            border: 1px solid $light-gray;
+            padding: 10px;
+            margin: 5px auto;
+
+            .introduction_area {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              margin: 10px 0x;
+
+              .avatar_area {
+                max-width: 60px;
+                margin: 0 5px 5px 0;
+                border-radius: 50%;
+              }
+
+              .name {
+                margin: 0 5px 5px 0;
+              }
+
+              .introduction_content {
+                display: flex;
+                flex-wrap: wrap;
+
+                p {
+                  margin: 0 5px 5px 0;
+                  white-space: nowrap;
+                }
+              }
+
+              .follow_btn {
+                margin: 10px;
+
+                p {
+                  text-align: center;
+                  padding: 5px 10px;
+                  background-color: $main-color;
+                  color: $white;
+                }
+
+                &:hover {
+                  p {
+                    background-color: darken($main-color, 10%);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .modal-footer {
+          text-align: center;
+
+          .comment_btn {
+            background-color: $main-color;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+
+            p {
+              color: $white;
+            }
+          }
+        }
+
+        .comment_area {
+          padding: 15px;
+          display: none;
+
+          .input-group {
+            width: 100%;
+
+            .input-group-text {
+              background-color: $main-color;
+              border: 1px solid $main-color;
+              border-radius: 5px;
+              display: flex;
+              flex-direction: column;
+              margin: 5px auto;
+              width: 100%;
+
+              p {
+                color: $white;
+              }
+            }
+
+            .form-control {
+              margin: 5px auto;
+              border: 1px solid $light-gray;
+            }
+
+            &.input_comment {
+              margin: 20px auto;
+
+              .limit {
+                p {
+                  text-align: right;
+
+                  span {
+                    color: $default-red;
+                  }
+                }
+
+              }
+            }
+          }
+
+          .button_area {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+
+            .close_btn {
+              border: 1px solid $light-gray;
+              background-color: $light-gray;
+              margin: 5px;
+
+              p {
+                color: $main-color;
+              }
+
+              &:hover {
+                background-color: darken($light-gray, 10%);
+              }
+            }
+
+            input {
+              background-color: $main-color;
+              color: $white;
+              padding: 5px 10px;
+              border-radius: 4px;
+              border: 0px;
+              margin: 5px;
+
+              &:hover {
+                background-color: darken($main-color, 10%);
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+@media screen and (min-width: 576px) {
+  main {
+    &.readingClub {
+      .join-all {
+        .order-wrap {
+
+          .order-body {
+            .readingClub-list {
+
+              .dataTables_wrapper {
+                .readingClub-list__header {
+                  flex-direction: row;
+                  justify-content: flex-end;
+                  padding: 5px;
+                }
+
+                .readingClub-table {
+                  tbody {
+                    justify-content: flex-start;
+
+                    tr {
+                      &.club_table_area {
+                        width: 47.5%;
+                        margin: 10px 1.25%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    &.readingClub {
+      .join-all {
+        .order-wrap {
+
+          .order-body {
+            .readingClub-list {
+
+              .dataTables_wrapper {
+                .readingClub-table {
+                  tbody {
+
+                    tr {
+                      &.club_table_area {
+                        width: 30%;
+                        margin: 10px 1.5%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2017 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="SmartReading 適性閱讀" /><meta name="author" content="SmartReading 適性閱讀" /><title>
+	SmartReading 適性閱讀
+</title><link rel="shortcut icon" type="image/x-icon" href="../Content/images/SR.ico" /><link rel="stylesheet" type="text/css" href="../Content/css/bootstrap-lg.min.css" /><link rel="stylesheet" type="text/css" href="../Content/css/ie10-viewport-bug-workaround.css" /><link href="../Content/widgets/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web.min.css" rel="stylesheet" />
+
+    <!-- this page widgets CSS -->
+
+    <!-- SR core CSS -->
+    <link rel="stylesheet" type="text/css" href="../Content/css/promote-styles.css" /><link rel="stylesheet" type="text/css" href="../Content/css/engineer-styles.css" />
+    <style>
+        /* AI小書人權限開啟時工具列為5欄，桌機每欄改20%維持單列；手機(<576px)仍由 col-xs-6 維持一排2欄 */
+        @media screen and (min-width: 576px) {
+            .RPList-books .RPList-books__table > tbody > tr > td.book-tools .tools-evaluation.tools-evaluation-5 > .row > div {
+                width: 20%;
+            }
+        }
+
+        /*閱讀計畫中_說書趣跳出視窗 開始*/
+        .modal .modal-dialog .modal-content .modal-header {
+            background-color: #edf1f4;
+        }
+
+        .modal .modal-dialog .modal-content .modal-body {
+            background-color: #edf1f4;
+        }
+
+            .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block {
+                height: auto;
+                overflow: initial;
+            }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-title {
+                    background-image: url(../images/reading_plan/myStudy/title-video-img.png), url(../images/reading_plan/myStudy/title-video-bg.png);
+                }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-content .upload-video .upload-video__area .upload-video__area-default {
+                    background-image: url(../images/reading_plan/myStudy/default-block-img.png);
+                }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-content .upload-video .upload-video__area .upload-video__area-default .upload-video__area-default__text img {
+                        width: auto;
+                    }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-btns .myStudy-btns_preview {
+                    color: #43a047;
+                    border: 1px solid #ccc;
+                    border-radius: 0;
+                }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-btns .myStudy-btns_submit {
+                    background-color: #43a047;
+                    color: white;
+                }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-btns .myStudy-btns_submit:hover {
+                        background-color: #3b8e3f;
+                    }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-text {
+                    display: flex;
+                    justify-content: center;
+                    margin: 10px auto 0;
+                }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-text .sent_success {
+                        display: none;
+                    }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-text p a {
+                        color: #43a047;
+                    }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .myStudy-text p a:hover {
+                            color: #3b8e3f;
+                        }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area {
+                    display: none;
+                }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox {
+                        position: absolute;
+                        opacity: 0;
+                    }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox + label {
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+                            cursor: pointer;
+                            padding: 0;
+                        }
+
+                            .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox + label p {
+                                max-width: calc(100% - 30px);
+                            }
+
+                            .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox + label:before {
+                                content: '';
+                                margin-right: 10px;
+                                display: inline-block;
+                                vertical-align: text-top;
+                                width: 20px;
+                                height: 20px;
+                                background: white;
+                                border: 1px solid #446ef6;
+                            }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox:hover + label {
+                            color: #446ef6;
+                        }
+
+                            .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox:hover + label:before {
+                                border: 1px solid #446ef6;
+                            }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox:checked + label:before {
+                            border: 1px solid #446ef6;
+                            background-color: #446ef6;
+                        }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_checkbox:checked + label:after {
+                            font-family: 'FontAwesome', sans-serif;
+                            content: '\f00c';
+                            position: absolute;
+                            color: white;
+                            width: 20px;
+                            font-size: 15px;
+                            text-align: center;
+                        }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_item_area {
+                        margin: 10px auto;
+                    }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_item_area .video_check_item_both .video_check_item p {
+                            display: flex;
+                            margin: 5px 0;
+                        }
+
+                            .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_item_area .video_check_item_both .video_check_item p i {
+                                color: #ff0000;
+                                margin: 0 5px 0 0;
+                            }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_submit {
+                    display: none;
+                    margin: 20px auto;
+                }
+
+                    .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_submit .video_check_submit_btn {
+                        display: block;
+                        margin: 0 auto;
+                        background-color: #43a047;
+                        color: white;
+                    }
+
+                        .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_submit .video_check_submit_btn:hover {
+                            background-color: #3b8e3f;
+                        }
+
+        @media screen and (min-width: 768px) {
+            .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_item_area {
+                display: flex;
+                justify-content: space-between;
+            }
+
+                .modal .modal-dialog .modal-content .modal-body .myStudy .container-fluid .myStudy-block.video .video_check_area .video_check_item_area .video_check_item_both {
+                    width: 47.5%;
+                }
+        }
+        /*閱讀計畫中_說書趣跳出視窗 結束*/
+    </style>
+</head>
+<body>
+    <form method="post" action="./RPList.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+setTimeout(function(){location.href='https://beta.smartreading.net:443/v3/index-student.aspx';},86400000);var lang=new Object();lang.RP_PlanYourReadingTimeAndProgress="你可以規劃自己的閱讀時間與進度，透過這些有系統的紀錄，能更加瞭解自己進步的情形。"  ;lang.RP_SearchPlannedBooks="搜索計畫書籍"  ;lang.RP_TotalPlannedBooks="計劃書籍總數"  ;lang.RP_HighestDifficulty="最高難度"  ;lang.RP_LowestDifficulty="最低難度"  ;lang.RP_LastModifiedTime="最近修改時間"  ;lang.RP_EnterBookTitle="輸入書名"  ;lang.RP_Search="查詢"  ;lang.RP_BookList="書籍清單"  ;lang.RP_MyBookList="我的書單"  ;lang.RP_Unassessed="未評量"  ;lang.RP_Assessed="已評量"  ;lang.RP_IconExplanation="圖標說明"  ;lang.RP_Show="顯示"  ;lang.RP_Regulations="條例"  ;lang.RP_Calendar="月曆"  ;lang.RP_SystemAssessmentScore="系統評量分數"  ;lang.RP_TeacherAssessmentScore="教師評量分數"  ;lang.RP_Pass="通過"  ;lang.RP_Fail="不通過"  ;lang.RP_StartReading="開始閱讀"  ;lang.RP_EndReading="結束閱讀"  ;lang.RP_BookRating="書籍評分"  ;lang.RP_SystemQuestions="系統題本"  ;lang.RP_TeacherProposedQuestions="教師命題"  ;lang.RP_MyStudyRoom="我的書房"  ;lang.RP_Notebook="筆記本"  ;lang.RP_Drawing="繪畫"  ;lang.RP_Recording="錄音"  ;lang.RP_Video="影片"  ;lang.RP_TeacherAssessment="教師評量"  ;lang.RP_Score="分數"  ;lang.RP_Comments="評語"  ;lang.RP_Submit="送出"  ;lang.RP_Draw="繪製"  ;lang.RP_UploadImage="上傳圖檔"  ;lang.RP_StartRecording="開始錄音"  ;lang.RP_PlayRecording="播放錄音"  ;lang.RP_Preview="預覽"  ;lang.RP_ReturnToReadingPlan="回閱讀計劃"  ;lang.RP_Complete="完成"  ;lang.RP_RememberToSubmitEachItemToSaveAnswers="請記得每一項目需點選「送出」才算儲存答案哦！"  ;lang.RP_SystemAssessment="系統評量"  ;lang.RP_CompletedThisBookTest="已完成此書測驗"  ;lang.RP_Summary="摘要"  ;lang.RP_TeacherAssessmentReview="教師評量批閱"  ;lang.RP_Rewrite="重寫"  ; lang.culture="zh-TW" ;//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D30DC6FC" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="uTnIjd3lEGbTwBkTfMYZrtaXR41Jz0DYLAF0O1iyPXf6+tWa/ysQ0D0CS98YY6B65xCBIgFhTmIkqOByhZN6D8Aerqo1nbnHKbuQZKFRo3+1aX/vVLP+acasNHAsqGLV0Ep0xlcSNzMGgfPZ3sIPF8gNf2Qdrh7P2i5cuTtTEmU=" />
+</div>
+        <input type="hidden" name="User_Grade" id="User_Grade" />
+        <input type="hidden" name="User_DACC_Grade" id="User_DACC_Grade" />
+        <input type="hidden" name="Auth_AI" id="Auth_AI" value="false" />
+    </form>
+    <header>
+        <nav class='navbar navi-main'><div class='container-fluid'><div class='row'><div class='navbar-header-area col-xs-12 col-sm-12 col-md-12 col-lg-12'><div class='navbar-header'><button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar'> <span class='sr-only'>展開選單</span> <span class='icon-bar'></span> <span class='icon-bar'></span> <span class='icon-bar'></span> </button><a href='../index-student.aspx' class='navbar-brand' style='max-width:400px'><img src='../Content/images/logo/sr_logo.svg' alt='SmartReading|科普閱讀力大賽' class='img-responsive' style='width: 100%;'></a></div><div id='navbar' class='navbar-collapse collapse'><ul class='nav navbar-nav'><li class='navTab-index'><a href='../index-student.aspx'>首頁</a></li><li class='navTab-abouut dropdown'> <a href='../#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>關於SR&nbsp;<span class='caret'></span></a><ul class='dropdown-menu'><li><a href='../about-us.aspx'>關於我們</a></li><li><a href='../about-sys.aspx'>SR系統介紹</a></li><li><a href='../about-dacc.aspx'>中文閱讀能力診斷</a></li><li><a href='../about-leveledBooks.aspx'>圖書難度分級</a></li><li><a href='../about-SR.aspx'>SR值說明</a></li></ul></li><li class='navTab-dacc dropdown'> <a href='../DACC/DACC.aspx'>能力檢測</a> </li><li class='navTab-RecommendedBookList dropdown'> <a href='../RP/RecommendedBookList.aspx'>推薦書單</a> </li><li class='navTab-RecommendedArticle dropdown'> <a href='../RA/RecommendedArticle2022.aspx'>推薦文章</a> </li><li class='navTab-RPList dropdown'><a href='../RP/RPList.aspx'>閱讀計畫</a> </li><li class='navTab-storytelling dropdown'> <a href='../ST/storytelling.aspx'>說書頻道</a> </li><li class='navTab-ContestReport dropdown'> <a href='../Contest/reading_contest.aspx'>大賽報表</a> </li><li class='navTab-ContestManual dropdown'> <a href='../Contest/contest_manual.aspx'>使用手冊</a> </li></ul><ul class='nav navbar-nav navbar-right'><li class='dropdown'><a class='navi-main__loginedBtn' data-target='#' href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>你好，參賽者05！</a><ul class='dropdown-menu navi-main__userMenu'><li><a target='_blank' href='https://forms.gle/GEJ2jaRTHaqvqc4M7'><i class='fas fa-bullhorn'></i>&nbsp;問題回報</a></li><li><a href='../UIlogout.aspx' class='btn navi-main__logoutBtn'>登出</a></li></ul></li></ul></div></div></div></div>
+    </header>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <main>
+        <!-- banner start -->
+        <div class="page-banner RPList">
+            <div class="container">
+                <div class="page-banner__text">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+
+                            <h1>閱讀計畫</h1>
+                            <p>你可以規劃自己的閱讀時間與進度，透過這些有系統的紀錄，能更加瞭解自己進步的情形。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+
+        <!-- RPList-search start -->
+        <div class="RPList-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-1">
+                        <img src="../Content/images/RPList/books.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="RPList-search__text">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-3">
+                                    <h2>搜索計畫書籍</h2>
+                                </div>
+                                <div class="col-md-8 col-lg-9">
+                                    <div class="input-group">
+                                        <input id="txt_search" type="text" class="form-control input-lg" placeholder="輸入書名..." onkeypress="searchByEnter(event)">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-lg btn-main RPList-search__btn-search" onclick="searchByKeyword()">查詢</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="RPList-search__info">
+                                        <span>計劃書籍總數：<label id="label_bookCount">1</label></span>
+                                        <span>最低難度：<label id="label_minHard">348</label></span>
+                                        <span>最高難度：<label id="label_maxHard">348</label></span>
+                                        <span>最近修改時間：<label id="label_lastUpdate">2026-09-24 18:11:21</label></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RPList-search end -->
+
+        <!-- RPList-books start -->
+        <div class="RPList-books">
+            <div class="container">
+                <div class="RPList-header">
+                    <h2>書籍清單</h2>
+                </div>
+                <div class="RPList-books__functions">
+                    <div class="functions-tips">
+                        圖標說明：
+                        
+                        <div id="Panel_function_tips_contest" style="display: inline-block;">
+	
+                            <button class="functions-tips__btn" type="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<h4>系統評量分數</h4>通過：<span class='userScore passed bySystem'>A</span>&nbsp;&nbsp;<span class='userScore passed bySystem'>A+</span>&nbsp;&nbsp;<span class='userScore passed bySystem'>A++</span>&nbsp;&nbsp;&nbsp;&nbsp;</br>不通過：<span class='userScore failed bySystem'>B</span>"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></button>
+                        
+</div>
+                    </div>
+                    <div id="div_mode" class="functions-modes">
+                        顯示：
+                        <ul class="functions-modes__block" role="tablist">
+                            <li role="presentation" class="functions-modes__btn active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">
+                                <img src="../Content/images/RPList/modes-list.png">條例</a></li>
+                            <li role="presentation" class="functions-modes__btn"><a href="RPCalendar.aspx">
+                                <img src="../Content/images/RPList/modes-calendar.png">月曆</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content RPList-books__tab-content">
+                    <div id="list" role="tabpanel" class="tab-pane active">
+                        <div class="RPList-books__tab-pane__functions list">
+                            <div id="div_search" class="functions-btns">
+                                <button id="btn-search-all" class="btn functions-btns__nav active" type="submit" onclick="SearchDone(2)">我的書單</button>
+                                <button id="btn-search-tobe" class="btn functions-btns__nav" type="submit" onclick="SearchDone(0)">未評量</button>
+                                <button id="btn-search-ed" class="btn functions-btns__nav" type="submit" onclick="SearchDone(1)">已評量</button>
+                            </div>
+                        </div>
+                        <table id="RPList-books__table" class="table RPList-books__table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>優選書</th>
+                                    <th>書封面</th>
+                                    <th>書名</th>
+                                    <th>電子書</th>
+                                    <th>圖書難度</th>
+                                    <th>分類</th>
+                                    <th>開始閱讀~結束閱讀</th>
+                                    <th>功能</th>
+                                    <th>刪除</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_list"><tr><td class="book-id">c9e5f6f2-a2ff-4be1-a9de-9e5b81aab102</td><td class="book-good"><img src="../Content/images/recommendedBook/goodBook.png" width="66" height="65"></td><td class="book-front"><a role="button" class="hover-effect-dark" onclick="LoadBookInfo(0)"><img src="../../RP/BookContent/BookFront/72225.jpg"></a></td><td class="book-name">深夜裡的鐵道英雄</td><td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"></td><td class="book-SR" data-th="圖書難度">SR 348</td><td class="book-sort" data-th="分類">應用科學</td><td class="book-date"><div class="book-date-start"><div class="book-date-start__title">開始閱讀</div><div class="book-date-start__content"><div class="SR-datepicker"><input id="dateStart_0_c9e5f6f2-a2ff-4be1-a9de-9e5b81aab102" type="text" class="datepicker form-control hasDatepicker" onchange="BookinPlan(this.id)" value="2026-09-30"></div></div></div><div class="book-date-end"><div class="book-date-start__title">結束閱讀</div><div class="book-date-start__content"><div class="SR-datepicker"><input id="dateEnd_0_c9e5f6f2-a2ff-4be1-a9de-9e5b81aab102" type="text" class="datepicker form-control hasDatepicker" onchange="BookinPlan(this.id)" value="2026-09-30"></div></div></div></td><td class="book-tools"><div class="tools-add"><button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-add" style="min-width:30%" onclick="LoadSystemInfo(0)"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-add STinserface" style="min-width:30%"><i class="fa-solid fa-video"></i> 說書趣</button></div></td><td class="book-delete"><button class="RPbookList-table__btn-delete" type="button" onclick="DeleteBook(0)">×</button></td></tr></tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                        <br>
+                        <!-- 頁碼 -->
+                        <!-- pagination star/... -->
+                        <div id="div_page" aria-label="Page navigation" class="text-center commontPage" style="display: block">
+                            <a id="Btn_pre" class="btn btn-default btn-lg disabled" href="javascript: void(0)" role="button" onclick="toPrePage()"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;上一頁</a>
+                            <div id="div_pageNO" class="commontPage-pages"><label style="color:red"> 1 </label></div>
+                            <a id="Btn_next" class="btn btn-default btn-lg disabled" href="javascript: void(0)" role="button" onclick="toNextPage()">下一頁&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            共
+                            <label id="pageCount_txt">1</label>
+                            頁
+                            <div class="add_dataTables_input">
+                                到第
+                                <input id="txt_goPage" type="text" class="form-control input-lg input-inline paginate_input noRadius" value="" onkeypress="goPageByEnter(event)">
+                                頁
+                                <a id="Btn_goPage" class="btn btn-default btn-lg paginate_button" onclick="goPage()">確定</a>
+                            </div>
+                        </div>
+                        <!-- .../pagination end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RPList-books start -->
+
+    </main>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <footer class="footer">
+        <div class='footer-info footer-info-simple'><div class='container-fluid'><div class='row'><div class='col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-0'><img src='../Content/images/HeaderLogo.png' width='249' height='116'></div><div class='col-xs-12 col-sm-6 col-md-5 col-lg-2'><div class='footer-info__social'><a class='footer-info__social-youtube hover-effect-dark' href='https://www.youtube.com/channel/UCW9Wu3E1PvmLu6-KqYMPlVQ' role='button' target='_blank'><i class='fab fa-youtube'></i></a> <a class='footer-info__social-facebook hover-effect-dark' href='https://www.facebook.com/SmartReading%E9%81%A9%E6%80%A7%E9%96%B1%E8%AE%80-2035646653426883' role='button' target='_blank'><i class='fab fa-facebook-f'></i></a></div></div><div class='col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-8 col-lg-offset-0'><div class='footer-info__contact'><div class='footer-info__contact-title'>聯繫我們</div><div class="footer-info__contact_CLTC"> 國立臺灣師範大學 華語文與科技研究中心 </div><div class='footer-info__contact-text row'><div class='col-lg-5'><div class='contact-email'><i class='far fa-envelope'></i>service@smartreading.net</div></div><div class='col-lg-7 col-lg-pull-1'><div class='contact-add'><i class='fas fa-map-marker-alt'></i>106台北市和平東路一段162號</div></div></div></div></div></div></div></div><div class="footer_copyright"><p> &copy; 國立臺灣師範大學 華語文與科技研究中心 版權所有</p><p> Copyright &copy; Chinese Language and Technology Center , National Taiwan Normal University. All rights reserved.</p></div>
+    </footer>
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+
+    <!-- Modal #starRating START/... -->
+    <div class="modal fade modal-style1 modal-starScore" id="starRating" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">請完成下列兩項評分&nbsp;<i class="fas fa-pen"></i></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="Vteaching-starScore-item">
+                        <div class="Vteaching-starScore-title">
+                            讀完這本書後，你喜歡嗎？
+                        </div>
+                        <div class="Vteaching-starScore-icon">
+                            <div id="div_like" class="btn-stars-group text-center">
+                                <button type="button" class="btn" value="非常不喜歡"><i class="SR-icon SR-icon-heart"></i>非常不喜歡</button>
+                                <button type="button" class="btn" value="有些不喜歡"><i class="SR-icon SR-icon-heart"></i>有些不喜歡</button>
+                                <button type="button" class="btn" value="沒意見"><i class="SR-icon SR-icon-heart"></i>沒意見</button>
+                                <button type="button" class="btn" value="還算喜歡"><i class="SR-icon SR-icon-heart"></i>還算喜歡</button>
+                                <button type="button" class="btn" value="非常喜歡"><i class="SR-icon SR-icon-heart"></i>非常喜歡</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Vteaching-starScore-item">
+                        <div class="Vteaching-starScore-title">
+                            讀完這本書後，你覺得有收穫嗎？
+                        </div>
+                        <div class="Vteaching-starScore-icon">
+                            <div id="div_gain" class="btn-stars-group text-center">
+                                <button type="button" class="btn" value="完全沒收穫"><i class="SR-icon SR-icon-seed"></i>完全沒收穫</button>
+                                <button type="button" class="btn" value="不太有收穫"><i class="SR-icon SR-icon-seed"></i>不太有收穫</button>
+                                <button type="button" class="btn" value="還算有收穫"><i class="SR-icon SR-icon-seed"></i>還算有收穫</button>
+                                <button type="button" class="btn" value="很有收穫"><i class="SR-icon SR-icon-seed"></i>很有收穫</button>
+                                <button type="button" class="btn" value="非常有收穫"><i class="SR-icon SR-icon-seed"></i>非常有收穫</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .../Modal #starRating END -->
+
+    <!-- Modal #teacherTopic START/... -->
+    <div class="modal fade modal-style1" id="teacherTopic" tabindex="-1" role="dialog" aria-labelledby="teacherTopicLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <!-- -->
+                    <div class="topic-style">
+                        <h3 class="topic-style__title">第一條魚</h3>
+                        <table class="table table-bordered topic-style__table">
+                            <thead>
+                                <tr>
+                                    <th>題本名稱</th>
+                                    <th>分派老師</th>
+                                    
+                                    <th>您的讀後評量</th>
+                                    <th>填寫評量</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_tea_list">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .../Modal #teacherTopic END -->
+
+    <!--Modal #frameModal START/-->
+    <div class="modal fade modal-style1 modal-bookIntro" id="frameModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-lg modal-md-full" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="CloseModal()"><span aria-hidden="true">&times;</span></button>
+                </div>
+                
+                <iframe id="examFrame" src="" style="width: 100%; height: 720px; border: 0; margin: 0"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--Modal #frameModal END-->
+    <!-- Modal #modal-bookIntro START/... -->
+    <div class="modal fade modal-style1 modal-starScore in" id="storytelling" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg modal-md-full" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="storytelling_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="myStudy">
+                        <div class="container-fluid">
+                            <div class="myStudy-block video">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="myStudy-content">
+                                            <!-- -->
+                                            <div class="upload-video">
+                                                <div class="upload-video__area">
+                                                    <div class="upload-video__area-default">
+                                                        <div class="upload-video__area-default__text" style="font-size:1.25em; color:#43a047;">
+                                                            將您自行錄製的說書影片上傳至YouTube，設為公開並分享到這裡！<br><span style="font-weight: bold; color:#31773a;">參賽者可不露臉，但至少要當旁白喔！</span>
+                                                        </div>
+                                                        <img src="../Content/images/myStudy/video-default-img.png" />
+                                                    </div>
+                                                    <div class="upload-video__area-answer" style="display: none;">
+                                                        <div class="upload-video__area-answer__videoWidth">
+                                                            <div class="embed-responsive embed-responsive-56pre">
+                                                                <iframe class="additional_materials_video_iframe" frameborder="0" id="AddVideo"
+                                                                    title="YouTube video player"
+                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"></iframe>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="myStudy-btns">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-7 col-md-8 text-left">
+                                                    <div class="input-group input-group-lg video-httpInput">
+                                                        <input type="text" id="AddVideoInput"
+                                                            class="form-control noRadius" placeholder="http://"
+                                                            value="" />
+                                                        <span class="input-group-btn">
+                                                            <button id="storytelling_preview" class="btn myStudy-btns_preview" type="button">預覽</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-5 col-md-4 text-right">
+                                                    <button id="myStudy-btns_submit" class="btn myStudy-btns_submit" type="submit" disabled="">
+                                                        送出
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="myStudy-text">
+                                            <p class="sent_success">您的影片作品已成功上傳至<a href="../ST/storytelling.aspx">說書頻道>></a>。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- .../Modal #modal-bookIntro END -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script src="../Script/jquery.min.js"></script>
+    <script src="../Script/bootstrap-lg.min.js"></script>
+    <script src="../Script/ie10-viewport-bug-workaround.js"></script>
+    <script src="../Content/widgets/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1.min.js"></script>
+
+    <!--日曆選擇器-->
+    <link href="../Script/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../Script/jquery-ui.min.js"></script>
+
+    <script src="../Script/Loading.js"></script>
+
+    <!--login-->
+    <script src="../Script/login/myID.js"></script>
+
+    <!-- 分頁-->
+    <script src="../Script/page/myPage2.js"></script>
+
+    <!--大賽相關-->
+    <script src="../Script/contest/contest.js"></script>
+
+    <!-- iframe高度-->
+    <script src="../Content/js/jquery.autoheight.js"></script>
+
+    <script>
+        var plansCount = 0;
+        //閱讀計畫列表
+        var first_arr = [];//原始資料、第一手資料(初始-全部)
+        var plan_arr = [];
+        var show_arr = [];//展示用(包含搜尋過後的結果)
+
+        var firstComein = true;
+
+        var isDone = 2;//查詢用。系統題本：已評量_1，未評量_0，全部_2。
+
+        $(document).ready(function () {
+            //nowPage
+            $('.navTab-RPList').addClass('active');
+
+            //#modal-bookIntro modify bootstrap Collapse.js
+            $(window).trigger('resize');
+
+            ShowLoadingImage();//載入loading畫面
+
+            //設定所有日期選擇器，可選取日期的第一天
+            getStartDate();
+
+            //設定每頁呈現數量
+            pageLength = 6;
+
+            init();
+        });
+
+        function init() {
+            //基本資訊
+            LoadInfo();
+
+            pageIndex = 0;
+            LoadAllPlansBasicInfo();
+        }
+
+        function LoadInfo() {
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/LoadInfo",
+                data: JSON.stringify({
+
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    var info = data["info"];
+                    $("#label_bookCount").text(info["bookCount"]);
+                    $("#label_minHard").text(info["minHard"]);
+                    $("#label_maxHard").text(info["maxHard"]);
+                    $("#label_lastUpdate").text(info["lastUpdate"]);
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadInfo]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+
+            });
+        }
+
+        //所有計畫的基本資訊
+        function LoadAllPlansBasicInfo() {
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/LoadAllPlansBasicInfo",
+                data: JSON.stringify({
+
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    //重新排序
+                    var sort_arr = data["plan_arr"].sort(
+                        (objA, objB) => new Date(objB.INSERT_DATE).getTime() - new Date(objA.INSERT_DATE).getTime(),
+                    );
+
+                    //顯示列表
+                    first_arr = sort_arr;
+                    plan_arr = sort_arr;
+                    show_arr = sort_arr;
+
+                    //分頁
+                    itemCount = show_arr.length;
+                    pageInit();//分頁程式
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadAllPlansBasicInfo]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                LoadDataByPage();
+            });
+        }
+
+        //撈學生的閱讀計畫列表之詳細狀態
+        function LoadPlan() {
+            var startIndex = pageIndex * pageLength;
+
+            var extraBookCount = 0;
+            for (var i = 0; i < pageIndex * pageLength; i++) {
+                if (show_arr[i]["isExtraBook"] == 1) {
+                    extraBookCount += 1;
+                }
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/LoadPlan",
+                data: JSON.stringify({
+                    startIndex: startIndex - extraBookCount,
+                    itemCount: pageLength,
+                    isDone: isDone
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    //顯示列表
+                    show_arr = data["plan_arr"];
+                    //console.log(startIndex, show_arr);
+                    for (var i in plan_arr) {
+                        if (i >= startIndex && i < startIndex + pageLength) {
+                            var plan = plan_arr[i];
+                            for (var j in show_arr) {
+                                var show = show_arr[j];
+                                if (show["bookID"] == plan["bookID"]) {
+                                    plan["status"] = show;
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                    show_arr = plan_arr;
+                    pageBtnReset();//分頁程式中，會呼叫ShowData()                
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadPlan]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+
+            });
+        }
+
+        //
+        function LoadDataByPage() {
+            //console.log("頁碼", pageIndex);
+            ShowLoadingImage();//載入loading畫面
+            if (searchType == "") {
+                LoadPlan();
+            } else {
+                pageBtnReset();
+            }
+        }
+
+        //顯示列表
+        function ShowData() {
+            //淨空
+            $("#tbody_list").empty();
+
+            //顯示
+            var tmp_index = 0;
+            for (var i = 0; i < pageLength; i++) {
+                tmp_index = pageIndex * pageLength + i;
+                if (tmp_index < itemCount) {
+                    var plan = show_arr[tmp_index];
+                    var tmp = '';
+                    if (plan["isExtraBook"] == "1") {
+                        tmp += '<tr class="ungradedBook">';
+                    } else {
+                        tmp += '<tr>';
+                    }
+                    tmp += '<td class="book-id">' + plan["bookID"] + '</td>';
+                    //優選書
+                    tmp += '<td class="book-good">' + (plan["isGood"] == 'True' ? '<img src="../Content/images/recommendedBook/goodBook.png" width="66" height="65">' : '') + '</td>';
+                    //書封
+                    if (plan["isExtraBook"] == "1") {
+                        if (plan["bookCover"] == "") { plan["bookCover"] = "SR_Cover.jpg" }
+                        tmp += '<td class="book-front"><a role="button" class="hover-effect-dark" onclick="LoadBookInfo(' + tmp_index + ')"><img src="../../RP/BookContent/ExtraBook/' + plan["bookCover"] + '"></a></td>';
+                    } else {
+                        tmp += '<td class="book-front"><a role="button" class="hover-effect-dark" onclick="LoadBookInfo(' + tmp_index + ')"><img src="' + plan["bookCover"] + '"></a></td>';
+                    }
+                    //書名
+                    tmp += '<td class="book-name">' + plan["bookName"] + '</td>';
+
+                    //電子書圖示
+                    //電子書借閱權限資訊
+                    if (plan["isExtraBook"] == "1") {
+                        tmp += '<td class="book-ebook"></td>';
+                    } else {
+                        if (plan["status"]["canEbook"]) {
+                            tmp += '<td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook.png" width="18" height="18"></td>';
+                        } else {
+                            //無權限可借電子書的情況
+                            tmp += '<td class="book-ebook"><img src="../Content/images/recommendedBook/icon-ebook-gray.png" width="18" height="18"></td>';
+                        }
+                    }
+
+                    //圖書難度
+                    if (plan["isExtraBook"] == "1") {
+                        tmp += '<td class="book-SR" data-th="圖書難度"></td>'; //圖書難度
+                    } else {
+                        tmp += '<td class="book-SR" data-th="圖書難度">SR ' + plan["SR"] + '</td>'; //圖書難度
+                    }
+                    //分類
+                    tmp += '<td class="book-sort" data-th="分類">' + plan["bookCategory"] + '</td>'; //分類
+                    //閱讀日期
+                    tmp += '<td class="book-date">';
+                    //開始閱讀
+                    tmp += '<div class="book-date-start"><div class="book-date-start__title">' + lang.RP_StartReading + '</div><div class="book-date-start__content"><div class="SR-datepicker">'; //開始閱讀
+                    tmp += (plan["canNewTime"]) ?
+                        '<input id="dateStart_' + tmp_index + '_' + plan["bookID"] + '" type="text" class="datepicker form-control"  onchange="BookinPlan(this.id)" value="' + plan["startDate"] + '">' :
+                        '<input id="dateStart_' + tmp_index + '_' + plan["bookID"] + '" type="text" class="datepicker form-control" value="' + plan["startDate"] + '" disabled>';
+                    tmp += '</div></div></div>';
+                    //結束閱讀
+                    tmp += '<div class="book-date-end"><div class="book-date-start__title">' + lang.RP_EndReading + '</div><div class="book-date-start__content"><div class="SR-datepicker">'; //結束閱讀
+                    tmp += (plan["canNewTime"]) ?
+                        '<input id="dateEnd_' + tmp_index + '_' + plan["bookID"] + '" type="text" class="datepicker form-control"  onchange="BookinPlan(this.id)" value="' + plan["endDate"] + '">' :
+                        '<input id="dateEnd_' + tmp_index + '_' + plan["bookID"] + '" type="text" class="datepicker form-control" value="' + plan["endDate"] + '" disabled>';
+                    tmp += '</div></div></div></td>';
+
+                    //評量區
+                    if (plan["isTeaModel"] == "1") {
+                        //教學版
+
+                        tmp += '<td class="book-tools">';
+                        if (plan["startDate"] == "") {
+                            tmp += '<div class="tools-add"><button class="btn btn-default btn-default-main RPbookList-table__btn-add" type="button" data-toggle="popover" data-placement="top" data-content="請規劃閱讀日期！">加入評量</button></div>';
+                        } else {
+
+                            //AI小書人權限開啟時為5欄，每欄寬度改為20%(套用 tools-evaluation-5)
+                            var aiOn = ($('#Auth_AI').val() === 'true');
+                            tmp += '<div class="tools-evaluation' + (aiOn ? ' tools-evaluation-5' : '') + '"><div class="row">';
+
+                            //書籍評分
+                            tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">' + lang.RP_BookRating + '</div><div class="tools-content">'; //書籍評分
+                            //是否有書籍評分
+                            tmp += (plan["status"]["hasRating"]) ?
+                                '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools-done" type="button" data-toggle="modal" data-target="#starRating" onclick="LoadLikeRating(' + tmp_index + ')"><img src="../Content/images/RPList/stared.png"></button>' :
+                                '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" data-toggle="modal" data-target="#starRating" onclick="LoadLikeRating(' + tmp_index + ')"><img src="../Content/images/RPList/star.png">&nbsp;評分</button>';
+                            tmp += '</div></div>';
+
+                            //系統題本
+                            if (plan["isExtraBook"] == "1") {
+                                tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="tools-content">';
+                                tmp += '</div></div>';
+                            } else {
+                                tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">' + lang.RP_SystemQuestions + '</div><div class="tools-content">'; //系統題本
+                                //判斷語意向量是否存在(簡體書有缺)
+                                tmp += (plan["status"]["vecExist"]) ?
+                                    //是否已測驗並得到分數
+                                    (plan["status"]["sysDegree"] == "") ?
+                                        //是否有書籍評分
+                                        (plan["status"]["hasRating"]) ?
+                                            '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" onclick="LoadSystemInfo(' + tmp_index + ')"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>' :
+                                            '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" data-toggle="popover" data-placement="top" data-content="請先完成書籍評分！"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>' :
+                                        '<button type="button" class="SR-btn-empty" type="button" onclick="LoadSystemInfo(' + tmp_index + ')"><span class="userScore ' + plan["status"]["sysTag"] + '">' + plan["status"]["sysDegree"] + '</span></button>' :
+                                    '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button"  disabled><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>';
+                                tmp += '</div></div>';
+                            }
+
+                            //教師命題
+                            if (plan["isExtraBook"] == "1") {
+                                tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="tools-content">';
+                                tmp += '</div></div>';
+                            } else {
+                                tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">' + lang.RP_TeacherProposedQuestions + '</div><div class="tools-content">'; //教師命題
+                                //是否有題本
+                                tmp += (plan["status"]["hasTeaPaper"]) ?
+                                    //是否已測驗並得到分數
+                                    (plan["status"]["teaDegree"] == "") ?
+                                        //是否有書籍評分
+                                        (plan["status"]["hasRating"]) ?
+                                            '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" data-toggle="modal" data-target="#teacherTopic" onclick="LoadTeacherInfo(' + tmp_index + ')"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>' :
+                                            '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" data-toggle="popover" data-placement="top" data-content="請先完成書籍評分！"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>' :
+                                        '<button type="button" class="SR-btn-empty" type="button" data-toggle="modal" data-target="#teacherTopic" onclick="LoadTeacherInfo(' + tmp_index + ')"><span class="userScore ' + plan["status"]["teaTag"] + '">' + plan["status"]["teaDegree"] + '</span></button>' :
+                                    '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" disabled><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>';
+                                tmp += '</div></div>';
+                            }
+
+                            //我的書房
+                            tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">' + lang.RP_MyStudyRoom + '</div><div class="tools-content">'; //我的書房
+                            //是否有書籍評分
+                            if (plan["status"]["hasRating"]) {
+                                var tmp2 = '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" onclick="LoadStudyInfo(' + tmp_index + ')">';
+
+                                //筆記本
+                                tmp2 += (plan["status"]["studyNotes"] == "1") ?
+                                    '<img src="../Content/images/RPList/myStudy-note-done.png">&nbsp;' :
+                                    '<img src="../Content/images/RPList/myStudy-note.png">&nbsp;';
+                                //繪畫
+                                tmp2 += (plan["status"]["studyPaint"] == "1") ?
+                                    '<img src="../Content/images/RPList/myStudy-paint-done.png">&nbsp;' :
+                                    '<img src="../Content/images/RPList/myStudy-paint.png">&nbsp;';
+                                //錄音
+                                tmp2 += (plan["status"]["studyAudio"] == "1") ?
+                                    '<img src="../Content/images/RPList/myStudy-audio-done.png">&nbsp;' :
+                                    '<img src="../Content/images/RPList/myStudy-audio.png">&nbsp;';
+                                //影音
+                                tmp2 += (plan["status"]["studyVideo"] == "1") ?
+                                    '<img src="../Content/images/RPList/myStudy-video-done.png"></button>' :
+                                    '<img src="../Content/images/RPList/myStudy-video.png"></button>';
+
+                                tmp += tmp2;
+
+                            } else {
+                                //沒有書籍評分
+                                tmp += '<button class="btn btn-default btn-default-main RPbookList-table__btn-tools" type="button" data-toggle="popover" data-placement="top" data-content="請先完成書籍評分！"><img src="../Content/images/RPList/myStudy-note.png">&nbsp;<img src="../Content/images/RPList/myStudy-paint.png">&nbsp;<img src="../Content/images/RPList/myStudy-audio.png">&nbsp;<img src="../Content/images/RPList/myStudy-video.png"></button>';
+                            }
+                            tmp += '</div></div>';
+                            //我的書房_END
+
+                            //AI小書人（本地 /SRAgent/ 對話頁，與本站同進程共用 Session）
+                            //依使用者單位(學校)AI權限才顯示欄位及連結
+                            if (aiOn) {
+                                tmp += '<div class="col-xs-6 col-sm-3"><div class="tools-title">AI小書人</div><div class="tools-content">'; //AI小書人
+                                //有摘要才顯示圖示(連結含 daccLevel/questId 與簽章，皆由伺服器產生)
+                                if (plan["aiHasSummary"] && plan["aiUrl"]) {
+                                    if (plan["aiCompleted"]) {
+                                        //曾完成對話 → 圖示正常，點擊先彈確認視窗(顯示最近時間+分數星星)
+                                        tmp += '<a role="button" class="ai-resume" style="cursor:pointer" data-url="' + plan["aiUrl"] + '" data-last="' + (plan["aiLastTime"] || '') + '" data-score="' + (plan["aiScore"] == null ? '' : plan["aiScore"]) + '"><img style="height:36px" src="../Content/images/SR_agent.png"/></a>';
+                                    } else {
+                                        //未完成 → 淡化、直接進入對話
+                                        tmp += '<a class="" style="opacity:0.4" href="' + plan["aiUrl"] + '" target="_blank"><img style="height:36px" src="../Content/images/SR_agent.png"/></a>';
+                                    }
+                                }
+                                tmp += '</div></div>';
+                            }
+                            //AI小書人_END
+
+                            tmp += '</div></div>';
+                        }
+
+                        tmp += '</td>';
+
+                        //教學版_END
+                    } else {
+                        //大賽版
+
+                        tmp += '<td class="book-tools">';
+                        tmp += '<div class="tools-add">';
+                        //判斷語意向量是否存在(簡體書有缺)
+                        tmp += (plan["status"]["vecExist"]) ?
+                            //有無分數的情況
+                            (plan["status"]["sysDegree"] == "") ?
+                                '<button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-add" style="min-width:30%" onclick="LoadSystemInfo(' + tmp_index + ')"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>' :
+                                '<button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-add" style="min-width:30%" onclick="LoadSystemInfo(' + tmp_index + ')"><span class="userScore ' + plan["status"]["sysTag"] + '">' + plan["status"]["sysDegree"] + '</span></button>' :
+                            '<button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-add" style="min-width:30%" disabled><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button>';
+                        //tmp += '</div>'
+                        //說書頻道按鈕
+                        //tmp += '<div class="tools-add">';
+                        tmp += '&nbsp;&nbsp;&nbsp;&nbsp;';
+                        tmp += '<button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-add STinserface" style="min-width:30%"><i class="fa-solid fa-video"></i> 說書趣</button>'
+                        tmp += '</div>'
+                        tmp += '</td>';
+
+                        //大賽版_END
+                    }
+
+                    //刪除
+                    tmp += (plan["status"]["canDel"]) ?
+                        '<td class="book-delete"><button class="RPbookList-table__btn-delete" type="button" onclick="DeleteBook(' + tmp_index + ')">×</button></td>' :
+                        '<td class="book-delete"></td>';
+                    tmp += '</tr>';
+
+                    $("#tbody_list").append(tmp);
+                }
+            }
+
+            //說書頻道按鈕事件
+            storytelling_setting();
+            //綁定日曆選擇器
+            setDatetimepicker();
+
+            SetPopover();
+
+            HideLoadingImage();//關閉lodaing畫面
+
+            //滑動至表格上方
+            if (firstComein) {
+                firstComein = false;
+            } else {
+                $('html, body').animate({ scrollTop: $(".RPList-books").offset().top - 80 }, 500);
+            }
+        }
+
+        //刪除某書的閱讀計畫
+        function DeleteBook(index) {
+            var plan = show_arr[index];
+
+            //提醒文字
+            var msg = "確定要從閱讀計畫中，刪除[" + plan["bookName"] + "]？";
+            ////語系轉換
+            //switch(window.localStorage.getItem('Lang')){
+            //    case "en-US":
+            //        //英文
+            //        msg = "Are you sure you want to delete [" + plan["bookName"] + "] from the reading plan?";
+            //        break;
+            //    case "zh-CN":
+            //        //簡體
+            //        msg = "确定要从阅读计划中，删除[" + plan["bookName"] + "]？";
+            //        break;
+            //}
+            var toDO = confirm(msg);
+
+            if (toDO) {
+                var currentPageIndex = pageIndex;
+
+                $.ajax({
+                    type: "POST",
+                    url: "RPList.aspx/DeleteBook",
+                    data: JSON.stringify({
+                        bookID: plan["bookID"]
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                        getOut(data["myID"]);
+
+                        if (data["status"] == "done") {
+                            LoadInfo();
+
+                            show_arr.splice(index, 1);
+                            itemCount = show_arr.length;
+                            pageInit();
+                            if (pageIndex > 0 && pageIndex >= pageCount) pageIndex--;
+
+                            //回到目前分頁
+                            toTargetPage(pageIndex);
+                        } else if (data["status"] == "deny") {
+                            alert("書籍已填答不可刪除。");
+                        }
+                    },
+                    error: function (jqXHR, textStatus, err) {
+                        console.log("[DeleteBook]：" + jqXHR.responseText);
+                    }
+                }).then(function () {
+                    HideLoadingImage();//關閉lodaing畫面
+                });
+            }
+        }
+    </script>
+
+    <!-- 選時間 -->
+    <link rel="stylesheet" type="text/css" href="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../Content/widgets/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <!--預定閱讀計畫時間-->
+    <script>
+        var starDate; //日曆選擇器，可選日期的第一天
+
+        //取得可選取日期的第一天
+        function getStartDate() {
+            starDate = new Date();
+            starDate.setDate(new Date().getDate());
+            starDate.setHours(0, 0, 0, 0);
+        }
+
+        //綁定日曆選擇器
+        function setDatetimepicker() {
+            $('.datepicker').datepicker({
+                minDate: starDate,
+                dateFormat: 'yy-mm-dd',
+                beforeShow: function () {
+                    setTimeout(function () {
+                        $('.ui-datepicker').css('z-index', 6);
+                    }, 0);
+                }
+            });
+
+            ////語系：非英文時，日曆選擇器的樣子
+            //if(window.localStorage.getItem('Lang') != "en-US"){
+            //    $.datepicker.regional['zh-CN'] = { 
+            //        monthNames: ['一月','二月','三月','四月','五月','六月', '七月','八月','九月','十月','十一月','十二月'],
+            //        dayNamesMin: ['日','一','二','三','四','五','六'],
+            //        dateFormat: 'yy-mm-dd',
+            //        isRTL: false}; 
+            //    $.datepicker.setDefaults($.datepicker.regional['zh-CN']); 
+            //}
+        }
+
+        //預定閱讀計畫時間
+        function BookinPlan(id) {
+            var index = id.split("_")[1];
+            var bookID = id.split("_")[2];
+            var _startDate = $("#dateStart_" + index + "_" + bookID).val();
+            var _endDate = $("#dateEnd_" + index + "_" + bookID).val();
+
+            if (_startDate != "" && _endDate != "") {
+                //檢查所選時間合理性
+                if (new Date(_startDate) > new Date(_endDate)) {
+
+                    var msg = "[開始時間] 不可晚於 [結束時間]。";
+                    //語系轉換
+                    //switch(window.localStorage.getItem('Lang')){
+                    //    case "en-US":
+                    //        //英文
+                    //        msg = "[Start Time] cannot be later than [End Time].";
+                    //        break;
+                    //    case "zh-CN":
+                    //        //簡體
+                    //        msg = "[开始时间] 不可晚于 [结束时间]。";
+                    //        break;
+                    //}
+                    alert(msg);
+                    $("#" + id).val('');
+                } else {
+
+                    ShowLoadingImage();//載入loading畫面
+
+                    //儲存閱讀計畫時間
+                    $.ajax({
+                        type: "POST",
+                        url: "RPList.aspx/SetPlanTime",
+                        data: JSON.stringify({
+                            bookID: bookID,
+                            startDate: _startDate,
+                            endDate: _endDate
+                        }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                            getOut(data["myID"]);
+
+                            //大賽徽章紀錄
+                            if (data["contestSN"] != "-1") checkBadgeRecord(bookID, "add", "plan");
+
+                            show_arr[index]["startDate"] = _startDate;
+                            show_arr[index]["endDate"] = _endDate;
+
+                            ShowData();
+                        },
+                        error: function (jqXHR, textStatus, err) {
+                            console.log("[BookinPlan]：" + jqXHR.responseText);
+                        }
+                    }).then(function () {
+                        HideLoadingImage();//關閉lodaing畫面
+                    });
+                }
+            }
+
+        }
+
+
+    </script>
+
+    <!--書籍資訊-->
+    <script>
+        function LoadBookInfo(index) {
+            var plan = show_arr[index];
+            var url = "Book-Intro.aspx?bookID=" + plan["bookID"] + "&canEbook=" + plan["status"]["canEbook"] + "&isFromSystem=" + plan["status"]["isFromSystem"];
+
+            $("#frameModal iframe").attr("src", url);
+            $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+        }
+    </script>
+
+    <!-- 與iFrame聯繫 -->
+    <script>
+        function CloseModal() {
+            $("#frameModal iframe").attr("src", "");
+            $("#frameModal").modal('hide');
+        }
+
+        function AfterScore() {
+            if (searchType == "") {
+                //回到我的書單
+                isDone = 2;
+                $("#div_search button").removeClass("active");
+                $("#btn-search-all").addClass("active");
+
+                LoadAllPlansBasicInfo();
+                //LoadPlan();
+            } else {
+                SearchByBook(false);
+            }
+        }
+    </script>
+
+    <!--系統題本-->
+    <script>
+        //撈預設題本_作答情況
+        function LoadSystemInfo(index) {
+            var plan = show_arr[index];
+            //$("#b_sys_name").text(plan["bookName"]);
+
+            ShowLoadingImage();//載入loading畫面
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/LoadSystemInfo",
+                data: JSON.stringify({
+                    bookID: plan["bookID"]
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    // 新增：維護時段提示
+                    if (data["status"] === "MAINTENANCE") {
+                        alert("每日00:00至06:00為系統維護時間，暫不開放書籍與文章之評量及評論等功能。");
+                        return;
+                    }
+
+                    var info = data["info"];
+                    if (plan["isTeaModel"] == "1") {
+                        //教學版
+
+                        //測驗網址
+                        var url = "";
+                        if (info["isSummary"] == "1") {
+                            //摘要題型
+                            url = (plan["status"]["sysTag"].indexOf("byTeacher") == -1) ? 'fillAssessment-bySystem.aspx?bookID=' + plan["bookID"] : 'fillAssessment-bySystem-teacherRating.aspx?bookID=' + plan["bookID"] + '&scoreID=' + plan["status"]["scoreID"];
+                            if (plan["status"]["sysDegree"] != "") url += '&onlyRead=true&degree=' + plan["status"]["sysDegree"] + '&tag=' + plan["status"]["sysTag"];//有分數，查看模式
+
+                        } else {
+                            //選擇題型
+                            url = 'fillQuiz-bySystem.aspx?bookID=' + plan["bookID"];
+                        }
+
+                        $("#frameModal iframe").attr("src", url);
+                        $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+
+                    } else {
+                        //大賽版
+
+                        if (info["testEnabled"] == "1") {
+
+                            //測驗網址
+                            var url = "";
+                            if (info["isSummary"] == "1") {
+                                //摘要題型
+                                url = 'fillAssessment-byContest.aspx?bookID=' + plan["bookID"];
+                                if (plan["status"]["sysDegree"] != "") url += '&onlyRead=true&degree=' + plan["status"]["sysDegree"] + '&tag=' + plan["status"]["sysTag"];//有分數，查看模式
+
+                            } else {
+                                //選擇題型
+                                url = 'fillQuiz-byContest.aspx?bookID=' + plan["bookID"];
+                            }
+
+                            $("#frameModal iframe").attr("src", url);
+                            $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+                        } else {
+                            alert("評量次數已滿。");
+                        }
+
+                    }
+
+                    ////語系轉換
+                    //switch(window.localStorage.getItem('Lang')){
+                    //    case "en-US":
+                    //        //英文
+                    //        //題本類型
+                    //        info["testType"] = info["testType"].replace("選擇題","Multiple choice questions").replace("摘要題","Summary questions");
+
+                    //        //填寫狀態
+                    //        info["testStatus"] = info["testStatus"].replace("未作答","Incomplete").replace("已送出","Sent").replace("暫存","Temporarily saved");
+
+                    //        title_1 = "View comments";
+                    //        title_2 = "Take a test";
+                    //        title_3 = "Done";
+                    //        break;
+                    //    case "zh-CN":
+                    //        //簡體
+                    //        //題本類型
+                    //        info["testType"] = info["testType"].replace("選擇題","选择题").replace("摘要題","摘要题");
+
+                    //        //填寫狀態
+                    //        info["testStatus"] = info["testStatus"].replace("未作答","未作答").replace("已送出","已送出").replace("暫存","暂存");
+
+                    //        title_1 = "查看评语";
+                    //        title_2 = "进行测评";
+                    //        title_3 = "已完成";
+                    //        break;
+                    //}
+
+
+                    ////題本類型
+                    //$("#td_sys_testType").text(info["testType"]);
+
+                    ////填寫狀態
+                    //$("#td_sys_testStatus").text(info["testStatus"]);
+
+                    ////等第
+                    //$("#td_sys_degree").empty();
+                    //if (plan["sysDegree"] != "") {
+                    //    if(plan["sysTag"].indexOf("byTeacher") == -1){
+                    //        //語系轉換-英文
+                    //        if(plan["sysDegree"] == "待" && window.localStorage.getItem('Lang') == "en-US") plan["sysDegree"] = "reviewing";
+
+                    //        $("#td_sys_degree").append('<span class="userScore ' + plan["sysTag"] + '">' + plan["sysDegree"] + '</span>');
+                    //    }else{
+                    //        $("#td_sys_degree").append('<button type="button" class="SR-btn-empty" title="' + title_1 + '" value="' + plan["scoreID"] + '" onclick="gotoSummary_Score(this)"><span class="userScore ' + plan["sysTag"] + '">' + plan["sysDegree"] + '</span></button');
+                    //    }
+                    //}
+                    //console.log("可測驗嗎?", info["testEnabled"]);
+
+                    //$("#td_sys_goTest").empty();
+                    ////測驗按鈕
+                    //if (info["testEnabled"] == "1") {
+                    //    //可測驗 
+                    //    $("#td_sys_goTest").append('<button type="button" class="btn btn-primary btn-xs" title="' + title_2 + '" value="' + plan["bookID"] + '|' + info["isSummary"] +  '" onclick="gotoSummary(this)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>');
+                    //} else {
+                    //    //不可測驗
+                    //    $("#td_sys_goTest").append('<button type="button" class="btn btn-primary btn-xs" title="' + title_3 + '" disabled="disabled"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>');
+                    //}
+
+
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadSystemInfo]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                HideLoadingImage();//關閉lodaing畫面
+            });
+
+        }
+    </script>
+
+    <!--教師命題-->
+    <script>
+        //撈教師題本_作答情況
+        function LoadTeacherInfo(index) {
+            var plan = show_arr[index];
+            $("#teacherTopic h3").html(plan["bookName"]);
+
+            //淨空
+            $("#tbody_tea_list").empty();
+
+            ShowLoadingImage();//載入loading畫面
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/LoadTeacherInfo",
+                data: JSON.stringify({
+                    bookID: plan["bookID"]
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    var tmp = '';
+                    var info_arr = data["info_arr"];
+                    for (var i = 0; i < info_arr.length; i++) {
+                        var info = info_arr[i];
+
+                        var value = plan["bookID"] + "|" + info["assSN"] + "|" + data["stuSN"]; //書籍編號|題本編號|學生編號
+
+                        var title_1 = "進行測驗";
+                        var title_2 = "查看評語";
+                        var title_3 = "已完成";
+
+                        ////語系轉換
+                        //switch(window.localStorage.getItem('Lang')){
+                        //    case "en-US":
+                        //        //英文
+                        //        //填寫狀態
+                        //        info["testStatus"] = info["testStatus"].replace("未作答","unanswered").replace("已送出","Sent").replace("暫存","Save");
+
+                        //        title_1 = "Take a test";
+                        //        title_2 = "View comments";
+                        //        title_3 = "Done";
+                        //        break;
+                        //    case "zh-CN":
+                        //        //簡體
+                        //        //填寫狀態
+                        //        info["testStatus"] = info["testStatus"].replace("未作答","未作答").replace("已送出","已送出").replace("暫存","暂存");
+
+                        //        title_1 = "进行测评";
+                        //        title_2 = "查看评语";
+                        //        title_3 = "已完成";
+                        //        break;
+                        //}
+
+                        tmp += '<tr>';
+
+                        tmp += '<td>' + info["assName"] + '</td>';//題本名稱
+                        tmp += '<td>' + info["teaName"] + '</td>';//出題老師
+
+                        //成績、測驗按鈕
+                        if (info["testEnabled"] == "1") {
+                            //成績等第 未完成：待計分
+                            tmp += (info['teaDegree'] == "") ? '<td></td>' : '<td><span class="userScore ' + info["teaTag"] + '">' + info["teaDegree"] + '</span></td>';
+                            //可測驗
+                            tmp += '<td><button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-tools" title="' + title_1 + '" value="' + value + '" onclick="gotoCustomTest(this)"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button></td></button></td>';
+                        } else {
+                            //語系轉換-英文
+                            if (info["teaDegree"] == "待" && window.localStorage.getItem('Lang') == "en-US") info["teaDegree"] = "reviewing";
+
+                            //成績等第
+                            tmp += '<td><button type="button" class="SR-btn-empty" title="' + title_2 + '" value="' + value + '" onclick="gotoCustomTest_Score(this)"><span class="userScore ' + info["teaTag"] + '">' + info["teaDegree"] + '</span></button/td>';
+                            //不可測驗
+                            tmp += '<td><button type="button" class="btn btn-default btn-default-main RPbookList-table__btn-tools" title="' + title_3 + '" value="' + value + '" onclick="gotoCustomTest(this)" disabled="disabled"><img src="../Content/images/RPList/assessment.png">&nbsp;評量</button></td></button></td>';
+                        }
+
+                        tmp += '</tr>';
+                    }
+                    $("#tbody_tea_list").append(tmp);
+
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadTeacherInfo]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                HideLoadingImage();//關閉lodaing畫面
+            });
+        }
+
+        //前往教師題本測驗(客製化題目)
+        //參數：書籍編號、題本編號
+        function gotoCustomTest(btn) {
+            var tmp = btn.value.split("|");
+            var bookID = tmp[0];    //書籍編號
+            var assSN = tmp[1];     //題本編號
+
+            $("#frameModal iframe").attr("src", "fillAssessment-byTeacher.aspx?bookID=" + bookID + "&assSN=" + assSN);
+            $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+        }
+
+        //前往教師題本(客製化題目)_老師評語
+        //參數：書籍編號、題本編號
+        function gotoCustomTest_Score(btn) {
+            var tmp = btn.value.split("|");
+            var bookID = tmp[0];    //書籍編號
+            var assSN = tmp[1];     //題本編號
+            var stuSN = tmp[2];     //學生編號
+
+            $("#frameModal iframe").attr("src", "fillAssessment-byTeacher-teacherRating.aspx?bookID=" + bookID + "&assSN=" + assSN);
+            $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+        }
+    </script>
+
+    <!--我的書房-->
+    <script>
+        function LoadStudyInfo(index) {
+            var plan = show_arr[index];
+            $("#frameModal iframe").attr("src", "myStudy.aspx?bookID=" + plan["bookID"]);
+            $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+        }
+    </script>
+
+    <!--書籍評分-->
+    <script>
+        var likeIndex = "";
+
+        //撈書籍喜好程度        
+        function LoadLikeRating(index) {
+            likeIndex = index;
+
+            //清除
+            likeScore = 0;//喜歡分數
+            gainScore = 0;//收穫分數            
+            $(".Vteaching-starScore-item .btn-stars-group .btn").each(function () {
+                $(this).removeClass("hover").removeClass("light");
+            });
+
+            var plan = show_arr[index];
+
+            ShowLoadingImage();//載入loading畫面
+
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/LoadLikeRating",
+                data: JSON.stringify({
+                    bookID: plan["bookID"]
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    var info = data["info"];
+                    likeScore = info["likeScore"];
+                    gainScore = info["gainScore"];
+                    plan["status"]["likeScore"] = info["likeScore"];
+                    plan["status"]["gainScore"] = info["gainScore"];
+
+                    //喜歡程度
+                    $("#div_like .btn").each(function () {
+                        if ($("#div_like .btn").index(this) + 1 == likeScore) $(this).addClass("hover").addClass("light").prevAll().addClass("light");
+                    });
+
+                    //收穫程度
+                    $("#div_gain .btn").each(function () {
+                        if ($("#div_gain .btn").index(this) + 1 == gainScore) $(this).addClass("hover").addClass("light").prevAll().addClass("light");
+                    });
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[LoadLikeRating]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                HideLoadingImage();//關閉lodaing畫面
+            });
+        }
+
+        //送出書籍喜好程度的評分
+        //參數：類別、分數
+        function SendLikeRating(type, score) {
+            var plan = show_arr[likeIndex];
+            //ShowLoadingImage();//載入loading畫面
+
+            //送出評分
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/SendLikeRating",
+                data: JSON.stringify({
+                    bookID: plan["bookID"],
+                    type: type,
+                    score: score
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    //$("#Vteaching-starScore").modal("hide");
+
+                    if (type == "like") {
+                        show_arr[likeIndex]["status"]["likeScore"] = score;
+                    } else {
+                        show_arr[likeIndex]["status"]["gainScore"] = score;
+                    }
+
+                    if (show_arr[likeIndex]["status"]["likeScore"] && show_arr[likeIndex]["status"]["gainScore"]) {
+                        show_arr[likeIndex]["status"]["hasRating"] = true;
+                        ShowData();
+                    }
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[SendLikeRating]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                //HideLoadingImage();//關閉lodaing畫面
+            });
+        }
+    </script>
+
+    <!-- K's js -->
+    <script>
+        $(window).on('resize', function () {
+            //modify bootstrap Collapse.js
+            $('.bookIntro-btnBorrow[data-toggle="collapse"]').click(function () {
+                $(this).parents('.modal-bookIntro').find('.bookIntro-btnBorrow').attr("aria-expanded", "false");
+                $(this).attr("aria-expanded", "true");
+                $($(this).attr('href')).parents('.modal-bookIntro').find('.bookIntro-collapse').removeClass('in');
+            });
+
+            //#frameModal iframe shown height & set
+            $('#frameModal').on('shown.bs.modal', function (e) {
+                $("#frameModal iframe").css({
+                    width: '100%',
+                    height: $(window).height() - 30 - 30 - $('#frameModal .modal-header').outerHeight() - 2,
+                    border: '0',
+                    margin: '0',
+                    display: 'block'
+                });
+            }).modal({
+                show: false,
+                backdrop: 'static',
+                keyboard: true
+            });
+        });
+
+        function SetPopover() {
+
+            //圖標說明popover
+            $('.functions-tips button[data-toggle="popover"]').popover({
+                trigger: 'focus',
+                html: true,
+                template: '<div class="popover functions-tips__popover" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>'
+            });
+
+            //評量裡按鈕出現popover
+            $('.book-tools button[data-toggle="popover"]').popover({
+                trigger: 'focus',
+                html: true
+            });
+        }
+
+        $(function () {
+            //星星評分
+            $('.Vteaching-starScore-item .btn-stars-group .btn').bind({
+                mouseenter: function (e) {
+                    $_getValue = $(this).val();
+                    $_getText = $(this).parents('.Vteaching-starScore-item').find(".Vteaching-starScore-text").html();
+
+                    $(this).addClass("hover").prevAll().addClass("hover");
+                    $(this).nextAll().removeClass("hover");
+                    $(this).parents('.Vteaching-starScore-item').find(".Vteaching-starScore-text").html($_getValue);
+                },
+                mouseleave: function (e) {
+                    $(this).removeClass("hover").siblings().removeClass("hover");
+                    $(this).parents('.Vteaching-starScore-item').find(".Vteaching-starScore-text").html($_getText);
+                },
+                //click: function (e) {
+                //    $(this).addClass("light").prevAll().addClass("light");
+                //    $(this).nextAll().removeClass("light");
+                //    $(this).parents('.Vteaching-starScore-item').find(".Vteaching-starScore-text").html($_getValue);
+                //    $(this).unbind('mouseleave');
+                //}
+            });
+
+            $("#div_like .btn").click(function () {
+                var likeScore = $("#div_like .btn").index(this) + 1;
+
+                $(this).addClass("light").prevAll().addClass("light");
+                $(this).nextAll().removeClass("light");
+                $(this).parents('.Vteaching-starScore-item').find(".Vteaching-starScore-text").html($_getValue);
+                $(this).unbind('mouseleave');
+
+                SendLikeRating("like", likeScore);
+            });
+
+            $("#div_gain .btn").click(function () {
+                var gainScore = $("#div_gain .btn").index(this) + 1;
+
+                $(this).addClass("light").prevAll().addClass("light");
+                $(this).nextAll().removeClass("light");
+                $(this).parents('.Vteaching-starScore-item').find(".Vteaching-starScore-text").html($_getValue);
+                $(this).unbind('mouseleave');
+
+                SendLikeRating("gain", gainScore);
+            });
+        });
+    </script>
+
+    <!--搜尋-->
+    <script>
+        var searchType = "";  //搜尋類型(keyword)
+
+        function searchByEnter(event) {
+            //按下enter鍵後，才進行搜尋
+            if ((event.keyCode || event.which) == 13) {
+                searchByKeyword();
+
+                //避免按下enter後，畫面重整
+                event.cancleBubble = true;
+                event.returnValue = false;
+            }
+        }
+
+        //關鍵字搜尋
+        function searchByKeyword() {
+            //搜尋類型
+            searchType = ($("#txt_search").val() == "") ? "" : "keyword";
+
+            //作答情況恢復起始值
+            //$("#Drop_paper").val("");
+            //$("#Drop_status").val("");
+
+            var keyword = $("#txt_search").val();
+            //console.log("搜尋關鍵字：",keyword);
+
+            //恢復所有資料的狀態
+            isDone = 2;
+            $("#div_search button").removeClass("active");
+            $("#btn-search-all").addClass("active");
+
+            if (keyword == "") {
+                //顯示全部
+                init();
+
+            } else {
+                plan_arr = first_arr;
+                show_arr = first_arr;
+
+                //模糊搜尋，比對書名、類別、圖書難度(SR值)
+                var filters = {
+                    bookName: keyword,
+                    //bookCategory: keyword,
+                    //SR: keyword
+                }
+                show_arr = searchKeysValue(first_arr, filters);
+
+                SearchByBook(true);
+            }
+        }
+
+        function searchKeysValue(lists, filters) {
+            var resArr = [];
+
+            lists.filter(item => {
+                for (var i in filters) {
+                    if (item[i].match(filters[i])) {
+                        var res = item;
+                        resArr.push(res);
+                        break;
+                    }
+                }
+            });
+            return resArr;
+        }
+
+        function SearchByBook(isNewSearch) {
+            ShowLoadingImage();
+
+            var search_arr = [];
+            for (var i in show_arr) {
+                search_arr.push(show_arr[i]["bookID"]);
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "RPList.aspx/SearchByBook",
+                data: JSON.stringify({
+                    bookID_arr: search_arr,
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = jQuery.parseJSON(decodeURIComponent(response.d));
+                    getOut(data["myID"]);
+
+                    var tmp_arr = data["plan_arr"];
+                    for (var i in show_arr) {
+                        var plan = show_arr[i];
+                        for (var j in tmp_arr) {
+                            var tmp = tmp_arr[j];
+                            if (tmp["bookID"] == plan["bookID"]) {
+                                plan["status"] = tmp;
+                                break;
+                            }
+                        }
+                    }
+
+                    //顯示搜尋結果
+                    if (isNewSearch) {
+                        itemCount = show_arr.length;
+                        pageInit();
+                        pageIndex = 0;
+                    }
+
+                    pageBtnReset();//分頁程式中，會呼叫ShowData()
+                },
+                error: function (jqXHR, textStatus, err) {
+                    console.log("[SearchByBook]：" + jqXHR.responseText);
+                }
+            }).then(function () {
+                HideLoadingImage();//關閉lodaing畫面
+            });
+        }
+    </script>
+
+    <!--是否評量分類搜尋-->
+    <script>
+        function SearchDone(_isDone) {
+            //清除關鍵字搜尋狀態
+            searchType = "";
+            $("#txt_search").val("");
+
+            //搜尋頁籤設定
+            $("#div_search button").removeClass("active");
+
+            //系統評量搜尋分類
+            isDone = _isDone;
+            switch (isDone) {
+                case 0:
+                    //未評量
+                    plan_arr = [];
+                    first_arr.forEach(function (plan, i) {
+                        if (plan["isTeaModel"] == "1") {
+                            if (plan["isExtraBook"] == "1") {
+                                //未分級書單判斷我的書房(status 可能尚未載入，做防呆)
+                                var st0 = plan["status"] || {};
+                                var anyDone0 = (st0["studyNotes"] == "1" || st0["studyPaint"] == "1" || st0["studyAudio"] == "1" || st0["studyVideo"] == "1");
+                                if (!anyDone0) {
+                                    plan_arr.push(plan);
+                                }
+                            } else {
+                                //教學版 - 系統題本 or 教師題本
+                                if (plan["isDone"] == "0" && plan["isTeaDone"] == "0") plan_arr.push(plan);
+                                //console.log(plan["isTeaDone"]);
+                            }
+                        } else {
+                            //大賽版 - 系統題本
+                            if (plan["isDone"] == "0") plan_arr.push(plan);
+                        }
+                    });
+
+                    $("#btn-search-tobe").addClass("active");
+                    break;
+
+                case 1:
+                    //已評量
+                    plan_arr = [];
+                    first_arr.forEach(function (plan, i) {
+                        if (plan["isTeaModel"] == "1") {
+                            //console.log(plan["isTeaDone"]);
+                            if (plan["isExtraBook"] == "1") {
+                                //未分級書單判斷我的書房(status 可能尚未載入，做防呆)
+                                var st1 = plan["status"] || {};
+                                if (st1["studyNotes"] == "1" || st1["studyPaint"] == "1" || st1["studyAudio"] == "1" || st1["studyVideo"] == "1") {
+                                    plan_arr.push(plan);
+                                }
+                            } else {
+                                //教學版 - 系統題本 or 教師題本
+                                if (plan["isDone"] == "1" || plan["isTeaDone"] == "1") plan_arr.push(plan);
+                            }
+                        } else {
+                            //大賽版 - 系統題本
+                            if (plan["isDone"] == "1") plan_arr.push(plan);
+                        }
+                    });
+
+                    $("#btn-search-ed").addClass("active");
+                    break;
+
+                case 2:
+                    //全部
+                    plan_arr = first_arr;
+
+                    $("#btn-search-all").addClass("active");
+                    break;
+            }
+            show_arr = plan_arr;
+
+            //分頁
+            itemCount = show_arr.length;
+            pageInit();//分頁程式
+
+            pageIndex = 0;
+            LoadDataByPage();
+
+        }
+    </script>
+
+    <!--說書專區-->
+    <script>
+        function storytelling_setting() {
+            console.log('說書趣')
+            //var rstorytelling = new bootstrap.Modal(document.getElementById('storytelling'), { backdrop: 'static', keyboard: false })
+
+            //「說書趣」按鈕
+            $('.STinserface').click(function () {
+                reset_storytelling();
+                let BookID = $(this).parents('td.book-tools').siblings('td.book-id').text();
+                fetch_storytelling_data(BookID);
+                $('#myStudy-btns_submit').attr('data-bookid', BookID);
+            });
+            //彈出視窗 關閉
+            $('#storytelling_close').click(function () {
+                //rstorytelling.hide();
+                $('#storytelling').modal('hide');
+                reset_storytelling();
+            });
+            //預覽按鈕
+            $('#storytelling_preview').click(function () {
+                AddVideoData();
+            });
+            //影片送出
+            $('#myStudy-btns_submit').click(function () {
+                $(this).attr('disabled', true);
+                let BookID = $('#myStudy-btns_submit').attr('data-bookid');
+                let VideoUrl = $('#AddVideoInput').val();
+                CheckBookTellingInsert(BookID, VideoUrl);
+            });
+            function reset_storytelling() {
+                //重新布設彈出視窗
+                $('#AddVideoInput').val("");
+                $('.upload-video__area-default').show();
+                $(".upload-video__area-answer").hide();
+                $(".sent_success").hide();
+                $('#myStudy-btns_submit').attr('disabled', true).removeAttr('data-bookid');
+            };
+
+            function fetch_storytelling_data(BookID) {
+                $.ajax({
+                    type: "POST",
+                    url: "RPList.aspx/LoadBookTellingInfo",
+                    data: JSON.stringify({
+                        BookID: BookID
+                    }),
+                    contentType: "application/JSON; charset=utf-8",
+                    dataType: "JSON",
+                    success: function (datatask) {
+                        let data = jQuery.parseJSON(datatask.d);
+                        if (data.length != 0) {
+                            $.each(data, function (index, item) {
+                                console.log('data.video_url:' + item.video_url);
+                               $('#AddVideoInput').val(item.video_url);
+							   if (item.vide_url != '') {
+								  $("#AddVideo").attr("src", item.vide_url);
+								  $(".upload-video__area-answer").show();
+								  $(".myStudy-btns_submit").attr('disabled', false);
+								};
+                            });
+                        }
+                    },
+                    error: function (datatask) {
+                        console.log(datatask);
+                    },
+                    complete: function () {
+                        //rstorytelling.show();
+                        $('#storytelling').modal('show');
+                    }
+                })
+            }
+            function CheckBookTellingInsert(BookID, VideoUrl) {
+                //檢查可以上傳/更新影片嗎
+                console.log('檢查可以上傳溜')
+                $.ajax({
+                    type: "POST",
+                    url: "RPList.aspx/CheckBookTellingInsert",
+                    data: JSON.stringify({
+                        BookID: BookID
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    beforeSend: function () {
+                    },
+                    success: function (res) {
+                        let data = jQuery.parseJSON(res.d);
+                        console.log('res.d')
+                        console.log(res.d)
+                        $.each(data, function (index, item) {
+                            console.log(item.sn_count);
+                            if (item.sn_count == 0) {
+                                insert_storytelling_data(BookID, VideoUrl);
+                            }
+                            else {
+                                window.alert('您的影片已發布，若要更換內容請至「我的頻道」收回，再更換影片網址！');
+                            }
+                        });
+                    },
+                    error: function () {
+                        $('#myStudy-btns_submit').attr('disabled', false)
+                        console.log('確認可上傳狀態失敗');
+                    },
+                    complete: function () {
+
+                    }
+                })
+            };
+            function insert_storytelling_data(BookID, VideoUrl) {
+                $.ajax({
+                    type: "POST",
+                    url: "RPList.aspx/InsertBookTellingInfo",
+                    data: JSON.stringify({
+                        BookID: BookID,
+                        VideoUrl: VideoUrl
+                    }),
+                    contentType: "application/JSON; charset=utf-8",
+                    dataType: "JSON",
+                    success: function (response) {
+                        $(".sent_success").show();//上傳完成字眼
+                        var serverData = jQuery.parseJSON(response.d);
+                        console.log(serverData.status);
+                    },
+                    error: function (response) {
+                        $('#myStudy-btns_submit').attr('disabled', false)
+                        var serverData = jQuery.parseJSON(response.d);
+                        console.log(serverData.status);
+                    },
+                    complete: function () {
+                    }
+                })
+            }
+
+            function AddVideoData() {
+                if ($('#AddVideoInput').val().indexOf("youtu") != -1 || $('#AddVideoInput').val().indexOf("drive.google") != -1) {
+                    var url = modifyURL($('#AddVideoInput').val());
+                    $('#AddVideoInput').val(url);
+                    $("#AddVideo").attr("src", url);
+                    $(".upload-video__area-answer").show();
+                    $(".myStudy-btns_submit").attr('disabled', false);
+                }
+                else if ($('#AddVideoInput').val() == "") {
+                    window.alert("請填入影片連結！");
+                }
+                else {
+                    window.alert("請填入「已公開影片」的YouTube影片連結，或是Google雲端連結！");
+                }
+            }
+             function modifyURL(url) {
+     //整理youtube, google影片網址適用不同格式
+     if (url.indexOf("http://") == -1 && url.indexOf("https://") == -1) url = "https://" + url;
+     if (url.indexOf("https://www.youtube.com/embed/") != -1) {
+         return url;
+     }
+     else if (url.indexOf("shorts") != -1) {
+         url = url.replace('shorts', 'embed');
+     }
+	 else if (url.indexOf("youtube.com/embed/")!=-1) {
+    url = url;
+	}
+     else if (url.indexOf("youtube") != -1) {
+         //完整網址(例：http://www.youtube.com/watch?v=FdeioVndUhs 、https://www.youtube.com/watch?v=NrRqkomut7w)
+         //短網址變長網址(例：https://www.youtube.com/watch?v=NrRqkomut7w&feature=youtu.be)
+         url = "https://www.youtube.com/embed/" + url.split("=")[1].split("&")[0]; //取得的"v"的值、並排除"&feature=youtu.be"
+         //alert(tmp);
+     } else if (url.indexOf("youtu.be") != -1) {
+         //短網址(例：http://youtu.be/FdeioVndUhs 、https://youtu.be/NrRqkomut7w)
+         url = "https://www.youtube.com/embed/" + url.split("/")[3];
+     } else if (url.indexOf("google") != -1) {
+         if (url.indexOf("open?id=") != -1) {
+             //google (例：https://drive.google.com/open?id=0Bww4YrzJ_EcRcVJ5Y0Rud2F6NVU)
+             url = "https://drive.google.com/file/d/" + url.split("=")[1] + "/preview";
+         } else if (url.indexOf("/view") != -1) {
+             //(例：https://drive.google.com/file/d/17LaS7NoafkkXppIla61Lq1DIopPEj7-f/view)
+             url = url.replace("/view", "/preview");
+         }
+     }
+     return url;
+ }
+
+
+        };
+    </script>
+<!-- 使用者使用時間追蹤 -->
+<script src="../Script/UserBehaviorTracker.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 在用戶驗證成功後初始化追蹤
+        UserBehaviorTracker.init({
+            heartbeatInterval: 30000, // 30秒
+            enableMouseTracking: true,
+            enableKeyboardTracking: true,
+            enableScrollTracking: true
+        });
+    });
+</script>
+
+<!-- AI小書人：曾完成對話 → 再次進入確認視窗 -->
+<div class="modal fade" id="aiResumeModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">AI小書人</h4>
+            </div>
+            <div class="modal-body" style="text-align:center">
+                <p style="margin-bottom:6px">最近一次對話時間</p>
+                <p id="aiResume_time" style="font-weight:bold;margin-bottom:14px">—</p>
+                <p style="margin-bottom:6px">整體表現</p>
+                <p id="aiResume_stars" style="margin-bottom:14px"></p>
+                <p style="color:#888">要再次進入 AI小書人 對話嗎？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="aiResume_enter">再次進入</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //AI小書人：曾完成對話的書，點圖示先彈確認視窗(最近時間+分數星星)
+    function aiRenderStars(score) {
+        var n = parseInt(score);
+        if (isNaN(n)) return '<span style="color:#888">尚無評分</span>';
+        var max = 5; if (n > max) max = n; if (n < 0) n = 0;
+        var s = "";
+        for (var i = 0; i < max; i++) s += (i < n ? "★" : "☆");
+        return '<span style="color:#f5a623;font-size:20px;letter-spacing:2px">' + s + '</span> <small>(' + n + ')</small>';
+    }
+    $(document).on("click", ".ai-resume", function () {
+        var url = $(this).attr("data-url");
+        var last = $(this).attr("data-last") || "";
+        var score = $(this).attr("data-score");
+        $("#aiResume_time").text(last ? last.substring(0, 16).replace("T", " ") : "—");
+        $("#aiResume_stars").html(aiRenderStars(score));
+        $("#aiResume_enter").attr("data-url", url);
+        $("#aiResumeModal").modal("show");
+    });
+    $(document).on("click", "#aiResume_enter", function () {
+        var url = $(this).attr("data-url");
+        $("#aiResumeModal").modal("hide");
+        if (url) window.open(url, "_blank");
+    });
+</script>
+</body>
+</html>
