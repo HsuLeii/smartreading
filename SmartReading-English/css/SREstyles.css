@@ -11668,8 +11668,6 @@ h-word {
 }
 .main.sign_up .sign_up_area .account_area .register_item {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
   margin: 10px 0 35px;
   width: 45%;
 }
@@ -11712,28 +11710,38 @@ h-word {
   color: #fff;
   background-color: #5B3716;
   margin: 0 auto;
-}
-.main.sign_up .sign_up_area .account_area .register_item.register_item_confirm a.signup_btn:hover {
-  transform: scale(1.05);
+  border: 1px solid #5B3716;
 }
 .main.sign_up .sign_up_area .account_area .register_item.register_item_confirm a.signup_btn.login_btn:hover {
-  border: 1px solid #5B3716;
-  background-color: #5B3716;
-  color: #fff;
+  border: 1px solid #ff6464;
+  background-color: #ff6464;
 }
-.main.sign_up .sign_up_area .account_area .register_item .account {
-  padding: 3px 85px 3px 8px;
+.main.sign_up .sign_up_area .account_area .register_item .account, .main.sign_up .sign_up_area .account_area .register_item #user_code {
+  padding: 10px 130px 10px 8px;
 }
 .main.sign_up .sign_up_area .account_area .register_item .get_code_btn {
   position: absolute;
   right: 5px;
-  bottom: 12px;
-  color: #5B3716;
+  top: 48.89px;
+  height: auto;
+  color: #fff;
+  background-color: #5B3716;
+  width: auto;
+  font-size: 15px;
+  border-radius: 50px;
+  padding: 5px 18px;
+  border-bottom: 0px;
+  cursor: pointer;
 }
 .main.sign_up .sign_up_area .account_area .register_item .get_code_btn:hover {
-  color: #ff6464;
+  background-color: #ff6464;
+}
+.main.sign_up .sign_up_area .account_area .register_item .get_code_btn:disabled {
+  color: #5B3716;
+  border: 1px solid #5B3716;
 }
 .main.sign_up .sign_up_area .account_area .register_item label {
+  display: block;
   width: 100%;
   margin: 0px auto 10px;
   border-left: 3px solid #5B3716;
@@ -11742,10 +11750,11 @@ h-word {
 .main.sign_up .sign_up_area .account_area .register_item input {
   font-size: 20px;
   width: 100%;
+  height: auto !important;
   background-color: #fff;
   border: 0px solid #5B3716;
   border-bottom: 1px solid #5B3716;
-  padding: 3px 8px;
+  padding: 10px 8px;
 }
 .main.sign_up .sign_up_area .account_area .register_item input:focus {
   outline: 0;
@@ -11754,6 +11763,13 @@ h-word {
 .main.sign_up .sign_up_area .account_area .register_item input:disabled {
   background-color: transparent;
   border-bottom: 1px solid #5B3716;
+  opacity: 0.55;
+  cursor: auto;
+}
+.main.sign_up .sign_up_area .account_area .register_item input:disabled:hover {
+  color: #5B3716;
+  background-color: transparent;
+  border: 1px solid #5B3716;
 }
 .main.sign_up .sign_up_area .account_area .register_item input.signup_btn {
   width: 100%;
@@ -11768,7 +11784,7 @@ h-word {
 .main.sign_up .sign_up_area .account_area .register_item select {
   font-size: 20px;
   width: 100%;
-  padding: 3px 8px;
+  padding: 10px 8px;
   border: 0px solid #5B3716;
   border-bottom: 1px solid #5B3716;
 }
@@ -11777,6 +11793,21 @@ h-word {
 }
 .main.sign_up .sign_up_area .account_area .register_item select:focus-visible {
   outline: #5B3716 auto 0px !important;
+}
+.main.sign_up .sign_up_area .account_area .register_item .password_rules {
+  margin: 10px 0 0;
+  padding: 0;
+}
+.main.sign_up .sign_up_area .account_area .register_item .password_rules li {
+  color: #b00020;
+}
+.main.sign_up .sign_up_area .account_area .email_status_row {
+  width: 100%;
+  margin: 10px 0 0;
+  text-align: left;
+}
+.main.sign_up .sign_up_area .account_area .email_status_row .register_status {
+  color: #b00020;
 }
 .main.sign_up .sign_up_area .account_area .sign_up_text {
   width: 100%;
@@ -11793,12 +11824,39 @@ h-word {
 }
 .main.sign_up .sign_up_area .account_area .sign_up_text.prompts_text {
   margin: 0 auto;
+  justify-content: flex-start;
 }
 .main.sign_up .sign_up_area .account_area .sign_up_text.prompts_text .fa-lightbulb {
   color: #ffc000;
 }
+.main.sign_up .sign_up_area .account_area .terms_row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.main.sign_up .sign_up_area .account_area .terms_row input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  margin: 0 10px 0 0;
+  visibility: visible;
+  accent-color: #5B3716;
+}
+.main.sign_up .sign_up_area .account_area label {
+  background-color: transparent !important;
+  cursor: pointer;
+}
 
 .sign_up_done_modal {
+  position: fixed;
+  z-index: 1050;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: none !important;
   width: 100%;
   height: 100%;
@@ -11819,7 +11877,10 @@ h-word {
   background-color: #EFE8E0;
   border-radius: 8px;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_title {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_close {
+  display: none;
+}
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_title {
   text-align: center;
   margin: 0 auto 60px;
   padding: 15px 20px;
@@ -11827,7 +11888,7 @@ h-word {
   background-color: #5B3716;
   border-radius: 5px 5px 0 0;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_text {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_text {
   margin: 10px auto;
   padding: 0 5%;
   display: flex;
@@ -11835,17 +11896,17 @@ h-word {
   align-items: center;
   flex-direction: column;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_text p a {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_text p a {
   color: #5B3716;
   text-decoration: underline;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_text p a:hover {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_text p a:hover {
   color: #ff6464;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_link {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_link {
   padding: 0 5%;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_link a {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_link a {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -11859,7 +11920,7 @@ h-word {
   background-color: #fff;
   margin: 40px auto 0;
 }
-.sign_up_done_modal .sign_up_done_area .sign_up_done_link a:hover {
+.sign_up_done_modal .sign_up_done_area .sign_up_done_content .sign_up_done_link a:hover {
   border: 1px solid #ff6464;
   background-color: #ff6464;
   color: #fff;
@@ -11869,6 +11930,9 @@ h-word {
 }
 
 @media screen and (max-width: 1024px) {
+  .main.sign_up .sign_up_area .account_area .register_item .get_code_btn {
+    top: 45.5px;
+  }
   .sign_up_done_modal .sign_up_done_area .sign_up_done_content {
     width: 80%;
   }

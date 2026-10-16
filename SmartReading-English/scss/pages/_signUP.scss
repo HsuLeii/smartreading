@@ -16,10 +16,9 @@
 
                 .register_item {
                     position: relative;
-                    display: flex;
-                    flex-wrap: wrap;
                     margin: 10px 0 35px;
                     width: 45%;
+                    
 
                     &.register_item_confirm {
                         width: 80%;
@@ -64,16 +63,12 @@
                                 color: c.$white;
                                 background-color: c.$brown;
                                 margin: 0 auto;
-
-                                &:hover {
-                                    transform: scale(1.05);
-                                }
+                                border: 1px solid c.$brown;
 
                                 &.login_btn {
                                     &:hover {
-                                        border: 1px solid c.$brown;
-                                        background-color: c.$brown;
-                                        color: c.$white;
+                                        border: 1px solid c.$main_color;
+                                        background-color: c.$main_color;
                                     }
                                 }
 
@@ -81,22 +76,39 @@
                         }
                     }
 
-                    .account {
-                        padding: 3px 85px 3px 8px;
+                    .account,#user_code {
+                        padding: 10px 130px 10px 8px;
                     }
 
                     .get_code_btn {
                         position: absolute;
                         right: 5px;
-                        bottom: 12px;
-                        color: c.$brown;
+                        // bottom: 10px !important;
+                        top: 48.89px;
+                        height: auto;
+                        color: c.$white;
+                        background-color: c.$brown;
+                        width: auto;
+                        font-size: 15px;
+                        border-radius: 50px;
+                        padding: 5px 18px;
+                        border-bottom: 0px;
+                        cursor: pointer;
 
                         &:hover {
-                            color: c.$main_color;
+                            background-color: c.$main_color;
                         }
+
+                        &:disabled{
+                            color: c.$brown;
+                            border: 1px solid c.$brown;
+                        }
+
+                        
                     }
 
                     label {
+                        display: block;
                         width: 100%;
                         margin: 0px auto 10px;
                         border-left: 3px solid c.$brown;
@@ -106,10 +118,11 @@
                     input {
                         font-size: 20px;
                         width: 100%;
+                        height: auto !important;
                         background-color: c.$white;
                         border: 0px solid c.$brown;
                         border-bottom: 1px solid c.$brown;
-                        padding: 3px 8px;
+                        padding: 10px 8px;
 
                         &:focus {
                             outline: 0;
@@ -119,6 +132,14 @@
                         &:disabled {
                             background-color: transparent;
                             border-bottom: 1px solid c.$brown;
+                            opacity: .55;
+                            cursor: auto;
+
+                            &:hover{
+                                color: c.$brown;
+                                background-color: transparent;
+                                border: 1px solid c.$brown;
+                            }
                         }
 
                         &.signup_btn {
@@ -137,7 +158,7 @@
                     select {
                         font-size: 20px;
                         width: 100%;
-                        padding: 3px 8px;
+                        padding: 10px 8px;
                         border: 0px solid c.$brown;
                         border-bottom: 1px solid c.$brown;
 
@@ -148,6 +169,25 @@
                         &:focus-visible {
                             outline: #5B3716 auto 0px !important;
                         }
+                    }
+
+                    .password_rules{
+                        margin: 10px 0 0;
+                        padding: 0;
+
+                        li{
+                            color: #b00020;
+                        }
+                    }
+                }
+
+                .email_status_row{
+                    width: 100%;
+                    margin: 10px 0 0;
+                    text-align: left;
+
+                    .register_status{
+                        color: #b00020;
                     }
                 }
 
@@ -168,12 +208,34 @@
 
                     &.prompts_text {
                         margin: 0 auto;
+                        justify-content: flex-start;
 
                         .fa-lightbulb {
                             color: c.$instructions;
                         }
                     }
                 }
+
+                .terms_row{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 20px auto;
+
+                    input[type=checkbox] {
+                        width: 18px;
+                        height: 18px;
+                        margin: 0 10px 0 0;
+                        visibility: visible;
+                        accent-color: c.$brown;
+                        }
+                    }
+
+                    label{
+                        background-color: transparent !important;
+                        cursor: pointer;
+                    }
             }
         }
 
@@ -181,6 +243,14 @@
 }
 
 .sign_up_done_modal {
+    position: fixed;
+    z-index: 1050;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: none !important;
     width: 100%;
     height: 100%;
@@ -200,9 +270,11 @@
             padding: 0 0 60px;
             background-color: c.$body_bg;
             border-radius: 8px;
+
+            .sign_up_done_close{
+            display: none;
         }
-
-
+        
         .sign_up_done_title {
             text-align: center;
             margin: 0 auto 60px;
@@ -255,6 +327,7 @@
                 }
             }
         }
+        }
     }
 
     .close-modal {
@@ -264,6 +337,19 @@
 }
 
 @media screen and (max-width: 1024px) {
+    .main {
+        &.sign_up {
+            .sign_up_area{
+                .account_area{
+                    .register_item{
+                        .get_code_btn{
+                            top: 45.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .sign_up_done_modal {
         .sign_up_done_area {
             .sign_up_done_content {

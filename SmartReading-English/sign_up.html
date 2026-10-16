@@ -17,8 +17,137 @@
     <!--fontawesome-->
     <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web.min.css">
 
+    <!-- <style>
+        /* The base registration stylesheet positions action buttons inside the input row. */
+        .main.sign_up .sign_up_area .account_area .register_item .get_code_btn {
+            width: 136px !important;
+            max-width: 136px;
+            min-width: 136px;
+            height: 34px;
+            box-sizing: border-box !important;
+            padding: 0 12px;
+            border: 0 !important;
+            border-radius: 17px !important;
+            background: #5B3716 !important;
+            color: #fff !important;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 32px !important;
+            cursor: pointer;
+            transition: background-color .2s ease, transform .2s ease;
+        }
+        .main.sign_up .sign_up_area .account_area .register_item .get_code_btn:hover { background: #ff6464 !important; transform: translateY(-1px); }
+        .main.sign_up .sign_up_area .account_area .register_item .get_code_btn:disabled { background: #cfc7bf !important; color: #756b63 !important; cursor: not-allowed; transform: none; }
+        .main.sign_up .register_item > label { height: 30px; box-sizing: border-box; }
+        .main.sign_up .register_item input[readonly] { height: 40px; box-sizing: border-box; }
+        /* Keep the two verification controls on one shared baseline.  The
+           status message is rendered below the pair, so it cannot change the
+           height of either input row. */
+        .main.sign_up .sign_up_area .account_area > .register_item:nth-child(1),
+        .main.sign_up .sign_up_area .account_area > .register_item:nth-child(2) {
+            height: 100px;
+            box-sizing: border-box;
+            align-content: flex-start;
+        }
+        .main.sign_up .sign_up_area .account_area > .register_item:nth-child(1) > input,
+        .main.sign_up .sign_up_area .account_area > .register_item:nth-child(2) > input {
+            display: block;
+            height: 40px;
+            box-sizing: border-box;
+        }
+        .main.sign_up .sign_up_area .account_area > .register_item:nth-child(1) .get_code_btn,
+        .main.sign_up .sign_up_area .account_area > .register_item:nth-child(2) .get_code_btn {
+            top: 43px;
+            bottom: auto;
+            height: 34px !important;
+        }
+        .email_status_row {
+            flex: 0 0 100%;
+            width: 100%;
+            min-height: 24px;
+            margin: -24px 0 10px;
+            text-align: center;
+        }
+        .email_status_row .register_status { margin: 0; }
+        .main.sign_up .sign_up_area .account_area > .register_status { flex: 0 0 100%; width: 100%; text-align: center; min-height: 24px; margin: 10px 0; }
+        .main.sign_up .register_item .register_status { flex: 0 0 100%; }
+        .register_status { display: block; margin: 8px 0; color: #b00020; }
+        .register_status.success { color: #168342; }
+        .terms_row { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin: 20px auto; }
+        .terms_row input[type="checkbox"] { width: 18px !important; height: 18px !important; margin: 0; visibility: visible !important; accent-color: #5B3716; }
+        .terms_row label,
+        .terms_row input[type="checkbox"]:checked ~ label {
+            width: auto !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+            background: transparent !important;
+            color: #5B3716 !important;
+            display: inline-block !important;
+            font-size: 16px;
+            line-height: 24px;
+            visibility: visible !important;
+        }
+        .password_rules { margin: 8px 0 0; padding-left: 20px; font-size: .9rem; }
+        .password_rules li { color: #b00020; }
+        .password_rules li.valid { color: #168342; }
+        .signup_btn[disabled] { opacity: .55; cursor: not-allowed; }
+        .sign_up_done_content { text-align: center; padding: 32px; }
+        /* Bootstrap-like success modal for the completed registration state. */
+        .main.sign_up .sign_up_done_modal {
+            position: fixed !important;
+            inset: 0 !important;
+            z-index: 1050;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: none !important;
+            padding: 1rem !important;
+            box-sizing: border-box;
+            background: rgba(33, 37, 41, .72) !important;
+        }
+        .main.sign_up .sign_up_done_area { width: 100%; height: auto; display: block; }
+        .main.sign_up .sign_up_done_content {
+            position: relative;
+            width: min(560px, 100%) !important;
+            margin: 0 auto;
+            padding: 0 2rem 2rem !important;
+            overflow: hidden;
+            background: #fff !important;
+            border: 1px solid rgba(0,0,0,.175);
+            border-radius: .5rem;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.25);
+        }
+        .main.sign_up .sign_up_done_title {
+            margin: 0 -2rem 1.5rem !important;
+            padding: 1rem 2rem !important;
+            text-align: left;
+            color: #fff;
+            background: #198754 !important;
+            border-radius: .4rem .4rem 0 0;
+            font-size: 1.35rem;
+        }
+        .main.sign_up .sign_up_done_title::before { content: '✓'; margin-right: .6rem; }
+        .main.sign_up .sign_up_done_text { margin: 0 auto; padding: 0 !important; color: #5B3716; }
+        .main.sign_up .sign_up_done_text p { margin: .55rem 0; line-height: 1.7; }
+        .main.sign_up .sign_up_done_link { padding: 0 !important; }
+        .main.sign_up .sign_up_done_link a { margin: 1.5rem auto 0 !important; }
+        .sign_up_done_close {
+            position: absolute; top: .75rem; right: 1rem; z-index: 1;
+            border: 0; background: transparent; color: #fff; font-size: 1.5rem;
+            line-height: 1; cursor: pointer; opacity: .85;
+        }
+        .sign_up_done_close:hover { opacity: 1; }
+    </style> -->
+    
     <!-- my core CSS -->
     <link rel="stylesheet" type="text/css" href="css/SREstyles.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="http://140.122.118.47/SRE/css/SREstyles.css?v=0910"> -->
+    
 
 </head>
 
@@ -30,7 +159,7 @@
     <div class="main sign_up">
 
         <div class="tittle">
-            <h1>註冊</h1>
+            <h1>個人會員註冊</h1>
         </div>
 
         <div class="sign_up_area">
@@ -40,15 +169,29 @@
                         Email
                     </label>
                     <input name="" type="text" placeholder="請輸入信箱" value="" class="account" id="account">
-                    <button type="button" class="get_code_btn">取得驗證碼</button>
+                    <input type="submit" name="ctl00$Content_body$BtnSendCode" value="發送驗證碼" id="BtnSendCode" class="get_code_btn" disabled="">
+                    <!-- <button type="button" class="get_code_btn">取得驗證碼</button> -->
+                
+                    <div class="email_status_row">
+                        <span id="EmailStatus" class="register_status">此 Email 已被註冊。</span>
+                    </div>
                 </div>
                 <div class="register_item">
                     <label for="user_code">驗證碼</label>
-                    <input name="" type="text" placeholder="請輸入驗證碼" id="user_code">
+                    <input name="" type="text" placeholder="請輸入 6 位數驗證碼" id="user_code">
+                    <input type="submit" name="ctl00$Content_body$BtnVerifyCode" value="驗證 Email" id="ctl00_Content_body_BtnVerifyCode" class="get_code_btn">
                 </div>
+                <!-- <div class="email_status_row">
+                    <span id="EmailStatus" class="register_status">此 Email 已被註冊。</span>
+                </div> -->
                 <div class="register_item">
                     <label for="password">密碼</label>
-                    <input name="" type="password" placeholder="請輸入密碼" id="password">
+                    <input name="" type="password" placeholder="請輸入密碼" maxlength="20" id="password" placeholder="請設定 8-20 位字元，需包含英文大、小寫及數字">
+                    <ul class="password_rules">
+                        <li id="ruleLength" class="">長度 8-20 字元</li>
+                        <li id="ruleCase" class="">包含英文大寫及小寫</li>
+                        <li id="ruleNumber" class="">包含數字</li>
+                    </ul>
                 </div>
                 <div class="register_item">
                     <label for="review_password">確認密碼</label>
@@ -56,8 +199,8 @@
                 </div>
                 <div class="sign_up_text prompts_text">
                     <p>
-                        <i class="fa-solid fa-lightbulb"></i>「請填寫實際使用者的真實姓名。
-                        若您是家長欲購買給孩子使用，請在此區塊填寫『孩子的資料』，以利系統提供正確的學習紀錄與個人化推薦。」
+                        <i class="fa-solid fa-lightbulb"></i>「
+                        請填寫實際使用者的真實姓名。若您是家長欲購買給孩子使用，請填寫孩子的資料，以利系統建立正確的學習紀錄與個人化推薦。
                     </p>
                 </div>
                 <div class="register_item">
@@ -90,11 +233,14 @@
                         <option value="2020">2020</option>
                     </select>
                 </div>
-                <div class="sign_up_text">
-                    <a href="" target="_blank" class="sign_up_text_link">查看會員服務條款及隱私權政策</a>
+                <div class="terms_row">
+                    <input id="AgreeTerms" type="checkbox" name="ctl00$Content_body$AgreeTerms"><label for="AgreeTerms"> 我已閱讀並同意會員服務條款及隱私權政策</label>
                 </div>
+                <!-- <div class="sign_up_text">
+                    <a href="" target="_blank" class="sign_up_text_link">查看會員服務條款及隱私權政策</a>
+                </div> -->
                 <div class="register_item register_item_confirm">
-                    <a href="#sign_up_done_modal" rel="modal:open" class="signup_btn">註冊</a>
+                    <input type="submit" name="ctl00$Content_body$BtnRegister" value="註冊" id="BtnRegister" class="signup_btn" disabled="">
                 </div>
                 <div class="register_item register_item_confirm">
                     <a href="login.html" class="signup_btn login_btn">返回登入</a>
@@ -123,6 +269,22 @@
 
             </div>
         </div>
+
+        <div id="ctl00_Content_body_RegistrationDone" class="sign_up_done_modal">
+	
+            <div class="sign_up_done_area">
+                <div class="sign_up_done_content">
+                    <button type="button" class="sign_up_done_close" aria-label="關閉" onclick="document.getElementById('ctl00_Content_body_RegistrationDone').style.display='none';">×</button>
+                    <h4 class="sign_up_done_title">會員註冊完成！</h4>
+                    <div class="sign_up_done_text">
+                        <p>您的個人會員帳號已建立，請使用註冊 Email 與密碼登入。</p>
+                        <p>登入後即可選擇訂閱方案，開啟英語適性閱讀之旅。</p>
+                    </div>
+                    <div class="sign_up_done_link"><a href="logintp.aspx">前往登入</a></div>
+                </div>
+            </div>
+        
+</div>
 
     </div>
 
