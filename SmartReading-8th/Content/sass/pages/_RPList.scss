@@ -225,13 +225,26 @@ main {
             margin: 0 auto 15px;
             padding: 20px 15px;
 
+            .RPList-books_header{
+                margin: 0 auto 20px;
+                padding: 0 0 20px;
+                border-bottom: 2px solid #d5d9de;
+            }
+
             .RPList-books_content{
                 .RPList-books__table{
+                    
                     thead{
                         display: none;
                     }
 
                     tbody {
+                        display: block;
+                        padding: 15px;
+                        background-color: #FFF;
+                        border: 2px solid #d5d9de;
+                        border-radius: 15px;
+
                         tr {
                             td{
                                 display: block;
@@ -255,6 +268,10 @@ main {
                                 &.book-front{
                                     padding: 10px 10px;
                                     text-align: center;
+
+                                    img{
+                                        border-radius: 15px;
+                                    }
                                 }
 
                                 &.book-name{
@@ -272,6 +289,10 @@ main {
                                     float: left;
                                     padding: 6px 5px 10px 5px;
                                     text-align: center;
+                                }
+
+                                &.book-SR{
+                                    width: 100%;
                                 }
 
                                 &.book-sort{
@@ -318,18 +339,27 @@ main {
                                                 position: relative;
                                                 box-sizing: border-box;
 
+                                                input{
+                                                    border: 0px;
+                                                    box-shadow: none;
+                                                }
+
                                                 &::before{
                                                     content: "";
                                                     display: block;
                                                     width: 22px;
                                                     height: 22px;
                                                     border: 1px solid transparent;
-                                                    border-left: 1px solid #ccc;
-                                                    background-color: #f1f1f1;
+                                                    background-color: transparent;
                                                     position: absolute;
                                                     top: 1px;
                                                     bottom: 1px;
                                                     right: 1px;
+                                                }
+
+                                                &::after{
+                                                    content: "\f078";
+                                                    font-family: "Font Awesome 7 Pro";
                                                 }
                                             }
                                         }
@@ -341,6 +371,135 @@ main {
 
                                     .book-date-end{
                                         margin-left: 5px;
+                                    }
+                                }
+
+                                &.book-tools{
+                                    .book-tools_title{
+                                        margin: 0 0 10px 0;
+                                    }
+                                    .book-tools_frame{
+                                        border-radius: 15px;
+                                        padding: 20px;
+
+                                        .book-tools_btn{
+                                            padding: 10px;
+                                            border-radius: 15px;
+                                            cursor: pointer;
+                                            .book-tools_btn_icon{
+                                                display: flex;
+                                                justify-content: center;
+                                            }
+
+                                            .book-tools_btn_text{
+                                                display: flex;
+                                                justify-content: center;
+                                                margin: 5px auto 0;
+                                            }
+                                        }
+                                    }
+
+                                    p{
+                                        font-weight: bold;
+                                    }
+
+                                    &.book-tools_assessment{
+                                        margin: 0 auto 20px;
+                                        .book-tools_frame{
+                                            border: 2px solid #43a047;
+                                            padding: 0;
+                                            .book-tools_btn{
+                                                .book-tools_btn_icon{
+                                                    i{
+                                                        color: #43a047;
+                                                    }
+                                                }
+
+                                                .book-tools_btn_text{
+                                                    p{
+                                                        color: #43a047;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.book-tools_task{
+                                        .book-tools_frame{
+                                            border: 2px solid #fcd34d;
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            .book-tools_frame_tittle{
+                                                width: 100%;
+                                                margin: 0 0 10px 0;
+                                                p{
+                                                    color: #78350f;
+                                                }
+                                            }
+
+                                            .book-tools_btn{
+                                                width: 47.5%;
+                                                .book-tools_btn_icon{
+                                                    display: flex;
+                                                    align-items: center;
+                                                }
+
+                                                &:nth-child(2){
+                                                    color: #78350f;
+                                                    border: 2px solid #fcd34d;
+                                                    background-color: #fffbeb;
+                                                    margin: 0 5% 0 0;
+
+                                                    p{
+                                                        color: #78350f;
+                                                        margin: 0 0 0 5px;
+                                                    }
+                                                }
+
+                                                &:nth-child(3){
+                                                    color: #2c5e56;
+                                                    border: 2px solid #2c5e56;
+                                                    background-color: #ecfdf5;
+                                                    p{
+                                                        color: #2c5e56;
+                                                        margin: 0 0 0 5px;
+                                                    }
+                                                
+                                            }
+                                            }
+                                        }
+                                    }
+
+                                    &.book-tools_video{
+                                        .book-tools_frame{
+                                            border: 2px solid #d8b4fe;
+                                            .book-tools_frame_tittle{
+                                                margin: 0 0 10px 0;
+                                                p{
+                                                    color: #581c87;
+                                                }
+                                            }
+
+                                            .book-tools_btn{
+                                                border: 2px solid #d8b4fe;
+                                                background-color: #faf5ff;
+                                                .book-tools_btn_icon{
+                                                    color: #581c87;
+                                                    display: flex;
+                                                    align-items: center;
+
+                                                    p{
+                                                        color: #581c87;
+                                                    }
+                                                }
+
+                                                .book-tools_btn_text{
+                                                    p{
+                                                        color: #581c87;
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
