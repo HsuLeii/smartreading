@@ -531,9 +531,9 @@
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </div>
                                                 <div class="book-tools_btn_text">
-                                                    <p>
-                                                        開始評量
-                                                    </p>
+                                                        <p>
+                                                            開始評量
+                                                        </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1318,6 +1318,8 @@
                                                     <p>
                                                         開始評量
                                                     </p>
+
+                                                    <button onclick="LoadSystemInfo(0)">開啟系統資訊 (網頁 A)</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1421,6 +1423,29 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- 1. 觸發按鈕 -->
+
+    <!-- 2. Modal 結構 (使用原生 <dialog>) -->
+    <!-- <div id="frameModal">
+        <button class="close-btn" onclick="closeModal()">關閉</button>
+        <iframe id="examFrame" src="" frameborder="0"></iframe>
+    </div> -->
+
+    <div class="modal fade modal-style1 modal-bookIntro" id="frameModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-lg modal-md-full" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="CloseModal()"><span aria-hidden="true">×</span></button>
+                </div>
+                
+                <iframe id="examFrame" src="" data-ruffle-polyfilled=""></iframe>
+            </div>
+        </div>
+    </div>
+
+
 
     </main>
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
@@ -1557,15 +1582,14 @@
     <!-- .../Modal #teacherTopic END -->
 
     <!--Modal #frameModal START/-->
-    <div class="modal fade modal-style1 modal-bookIntro" id="frameModal" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal fade modal-style1 modal-bookIntro" id="frameModal" tabindex="-1" role="dialog" aria-labelledby="" style="display: none;">
         <div class="modal-dialog modal-lg modal-md-full" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        onclick="CloseModal()"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="CloseModal()"><span aria-hidden="true">×</span></button>
                 </div>
-
-                <iframe id="examFrame" src="" style="width: 100%; height: 720px; border: 0; margin: 0"></iframe>
+                
+                <iframe id="examFrame" src="" style="width: 100%; height: 606px; border: 0px; margin: 0px; display: block;" data-ruffle-polyfilled=""></iframe>
             </div>
         </div>
     </div>
@@ -1599,6 +1623,42 @@
 
     <!-- iframe高度-->
     <script src="../Content/js/jquery.autoheight.js"></script>
+
+    <!-- 3. JavaScript 控制邏輯 -->
+    <script>
+        function LoadSystemInfo(type) {
+            const modal = document.getElementById('frameModal');
+            const iframe = document.getElementById('examFrame');
+            
+            // 根據傳入的數字 (0 或 1)，決定 iframe 要載入哪一個網頁
+            if (type === 0) {
+                // iframe.src = "fillAssessment-byContest.html"; // 替換成你的網址A
+                $("#frameModal iframe").attr("src", "fillAssessment-byContest.html");
+                $('#frameModal').modal({ backdrop: 'static', keyboard: true });
+            }
+
+            $("#frameModal iframe").css({
+                    width: '100%',
+                    height: $(window).height() - 30 - 30 - $('#frameModal .modal-header').outerHeight() - 2,
+                    border: '0',
+                    margin: '0',
+                    display: 'block'
+                });
+            
+            // 顯示 Modal 并帶有背景遮罩
+            // modal.showModal(); 
+        }
+
+        // 關閉 Modal 的函式
+        function closeModal() {
+            const modal = document.getElementById('frameModal');
+            const iframe = document.getElementById('examFrame');
+            
+            modal.close(); // 關閉對話框
+            iframe.src = ""; // 清空 iframe，釋放記憶體並停止背景網頁運作
+        }
+    </script>
+
 
     <script>
         var plansCount = 0;
@@ -2557,11 +2617,11 @@
     <!-- <script>
         $(window).on('resize', function () {
             //modify bootstrap Collapse.js
-            $('.bookIntro-btnBorrow[data-toggle="collapse"]').click(function () {
-                $(this).parents('.modal-bookIntro').find('.bookIntro-btnBorrow').attr("aria-expanded", "false");
-                $(this).attr("aria-expanded", "true");
-                $($(this).attr('href')).parents('.modal-bookIntro').find('.bookIntro-collapse').removeClass('in');
-            });
+            // $('.bookIntro-btnBorrow[data-toggle="collapse"]').click(function () {
+            //     $(this).parents('.modal-bookIntro').find('.bookIntro-btnBorrow').attr("aria-expanded", "false");
+            //     $(this).attr("aria-expanded", "true");
+            //     $($(this).attr('href')).parents('.modal-bookIntro').find('.bookIntro-collapse').removeClass('in');
+            // });
 
             //#frameModal iframe shown height & set
             $('#frameModal').on('shown.bs.modal', function (e) {
