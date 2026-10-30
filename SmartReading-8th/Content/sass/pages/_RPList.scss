@@ -241,13 +241,17 @@ main {
 
                     tbody {
                         display: block;
-                        padding: 15px;
+                        padding: 0 15px;
                         background-color: #FFF;
                         border: 2px solid #d5d9de;
                         border-radius: 15px;
 
                         tr {
                             position: relative;
+                            width: 100%;
+                            display: block;
+                            padding: 20px 15px;
+                            border-bottom: 1px solid #d5d9de;
 
                             td{
                                 display: block;
@@ -265,8 +269,8 @@ main {
                                 &.book-good{
                                     position: absolute;
                                     z-index: 5;
-                                    top: -5px;
-                                    right: -5px;
+                                    top: 15px;
+                                    right: 10px;
                                 }
 
                                 &.book-front{
@@ -389,11 +393,14 @@ main {
                                     .book-tools_title{
                                         margin: 0 0 10px 0;
                                     }
+
                                     .book-tools_frame{
                                         border-radius: 15px;
                                         padding: 20px;
 
                                         .book-tools_btn{
+                                            display: block;
+                                            width: 100%;
                                             padding: 10px;
                                             border-radius: 15px;
                                             cursor: pointer;
@@ -407,11 +414,43 @@ main {
                                                 justify-content: center;
                                                 margin: 5px auto 0;
                                             }
+
+                                            &.done{
+                                                cursor: auto;
+                                                border: 2px solid #43a047 !important;
+                                                background-color: #43a047 !important;
+
+                                                .book-tools_btn_icon{
+                                                    color: #FFF !important;
+
+                                                    p{
+                                                        color: #FFF !important;
+                                                    }
+                                                }
+
+                                                .book-tools_btn_text{
+                                                    p{
+                                                        color: #FFF !important;
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
 
                                     p{
                                         font-weight: bold;
+                                    }
+
+                                    &.done{
+                                        .book-tools_frame{
+                                            border: 2px solid #43a047 !important;
+
+                                            .book-tools_frame_tittle{
+                                                p{
+                                                    color: #43a047 !important;
+                                                }
+                                            }
+                                        }
                                     }
 
                                     &.book-tools_assessment{
@@ -574,6 +613,7 @@ main {
 
                                                     p{
                                                         color: #581c87;
+                                                        margin: 0 0 0 5px;
                                                     }
                                                 }
 
@@ -610,8 +650,20 @@ main {
                                     padding: 0;
                                     position: absolute;
                                     z-index: 5;
-                                    top: -10px;
+                                    top: 0px;
                                     right: -10px;
+                                    opacity: 0.5;
+                                    transition: 0.3s;
+
+                                    button{
+                                        font-size: 20px;
+                                    }
+
+                                    &:hover{
+                                        opacity: 1;
+                                        transform: scale(1.1);
+                                        
+                                    }
                                 }
                             }
                         }
@@ -622,8 +674,33 @@ main {
     }
 }
 
-@media screen and (min-width: 576px) {
-    main {}
+@media screen and (min-width: 500px) {
+    main {
+    .AI_content {
+        .RPList-books_area{
+            .RPList-books_content{
+                .RPList-books__table{
+
+                    tbody {
+                        tr {
+                            td{
+                                &.book-good{
+                                    right: calc(20% + 5px);
+                                }
+                                &.book-front{
+                                    width: 60%;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 }
 
 @media screen and (min-width: 640px) {
@@ -703,7 +780,7 @@ main {
 
                         tr {
                             width: 50%;
-                            padding: 10px 15px;
+                            border-bottom: 0px; 
 
                             &::after{
                                 content: "";
@@ -736,8 +813,11 @@ main {
 
                             td{
                                 &.book-good{
-                                    top: 10px;
                                     right: 10px;
+                                }
+
+                                &.book-front{
+                                    width: 100%;
                                 }
 
                                 &.book-date{
@@ -764,7 +844,6 @@ main {
                                 }
 
                                 &.book-delete{
-                                    top: 5px;
                                     right: 5px;
                                 }
                             }
