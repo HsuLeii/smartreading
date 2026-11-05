@@ -550,7 +550,7 @@
                                                     SR小書人
                                                 </p>
                                             </div>
-                                            <div class="book-tools_btn">
+                                            <div class="book-tools_btn" data-toggle="modal" data-target="#AI_dialogue_modal">
                                                 <div class="book-tools_btn_icon">
                                                     <i class="fa-solid fa-comment-dots"></i>
                                                     <p>
@@ -802,7 +802,7 @@
                                         </div>
                                         
                                     </td>
-                                    <td class="book-tools book-tools_video">
+                                    <td class="book-tools book-tools_video review">
                                         <div class="book-tools_frame">
                                             <div class="book-tools_frame_tittle">
                                                 <p>
@@ -811,14 +811,9 @@
                                             </div>
                                             <div class="book-tools_btn">
                                                 <div class="book-tools_btn_icon">
-                                                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                                    <i class="fa-solid fa-hourglass-half"></i>
                                                     <p>
-                                                        上傳說書影片
-                                                    </p>
-                                                </div>
-                                                <div class="book-tools_btn_text">
-                                                    <p>
-                                                        點擊開始
+                                                        待發布審核
                                                     </p>
                                                 </div>
                                             </div>
@@ -1421,23 +1416,128 @@
             </div>
         </div>
 
+    
 
-        <!-- 1. 觸發按鈕 -->
-
-    <!-- 2. Modal 結構 (使用原生 <dialog>) -->
-    <!-- <div id="frameModal">
-        <button class="close-btn" onclick="closeModal()">關閉</button>
-        <iframe id="examFrame" src="" frameborder="0"></iframe>
-    </div> -->
-
-    <div class="modal fade modal-style1 modal-bookIntro" id="frameModal" tabindex="-1" role="dialog" aria-labelledby="">
-        <div class="modal-dialog modal-lg modal-md-full" role="document">
+        <!-- AI對話彈跳視窗 -->
+    <div class="modal RPList_modal AI_dialogue_modal" id="AI_dialogue_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="CloseModal()"><span aria-hidden="true">×</span></button>
-                </div>
                 
-                <iframe id="examFrame" src="" data-ruffle-polyfilled=""></iframe>
+
+                <div class="modal-content-header">
+                    <div class="modal-content-header-text">
+                        <h4>
+                            AI小書人
+                        </h4>
+                    </div>
+
+                    <div class="modal-content-header-button">
+                        <button type="button" class="modal_close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-content-text-area">
+                    <div class="modal-content-text-item">
+                        <div class="modal-content-text-tittle">
+                            <h5>
+                                正在練習書籍
+                            </h5>
+                        </div>
+
+                        <p>
+                            123捉迷藏
+                        </p>
+                    </div>
+
+                    <div class="modal-content-text-item">
+                        <div class="modal-content-text-tittle">
+                            <h5>
+                                最近一次對話
+                            </h5>
+                        </div>
+
+                        <p>
+                            尚未對話
+                        </p>
+                    </div>
+
+                    <div class="modal-content-text-item">
+                        <div class="modal-content-text-tittle">
+                            <h5>
+                                本書最佳口語表達評級
+                            </h5>
+                        </div>
+
+                        <p>
+                            評級標準：<br/>
+                            ★ 再加油！／★★ 一般／★★★ 良好／★★★★ 優秀／★★★★★ 卓越
+                        </p>
+                    </div>
+                </div>
+
+                <div class="modal-content-button-area">
+                    <div class="modal-content-button-item">
+                        <button type="button" class="modal-content-button-btn practise" data-toggle="modal" data-target="#start_practicing_modal" data-dismiss="modal">
+                            <p>
+                                開始練習
+                            </p>
+                        </button>
+
+                        <button type="button" class="modal-content-button-btn feedback">
+                            <p>
+                                練習回饋
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal RPList_modal start_practicing_modal" id="start_practicing_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                
+
+                <div class="modal-content-header">
+                    <div class="modal-content-header-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div class="modal-content-header-text">
+                        <h4>
+                            準備進入對話練習
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="modal-content-text-area">
+                    <div class="modal-content-text-item">
+                        <p>
+                            準備進入對話，將扣對話次數 1 次，確定練習請按「開始練習」
+                        </p>
+                    </div>
+                </div>
+
+                <div class="modal-content-button-area">
+                    <div class="modal-content-button-item">
+                        <button type="button" class="modal-content-button-btn cancel" data-toggle="modal" data-target="#AI_dialogue_modal" data-dismiss="modal">
+                            <p>
+                                取消
+                            </p>
+                        </button>
+
+                        <button type="button" class="modal-content-button-btn practise">
+                            <p>
+                                開始練習
+                            </p>
+                        </button>
+
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>
