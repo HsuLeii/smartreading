@@ -708,7 +708,7 @@ main {
             max-width: 800px;
 
             .modal-content{
-                border: 2px solid #fcd34d;
+                border: 4px solid #fcd34d;
                 border-radius: 15px;
                 background-color: #fffbeb;
                 padding: 20px 20px;
@@ -807,6 +807,47 @@ main {
                         }
                     }
                 }
+
+                .modal-content-answer-area{
+                    .modal-content-answer-item{
+                        margin: 0 auto 15px;
+                        .modal-content-answer-item-tittle{
+                            margin: 5px 0;
+
+                            p{
+                                font-weight: normal;
+                            }
+                        }
+                        .modal-content-answer-item-label-area{
+                            display: flex;
+                            flex-wrap: wrap;
+                            .label-item{
+                                    margin: 5px 15px 5px 0;
+
+                                    input{
+                                        &:checked {
+                                    &+ label{
+                                        &::before{
+                                            border: 1px solid #6cc868;
+                                        }
+                                    }
+                                }
+                                    }
+                                label{
+                                    font-weight: normal;
+                                    &::before,
+                                    &::after{
+                                        top: 50%;
+                                        transform: translate(0px, -50%);
+                                    }
+                                }
+
+                                
+                            }
+                    }
+                    }
+                    
+                }
             }
         }
 
@@ -835,6 +876,72 @@ main {
                         .modal-content-text-item{
                             display: flex;
                             justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.feedback_modal{
+            .modal-dialog{
+                .modal-content{
+                    .modal-content-text-area{
+                        .modal-content-text-item{
+                            padding: 10px 15px;
+                            border-radius: 15px;
+                            border-width: 2px;
+                            border-style: solid;
+
+                            p{
+                                &:nth-child(1){
+                                    font-weight: bold;
+                                }
+                            }
+
+                            &.feedback_modal_item_one{
+                                background-color: #cfe2ff;
+                                border-color: #b6d4fe;
+                                
+                                p{
+                                    color: #084298;
+                                }
+                            }
+
+                            &.feedback_modal_item_two{
+                                background-color: #cff4fc;
+                                border-color: #b6effb;
+                                
+                                p{
+                                    color: #055160;
+                                }
+                            }
+
+                            &.feedback_modal_item_three{
+                                background-color: #d1e7dd;
+                                border-color: #badbcc;
+                                
+                                p{
+                                    color: #0f5132;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.worksheets_modal{
+            .modal-dialog{
+                .modal-content{
+                    .modal-content-text-area{
+                        .modal-content-text-item{
+                            padding: 10px 15px;
+                            border-radius: 15px;
+                            border: 2px solid #badbcc;
+                            background-color: #d1e7dd;
+                            p{
+                                color: #0f5132;
+                            }
                         }
                     }
                 }
