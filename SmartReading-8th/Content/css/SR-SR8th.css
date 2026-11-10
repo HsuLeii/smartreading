@@ -524,7 +524,7 @@ main .RPList_modal .modal-dialog {
 main .RPList_modal .modal-dialog .modal-content {
   border: 4px solid #fcd34d;
   border-radius: 15px;
-  background-color: #fffbeb;
+  background-color: #FFF;
   padding: 20px 20px;
 }
 main .RPList_modal .modal-dialog .modal-content .modal-content-header {
@@ -533,6 +533,9 @@ main .RPList_modal .modal-dialog .modal-content .modal-content-header {
   align-items: center;
   width: 100%;
   margin: 0 auto 30px;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-text {
+  width: 85%;
 }
 main .RPList_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-text h4 {
   color: #78350f;
@@ -606,18 +609,96 @@ main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .moda
   display: flex;
   flex-wrap: wrap;
 }
-main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item {
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area p {
+  font-weight: normal;
   margin: 5px 15px 5px 0;
 }
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label {
+  position: relative;
+  font-weight: normal;
+  width: calc(100% - 0px);
+  margin: 5px 0px 5px 0;
+  padding-left: 30px;
+  cursor: pointer;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label:hover {
+  color: #43a047;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label:has(input:checked) {
+  color: #43a047;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label:has(input:checked)::before {
+  border: 1px solid #43a047;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label:has(input:checked)::after {
+  display: inline-block;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label input {
+  display: none;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: calc(-50% + 18px);
+  left: 0;
+  width: 10px;
+  height: 20px;
+  border: solid 2px #43a047;
+  border-left: none;
+  border-top: none;
+  transform: translate(10px, -50%) rotate(45deg);
+  -ms-transform: translate(10px, -50%) rotate(45deg);
+  box-shadow: 2px 0px #FFF, 0px -2px #FFF;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 15px 5px 0;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item input:checked + label {
+  color: #43a047;
+}
 main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item input:checked + label::before {
-  border: 1px solid #6cc868;
+  border: 1px solid #43a047;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item input:checked + label::after {
+  background-color: #43a047;
 }
 main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label {
   font-weight: normal;
 }
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label:hover {
+  color: #43a047;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label:hover::before {
+  border: 1px solid #ccc;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label:hover::after {
+  background-color: #ccc;
+}
 main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::before, main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::after {
   top: 50%;
   transform: translate(0px, -50%);
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::before {
+  width: 20px;
+  height: 20px;
+}
+main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::after {
+  width: 12px;
+  height: 12px;
 }
 main .RPList_modal.start_practicing_modal .modal-dialog .modal-content .modal-content-header {
   display: flex;
@@ -665,6 +746,13 @@ main .RPList_modal.feedback_modal .modal-dialog .modal-content .modal-content-te
   border-color: #badbcc;
 }
 main .RPList_modal.feedback_modal .modal-dialog .modal-content .modal-content-text-area .modal-content-text-item.feedback_modal_item_three p {
+  color: #0f5132;
+}
+main .RPList_modal.worksheets_modal .modal-dialog .modal-content {
+  border: 4px solid #2c5e56;
+  background-color: #FFF;
+}
+main .RPList_modal.worksheets_modal .modal-dialog .modal-content .modal-content-header .modal-content-header-text h4 {
   color: #0f5132;
 }
 main .RPList_modal.worksheets_modal .modal-dialog .modal-content .modal-content-text-area .modal-content-text-item {
@@ -803,6 +891,26 @@ main .RPList_modal.worksheets_modal .modal-dialog .modal-content .modal-content-
   main .AI_content .RPList-books_area .RPList-books_content .RPList-books__table tbody tr td.book-tools.book-tools_task .book-tools_frame .book-tools_btn:nth-child(2) {
     margin: 10px 5% 10px 0;
   }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label {
+    width: calc(50% - 15px);
+    margin: 5px 15px 5px 0;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label::before {
+    width: 22px;
+    height: 22px;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label::after {
+    top: calc(-50% + 20px);
+    height: 22px;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::before {
+    width: 22px;
+    height: 22px;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::after {
+    width: 14px;
+    height: 14px;
+  }
 }
 @media screen and (min-width: 1024px) {
   main .AI_content .RPList-books_area .RPList-books_content .RPList-books__table tbody {
@@ -914,6 +1022,22 @@ main .RPList_modal.worksheets_modal .modal-dialog .modal-content .modal-content-
   }
   main .AI_content .RPList-books_area .RPList-books_content .RPList-books__table tbody tr:nth-last-child(4)::after {
     display: none;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label::before {
+    width: 24px;
+    height: 24px;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area.multiple_choice-area label::after {
+    top: calc(-50% + 25px);
+    height: 24px;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::before {
+    width: 24px;
+    height: 24px;
+  }
+  main .RPList_modal .modal-dialog .modal-content .modal-content-answer-area .modal-content-answer-item .modal-content-answer-item-label-area .label-item label::after {
+    width: 16px;
+    height: 16px;
   }
 }
 @media screen and (min-width: 1600px) {
