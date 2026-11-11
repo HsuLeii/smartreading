@@ -593,7 +593,7 @@
                                                 說書影片
                                             </p>
                                         </div>
-                                        <div class="book-tools_btn">
+                                        <div class="book-tools_btn" data-toggle="modal" data-target="#video_modal">
                                             <div class="book-tools_btn_icon">
                                                 <i class="fa-solid fa-arrow-up-from-bracket"></i>
                                                 <p>
@@ -1774,8 +1774,192 @@
 
                     <div class="modal-content-button-area">
                         <div class="modal-content-button-item">
-                            <button type="button" class="modal-content-button-btn practise" data-toggle="modal"
-                                data-target="#start_practicing_modal" data-dismiss="modal">
+                            <button type="button" class="modal-content-button-btn cancel" data-dismiss="modal">
+                                <p>
+                                    返回
+                                </p>
+                            </button>
+                            <button type="button" class="modal-content-button-btn practise" data-dismiss="modal">
+                                <p>
+                                    完成學習單送出
+                                </p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 上傳影片彈跳視窗 -->
+        <div class="modal RPList_modal video_modal" id="video_modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-content-header">
+                        <div class="modal-content-header-text">
+                            <h4>
+                                說書影片
+                            </h4>
+                        </div>
+
+                        <div class="modal-content-header-button">
+                            <button type="button" class="modal_close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="modal-content-text-area">
+                        <div class="modal-content-text-item">
+                            <div class="modal-content-text-item-icon">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+
+                            <div class="modal-content-text-item-text">
+                                <p>
+                                    額度加贈規則：影片經審核通過後，立即加贈+5次對話額度！
+                                </p>
+                                <p>
+                                    送出並通過評審老師審核後，系統會自動將5次額度存入你的帳號中。
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="modal-content-video-area">
+                        <div class="modal-content-video-area-tittle">
+                            <div class="modal-content-video-area-tittle-icon">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </div>
+                            <p>
+                                說書示範影片（觀摩與學習）
+                            </p>
+                        </div>
+                        
+                        <div class="modal-content-video-area-iframe">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/D8CAmACIKiI?si=WVQjM2NNkLEmgCCZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="modal-content-video-area-hint">
+                            <div class="modal-content-video-area-hint-icon">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+
+                            <div class="modal-content-video-area-hint-text">
+                                <p>
+                                    說書秘訣：可以參考範例影片，並結合剛才AI小書人討論的故事線索，自信地把故事分享出來。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="input_group">
+                      <input type="text" id="AddVideoInput" class="input_block" placeholder="輸入影片連結 https://" aria-label="輸入影片連結">
+                      <button class="input_group_btn" type="button" onclick="AddVideoData();">
+                        <p>瀏覽</p>
+                      </button>
+                    </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-content-answer-area">
+                        <div class="modal-content-answer-item">
+                            <div class="modal-content-answer-item-tittle">
+                                <p>
+                                    1.SR小書人的問題讓我有機會說出自己的想法。
+                                </p>
+                            </div>
+
+                            <div class="modal-content-answer-item-label-area">
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_one_1" type="radio" value="0" name="question_one">
+                                    <label for="question_one_1">非常同意</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_one_2" type="radio" value="1" name="question_one">
+                                    <label for="question_one_2">同意</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_one_3" type="radio" value="2" name="question_one">
+                                    <label for="question_one_3">普通</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_one_4" type="radio" value="2" name="question_one">
+                                    <label for="question_one_4">不太同意</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_one_5" type="radio" value="2" name="question_one">
+                                    <label for="question_one_5">不同意</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-content-answer-item">
+                            <div class="modal-content-answer-item-tittle">
+                                <p>
+                                    2.我覺得SR小書人可以幫助我練習閱讀和表達。
+                                </p>
+                            </div>
+
+                            <div class="modal-content-answer-item-label-area">
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_two_1" type="radio" value="0" name="question_two">
+                                    <label for="question_two_1">非常同意</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_two_2" type="radio" value="1" name="question_two">
+                                    <label for="question_two_2">同意</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_two_3" type="radio" value="2" name="question_two">
+                                    <label for="question_two_3">普通</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_two_4" type="radio" value="2" name="question_two">
+                                    <label for="question_two_4">不太同意</label>
+                                </div>
+
+                                <div class="SRradioRound-green label-item">
+                                    <input id="question_two_5" type="radio" value="2" name="question_two">
+                                    <label for="question_two_5">不同意</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-content-answer-item">
+                            <div class="modal-content-answer-item-tittle">
+                                <p>
+                                    3.今天我覺得自己表現最好的是（可複選）：
+                                </p>
+                            </div>
+
+                            <div class="modal-content-answer-item-label-area multiple_choice-area">
+                                <label><input type="checkbox" name="color1" value="blue">我能說出這本書或這篇文章大意</label>
+                                <label><input type="checkbox" name="color2" value="yellow">我能找到這本書或這篇文章線索</label>
+                                <label><input type="checkbox" name="color3" value="red">我能說出自己的理由</label>
+                                <label><input type="checkbox" name="color4" value="green">我能把回答說得更清楚、完整</label>
+                                <label><input type="checkbox" name="color4" value="green">我能回答追問或補充想法</label>
+                                <label><input type="checkbox" name="color4" value="green">我比較勇敢地說出自己的想法</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-content-button-area">
+                        <div class="modal-content-button-item">
+                            <button type="button" class="modal-content-button-btn cancel" data-dismiss="modal">
+                                <p>
+                                    返回
+                                </p>
+                            </button>
+                            <button type="button" class="modal-content-button-btn practise" data-dismiss="modal">
                                 <p>
                                     完成學習單送出
                                 </p>
