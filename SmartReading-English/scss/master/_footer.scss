@@ -72,28 +72,47 @@ footer {
         margin-bottom: 35px;
 
         .information {
+            width: 45%;
             a {
                 color: c.$brown;
             }
         }
 
         .products {
+            width: 55%;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
 
             p {
+                width: 100%;
                 color: c.$brown;
-                margin: 0 15px;
+                margin: 0 0 10px 15px;
             }
 
             .products_logo {
+                width: 100%;
                 display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                a{
+                    &:nth-last-child(1){
+                        img{
+                            margin: 5px 0 5px 15px;
+                        }
+                }
+                }
 
                 img {
-                    height: 65px;
+                    height: 54px;
                     width: auto;
-                    margin: 0 15px;
+                    margin: 5px 15px;
+
+                    
                 }
+
+                
             }
         }
     }
@@ -118,16 +137,45 @@ footer {
     }
 }
 
+@media screen and (max-width: 1600px) {
+    footer {
+        .footer_information {
+
+            .products {
+
+                .products_logo{
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1200px) {
     footer {
         .footer_information {
             flex-direction: column;
 
+            .information{
+                width: 100%;
+            }
+
             .products {
-                margin-top: 20px;
+                width: 100%;
+                margin: 20px 0 0;
 
                 p {
-                    margin: 0 15px 0 0;
+                    margin: 0 0 10px;
+                }
+
+                .products_logo{
+                    a{
+                    &:nth-child(1){
+                        img{
+                            margin: 5px 15px 5px 0;
+                        }
+                }
+                }
                 }
             }
         }
@@ -167,6 +215,21 @@ footer {
 
 }
 
+@media screen and (max-width: 992px) {
+    footer {
+        .footer_information {
+            .products {
+                .products_logo {
+                    img {
+                        height: 49px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 @media screen and (max-width: 768px) {
     footer {
         padding: 20px 0px;
@@ -188,6 +251,15 @@ footer {
                 .products_logo {
                     flex-wrap: wrap;
                     justify-content: flex-start;
+
+                    a{
+                    &:nth-child(1),
+                    &:nth-last-child(1){
+                        img{
+                            margin: 10px 12px 10px 0;
+                        }
+                }
+                }
 
                     img {
                         margin: 10px 12px 10px 0;

@@ -992,24 +992,36 @@ footer .footer_information {
   justify-content: space-between;
   margin-bottom: 35px;
 }
+footer .footer_information .information {
+  width: 45%;
+}
 footer .footer_information .information a {
   color: #5B3716;
 }
 footer .footer_information .products {
+  width: 55%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 footer .footer_information .products p {
+  width: 100%;
   color: #5B3716;
-  margin: 0 15px;
+  margin: 0 0 10px 15px;
 }
 footer .footer_information .products .products_logo {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer .footer_information .products .products_logo a:nth-last-child(1) img {
+  margin: 5px 0 5px 15px;
 }
 footer .footer_information .products .products_logo img {
-  height: 65px;
+  height: 54px;
   width: auto;
-  margin: 0 15px;
+  margin: 5px 15px;
 }
 footer .footer_copyright {
   display: flex;
@@ -1028,15 +1040,27 @@ footer .footer_copyright p {
   font-size: 12px;
 }
 
+@media screen and (max-width: 1600px) {
+  footer .footer_information .products .products_logo {
+    justify-content: flex-start;
+  }
+}
 @media screen and (max-width: 1200px) {
   footer .footer_information {
     flex-direction: column;
   }
+  footer .footer_information .information {
+    width: 100%;
+  }
   footer .footer_information .products {
-    margin-top: 20px;
+    width: 100%;
+    margin: 20px 0 0;
   }
   footer .footer_information .products p {
-    margin: 0 15px 0 0;
+    margin: 0 0 10px;
+  }
+  footer .footer_information .products .products_logo a:nth-child(1) img {
+    margin: 5px 15px 5px 0;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -1058,6 +1082,11 @@ footer .footer_copyright p {
     margin-bottom: 5px;
   }
 }
+@media screen and (max-width: 992px) {
+  footer .footer_information .products .products_logo img {
+    height: 49px;
+  }
+}
 @media screen and (max-width: 768px) {
   footer {
     padding: 20px 0px;
@@ -1077,6 +1106,9 @@ footer .footer_copyright p {
   footer .footer_information .products .products_logo {
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+  footer .footer_information .products .products_logo a:nth-child(1) img, footer .footer_information .products .products_logo a:nth-last-child(1) img {
+    margin: 10px 12px 10px 0;
   }
   footer .footer_information .products .products_logo img {
     margin: 10px 12px 10px 0;
