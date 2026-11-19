@@ -325,6 +325,7 @@
     </header>
     <!-- ------- ------- ------- ------- ------- ------- ------- -->
     <main>
+
         <!-- banner start -->
         <div class="page-banner RPList">
             <div class="container">
@@ -342,6 +343,7 @@
         <!-- banner end -->
 
         <div class="AI_content">
+
             <div class="RPList_tools_area">
                 <div class="RPList_search_area">
                     <div class="RPList_search_tittle">
@@ -475,6 +477,311 @@
                 </div>
 
                 <div class="RPList-books_content">
+
+                    <div class="RPList-books_content_header">
+
+                        <div class="RPList-books-classification-area">
+                            <div class="RPList-books-classification-area-text">
+                                <p class="RPList-books-classification-tittle">分類：</p>
+
+                                <!-- 下拉觸發按鈕 -->
+                                <button type="button" onclick="toggleDropdown(event)" class="RPList-books-classification-btn">
+                                    <p>全部分類 <i class="fa-solid fa-sort-down"></i></p>
+                                </button>
+
+                                <!-- 已閱讀類別統計徽章 -->
+                                <p class="RPList-books-classification-text">已讀 5/12 類</p>
+                            </div>
+
+                            <!-- 複選下拉展開面板 -->
+                            <div id="multi-select-panel" class="RPList-books-classification-area-modal">
+
+                                <!-- 面板頂部快捷操作列 -->
+                                <div class="RPList-books-classification-area-modal-header">
+                                    <p class="">勾選分類（可複選）</p>
+                                    <div class="RPList-books-classification-area-modal-header-btn">
+                                        <button type="button" onclick="selectAllCategories()">
+                                            <p>
+                                                全選
+                                            </p>
+                                        </button>
+                                        <span>|</span>
+                                        <button type="button" onclick="clearAllCategories()">
+                                            <p>
+                                                清除
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 分類複選清單（可捲動） -->
+                                <div class="RPList-books-classification-area-modal-list">
+                                    <p class="RPList-books-classification-area-modal-list-tittle">已閱讀過的分類（5 類）</p>
+                                    
+                                    <label class="list_read">
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        AI 運算思維
+                                        <span>已讀 1 本</span>
+                                    </label>
+
+                                    <label class="list_read">
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        植物 動物
+                                        <span>已讀 1 本</span>
+                                    </label>
+
+                                    <label class="list_read">
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        生態 生命科學
+                                        <span>已讀 1 本</span>
+                                    </label>
+
+                                    <label class="list_read">
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        醫藥心理
+                                        <span>已讀 1 本</span>
+                                    </label>
+
+                                    <label class="list_read">
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        歷史地理
+                                        <span>已讀 1 本</span>
+                                    </label>
+
+                                    <p class="RPList-books-classification-area-modal-list-tittle">尚未閱讀的分類（7 類）</p>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        數位應用
+                                        <span>未讀</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        數位倫理
+                                        <span>未讀</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        綜合科學
+                                        <span>未讀</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        數學
+                                        <span>未讀</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        天文地科
+                                        <span>未讀</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        物理 化學
+                                        <span>未讀</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="books_classification_list_1" value="books_classification_list_1">
+                                        應用科學
+                                        <span>未讀</span>
+                                    </label>
+                                    
+                                    <!-- <label>
+                                        <div class="">
+                                            <input type="checkbox" value="ai-ct" onchange="toggleCategoryOption('ai-ct')">
+                                            <span>AI 運算思維</span>
+                                        </div>
+                                        <span class="text-[11px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.2 rounded">已讀 1
+                                            本</span>
+                                    </label> -->
+
+                                    <!-- <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-green-50 text-xs transition text-gray-700">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="plant-animal"
+                                                onchange="toggleCategoryOption('plant-animal')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>植物 動物</span>
+                                        </div>
+                                        <span class="text-[11px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.2 rounded">已讀 1
+                                            本</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-green-50 text-xs transition text-gray-700">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="eco-bio"
+                                                onchange="toggleCategoryOption('eco-bio')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>生態 生命科學</span>
+                                        </div>
+                                        <span class="text-[11px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.2 rounded">已讀 1
+                                            本</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-green-50 text-xs transition text-gray-700">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="med-psych"
+                                                onchange="toggleCategoryOption('med-psych')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>醫藥心理</span>
+                                        </div>
+                                        <span class="text-[11px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.2 rounded">已讀 1
+                                            本</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-green-50 text-xs transition text-gray-700">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="hist-geo"
+                                                onchange="toggleCategoryOption('hist-geo')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>歷史地理</span>
+                                        </div>
+                                        <span class="text-[11px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.2 rounded">已讀 1
+                                            本</span>
+                                    </label>
+
+                                    <p class="RPList-books-classification-area-modal-list-tittle">尚未閱讀的分類（7 類）</p>
+                                    
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="digital-app"
+                                                onchange="toggleCategoryOption('digital-app')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>數位應用</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="digital-ethics"
+                                                onchange="toggleCategoryOption('digital-ethics')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>數位倫理</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="general-sci"
+                                                onchange="toggleCategoryOption('general-sci')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>綜合科學</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="math" onchange="toggleCategoryOption('math')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>數學</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="astro-earth"
+                                                onchange="toggleCategoryOption('astro-earth')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>天文地科</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="phys-chem"
+                                                onchange="toggleCategoryOption('phys-chem')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>物理 化學</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer hover:bg-gray-50 text-xs transition text-gray-600">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" value="applied-sci"
+                                                onchange="toggleCategoryOption('applied-sci')"
+                                                class="accent-[#389749] w-3.5 h-3.5 rounded cursor-pointer">
+                                            <span>應用科學</span>
+                                        </div>
+                                        <span class="text-[11px] text-gray-400">未讀</span>
+                                    </label> -->
+                                </div>
+
+                                <!-- 面板底部確認列 -->
+                                <div class="RPList-books-classification-area-modal-bottom">
+                                    <p class="">目前顯示：全部分類</p>
+                                    <button type="button" onclick="closeDropdown()" class="RPList-books-classification-area-modal-bottom-btn">
+                                        完成
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="RPList-books">
+                            <div class="container">
+                                <div class="RPList-books__functions">
+                                    <div class="functions-tips">
+                                        圖標說明：
+
+                                        <div id="Panel_function_tips_contest" style="display: inline-block;">
+
+                                            <button class="functions-tips__btn" type="button" data-container="body"
+                                                data-toggle="popover" data-placement="bottom"
+                                                data-content="&lt;h4&gt;系統評量分數&lt;/h4&gt;通過：&lt;span class='userScore passed bySystem'&gt;A&lt;/span&gt;&nbsp;&nbsp;&lt;span class='userScore passed bySystem'&gt;A+&lt;/span&gt;&nbsp;&nbsp;&lt;span class='userScore passed bySystem'&gt;A++&lt;/span&gt;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/br&gt;不通過：&lt;span class='userScore failed bySystem'&gt;B&lt;/span&gt;"
+                                                data-original-title="" title=""><span
+                                                    class="glyphicon glyphicon-question-sign"
+                                                    aria-hidden="true"></span></button>
+
+                                        </div>
+                                    </div>
+                                    <div id="div_mode" class="functions-modes">
+                                        顯示：
+                                        <ul class="functions-modes__block" role="tablist">
+                                            <li role="presentation" class="functions-modes__btn active"><a href="#list"
+                                                    aria-controls="list" role="tab" data-toggle="tab">
+                                                    <img src="../Content/images/RPList/modes-list.png">條例</a></li>
+                                            <li role="presentation" class="functions-modes__btn"><a
+                                                    href="RPCalendar.aspx">
+                                                    <img src="../Content/images/RPList/modes-calendar.png">月曆</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="RPList-books__tab-pane__functions list">
+                            <div id="div_search" class="functions-btns">
+                                <button id="btn-search-all" class="btn functions-btns__nav active" type="submit"
+                                    onclick="SearchDone(2)">我的書單</button>
+                                <button id="btn-search-tobe" class="btn functions-btns__nav" type="submit"
+                                    onclick="SearchDone(0)">未評量</button>
+                                <button id="btn-search-ed" class="btn functions-btns__nav" type="submit"
+                                    onclick="SearchDone(1)">已評量</button>
+                                <button id="btn-search-ed" class="btn functions-btns__nav" type="submit">AI對話</button>
+                            </div>
+                        </div>
+                    </div>
 
                     <table id="RPList-books__table" class="table RPList-books__table">
                         <thead>
@@ -1471,8 +1778,6 @@
             </div>
         </div>
 
-
-
         <!-- AI對話彈跳視窗 -->
         <div class="modal RPList_modal AI_dialogue_modal" id="AI_dialogue_modal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1762,12 +2067,12 @@
                             </div>
 
                             <div class="modal-content-answer-item-label-area multiple_choice-area">
-                                <label><input type="checkbox" name="color1" value="blue">我能說出這本書或這篇文章大意</label>
-                                <label><input type="checkbox" name="color2" value="yellow">我能找到這本書或這篇文章線索</label>
-                                <label><input type="checkbox" name="color3" value="red">我能說出自己的理由</label>
-                                <label><input type="checkbox" name="color4" value="green">我能把回答說得更清楚、完整</label>
-                                <label><input type="checkbox" name="color4" value="green">我能回答追問或補充想法</label>
-                                <label><input type="checkbox" name="color4" value="green">我比較勇敢地說出自己的想法</label>
+                                <label><input type="checkbox" name="multiple_choice_1" value="multiple_choice_1">我能說出這本書或這篇文章大意</label>
+                                <label><input type="checkbox" name="multiple_choice_2" value="multiple_choice_2">我能找到這本書或這篇文章線索</label>
+                                <label><input type="checkbox" name="multiple_choice_3" value="multiple_choice_3">我能說出自己的理由</label>
+                                <label><input type="checkbox" name="multiple_choice_4" value="multiple_choice_4">我能把回答說得更清楚、完整</label>
+                                <label><input type="checkbox" name="multiple_choice_4" value="multiple_choice_5">我能回答追問或補充想法</label>
+                                <label><input type="checkbox" name="multiple_choice_4" value="multiple_choice_6">我比較勇敢地說出自己的想法</label>
                             </div>
                         </div>
                     </div>
@@ -2080,6 +2385,33 @@
 
     <!-- iframe高度-->
     <script src="../Content/js/jquery.autoheight.js"></script>
+
+    <script>
+        // 開關複選下拉選單
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            const panel = document.getElementById('multi-select-panel');
+            panel.classList.toggle('hidden');
+        }
+
+        function closeDropdown() {
+            document.getElementById('multi-select-panel').classList.add('hidden');
+        }
+
+    // 全選所有分類
+    function selectAllCategories() {
+      categories.forEach(c => selectedCategories.add(c.id));
+      renderMultiSelectOptions();
+      renderBookGrid();
+    }
+
+    // 清除所有勾選（恢復顯示全部分類）
+    function clearAllCategories() {
+      selectedCategories.clear();
+      renderMultiSelectOptions();
+      renderBookGrid();
+    }
+    </script>
 
     <!-- 3. JavaScript 控制邏輯 -->
     <script>
