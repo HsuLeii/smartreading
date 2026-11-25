@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SmartReading 適性閱讀">
+    <meta name="author" content="SmartReading 適性閱讀">
+    <title>SmartReading 適性閱讀</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Content/images/SR.ico">
+    <link rel="stylesheet" type="text/css" href="Content/css/bootstrap-lg.min.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/SR-readingTask-modal.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 任務提示牆 彈跳視窗開始 -->
+    <a class="reading_progress_modal_link" data-toggle="modal" data-target="#readingProgress_modal"></a>
+
+    <a class="progress_icon_area" data-toggle="modal" data-target="#readingProgress_modal">
+        <div class="progress_icon">
+            <img src="Content/images/readingProgress/progress_icon.png" alt="">
+        </div>
+        <div class="progress_icon_text">
+            <p>任務進度</p>
+        </div>
+    </a>
+    
+    <div class="modal readingProgress_modal in" id="readingProgress_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="reading_progress_close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+                <div class="modal-content-header">
+                    <div class="modal-header-tittle">
+                        <img src="Content/images/readingTask/tittle.png" alt="">
+                    </div>
+                </div>
+
+                <div class="task_area">
+                    <div class="task_area_text">
+                        <div class="task_area_tittle">
+                            <h4>幫助小書人修好AI機器人</h4>
+                        </div>
+                        <div class="task_area_content">
+                            <p>
+                                SR紀元3175年，距離科學家發布跨世代閱讀AI導航員-小書博特機器人以及SR星球被隕石毀滅經過了150年。小書博特不停
+在世界各地旅行，尋找人類遺落的科技與文化，蒐集並建構檢索資料庫，正確地理解複雜知識，並幫助人類重建文明。
+某天，它在建築殘骸中撿到一張智慧城市設計光碟，從AI市政大樓、科技管理局、機器人派遣總部、AI醫療與照護中心、創
+                            </p>
+                        </div>
+                    </div>
+                    <div class="robot_progress_area">
+                        <div class="robot_img_area">
+                            <!-- 獲得時class加上get -->
+                            <div class="robot_img_item get">
+                                <div class="robot_img_item_img">
+                                    <div class="robot_img_item_grey">
+                                        <img src="Content/images/readingProgress/robot_img_grey_one.png" alt="">
+                                    </div>
+                                    <div class="robot_img_item_color">
+                                        <img src="Content/images/readingProgress/robot_img_color_one.png" alt="">
+                                    </div>
+                                </div>
+                                
+                                <div class="arrow_img_item_img">
+                                    <div class="arrow_img_item_grey">
+                                        <img src="Content/images/readingProgress/arrow_grey.png" alt="">
+                                    </div>
+                                    <div class="arrow_img_item_color">
+                                        <img src="Content/images/readingProgress/arrow_color.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 獲得時class加上get -->
+                            <div class="robot_img_item">
+                                <div class="robot_img_item_img">
+                                    <div class="robot_img_item_grey">
+                                        <img src="Content/images/readingProgress/robot_img_grey_two.png" alt="">
+                                    </div>
+                                    <div class="robot_img_item_color">
+                                        <img src="Content/images/readingProgress/robot_img_color_two.png" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="arrow_img_item_img">
+                                    <div class="arrow_img_item_grey">
+                                        <img src="Content/images/readingProgress/arrow_grey.png" alt="">
+                                    </div>
+                                    <div class="arrow_img_item_color">
+                                        <img src="Content/images/readingProgress/arrow_color.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 獲得時class加上get -->
+                            <div class="robot_img_item">
+                                <div class="robot_img_item_img">
+                                    <div class="robot_img_item_grey">
+                                        <img src="Content/images/readingProgress/robot_img_grey_three.png" alt="">
+                                    </div>
+                                    <div class="robot_img_item_color">
+                                        <img src="Content/images/readingProgress/robot_img_color_three.png" alt="">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="robot_progress">
+                            <div class="robot_progress_text">
+                                <p>
+                                    整體完成進度
+                                </p>
+                            </div>
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="robot_progress_num">
+                                <p>
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="small_task_area">
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    智慧城規劃圖面
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    閱讀並完成「植物/動物」、「物理/化學」、「應用科學」類別書籍評量各1本
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 100%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    100%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link done">
+                            <a href="">
+                                已完成
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    智慧城建築執照
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    閱讀並完成「植物/動物」、「物理/化學」、「應用科學」類別書籍評量各1本
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link">
+                            <a href="">
+                                前往推薦書單
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    智慧城營造機械組
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    閱讀並完成「天文地科」、「法律財經」、「地理歷史」、「數學」類別書籍評量各1本
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link">
+                            <a href="">
+                                前往推薦書單
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    AI工程機器人
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    閱讀並完成「植物/動物」、「物理/化學」、「法律財經」、「地理歷史」、「數學」類別推薦文章各1篇
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link">
+                            <a href="">
+                                前往推薦書單
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    智慧城營造建材組
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    閱讀並完成「生態/生命科學」、「醫藥心理」、「綜合科學」、「天文地科」、「應用科學」類別推薦文章各3篇
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link">
+                            <a href="">
+                                前往推薦書單
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item">
+                        <div class="small_task_text">
+                            <div class="small_task_tittle">
+                                <h5>
+                                    智慧城竣工儀式
+                                </h5>
+                            </div>
+                            <div class="small_task_content">
+                                <p>
+                                    閱讀且完成1本「應用科學」類別書籍，並在說書頻道投稿該書影片1則，且主辦單位通過審核公開發布
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_progress">
+                            <div class="progress_area">
+                                    <div id="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" class="progress_bar" style="width: 33%;">
+                                    </div>
+                            </div>
+                            <div class="small_task_progress_num">
+                                <p>
+                                    33%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="small_task_link">
+                            <a href="">
+                                前往推薦書單
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    <div class="small_task_item_text">
+                        <p>
+                    ※主題任務完成狀態每3小時更新，若完成任務稍晚重新登入就會更新，並可前往勳章挑戰查看已獲得的任務道具。
+                </p>
+                    </div>
+                    
+                </div>
+
+                
+
+                <div class="modal-content-bg">
+                    <img src="Content/images/readingTask/bg.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 任務提示牆 彈跳視窗結束 -->
+
+
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <!-- ------- ------- ------- ------- ------- ------- ------- -->
+    <script src="Content/Script/jquery.min.js"></script>
+    <script src="Content/Script/bootstrap-lg.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //關閉閱讀任務彈跳視窗
+            $(".reading_progress_modal_link").click();
+            $(".reading_progress_close").click(function () {
+                $(".reading_task_modal").hide();
+                $(".modal-backdrop").hide();
+                $("body").removeClass("modal-open")
+            });
+        });
+    </script>
+
+</body>
+
+</html>
