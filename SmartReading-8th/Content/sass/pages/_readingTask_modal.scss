@@ -119,35 +119,8 @@ body {
     box-sizing: border-box;
 }
 
-.progress_icon_area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-    z-index: 5;
-    right: 15px;
-    bottom: 15px;
-    cursor: pointer;
-
-    .progress_icon {
-        width: 100px;
-
-        img{
-            width: 100%;
-        }
-    }
-
-    .progress_icon_text {
-        p {
-            color: #ff4df5;
-        }
-    }
-}
-
-
 .modal {
-    &.readingProgress_modal {
+    &.readingTask_modal {
         width: 100%;
 
         img {
@@ -181,191 +154,391 @@ body {
                 }
 
                 .modal-content-header {
-                    border-bottom: 0;
                     margin: 0 auto;
 
                     .modal-header-tittle {
-                                    width: 100%;
-                                    margin: 0 auto 15px;
-                                    display: flex;
-                                    justify-content: center;
+                        width: 100%;
+                        margin: 0 auto 15px;
+                        display: flex;
+                        justify-content: center;
 
-                                    img {
-                                        width: 100%;
-                                    }
-
-                                    // h2 {
-                                    //     font-size: 25px;
-                                    //     font-family: "Noto Sans SC", "Noto Sans TC";
-                                    //     font-weight: 900;
-                                    //     text-align: center;
-                                    //     width: 100%;
-                                    //     line-height: 1.5;
-
-                                    //     &.modal-header-tittle-main {
-                                    //         /* 	等同於：-webkit-text-fill-color: transparent; */
-                                    //         // -webkit-text-stroke: 2px #1e286b;
-                                    //         position: relative;
-                                    //         z-index: 3;
-                                    //         color: #fff100;
-                                    //     }
-
-                                    //     &.modal-header-tittle-border {
-                                    //         position: absolute;
-                                    //         left: 50%;
-                                    //         top: 0;
-                                    //         transform: translate(-50%, 0);
-                                    //         z-index: 2;
-                                    //         /* background-clip 要在背景的後面 */
-                                    //         -webkit-background-clip: text;
-                                    //         color: transparent;
-                                    //         /* 	等同於：-webkit-text-fill-color: transparent; */
-                                    //         -webkit-text-stroke: 3px #005b98;
-                                    //     }
-
-                                    //     &.modal-header-tittle-bg {
-                                    //         color: #005b98;
-                                    //         position: absolute;
-                                    //         top: 0;
-                                    //         left: 50%;
-                                    //         transform: translate(-50%, 0%);
-                                    //         -webkit-text-stroke: 20px #fff;
-
-                                    //         &.modal-header-tittle-bg-blue {
-                                    //             -webkit-text-stroke: 25px #005b98;
-                                    //         }
-                                    //     }
-
-                                    //     &.modal-header-tittle-blue {
-                                    //         color: #005b98;
-                                    //         position: absolute;
-                                    //         top: 0;
-                                    //         left: 50%;
-                                    //         transform: translate(calc(-50% + 5px), 5px);
-                                    //         z-index: 1;
-                                    //         -webkit-text-stroke: 3px #005b98;
-                                    //     }
-                                    // }
-                                }
+                        img {
+                            width: 100%;
+                        }
+                    }
                 }
 
                 .task_area {
-                    border-radius: 30px;
-                    padding: 45px 5%;
-                    width: 85%;
-                    margin: 15px auto 40px;
-                    position: relative;
-                    z-index: 1;
-                    background-color: rgba(2,22,80,.57);
-                    box-shadow:  0px 0px 30px 10px rgba(16,234,255,.52);
+                    width: 90%;
+                    margin: 0 auto;
+                    background-color: #014063;
 
-                    .task_area_text {
+                    .task_area_one {
+                        position: relative;
+                        border: 3px solid #00EBFF;
+                        padding: 30px 40px;
 
-                        .task_area_tittle,
-                        .task_area_content {
-                            display: flex;
-                            justify-content: center;
+                        .task_area_one_top,
+                        .task_area_one_bottom {
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
 
-                            h4,
-                            p {
-                                font-weight: normal;
-                                color: #fff;
-                                text-shadow: 0px 0px 5px rgba(255,255,255,.35);
+                            &::before,
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                background-color: #BE581E;
                             }
 
-                            p {
-                                text-align: justify;
+                            &::before {
+                                left: 0;
                             }
-                        }
 
-                        .task_area_tittle {
-                            margin: 10px auto 35px;
-                        }
-                    }
-
-                    .robot_progress_area {
-                        margin: 30px auto 0;
-
-                        .robot_img_area {
-                            display: flex;
-                            justify-content: center;
-                            margin: 0 0 15px 25px;
-
-                            .robot_img_item {
-                                display: flex;
-                                align-items: center;
-                                width: 33%;
-
-                                .robot_img_item_img {
-                                    width: calc(100% - 30px);
-
-                                    .robot_img_item_color {
-                                        display: none;
-                                    }
-                                }
-
-                                .arrow_img_item_img {
-                                    width: 30px;
-
-                                    .arrow_img_item_grey,
-                                    .arrow_img_item_color{
-                                        img{
-                                            border-radius: 50%;
-                                        }
-                                    }
-
-                                    .arrow_img_item_color {
-                                        display: none;
-                                    }
-                                }
-
-                                &.get {
-                                    .robot_img_item_img {
-                                        .robot_img_item_color {
-                                            display: block;
-                                        }
-
-                                        .robot_img_item_grey {
-                                            display: none;
-                                        }
-                                    }
-
-                                    .arrow_img_item_img {
-                                        .arrow_img_item_color {
-                                            display: block;
-                                        }
-
-                                        .arrow_img_item_grey {
-                                            display: none;
-                                        }
-                                    }
-                                }
+                            &::after {
+                                right: 0;
                             }
                         }
 
-                        .robot_progress {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
+                        .task_area_one_top {
+                            top: 0;
 
-                            .robot_progress_text,
-                            .robot_progress_num {
+                            &::before,
+                            &::after {
+                                top: 0;
+                                border-bottom: 3px solid #00EBFF;
+                            }
+
+                            &::before {
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                            }
+
+                            &::after {
+                                transform: translate(50%, -50%) rotate(45deg);
+                            }
+                        }
+
+                        .task_area_one_bottom {
+                            bottom: 0;
+
+                            &::before,
+                            &::after {
+                                bottom: 0;
+                                border-top: 3px solid #00EBFF;
+                            }
+
+                            &::before {
+                                transform: translate(-50%, 50%) rotate(45deg);
+                            }
+
+                            &::after {
+                                transform: translate(50%, 50%) rotate(-45deg);
+                            }
+                        }
+
+                        .task_area_one_bookman_area {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+
+                            .task_area_one_bookman_area_img {
+                                width: 35%;
+
+                                img {
+                                    width: 87%;
+                                    margin: 0 auto 23px;
+                                }
+
+                                .task_area_one_bookman_area_img_text {
+                                    display: flex;
+                                    justify-content: center;
+                                    background-color: #008D3C;
+                                    border-radius: 5px;
+
+                                    p {
+                                        font-size: 24px;
+                                        color: #FFF;
+                                        padding: 10px;
+                                    }
+                                }
+                            }
+
+                            .task_area_one_bookman_area_text {
+                                width: 60%;
+
+                                h4 {
+                                    font-size: 40px;
+                                    color: #EDD837;
+                                }
+
                                 p {
-                                    color: $white;
+                                    font-size: 26px;
+                                    color: #FFF;
                                 }
                             }
 
-                            .progress_area {
-                                width: 40%;
-                                height: 12px;
-                                background-color: #821fb5;
-                                border-radius: 6px;
-                                margin: 0 16px;
+                            .task_area_one_bookman_area_bottom_text {
+                                width: 100%;
+                                margin: 50px auto 0;
 
-                                .progress_bar {
-                                    height: 100%;
-                                    border-radius: 6px;
-                                    background-color: #ff4df5;
+                                p {
+                                    font-size: 26px;
+                                    color: #FFF;
+
+                                    span {
+                                        font-size: 26px;
+                                        color: #84C97B;
+                                    }
+                                }
+                            }
+
+                            .task_area_one_taskProgress_area {
+                                position: relative;
+                                width: 100%;
+                                margin: 80px auto 0;
+                                padding: 55px 0 0;
+                                border: 2px solid #00EBFF;
+
+                                &::before,
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    width: 20px;
+                                    height: 20px;
+                                    border-bottom: 2px solid #00EBFF;
+                                    background-color: #014063;
+                                }
+
+                                &::before {
+                                    left: 0;
+                                    transform: translate(-50%, -50%) rotate(-45deg);
+                                }
+
+                                &::after {
+                                    right: 0;
+                                    transform: translate(50%, -50%) rotate(45deg);
+                                }
+
+                                .task_area_one_taskProgress_area_time {
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    padding: 6px 25px;
+                                    border-radius: 25px;
+                                    background-color: #00EBFF;
+                                    transform: translate(-25px, -50%);
+
+                                    p {
+                                        font-size: 21px;
+                                        color: #014063;
+
+                                        i {
+                                            color: #014063;
+                                        }
+                                    }
+                                }
+
+                                .task_area_one_taskProgress_area_top {
+                                    .task_area_one_taskProgress_area_top_text {
+                                        width: 90%;
+                                        margin: 0 auto;
+
+                                        p {
+                                            font-size: 26px;
+                                            color: #EDD837;
+                                        }
+                                    }
+                                }
+
+                                .task_area_one_taskProgress_area_bottom {
+                                    position: relative;
+                                    margin: 35px auto 0;
+                                    padding: 0 0 45px;
+
+                                    &::before,
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        bottom: 0;
+                                        width: 20px;
+                                        height: 20px;
+                                        border-top: 2px solid #00EBFF;
+                                        background-color: #014063;
+                                    }
+
+                                    &::before {
+                                        left: 0;
+                                        transform: translate(-50%, 50%) rotate(45deg);
+                                    }
+
+                                    &::after {
+                                        right: 0;
+                                        transform: translate(50%, 50%) rotate(-45deg);
+                                    }
+
+                                    .task_area_one_taskProgress_area_bottom_img_area {
+                                        display: flex;
+                                        align-items: flex-end;
+                                        justify-content: space-around;
+                                        margin: 0 auto 25px;
+
+                                        .task_area_one_taskProgress_area_bottom_img_item {
+                                            width: 31%;
+                                        }
+                                    }
+
+                                    .task_area_one_taskProgress_area_bottom_progress_area {
+                                        width: 93%;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin: 0 auto;
+
+                                        .task_area_one_taskProgress_area_bottom_progress_top_text {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            width: 100%;
+
+                                            .task_area_one_taskProgress_area_bottom_progress_top_text_item {
+                                                position: relative;
+                                                display: flex;
+                                                align-items: center;
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item_img {
+                                                    width: 30px;
+                                                    margin: 0 6px 0 0;
+                                                }
+
+                                                p {
+                                                    font-size: 17px;
+                                                    color: #00EBFF;
+                                                    line-height: 1;
+                                                }
+
+                                                &:nth-child(2) {
+                                                    border: 1px solid #00EBFF;
+                                                    padding: 5px 18px;
+
+                                                    p {
+                                                        color: #EDD837;
+
+                                                        span {
+                                                            font-size: 29px;
+                                                        }
+                                                    }
+                                                }
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item_top,
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom {
+                                                    position: absolute;
+                                                    left: 0;
+                                                    width: 100%;
+
+                                                    &::before,
+                                                    &::after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        width: 18px;
+                                                        height: 18px;
+                                                        background-color: #014063;
+                                                    }
+
+                                                    &::before {
+                                                        left: 0;
+                                                    }
+
+                                                    &::after {
+                                                        right: 0;
+                                                    }
+                                                }
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item_top {
+                                                    top: 0;
+
+                                                    &::before,
+                                                    &::after {
+                                                        top: 0;
+                                                        border-bottom: 1px solid #00EBFF;
+                                                    }
+
+                                                    &::before {
+                                                        transform: translate(-50%, -50%) rotate(-45deg);
+                                                    }
+
+                                                    &::after {
+                                                        transform: translate(50%, -50%) rotate(45deg);
+                                                    }
+                                                }
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom {
+                                                    bottom: 0;
+
+                                                    &::before,
+                                                    &::after {
+                                                        bottom: 0;
+                                                        border-top: 1px solid #00EBFF;
+                                                    }
+
+                                                    &::before {
+                                                        transform: translate(-50%, 50%) rotate(45deg);
+                                                    }
+
+                                                    &::after {
+                                                        transform: translate(50%, 50%) rotate(-45deg);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .task_area_one_taskProgress_area_bottom_progress {
+                                            position: relative;
+                                            width: 100%;
+                                            height: 23px;
+                                            border: 1px solid #00EBFF;
+                                            border-radius: 12px;
+                                            margin: 25px auto;
+
+                                            .progress_bar {
+                                                height: 100%;
+                                                border-radius: 12px;
+                                                background-color: #DFC44A;
+                                            }
+
+                                            .progress_img {
+                                                position: absolute;
+                                                width: 6%;
+                                                top: 50%;
+                                                transform: translate(-50%, -50%);
+                                            }
+                                        }
+
+                                        .task_area_one_taskProgress_area_bottom_progress_bottom_text {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            width: 100%;
+
+                                            .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
+                                                display: flex;
+                                                align-items: center;
+
+                                                .task_area_one_taskProgress_area_bottom_progress_bottom_text_item_img {
+                                                    width: 20px;
+                                                    margin: 0 6px 0 0;
+                                                }
+
+                                                p {
+                                                    font-size: 17px;
+                                                    color: #00EBFF;
+                                                    line-height: 1;
+                                                }
+                                            }
+
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -382,8 +555,8 @@ body {
                     .small_task_item {
                         position: relative;
                         z-index: 2;
-                        background-color: rgba(2,22,80,.5);
-                        box-shadow:  0px 0px 15px 5px rgba(16,234,255,.52);
+                        background-color: rgba(2, 22, 80, .5);
+                        box-shadow: 0px 0px 15px 5px rgba(16, 234, 255, .52);
                         border-radius: 30px;
                         padding: 40px 25px 30px;
                         margin: 0 auto 40px;
@@ -428,13 +601,13 @@ body {
                             .small_task_tittle {
 
                                 h5 {
-                                    color: rgba(2,22,80);
+                                    color: rgba(2, 22, 80);
                                 }
                             }
 
                             .small_task_content {
                                 p {
-                                    color: rgba(2,22,80);
+                                    color: rgba(2, 22, 80);
                                     text-align: justify;
                                 }
                             }
@@ -462,7 +635,7 @@ body {
 
                             .small_task_progress_num {
                                 p {
-                                    color: rgba(2,22,80);
+                                    color: rgba(2, 22, 80);
                                 }
                             }
                         }
@@ -485,28 +658,29 @@ body {
                             }
 
                             &:hover {
-                                    background-color: #ff4df5;
+                                background-color: #ff4df5;
+
                                 a {
                                     color: $white;
                                 }
                             }
 
-                            &.done{
-                                background-color: rgba(2,22,80);
+                            &.done {
+                                background-color: rgba(2, 22, 80);
 
-                                a{
+                                a {
                                     cursor: auto;
                                 }
 
-                                &:hover{
-                                    background-color: rgba(2,22,80);
+                                &:hover {
+                                    background-color: rgba(2, 22, 80);
                                 }
                             }
                         }
                     }
                 }
 
-                .small_task_item_text{
+                .small_task_item_text {
                     position: relative;
                     z-index: 1;
                     display: flex;
@@ -514,7 +688,7 @@ body {
                     width: 100%;
                     margin: 0 auto 40px;
 
-                    p{
+                    p {
                         font-size: 18px;
                         color: #ff4df5;
                         font-weight: bold;

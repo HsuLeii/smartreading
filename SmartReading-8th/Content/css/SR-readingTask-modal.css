@@ -115,39 +115,18 @@ body {
   box-sizing: border-box;
 }
 
-.progress_icon_area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  z-index: 5;
-  right: 15px;
-  bottom: 15px;
-  cursor: pointer;
-}
-.progress_icon_area .progress_icon {
-  width: 100px;
-}
-.progress_icon_area .progress_icon img {
+.modal.readingTask_modal {
   width: 100%;
 }
-.progress_icon_area .progress_icon_text p {
-  color: #ff4df5;
-}
-
-.modal.readingProgress_modal {
+.modal.readingTask_modal img {
   width: 100%;
 }
-.modal.readingProgress_modal img {
-  width: 100%;
-}
-.modal.readingProgress_modal .modal-dialog {
+.modal.readingTask_modal .modal-dialog {
   width: 80%;
   max-width: 1200px;
   margin: 40px auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content {
+.modal.readingTask_modal .modal-dialog .modal-content {
   position: relative;
   background-color: #BE581E;
   border: 0px;
@@ -155,130 +134,344 @@ body {
   box-shadow: none;
   padding: 0 0 5%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .reading_progress_close {
+.modal.readingTask_modal .modal-dialog .modal-content .reading_progress_close {
   position: absolute;
   left: 15px;
   top: 15px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .reading_progress_close span {
+.modal.readingTask_modal .modal-dialog .modal-content .reading_progress_close span {
   color: #005b98;
   font-size: 60px;
   line-height: 1;
   letter-spacing: normal;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header {
-  border-bottom: 0;
+.modal.readingTask_modal .modal-dialog .modal-content .modal-content-header {
   margin: 0 auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-header-tittle {
+.modal.readingTask_modal .modal-dialog .modal-content .modal-content-header .modal-header-tittle {
   width: 100%;
   margin: 0 auto 15px;
   display: flex;
   justify-content: center;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-header .modal-header-tittle img {
+.modal.readingTask_modal .modal-dialog .modal-content .modal-content-header .modal-header-tittle img {
   width: 100%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area {
-  border-radius: 30px;
-  padding: 45px 5%;
-  width: 85%;
-  margin: 15px auto 40px;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #014063;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one {
   position: relative;
-  z-index: 1;
-  background-color: rgba(2, 22, 80, 0.57);
-  box-shadow: 0px 0px 30px 10px rgba(16, 234, 255, 0.52);
+  border: 3px solid #00EBFF;
+  padding: 30px 40px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content {
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::after,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::before,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #BE581E;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::before,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::before {
+  left: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::after,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::after {
+  right: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top {
+  top: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::after {
+  top: 0;
+  border-bottom: 3px solid #00EBFF;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_top::after {
+  transform: translate(50%, -50%) rotate(45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom {
+  bottom: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::after {
+  bottom: 0;
+  border-top: 3px solid #00EBFF;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::before {
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bottom::after {
+  transform: translate(50%, 50%) rotate(-45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_img {
+  width: 35%;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_img img {
+  width: 87%;
+  margin: 0 auto 23px;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_img .task_area_one_bookman_area_img_text {
   display: flex;
   justify-content: center;
+  background-color: #008D3C;
+  border-radius: 5px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle h4,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle p,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content h4,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content p {
-  font-weight: normal;
-  color: #fff;
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.35);
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_img .task_area_one_bookman_area_img_text p {
+  font-size: 24px;
+  color: #FFF;
+  padding: 10px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle p,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_content p {
-  text-align: justify;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_text {
+  width: 60%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .task_area_text .task_area_tittle {
-  margin: 10px auto 35px;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_text h4 {
+  font-size: 40px;
+  color: #EDD837;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area {
-  margin: 30px auto 0;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_text p {
+  font-size: 26px;
+  color: #FFF;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area {
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_bottom_text {
+  width: 100%;
+  margin: 50px auto 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_bottom_text p {
+  font-size: 26px;
+  color: #FFF;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_bookman_area_bottom_text p span {
+  font-size: 26px;
+  color: #84C97B;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area {
+  position: relative;
+  width: 100%;
+  margin: 80px auto 0;
+  padding: 55px 0 0;
+  border: 2px solid #00EBFF;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid #00EBFF;
+  background-color: #014063;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area::before {
+  left: 0;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area::after {
+  right: 0;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_time {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px 25px;
+  border-radius: 25px;
+  background-color: #00EBFF;
+  transform: translate(-25px, -50%);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_time p {
+  font-size: 21px;
+  color: #014063;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_time p i {
+  color: #014063;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_top .task_area_one_taskProgress_area_top_text {
+  width: 90%;
+  margin: 0 auto;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_top .task_area_one_taskProgress_area_top_text p {
+  font-size: 26px;
+  color: #EDD837;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom {
+  position: relative;
+  margin: 35px auto 0;
+  padding: 0 0 45px;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #00EBFF;
+  background-color: #014063;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom::before {
+  left: 0;
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom::after {
+  right: 0;
+  transform: translate(50%, 50%) rotate(-45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_img_area {
   display: flex;
-  justify-content: center;
-  margin: 0 0 15px 25px;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin: 0 auto 25px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item {
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_img_area .task_area_one_taskProgress_area_bottom_img_item {
+  width: 31%;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area {
+  width: 93%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item {
+  position: relative;
   display: flex;
   align-items: center;
-  width: 33%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img {
-  width: calc(100% - 30px);
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .robot_img_item_img .robot_img_item_color {
-  display: none;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img {
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_img {
   width: 30px;
+  margin: 0 6px 0 0;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img .arrow_img_item_grey img,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img .arrow_img_item_color img {
-  border-radius: 50%;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item p {
+  font-size: 17px;
+  color: #00EBFF;
+  line-height: 1;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item .arrow_img_item_img .arrow_img_item_color {
-  display: none;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item:nth-child(2) {
+  border: 1px solid #00EBFF;
+  padding: 5px 18px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .robot_img_item_img .robot_img_item_color {
-  display: block;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item:nth-child(2) p {
+  color: #EDD837;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .robot_img_item_img .robot_img_item_grey {
-  display: none;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item:nth-child(2) p span {
+  font-size: 29px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .arrow_img_item_img .arrow_img_item_color {
-  display: block;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_img_area .robot_img_item.get .arrow_img_item_img .arrow_img_item_grey {
-  display: none;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::after,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::before,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #014063;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress {
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::before,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::before {
+  left: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::after,
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::after {
+  right: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top {
+  top: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::after {
+  top: 0;
+  border-bottom: 1px solid #00EBFF;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_top::after {
+  transform: translate(50%, -50%) rotate(45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom {
+  bottom: 0;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::before, .modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::after {
+  bottom: 0;
+  border-top: 1px solid #00EBFF;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::before {
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_top_text .task_area_one_taskProgress_area_bottom_progress_top_text_item .task_area_one_taskProgress_area_bottom_progress_top_text_item_bottom::after {
+  transform: translate(50%, 50%) rotate(-45deg);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress {
+  position: relative;
+  width: 100%;
+  height: 23px;
+  border: 1px solid #00EBFF;
+  border-radius: 12px;
+  margin: 25px auto;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress .progress_bar {
+  height: 100%;
+  border-radius: 12px;
+  background-color: #DFC44A;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress .progress_img {
+  position: absolute;
+  width: 6%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_bottom_text {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_bottom_text .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
+  display: flex;
   align-items: center;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_text p,
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .robot_progress_num p {
-  color: white;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_bottom_text .task_area_one_taskProgress_area_bottom_progress_bottom_text_item .task_area_one_taskProgress_area_bottom_progress_bottom_text_item_img {
+  width: 20px;
+  margin: 0 6px 0 0;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area {
-  width: 40%;
-  height: 12px;
-  background-color: #821fb5;
-  border-radius: 6px;
-  margin: 0 16px;
+.modal.readingTask_modal .modal-dialog .modal-content .task_area .task_area_one .task_area_one_bookman_area .task_area_one_taskProgress_area .task_area_one_taskProgress_area_bottom .task_area_one_taskProgress_area_bottom_progress_area .task_area_one_taskProgress_area_bottom_progress_bottom_text .task_area_one_taskProgress_area_bottom_progress_bottom_text_item p {
+  font-size: 17px;
+  color: #00EBFF;
+  line-height: 1;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .task_area .robot_progress_area .robot_progress .progress_area .progress_bar {
-  height: 100%;
-  border-radius: 6px;
-  background-color: #ff4df5;
-}
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
   padding: 40px 4%;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item {
   position: relative;
   z-index: 2;
   background-color: rgba(2, 22, 80, 0.5);
@@ -287,10 +480,10 @@ body {
   padding: 40px 25px 30px;
   margin: 0 auto 40px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-last-child(1) {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item:nth-last-child(1) {
   margin: 0 auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item::before {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -301,7 +494,7 @@ body {
   border: 1px solid #0deaff;
   border-radius: 30px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item::after {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -312,48 +505,48 @@ body {
   border-radius: 30px;
   background-color: #fff;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle,
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle,
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content {
   display: flex;
   justify-content: center;
   margin: 0 auto 25px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle h5 {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_tittle h5 {
   color: rgb(2, 22, 80);
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content p {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_text .small_task_content p {
   color: rgb(2, 22, 80);
   text-align: justify;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area {
   width: 80%;
   height: 12px;
   background-color: #821fb5;
   border-radius: 6px;
   margin: 0 16px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area .progress_bar {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .progress_area .progress_bar {
   height: 100%;
   border-radius: 6px;
   background-color: #ff4df5;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .small_task_progress_num p {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_progress .small_task_progress_num p {
   color: rgb(2, 22, 80);
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link {
   position: relative;
   z-index: 1;
   background-color: #0deaff;
   border-radius: 10px;
   margin: 20px auto 0;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link a {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link a {
   display: flex;
   justify-content: center;
   font-size: 18px;
@@ -361,22 +554,22 @@ body {
   color: #fff;
   padding: 10px 15px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link:hover {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link:hover {
   background-color: #ff4df5;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link:hover a {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link:hover a {
   color: white;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link.done {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link.done {
   background-color: rgb(2, 22, 80);
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link.done a {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link.done a {
   cursor: auto;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link.done:hover {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_area .small_task_item .small_task_link.done:hover {
   background-color: rgb(2, 22, 80);
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_item_text {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_item_text {
   position: relative;
   z-index: 1;
   display: flex;
@@ -384,12 +577,12 @@ body {
   width: 100%;
   margin: 0 auto 40px;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .small_task_item_text p {
+.modal.readingTask_modal .modal-dialog .modal-content .small_task_item_text p {
   font-size: 18px;
   color: #ff4df5;
   font-weight: bold;
 }
-.modal.readingProgress_modal .modal-dialog .modal-content .modal-content-bg {
+.modal.readingTask_modal .modal-dialog .modal-content .modal-content-bg {
   content: "";
   position: absolute;
   width: 100%;
