@@ -122,13 +122,14 @@ body {
 .modal {
     &.readingTask_modal {
         width: 100%;
+        padding: 0 !important;
 
         img {
             width: 100%;
         }
 
         .modal-dialog {
-            width: 80%;
+            width: 90%;
             max-width: 1200px;
             margin: 40px auto;
 
@@ -142,14 +143,12 @@ body {
 
                 .reading_progress_close {
                     position: absolute;
-                    left: 15px;
-                    top: 15px;
+                    right: 20px;
+                    top: 20px;
+                    width: 24px;
 
-                    span {
-                        color: #005b98;
-                        font-size: 60px;
-                        line-height: 1;
-                        letter-spacing: normal;
+                    &:hover{
+                        transform: scale(1.1);
                     }
                 }
 
@@ -177,6 +176,7 @@ body {
                         position: relative;
                         border: 3px solid #00EBFF;
                         padding: 30px 40px;
+                        padding: 30px 20px;
 
                         .task_area_one_top,
                         .task_area_one_bottom {
@@ -244,10 +244,12 @@ body {
                             flex-wrap: wrap;
 
                             .task_area_one_bookman_area_img {
-                                width: 35%;
+                                width: 100%;
 
                                 img {
-                                    width: 87%;
+                                    display: block;
+                                    width: 60%;
+                                    max-width: 200px;
                                     margin: 0 auto 23px;
                                 }
 
@@ -265,7 +267,8 @@ body {
                             }
 
                             .task_area_one_bookman_area_text {
-                                width: 60%;
+                                width: 100%;
+                                margin: 25px auto 0;
 
                                 h4 {
                                     color: #EDD837;
@@ -278,7 +281,7 @@ body {
 
                             .task_area_one_bookman_area_bottom_text {
                                 width: 100%;
-                                margin: 50px auto 0;
+                                margin: 25px auto 0;
 
                                 p {
                                     color: #FFF;
@@ -319,12 +322,16 @@ body {
 
                                 .task_area_one_taskProgress_area_time {
                                     position: absolute;
-                                    right: 0;
+                                    left: 50%;
                                     top: 0;
                                     padding: 6px 25px;
                                     border-radius: 25px;
                                     background-color: #00EBFF;
-                                    transform: translate(-25px, -50%);
+                                    transform: translate(-50%, -50%);
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-wrap: wrap;
+                                    width: 80%;
 
                                     p {
                                         color: #014063;
@@ -394,29 +401,81 @@ body {
                                         .task_area_one_taskProgress_area_bottom_progress_top_text {
                                             display: flex;
                                             justify-content: space-between;
+                                            align-items: flex-end;
+                                            flex-wrap: wrap;
                                             width: 100%;
 
                                             .task_area_one_taskProgress_area_bottom_progress_top_text_item {
                                                 position: relative;
                                                 display: flex;
                                                 align-items: center;
+                                                flex-wrap: wrap;
+                                                justify-content: center;
 
                                                 .task_area_one_taskProgress_area_bottom_progress_top_text_item_img {
-                                                    width: 30px;
-                                                    margin: 0 6px 0 0;
+                                                    width: 100%;
+                                                    margin: 0 auto 5px;
+
+                                                    img{
+                                                        display: block;
+                                                        margin: 0 auto;
+                                                        width: 30px;
+                                                    }
                                                 }
 
                                                 p {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
                                                     color: #00EBFF;
                                                     line-height: 1;
                                                 }
 
-                                                &:nth-child(2) {
-                                                    border: 1px solid #00EBFF;
-                                                    padding: 5px 18px;
+                                                &:nth-child(1) {
+                                                    justify-content: flex-start;
+                                                    order: 2;
+
+                                                    .task_area_one_taskProgress_area_bottom_progress_top_text_item_img{
+                                                        img{
+                                                            margin: 0 auto 0 0;
+                                                        }
+                                                    }
 
                                                     p {
+                                                        align-items: flex-start;
+                                                    }
+                                                }
+
+                                                &:nth-child(2) {
+                                                    width: 90%;
+                                                    border: 1px solid #00EBFF;
+                                                    padding: 10px 5px;
+                                                    margin: 0 auto 25px;
+                                                    order: 1;
+
+                                                    p {
+                                                        line-height: 1.7;
                                                         color: #EDD837;
+
+                                                        span {
+                                                            font-size: 20px;
+                                                            font-weight: 800;
+                                                        }
+                                                    }
+                                                }
+                                                
+                                                &:nth-child(3) {
+                                                    justify-content: flex-end;
+                                                    order: 3;
+
+                                                    .task_area_one_taskProgress_area_bottom_progress_top_text_item_img{
+                                                        img{
+                                                            margin: 0 0 0 auto;
+                                                        }
+                                                    }
+
+                                                    p {
+                                                        align-items: flex-end;
                                                     }
                                                 }
 
@@ -485,7 +544,7 @@ body {
                                         .task_area_one_taskProgress_area_bottom_progress {
                                             position: relative;
                                             width: 100%;
-                                            height: 23px;
+                                            height: 15px;
                                             border: 1px solid #00EBFF;
                                             border-radius: 12px;
                                             margin: 25px auto;
@@ -499,6 +558,7 @@ body {
                                             .progress_img {
                                                 position: absolute;
                                                 width: 6%;
+                                                width: 40px;
                                                 top: 50%;
                                                 transform: translate(-50%, -50%);
                                             }
@@ -507,11 +567,14 @@ body {
                                         .task_area_one_taskProgress_area_bottom_progress_bottom_text {
                                             display: flex;
                                             justify-content: space-between;
+                                            flex-wrap: wrap;
                                             width: 100%;
 
                                             .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
                                                 display: flex;
                                                 align-items: center;
+                                                width: 100%;
+                                                margin: 0 0 10px 0;
 
                                                 .task_area_one_taskProgress_area_bottom_progress_bottom_text_item_img {
                                                     width: 20px;
@@ -553,6 +616,175 @@ body {
     }
 }
 
+@media screen and (min-width: 500px) {
+    .modal {
+        &.readingTask_modal {
+
+            .modal-dialog {
+
+                .modal-content {
+
+                    .task_area {
+
+                        .task_area_one {
+                            .task_area_one_bookman_area {
+
+                                .task_area_one_taskProgress_area {
+
+                                    .task_area_one_taskProgress_area_bottom {
+
+                                        .task_area_one_taskProgress_area_bottom_progress_area {
+
+                                            .task_area_one_taskProgress_area_bottom_progress_top_text {
+                                                flex-wrap: nowrap;
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item {
+                                                    
+                                                    &:nth-child(1){
+                                                        order: 1;
+                                                    }
+
+                                                    &:nth-child(2) {
+                                                        width: 55%;
+                                                        padding: 10px;
+                                                        order: 2;
+                                                        margin: 0 auto;
+
+                                                        p {
+                                                            line-height: 1;
+
+                                                            span {
+                                                                font-size: 29px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width: 576px) {
+    .modal {
+        &.readingTask_modal {
+
+            .modal-dialog {
+
+                .modal-content {
+
+                    .task_area {
+
+                        .task_area_one {
+                            .task_area_one_bookman_area {
+                                .task_area_one_bookman_area_img {
+                                    width: 35%;
+                                    img {
+                                        width: 100%;
+                                        max-width: none;
+                                    }
+
+                                    .task_area_one_bookman_area_img_text {
+
+                                        p {
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+
+                                .task_area_one_bookman_area_text {
+                                    width: 60%;
+                                    margin: 0;
+
+                                    h4 {
+                                        font-size: 30px;
+                                    }
+
+                                    p {
+                                        font-size: 18px;
+                                    }
+                                }
+
+                                .task_area_one_bookman_area_bottom_text {
+                                    p {
+                                        font-size: 18px;
+
+                                        span {
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+
+                                .task_area_one_taskProgress_area {
+
+                                    .task_area_one_taskProgress_area_time {
+                                        left: auto;
+                                        right: 0;
+                                        transform: translate(-25px, -50%);
+                                        flex-wrap: nowrap;
+                                        width: auto;
+
+                                        p {
+                                            font-size: 18px;
+                                        }
+                                    }
+
+                                    .task_area_one_taskProgress_area_top {
+                                        .task_area_one_taskProgress_area_top_text {
+
+                                            p {
+                                                font-size: 18px;
+                                            }
+                                        }
+                                    }
+
+                                    .task_area_one_taskProgress_area_bottom {
+
+                                        .task_area_one_taskProgress_area_bottom_progress_area {
+
+                                            .task_area_one_taskProgress_area_bottom_progress_top_text {
+
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item {
+
+                                                    p {
+                                                        font-size: 17px;
+                                                    }
+
+                                                    &:nth-child(2) {
+                                                        padding: 5px 18px 15px;
+                                                    }
+                                                }
+                                            }
+
+                                            .task_area_one_taskProgress_area_bottom_progress_bottom_text {
+                                                .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
+                                                    p {
+                                                        font-size: 17px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
 @media screen and (min-width: 768px) {
     h1 {
         font-size: 32px;
@@ -591,85 +823,6 @@ body {
         font-size: 15px;
     }
 
-
-    // .modal {
-    //     &.readingProgress_modal {
-    //         .modal-dialog {
-    //             .modal-content {
-
-    //                 .modal-content-header {
-    //                     .modal-content-header-frame {
-    //                         .modal-header-frame-bothSides {
-    //                             .modal-header-content {
-    //                                 .modal-header-tittle {
-    //                                     h2 {
-    //                                         font-size: 40px;
-
-    //                                         &.modal-header-tittle-border {
-    //                                             /* 	等同於：-webkit-text-fill-color: transparent; */
-    //                                             -webkit-text-stroke: 4px #005b98;
-    //                                         }
-
-    //                                         // &.modal-header-tittle-pink{
-    //                                         //     transform: translate(calc(-50% + 4px) , 4px);
-    //                                         // }
-
-    //                                         // &.modal-header-tittle-blue{
-    //                                         //     transform: translate(calc(-50% - 4px) , -4px);
-    //                                         // }
-    //                                     }
-    //                                 }
-
-    //                                 .modal-header-text-area {
-    //                                     .modal-header-text {
-    //                                         flex-wrap: nowrap;
-
-    //                                         .tittle {
-    //                                             width: auto;
-    //                                         }
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .task_area {
-    //                     .task_area_text {
-
-    //                         .task_area_tittle {
-    //                             margin: 20px auto 35px;
-    //                         }
-    //                     }
-
-    //                     .robot_progress_area {
-    //                         .robot_progress {
-    //                             .progress_area {
-    //                                 width: 55%;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .small_task_area {
-
-    //                     .small_task_item {
-    //                         width: 47.5%;
-
-    //                         &:nth-child(even) {
-    //                             margin: 0 0 40px 2.5%;
-    //                         }
-
-    //                         &:nth-child(odd) {
-    //                             margin: 0 2.5% 40px 0;
-    //                         }
-    //                     }
-    //                 }
-    //             }
-
-    //         }
-    //     }
-    // }
 }
 
 @media screen and (min-width: 992px) {
@@ -710,99 +863,110 @@ body {
         font-size: 17px;
     }
 
-    // .modal {
-    //     &.readingProgress_modal {
-    //         .modal-dialog {
-    //             .modal-content {
-    //                 .modal-content-header {
-    //                     .modal-content-header-frame {
-    //                         .modal-header-frame-bothSides {
-    //                             .modal-header-content {
-    //                                 .modal-header-tittle {
-    //                                     margin: 0 auto 30px;
+    .modal {
+        &.readingTask_modal {
 
-    //                                     h2 {
-    //                                         font-size: 50px;
+            .modal-dialog {
 
-    //                                         &.modal-header-tittle-border {
-    //                                             /* 	等同於：-webkit-text-fill-color: transparent; */
-    //                                             -webkit-text-stroke: 5px #005b98;
-    //                                         }
+                .modal-content {
 
-    //                                         // &.modal-header-tittle-pink{
-    //                                         //     transform: translate(calc(-50% + 5px) , 5px);
-    //                                         // }
+                    .task_area {
 
-    //                                         // &.modal-header-tittle-blue{
-    //                                         //     transform: translate(calc(-50% - 5px) , -5px);
-    //                                         // }
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
+                        .task_area_one {
+                            padding: 30px 40px;
+                            .task_area_one_bookman_area {
 
-    //                 .task_area {
-    //                     .robot_progress_area {
-    //                         .robot_img_area {
-    //                             .robot_img_item {
-    //                                 .robot_img_item_img {
-    //                                     width: calc(100% - 50px);
-    //                                 }
+                                .task_area_one_bookman_area_img {
+                                    width: 35%;
 
-    //                                 .arrow_img_item_img {
-    //                                     width: 50px;
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
+                                    img {
+                                        width: 87%;
+                                    }
+                                }
 
-    //                     .task_area_icon_area {
-    //                         .task_area_icon_two {
-    //                             right: 2.5%;
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+                                .task_area_one_bookman_area_text {
+                                    h4 {
+                                        font-size: 40px;
+                                    }
+                                }
+
+                                .task_area_one_bookman_area_bottom_text {
+                                    margin: 50px auto 0;
+                                }
+
+                                .task_area_one_taskProgress_area {
+
+                                    .task_area_one_taskProgress_area_time {
+                                        left: auto;
+                                        right: 0;
+                                        transform: translate(-25px, -50%);
+                                        flex-wrap: nowrap;
+                                        width: auto;
+                                    }
+
+                                    .task_area_one_taskProgress_area_bottom {
+
+                                        .task_area_one_taskProgress_area_bottom_progress_area {
+
+                                            .task_area_one_taskProgress_area_bottom_progress_top_text {
+
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item {
+
+                                                    &:nth-child(2) {
+                                                        width: 65%;
+                                                        flex-wrap: nowrap;
+                                                        padding: 5px 18px;
+
+                                                        p {
+                                                            &:nth-child(3){
+                                                                margin: 0 5px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .task_area_one_taskProgress_area_bottom_progress {
+                                                height: 23px;
+                                                .progress_img {
+                                                    width: 57px;
+                                                }
+                                            }
+
+                                            .task_area_one_taskProgress_area_bottom_progress_bottom_text {
+
+                                                .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
+                                                    width: 33%;
+
+                                                    p{
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                    }
+
+                                                    &:nth-child(2){
+                                                        justify-content: center;
+                                                    }
+
+                                                    &:nth-child(3){
+                                                        justify-content: flex-end;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
-    // .modal {
-    //     &.readingProgress_modal {
-    //         .modal-dialog {
-    //             .modal-content {
-    //                 .modal-content-header {
-    //                     .modal-content-header-frame {
-    //                         .modal-header-frame-bothSides {
-    //                             .modal-header-content {
-    //                                 .modal-header-tittle {
-    //                                     h2 {
-    //                                         font-size: 55px;
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .small_task_area {
-    //                     .small_task_item {
-    //                         width: 30%;
-    //                         margin: 0 1.5% 40px 1.5% !important;
-    //                     }
-    //                 }
-
-    //                 .small_task_item_text{
-    //                     width: 97%;
-    //             }
-    //             }
-    //         }
-    //     }
-    // }
+    
 }
 
 @media screen and (min-width: 1200px) {
@@ -828,27 +992,68 @@ body {
         font-size: 19px;
     }
 
-    // .modal {
-    //     &.readingProgress_modal {
-    //         .modal-dialog {
-    //             .modal-content {
-    //                 .modal-content-header {
-    //                     .modal-content-header-frame {
-    //                         .modal-header-frame-bothSides {
-    //                             .modal-header-content {
-    //                                 .modal-header-tittle {
-    //                                     h2 {
-    //                                         font-size: 65px;
-    //                                     }
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    .modal {
+        &.readingTask_modal {
+
+            .modal-dialog {
+
+                .modal-content {
+
+                    .task_area {
+
+                        .task_area_one {
+                            .task_area_one_bookman_area {
+
+                                .task_area_one_bookman_area_img {
+
+                                    .task_area_one_bookman_area_img_text {
+                                        p {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+
+                                .task_area_one_bookman_area_text {
+                                    p {
+                                        font-size: 20px;
+                                    }
+                                }
+
+                                .task_area_one_bookman_area_bottom_text {
+                                    p {
+                                        font-size: 20px;
+
+                                        span {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+
+                                .task_area_one_taskProgress_area {
+
+                                    .task_area_one_taskProgress_area_time {
+                                        p {
+                                            font-size: 20px;
+                                        }
+                                    }
+
+                                    .task_area_one_taskProgress_area_top {
+                                        .task_area_one_taskProgress_area_top_text {
+
+                                            p {
+                                                font-size: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 @media screen and (min-width: 1400px) {
@@ -890,117 +1095,88 @@ body {
     }
 
     .modal {
-    &.readingTask_modal {
-
-        .modal-dialog {
-
-            .modal-content {
-
-                .task_area {
-
-                    .task_area_one {
-                        .task_area_one_bookman_area {
-
-                            .task_area_one_bookman_area_img {
-                                width: 35%;
-
-                                img {
-                                    width: 87%;
-                                }
-
-                                .task_area_one_bookman_area_img_text {
-
-                                    p {
-                                        font-size: 24px;
+        &.readingTask_modal {
+            .modal-dialog {
+                .modal-content {
+                    .task_area {
+                        .task_area_one {
+                            .task_area_one_bookman_area {
+                                .task_area_one_bookman_area_img {
+                                    .task_area_one_bookman_area_img_text {
+                                        p {
+                                            font-size: 24px;
+                                        }
                                     }
                                 }
-                            }
 
-                            .task_area_one_bookman_area_text {
-                                width: 60%;
-
-                                h4 {
-                                    font-size: 40px;
-                                }
-
-                                p {
-                                    font-size: 26px;
-                                }
-                            }
-
-                            .task_area_one_bookman_area_bottom_text {
-
-                                p {
-                                    font-size: 26px;
-
-                                    span {
+                                .task_area_one_bookman_area_text {
+                                    p {
                                         font-size: 26px;
                                     }
                                 }
-                            }
 
-                            .task_area_one_taskProgress_area {
-
-                                .task_area_one_taskProgress_area_time {
-
+                                .task_area_one_bookman_area_bottom_text {
                                     p {
-                                        font-size: 21px;
-                                    }
-                                }
+                                        font-size: 26px;
 
-                                .task_area_one_taskProgress_area_top {
-                                    .task_area_one_taskProgress_area_top_text {
-
-                                        p {
+                                        span {
                                             font-size: 26px;
                                         }
                                     }
                                 }
 
-                                .task_area_one_taskProgress_area_bottom {
+                                .task_area_one_taskProgress_area {
 
-
-                                    .task_area_one_taskProgress_area_bottom_img_area {
-
-                                        .task_area_one_taskProgress_area_bottom_img_item {
-                                            width: 31%;
+                                    .task_area_one_taskProgress_area_time {
+                                        p {
+                                            font-size: 21px;
                                         }
                                     }
 
-                                    .task_area_one_taskProgress_area_bottom_progress_area {
-                                        width: 93%;
+                                    .task_area_one_taskProgress_area_top {
+                                        .task_area_one_taskProgress_area_top_text {
 
-                                        .task_area_one_taskProgress_area_bottom_progress_top_text {
+                                            p {
+                                                font-size: 26px;
+                                            }
+                                        }
+                                    }
 
+                                    .task_area_one_taskProgress_area_bottom {
+                                        .task_area_one_taskProgress_area_bottom_progress_area {
+                                            .task_area_one_taskProgress_area_bottom_progress_top_text {
+                                                align-items: center;
 
-                                            .task_area_one_taskProgress_area_bottom_progress_top_text_item {
-                                                
+                                                .task_area_one_taskProgress_area_bottom_progress_top_text_item {
+                                                    flex-wrap: nowrap;
 
-                                                p {
-                                                    font-size: 17px;
-                                                }
+                                                    .task_area_one_taskProgress_area_bottom_progress_top_text_item_img{
+                                                        width: 30px;
+                                                        margin: 0 6px 0 0;
 
-                                                &:nth-child(2) {
-                                                    p {
-                                                        span {
-                                                            font-size: 29px;
+                                                        img{
+                                                            width: 100%;
                                                         }
+                                                    }
+
+                                                    p{
+                                                        flex-direction: row;
+                                                    }
+
+                                                    &:nth-child(2) {
+                                                        width: 50%;
                                                     }
                                                 }
                                             }
-                                        }
 
-                                        .task_area_one_taskProgress_area_bottom_progress_bottom_text {
-                                            
-                                            .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
-                                                
-
-                                                p {
-                                                    font-size: 17px;
-                                                    
+                                            .task_area_one_taskProgress_area_bottom_progress_bottom_text {
+                                                .task_area_one_taskProgress_area_bottom_progress_bottom_text_item {
+                                                    width: auto;
+                                                    p{
+                                                        flex-direction: row;
+                                                    }
                                                 }
                                             }
-
                                         }
                                     }
                                 }
@@ -1011,6 +1187,5 @@ body {
             }
         }
     }
-}
 
 }
